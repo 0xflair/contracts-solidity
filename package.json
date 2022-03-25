@@ -1,8 +1,32 @@
 {
-  "devDependencies": {
-    "@nomiclabs/hardhat-ethers": "^2.0.5",
+  "name": "@0xflair/evm-contracts",
+  "version": "1.0.0",
+  "description": "A monorepo containing all evm-based smart contracts and extensions used on Flair platform.",
+  "repository": "git@github.com:0xflair/evm-contracts.git",
+  "author": "Flair.Finance",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "lint": "eslint \"**/*.{js,ts}\" && solhint src/**/*.sol",
+    "lint:fix": "eslint --fix \"**/*.{js,ts}\" && solhint --fix src/**/*.sol",
+    "format": "prettier --check \"**/*.{ts,js,sol}\"",
+    "format:fix": "prettier --write \"**/*.{ts,js,sol}\"",
+    "test": "npx hardhat test --network hardhat",
+    "build": "npm run clean && npm run compile",
+    "deploy:rinkeby": "npx hardhat deploy --network rinkeby && npx hardhat etherscan-verify --network rinkeby",
+    "deploy:mumbai": "npx hardhat deploy --network mumbai && npx hardhat etherscan-verify --network mumbai",
+    "deploy:matic": "npx hardhat deploy --network matic && npx hardhat etherscan-verify --network matic",
+    "deploy:arbitrum_rinkeby": "npx hardhat deploy --network arbitrum_rinkeby && npx hardhat etherscan-verify --network arbitrum_rinkeby",
+    "clean": "npx hardhat clean",
+    "compile": "npx hardhat compile",
+    "coverage": "npm run build && npx hardhat coverage --temp artifacts --network hardhat"
+  },
+  "dependencies": {
+    "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.5.0",
     "@typechain/ethers-v5": "^7.2.0",
     "@typechain/hardhat": "^2.3.1",
     "@types/chai": "^4.3.0",
@@ -22,6 +46,8 @@
     "ethereum-waffle": "^3.4.4",
     "ethers": "^5.6.1",
     "hardhat": "^2.9.1",
+    "hardhat-contract-sizer": "^2.5.1",
+    "hardhat-deploy": "^0.11.2",
     "hardhat-gas-reporter": "^1.0.8",
     "prettier": "^2.6.0",
     "prettier-plugin-solidity": "^1.0.0-beta.13",
@@ -29,6 +55,7 @@
     "solidity-coverage": "^0.7.20",
     "ts-node": "^10.7.0",
     "typechain": "^5.2.0",
-    "typescript": "^4.6.2"
+    "typescript": "^4.6.2",
+    "web3": "^1.7.1"
   }
 }
