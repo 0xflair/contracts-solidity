@@ -1,3 +1,10 @@
+### [1.1.1](https://github.com/0xflair/evm-contracts/compare/v1.1.0...v1.1.1) (2022-03-27)
+
+
+### Bug Fixes
+
+* use dist as package root ([7a827ac](https://github.com/0xflair/evm-contracts/commit/7a827acd77f119c8a05318155451049d4bef4ffe))
+
 ## [1.1.0](https://github.com/0xflair/evm-contracts/compare/v1.0.1...v1.1.0) (2022-03-27)
 
 
