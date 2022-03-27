@@ -35,6 +35,8 @@
     "deploy:arbitrum_rinkeby": "npx hardhat deploy --network arbitrum_rinkeby && npx hardhat etherscan-verify --network arbitrum_rinkeby"
   },
   "dependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
     "@nomiclabs/hardhat-etherscan": "^3.0.3",
