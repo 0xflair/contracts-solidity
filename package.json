@@ -37,7 +37,7 @@
     "deploy:matic": "npx hardhat deploy --network matic && npx hardhat etherscan-verify --network matic",
     "deploy:arbitrum_rinkeby": "npx hardhat deploy --network arbitrum_rinkeby && npx hardhat etherscan-verify --network arbitrum_rinkeby"
   },
-  "dependencies": {
+  "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
