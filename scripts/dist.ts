@@ -17,6 +17,10 @@ async function main() {
     path.resolve(__dirname, "../package.json"),
     distPath + "/package.json"
   );
+  fse.copySync(
+    path.resolve(__dirname, "../README.md"),
+    distPath + "/README.md"
+  );
 
   console.log(path.resolve(__dirname, "../artifacts/contracts"));
 
