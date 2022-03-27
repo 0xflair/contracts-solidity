@@ -17,7 +17,6 @@
   "types": "typechain/index.ts",
   "files": [
     "dist",
-    "typechain",
     "README.md"
   ],
   "scripts": {

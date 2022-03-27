@@ -9,6 +9,14 @@ async function main() {
   fse.mkdirSync(distPath, { recursive: true });
 
   fse.copySync(path.resolve(__dirname, "../contracts"), distPath);
+  fse.copySync(
+    path.resolve(__dirname, "../typechain"),
+    distPath + "/typechain"
+  );
+  fse.copySync(
+    path.resolve(__dirname, "../package.json"),
+    distPath + "/package.json"
+  );
 
   console.log(path.resolve(__dirname, "../artifacts/contracts"));
 
