@@ -71,10 +71,7 @@
     [
       "@semantic-release/github",
       {
-        "assets": [
-          "artifacts/contracts/**/*.json",
-          "!**/*.dbg.json"
-        ]
+        "assets": []
       }
     ],
     [
