@@ -12,8 +12,12 @@
     "type": "git",
     "url": "git+https://github.com/0xflair/evm-contracts.git"
   },
+  "main": "typechain/index.ts",
+  "module": "typechain/index.ts",
+  "types": "typechain/index.ts",
   "files": [
     "dist",
+    "typechain",
     "README.md"
   ],
   "scripts": {
