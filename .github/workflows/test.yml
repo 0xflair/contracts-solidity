@@ -1,0 +1,23 @@
+name: Test
+
+on:
+  push:
+    branches-ignore: [main]
+
+jobs:
+  default:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm run install
+
+      - name: Build packages
+        run: npm run build
+        shell: bash
+
+      - name: Test
+        run: npm run test
+        shell: bash
