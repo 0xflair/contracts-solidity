@@ -1,3 +1,10 @@
+## [1.1.0](https://github.com/0xflair/evm-contracts/compare/v1.0.1...v1.1.0) (2022-03-27)
+
+
+### Features
+
+* add typechain dts to dist package ([4ea7e6d](https://github.com/0xflair/evm-contracts/commit/4ea7e6d934a13a7ab12add9e7e31741020907dcc))
+
 ### [1.0.1](https://github.com/0xflair/evm-contracts/compare/v1.0.0...v1.0.1) (2022-03-27)
 
 
