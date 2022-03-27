@@ -1,3 +1,10 @@
+### [1.1.3](https://github.com/0xflair/evm-contracts/compare/v1.1.2...v1.1.3) (2022-03-27)
+
+
+### Bug Fixes
+
+* package all files in dist ([c285204](https://github.com/0xflair/evm-contracts/commit/c2852044b95f7ba8a8600115db70b529252a8fc8))
+
 ### [1.1.2](https://github.com/0xflair/evm-contracts/compare/v1.1.1...v1.1.2) (2022-03-27)
 
 
