@@ -1,3 +1,10 @@
+### [1.1.2](https://github.com/0xflair/evm-contracts/compare/v1.1.1...v1.1.2) (2022-03-27)
+
+
+### Bug Fixes
+
+* change deps to devDeps for lighter installation ([989f2bd](https://github.com/0xflair/evm-contracts/commit/989f2bdaae7802332d6fc2779ce00c1a84471216))
+
 ### [1.1.1](https://github.com/0xflair/evm-contracts/compare/v1.1.0...v1.1.1) (2022-03-27)
 
 
