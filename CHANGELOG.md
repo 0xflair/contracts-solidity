@@ -1,3 +1,10 @@
+### [1.0.1](https://github.com/0xflair/evm-contracts/compare/v1.0.0...v1.0.1) (2022-03-27)
+
+
+### Bug Fixes
+
+* remove assets from gh release ([2f6160e](https://github.com/0xflair/evm-contracts/commit/2f6160ee3add026ba619a9c5e39b3bc162f5be65))
+
 ## 1.0.0 (2022-03-27)
 
 
