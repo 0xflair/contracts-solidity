@@ -2,12 +2,15 @@
   "name": "@0xflair/evm-contracts",
   "version": "1.0.0",
   "description": "A monorepo containing all evm-based smart contracts and extensions used on Flair platform.",
-  "repository": "git@github.com:0xflair/evm-contracts.git",
   "author": "Flair.Finance",
   "license": "MIT",
   "private": false,
   "publishConfig": {
     "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xflair/evm-contracts.git"
   },
   "files": [
     "dist",
