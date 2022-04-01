@@ -12,13 +12,13 @@ describe("ERC721FullFeaturedCollection", function () {
       "ANGEL",
       "ipfs://xxxxx",
       "ipfs://yyyyy",
-      [8000, web3.utils.toWei("0.06"), 2, web3.utils.toWei("0.08"), 10],
-      [
-        "0x0000000000000000000000000000000000000000",
-        "0x0000000000000000000000000000000000000000",
-        "0x0000000000000000000000000000000000000000",
-      ]
+      8000,
+      web3.utils.toWei("0.06"),
+      2,
+      web3.utils.toWei("0.08"),
+      10
     );
+
     await collection.deployed();
 
     await collection.getInfo();

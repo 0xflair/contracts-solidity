@@ -1,5 +1,4 @@
 import { ethers } from "hardhat";
-import web3 from "web3";
 import { ERC721SimpleCollection } from "../../../typechain";
 
 describe("ERC721SimpleCollection", function () {
@@ -14,7 +13,8 @@ describe("ERC721SimpleCollection", function () {
       "Flair Angels",
       "ANGEL",
       "ipfs://xxxxx",
-      "ipfs://yyyyy"
+      "ipfs://yyyyy",
+      10000
     )) as ERC721SimpleCollection;
 
     await collection.deployed();
