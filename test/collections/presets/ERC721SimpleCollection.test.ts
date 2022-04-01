@@ -14,12 +14,7 @@ describe("ERC721SimpleCollection", function () {
       "Flair Angels",
       "ANGEL",
       "ipfs://xxxxx",
-      "ipfs://yyyyy",
-      8000,
-      web3.utils.toWei("0.06"),
-      2,
-      web3.utils.toWei("0.08"),
-      10
+      "ipfs://yyyyy"
     )) as ERC721SimpleCollection;
 
     await collection.deployed();

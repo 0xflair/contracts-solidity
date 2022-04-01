@@ -10,13 +10,16 @@ import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721PreSalesExtension.sol";
 import "../extensions/ERC721PublicSalesExtension.sol";
+import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
 import "../extensions/ERC721OpenSeaNoGasWyvernExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 
-contract ERC721FullFeaturedCollection is
+/**
+ * This contract has all the features, plus it offers gasless listing for OpenSea on Ethereum chains.
+ */
+contract ERC721FullFeaturedCollectionWyvern is
     Ownable,
     ERC721,
     ERC721MetadataExtension,
@@ -24,33 +27,46 @@ contract ERC721FullFeaturedCollection is
     ERC721OwnerMintExtension,
     ERC721PreSalesExtension,
     ERC721PublicSalesExtension,
+    ERC721RoyaltyExtension,
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
-    ERC721BulkifyExtension
+    ERC721BulkifyExtension,
+    ERC721OpenSeaNoGasWyvernExtension
 {
     constructor(
         string memory name,
         string memory symbol,
         string memory contractURI,
         string memory placeholderURI,
-        uint256 maxSupply,
-        uint256 preSalePrice,
-        uint256 preSaleMaxMintPerWallet,
-        uint256 publicSalePrice,
-        uint256 publicSaleMaxMintPerTx
+        address raribleRoyaltyAddress,
+        address openSeaProxyRegistryAddress,
+        // Merged interger arguments due to Solifity limitations:
+        //
+        // uint256 maxSupply,
+        // uint256 preSalePrice,
+        // uint256 preSaleMaxMintPerWallet,
+        // uint256 publicSalePrice,
+        // uint256 publicSaleMaxMintPerTx,
+        uint256[5] memory uints
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
+        ERC721RoyaltyExtension(
+            raribleRoyaltyAddress
+        )
+        ERC721OpenSeaNoGasWyvernExtension(
+            openSeaProxyRegistryAddress
+        )
         ERC721AutoIdMinterExtension(
-            maxSupply
+            uints[0] /* maxSupply */
         )
         ERC721PreSalesExtension(
-            preSalePrice,
-            preSaleMaxMintPerWallet
+            uints[1], /* preSalePrice */
+            uints[2] /* preSaleMaxMintPerWallet */
         )
         ERC721PublicSalesExtension(
-            publicSalePrice,
-            publicSaleMaxMintPerTx
+            uints[3], /* publicSalePrice */
+            uints[4] /* publicSaleMaxMintPerTx */
         )
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
@@ -65,7 +81,10 @@ contract ERC721FullFeaturedCollection is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(ERC721)
+        override(
+            ERC721,
+            ERC721OpenSeaNoGasWyvernExtension
+        )
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);
@@ -75,7 +94,7 @@ contract ERC721FullFeaturedCollection is
         public
         view
         virtual
-        override(ERC721, ERC721RoleBasedMintExtension)
+        override(ERC721, ERC721RoleBasedMintExtension, ERC721RoyaltyExtension)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);

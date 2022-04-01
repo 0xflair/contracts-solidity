@@ -8,36 +8,24 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "../extensions/ERC721MetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
-import "../extensions/ERC721PreSalesExtension.sol";
-import "../extensions/ERC721PublicSalesExtension.sol";
-import "../extensions/ERC721SimpleProceedsExtension.sol";
 
 contract ERC721SimpleCollection is
     Ownable,
     ERC721,
     ERC721MetadataExtension,
     ERC721AutoIdMinterExtension,
-    ERC721OwnerMintExtension,
-    ERC721PreSalesExtension,
-    ERC721PublicSalesExtension,
-    ERC721SimpleProceedsExtension
+    ERC721OwnerMintExtension
 {
     constructor(
         string memory name,
         string memory symbol,
         string memory contractURI,
         string memory placeholderURI,
-        uint256 maxSupply,
-        uint256 preSalePrice,
-        uint256 preSaleMaxMintPerWallet,
-        uint256 publicSalePrice,
-        uint256 publicSaleMaxMintPerTx
+        uint256 maxSupply
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
-        ERC721PreSalesExtension(preSalePrice, preSaleMaxMintPerWallet)
-        ERC721PublicSalesExtension(publicSalePrice, publicSaleMaxMintPerTx)
     {}
 
     // PUBLIC
@@ -58,14 +46,7 @@ contract ERC721SimpleCollection is
         returns (
             uint256 _maxSupply,
             uint256 _totalSupply,
-            uint256 _senderBalance,
-            uint256 _preSalePrice,
-            uint256 _preSaleMaxMintPerWallet,
-            uint256 _senderPreSaleClaimed,
-            bool _preSaleActive,
-            uint256 _publicSalePrice,
-            uint256 _publicSaleMaxMintPerTx,
-            bool _publicSaleActive
+            uint256 _senderBalance
         )
     {
         uint256 balance = 0;
@@ -74,17 +55,6 @@ contract ERC721SimpleCollection is
             balance = this.balanceOf(msg.sender);
         }
 
-        return (
-            maxSupply,
-            this.totalSupply(),
-            balance,
-            preSalePrice,
-            preSaleMaxMintPerWallet,
-            preSaleAllowlistClaimed[msg.sender],
-            preSaleActive,
-            publicSalePrice,
-            publicSaleMaxMintPerTx,
-            publicSaleActive
-        );
+        return (maxSupply, this.totalSupply(), balance);
     }
 }

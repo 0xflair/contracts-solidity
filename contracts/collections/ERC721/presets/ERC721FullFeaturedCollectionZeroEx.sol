@@ -12,8 +12,14 @@ import "../extensions/ERC721PreSalesExtension.sol";
 import "../extensions/ERC721PublicSalesExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
+import "../extensions/ERC721RoleBasedMintExtension.sol";
+import "../extensions/ERC721BulkifyExtension.sol";
+import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 
-contract ERC721SimpleRoyaltyCollection is
+/**
+ * This contract has all the features, plus it offers gasless listing for OpenSea on Polygon chains.
+ */
+contract ERC721FullFeaturedCollectionZeroEx is
     Ownable,
     ERC721,
     ERC721MetadataExtension,
@@ -22,13 +28,18 @@ contract ERC721SimpleRoyaltyCollection is
     ERC721PreSalesExtension,
     ERC721PublicSalesExtension,
     ERC721RoyaltyExtension,
-    ERC721SimpleProceedsExtension
+    ERC721SimpleProceedsExtension,
+    ERC721RoleBasedMintExtension,
+    ERC721BulkifyExtension,
+    ERC721OpenSeaNoGasZeroExExtension
 {
     constructor(
         string memory name,
         string memory symbol,
         string memory contractURI,
         string memory placeholderURI,
+        address raribleRoyaltyAddress,
+        address openSeaExchangeAddress,
         // Merged interger arguments due to Solifity limitations:
         //
         // uint256 maxSupply,
@@ -36,11 +47,16 @@ contract ERC721SimpleRoyaltyCollection is
         // uint256 preSaleMaxMintPerWallet,
         // uint256 publicSalePrice,
         // uint256 publicSaleMaxMintPerTx,
-        uint256[] memory uints,
-        address raribleRoyaltyAddress
+        uint256[5] memory uints
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
+        ERC721RoyaltyExtension(
+            raribleRoyaltyAddress
+        )
+        ERC721OpenSeaNoGasZeroExExtension(
+            openSeaExchangeAddress
+        )
         ERC721AutoIdMinterExtension(
             uints[0] /* maxSupply */
         )
@@ -52,16 +68,33 @@ contract ERC721SimpleRoyaltyCollection is
             uints[3], /* publicSalePrice */
             uints[4] /* publicSaleMaxMintPerTx */
         )
-        ERC721RoyaltyExtension(raribleRoyaltyAddress)
-    {}
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(MINTER_ROLE, _msgSender());
+    }
 
     // PUBLIC
+
+    /**
+     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
+     */
+    function isApprovedForAll(address owner, address operator)
+        public
+        view
+        override(
+            ERC721,
+            ERC721OpenSeaNoGasZeroExExtension
+        )
+        returns (bool)
+    {
+        return super.isApprovedForAll(owner, operator);
+    }
 
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(ERC721, ERC721RoyaltyExtension)
+        override(ERC721, ERC721RoleBasedMintExtension, ERC721RoyaltyExtension)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
