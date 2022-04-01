@@ -1,3 +1,15 @@
+## [1.2.0](https://github.com/0xflair/evm-contracts/compare/v1.1.3...v1.2.0) (2022-04-01)
+
+
+### Features
+
+* separate Wyvern and ZeroEx based collections ([dbfd60f](https://github.com/0xflair/evm-contracts/commit/dbfd60fc72bda5031152cf9e66ccec19ff7ecd58))
+
+
+### Bug Fixes
+
+* test cases of collection ([5e2e8d1](https://github.com/0xflair/evm-contracts/commit/5e2e8d139d4666b62f7166b3676f550853d840f1))
+
 ### [1.1.3](https://github.com/0xflair/evm-contracts/compare/v1.1.2...v1.1.3) (2022-03-27)
 
 
