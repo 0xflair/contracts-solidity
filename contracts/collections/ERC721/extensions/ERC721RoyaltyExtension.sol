@@ -20,10 +20,12 @@ abstract contract ERC721RoyaltyExtension is
     EIP2981RoyaltyOverrideCore,
     IRoyalties
 {
-    address internal _raribleRoyaltyAddress;
+    address public raribleRoyaltyAddress;
+    uint96 public raribleRoyaltyPercent; // 10,000 basis (5% = 500)
 
-    constructor(address raribleRoyaltyAddress) {
-        _raribleRoyaltyAddress = raribleRoyaltyAddress;
+    constructor(address _raribleRoyaltyAddress, uint96 _raribleRoyaltyPercent) {
+        raribleRoyaltyAddress = _raribleRoyaltyAddress;
+        raribleRoyaltyPercent = _raribleRoyaltyPercent;
     }
 
     function setTokenRoyalties(TokenRoyaltyConfig[] calldata royaltyConfigs)
@@ -43,7 +45,11 @@ abstract contract ERC721RoyaltyExtension is
     }
 
     function setRaribleRoyaltyAddress(address addr) external onlyOwner {
-        _raribleRoyaltyAddress = addr;
+        raribleRoyaltyAddress = addr;
+    }
+
+    function setRaribleRoyaltyPercent(uint96 percent) external onlyOwner {
+        raribleRoyaltyPercent = percent;
     }
 
     function getRaribleV2Royalties(uint256 id)
@@ -54,9 +60,9 @@ abstract contract ERC721RoyaltyExtension is
     {
         result = new LibPart.Part[](1);
 
-        result[0].account = payable(_raribleRoyaltyAddress);
-        result[0].value = 10000;
-        // 100% of royalty goes to defined address above.
+        result[0].account = payable(raribleRoyaltyAddress);
+        result[0].value = raribleRoyaltyPercent;
+
         id;
         // avoid unused param warning
     }

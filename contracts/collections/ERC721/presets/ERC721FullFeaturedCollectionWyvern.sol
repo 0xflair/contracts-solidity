@@ -38,25 +38,25 @@ contract ERC721FullFeaturedCollectionWyvern is
         string memory symbol,
         string memory contractURI,
         string memory placeholderURI,
-        address raribleRoyaltyAddress,
-        address openSeaProxyRegistryAddress,
-        // Merged interger arguments due to Solifity limitations:
+        // # Merged interger arguments due to Solifity limitations:
         //
         // uint256 maxSupply,
         // uint256 preSalePrice,
         // uint256 preSaleMaxMintPerWallet,
         // uint256 publicSalePrice,
         // uint256 publicSaleMaxMintPerTx,
-        uint256[5] memory uints
+        // uint256 rarityRoyaltyPercentage,
+        uint256[6] memory uints,
+        // # Merged address arguments due to Solifity limitations:
+        //
+        // address raribleRoyaltyAddress,
+        // address openSeaProxyRegistryAddress,
+        address[2] memory addresses
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
-        ERC721RoyaltyExtension(
-            raribleRoyaltyAddress
-        )
-        ERC721OpenSeaNoGasWyvernExtension(
-            openSeaProxyRegistryAddress
-        )
+        ERC721RoyaltyExtension(addresses[0], uint96(uints[5]) /* rarityRoyaltyPercentage */)
+        ERC721OpenSeaNoGasWyvernExtension(addresses[1])
         ERC721AutoIdMinterExtension(
             uints[0] /* maxSupply */
         )
@@ -81,10 +81,7 @@ contract ERC721FullFeaturedCollectionWyvern is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(
-            ERC721,
-            ERC721OpenSeaNoGasWyvernExtension
-        )
+        override(ERC721, ERC721OpenSeaNoGasWyvernExtension)
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);

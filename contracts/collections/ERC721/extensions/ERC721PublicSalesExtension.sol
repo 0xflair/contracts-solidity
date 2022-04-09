@@ -24,9 +24,17 @@ abstract contract ERC721PublicSalesExtension is
         publicSaleMaxMintPerTx = _publicSaleMaxMintPerTx;
     }
 
+    // ADMIN
+
+    function setPublicSalePrice(uint256 newValue) external onlyOwner {
+        publicSalePrice = newValue;
+    }
+
     function togglePublicSale(bool isActive) external onlyOwner {
         publicSaleActive = isActive;
     }
+
+    // PUBLIC
 
     function mintPublic(address to, uint256 count)
         external

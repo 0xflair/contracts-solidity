@@ -41,17 +41,9 @@ contract ERC721FullFeaturedCollection is
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
-        ERC721AutoIdMinterExtension(
-            maxSupply
-        )
-        ERC721PreSalesExtension(
-            preSalePrice,
-            preSaleMaxMintPerWallet
-        )
-        ERC721PublicSalesExtension(
-            publicSalePrice,
-            publicSaleMaxMintPerTx
-        )
+        ERC721AutoIdMinterExtension(maxSupply)
+        ERC721PreSalesExtension(preSalePrice, preSaleMaxMintPerWallet)
+        ERC721PublicSalesExtension(publicSalePrice, publicSaleMaxMintPerTx)
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());

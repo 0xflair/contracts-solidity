@@ -38,8 +38,6 @@ contract ERC721FullFeaturedCollectionZeroEx is
         string memory symbol,
         string memory contractURI,
         string memory placeholderURI,
-        address raribleRoyaltyAddress,
-        address openSeaExchangeAddress,
         // Merged interger arguments due to Solifity limitations:
         //
         // uint256 maxSupply,
@@ -47,16 +45,18 @@ contract ERC721FullFeaturedCollectionZeroEx is
         // uint256 preSaleMaxMintPerWallet,
         // uint256 publicSalePrice,
         // uint256 publicSaleMaxMintPerTx,
-        uint256[5] memory uints
+        // uint256 rarityRoyaltyPercentage,
+        uint256[6] memory uints,
+        // # Merged address arguments due to Solifity limitations:
+        //
+        // address raribleRoyaltyAddress,
+        // address openSeaProxyRegistryAddress,
+        address[2] memory addresses
     )
         ERC721(name, symbol)
         ERC721MetadataExtension(contractURI, placeholderURI)
-        ERC721RoyaltyExtension(
-            raribleRoyaltyAddress
-        )
-        ERC721OpenSeaNoGasZeroExExtension(
-            openSeaExchangeAddress
-        )
+        ERC721RoyaltyExtension(addresses[0] /* raribleRoyaltyAddress */, uint96(uints[5]) /* rarityRoyaltyPercentage */)
+        ERC721OpenSeaNoGasZeroExExtension(addresses[1] /* openSeaProxyRegistryAddress */)
         ERC721AutoIdMinterExtension(
             uints[0] /* maxSupply */
         )
@@ -81,10 +81,7 @@ contract ERC721FullFeaturedCollectionZeroEx is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(
-            ERC721,
-            ERC721OpenSeaNoGasZeroExExtension
-        )
+        override(ERC721, ERC721OpenSeaNoGasZeroExExtension)
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);

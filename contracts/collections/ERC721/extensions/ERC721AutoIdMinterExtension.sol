@@ -6,10 +6,16 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+import "./IERC721AutoIdMinterExtension.sol";
+
 /**
  * @dev Extension to add minting capability with an auto incremented ID for each token and a maximum supply setting.
  */
-abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
+abstract contract ERC721AutoIdMinterExtension is
+    IERC721AutoIdMinterExtension,
+    Ownable,
+    ERC721
+{
     using SafeMath for uint256;
 
     uint256 public maxSupply;
@@ -23,18 +29,18 @@ abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
 
     // ADMIN
 
-    function setMaxSupply(uint256 newValue) external onlyOwner {
+    function setMaxSupply(uint256 newValue) external override onlyOwner {
         require(!_maxSupplyFrozen, "BASE_URI_FROZEN");
         maxSupply = newValue;
     }
 
-    function freezeMaxSupply() external onlyOwner {
+    function freezeMaxSupply() external override onlyOwner {
         _maxSupplyFrozen = true;
     }
 
     // PUBLIC
 
-    function totalSupply() public view returns (uint256) {
+    function totalSupply() public view override returns (uint256) {
         return _currentTokenId;
     }
 

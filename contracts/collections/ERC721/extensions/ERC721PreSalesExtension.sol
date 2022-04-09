@@ -28,6 +28,10 @@ abstract contract ERC721PreSalesExtension is
 
     // ADMIN
 
+    function setPreSalePrice(uint256 newValue) external onlyOwner {
+        preSalePrice = newValue;
+    }
+
     function setPreSaleMaxMintPerWallet(uint256 newValue) external onlyOwner {
         preSaleMaxMintPerWallet = newValue;
     }
