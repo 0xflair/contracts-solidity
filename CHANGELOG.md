@@ -1,3 +1,10 @@
+### [1.2.1](https://github.com/0xflair/evm-contracts/compare/v1.2.0...v1.2.1) (2022-04-09)
+
+
+### Bug Fixes
+
+* add methods to update prices ([bffba23](https://github.com/0xflair/evm-contracts/commit/bffba23eaf4e4d7a3b12478aa9826af4d6e62b41))
+
 ## [1.2.0](https://github.com/0xflair/evm-contracts/compare/v1.1.3...v1.2.0) (2022-04-01)
 
 
