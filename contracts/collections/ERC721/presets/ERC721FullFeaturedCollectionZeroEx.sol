@@ -5,7 +5,7 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-import "../extensions/ERC721MetadataExtension.sol";
+import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721PreSalesExtension.sol";
@@ -22,7 +22,7 @@ import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 contract ERC721FullFeaturedCollectionZeroEx is
     Ownable,
     ERC721,
-    ERC721MetadataExtension,
+    ERC721PrefixedMetadataExtension,
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension,
     ERC721PreSalesExtension,
@@ -54,9 +54,14 @@ contract ERC721FullFeaturedCollectionZeroEx is
         address[2] memory addresses
     )
         ERC721(name, symbol)
-        ERC721MetadataExtension(contractURI, placeholderURI)
-        ERC721RoyaltyExtension(addresses[0] /* raribleRoyaltyAddress */, uint96(uints[5]) /* rarityRoyaltyPercentage */)
-        ERC721OpenSeaNoGasZeroExExtension(addresses[1] /* openSeaProxyRegistryAddress */)
+        ERC721PrefixedMetadataExtension(contractURI, placeholderURI)
+        ERC721RoyaltyExtension(
+            addresses[0], /* raribleRoyaltyAddress */
+            uint96(uints[5]) /* rarityRoyaltyPercentage */
+        )
+        ERC721OpenSeaNoGasZeroExExtension(
+            addresses[1] /* openSeaProxyRegistryAddress */
+        )
         ERC721AutoIdMinterExtension(
             uints[0] /* maxSupply */
         )
@@ -101,10 +106,10 @@ contract ERC721FullFeaturedCollectionZeroEx is
         public
         view
         virtual
-        override(ERC721, ERC721MetadataExtension)
+        override(ERC721, ERC721PrefixedMetadataExtension)
         returns (string memory)
     {
-        return ERC721MetadataExtension.tokenURI(_tokenId);
+        return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);
     }
 
     function getInfo()

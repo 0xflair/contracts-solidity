@@ -15,7 +15,7 @@ abstract contract ERC721OwnerMintExtension is
 {
     // ADMIN
 
-    function mintOwner(address to, uint256 count) external onlyOwner {
+    function mintByOwner(address to, uint256 count) external onlyOwner {
         _mintTo(to, count);
     }
 }
