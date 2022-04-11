@@ -1,3 +1,10 @@
+## [1.3.0](https://github.com/0xflair/evm-contracts/compare/v1.2.1...v1.3.0) (2022-04-11)
+
+
+### Features
+
+* separate prefixed and per-token metadata extensions ([deb1fc2](https://github.com/0xflair/evm-contracts/commit/deb1fc2d21363c686cd5b8b377168208f9f6ce1d))
+
 ### [1.2.1](https://github.com/0xflair/evm-contracts/compare/v1.2.0...v1.2.1) (2022-04-09)
 
 
