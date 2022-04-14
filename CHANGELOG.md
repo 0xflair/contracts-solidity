@@ -1,3 +1,10 @@
+### [1.3.1](https://github.com/0xflair/evm-contracts/compare/v1.3.0...v1.3.1) (2022-04-14)
+
+
+### Bug Fixes
+
+* include upstream dependencies in the ABI distribution ([75fe556](https://github.com/0xflair/evm-contracts/commit/75fe556e39afe8f3de0d5d6cb48194878e12ba85))
+
 ## [1.3.0](https://github.com/0xflair/evm-contracts/compare/v1.2.1...v1.3.0) (2022-04-11)
 
 
