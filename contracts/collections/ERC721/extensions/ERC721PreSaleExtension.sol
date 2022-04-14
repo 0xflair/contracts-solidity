@@ -10,7 +10,7 @@ import "./ERC721AutoIdMinterExtension.sol";
 /**
  * @dev Extension to provide pre-sale capabilities for certain collectors to mint for a specific price.
  */
-abstract contract ERC721PreSalesExtension is
+abstract contract ERC721PreSaleExtension is
     ERC721AutoIdMinterExtension,
     ReentrancyGuard
 {
@@ -59,7 +59,7 @@ abstract contract ERC721PreSalesExtension is
             );
     }
 
-    function mintPresale(uint256 count, bytes32[] calldata proof)
+    function mintPreSale(uint256 count, bytes32[] calldata proof)
         external
         payable
         nonReentrant

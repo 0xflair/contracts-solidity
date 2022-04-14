@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
-import "../extensions/ERC721PreSalesExtension.sol";
-import "../extensions/ERC721PublicSalesExtension.sol";
+import "../extensions/ERC721PreSaleExtension.sol";
+import "../extensions/ERC721PublicSaleExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
@@ -22,8 +22,8 @@ contract ERC721FullFeaturedCollection is
     ERC721PrefixedMetadataExtension,
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension,
-    ERC721PreSalesExtension,
-    ERC721PublicSalesExtension,
+    ERC721PreSaleExtension,
+    ERC721PublicSaleExtension,
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
     ERC721BulkifyExtension
@@ -42,8 +42,8 @@ contract ERC721FullFeaturedCollection is
         ERC721(name, symbol)
         ERC721PrefixedMetadataExtension(contractURI, placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
-        ERC721PreSalesExtension(preSalePrice, preSaleMaxMintPerWallet)
-        ERC721PublicSalesExtension(publicSalePrice, publicSaleMaxMintPerTx)
+        ERC721PreSaleExtension(preSalePrice, preSaleMaxMintPerWallet)
+        ERC721PublicSaleExtension(publicSalePrice, publicSaleMaxMintPerTx)
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());

@@ -14,8 +14,8 @@ abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
 
     uint256 public maxSupply;
 
-    bool private _maxSupplyFrozen;
-    uint256 private _currentTokenId = 0;
+    bool internal _maxSupplyFrozen;
+    uint256 internal _currentTokenId = 0;
 
     constructor(uint256 _maxSupply) {
         maxSupply = _maxSupply;
@@ -54,14 +54,14 @@ abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
      * Calculates the next token ID based on value of _currentTokenId
      * @return uint256 for the next token ID
      */
-    function _getNextTokenId() private view returns (uint256) {
+    function _getNextTokenId() internal view returns (uint256) {
         return _currentTokenId.add(1);
     }
 
     /**
      * Increments the value of _currentTokenId
      */
-    function _incrementTokenId() private {
+    function _incrementTokenId() internal {
         _currentTokenId++;
     }
 }

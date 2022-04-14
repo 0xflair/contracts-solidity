@@ -8,9 +8,9 @@ import "./ERC721AutoIdMinterExtension.sol";
 import "./ERC721PerTokenMetadataExtension.sol";
 
 /**
- * @dev Extension to allow owner to mint directly by providing independent metadata URIs for tokens.
+ * @dev Extension to allow owner to mint 1-of-1 NFTs by providing dedicated metadata URI for each token.
  */
-abstract contract ERC721MetadataMintExtension is
+abstract contract ERC721OneOfOneMintExtension is
     Ownable,
     ERC721AutoIdMinterExtension,
     ERC721PerTokenMetadataExtension
@@ -22,9 +22,10 @@ abstract contract ERC721MetadataMintExtension is
         uint256 count,
         string[] memory tokenURIs
     ) external onlyOwner {
+        uint256 startingTokenId = _getNextTokenId();
         _mintTo(to, count);
         for (uint256 i = 0; i < count; i++) {
-            _setTokenURI(uint256(i), tokenURIs[i]);
+            _setTokenURI(startingTokenId + i, tokenURIs[i]);
         }
     }
 

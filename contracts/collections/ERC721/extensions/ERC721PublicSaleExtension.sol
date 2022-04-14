@@ -10,7 +10,7 @@ import "./ERC721AutoIdMinterExtension.sol";
 /**
  * @dev Extension to provide pre-sale and public-sale capabilities for colelctors to mint for a specific price.
  */
-abstract contract ERC721PublicSalesExtension is
+abstract contract ERC721PublicSaleExtension is
     Ownable,
     ERC721AutoIdMinterExtension,
     ReentrancyGuard
@@ -30,13 +30,17 @@ abstract contract ERC721PublicSalesExtension is
         publicSalePrice = newValue;
     }
 
+    function setPublicSaleMaxMintPerTx(uint256 newValue) external onlyOwner {
+        publicSaleMaxMintPerTx = newValue;
+    }
+
     function togglePublicSale(bool isActive) external onlyOwner {
         publicSaleActive = isActive;
     }
 
     // PUBLIC
 
-    function mintPublic(address to, uint256 count)
+    function mintPublicSale(address to, uint256 count)
         external
         payable
         nonReentrant

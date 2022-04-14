@@ -8,8 +8,8 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
-import "../extensions/ERC721PreSalesExtension.sol";
-import "../extensions/ERC721PublicSalesExtension.sol";
+import "../extensions/ERC721PreSaleExtension.sol";
+import "../extensions/ERC721PublicSaleExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
@@ -25,8 +25,8 @@ contract ERC721FullFeaturedCollectionWyvern is
     ERC721PrefixedMetadataExtension,
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension,
-    ERC721PreSalesExtension,
-    ERC721PublicSalesExtension,
+    ERC721PreSaleExtension,
+    ERC721PublicSaleExtension,
     ERC721RoyaltyExtension,
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
@@ -63,11 +63,11 @@ contract ERC721FullFeaturedCollectionWyvern is
         ERC721AutoIdMinterExtension(
             uints[0] /* maxSupply */
         )
-        ERC721PreSalesExtension(
+        ERC721PreSaleExtension(
             uints[1], /* preSalePrice */
             uints[2] /* preSaleMaxMintPerWallet */
         )
-        ERC721PublicSalesExtension(
+        ERC721PublicSaleExtension(
             uints[3], /* publicSalePrice */
             uints[4] /* publicSaleMaxMintPerTx */
         )
