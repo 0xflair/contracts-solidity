@@ -11,28 +11,12 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
  *      In this extension each token will have a different independent token URI set by contract owner,
  */
 abstract contract ERC721PerTokenMetadataExtension is Ownable, ERC721URIStorage {
-    string private _contractURI;
-
-    constructor(string memory contractURI_) {
-        _contractURI = contractURI_;
-    }
-
     // ADMIN
-
-    function setContractURI(string memory newValue) external onlyOwner {
-        _contractURI = newValue;
-    }
 
     function setTokenURI(uint256 tokenId, string memory tokenURI)
         external
         onlyOwner
     {
         _setTokenURI(tokenId, tokenURI);
-    }
-
-    // PUBLIC
-
-    function contractURI() public view returns (string memory) {
-        return _contractURI;
     }
 }

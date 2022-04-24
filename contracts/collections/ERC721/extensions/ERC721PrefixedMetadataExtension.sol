@@ -7,26 +7,21 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 /**
- * @dev Extension to allow configuring collection and tokens metadata URI.
+ * @dev Extension to allow configuring tokens metadata URI.
  *      In this extension tokens will have a shared token URI prefix,
  *      therefore on tokenURI() token's ID will be appended to the base URI.
+ *      It also allows configuring a fallback "placeholder" URI when prefix is not set yet.
  */
 abstract contract ERC721PrefixedMetadataExtension is Ownable, ERC721 {
-    string private _contractURI;
     string private _placeholderURI;
     string private _baseTokenURI;
     bool private _baseURIFrozen;
 
-    constructor(string memory contractURI_, string memory placeholderURI_) {
-        _contractURI = contractURI_;
+    constructor(string memory placeholderURI_) {
         _placeholderURI = placeholderURI_;
     }
 
     // ADMIN
-
-    function setContractURI(string memory newValue) external onlyOwner {
-        _contractURI = newValue;
-    }
 
     function setPlaceholderURI(string memory newValue) external onlyOwner {
         _placeholderURI = newValue;
@@ -42,10 +37,6 @@ abstract contract ERC721PrefixedMetadataExtension is Ownable, ERC721 {
     }
 
     // PUBLIC
-
-    function contractURI() public view returns (string memory) {
-        return _contractURI;
-    }
 
     function baseTokenURI() public view returns (string memory) {
         return _baseTokenURI;

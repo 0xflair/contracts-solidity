@@ -5,6 +5,7 @@ pragma solidity ^0.8.4;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
@@ -12,6 +13,7 @@ import "../extensions/ERC721OwnerMintExtension.sol";
 contract ERC721SimpleCollection is
     Ownable,
     ERC721,
+    ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension
@@ -24,7 +26,8 @@ contract ERC721SimpleCollection is
         uint256 maxSupply
     )
         ERC721(name, symbol)
-        ERC721PrefixedMetadataExtension(contractURI, placeholderURI)
+        ERC721CollectionMetadataExtension(contractURI)
+        ERC721PrefixedMetadataExtension(placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
     {}
 

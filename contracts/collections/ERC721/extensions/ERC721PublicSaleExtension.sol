@@ -17,7 +17,7 @@ abstract contract ERC721PublicSaleExtension is
 {
     uint256 public publicSalePrice;
     uint256 public publicSaleMaxMintPerTx;
-    bool public publicSaleActive;
+    bool public publicSaleStatus;
 
     constructor(uint256 _publicSalePrice, uint256 _publicSaleMaxMintPerTx) {
         publicSalePrice = _publicSalePrice;
@@ -34,8 +34,8 @@ abstract contract ERC721PublicSaleExtension is
         publicSaleMaxMintPerTx = newValue;
     }
 
-    function togglePublicSale(bool isActive) external onlyOwner {
-        publicSaleActive = isActive;
+    function togglePublicSaleStatus(bool isActive) external onlyOwner {
+        publicSaleStatus = isActive;
     }
 
     // PUBLIC
@@ -45,7 +45,7 @@ abstract contract ERC721PublicSaleExtension is
         payable
         nonReentrant
     {
-        require(publicSaleActive, "PRE_SALE_NOT_ACTIVE");
+        require(publicSaleStatus, "PRE_SALE_NOT_ACTIVE");
         require(count <= publicSaleMaxMintPerTx, "PUBLIC_SALE_LIMIT");
         require(publicSalePrice * count <= msg.value, "INSUFFICIENT_AMOUNT");
 

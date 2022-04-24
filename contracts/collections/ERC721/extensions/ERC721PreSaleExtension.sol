@@ -17,7 +17,7 @@ abstract contract ERC721PreSaleExtension is
     uint256 public preSalePrice;
     uint256 public preSaleMaxMintPerWallet;
     bytes32 public preSaleAllowlistMerkleRoot;
-    bool public preSaleActive;
+    bool public preSaleStatus;
 
     mapping(address => uint256) internal preSaleAllowlistClaimed;
 
@@ -40,8 +40,8 @@ abstract contract ERC721PreSaleExtension is
         preSaleAllowlistMerkleRoot = newRoot;
     }
 
-    function togglePreSale(bool isActive) external onlyOwner {
-        preSaleActive = isActive;
+    function togglePreSaleStatus(bool isActive) external onlyOwner {
+        preSaleStatus = isActive;
     }
 
     // PUBLIC
@@ -64,7 +64,7 @@ abstract contract ERC721PreSaleExtension is
         payable
         nonReentrant
     {
-        require(preSaleActive, "PRE_SALE_NOT_ACTIVE");
+        require(preSaleStatus, "PRE_SALE_NOT_ACTIVE");
 
         address to = _msgSender();
 
