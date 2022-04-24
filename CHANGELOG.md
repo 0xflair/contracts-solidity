@@ -1,3 +1,10 @@
+## [1.4.0](https://github.com/0xflair/evm-contracts/compare/v1.3.1...v1.4.0) (2022-04-24)
+
+
+### Features
+
+* separate contract-level metadata collection extension ([#1](https://github.com/0xflair/evm-contracts/issues/1)) ([ad208d5](https://github.com/0xflair/evm-contracts/commit/ad208d565397b14de85130930ab2f8f0a1cc4c42))
+
 ### [1.3.1](https://github.com/0xflair/evm-contracts/compare/v1.3.0...v1.3.1) (2022-04-14)
 
 
