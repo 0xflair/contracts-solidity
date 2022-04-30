@@ -51,7 +51,7 @@ contract ERC721FullFeaturedCollectionZeroEx is
         uint256[6] memory uints,
         // # Merged address arguments due to Solifity limitations:
         //
-        // address raribleRoyaltyAddress,
+        // address raribleRoyaltyReceiver,
         // address openSeaProxyRegistryAddress,
         address[2] memory addresses
     )
@@ -59,7 +59,7 @@ contract ERC721FullFeaturedCollectionZeroEx is
         ERC721CollectionMetadataExtension(contractURI)
         ERC721PrefixedMetadataExtension(placeholderURI)
         ERC721RoyaltyExtension(
-            addresses[0], /* raribleRoyaltyAddress */
+            addresses[0], /* raribleRoyaltyReceiver */
             uint96(uints[5]) /* rarityRoyaltyPercentage */
         )
         ERC721OpenSeaNoGasZeroExExtension(

@@ -51,7 +51,7 @@ contract ERC721FullFeaturedCollectionWyvern is
         uint256[6] memory uints,
         // # Merged address arguments due to Solifity limitations:
         //
-        // address raribleRoyaltyAddress,
+        // address raribleRoyaltyReceiver,
         // address openSeaProxyRegistryAddress,
         address[2] memory addresses
     )
