@@ -1,3 +1,10 @@
+### [1.4.2](https://github.com/0xflair/evm-contracts/compare/v1.4.1...v1.4.2) (2022-04-30)
+
+
+### Bug Fixes
+
+* add royalty extension to full-featured preset and use struct in constructor ([b8e5fb8](https://github.com/0xflair/evm-contracts/commit/b8e5fb8b699884c0bcd2474a6e4a58679124c9ed))
+
 ### [1.4.1](https://github.com/0xflair/evm-contracts/compare/v1.4.0...v1.4.1) (2022-04-30)
 
 
