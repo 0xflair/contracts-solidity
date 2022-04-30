@@ -13,9 +13,8 @@ import "../extensions/ERC721PreSaleExtension.sol";
 import "../extensions/ERC721PublicSaleExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
+import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasWyvernExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 
 contract ERC721FullFeaturedCollection is
     Ownable,
@@ -28,25 +27,40 @@ contract ERC721FullFeaturedCollection is
     ERC721PublicSaleExtension,
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
+    ERC721RoyaltyExtension,
     ERC721BulkifyExtension
 {
-    constructor(
-        string memory name,
-        string memory symbol,
-        string memory contractURI,
-        string memory placeholderURI,
-        uint256 maxSupply,
-        uint256 preSalePrice,
-        uint256 preSaleMaxMintPerWallet,
-        uint256 publicSalePrice,
-        uint256 publicSaleMaxMintPerTx
-    )
-        ERC721(name, symbol)
-        ERC721CollectionMetadataExtension(contractURI)
-        ERC721PrefixedMetadataExtension(placeholderURI)
-        ERC721AutoIdMinterExtension(maxSupply)
-        ERC721PreSaleExtension(preSalePrice, preSaleMaxMintPerWallet)
-        ERC721PublicSaleExtension(publicSalePrice, publicSaleMaxMintPerTx)
+    struct Config {
+        string name;
+        string symbol;
+        string contractURI;
+        string placeholderURI;
+        uint256 maxSupply;
+        uint256 preSalePrice;
+        uint256 preSaleMaxMintPerWallet;
+        uint256 publicSalePrice;
+        uint256 publicSaleMaxMintPerTx;
+        address defaultRoyaltyAddress;
+        uint16 defaultRoyaltyBps;
+    }
+
+    constructor(Config memory config)
+        ERC721(config.name, config.symbol)
+        ERC721CollectionMetadataExtension(config.contractURI)
+        ERC721PrefixedMetadataExtension(config.placeholderURI)
+        ERC721AutoIdMinterExtension(config.maxSupply)
+        ERC721PreSaleExtension(
+            config.preSalePrice,
+            config.preSaleMaxMintPerWallet
+        )
+        ERC721PublicSaleExtension(
+            config.publicSalePrice,
+            config.publicSaleMaxMintPerTx
+        )
+        ERC721RoyaltyExtension(
+            config.defaultRoyaltyAddress,
+            config.defaultRoyaltyBps
+        )
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
@@ -54,23 +68,11 @@ contract ERC721FullFeaturedCollection is
 
     // PUBLIC
 
-    /**
-     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
-     */
-    function isApprovedForAll(address owner, address operator)
-        public
-        view
-        override(ERC721)
-        returns (bool)
-    {
-        return super.isApprovedForAll(owner, operator);
-    }
-
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(ERC721, ERC721RoleBasedMintExtension)
+        override(ERC721, ERC721RoyaltyExtension, ERC721RoleBasedMintExtension)
         returns (bool)
     {
         return super.supportsInterface(interfaceId);

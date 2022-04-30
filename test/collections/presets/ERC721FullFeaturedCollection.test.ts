@@ -7,7 +7,7 @@ describe("ERC721FullFeaturedCollection", function () {
     const ERC721FullFeaturedCollection = await ethers.getContractFactory(
       "ERC721FullFeaturedCollection"
     );
-    const collection = await ERC721FullFeaturedCollection.deploy(
+    const collection = await ERC721FullFeaturedCollection.deploy([
       "Flair Angels",
       "ANGEL",
       "ipfs://xxxxx",
@@ -16,8 +16,10 @@ describe("ERC721FullFeaturedCollection", function () {
       web3.utils.toWei("0.06"),
       2,
       web3.utils.toWei("0.08"),
-      10
-    );
+      10,
+      "0x0000000000000000000000000000000000000000",
+      250,
+    ]);
 
     await collection.deployed();
 

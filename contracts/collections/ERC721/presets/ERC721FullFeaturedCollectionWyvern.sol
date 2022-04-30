@@ -51,7 +51,7 @@ contract ERC721FullFeaturedCollectionWyvern is
         uint256[6] memory uints,
         // # Merged address arguments due to Solifity limitations:
         //
-        // address raribleRoyaltyReceiver,
+        // address defaultRoyaltyReceiver,
         // address openSeaProxyRegistryAddress,
         address[2] memory addresses
     )
@@ -60,7 +60,7 @@ contract ERC721FullFeaturedCollectionWyvern is
         ERC721PrefixedMetadataExtension(placeholderURI)
         ERC721RoyaltyExtension(
             addresses[0],
-            uint96(uints[5]) /* rarityRoyaltyPercentage */
+            uint16(uints[5]) /* rarityRoyaltyPercentage */
         )
         ERC721OpenSeaNoGasWyvernExtension(addresses[1])
         ERC721AutoIdMinterExtension(
