@@ -1,9 +1,10 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/metatx/ERC2771Context.sol";
 
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
@@ -15,8 +16,11 @@ import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
+import "../extensions/ERC721OpenSeaNoGasWyvernExtension.sol";
+import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 
 contract ERC721FullFeaturedCollection is
+    ERC2771Context,
     Ownable,
     ERC721,
     ERC721CollectionMetadataExtension,
@@ -28,7 +32,9 @@ contract ERC721FullFeaturedCollection is
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
     ERC721RoyaltyExtension,
-    ERC721BulkifyExtension
+    ERC721BulkifyExtension,
+    ERC721OpenSeaNoGasWyvernExtension,
+    ERC721OpenSeaNoGasZeroExExtension
 {
     struct Config {
         string name;
@@ -42,6 +48,9 @@ contract ERC721FullFeaturedCollection is
         uint256 publicSaleMaxMintPerTx;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
+        address openSeaProxyRegistryAddress;
+        address openSeaExchangeAddress;
+        address trustedForwarder;
     }
 
     constructor(Config memory config)
@@ -61,9 +70,32 @@ contract ERC721FullFeaturedCollection is
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
         )
+        ERC721OpenSeaNoGasWyvernExtension(config.openSeaProxyRegistryAddress)
+        ERC721OpenSeaNoGasZeroExExtension(config.openSeaExchangeAddress)
+        ERC2771Context(config.trustedForwarder)
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
+    }
+
+    function _msgSender()
+        internal
+        view
+        virtual
+        override(ERC2771Context, Context)
+        returns (address sender)
+    {
+        return super._msgSender();
+    }
+
+    function _msgData()
+        internal
+        view
+        virtual
+        override(ERC2771Context, Context)
+        returns (bytes calldata)
+    {
+        return super._msgData();
     }
 
     // PUBLIC
@@ -76,6 +108,22 @@ contract ERC721FullFeaturedCollection is
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    /**
+     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
+     */
+    function isApprovedForAll(address owner, address operator)
+        public
+        view
+        override(
+            ERC721,
+            ERC721OpenSeaNoGasWyvernExtension,
+            ERC721OpenSeaNoGasZeroExExtension
+        )
+        returns (bool)
+    {
+        return super.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)
@@ -106,8 +154,8 @@ contract ERC721FullFeaturedCollection is
     {
         uint256 balance = 0;
 
-        if (msg.sender != address(0)) {
-            balance = this.balanceOf(msg.sender);
+        if (_msgSender() != address(0)) {
+            balance = this.balanceOf(_msgSender());
         }
 
         return (
@@ -116,7 +164,7 @@ contract ERC721FullFeaturedCollection is
             balance,
             preSalePrice,
             preSaleMaxMintPerWallet,
-            preSaleAllowlistClaimed[msg.sender],
+            preSaleAllowlistClaimed[_msgSender()],
             preSaleStatus,
             publicSalePrice,
             publicSaleMaxMintPerTx,

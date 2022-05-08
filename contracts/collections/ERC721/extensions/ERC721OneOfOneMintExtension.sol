@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 import "./ERC721PerTokenMetadataExtension.sol";
@@ -12,9 +13,12 @@ import "./ERC721PerTokenMetadataExtension.sol";
  */
 abstract contract ERC721OneOfOneMintExtension is
     Ownable,
+    AccessControl,
     ERC721AutoIdMinterExtension,
     ERC721PerTokenMetadataExtension
 {
+    bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+
     // ADMIN
 
     function mintWithTokenURIsByOwner(
@@ -29,6 +33,20 @@ abstract contract ERC721OneOfOneMintExtension is
         }
     }
 
+    function mintWithTokenURIsByRole(
+        address to,
+        uint256 count,
+        string[] memory tokenURIs
+    ) external {
+        require(hasRole(MINTER_ROLE, _msgSender()), "NOT_MINTER_ROLE");
+
+        uint256 startingTokenId = _getNextTokenId();
+        _mintTo(to, count);
+        for (uint256 i = 0; i < count; i++) {
+            _setTokenURI(startingTokenId + i, tokenURIs[i]);
+        }
+    }
+
     function tokenURI(uint256 tokenId)
         public
         view
@@ -36,7 +54,20 @@ abstract contract ERC721OneOfOneMintExtension is
         override(ERC721, ERC721URIStorage)
         returns (string memory)
     {
-        return super.tokenURI(tokenId);
+        return ERC721URIStorage.tokenURI(tokenId);
+    }
+
+    /**
+     * @dev See {IERC165-supportsInterface}.
+     */
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(ERC721, AccessControl)
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
     }
 
     function _burn(uint256 tokenId)
@@ -44,6 +75,6 @@ abstract contract ERC721OneOfOneMintExtension is
         virtual
         override(ERC721, ERC721URIStorage)
     {
-        return super._burn(tokenId);
+        return ERC721URIStorage._burn(tokenId);
     }
 }

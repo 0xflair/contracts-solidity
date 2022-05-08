@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -33,13 +33,15 @@ abstract contract ERC721OpenSeaNoGasWyvernExtension is Ownable, ERC721 {
         override
         returns (bool)
     {
-        // Whitelist OpenSea proxy contract for easy trading.
-        ProxyRegistry proxyRegistry = ProxyRegistry(
-            _openSeaProxyRegistryAddress
-        );
+        if (_openSeaProxyRegistryAddress != address(0)) {
+            // Whitelist OpenSea proxy contract for easy trading.
+            ProxyRegistry proxyRegistry = ProxyRegistry(
+                _openSeaProxyRegistryAddress
+            );
 
-        if (address(proxyRegistry.proxies(owner)) == operator) {
-            return true;
+            if (address(proxyRegistry.proxies(owner)) == operator) {
+                return true;
+            }
         }
 
         return super.isApprovedForAll(owner, operator);

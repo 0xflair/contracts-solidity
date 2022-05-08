@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
@@ -11,6 +11,6 @@ abstract contract ERC721SimpleProceedsExtension is Ownable {
     function withdraw() external onlyOwner {
         uint256 balance = address(this).balance;
 
-        payable(msg.sender).transfer(balance);
+        payable(this.owner()).transfer(balance);
     }
 }

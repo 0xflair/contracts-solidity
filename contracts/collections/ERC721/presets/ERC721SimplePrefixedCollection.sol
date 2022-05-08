@@ -1,16 +1,18 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/metatx/ERC2771Context.sol";
 
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 
-contract ERC721SimpleCollection is
+contract ERC721SimplePrefixedCollection is
+    ERC2771Context,
     Ownable,
     ERC721,
     ERC721CollectionMetadataExtension,
@@ -18,18 +20,42 @@ contract ERC721SimpleCollection is
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension
 {
-    constructor(
-        string memory name,
-        string memory symbol,
-        string memory contractURI,
-        string memory placeholderURI,
-        uint256 maxSupply
-    )
-        ERC721(name, symbol)
-        ERC721CollectionMetadataExtension(contractURI)
-        ERC721PrefixedMetadataExtension(placeholderURI)
+    struct Config {
+        string name;
+        string symbol;
+        string contractURI;
+        string placeholderURI;
+        uint256 maxSupply;
+        address trustedForwarder;
+    }
+
+    constructor(Config memory config)
+        ERC721(config.name, config.symbol)
+        ERC721CollectionMetadataExtension(config.contractURI)
+        ERC721PrefixedMetadataExtension(config.placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
+        ERC2771Context(config.trustedForwarder)
     {}
+
+    function _msgSender()
+        internal
+        view
+        virtual
+        override(ERC2771Context, Context)
+        returns (address sender)
+    {
+        return super._msgSender();
+    }
+
+    function _msgData()
+        internal
+        view
+        virtual
+        override(ERC2771Context, Context)
+        returns (bytes calldata)
+    {
+        return super._msgData();
+    }
 
     // PUBLIC
 
@@ -54,8 +80,8 @@ contract ERC721SimpleCollection is
     {
         uint256 balance = 0;
 
-        if (msg.sender != address(0)) {
-            balance = this.balanceOf(msg.sender);
+        if (_msgSender() != address(0)) {
+            balance = this.balanceOf(_msgSender());
         }
 
         return (maxSupply, this.totalSupply(), balance);

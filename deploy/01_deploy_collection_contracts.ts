@@ -5,7 +5,7 @@ import web3 from "web3";
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const accounts = await hre.getUnnamedAccounts();
 
-  await hre.deployments.deploy("ERC721SimpleCollection", {
+  await hre.deployments.deploy("ERC721SimplePrefixedCollection", {
     from: accounts[0],
     args: [
       [

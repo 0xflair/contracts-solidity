@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 
@@ -16,7 +16,7 @@ abstract contract ERC721RoleBasedMintExtension is
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
     function mintByRole(address to, uint256 count) external {
-        require(hasRole(MINTER_ROLE, msg.sender), "NOT_MINTER_ROLE");
+        require(hasRole(MINTER_ROLE, _msgSender()), "NOT_MINTER_ROLE");
 
         _mintTo(to, count);
     }

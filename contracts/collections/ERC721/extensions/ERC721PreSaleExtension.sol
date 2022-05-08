@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
@@ -72,7 +72,7 @@ abstract contract ERC721PreSaleExtension is
             MerkleProof.verify(
                 proof,
                 preSaleAllowlistMerkleRoot,
-                _generateMerkleLeaf(msg.sender)
+                _generateMerkleLeaf(to)
             ),
             "PRE_SALE_WRONG_PROOF"
         );
