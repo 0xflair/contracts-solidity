@@ -52,7 +52,7 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
     function verify(
         UnorderedMetaTransaction calldata mtx,
         bytes calldata signature
-    ) public view returns (bool valid, bytes32 mtxHash) {
+    ) public view returns (bytes32 mtxHash) {
         mtxHash = _hashTypedDataV4(
             keccak256(
                 abi.encode(
@@ -69,11 +69,19 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
             )
         );
 
-        address signer = mtxHash.recover(signature);
+        // Must not be expired.
+        require(mtx.expiresAt > block.timestamp, "FWD_EXPIRED");
 
-        valid =
-            mtxHashToExecutedBlockNumber[mtxHash] == 0 &&
-            signer == mtx.from;
+        // Must be signed by the signer.
+        require(
+            mtxHash.recover(signature) == mtx.from,
+            "FWD_INVALID_SIGNATURE"
+        );
+
+        // Transaction must not have been already executed.
+        require(mtxHashToExecutedBlockNumber[mtxHash] == 0, "FWD_REPLAYED");
+
+        return mtxHash;
     }
 
     function execute(
@@ -114,9 +122,16 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
         UnorderedMetaTransaction calldata mtx,
         bytes calldata signature
     ) internal returns (bytes memory) {
-        (bool valid, bytes32 mtxHash) = verify(mtx, signature);
+        // Must have a valid gas price.
+        require(
+            mtx.minGasPrice <= tx.gasprice && tx.gasprice <= mtx.maxGasPrice,
+            "FWD_INVALID_GAS"
+        );
 
-        require(valid, "FWD_INVALID_SIGNATURE");
+        // Must have enough ETH.
+        require(mtx.value <= address(this).balance, "FWD_INVALID_VALUE");
+
+        bytes32 mtxHash = verify(mtx, signature);
 
         mtxHashToExecutedBlockNumber[mtxHash] = block.number;
 
