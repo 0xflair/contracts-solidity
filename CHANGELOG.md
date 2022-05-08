@@ -1,3 +1,15 @@
+## [1.6.0](https://github.com/0xflair/evm-contracts/compare/v1.5.0...v1.6.0) (2022-05-08)
+
+
+### Features
+
+* distribute deployed contract addresses automatically ([f9f4c76](https://github.com/0xflair/evm-contracts/commit/f9f4c76ff8af23d2acc732ce612a2adea5f216b0))
+
+
+### Bug Fixes
+
+* asert gas price during execution ([6504d5e](https://github.com/0xflair/evm-contracts/commit/6504d5e0a966d5bb67568c209577d2f83606b161))
+
 ## [1.5.0](https://github.com/0xflair/evm-contracts/compare/v1.4.2...v1.5.0) (2022-05-08)
 
 
