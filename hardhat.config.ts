@@ -48,13 +48,13 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    matic: {
+    polygon: {
       chainId: 137,
       url: process.env.MATIC_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    arbitrum_rinkeby: {
+    arbitrumTestnet: {
       chainId: 421611,
       url: "https://rinkeby.arbitrum.io/rpc",
       accounts:
@@ -62,15 +62,14 @@ const config: HardhatUserConfig = {
     },
   },
   etherscan: {
-    apiKey: process.env.RINKEBY_ETHERSCAN_API_KEY,
-    // apiKey: {
-    //   mainnet: process.env.MAINNET_ETHERSCAN_API_KEY,
-    //   rinkeby: process.env.RINKEBY_ETHERSCAN_API_KEY,
-    //   arbitrumOne: process.env.ARBITRUM_ONE_ETHERSCAN_API_KEY,
-    //   arbitrumTestnet: process.env.ARBITRUM_TESTNET_ETHERSCAN_API_KEY,
-    //   polygon: process.env.POLYGON_ETHERSCAN_API_KEY,
-    //   polygonMumbai: process.env.POLYGON_MUMBAI_ETHERSCAN_API_KEY,
-    // },
+    apiKey: {
+      mainnet: process.env.MAINNET_ETHERSCAN_API_KEY,
+      rinkeby: process.env.RINKEBY_ETHERSCAN_API_KEY,
+      arbitrumOne: process.env.ARBITRUM_ONE_ETHERSCAN_API_KEY,
+      arbitrumTestnet: process.env.ARBITRUM_TESTNET_ETHERSCAN_API_KEY,
+      polygon: process.env.POLYGON_ETHERSCAN_API_KEY,
+      polygonMumbai: process.env.POLYGON_MUMBAI_ETHERSCAN_API_KEY,
+    },
   },
   contractSizer: {
     alphaSort: false,

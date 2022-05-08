@@ -29,9 +29,8 @@
     "release": "semantic-release",
     "release:dry": "semantic-release --branch main --dry-run --no-ci",
     "deploy:rinkeby": "npx hardhat deploy --network rinkeby && npx hardhat etherscan-verify --network rinkeby",
-    "deploy:mumbai": "npx hardhat deploy --network mumbai && npx hardhat etherscan-verify --network mumbai",
-    "deploy:matic": "npx hardhat deploy --network matic && npx hardhat etherscan-verify --network matic",
-    "deploy:arbitrum_rinkeby": "npx hardhat deploy --network arbitrum_rinkeby && npx hardhat etherscan-verify --network arbitrum_rinkeby"
+    "deploy:polygon": "npx hardhat deploy --network polygon && npx hardhat etherscan-verify --network polygon",
+    "deploy:arbitrumTestnet": "npx hardhat deploy --network arbitrumTestnet && npx hardhat etherscan-verify --network arbitrumTestnet"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",

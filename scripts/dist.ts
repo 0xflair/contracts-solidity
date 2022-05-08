@@ -3,6 +3,10 @@ import * as path from "path";
 import * as rimraf from "rimraf";
 import glob from "glob";
 
+const {
+  chainConfig,
+} = require("@nomiclabs/hardhat-etherscan/dist/src/ChainConfig.js");
+
 async function main() {
   const distPath = path.resolve(__dirname, "../dist");
 
@@ -73,6 +77,46 @@ async function main() {
       )
     );
   }
+
+  // Add deployment addresses
+  const contractAddresses: Record<string, any> = {};
+  const deploymentsRoot = path.resolve(__dirname, "../deployments");
+  const deploymentFiles = glob.sync("*/*.json", {
+    nodir: true,
+    cwd: deploymentsRoot,
+  });
+  for (const file of deploymentFiles) {
+    const chainName = path.dirname(file);
+
+    if (!chainConfig[chainName]) {
+      throw new Error(
+        `Could not find ID for chain ${chainName} in chainConfig`
+      );
+    }
+
+    const chainId = Number(chainConfig[chainName].chainId);
+
+    if (!contractAddresses[chainId]) {
+      contractAddresses[chainId] = {};
+    }
+
+    if (!contractAddresses[chainName]) {
+      contractAddresses[chainName] = {};
+    }
+
+    const contractName = path.basename(file).split(".")[0];
+    const contractAddress = (
+      await fse.readJSON(path.resolve(deploymentsRoot, file))
+    ).address;
+
+    contractAddresses[chainId][contractName] = contractAddress;
+    contractAddresses[chainName][contractName] = contractAddress;
+  }
+
+  fse.writeJSONSync(
+    path.resolve(distPath, "addresses.json"),
+    contractAddresses
+  );
 
   // Remove debug files
   rimraf.sync(path.resolve(distPath) + "/**/*.dbg.json");
