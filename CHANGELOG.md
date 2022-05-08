@@ -1,3 +1,10 @@
+## [1.5.0](https://github.com/0xflair/evm-contracts/compare/v1.4.2...v1.5.0) (2022-05-08)
+
+
+### Features
+
+* add unordered meta transactions module ([#2](https://github.com/0xflair/evm-contracts/issues/2)) ([17d23a9](https://github.com/0xflair/evm-contracts/commit/17d23a95dbc166f368ab4a21f27fcc55b2982f3b))
+
 ### [1.4.2](https://github.com/0xflair/evm-contracts/compare/v1.4.1...v1.4.2) (2022-04-30)
 
 
