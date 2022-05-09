@@ -1,3 +1,10 @@
+### [1.6.1](https://github.com/0xflair/evm-contracts/compare/v1.6.0...v1.6.1) (2022-05-09)
+
+
+### Bug Fixes
+
+* change structure of addresses json ([e36f833](https://github.com/0xflair/evm-contracts/commit/e36f83314c5786c94101818b1ebff175ed90b466))
+
 ## [1.6.0](https://github.com/0xflair/evm-contracts/compare/v1.5.0...v1.6.0) (2022-05-08)
 
 
