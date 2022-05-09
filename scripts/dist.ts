@@ -79,7 +79,10 @@ async function main() {
   }
 
   // Add deployment addresses
-  const contractAddresses: Record<string, any> = {};
+  const contractNameToChainToAddress: Record<
+    string,
+    Record<string, string>
+  > = {};
   const deploymentsRoot = path.resolve(__dirname, "../deployments");
   const deploymentFiles = glob.sync("*/*.json", {
     nodir: true,
@@ -96,26 +99,32 @@ async function main() {
 
     const chainId = Number(chainConfig[chainName].chainId);
 
-    if (!contractAddresses[chainId]) {
-      contractAddresses[chainId] = {};
+    const deploymentJson = await fse.readJSON(
+      path.resolve(deploymentsRoot, file)
+    );
+    const contractAddress = deploymentJson.address;
+
+    const metadata = JSON.parse(deploymentJson.metadata);
+
+    const artifactKey = Object.keys(metadata.settings.compilationTarget)
+      .pop()
+      ?.slice("contracts/".length, -".sol".length);
+
+    if (!artifactKey) {
+      throw new Error(`Could not get artifact key for ${file}`);
     }
 
-    if (!contractAddresses[chainName]) {
-      contractAddresses[chainName] = {};
+    if (!contractNameToChainToAddress[artifactKey]) {
+      contractNameToChainToAddress[artifactKey] = {};
     }
 
-    const contractName = path.basename(file).split(".")[0];
-    const contractAddress = (
-      await fse.readJSON(path.resolve(deploymentsRoot, file))
-    ).address;
-
-    contractAddresses[chainId][contractName] = contractAddress;
-    contractAddresses[chainName][contractName] = contractAddress;
+    contractNameToChainToAddress[artifactKey][chainId] = contractAddress;
+    contractNameToChainToAddress[artifactKey][chainName] = contractAddress;
   }
 
   fse.writeJSONSync(
     path.resolve(distPath, "addresses.json"),
-    contractAddresses
+    contractNameToChainToAddress
   );
 
   // Remove debug files
