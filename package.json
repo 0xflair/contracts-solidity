@@ -28,15 +28,16 @@
     "coverage": "npm run build && npx hardhat coverage --temp artifacts --network hardhat",
     "release": "semantic-release",
     "release:dry": "semantic-release --branch main --dry-run --no-ci",
-    "deploy:rinkeby": "npx hardhat deploy --network rinkeby && npx hardhat etherscan-verify --network rinkeby",
-    "deploy:polygon": "npx hardhat deploy --network polygon && npx hardhat etherscan-verify --network polygon",
-    "deploy:arbitrumTestnet": "npx hardhat deploy --network arbitrumTestnet && npx hardhat etherscan-verify --network arbitrumTestnet"
+    "deploy:rinkeby": "npx hardhat deploy --network rinkeby",
+    "deploy:polygon": "npx hardhat deploy --network polygon",
+    "deploy:arbitrumTestnet": "npx hardhat deploy --network arbitrumTestnet"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
+    "@nomiclabs/hardhat-etherscan": "^3.0.3",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
     "@openzeppelin/contracts": "^4.5.0",
     "@semantic-release/changelog": "^6.0.1",
@@ -67,7 +68,7 @@
     "eslint-plugin-promise": "^5.2.0",
     "eth-sig-util": "^3.0.1",
     "ethereum-waffle": "^3.4.4",
-    "ethers": "^5.6.1",
+    "ethers": "^5.6.6",
     "fs-extra": "^10.0.1",
     "glob": "^7.2.0",
     "hardhat": "^2.9.1",
@@ -86,8 +87,5 @@
     "typechain": "^5.2.0",
     "typescript": "^4.6.2",
     "web3": "^1.7.1"
-  },
-  "dependencies": {
-    "@nomiclabs/hardhat-etherscan": "^3.0.3"
   }
 }

@@ -22,9 +22,9 @@ describe("ERC721FullFeaturedCollection", function () {
       publicSaleMaxMintPerTx: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
-      trustedForwarder: "0x0000000000000000000000000000000000000000",
       openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
       openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
+      trustedForwarder: "0x0000000000000000000000000000000000000000",
     });
 
     await collection.deployed();
