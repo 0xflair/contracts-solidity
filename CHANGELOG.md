@@ -1,3 +1,10 @@
+### [1.6.2](https://github.com/0xflair/evm-contracts/compare/v1.6.1...v1.6.2) (2022-05-14)
+
+
+### Bug Fixes
+
+* etherscan verify command ([9e31626](https://github.com/0xflair/evm-contracts/commit/9e316269ed021d2c00c6d528105cdd140b3e687f))
+
 ### [1.6.1](https://github.com/0xflair/evm-contracts/compare/v1.6.0...v1.6.1) (2022-05-09)
 
 
