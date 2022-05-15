@@ -1,3 +1,10 @@
+### [1.6.3](https://github.com/0xflair/evm-contracts/compare/v1.6.2...v1.6.3) (2022-05-15)
+
+
+### Bug Fixes
+
+* deploy unordered forwarder on polygon ([d91c1d2](https://github.com/0xflair/evm-contracts/commit/d91c1d27660655a5b0b141ecf5233311463aff8d))
+
 ### [1.6.2](https://github.com/0xflair/evm-contracts/compare/v1.6.1...v1.6.2) (2022-05-14)
 
 
