@@ -127,6 +127,22 @@ async function main() {
     contractNameToChainToAddress
   );
 
+  // Add build info
+  const buildInfoRoot = path.resolve(__dirname, "../artifacts/build-info");
+  const buildInfoFiles = glob.sync("*.json", {
+    nodir: true,
+    cwd: buildInfoRoot,
+  });
+
+  const buildInfo = fse.readJSONSync(
+    path.resolve(buildInfoRoot, buildInfoFiles[0])
+  );
+
+  fse.writeJSONSync(path.resolve(distPath, "build-info.json"), {
+    compilerVersion: `v${buildInfo.solcLongVersion}`,
+    solcInput: buildInfo.input,
+  });
+
   // Remove debug files
   rimraf.sync(path.resolve(distPath) + "/**/*.dbg.json");
 
