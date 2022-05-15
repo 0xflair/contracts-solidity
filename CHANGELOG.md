@@ -1,3 +1,10 @@
+## [1.7.0](https://github.com/0xflair/evm-contracts/compare/v1.6.3...v1.7.0) (2022-05-15)
+
+
+### Features
+
+* export build info in dist files ([5af4763](https://github.com/0xflair/evm-contracts/commit/5af4763a15a98d3040607d825e9876c05a864b4f))
+
 ### [1.6.3](https://github.com/0xflair/evm-contracts/compare/v1.6.2...v1.6.3) (2022-05-15)
 
 
