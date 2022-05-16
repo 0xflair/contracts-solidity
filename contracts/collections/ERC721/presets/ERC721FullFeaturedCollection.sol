@@ -4,8 +4,8 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/metatx/ERC2771Context.sol";
 
+import "../../../common/meta-transactions/ERC2771Context.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
@@ -20,8 +20,8 @@ import "../extensions/ERC721OpenSeaNoGasWyvernExtension.sol";
 import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
 
 contract ERC721FullFeaturedCollection is
-    ERC2771Context,
     Ownable,
+    ERC2771Context,
     ERC721,
     ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
