@@ -31,8 +31,8 @@ contract ERC721FullFeaturedCollection is
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
     ERC721RoyaltyExtension,
-    ERC721BulkifyExtension,
-    ERC721OpenSeaNoGasExtension
+    ERC721OpenSeaNoGasExtension,
+    ERC721BulkifyExtension
 {
     struct Config {
         string name;

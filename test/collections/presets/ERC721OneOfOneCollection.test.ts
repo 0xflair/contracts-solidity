@@ -19,6 +19,10 @@ describe("ERC721OneOfOneCollection", function () {
       symbol: "ANGEL",
       contractURI: "ipfs://yyyyy",
       maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
       trustedForwarder: "0x0000000000000000000000000000000000000000",
     });
 
@@ -36,6 +40,10 @@ describe("ERC721OneOfOneCollection", function () {
       symbol: "ANGEL",
       contractURI: "ipfs://yyyyy",
       maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
       trustedForwarder: "0x0000000000000000000000000000000000000000",
     });
 
@@ -65,6 +73,10 @@ describe("ERC721OneOfOneCollection", function () {
       symbol: "ANGEL",
       contractURI: "ipfs://yyyyy",
       maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
       trustedForwarder: forwarder.address,
     });
 
@@ -121,6 +133,10 @@ describe("ERC721OneOfOneCollection", function () {
       symbol: "ANGEL",
       contractURI: "ipfs://yyyyy",
       maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
       trustedForwarder: forwarder.address,
     });
 
@@ -177,6 +193,10 @@ describe("ERC721OneOfOneCollection", function () {
       symbol: "ANGEL",
       contractURI: "ipfs://yyyyy",
       maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
       trustedForwarder: forwarder.address,
     });
 

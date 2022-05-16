@@ -11,6 +11,8 @@ import "../extensions/ERC721PerTokenMetadataExtension.sol";
 import "../extensions/ERC721OneOfOneMintExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
+import "../extensions/ERC721RoyaltyExtension.sol";
+import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721OneOfOneCollection is
     Ownable,
@@ -20,13 +22,19 @@ contract ERC721OneOfOneCollection is
     ERC721CollectionMetadataExtension,
     ERC721OwnerMintExtension,
     ERC721PerTokenMetadataExtension,
-    ERC721OneOfOneMintExtension
+    ERC721OneOfOneMintExtension,
+    ERC721RoyaltyExtension,
+    ERC721OpenSeaNoGasExtension
 {
     struct Config {
         string name;
         string symbol;
         string contractURI;
         uint256 maxSupply;
+        address defaultRoyaltyAddress;
+        uint16 defaultRoyaltyBps;
+        address openSeaProxyRegistryAddress;
+        address openSeaExchangeAddress;
         address trustedForwarder;
     }
 
@@ -36,6 +44,14 @@ contract ERC721OneOfOneCollection is
         ERC721PerTokenMetadataExtension()
         ERC721OneOfOneMintExtension()
         ERC721AutoIdMinterExtension(config.maxSupply)
+        ERC721RoyaltyExtension(
+            config.defaultRoyaltyAddress,
+            config.defaultRoyaltyBps
+        )
+        ERC721OpenSeaNoGasExtension(
+            config.openSeaProxyRegistryAddress,
+            config.openSeaExchangeAddress
+        )
         ERC2771Context(config.trustedForwarder)
     {}
 
@@ -79,11 +95,25 @@ contract ERC721OneOfOneCollection is
             ERC721CollectionMetadataExtension,
             ERC721OwnerMintExtension,
             ERC721OneOfOneMintExtension,
-            ERC721PerTokenMetadataExtension
+            ERC721PerTokenMetadataExtension,
+            ERC721RoyaltyExtension,
+            ERC721OpenSeaNoGasExtension
         )
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
+    }
+
+    /**
+     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
+     */
+    function isApprovedForAll(address owner, address operator)
+        public
+        view
+        override(ERC721, ERC721OpenSeaNoGasExtension)
+        returns (bool)
+    {
+        return super.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)
