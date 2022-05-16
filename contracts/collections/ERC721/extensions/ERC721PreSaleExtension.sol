@@ -4,15 +4,37 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
+
+interface ERC721PreSaleExtensionInterface is IERC165 {
+    function setPreSalePrice(uint256 newValue) external;
+
+    function setPreSaleMaxMintPerWallet(uint256 newValue) external;
+
+    function setAllowlistMerkleRoot(bytes32 newRoot) external;
+
+    function togglePreSaleStatus(bool isActive) external;
+
+    function onPreSaleAllowList(address minter, bytes32[] calldata proof)
+        external
+        view
+        returns (bool);
+
+    function mintPreSale(uint256 count, bytes32[] calldata proof)
+        external
+        payable;
+}
 
 /**
  * @dev Extension to provide pre-sale capabilities for certain collectors to mint for a specific price.
  */
 abstract contract ERC721PreSaleExtension is
     ERC721AutoIdMinterExtension,
-    ReentrancyGuard
+    ReentrancyGuard,
+    ERC721PreSaleExtensionInterface
 {
     uint256 public preSalePrice;
     uint256 public preSaleMaxMintPerWallet;
@@ -45,6 +67,18 @@ abstract contract ERC721PreSaleExtension is
     }
 
     // PUBLIC
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(IERC165, ERC721AutoIdMinterExtension)
+        returns (bool)
+    {
+        return
+            interfaceId == type(ERC721PreSaleExtensionInterface).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
 
     function onPreSaleAllowList(address minter, bytes32[] calldata proof)
         external

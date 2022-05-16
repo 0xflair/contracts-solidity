@@ -3,11 +3,26 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/RoyaltyOverrideCore.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
 import "../../../misc/rarible/IRoyalties.sol";
 import "../../../misc/rarible/LibPart.sol";
 import "../../../misc/rarible/LibRoyaltiesV2.sol";
+
+interface ERC721RoyaltyExtensionInterface is IERC165, IEIP2981RoyaltyOverride {
+    function setTokenRoyalties(TokenRoyaltyConfig[] calldata royaltyConfigs)
+        external;
+
+    function setDefaultRoyalty(TokenRoyalty calldata royalty) external;
+
+    function getRaribleV2Royalties(uint256 id)
+        external
+        view
+        returns (LibPart.Part[] memory result);
+}
 
 /**
  * @dev Extension to signal configured royalty to famous marketplaces as well as ERC2981.
@@ -18,7 +33,8 @@ import "../../../misc/rarible/LibRoyaltiesV2.sol";
 abstract contract ERC721RoyaltyExtension is
     Ownable,
     EIP2981RoyaltyOverrideCore,
-    IRoyalties
+    IRoyalties,
+    ERC721RoyaltyExtensionInterface
 {
     constructor(address defaultRoyaltyReceiver, uint16 defaultRoyaltyBps) {
         TokenRoyalty memory royalty = TokenRoyalty(
@@ -31,7 +47,7 @@ abstract contract ERC721RoyaltyExtension is
 
     function setTokenRoyalties(TokenRoyaltyConfig[] calldata royaltyConfigs)
         external
-        override
+        override(IEIP2981RoyaltyOverride, ERC721RoyaltyExtensionInterface)
         onlyOwner
     {
         _setTokenRoyalties(royaltyConfigs);
@@ -39,7 +55,7 @@ abstract contract ERC721RoyaltyExtension is
 
     function setDefaultRoyalty(TokenRoyalty calldata royalty)
         external
-        override
+        override(IEIP2981RoyaltyOverride, ERC721RoyaltyExtensionInterface)
         onlyOwner
     {
         _setDefaultRoyalty(royalty);
@@ -48,7 +64,7 @@ abstract contract ERC721RoyaltyExtension is
     function getRaribleV2Royalties(uint256 id)
         external
         view
-        override
+        override(IRoyalties, ERC721RoyaltyExtensionInterface)
         returns (LibPart.Part[] memory result)
     {
         result = new LibPart.Part[](1);
@@ -60,17 +76,20 @@ abstract contract ERC721RoyaltyExtension is
         // avoid unused param warning
     }
 
-    /**
-     * @dev See {IERC165-supportsInterface}.
-     */
+    // PUBLIC
+
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override
+        override(IERC165, EIP2981RoyaltyOverrideCore)
         returns (bool)
     {
         if (interfaceId == LibRoyaltiesV2._INTERFACE_ID_ROYALTIES) {
+            return true;
+        }
+
+        if (interfaceId == type(ERC721RoyaltyExtensionInterface).interfaceId) {
             return true;
         }
 

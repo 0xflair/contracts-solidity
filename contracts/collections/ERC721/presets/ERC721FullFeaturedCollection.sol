@@ -16,8 +16,7 @@ import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasWyvernExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasZeroExExtension.sol";
+import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721FullFeaturedCollection is
     Ownable,
@@ -33,8 +32,7 @@ contract ERC721FullFeaturedCollection is
     ERC721RoleBasedMintExtension,
     ERC721RoyaltyExtension,
     ERC721BulkifyExtension,
-    ERC721OpenSeaNoGasWyvernExtension,
-    ERC721OpenSeaNoGasZeroExExtension
+    ERC721OpenSeaNoGasExtension
 {
     struct Config {
         string name;
@@ -70,8 +68,10 @@ contract ERC721FullFeaturedCollection is
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
         )
-        ERC721OpenSeaNoGasWyvernExtension(config.openSeaProxyRegistryAddress)
-        ERC721OpenSeaNoGasZeroExExtension(config.openSeaExchangeAddress)
+        ERC721OpenSeaNoGasExtension(
+            config.openSeaProxyRegistryAddress,
+            config.openSeaExchangeAddress
+        )
         ERC2771Context(config.trustedForwarder)
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
@@ -104,7 +104,20 @@ contract ERC721FullFeaturedCollection is
         public
         view
         virtual
-        override(ERC721, ERC721RoyaltyExtension, ERC721RoleBasedMintExtension)
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension,
+            ERC721PrefixedMetadataExtension,
+            ERC721OwnerMintExtension,
+            ERC721RoleBasedMintExtension,
+            ERC721PreSaleExtension,
+            ERC721PublicSaleExtension,
+            ERC721RoyaltyExtension,
+            ERC721SimpleProceedsExtension,
+            ERC721BulkifyExtension,
+            ERC721OpenSeaNoGasExtension
+        )
         returns (bool)
     {
         return super.supportsInterface(interfaceId);
@@ -116,11 +129,7 @@ contract ERC721FullFeaturedCollection is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(
-            ERC721,
-            ERC721OpenSeaNoGasWyvernExtension,
-            ERC721OpenSeaNoGasZeroExExtension
-        )
+        override(ERC721, ERC721OpenSeaNoGasExtension)
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);

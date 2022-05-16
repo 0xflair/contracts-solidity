@@ -4,9 +4,27 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 import "./ERC721PerTokenMetadataExtension.sol";
+
+interface ERC721OneOfOneMintExtensionInterface is IERC165 {
+    function mintWithTokenURIsByOwner(
+        address to,
+        uint256 count,
+        string[] memory tokenURIs
+    ) external;
+
+    function mintWithTokenURIsByRole(
+        address to,
+        uint256 count,
+        string[] memory tokenURIs
+    ) external;
+
+    function tokenURI(uint256 tokenId) external view returns (string memory);
+}
 
 /**
  * @dev Extension to allow owner to mint 1-of-1 NFTs by providing dedicated metadata URI for each token.
@@ -15,7 +33,8 @@ abstract contract ERC721OneOfOneMintExtension is
     Ownable,
     AccessControl,
     ERC721AutoIdMinterExtension,
-    ERC721PerTokenMetadataExtension
+    ERC721PerTokenMetadataExtension,
+    ERC721OneOfOneMintExtensionInterface
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -47,27 +66,34 @@ abstract contract ERC721OneOfOneMintExtension is
         }
     }
 
-    function tokenURI(uint256 tokenId)
-        public
-        view
-        virtual
-        override(ERC721, ERC721URIStorage)
-        returns (string memory)
-    {
-        return ERC721URIStorage.tokenURI(tokenId);
-    }
+    // PUBLIC
 
-    /**
-     * @dev See {IERC165-supportsInterface}.
-     */
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(ERC721, AccessControl)
+        override(
+            IERC165,
+            AccessControl,
+            ERC721AutoIdMinterExtension,
+            ERC721PerTokenMetadataExtension
+        )
         returns (bool)
     {
-        return super.supportsInterface(interfaceId);
+        return
+            interfaceId ==
+            type(ERC721OneOfOneMintExtensionInterface).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
+
+    function tokenURI(uint256 tokenId)
+        public
+        view
+        virtual
+        override(ERC721, ERC721URIStorage, ERC721OneOfOneMintExtensionInterface)
+        returns (string memory)
+    {
+        return ERC721URIStorage.tokenURI(tokenId);
     }
 
     function _burn(uint256 tokenId)

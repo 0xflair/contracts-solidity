@@ -73,7 +73,14 @@ contract ERC721OneOfOneCollection is
         public
         view
         virtual
-        override(ERC721, ERC721OneOfOneMintExtension)
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension,
+            ERC721OwnerMintExtension,
+            ERC721OneOfOneMintExtension,
+            ERC721PerTokenMetadataExtension
+        )
         returns (bool)
     {
         return super.supportsInterface(interfaceId);

@@ -5,6 +5,22 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+
+interface ERC721PrefixedMetadataExtensionInterface is IERC165 {
+    function setPlaceholderURI(string memory newValue) external;
+
+    function setBaseURI(string memory newValue) external;
+
+    function freezeBaseURI() external;
+
+    function baseTokenURI() external view returns (string memory);
+
+    function placeholderURI() external view returns (string memory);
+
+    function tokenURI(uint256 _tokenId) external view returns (string memory);
+}
 
 /**
  * @dev Extension to allow configuring tokens metadata URI.
@@ -12,7 +28,11 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
  *      therefore on tokenURI() token's ID will be appended to the base URI.
  *      It also allows configuring a fallback "placeholder" URI when prefix is not set yet.
  */
-abstract contract ERC721PrefixedMetadataExtension is Ownable, ERC721 {
+abstract contract ERC721PrefixedMetadataExtension is
+    Ownable,
+    ERC721,
+    ERC721PrefixedMetadataExtensionInterface
+{
     string private _placeholderURI;
     string private _baseTokenURI;
     bool private _baseURIFrozen;
@@ -38,6 +58,19 @@ abstract contract ERC721PrefixedMetadataExtension is Ownable, ERC721 {
 
     // PUBLIC
 
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(IERC165, ERC721)
+        returns (bool)
+    {
+        return
+            interfaceId ==
+            type(ERC721PrefixedMetadataExtensionInterface).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
+
     function baseTokenURI() public view returns (string memory) {
         return _baseTokenURI;
     }
@@ -50,7 +83,7 @@ abstract contract ERC721PrefixedMetadataExtension is Ownable, ERC721 {
         public
         view
         virtual
-        override
+        override(ERC721, ERC721PrefixedMetadataExtensionInterface)
         returns (string memory)
     {
         return

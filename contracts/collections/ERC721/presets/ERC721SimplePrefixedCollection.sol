@@ -59,6 +59,22 @@ contract ERC721SimplePrefixedCollection is
 
     // PUBLIC
 
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension,
+            ERC721OwnerMintExtension,
+            ERC721PrefixedMetadataExtension
+        )
+        returns (bool)
+    {
+        return super.supportsInterface(interfaceId);
+    }
+
     function tokenURI(uint256 _tokenId)
         public
         view

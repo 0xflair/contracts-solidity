@@ -5,11 +5,25 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+
+interface ERC721AutoIdMinterExtensionInterface is IERC165 {
+    function setMaxSupply(uint256 newValue) external;
+
+    function freezeMaxSupply() external;
+
+    function totalSupply() external view returns (uint256);
+}
 
 /**
  * @dev Extension to add minting capability with an auto incremented ID for each token and a maximum supply setting.
  */
-abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
+abstract contract ERC721AutoIdMinterExtension is
+    Ownable,
+    ERC721,
+    ERC721AutoIdMinterExtensionInterface
+{
     using SafeMath for uint256;
 
     uint256 public maxSupply;
@@ -33,6 +47,19 @@ abstract contract ERC721AutoIdMinterExtension is Ownable, ERC721 {
     }
 
     // PUBLIC
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(IERC165, ERC721)
+        returns (bool)
+    {
+        return
+            interfaceId ==
+            type(ERC721AutoIdMinterExtensionInterface).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
 
     function totalSupply() public view returns (uint256) {
         return _currentTokenId;

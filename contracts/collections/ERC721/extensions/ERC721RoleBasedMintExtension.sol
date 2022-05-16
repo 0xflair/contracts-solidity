@@ -3,15 +3,22 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
+
+interface ERC721RoleBasedMintExtensionInterface is IERC165 {
+    function mintByRole(address to, uint256 count) external;
+}
 
 /**
  * @dev Extension to allow holders of a OpenZepplin-based role to mint directly.
  */
 abstract contract ERC721RoleBasedMintExtension is
     ERC721AutoIdMinterExtension,
-    AccessControl
+    AccessControl,
+    ERC721RoleBasedMintExtensionInterface
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -21,16 +28,18 @@ abstract contract ERC721RoleBasedMintExtension is
         _mintTo(to, count);
     }
 
-    /**
-     * @dev See {IERC165-supportsInterface}.
-     */
+    // PUBLIC
+
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(ERC721, AccessControl)
+        override(IERC165, AccessControl, ERC721AutoIdMinterExtension)
         returns (bool)
     {
-        return super.supportsInterface(interfaceId);
+        return
+            interfaceId ==
+            type(ERC721RoleBasedMintExtensionInterface).interfaceId ||
+            super.supportsInterface(interfaceId);
     }
 }
