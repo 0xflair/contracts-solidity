@@ -1,3 +1,10 @@
+### [1.7.5](https://github.com/0xflair/evm-contracts/compare/v1.7.4...v1.7.5) (2022-05-16)
+
+
+### Bug Fixes
+
+* add royalty and gasless listing extensions to 1-of-1 collection ([6bcab32](https://github.com/0xflair/evm-contracts/commit/6bcab32b8e40c4fc73b26877a06b39adfc4f5791))
+
 ### [1.7.4](https://github.com/0xflair/evm-contracts/compare/v1.7.3...v1.7.4) (2022-05-16)
 
 
