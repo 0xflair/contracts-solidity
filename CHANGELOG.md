@@ -1,3 +1,10 @@
+### [1.7.1](https://github.com/0xflair/evm-contracts/compare/v1.7.0...v1.7.1) (2022-05-16)
+
+
+### Bug Fixes
+
+* rename meta transaction struct ([b1ccf9a](https://github.com/0xflair/evm-contracts/commit/b1ccf9a3f8ff4d99ecca93fab2838f8f984481c9))
+
 ## [1.7.0](https://github.com/0xflair/evm-contracts/compare/v1.6.3...v1.7.0) (2022-05-15)
 
 
