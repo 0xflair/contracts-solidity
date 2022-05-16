@@ -1,3 +1,10 @@
+### [1.7.4](https://github.com/0xflair/evm-contracts/compare/v1.7.3...v1.7.4) (2022-05-16)
+
+
+### Bug Fixes
+
+* add interfaces for extensions ([840431d](https://github.com/0xflair/evm-contracts/commit/840431df89d4321346c5d3294f7434c23a594c06))
+
 ### [1.7.3](https://github.com/0xflair/evm-contracts/compare/v1.7.2...v1.7.3) (2022-05-16)
 
 
