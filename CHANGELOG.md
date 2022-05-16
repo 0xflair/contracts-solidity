@@ -1,3 +1,10 @@
+### [1.7.3](https://github.com/0xflair/evm-contracts/compare/v1.7.2...v1.7.3) (2022-05-16)
+
+
+### Bug Fixes
+
+* allow updating trusted forwarder ([f012fae](https://github.com/0xflair/evm-contracts/commit/f012fae9f45655837da575c1e7fed3abea531656))
+
 ### [1.7.2](https://github.com/0xflair/evm-contracts/compare/v1.7.1...v1.7.2) (2022-05-16)
 
 
