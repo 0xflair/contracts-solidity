@@ -4,8 +4,8 @@ import { ethers, getUnnamedAccounts, getChainId } from "hardhat";
 import { ERC721OneOfOneCollection__factory } from "../../../typechain/factories/ERC721OneOfOneCollection__factory";
 import { UnorderedForwarder__factory } from "../../../typechain/factories/UnorderedForwarder__factory";
 import {
-  signUnorderedMetaTransaction,
-  UnorderedMetaTransaction,
+  signMetaTransaction,
+  MetaTransaction,
 } from "../../utils/meta-transactions";
 
 describe("ERC721OneOfOneCollection", function () {
@@ -80,7 +80,7 @@ describe("ERC721OneOfOneCollection", function () {
       [userB, 2, ["ipfs://zzzzz", "ipfs://wwwwww"]]
     );
 
-    const metaTransaction: UnorderedMetaTransaction = {
+    const metaTransaction: MetaTransaction = {
       from: deployer,
       to: collection.address,
       value: 0,
@@ -91,7 +91,7 @@ describe("ERC721OneOfOneCollection", function () {
       data,
     };
 
-    const signature = await signUnorderedMetaTransaction(
+    const signature = await signMetaTransaction(
       deployerSigner,
       Number(chainId),
       metaTransaction,
@@ -136,7 +136,7 @@ describe("ERC721OneOfOneCollection", function () {
       [userB, 2, ["ipfs://zzzzz", "ipfs://wwwwww"]]
     );
 
-    const metaTransaction: UnorderedMetaTransaction = {
+    const metaTransaction: MetaTransaction = {
       from: userA,
       to: collection.address,
       value: 0,
@@ -147,7 +147,7 @@ describe("ERC721OneOfOneCollection", function () {
       data,
     };
 
-    const signature = await signUnorderedMetaTransaction(
+    const signature = await signMetaTransaction(
       signerA,
       Number(chainId),
       metaTransaction,
@@ -192,7 +192,7 @@ describe("ERC721OneOfOneCollection", function () {
       [userB, 2, ["ipfs://zzzzz", "ipfs://wwwwww"]]
     );
 
-    const metaTransaction: UnorderedMetaTransaction = {
+    const metaTransaction: MetaTransaction = {
       from: deployer,
       to: collection.address,
       value: 0,
@@ -203,7 +203,7 @@ describe("ERC721OneOfOneCollection", function () {
       data,
     };
 
-    const signature = await signUnorderedMetaTransaction(
+    const signature = await signMetaTransaction(
       signerA,
       Number(chainId),
       metaTransaction,

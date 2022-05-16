@@ -10,7 +10,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 contract UnorderedForwarder is EIP712, ReentrancyGuard {
     using ECDSA for bytes32;
 
-    struct UnorderedMetaTransaction {
+    struct MetaTransaction {
         address from;
         address to;
         uint256 value;
@@ -23,7 +23,7 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
 
     bytes32 private constant _TYPEHASH =
         keccak256(
-            "UnorderedMetaTransaction(address from,address to,uint256 value,uint256 minGasPrice,uint256 maxGasPrice,uint256 expiresAt,uint256 nonce,bytes data)"
+            "MetaTransaction(address from,address to,uint256 value,uint256 minGasPrice,uint256 maxGasPrice,uint256 expiresAt,uint256 nonce,bytes data)"
         );
 
     mapping(bytes32 => uint256) mtxHashToExecutedBlockNumber;
@@ -49,10 +49,11 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
         require(initialBalance <= address(this).balance, "FWD_ETH_LEAK");
     }
 
-    function verify(
-        UnorderedMetaTransaction calldata mtx,
-        bytes calldata signature
-    ) public view returns (bytes32 mtxHash) {
+    function verify(MetaTransaction calldata mtx, bytes calldata signature)
+        public
+        view
+        returns (bytes32 mtxHash)
+    {
         mtxHash = _hashTypedDataV4(
             keccak256(
                 abi.encode(
@@ -84,10 +85,7 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
         return mtxHash;
     }
 
-    function execute(
-        UnorderedMetaTransaction calldata mtx,
-        bytes calldata signature
-    )
+    function execute(MetaTransaction calldata mtx, bytes calldata signature)
         public
         payable
         nonReentrant
@@ -99,7 +97,7 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
     }
 
     function batchExecute(
-        UnorderedMetaTransaction[] calldata mtxs,
+        MetaTransaction[] calldata mtxs,
         bytes[] calldata signatures
     )
         public
@@ -118,10 +116,10 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
         }
     }
 
-    function _execute(
-        UnorderedMetaTransaction calldata mtx,
-        bytes calldata signature
-    ) internal returns (bytes memory) {
+    function _execute(MetaTransaction calldata mtx, bytes calldata signature)
+        internal
+        returns (bytes memory)
+    {
         // Must have a valid gas price.
         require(
             mtx.minGasPrice <= tx.gasprice && tx.gasprice <= mtx.maxGasPrice,

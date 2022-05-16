@@ -1,6 +1,6 @@
 import { BigNumberish, BytesLike, Signer } from "ethers";
 
-export type UnorderedMetaTransaction = {
+export type MetaTransaction = {
   from: string;
   to: string;
   value: BigNumberish;
@@ -12,7 +12,7 @@ export type UnorderedMetaTransaction = {
 };
 
 export const EIP712_UMTX_TYPES = {
-  UnorderedMetaTransaction: [
+  MetaTransaction: [
     { name: "from", type: "address" },
     { name: "to", type: "address" },
     { name: "value", type: "uint256" },
@@ -24,10 +24,10 @@ export const EIP712_UMTX_TYPES = {
   ],
 };
 
-export const signUnorderedMetaTransaction = async (
+export const signMetaTransaction = async (
   account: Signer,
   chainId: number,
-  metaTransaction: UnorderedMetaTransaction,
+  metaTransaction: MetaTransaction,
   verifyingContract: string
 ) => {
   // @ts-ignore
