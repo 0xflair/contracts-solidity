@@ -1,3 +1,10 @@
+### [1.7.2](https://github.com/0xflair/evm-contracts/compare/v1.7.1...v1.7.2) (2022-05-16)
+
+
+### Bug Fixes
+
+* deploy updated contracts ([2443b9b](https://github.com/0xflair/evm-contracts/commit/2443b9bbb6b7eeb17b9fd7eebc7d2009ea546093))
+
 ### [1.7.1](https://github.com/0xflair/evm-contracts/compare/v1.7.0...v1.7.1) (2022-05-16)
 
 
