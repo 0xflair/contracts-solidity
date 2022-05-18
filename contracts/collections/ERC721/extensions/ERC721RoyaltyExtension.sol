@@ -12,11 +12,14 @@ import "../../../misc/rarible/IRoyalties.sol";
 import "../../../misc/rarible/LibPart.sol";
 import "../../../misc/rarible/LibRoyaltiesV2.sol";
 
-interface ERC721RoyaltyExtensionInterface is IERC165, IEIP2981RoyaltyOverride {
-    function setTokenRoyalties(TokenRoyaltyConfig[] calldata royaltyConfigs)
-        external;
+interface ERC721RoyaltyExtensionInterface is IERC165 {
+    function setTokenRoyalties(
+        IEIP2981RoyaltyOverride.TokenRoyaltyConfig[] calldata royaltyConfigs
+    ) external;
 
-    function setDefaultRoyalty(TokenRoyalty calldata royalty) external;
+    function setDefaultRoyalty(
+        IEIP2981RoyaltyOverride.TokenRoyalty calldata royalty
+    ) external;
 
     function getRaribleV2Royalties(uint256 id)
         external
