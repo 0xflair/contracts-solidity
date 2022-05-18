@@ -1,3 +1,10 @@
+### [1.7.6](https://github.com/0xflair/evm-contracts/compare/v1.7.5...v1.7.6) (2022-05-18)
+
+
+### Bug Fixes
+
+* do not extend other interfaces expect eip165 ([37e178e](https://github.com/0xflair/evm-contracts/commit/37e178e85fd0b3658405a898232382194133b97d))
+
 ### [1.7.5](https://github.com/0xflair/evm-contracts/compare/v1.7.4...v1.7.5) (2022-05-16)
 
 
