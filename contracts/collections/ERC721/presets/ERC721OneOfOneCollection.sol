@@ -53,7 +53,10 @@ contract ERC721OneOfOneCollection is
             config.openSeaExchangeAddress
         )
         ERC2771Context(config.trustedForwarder)
-    {}
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
+        _setupRole(MINTER_ROLE, _msgSender());
+    }
 
     function _burn(uint256 tokenId)
         internal
