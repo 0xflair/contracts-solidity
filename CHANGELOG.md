@@ -1,3 +1,10 @@
+### [1.7.7](https://github.com/0xflair/evm-contracts/compare/v1.7.6...v1.7.7) (2022-05-20)
+
+
+### Bug Fixes
+
+* add roles to deployer by default ([e8d06b6](https://github.com/0xflair/evm-contracts/commit/e8d06b678ecc1cd0097e6f55ead62ec63771db70))
+
 ### [1.7.6](https://github.com/0xflair/evm-contracts/compare/v1.7.5...v1.7.6) (2022-05-18)
 
 
