@@ -1,3 +1,10 @@
+## [1.8.0](https://github.com/0xflair/evm-contracts/compare/v1.7.7...v1.8.0) (2022-05-29)
+
+
+### Features
+
+* add ERC721-based vested token distributor contract ([#3](https://github.com/0xflair/evm-contracts/issues/3)) ([dd673e3](https://github.com/0xflair/evm-contracts/commit/dd673e36d6caf002dad1cb2a9cdf0a8d81b8b28e))
+
 ### [1.7.7](https://github.com/0xflair/evm-contracts/compare/v1.7.6...v1.7.7) (2022-05-20)
 
 
