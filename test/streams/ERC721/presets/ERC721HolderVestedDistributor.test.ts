@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { utils, BigNumberish } from "ethers";
 
-import { ERC721VestedDistributor } from "../../../../typechain";
+import { ERC721HolderVestedDistributor } from "../../../../typechain";
 import { deployPermanentContract } from "../../../../hardhat.util";
 
 import { setupTest } from "../../../setup";
@@ -15,14 +15,14 @@ const deployDistributor = async function (args: {
   claimWindowUnit?: BigNumberish;
   claimStart?: BigNumberish;
   claimEnd?: BigNumberish;
-}): Promise<ERC721VestedDistributor> {
+}): Promise<ERC721HolderVestedDistributor> {
   const accounts = await getUnnamedAccounts();
 
   return (await deployPermanentContract(
     deployments,
     accounts[0],
     accounts[0],
-    "ERC721VestedDistributor",
+    "ERC721HolderVestedDistributor",
     [
       {
         claimToken: "0x0000000000000000000000000000000000000000",
@@ -34,15 +34,15 @@ const deployDistributor = async function (args: {
         ...args,
       },
     ]
-  )) as ERC721VestedDistributor;
+  )) as ERC721HolderVestedDistributor;
 };
 
-describe("ERC721VestedDistributor", function () {
+describe("ERC721HolderVestedDistributor", function () {
   // describe("Release Amount Calculation", function () {
   //   it("should calculate release amount correctly based on unit window", async function () {
   //     const nowUnix = Math.floor(new Date().getTime() / 1000);
   //     const { userA } = await setupTest();
-  //     const contract = userA.ERC721VestedDistributor as ERC721VestedDistributor;
+  //     const contract = userA.ERC721HolderVestedDistributor as ERC721HolderVestedDistributor;
 
   //     await contract.registerStream(
   //       userA.TestERC20.address,
@@ -64,7 +64,7 @@ describe("ERC721VestedDistributor", function () {
   //   it("should round down release amount correctly based on unit window", async function () {
   //     const nowUnix = Math.floor(new Date().getTime() / 1000);
   //     const { userA } = await setupTest();
-  //     const contract = userA.ERC721VestedDistributor as ERC721VestedDistributor;
+  //     const contract = userA.ERC721HolderVestedDistributor as ERC721HolderVestedDistributor;
 
   //     await contract.registerStream(
   //       userA.TestERC20.address,
@@ -86,7 +86,7 @@ describe("ERC721VestedDistributor", function () {
   //   it("should calculate factional release amount correctly based on unit window", async function () {
   //     const nowUnix = Math.floor(new Date().getTime() / 1000);
   //     const { userA } = await setupTest();
-  //     const contract = userA.ERC721VestedDistributor as ERC721VestedDistributor;
+  //     const contract = userA.ERC721HolderVestedDistributor as ERC721HolderVestedDistributor;
 
   //     await contract.registerStream(
   //       userA.TestERC20.address,
@@ -110,7 +110,7 @@ describe("ERC721VestedDistributor", function () {
   //   it("should register ether-based streams", async function () {
   //     const nowUnix = Math.floor(new Date().getTime() / 1000);
   //     const { userA } = await setupTest();
-  //     const contract = userA.ERC721VestedDistributor as ERC721VestedDistributor;
+  //     const contract = userA.ERC721HolderVestedDistributor as ERC721HolderVestedDistributor;
 
   //     await contract.registerStream(
   //       ZERO_ADDRESS,
@@ -137,7 +137,7 @@ describe("ERC721VestedDistributor", function () {
   //   it("should top-up a ether-based stream", async function () {
   //     const nowUnix = Math.floor(new Date().getTime() / 1000);
   //     const { userA } = await setupTest();
-  //     const contract = userA.ERC721VestedDistributor as ERC721VestedDistributor;
+  //     const contract = userA.ERC721HolderVestedDistributor as ERC721HolderVestedDistributor;
 
   //     await contract.registerStream(
   //       ZERO_ADDRESS,

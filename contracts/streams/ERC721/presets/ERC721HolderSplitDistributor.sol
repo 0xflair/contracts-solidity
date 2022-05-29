@@ -12,7 +12,7 @@ import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
 import "../core/ERC721BaseDistributor.sol";
 
-contract ERC721EqualShareDistributor is
+contract ERC721HolderSplitDistributor is
     Ownable,
     Initializable,
     ERC721BaseDistributor
