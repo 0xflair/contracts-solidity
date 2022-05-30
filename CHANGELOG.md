@@ -1,3 +1,11 @@
+### [1.8.2](https://github.com/0xflair/evm-contracts/compare/v1.8.1...v1.8.2) (2022-05-30)
+
+
+### Bug Fixes
+
+* consistent naming for vesting time unit ([15a92db](https://github.com/0xflair/evm-contracts/commit/15a92dbc37567820c56cbbaa79a3ea9224d94a8e))
+* deploy contracts on testnets and polygon ([754c2b9](https://github.com/0xflair/evm-contracts/commit/754c2b986cdfeeb4930163a17868f000389a206a))
+
 ### [1.8.1](https://github.com/0xflair/evm-contracts/compare/v1.8.0...v1.8.1) (2022-05-29)
 
 
