@@ -42,22 +42,28 @@ async function main() {
   // Add OpenZeppelin ABI artifacts for convenience
   const ozRoot = path.resolve(
     __dirname,
-    // "../artifacts/@openzeppelin/contracts"
-    "../node_modules/@openzeppelin/contracts/build"
+    "../node_modules/@openzeppelin/contracts"
   );
+  const ozBuildRoot = path.resolve(ozRoot, "build");
   const ozFiles = glob.sync("**/*.json", {
     nodir: true,
-    cwd: ozRoot,
+    cwd: ozBuildRoot,
     follow: true,
   });
   for (const file of ozFiles) {
+    let { sourceName } = fse.readJsonSync(path.resolve(ozBuildRoot, file));
+    sourceName = sourceName.replace(/^contracts\//i, "");
+
     fse.copySync(
-      path.resolve(ozRoot, file),
+      path.resolve(ozBuildRoot, file),
       path.resolve(
         distPath + "/openzeppelin",
-        path.dirname(path.dirname(file)),
-        path.basename(file)
+        sourceName.replace(/\.sol$/i, ".json")
       )
+    );
+    fse.copySync(
+      path.resolve(ozRoot, sourceName),
+      path.resolve(distPath + "/openzeppelin", sourceName)
     );
   }
   fse.removeSync(path.resolve(distPath, "misc/openzeppelin"));
