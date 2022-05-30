@@ -1,3 +1,10 @@
+### [1.8.4](https://github.com/0xflair/evm-contracts/compare/v1.8.3...v1.8.4) (2022-05-30)
+
+
+### Bug Fixes
+
+* compile and publish openzeppelin ABIs ([df92d36](https://github.com/0xflair/evm-contracts/commit/df92d36e94e638dce5eae09a359358e174f793e6))
+
 ### [1.8.3](https://github.com/0xflair/evm-contracts/compare/v1.8.2...v1.8.3) (2022-05-30)
 
 
