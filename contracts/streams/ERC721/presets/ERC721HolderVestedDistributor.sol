@@ -33,10 +33,10 @@ contract ERC721HolderVestedDistributor is
         uint256 claimEnd;
     }
 
-    uint256 emissionRate;
-    uint256 vestingTimeUnit;
-    uint256 claimStart;
-    uint256 claimEnd;
+    uint256 public emissionRate;
+    uint256 public vestingTimeUnit;
+    uint256 public claimStart;
+    uint256 public claimEnd;
 
     /* INTERNAL */
 

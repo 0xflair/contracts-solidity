@@ -20,8 +20,8 @@ abstract contract ERC721BaseDistributor is Ownable, ReentrancyGuard {
     }
 
     // Config
-    address claimToken;
-    address ticketToken;
+    address public claimToken;
+    address public ticketToken;
 
     // Map of ticket token ID -> entitlement
     mapping(uint256 => Entitlement) public entitlements;
