@@ -43,6 +43,9 @@ if (args.includes("mainnet")) {
 // Go to https://hardhat.org/config/ to learn more
 
 const config: HardhatUserConfig = {
+  paths: {
+    sources: "./contracts",
+  },
   solidity: {
     version: "0.8.9",
     settings: {

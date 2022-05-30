@@ -94,7 +94,9 @@ contract ERC721HolderVestedDistributor is
     {
         claimableAmount =
             calculateReleasedAmount(
-                block.timestamp > claimEnd ? claimEnd : block.timestamp
+                claimEnd > 0 && block.timestamp > claimEnd
+                    ? claimEnd
+                    : block.timestamp
             ) -
             entitlements[ticketTokenId].totalClaimed;
     }
@@ -121,7 +123,9 @@ contract ERC721HolderVestedDistributor is
     {
         claimableAmount =
             calculateReleasedAmountFractioned(
-                block.timestamp > claimEnd ? claimEnd : block.timestamp
+                claimEnd > 0 && block.timestamp > claimEnd
+                    ? claimEnd
+                    : block.timestamp
             ) -
             entitlements[ticketTokenId].totalClaimed;
     }

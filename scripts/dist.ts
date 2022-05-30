@@ -26,6 +26,7 @@ async function main() {
   const files = glob.sync("**/*.json", {
     nodir: true,
     cwd: artifactsRoot,
+    follow: true,
   });
   for (const file of files) {
     fse.copySync(
@@ -41,11 +42,13 @@ async function main() {
   // Add OpenZeppelin ABI artifacts for convenience
   const ozRoot = path.resolve(
     __dirname,
-    "../artifacts/@openzeppelin/contracts"
+    // "../artifacts/@openzeppelin/contracts"
+    "../node_modules/@openzeppelin/contracts/build"
   );
   const ozFiles = glob.sync("**/*.json", {
     nodir: true,
     cwd: ozRoot,
+    follow: true,
   });
   for (const file of ozFiles) {
     fse.copySync(
@@ -57,6 +60,7 @@ async function main() {
       )
     );
   }
+  fse.removeSync(path.resolve(distPath, "misc/openzeppelin"));
 
   // Add Manifold.xyz ABI artifacts for convenience
   const manifoldRoot = path.resolve(
@@ -66,6 +70,7 @@ async function main() {
   const manifoldFiles = glob.sync("**/*.json", {
     nodir: true,
     cwd: manifoldRoot,
+    follow: true,
   });
   for (const file of manifoldFiles) {
     fse.copySync(
@@ -87,6 +92,7 @@ async function main() {
   const deploymentFiles = glob.sync("*/*.json", {
     nodir: true,
     cwd: deploymentsRoot,
+    follow: true,
   });
   for (const file of deploymentFiles) {
     const chainName = path.dirname(file);
@@ -132,6 +138,7 @@ async function main() {
   const buildInfoFiles = glob.sync("*.json", {
     nodir: true,
     cwd: buildInfoRoot,
+    follow: true,
   });
 
   const buildInfo = fse.readJSONSync(
