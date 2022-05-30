@@ -12,7 +12,7 @@ const deployDistributor = async function (args: {
   claimToken?: string;
   ticketToken?: string;
   emissionRate?: BigNumberish;
-  claimWindowUnit?: BigNumberish;
+  vestingTimeUnit?: BigNumberish;
   claimStart?: BigNumberish;
   claimEnd?: BigNumberish;
 }): Promise<ERC721HolderVestedDistributor> {
@@ -28,7 +28,7 @@ const deployDistributor = async function (args: {
         claimToken: "0x0000000000000000000000000000000000000000",
         ticketToken: "0x0000000000000000000000000000000000000000",
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 60 * 60, // 1 hour
+        vestingTimeUnit: 60 * 60, // 1 hour
         claimStart: 0,
         claimEnd: Infinity,
         ...args,
@@ -127,7 +127,7 @@ describe("ERC721HolderVestedDistributor", function () {
   //     expect(result.claimToken).to.equal(ZERO_ADDRESS);
   //     expect(result.ticketToken).to.equal(userA.TestERC721.address);
   //     expect(result.emissionRate).to.equal(utils.parseEther("1"));
-  //     expect(result.claimWindowUnit).to.equal(BigNumber.from(24 * 60 * 60));
+  //     expect(result.vestingTimeUnit).to.equal(BigNumber.from(24 * 60 * 60));
   //     expect(result.claimStart).to.equal(BigNumber.from(nowUnix));
   //     expect(result.claimEnd).to.equal(
   //       BigNumber.from(nowUnix + 30 * 24 * 60 * 60)
@@ -165,7 +165,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -189,7 +189,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -217,7 +217,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -246,7 +246,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -289,7 +289,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix + 5 * 24 * 60 * 60, // +5 days
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -307,7 +307,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix - 5 * 24 * 60 * 60, // -5 days
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -328,7 +328,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -360,7 +360,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -398,7 +398,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 8 * 24 * 60 * 60, // +8 days
       });
@@ -436,7 +436,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });
@@ -477,7 +477,7 @@ describe("ERC721HolderVestedDistributor", function () {
         claimToken: userA.TestERC20.address,
         ticketToken: userA.TestERC721.address,
         emissionRate: utils.parseEther("2"),
-        claimWindowUnit: 24 * 60 * 60, // daily
+        vestingTimeUnit: 24 * 60 * 60, // daily
         claimStart: nowUnix,
         claimEnd: nowUnix + 6 * 24 * 60 * 60, // +6 days
       });

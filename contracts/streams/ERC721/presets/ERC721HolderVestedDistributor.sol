@@ -28,13 +28,13 @@ contract ERC721HolderVestedDistributor is
         address claimToken;
         address ticketToken;
         uint256 emissionRate;
-        uint256 claimWindowUnit;
+        uint256 vestingTimeUnit;
         uint256 claimStart;
         uint256 claimEnd;
     }
 
     uint256 emissionRate;
-    uint256 claimWindowUnit;
+    uint256 vestingTimeUnit;
     uint256 claimStart;
     uint256 claimEnd;
 
@@ -53,7 +53,7 @@ contract ERC721HolderVestedDistributor is
         ERC721BaseDistributor._setup(config.claimToken, config.ticketToken);
 
         emissionRate = config.emissionRate;
-        claimWindowUnit = config.claimWindowUnit;
+        vestingTimeUnit = config.vestingTimeUnit;
         claimStart = config.claimStart;
         claimEnd = config.claimEnd;
     }
@@ -64,8 +64,8 @@ contract ERC721HolderVestedDistributor is
         emissionRate = newValue;
     }
 
-    function setClaimDurationUnit(uint256 newValue) public onlyOwner {
-        claimWindowUnit = newValue;
+    function setVestingTimeUnit(uint256 newValue) public onlyOwner {
+        vestingTimeUnit = newValue;
     }
 
     function setClaimStart(uint256 newValue) public onlyOwner {
@@ -81,7 +81,7 @@ contract ERC721HolderVestedDistributor is
 
         require(
             entitlements[ticketTokenId].lastClaimedAt <
-                block.timestamp - claimWindowUnit,
+                block.timestamp - vestingTimeUnit,
             "DISTRIBUTOR/TOO_EARLY"
         );
     }
@@ -111,7 +111,7 @@ contract ERC721HolderVestedDistributor is
         return
             emissionRate *
             // Intentionally rounded down:
-            ((calcUntil - claimStart) / claimWindowUnit);
+            ((calcUntil - claimStart) / vestingTimeUnit);
     }
 
     function calculateClaimableAmountFractioned(uint256 ticketTokenId)
@@ -131,6 +131,6 @@ contract ERC721HolderVestedDistributor is
         view
         returns (uint256)
     {
-        return ((calcUntil - claimStart) * emissionRate) / claimWindowUnit;
+        return ((calcUntil - claimStart) * emissionRate) / vestingTimeUnit;
     }
 }

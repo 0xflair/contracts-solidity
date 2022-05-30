@@ -18,7 +18,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         claimToken: "0x0000000000000000000000000000000000000000",
         ticketToken: "0x0000000000000000000000000000000000000000",
         emissionRate: utils.parseEther("1"),
-        claimWindowUnit: 60 * 60, // 1 hour
+        vestingTimeUnit: 60 * 60, // 1 hour
         claimStart: 0,
         claimEnd: 999999999999999,
       },
