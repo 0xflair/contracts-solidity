@@ -1,3 +1,10 @@
+### [1.8.6](https://github.com/0xflair/evm-contracts/compare/v1.8.5...v1.8.6) (2022-05-30)
+
+
+### Bug Fixes
+
+* preserve openzeppelin artifact paths ([8d90984](https://github.com/0xflair/evm-contracts/commit/8d909841b029fcd60ce63dfc8d82eaf98b21359f))
+
 ### [1.8.5](https://github.com/0xflair/evm-contracts/compare/v1.8.4...v1.8.5) (2022-05-30)
 
 
