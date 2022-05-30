@@ -1,3 +1,10 @@
+### [1.8.3](https://github.com/0xflair/evm-contracts/compare/v1.8.2...v1.8.3) (2022-05-30)
+
+
+### Bug Fixes
+
+* make config variables publicly readable ([86df25d](https://github.com/0xflair/evm-contracts/commit/86df25d5fd19070e5e2f517a61ac281eebf2c55f))
+
 ### [1.8.2](https://github.com/0xflair/evm-contracts/compare/v1.8.1...v1.8.2) (2022-05-30)
 
 
