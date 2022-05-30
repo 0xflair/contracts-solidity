@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /**
  * @dev Context variant with ERC2771 support.
  */
-abstract contract ERC2771Context is Context, Ownable {
+abstract contract ERC2771ContextOwnable is Context, Ownable {
     address public _trustedForwarder;
 
     /// @custom:oz-upgrades-unsafe-allow constructor

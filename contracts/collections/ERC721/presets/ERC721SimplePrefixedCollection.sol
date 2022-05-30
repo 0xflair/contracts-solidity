@@ -5,7 +5,7 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-import "../../../common/meta-transactions/ERC2771Context.sol";
+import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
@@ -13,7 +13,7 @@ import "../extensions/ERC721OwnerMintExtension.sol";
 
 contract ERC721SimplePrefixedCollection is
     Ownable,
-    ERC2771Context,
+    ERC2771ContextOwnable,
     ERC721,
     ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
@@ -34,14 +34,14 @@ contract ERC721SimplePrefixedCollection is
         ERC721CollectionMetadataExtension(config.contractURI)
         ERC721PrefixedMetadataExtension(config.placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
-        ERC2771Context(config.trustedForwarder)
+        ERC2771ContextOwnable(config.trustedForwarder)
     {}
 
     function _msgSender()
         internal
         view
         virtual
-        override(ERC2771Context, Context)
+        override(ERC2771ContextOwnable, Context)
         returns (address sender)
     {
         return super._msgSender();
@@ -51,7 +51,7 @@ contract ERC721SimplePrefixedCollection is
         internal
         view
         virtual
-        override(ERC2771Context, Context)
+        override(ERC2771ContextOwnable, Context)
         returns (bytes calldata)
     {
         return super._msgData();

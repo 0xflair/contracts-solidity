@@ -5,7 +5,7 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
-import "../../../common/meta-transactions/ERC2771Context.sol";
+import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PerTokenMetadataExtension.sol";
 import "../extensions/ERC721OneOfOneMintExtension.sol";
@@ -16,7 +16,7 @@ import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721OneOfOneCollection is
     Ownable,
-    ERC2771Context,
+    ERC2771ContextOwnable,
     ERC721,
     ERC721AutoIdMinterExtension,
     ERC721CollectionMetadataExtension,
@@ -52,7 +52,7 @@ contract ERC721OneOfOneCollection is
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
         )
-        ERC2771Context(config.trustedForwarder)
+        ERC2771ContextOwnable(config.trustedForwarder)
     {
         _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
         _setupRole(MINTER_ROLE, _msgSender());
@@ -70,7 +70,7 @@ contract ERC721OneOfOneCollection is
         internal
         view
         virtual
-        override(ERC2771Context, Context)
+        override(ERC2771ContextOwnable, Context)
         returns (address sender)
     {
         return super._msgSender();
@@ -80,7 +80,7 @@ contract ERC721OneOfOneCollection is
         internal
         view
         virtual
-        override(ERC2771Context, Context)
+        override(ERC2771ContextOwnable, Context)
         returns (bytes calldata)
     {
         return super._msgData();
