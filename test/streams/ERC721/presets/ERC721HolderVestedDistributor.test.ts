@@ -53,7 +53,7 @@ describe("ERC721HolderVestedDistributor", function () {
   //       nowUnix + 30 * 24 * 60 * 60 // +30 days
   //     );
 
-  //     const result = await contract.calculateReleasedAmountRounded(
+  //     const result = await contract.calculateClaimableAmountUntilRounded(
   //       1,
   //       nowUnix + 5 * 24 * 60 * 60 // +5 days
   //     );
@@ -75,7 +75,7 @@ describe("ERC721HolderVestedDistributor", function () {
   //       nowUnix + 30 * 24 * 60 * 60 // +30 days
   //     );
 
-  //     const result = await contract.calculateReleasedAmountRounded(
+  //     const result = await contract.calculateClaimableAmountUntilRounded(
   //       1,
   //       nowUnix + Math.floor(6.5 * 24 * 60 * 60) // +6.5 days
   //     );
@@ -97,7 +97,7 @@ describe("ERC721HolderVestedDistributor", function () {
   //       nowUnix + 30 * 24 * 60 * 60 // +30 days
   //     );
 
-  //     const result = await contract.calculateReleasedAmountFractioned(
+  //     const result = await contract.calculateReleasedAmountUntil(
   //       1,
   //       nowUnix + Math.floor(6.5 * 24 * 60 * 60) // +6.5 days
   //     );

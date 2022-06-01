@@ -93,7 +93,7 @@ contract ERC721HolderVestedDistributor is
         returns (uint256 claimableAmount)
     {
         claimableAmount =
-            calculateReleasedAmount(
+            calculateClaimableAmountUntil(
                 claimEnd > 0 && block.timestamp > claimEnd
                     ? claimEnd
                     : block.timestamp
@@ -101,7 +101,7 @@ contract ERC721HolderVestedDistributor is
             entitlements[ticketTokenId].totalClaimed;
     }
 
-    function calculateReleasedAmount(uint256 calcUntil)
+    function calculateClaimableAmountUntil(uint256 calcUntil)
         public
         view
         returns (uint256)
@@ -116,13 +116,13 @@ contract ERC721HolderVestedDistributor is
             ((calcUntil - claimStart) / vestingTimeUnit);
     }
 
-    function calculateClaimableAmountFractioned(uint256 ticketTokenId)
+    function calculateReleasedAmount(uint256 ticketTokenId)
         public
         view
-        returns (uint256 claimableAmount)
+        returns (uint256 releasedAmount)
     {
-        claimableAmount =
-            calculateReleasedAmountFractioned(
+        releasedAmount =
+            calculateReleasedAmountUntil(
                 claimEnd > 0 && block.timestamp > claimEnd
                     ? claimEnd
                     : block.timestamp
@@ -130,7 +130,7 @@ contract ERC721HolderVestedDistributor is
             entitlements[ticketTokenId].totalClaimed;
     }
 
-    function calculateReleasedAmountFractioned(uint256 calcUntil)
+    function calculateReleasedAmountUntil(uint256 calcUntil)
         public
         view
         returns (uint256)
