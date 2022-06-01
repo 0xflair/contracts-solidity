@@ -27,13 +27,13 @@ contract ERC721HolderVestedDistributor is
     struct Config {
         address claimToken;
         address ticketToken;
-        uint256 emissionRate;
+        uint256 vestingRate;
         uint256 vestingTimeUnit;
         uint256 claimStart;
         uint256 claimEnd;
     }
 
-    uint256 public emissionRate;
+    uint256 public vestingRate;
     uint256 public vestingTimeUnit;
     uint256 public claimStart;
     uint256 public claimEnd;
@@ -52,7 +52,7 @@ contract ERC721HolderVestedDistributor is
         Ownable._transferOwnership(owner);
         ERC721BaseDistributor._setup(config.claimToken, config.ticketToken);
 
-        emissionRate = config.emissionRate;
+        vestingRate = config.vestingRate;
         vestingTimeUnit = config.vestingTimeUnit;
         claimStart = config.claimStart;
         claimEnd = config.claimEnd;
@@ -60,8 +60,8 @@ contract ERC721HolderVestedDistributor is
 
     /* PUBLIC */
 
-    function setEmissionRate(uint256 newValue) public onlyOwner {
-        emissionRate = newValue;
+    function setVestingRate(uint256 newValue) public onlyOwner {
+        vestingRate = newValue;
     }
 
     function setVestingTimeUnit(uint256 newValue) public onlyOwner {
@@ -111,7 +111,7 @@ contract ERC721HolderVestedDistributor is
         }
 
         return
-            emissionRate *
+            vestingRate *
             // Intentionally rounded down:
             ((calcUntil - claimStart) / vestingTimeUnit);
     }
@@ -135,6 +135,6 @@ contract ERC721HolderVestedDistributor is
         view
         returns (uint256)
     {
-        return ((calcUntil - claimStart) * emissionRate) / vestingTimeUnit;
+        return ((calcUntil - claimStart) * vestingRate) / vestingTimeUnit;
     }
 }
