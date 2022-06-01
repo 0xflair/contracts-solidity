@@ -1,3 +1,10 @@
+### [1.8.8](https://github.com/0xflair/evm-contracts/compare/v1.8.7...v1.8.8) (2022-06-01)
+
+
+### Bug Fixes
+
+* more semantically correct naming ([7dc8253](https://github.com/0xflair/evm-contracts/commit/7dc8253b6355842647fc95c72532347358418010))
+
 ### [1.8.7](https://github.com/0xflair/evm-contracts/compare/v1.8.6...v1.8.7) (2022-06-01)
 
 
