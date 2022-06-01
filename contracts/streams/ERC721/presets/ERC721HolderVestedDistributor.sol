@@ -86,6 +86,20 @@ contract ERC721HolderVestedDistributor is
         );
     }
 
+    function getTotalReleasedBulk(uint256[] calldata ticketTokenIds)
+        public
+        view
+        returns (uint256)
+    {
+        uint256 totalReleased = 0;
+
+        for (uint256 i = 0; i < ticketTokenIds.length; i++) {
+            totalReleased += calculateReleasedAmount(ticketTokenIds[i]);
+        }
+
+        return totalReleased;
+    }
+
     function calculateClaimableAmount(uint256 ticketTokenId)
         public
         view
