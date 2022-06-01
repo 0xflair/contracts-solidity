@@ -1,3 +1,10 @@
+### [1.8.9](https://github.com/0xflair/evm-contracts/compare/v1.8.8...v1.8.9) (2022-06-01)
+
+
+### Bug Fixes
+
+* add getTotalReleasedBulk method ([8a9106f](https://github.com/0xflair/evm-contracts/commit/8a9106f584436efdc462ea6ae3704db35748b3f6))
+
 ### [1.8.8](https://github.com/0xflair/evm-contracts/compare/v1.8.7...v1.8.8) (2022-06-01)
 
 
