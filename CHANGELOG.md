@@ -1,3 +1,10 @@
+### [1.8.7](https://github.com/0xflair/evm-contracts/compare/v1.8.6...v1.8.7) (2022-06-01)
+
+
+### Bug Fixes
+
+* use consistent naming for vesting rate ([6f8f734](https://github.com/0xflair/evm-contracts/commit/6f8f734a49173438027fdb765e0b090aae4c8a8a))
+
 ### [1.8.6](https://github.com/0xflair/evm-contracts/compare/v1.8.5...v1.8.6) (2022-05-30)
 
 
