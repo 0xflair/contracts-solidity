@@ -1,3 +1,10 @@
+### [1.8.10](https://github.com/0xflair/evm-contracts/compare/v1.8.9...v1.8.10) (2022-06-05)
+
+
+### Bug Fixes
+
+* support interface to cover all parent interfaces ([3d555ad](https://github.com/0xflair/evm-contracts/commit/3d555ad9eef1e46f685b453bae6471e9a95d4a14))
+
 ### [1.8.9](https://github.com/0xflair/evm-contracts/compare/v1.8.8...v1.8.9) (2022-06-01)
 
 
