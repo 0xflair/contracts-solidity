@@ -5,10 +5,9 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721PrefixedMetadataExtensionInterface is IERC165 {
+interface ERC721PrefixedMetadataExtensionInterface {
     function setPlaceholderURI(string memory newValue) external;
 
     function setBaseURI(string memory newValue) external;
@@ -30,6 +29,7 @@ interface ERC721PrefixedMetadataExtensionInterface is IERC165 {
  */
 abstract contract ERC721PrefixedMetadataExtension is
     Ownable,
+    ERC165Storage,
     ERC721,
     ERC721PrefixedMetadataExtensionInterface
 {
@@ -39,6 +39,10 @@ abstract contract ERC721PrefixedMetadataExtension is
 
     constructor(string memory placeholderURI_) {
         _placeholderURI = placeholderURI_;
+
+        _registerInterface(
+            type(ERC721PrefixedMetadataExtensionInterface).interfaceId
+        );
     }
 
     // ADMIN
@@ -62,13 +66,10 @@ abstract contract ERC721PrefixedMetadataExtension is
         public
         view
         virtual
-        override(IERC165, ERC721)
+        override(ERC165Storage, ERC721)
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721PrefixedMetadataExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function baseTokenURI() public view returns (string memory) {

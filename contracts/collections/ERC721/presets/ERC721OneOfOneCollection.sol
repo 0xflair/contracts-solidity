@@ -16,6 +16,7 @@ import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721OneOfOneCollection is
     Ownable,
+    ERC165Storage,
     ERC2771ContextOwnable,
     ERC721,
     ERC721AutoIdMinterExtension,
@@ -93,6 +94,7 @@ contract ERC721OneOfOneCollection is
         view
         virtual
         override(
+            ERC165Storage,
             ERC721,
             ERC721AutoIdMinterExtension,
             ERC721CollectionMetadataExtension,
@@ -104,7 +106,9 @@ contract ERC721OneOfOneCollection is
         )
         returns (bool)
     {
-        return super.supportsInterface(interfaceId);
+        return
+            ERC721.supportsInterface(interfaceId) ||
+            ERC165Storage.supportsInterface(interfaceId);
     }
 
     /**

@@ -3,10 +3,9 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721SimpleProceedsExtensionInterface is IERC165 {
+interface ERC721SimpleProceedsExtensionInterface {
     function withdraw() external;
 }
 
@@ -15,8 +14,15 @@ interface ERC721SimpleProceedsExtensionInterface is IERC165 {
  */
 abstract contract ERC721SimpleProceedsExtension is
     Ownable,
+    ERC165Storage,
     ERC721SimpleProceedsExtensionInterface
 {
+    constructor() {
+        _registerInterface(
+            type(ERC721SimpleProceedsExtensionInterface).interfaceId
+        );
+    }
+
     // ADMIN
 
     function withdraw() external onlyOwner {
@@ -31,11 +37,9 @@ abstract contract ERC721SimpleProceedsExtension is
         public
         view
         virtual
-        override(IERC165)
+        override(ERC165Storage)
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721SimpleProceedsExtensionInterface).interfaceId;
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 }

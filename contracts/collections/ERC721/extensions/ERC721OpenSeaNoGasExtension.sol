@@ -4,12 +4,11 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "../../../misc/opensea/ProxyRegistry.sol";
 
-interface ERC721OpenSeaNoGasExtensionInterface is IERC165 {
+interface ERC721OpenSeaNoGasExtensionInterface {
     function setOpenSeaProxyRegistryAddress(address addr) external;
 
     function setOpenSeaExchangeAddress(address addr) external;
@@ -25,6 +24,7 @@ interface ERC721OpenSeaNoGasExtensionInterface is IERC165 {
  */
 abstract contract ERC721OpenSeaNoGasExtension is
     Ownable,
+    ERC165Storage,
     ERC721,
     ERC721OpenSeaNoGasExtensionInterface
 {
@@ -37,6 +37,10 @@ abstract contract ERC721OpenSeaNoGasExtension is
     ) {
         _openSeaProxyRegistryAddress = openSeaProxyRegistryAddress;
         _openSeaExchangeAddress = openSeaExchangeAddress;
+
+        _registerInterface(
+            type(ERC721OpenSeaNoGasExtensionInterface).interfaceId
+        );
     }
 
     // ADMIN
@@ -55,13 +59,10 @@ abstract contract ERC721OpenSeaNoGasExtension is
         public
         view
         virtual
-        override(IERC165, ERC721)
+        override(ERC165Storage, ERC721)
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721OpenSeaNoGasExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     /**

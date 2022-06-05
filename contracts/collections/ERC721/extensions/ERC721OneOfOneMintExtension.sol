@@ -4,13 +4,12 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 import "./ERC721PerTokenMetadataExtension.sol";
 
-interface ERC721OneOfOneMintExtensionInterface is IERC165 {
+interface ERC721OneOfOneMintExtensionInterface {
     function mintWithTokenURIsByOwner(
         address to,
         uint256 count,
@@ -31,12 +30,19 @@ interface ERC721OneOfOneMintExtensionInterface is IERC165 {
  */
 abstract contract ERC721OneOfOneMintExtension is
     Ownable,
+    ERC165Storage,
     AccessControl,
     ERC721AutoIdMinterExtension,
     ERC721PerTokenMetadataExtension,
     ERC721OneOfOneMintExtensionInterface
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
+
+    constructor() {
+        _registerInterface(
+            type(ERC721OneOfOneMintExtensionInterface).interfaceId
+        );
+    }
 
     // ADMIN
 
@@ -73,17 +79,14 @@ abstract contract ERC721OneOfOneMintExtension is
         view
         virtual
         override(
-            IERC165,
+            ERC165Storage,
             AccessControl,
             ERC721AutoIdMinterExtension,
             ERC721PerTokenMetadataExtension
         )
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721OneOfOneMintExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function tokenURI(uint256 tokenId)

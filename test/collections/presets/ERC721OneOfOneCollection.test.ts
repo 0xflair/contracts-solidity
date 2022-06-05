@@ -30,6 +30,38 @@ describe("ERC721OneOfOneCollection", function () {
     await collection.getInfo();
   });
 
+  it("should return true when checking IRC721 interface", async function () {
+    const ERC721OneOfOneCollection =
+      await ethers.getContractFactory<ERC721OneOfOneCollection__factory>(
+        "ERC721OneOfOneCollection"
+      );
+    const collection = await ERC721OneOfOneCollection.deploy({
+      name: "Flair Angels",
+      symbol: "ANGEL",
+      contractURI: "ipfs://yyyyy",
+      maxSupply: 8000,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 250,
+      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
+      trustedForwarder: "0x0000000000000000000000000000000000000000",
+    });
+
+    await collection.deployed();
+
+    // ERC721
+    expect(await collection.supportsInterface("0x80ac58cd")).to.be.equal(true);
+
+    // ERC721OneOfOneMintExtensionInterface
+    expect(await collection.supportsInterface("0x68b4edf8")).to.be.equal(true);
+
+    // Rarible Royalty
+    expect(await collection.supportsInterface("0xcad96cca")).to.be.equal(true);
+
+    // EIP2981 Royalty
+    expect(await collection.supportsInterface("0x2a55205a")).to.be.equal(true);
+  });
+
   it("should mint 1 one-of-one token", async function () {
     const ERC721OneOfOneCollection =
       await ethers.getContractFactory<ERC721OneOfOneCollection__factory>(

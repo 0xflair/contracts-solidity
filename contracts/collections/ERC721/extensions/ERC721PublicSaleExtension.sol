@@ -4,12 +4,11 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 
-interface ERC721PublicSaleExtensionInterface is IERC165 {
+interface ERC721PublicSaleExtensionInterface {
     function setPublicSalePrice(uint256 newValue) external;
 
     function setPublicSaleMaxMintPerTx(uint256 newValue) external;
@@ -24,6 +23,7 @@ interface ERC721PublicSaleExtensionInterface is IERC165 {
  */
 abstract contract ERC721PublicSaleExtension is
     Ownable,
+    ERC165Storage,
     ERC721AutoIdMinterExtension,
     ReentrancyGuard,
     ERC721PublicSaleExtensionInterface
@@ -35,6 +35,10 @@ abstract contract ERC721PublicSaleExtension is
     constructor(uint256 _publicSalePrice, uint256 _publicSaleMaxMintPerTx) {
         publicSalePrice = _publicSalePrice;
         publicSaleMaxMintPerTx = _publicSaleMaxMintPerTx;
+
+        _registerInterface(
+            type(ERC721PublicSaleExtensionInterface).interfaceId
+        );
     }
 
     // ADMIN
@@ -57,13 +61,10 @@ abstract contract ERC721PublicSaleExtension is
         public
         view
         virtual
-        override(IERC165, ERC721AutoIdMinterExtension)
+        override(ERC165Storage, ERC721AutoIdMinterExtension)
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721PublicSaleExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function mintPublicSale(address to, uint256 count)

@@ -13,6 +13,7 @@ import "../extensions/ERC721OwnerMintExtension.sol";
 
 contract ERC721SimplePrefixedCollection is
     Ownable,
+    ERC165Storage,
     ERC2771ContextOwnable,
     ERC721,
     ERC721CollectionMetadataExtension,
@@ -64,6 +65,7 @@ contract ERC721SimplePrefixedCollection is
         view
         virtual
         override(
+            ERC165Storage,
             ERC721,
             ERC721AutoIdMinterExtension,
             ERC721CollectionMetadataExtension,
@@ -72,7 +74,9 @@ contract ERC721SimplePrefixedCollection is
         )
         returns (bool)
     {
-        return super.supportsInterface(interfaceId);
+        return
+            ERC721.supportsInterface(interfaceId) ||
+            ERC165Storage.supportsInterface(interfaceId);
     }
 
     function tokenURI(uint256 _tokenId)

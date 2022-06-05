@@ -20,8 +20,9 @@ import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721FullFeaturedCollection is
     Ownable,
-    ERC2771ContextOwnable,
+    ERC165Storage,
     ERC721,
+    ERC2771ContextOwnable,
     ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
     ERC721AutoIdMinterExtension,
@@ -105,22 +106,25 @@ contract ERC721FullFeaturedCollection is
         view
         virtual
         override(
+            ERC165Storage,
             ERC721,
-            ERC721AutoIdMinterExtension,
             ERC721CollectionMetadataExtension,
             ERC721PrefixedMetadataExtension,
-            ERC721OwnerMintExtension,
-            ERC721RoleBasedMintExtension,
+            ERC721AutoIdMinterExtension,
             ERC721PreSaleExtension,
             ERC721PublicSaleExtension,
-            ERC721RoyaltyExtension,
             ERC721SimpleProceedsExtension,
-            ERC721BulkifyExtension,
-            ERC721OpenSeaNoGasExtension
+            ERC721OwnerMintExtension,
+            ERC721RoleBasedMintExtension,
+            ERC721RoyaltyExtension,
+            ERC721OpenSeaNoGasExtension,
+            ERC721BulkifyExtension
         )
         returns (bool)
     {
-        return super.supportsInterface(interfaceId);
+        return
+            ERC721.supportsInterface(interfaceId) ||
+            ERC165Storage.supportsInterface(interfaceId);
     }
 
     /**

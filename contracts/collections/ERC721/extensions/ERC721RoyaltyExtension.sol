@@ -5,14 +5,13 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/RoyaltyOverrideCore.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "../../../misc/rarible/IRoyalties.sol";
 import "../../../misc/rarible/LibPart.sol";
 import "../../../misc/rarible/LibRoyaltiesV2.sol";
 
-interface ERC721RoyaltyExtensionInterface is IERC165 {
+interface ERC721RoyaltyExtensionInterface {
     function setTokenRoyalties(
         IEIP2981RoyaltyOverride.TokenRoyaltyConfig[] calldata royaltyConfigs
     ) external;
@@ -35,6 +34,7 @@ interface ERC721RoyaltyExtensionInterface is IERC165 {
  */
 abstract contract ERC721RoyaltyExtension is
     Ownable,
+    ERC165Storage,
     EIP2981RoyaltyOverrideCore,
     IRoyalties,
     ERC721RoyaltyExtensionInterface
@@ -46,6 +46,11 @@ abstract contract ERC721RoyaltyExtension is
         );
 
         _setDefaultRoyalty(royalty);
+
+        _registerInterface(type(ERC721RoyaltyExtensionInterface).interfaceId);
+        _registerInterface(type(IEIP2981).interfaceId);
+        _registerInterface(type(IEIP2981RoyaltyOverride).interfaceId);
+        _registerInterface(LibRoyaltiesV2._INTERFACE_ID_ROYALTIES);
     }
 
     function setTokenRoyalties(TokenRoyaltyConfig[] calldata royaltyConfigs)
@@ -85,17 +90,9 @@ abstract contract ERC721RoyaltyExtension is
         public
         view
         virtual
-        override(IERC165, EIP2981RoyaltyOverrideCore)
+        override(ERC165Storage, EIP2981RoyaltyOverrideCore)
         returns (bool)
     {
-        if (interfaceId == LibRoyaltiesV2._INTERFACE_ID_ROYALTIES) {
-            return true;
-        }
-
-        if (interfaceId == type(ERC721RoyaltyExtensionInterface).interfaceId) {
-            return true;
-        }
-
-        return super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 }

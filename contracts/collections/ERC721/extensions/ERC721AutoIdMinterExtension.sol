@@ -5,10 +5,9 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721AutoIdMinterExtensionInterface is IERC165 {
+interface ERC721AutoIdMinterExtensionInterface {
     function setMaxSupply(uint256 newValue) external;
 
     function freezeMaxSupply() external;
@@ -21,6 +20,7 @@ interface ERC721AutoIdMinterExtensionInterface is IERC165 {
  */
 abstract contract ERC721AutoIdMinterExtension is
     Ownable,
+    ERC165Storage,
     ERC721,
     ERC721AutoIdMinterExtensionInterface
 {
@@ -33,6 +33,10 @@ abstract contract ERC721AutoIdMinterExtension is
 
     constructor(uint256 _maxSupply) {
         maxSupply = _maxSupply;
+
+        _registerInterface(
+            type(ERC721AutoIdMinterExtensionInterface).interfaceId
+        );
     }
 
     // ADMIN
@@ -52,13 +56,10 @@ abstract contract ERC721AutoIdMinterExtension is
         public
         view
         virtual
-        override(IERC165, ERC721)
+        override(ERC165Storage, ERC721)
         returns (bool)
     {
-        return
-            interfaceId ==
-            type(ERC721AutoIdMinterExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function totalSupply() public view returns (uint256) {

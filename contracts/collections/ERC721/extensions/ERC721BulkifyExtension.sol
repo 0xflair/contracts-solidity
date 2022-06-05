@@ -3,10 +3,9 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721BulkifyExtensionInterface is IERC165 {
+interface ERC721BulkifyExtensionInterface {
     function transferFromBulk(
         address from,
         address to,
@@ -19,21 +18,24 @@ interface ERC721BulkifyExtensionInterface is IERC165 {
  */
 abstract contract ERC721BulkifyExtension is
     Context,
+    ERC165Storage,
     ERC721,
     ERC721BulkifyExtensionInterface
 {
+    constructor() {
+        _registerInterface(type(ERC721BulkifyExtensionInterface).interfaceId);
+    }
+
     // PUBLIC
 
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(IERC165, ERC721)
+        override(ERC165Storage, ERC721)
         returns (bool)
     {
-        return
-            interfaceId == type(ERC721BulkifyExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     /**

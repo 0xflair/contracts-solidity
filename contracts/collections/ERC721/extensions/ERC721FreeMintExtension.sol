@@ -3,12 +3,11 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165.sol";
-import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 
-interface ERC721FreeMintExtensionInterface is IERC165 {
+interface ERC721FreeMintExtensionInterface {
     function mintFree(address to, uint256 count) external;
 }
 
@@ -16,21 +15,24 @@ interface ERC721FreeMintExtensionInterface is IERC165 {
  * @dev Extension to allow anyone to mint directly without paying.
  */
 abstract contract ERC721FreeMintExtension is
+    ERC165Storage,
     ERC721AutoIdMinterExtension,
     ERC721FreeMintExtensionInterface
 {
+    constructor() {
+        _registerInterface(type(ERC721FreeMintExtensionInterface).interfaceId);
+    }
+
     // PUBLIC
 
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(IERC165, ERC721AutoIdMinterExtension)
+        override(ERC165Storage, ERC721AutoIdMinterExtension)
         returns (bool)
     {
-        return
-            interfaceId == type(ERC721FreeMintExtensionInterface).interfaceId ||
-            super.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function mintFree(address to, uint256 count) external {
