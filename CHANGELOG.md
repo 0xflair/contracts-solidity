@@ -1,3 +1,10 @@
+### [1.8.11](https://github.com/0xflair/evm-contracts/compare/v1.8.10...v1.8.11) (2022-06-06)
+
+
+### Bug Fixes
+
+* add basic erc20 token contracts ([ab45717](https://github.com/0xflair/evm-contracts/commit/ab45717dd0d45add697af8a03eed050b5a43dc13))
+
 ### [1.8.10](https://github.com/0xflair/evm-contracts/compare/v1.8.9...v1.8.10) (2022-06-05)
 
 
