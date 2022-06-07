@@ -1,3 +1,10 @@
+### [1.8.12](https://github.com/0xflair/evm-contracts/compare/v1.8.11...v1.8.12) (2022-06-07)
+
+
+### Bug Fixes
+
+* correct name for lockable token ([40e0d29](https://github.com/0xflair/evm-contracts/commit/40e0d2983661a8af49f1f7846a5620998854e97d))
+
 ### [1.8.11](https://github.com/0xflair/evm-contracts/compare/v1.8.10...v1.8.11) (2022-06-06)
 
 
