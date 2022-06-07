@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 
 import "../extensions/ERC20RoleBasedLockingExtension.sol";
 
-contract ERC20BasicToken is
+contract ERC20LockableToken is
     ERC165Storage,
     AccessControl,
     ERC20,
