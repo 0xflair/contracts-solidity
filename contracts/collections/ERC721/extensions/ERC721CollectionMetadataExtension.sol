@@ -4,6 +4,7 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol";
 
 interface ERC721CollectionMetadataExtensionInterface {
     function setContractURI(string memory newValue) external;
@@ -27,6 +28,7 @@ abstract contract ERC721CollectionMetadataExtension is
         _registerInterface(
             type(ERC721CollectionMetadataExtensionInterface).interfaceId
         );
+        _registerInterface(type(IERC721Metadata).interfaceId);
     }
 
     // ADMIN

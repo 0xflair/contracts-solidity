@@ -37,6 +37,7 @@ abstract contract ERC721AutoIdMinterExtension is
         _registerInterface(
             type(ERC721AutoIdMinterExtensionInterface).interfaceId
         );
+        _registerInterface(type(IERC721).interfaceId);
     }
 
     // ADMIN

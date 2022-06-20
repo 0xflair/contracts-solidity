@@ -33,9 +33,10 @@ abstract contract ERC721PrefixedMetadataExtension is
     ERC721,
     ERC721PrefixedMetadataExtensionInterface
 {
-    string private _placeholderURI;
-    string private _baseTokenURI;
-    bool private _baseURIFrozen;
+    string internal _placeholderURI;
+    string internal _baseTokenURI;
+
+    bool public baseURIFrozen;
 
     constructor(string memory placeholderURI_) {
         _placeholderURI = placeholderURI_;
@@ -52,12 +53,12 @@ abstract contract ERC721PrefixedMetadataExtension is
     }
 
     function setBaseURI(string memory newValue) external onlyOwner {
-        require(!_baseURIFrozen, "BASE_URI_FROZEN");
+        require(!baseURIFrozen, "BASE_URI_FROZEN");
         _baseTokenURI = newValue;
     }
 
     function freezeBaseURI() external onlyOwner {
-        _baseURIFrozen = true;
+        baseURIFrozen = true;
     }
 
     // PUBLIC

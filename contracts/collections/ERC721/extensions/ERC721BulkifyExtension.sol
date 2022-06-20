@@ -11,6 +11,12 @@ interface ERC721BulkifyExtensionInterface {
         address to,
         uint256[] memory tokenIds
     ) external;
+
+    function transferFromBulk(
+        address[] memory from,
+        address[] memory to,
+        uint256[] memory tokenIds
+    ) external;
 }
 
 /**
@@ -50,6 +56,23 @@ abstract contract ERC721BulkifyExtension is
         for (uint256 i = 0; i < tokenIds.length; i++) {
             require(_isApprovedOrOwner(_msgSender(), tokenIds[i]), "NOT_OWNER");
             _transfer(from, to, tokenIds[i]);
+        }
+    }
+
+    /**
+     * Useful for transferring multiple tokens from/to multiple addresses.
+     */
+    function transferFromBulk(
+        address[] memory from,
+        address[] memory to,
+        uint256[] memory tokenIds
+    ) public virtual {
+        require(from.length == to.length, "FROM_TO_LENGTH_MISMATCH");
+        require(from.length == tokenIds.length, "FROM_TOKEN_LENGTH_MISMATCH");
+
+        for (uint256 i = 0; i < tokenIds.length; i++) {
+            require(_isApprovedOrOwner(_msgSender(), tokenIds[i]), "NOT_OWNER");
+            _transfer(from[i], to[i], tokenIds[i]);
         }
     }
 }

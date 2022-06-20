@@ -24,6 +24,20 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       },
     ]
   );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC721ShareholderDistributor",
+    [
+      {
+        ticketToken: "0x0000000000000000000000000000000000000000",
+        tokenIds: [],
+        shares: [],
+        lockedUntilTimestamp: 0,
+      },
+    ]
+  );
 };
 
 export default func;

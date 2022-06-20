@@ -2,15 +2,38 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
-abstract contract ERC721BaseDistributor is Ownable, ReentrancyGuard {
+interface ERC721SingleTokenDistributorInterface {
+    function claim(uint256 ticketTokenId) external;
+
+    function claimBulk(uint256[] calldata ticketTokenIds) external;
+
+    function streamTotalSupply() external view returns (uint256);
+
+    function getTotalClaimedBulk(uint256[] calldata ticketTokenIds)
+        external
+        view
+        returns (uint256);
+
+    function calculateClaimableAmount(uint256 ticketTokenId)
+        external
+        view
+        returns (uint256 claimableAmount);
+}
+
+abstract contract ERC721SingleTokenDistributor is
+    OwnableUpgradeable,
+    ReentrancyGuard,
+    ERC721SingleTokenDistributorInterface
+{
     using Address for address;
     using Address for address payable;
 
@@ -39,7 +62,22 @@ abstract contract ERC721BaseDistributor is Ownable, ReentrancyGuard {
         uint256 releasedAmount
     );
 
-    function _setup(address _claimToken, address _ticketToken) internal {
+    function __ERC721SingleTokenDistributor_init(
+        address _claimToken,
+        address _ticketToken
+    ) internal onlyInitializing {
+        __Context_init();
+        __Ownable_init();
+        __ERC721SingleTokenDistributor_init_unchained(
+            _claimToken,
+            _ticketToken
+        );
+    }
+
+    function __ERC721SingleTokenDistributor_init_unchained(
+        address _claimToken,
+        address _ticketToken
+    ) internal onlyInitializing {
         claimToken = _claimToken;
         ticketToken = _ticketToken;
     }
@@ -48,7 +86,7 @@ abstract contract ERC721BaseDistributor is Ownable, ReentrancyGuard {
 
     receive() external payable {
         require(msg.value > 0);
-        require(ticketToken == address(0));
+        require(claimToken == address(0));
     }
 
     function claim(uint256 ticketTokenId) public nonReentrant {

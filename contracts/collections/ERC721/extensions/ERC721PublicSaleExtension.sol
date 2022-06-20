@@ -19,7 +19,7 @@ interface ERC721PublicSaleExtensionInterface {
 }
 
 /**
- * @dev Extension to provide pre-sale and public-sale capabilities for colelctors to mint for a specific price.
+ * @dev Extension to provide pre-sale and public-sale capabilities for collectors to mint for a specific price.
  */
 abstract contract ERC721PublicSaleExtension is
     Ownable,
@@ -72,7 +72,7 @@ abstract contract ERC721PublicSaleExtension is
         payable
         nonReentrant
     {
-        require(publicSaleStatus, "PRE_SALE_NOT_ACTIVE");
+        require(publicSaleStatus, "PUBLIC_SALE_NOT_ACTIVE");
         require(count <= publicSaleMaxMintPerTx, "PUBLIC_SALE_LIMIT");
         require(publicSalePrice * count <= msg.value, "INSUFFICIENT_AMOUNT");
 

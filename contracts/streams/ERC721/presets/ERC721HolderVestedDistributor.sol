@@ -5,17 +5,15 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
-import "../core/ERC721BaseDistributor.sol";
+import "../core/ERC721SingleTokenDistributor.sol";
 
 contract ERC721HolderVestedDistributor is
-    Ownable,
     Initializable,
-    ERC721BaseDistributor
+    OwnableUpgradeable,
+    ERC721SingleTokenDistributor
 {
     using Address for address;
     using Address for address payable;
@@ -41,16 +39,17 @@ contract ERC721HolderVestedDistributor is
     /* INTERNAL */
 
     constructor(Config memory config) {
-        initialize(msg.sender, config);
+        initialize(config);
     }
 
     // To enable factory cloning
-    function initialize(address owner, Config memory config)
-        public
-        initializer
-    {
-        Ownable._transferOwnership(owner);
-        ERC721BaseDistributor._setup(config.claimToken, config.ticketToken);
+    function initialize(Config memory config) public initializer {
+        __Context_init();
+        __Ownable_init();
+        __ERC721SingleTokenDistributor_init(
+            config.claimToken,
+            config.ticketToken
+        );
 
         vestingRate = config.vestingRate;
         vestingTimeUnit = config.vestingTimeUnit;
