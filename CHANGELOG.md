@@ -1,3 +1,15 @@
+## [1.9.0](https://github.com/0xflair/evm-contracts/compare/v1.8.12...v1.9.0) (2022-06-20)
+
+
+### Features
+
+* add NFT holder split distributor preset ([#5](https://github.com/0xflair/evm-contracts/issues/5)) ([891e077](https://github.com/0xflair/evm-contracts/commit/891e07727f9f07c5ffc0126327ca135466eaac39))
+
+
+### Bug Fixes
+
+* move upstream contracts to deps ([ed64073](https://github.com/0xflair/evm-contracts/commit/ed640736663fa60984f7d30e5833c7a21f5810ce))
+
 ### [1.8.12](https://github.com/0xflair/evm-contracts/compare/v1.8.11...v1.8.12) (2022-06-07)
 
 
