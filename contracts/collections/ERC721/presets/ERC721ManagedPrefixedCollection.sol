@@ -11,6 +11,7 @@ import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721OwnerManagedExtension.sol";
+import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
 
 contract ERC721ManagedPrefixedCollection is
@@ -23,6 +24,7 @@ contract ERC721ManagedPrefixedCollection is
     ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension,
     ERC721OwnerManagedExtension,
+    ERC721RoyaltyExtension,
     ERC721BulkifyExtension
 {
     struct Config {
@@ -34,6 +36,8 @@ contract ERC721ManagedPrefixedCollection is
         address[] initialHolders;
         uint256[] initialAmounts;
         uint256 maxSupply;
+        address defaultRoyaltyAddress;
+        uint16 defaultRoyaltyBps;
         address trustedForwarder;
     }
 
@@ -42,6 +46,10 @@ contract ERC721ManagedPrefixedCollection is
         ERC721CollectionMetadataExtension(config.contractURI)
         ERC721PrefixedMetadataExtension(config.placeholderURI)
         ERC721AutoIdMinterExtension(maxSupply)
+        ERC721RoyaltyExtension(
+            config.defaultRoyaltyAddress,
+            config.defaultRoyaltyBps
+        )
         ERC2771ContextOwnable(config.trustedForwarder)
     {
         initialize(config);
@@ -105,6 +113,7 @@ contract ERC721ManagedPrefixedCollection is
             ERC721OwnerMintExtension,
             ERC721OwnerManagedExtension,
             ERC721PrefixedMetadataExtension,
+            ERC721RoyaltyExtension,
             ERC721BulkifyExtension
         )
         returns (bool)

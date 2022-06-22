@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { expect } from "chai";
-import { ethers, getUnnamedAccounts, getChainId } from "hardhat";
+import { ethers, getUnnamedAccounts } from "hardhat";
 import { ERC721ManagedPrefixedCollection__factory } from "../../../typechain/factories/ERC721ManagedPrefixedCollection__factory";
 
 describe("ERC721ManagedPrefixedCollection", function () {
@@ -18,6 +18,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
       placeholderURI: "ipfs://yyyyy",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 1000,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA, userB],
       initialAmounts: [2, 1],
@@ -41,6 +43,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
       placeholderURI: "ipfs://yyyyy",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 1000,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [],
       initialAmounts: [],
@@ -48,7 +52,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
 
     await collection.deployed();
 
-    expect(await collection.tokenURI('11')).to.eq(`ipfs://xxxxx/11`);
+    expect(await collection.tokenURI("11")).to.eq(`ipfs://xxxxx/11`);
   });
 
   it("should use the placeholder URI when baseURI is not provided on deployment", async function () {
@@ -63,6 +67,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
       placeholderURI: "ipfs://yyyyy",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 1000,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [],
       initialAmounts: [],
@@ -70,7 +76,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
 
     await collection.deployed();
 
-    expect(await collection.tokenURI('11')).to.eq(`ipfs://yyyyy`);
+    expect(await collection.tokenURI("11")).to.eq(`ipfs://yyyyy`);
   });
 
   it("should allow contract owner to transfer when collection is managed", async function () {
@@ -87,6 +93,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
       placeholderURI: "ipfs://yyyyy",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 1000,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA],
       initialAmounts: [1],
@@ -95,7 +103,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
     await collection.deployed();
     await collection.transferFrom(userA, userB, 1);
 
-    expect(await collection.ownerOf('1')).to.eq(userB);
+    expect(await collection.ownerOf("1")).to.eq(userB);
   });
 
   it("should reject contract owner to transfer when collection is not managed anymore", async function () {
@@ -112,19 +120,21 @@ describe("ERC721ManagedPrefixedCollection", function () {
       placeholderURI: "ipfs://yyyyy",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
+      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+      defaultRoyaltyBps: 1000,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA],
       initialAmounts: [1],
     });
 
     await collection.deployed();
-    
+
     await collection.revokeManagementPower();
 
-    await expect(
-      collection.transferFrom(userA, userB, 1)
-    ).to.be.revertedWith("ERC721: transfer caller is not owner nor approved");
+    await expect(collection.transferFrom(userA, userB, 1)).to.be.revertedWith(
+      "ERC721: transfer caller is not owner nor approved"
+    );
 
-    expect(await collection.ownerOf('1')).to.eq(userA);
+    expect(await collection.ownerOf("1")).to.eq(userA);
   });
 });
