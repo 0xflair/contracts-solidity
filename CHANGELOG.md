@@ -1,3 +1,10 @@
+### [1.9.1](https://github.com/0xflair/evm-contracts/compare/v1.9.0...v1.9.1) (2022-06-22)
+
+
+### Bug Fixes
+
+* add royalty extension to managed prefix collection ([#6](https://github.com/0xflair/evm-contracts/issues/6)) ([e90611f](https://github.com/0xflair/evm-contracts/commit/e90611fec3d8daa2fc018fb12a34e9aeeb18c1ea))
+
 ## [1.9.0](https://github.com/0xflair/evm-contracts/compare/v1.8.12...v1.9.0) (2022-06-20)
 
 
