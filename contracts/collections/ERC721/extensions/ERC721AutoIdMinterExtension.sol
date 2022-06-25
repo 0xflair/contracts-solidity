@@ -28,7 +28,7 @@ abstract contract ERC721AutoIdMinterExtension is
 
     uint256 public maxSupply;
 
-    bool internal _maxSupplyFrozen;
+    bool public maxSupplyFrozen;
     uint256 internal _currentTokenId = 0;
 
     constructor(uint256 _maxSupply) {
@@ -43,12 +43,12 @@ abstract contract ERC721AutoIdMinterExtension is
     // ADMIN
 
     function setMaxSupply(uint256 newValue) external onlyOwner {
-        require(!_maxSupplyFrozen, "BASE_URI_FROZEN");
+        require(!maxSupplyFrozen, "BASE_URI_FROZEN");
         maxSupply = newValue;
     }
 
     function freezeMaxSupply() external onlyOwner {
-        _maxSupplyFrozen = true;
+        maxSupplyFrozen = true;
     }
 
     // PUBLIC
