@@ -1,3 +1,10 @@
+### [1.9.2](https://github.com/0xflair/evm-contracts/compare/v1.9.1...v1.9.2) (2022-06-25)
+
+
+### Bug Fixes
+
+* expose current state of max supply publicly ([2cb2242](https://github.com/0xflair/evm-contracts/commit/2cb2242ea3247a8005ddfd2e66df046db1deb1e2))
+
 ### [1.9.1](https://github.com/0xflair/evm-contracts/compare/v1.9.0...v1.9.1) (2022-06-22)
 
 
