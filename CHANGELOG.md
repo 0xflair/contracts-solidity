@@ -1,3 +1,10 @@
+### [1.10.1](https://github.com/0xflair/evm-contracts/compare/v1.10.0...v1.10.1) (2022-06-26)
+
+
+### Bug Fixes
+
+* proper returning for share values ([2e3faac](https://github.com/0xflair/evm-contracts/commit/2e3faac4fc8e3fd61175813cd7765fb8afb99a38))
+
 ## [1.10.0](https://github.com/0xflair/evm-contracts/compare/v1.9.2...v1.10.0) (2022-06-26)
 
 ### [1.9.2](https://github.com/0xflair/evm-contracts/compare/v1.9.1...v1.9.2) (2022-06-25)
