@@ -86,11 +86,15 @@ contract ERC721ShareBasedDistributor is
     function getShares(uint256[] memory _tokenIds)
         public
         view
-        returns (uint256[] memory _shares)
+        returns (uint256[] memory)
     {
+        uint256[] memory _shares = new uint256[](_tokenIds.length);
+
         for (uint256 i = 0; i < _shares.length; i++) {
             _shares[i] = shares[_tokenIds[i]];
         }
+
+        return _shares;
     }
 
     // PUBLIC
