@@ -1,3 +1,5 @@
+## [1.10.0](https://github.com/0xflair/evm-contracts/compare/v1.9.2...v1.10.0) (2022-06-26)
+
 ### [1.9.2](https://github.com/0xflair/evm-contracts/compare/v1.9.1...v1.9.2) (2022-06-25)
 
 
