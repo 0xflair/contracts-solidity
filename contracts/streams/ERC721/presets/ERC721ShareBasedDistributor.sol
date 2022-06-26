@@ -13,7 +13,7 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 import "../core/ERC721MultiTokenDistributor.sol";
 
-contract ERC721ShareholderDistributor is
+contract ERC721ShareBasedDistributor is
     Initializable,
     OwnableUpgradeable,
     ERC721MultiTokenDistributor
@@ -23,7 +23,7 @@ contract ERC721ShareholderDistributor is
     using Address for address;
     using Address for address payable;
 
-    string public constant name = "ERC721 Shareholder Distributor";
+    string public constant name = "ERC721 Share-based Distributor";
 
     string public constant version = "0.1";
 
@@ -40,7 +40,7 @@ contract ERC721ShareholderDistributor is
     // Map of ticket token ID -> share of the stream
     mapping(uint256 => uint256) public shares;
 
-    // Locks changing the shareholder table until this timestamp is reached
+    // Locks changing the shares table until this timestamp is reached
     uint256 lockedUntilTimestamp;
 
     /* INTERNAL */
@@ -80,6 +80,16 @@ contract ERC721ShareholderDistributor is
 
         for (uint256 i = 0; i < _shares.length; i++) {
             _updateShares(_tokenIds[i], _shares[i]);
+        }
+    }
+
+    function getShares(uint256[] memory _tokenIds)
+        public
+        view
+        returns (uint256[] memory _shares)
+    {
+        for (uint256 i = 0; i < _shares.length; i++) {
+            _shares[i] = shares[_tokenIds[i]];
         }
     }
 

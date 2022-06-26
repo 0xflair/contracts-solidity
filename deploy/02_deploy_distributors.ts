@@ -28,7 +28,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC721ShareholderDistributor",
+    "ERC721ShareBasedDistributor",
     [
       {
         ticketToken: "0x0000000000000000000000000000000000000000",

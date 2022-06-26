@@ -27,8 +27,8 @@ abstract contract ERC721AutoIdMinterExtension is
     using SafeMath for uint256;
 
     uint256 public maxSupply;
-
     bool public maxSupplyFrozen;
+
     uint256 internal _currentTokenId = 0;
 
     constructor(uint256 _maxSupply) {

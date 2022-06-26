@@ -21,6 +21,22 @@
         "preset": "conventionalcommits",
         "releaseRules": [
           {
+            "type": "minor",
+            "release": "minor"
+          },
+          {
+            "type": "major",
+            "release": "major"
+          },
+          {
+            "type": "patch",
+            "release": "patch"
+          },
+          {
+            "type": "chore",
+            "release": "patch"
+          },
+          {
             "type": "docs",
             "release": "patch"
           },
