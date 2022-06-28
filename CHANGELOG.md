@@ -1,3 +1,10 @@
+## [1.11.0](https://github.com/0xflair/evm-contracts/compare/v1.10.1...v1.11.0) (2022-06-28)
+
+
+### Features
+
+* extract stream extensions and create various presets ([#7](https://github.com/0xflair/evm-contracts/issues/7)) ([555db38](https://github.com/0xflair/evm-contracts/commit/555db385b0e3e90909339aaec5a6f2954f4724ca))
+
 ### [1.10.1](https://github.com/0xflair/evm-contracts/compare/v1.10.0...v1.10.1) (2022-06-26)
 
 
