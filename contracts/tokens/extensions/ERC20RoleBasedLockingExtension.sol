@@ -33,7 +33,7 @@ abstract contract ERC20RoleBasedLockingExtension is
         _grantRole(TRANSFER_ROLE, msg.sender);
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function lockForAll() external {
         require(hasRole(DEFAULT_ADMIN_ROLE, _msgSender()), "NOT_ADMIN");
@@ -47,7 +47,7 @@ abstract contract ERC20RoleBasedLockingExtension is
         _grantRole(TRANSFER_ROLE, address(0));
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function canTransfer(address operator)
         external

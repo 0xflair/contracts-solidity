@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 
-interface ERC721FreeMintExtensionInterface {
+interface IERC721FreeMintExtension {
     function mintFree(address to, uint256 count) external;
 }
 
@@ -15,15 +15,15 @@ interface ERC721FreeMintExtensionInterface {
  * @dev Extension to allow anyone to mint directly without paying.
  */
 abstract contract ERC721FreeMintExtension is
+    IERC721FreeMintExtension,
     ERC165Storage,
-    ERC721AutoIdMinterExtension,
-    ERC721FreeMintExtensionInterface
+    ERC721AutoIdMinterExtension
 {
     constructor() {
-        _registerInterface(type(ERC721FreeMintExtensionInterface).interfaceId);
+        _registerInterface(type(IERC721FreeMintExtension).interfaceId);
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

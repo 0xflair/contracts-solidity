@@ -8,7 +8,7 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "../../../misc/opensea/ProxyRegistry.sol";
 
-interface ERC721OpenSeaNoGasExtensionInterface {
+interface IERC721OpenSeaNoGasExtension {
     function setOpenSeaProxyRegistryAddress(address addr) external;
 
     function setOpenSeaExchangeAddress(address addr) external;
@@ -23,10 +23,10 @@ interface ERC721OpenSeaNoGasExtensionInterface {
  * @dev Extension that automatically approves OpenSea to avoid having users to "Approve" your collection before trading.
  */
 abstract contract ERC721OpenSeaNoGasExtension is
+    IERC721OpenSeaNoGasExtension,
     Ownable,
     ERC165Storage,
-    ERC721,
-    ERC721OpenSeaNoGasExtensionInterface
+    ERC721
 {
     address internal _openSeaProxyRegistryAddress;
     address private _openSeaExchangeAddress;
@@ -35,15 +35,13 @@ abstract contract ERC721OpenSeaNoGasExtension is
         address openSeaProxyRegistryAddress,
         address openSeaExchangeAddress
     ) {
+        _registerInterface(type(IERC721OpenSeaNoGasExtension).interfaceId);
+
         _openSeaProxyRegistryAddress = openSeaProxyRegistryAddress;
         _openSeaExchangeAddress = openSeaExchangeAddress;
-
-        _registerInterface(
-            type(ERC721OpenSeaNoGasExtensionInterface).interfaceId
-        );
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function setOpenSeaProxyRegistryAddress(address addr) external onlyOwner {
         _openSeaProxyRegistryAddress = addr;
@@ -53,7 +51,7 @@ abstract contract ERC721OpenSeaNoGasExtension is
         _openSeaExchangeAddress = addr;
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public
@@ -72,7 +70,7 @@ abstract contract ERC721OpenSeaNoGasExtension is
         public
         view
         virtual
-        override(ERC721, ERC721OpenSeaNoGasExtensionInterface)
+        override(ERC721, IERC721OpenSeaNoGasExtension)
         returns (bool)
     {
         if (_openSeaProxyRegistryAddress != address(0)) {

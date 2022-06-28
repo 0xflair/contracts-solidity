@@ -33,7 +33,7 @@ contract ERC20LockableToken is
         _grantRole(MINTER_ROLE, msg.sender);
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function pause() public onlyRole(PAUSER_ROLE) {
         _pause();
@@ -47,7 +47,7 @@ contract ERC20LockableToken is
         _mint(to, amount);
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

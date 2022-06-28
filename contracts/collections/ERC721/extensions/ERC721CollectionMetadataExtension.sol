@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol";
 
-interface ERC721CollectionMetadataExtensionInterface {
+interface IERC721CollectionMetadataExtension {
     function setContractURI(string memory newValue) external;
 
     function contractURI() external view returns (string memory);
@@ -16,28 +16,28 @@ interface ERC721CollectionMetadataExtensionInterface {
  * @dev Extension to allow configuring contract-level collection metadata URI.
  */
 abstract contract ERC721CollectionMetadataExtension is
+    IERC721CollectionMetadataExtension,
     Ownable,
-    ERC165Storage,
-    ERC721CollectionMetadataExtensionInterface
+    ERC165Storage
 {
     string private _contractURI;
 
     constructor(string memory contractURI_) {
-        _contractURI = contractURI_;
-
         _registerInterface(
-            type(ERC721CollectionMetadataExtensionInterface).interfaceId
+            type(IERC721CollectionMetadataExtension).interfaceId
         );
         _registerInterface(type(IERC721Metadata).interfaceId);
+
+        _contractURI = contractURI_;
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function setContractURI(string memory newValue) external onlyOwner {
         _contractURI = newValue;
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

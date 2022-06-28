@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721PrefixedMetadataExtensionInterface {
+interface IERC721PrefixedMetadataExtension {
     function setPlaceholderURI(string memory newValue) external;
 
     function setBaseURI(string memory newValue) external;
@@ -28,10 +28,10 @@ interface ERC721PrefixedMetadataExtensionInterface {
  *      It also allows configuring a fallback "placeholder" URI when prefix is not set yet.
  */
 abstract contract ERC721PrefixedMetadataExtension is
+    IERC721PrefixedMetadataExtension,
     Ownable,
     ERC165Storage,
-    ERC721,
-    ERC721PrefixedMetadataExtensionInterface
+    ERC721
 {
     string internal _placeholderURI;
     string internal _baseTokenURI;
@@ -39,14 +39,12 @@ abstract contract ERC721PrefixedMetadataExtension is
     bool public baseURIFrozen;
 
     constructor(string memory placeholderURI_) {
-        _placeholderURI = placeholderURI_;
+        _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
 
-        _registerInterface(
-            type(ERC721PrefixedMetadataExtensionInterface).interfaceId
-        );
+        _placeholderURI = placeholderURI_;
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function setPlaceholderURI(string memory newValue) external onlyOwner {
         _placeholderURI = newValue;
@@ -61,7 +59,7 @@ abstract contract ERC721PrefixedMetadataExtension is
         baseURIFrozen = true;
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public
@@ -85,7 +83,7 @@ abstract contract ERC721PrefixedMetadataExtension is
         public
         view
         virtual
-        override(ERC721, ERC721PrefixedMetadataExtensionInterface)
+        override(ERC721, IERC721PrefixedMetadataExtension)
         returns (string memory)
     {
         return

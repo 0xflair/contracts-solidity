@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721AutoIdMinterExtensionInterface {
+interface IERC721AutoIdMinterExtension {
     function setMaxSupply(uint256 newValue) external;
 
     function freezeMaxSupply() external;
@@ -19,10 +19,10 @@ interface ERC721AutoIdMinterExtensionInterface {
  * @dev Extension to add minting capability with an auto incremented ID for each token and a maximum supply setting.
  */
 abstract contract ERC721AutoIdMinterExtension is
+    IERC721AutoIdMinterExtension,
     Ownable,
     ERC165Storage,
-    ERC721,
-    ERC721AutoIdMinterExtensionInterface
+    ERC721
 {
     using SafeMath for uint256;
 
@@ -32,15 +32,13 @@ abstract contract ERC721AutoIdMinterExtension is
     uint256 internal _currentTokenId = 0;
 
     constructor(uint256 _maxSupply) {
-        maxSupply = _maxSupply;
-
-        _registerInterface(
-            type(ERC721AutoIdMinterExtensionInterface).interfaceId
-        );
+        _registerInterface(type(IERC721AutoIdMinterExtension).interfaceId);
         _registerInterface(type(IERC721).interfaceId);
+
+        maxSupply = _maxSupply;
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function setMaxSupply(uint256 newValue) external onlyOwner {
         require(!maxSupplyFrozen, "BASE_URI_FROZEN");
@@ -51,7 +49,7 @@ abstract contract ERC721AutoIdMinterExtension is
         maxSupplyFrozen = true;
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public
@@ -67,7 +65,7 @@ abstract contract ERC721AutoIdMinterExtension is
         return _currentTokenId;
     }
 
-    // INTERNAL
+    /* INTERNAL */
 
     function _mintTo(address to, uint256 count) internal {
         require(totalSupply() + count <= maxSupply, "EXCEEDS_MAX_SUPPLY");

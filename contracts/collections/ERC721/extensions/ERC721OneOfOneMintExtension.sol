@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "./ERC721AutoIdMinterExtension.sol";
 import "./ERC721PerTokenMetadataExtension.sol";
 
-interface ERC721OneOfOneMintExtensionInterface {
+interface IERC721OneOfOneMintExtension {
     function mintWithTokenURIsByOwner(
         address to,
         uint256 count,
@@ -29,22 +29,20 @@ interface ERC721OneOfOneMintExtensionInterface {
  * @dev Extension to allow owner to mint 1-of-1 NFTs by providing dedicated metadata URI for each token.
  */
 abstract contract ERC721OneOfOneMintExtension is
+    IERC721OneOfOneMintExtension,
     Ownable,
     ERC165Storage,
     AccessControl,
     ERC721AutoIdMinterExtension,
-    ERC721PerTokenMetadataExtension,
-    ERC721OneOfOneMintExtensionInterface
+    ERC721PerTokenMetadataExtension
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
     constructor() {
-        _registerInterface(
-            type(ERC721OneOfOneMintExtensionInterface).interfaceId
-        );
+        _registerInterface(type(IERC721OneOfOneMintExtension).interfaceId);
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function mintWithTokenURIsByOwner(
         address to,
@@ -72,7 +70,7 @@ abstract contract ERC721OneOfOneMintExtension is
         }
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public
@@ -93,7 +91,7 @@ abstract contract ERC721OneOfOneMintExtension is
         public
         view
         virtual
-        override(ERC721, ERC721URIStorage, ERC721OneOfOneMintExtensionInterface)
+        override(ERC721, ERC721URIStorage, IERC721OneOfOneMintExtension)
         returns (string memory)
     {
         return ERC721URIStorage.tokenURI(tokenId);

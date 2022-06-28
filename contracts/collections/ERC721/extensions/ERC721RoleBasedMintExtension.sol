@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 
-interface ERC721RoleBasedMintExtensionInterface {
+interface IERC721RoleBasedMintExtension {
     function mintByRole(address to, uint256 count) external;
 }
 
@@ -15,20 +15,18 @@ interface ERC721RoleBasedMintExtensionInterface {
  * @dev Extension to allow holders of a OpenZepplin-based role to mint directly.
  */
 abstract contract ERC721RoleBasedMintExtension is
+    IERC721RoleBasedMintExtension,
     ERC165Storage,
     ERC721AutoIdMinterExtension,
-    AccessControl,
-    ERC721RoleBasedMintExtensionInterface
+    AccessControl
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
     constructor() {
-        _registerInterface(
-            type(ERC721RoleBasedMintExtensionInterface).interfaceId
-        );
+        _registerInterface(type(IERC721RoleBasedMintExtension).interfaceId);
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function mintByRole(address to, uint256 count) external {
         require(hasRole(MINTER_ROLE, _msgSender()), "NOT_MINTER_ROLE");
@@ -36,7 +34,7 @@ abstract contract ERC721RoleBasedMintExtension is
         _mintTo(to, count);
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

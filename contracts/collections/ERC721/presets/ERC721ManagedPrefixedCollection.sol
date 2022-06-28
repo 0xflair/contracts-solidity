@@ -90,7 +90,7 @@ contract ERC721ManagedPrefixedCollection is
         return super._msgData();
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function isApprovedForAll(address owner, address operator)
         public

@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AutoIdMinterExtension.sol";
 
-interface ERC721OwnerManagedExtensionInterface {
+interface IERC721OwnerManagedExtension {
     function revokeManagementPower() external;
 }
 
@@ -15,26 +15,24 @@ interface ERC721OwnerManagedExtensionInterface {
  * @dev Extension to allow owner to transfer tokens on behalf of owners. Only useful for certain use-cases.
  */
 abstract contract ERC721OwnerManagedExtension is
+    IERC721OwnerManagedExtension,
     Ownable,
     ERC165Storage,
-    ERC721AutoIdMinterExtension,
-    ERC721OwnerManagedExtensionInterface
+    ERC721AutoIdMinterExtension
 {
     bool public managementPowerRevoked;
 
     constructor() {
-        _registerInterface(
-            type(ERC721OwnerManagedExtensionInterface).interfaceId
-        );
+        _registerInterface(type(IERC721OwnerManagedExtension).interfaceId);
     }
 
-    // ADMIN
+    /* ADMIN */
 
     function revokeManagementPower() external onlyOwner {
         managementPowerRevoked = true;
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     /**
      * Override isApprovedForAll to allow owner to transfer tokens.

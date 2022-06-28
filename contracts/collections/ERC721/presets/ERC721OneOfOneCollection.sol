@@ -87,7 +87,7 @@ contract ERC721OneOfOneCollection is
         return super._msgData();
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

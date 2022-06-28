@@ -99,7 +99,7 @@ contract ERC721FullFeaturedCollection is
         return super._msgData();
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public

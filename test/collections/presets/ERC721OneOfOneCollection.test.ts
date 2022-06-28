@@ -52,7 +52,7 @@ describe("ERC721OneOfOneCollection", function () {
     // ERC721
     expect(await collection.supportsInterface("0x80ac58cd")).to.be.equal(true);
 
-    // ERC721OneOfOneMintExtensionInterface
+    // IERC721OneOfOneMintExtension
     expect(await collection.supportsInterface("0x68b4edf8")).to.be.equal(true);
 
     // Rarible Royalty

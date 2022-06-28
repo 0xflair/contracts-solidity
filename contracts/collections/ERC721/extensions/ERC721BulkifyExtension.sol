@@ -5,7 +5,7 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
-interface ERC721BulkifyExtensionInterface {
+interface IERC721BulkifyExtension {
     function transferFromBulk(
         address from,
         address to,
@@ -23,16 +23,16 @@ interface ERC721BulkifyExtensionInterface {
  * @dev Extension to add bulk operations to a standard ERC721 contract.
  */
 abstract contract ERC721BulkifyExtension is
+    IERC721BulkifyExtension,
     Context,
     ERC165Storage,
-    ERC721,
-    ERC721BulkifyExtensionInterface
+    ERC721
 {
     constructor() {
-        _registerInterface(type(ERC721BulkifyExtensionInterface).interfaceId);
+        _registerInterface(type(IERC721BulkifyExtension).interfaceId);
     }
 
-    // PUBLIC
+    /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
         public
