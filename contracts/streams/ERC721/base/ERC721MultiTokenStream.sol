@@ -67,7 +67,7 @@ interface IERC721MultiTokenStream {
 
     // Calculate currently claimable amount for a specific ticket token ID and a specific claim token address
     // Pass 0x0000000000000000000000000000000000000000 as claim token to represent native currency
-    function claimableAmount(uint256 ticketTokenId, address claimToken)
+    function streamClaimableAmount(uint256 ticketTokenId, address claimToken)
         external
         view
         returns (uint256 claimableAmount);
@@ -165,7 +165,7 @@ abstract contract ERC721MultiTokenStream is
         _beforeClaim(ticketTokenId, claimToken);
 
         address owner = IERC721(ticketToken).ownerOf(ticketTokenId);
-        uint256 claimable = claimableAmount(ticketTokenId, claimToken);
+        uint256 claimable = streamClaimableAmount(ticketTokenId, claimToken);
         require(claimable > 0, "STREAM/NOTHING_TO_CLAIM");
 
         /* EFFECTS */
@@ -209,7 +209,10 @@ abstract contract ERC721MultiTokenStream is
             );
 
             /* EFFECTS */
-            uint256 claimable = claimableAmount(ticketTokenIds[i], claimToken);
+            uint256 claimable = streamClaimableAmount(
+                ticketTokenIds[i],
+                claimToken
+            );
 
             if (claimable > 0) {
                 entitlements[ticketTokenIds[i]][claimToken]
@@ -311,28 +314,28 @@ abstract contract ERC721MultiTokenStream is
         return claimed;
     }
 
-    function claimableAmount(
+    function streamClaimableAmount(
         uint256[] calldata ticketTokenIds,
         address claimToken
     ) public view returns (uint256) {
         uint256 claimable = 0;
 
         for (uint256 i = 0; i < ticketTokenIds.length; i++) {
-            claimable += claimableAmount(ticketTokenIds[i], claimToken);
+            claimable += streamClaimableAmount(ticketTokenIds[i], claimToken);
         }
 
         return claimable;
     }
 
-    function claimableAmount(uint256 ticketTokenId)
+    function streamClaimableAmount(uint256 ticketTokenId)
         public
         view
         returns (uint256)
     {
-        return claimableAmount(ticketTokenId, address(0));
+        return streamClaimableAmount(ticketTokenId, address(0));
     }
 
-    function claimableAmount(uint256 ticketTokenId, address claimToken)
+    function streamClaimableAmount(uint256 ticketTokenId, address claimToken)
         public
         view
         virtual
