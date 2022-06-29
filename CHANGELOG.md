@@ -1,3 +1,10 @@
+### [1.11.1](https://github.com/0xflair/evm-contracts/compare/v1.11.0...v1.11.1) (2022-06-29)
+
+
+### Bug Fixes
+
+* use consistent naming for methods ([#8](https://github.com/0xflair/evm-contracts/issues/8)) ([a4ee3dd](https://github.com/0xflair/evm-contracts/commit/a4ee3dd62d59a07431afcba04fee98c9a3bb52ef))
+
 ## [1.11.0](https://github.com/0xflair/evm-contracts/compare/v1.10.1...v1.11.0) (2022-06-28)
 
 
