@@ -1,3 +1,10 @@
+### [1.11.2](https://github.com/0xflair/evm-contracts/compare/v1.11.1...v1.11.2) (2022-06-29)
+
+
+### Bug Fixes
+
+* allow emissions to be indefinite ([#9](https://github.com/0xflair/evm-contracts/issues/9)) ([b3bee09](https://github.com/0xflair/evm-contracts/commit/b3bee0981c145bf73a9b759800d063e8e5575aa7))
+
 ### [1.11.1](https://github.com/0xflair/evm-contracts/compare/v1.11.0...v1.11.1) (2022-06-29)
 
 
