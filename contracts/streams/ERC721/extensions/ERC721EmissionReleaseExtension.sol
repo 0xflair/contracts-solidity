@@ -146,7 +146,7 @@ abstract contract ERC721EmissionReleaseExtension is
 
         if (block.timestamp < emissionStart) {
             return 0;
-        } else if (block.timestamp > emissionEnd) {
+        } else if (emissionEnd > 0 && block.timestamp > emissionEnd) {
             return releasedAmountUntil(emissionEnd);
         } else {
             return releasedAmountUntil(block.timestamp);
