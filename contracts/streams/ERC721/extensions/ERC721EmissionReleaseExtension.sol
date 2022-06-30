@@ -25,12 +25,12 @@ interface IERC721EmissionReleaseExtension {
 
     function setEmissionEnd(uint64 newValue) external;
 
-    function releasedAmountUntil(uint256 calcUntil)
+    function releasedAmountUntil(uint64 calcUntil)
         external
         view
         returns (uint256);
 
-    function emissionAmountUntil(uint256 calcUntil)
+    function emissionAmountUntil(uint64 calcUntil)
         external
         view
         returns (uint256);
@@ -114,7 +114,7 @@ abstract contract ERC721EmissionReleaseExtension is
         return true;
     }
 
-    function releasedAmountUntil(uint256 calcUntil)
+    function releasedAmountUntil(uint64 calcUntil)
         public
         view
         returns (uint256)
@@ -125,7 +125,7 @@ abstract contract ERC721EmissionReleaseExtension is
             ((calcUntil - emissionStart) / emissionTimeUnit);
     }
 
-    function emissionAmountUntil(uint256 calcUntil)
+    function emissionAmountUntil(uint64 calcUntil)
         public
         view
         returns (uint256)
@@ -149,7 +149,7 @@ abstract contract ERC721EmissionReleaseExtension is
         } else if (emissionEnd > 0 && block.timestamp > emissionEnd) {
             return releasedAmountUntil(emissionEnd);
         } else {
-            return releasedAmountUntil(block.timestamp);
+            return releasedAmountUntil(uint64(block.timestamp));
         }
     }
 
