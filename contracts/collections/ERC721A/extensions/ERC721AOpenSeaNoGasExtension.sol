@@ -14,7 +14,7 @@ import {IERC721OpenSeaNoGasExtension} from "../../ERC721/extensions/ERC721OpenSe
 /**
  * @dev Extension that automatically approves OpenSea to avoid having users to "Approve" your collection before trading.
  */
-abstract contract ERC721OpenSeaNoGasExtension is
+abstract contract ERC721AOpenSeaNoGasExtension is
     IERC721OpenSeaNoGasExtension,
     Ownable,
     ERC165Storage,

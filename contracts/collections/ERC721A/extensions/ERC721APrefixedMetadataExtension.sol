@@ -17,7 +17,7 @@ import {IERC721PrefixedMetadataExtension} from "../../ERC721/extensions/ERC721Pr
  *      therefore on tokenURI() token's ID will be appended to the base URI.
  *      It also allows configuring a fallback "placeholder" URI when prefix is not set yet.
  */
-abstract contract ERC721PrefixedMetadataExtension is
+abstract contract ERC721APrefixedMetadataExtension is
     IERC721PrefixedMetadataExtension,
     Ownable,
     ERC165Storage,

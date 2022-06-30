@@ -12,7 +12,7 @@ import {IERC721RoleBasedMintExtension} from "../../ERC721/extensions/ERC721RoleB
 /**
  * @dev Extension to allow holders of a OpenZepplin-based role to mint directly.
  */
-abstract contract ERC721RoleBasedMintExtension is
+abstract contract ERC721ARoleBasedMintExtension is
     IERC721RoleBasedMintExtension,
     ERC165Storage,
     ERC721AMinterExtension,

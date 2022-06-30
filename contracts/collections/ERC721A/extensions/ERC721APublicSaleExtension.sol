@@ -13,7 +13,7 @@ import {IERC721PublicSaleExtension} from "../../ERC721/extensions/ERC721PublicSa
 /**
  * @dev Extension to provide pre-sale and public-sale capabilities for collectors to mint for a specific price.
  */
-abstract contract ERC721PublicSaleExtension is
+abstract contract ERC721APublicSaleExtension is
     IERC721PublicSaleExtension,
     Ownable,
     ERC165Storage,

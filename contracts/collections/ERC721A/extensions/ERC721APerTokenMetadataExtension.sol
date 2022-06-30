@@ -15,7 +15,7 @@ import {IERC721PerTokenMetadataExtension} from "../../ERC721/extensions/ERC721Pe
  *      In this extension each token will have a different independent token URI set by contract owner.
  *      To enable true self-custody for token owners, an admin can freeze URIs using a token ID pointer that can only be increased.
  */
-abstract contract ERC721PerTokenMetadataExtension is
+abstract contract ERC721APerTokenMetadataExtension is
     IERC721PerTokenMetadataExtension,
     Ownable,
     ERC165Storage,

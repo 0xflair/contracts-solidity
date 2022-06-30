@@ -12,7 +12,7 @@ import {IERC721OwnerManagedExtension} from "../../ERC721/extensions/ERC721OwnerM
 /**
  * @dev Extension to allow owner to transfer tokens on behalf of owners. Only useful for certain use-cases.
  */
-abstract contract ERC721OwnerManagedExtension is
+abstract contract ERC721AOwnerManagedExtension is
     IERC721OwnerManagedExtension,
     Ownable,
     ERC165Storage,

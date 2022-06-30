@@ -7,25 +7,18 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AMinterExtension.sol";
 
-import {IERC721OwnerMintExtension} from "../../ERC721/extensions/ERC721OwnerMintExtension.sol";
+import {IERC721FreeMintExtension} from "../../ERC721/extensions/ERC721FreeMintExtension.sol";
 
 /**
- * @dev Extension to allow owner to mint directly without paying.
+ * @dev Extension to allow anyone to mint directly without paying.
  */
-abstract contract ERC721OwnerMintExtension is
-    IERC721OwnerMintExtension,
-    Ownable,
+abstract contract ERC721AFreeMintExtension is
+    IERC721FreeMintExtension,
     ERC165Storage,
     ERC721AMinterExtension
 {
     constructor() {
-        _registerInterface(type(IERC721OwnerMintExtension).interfaceId);
-    }
-
-    /* ADMIN */
-
-    function mintByOwner(address to, uint256 count) external onlyOwner {
-        _mintTo(to, count);
+        _registerInterface(type(IERC721FreeMintExtension).interfaceId);
     }
 
     /* PUBLIC */
@@ -38,5 +31,9 @@ abstract contract ERC721OwnerMintExtension is
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
+    }
+
+    function mintFree(address to, uint256 count) external {
+        _mintTo(to, count);
     }
 }

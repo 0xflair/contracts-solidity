@@ -7,20 +7,20 @@ import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "./ERC721AMinterExtension.sol";
-import "./ERC721PerTokenMetadataExtension.sol";
+import "./ERC721APerTokenMetadataExtension.sol";
 
 import {IERC721OneOfOneMintExtension} from "../../ERC721/extensions/ERC721OneOfOneMintExtension.sol";
 
 /**
  * @dev Extension to allow owner to mint 1-of-1 NFTs by providing dedicated metadata URI for each token.
  */
-abstract contract ERC721OneOfOneMintExtension is
+abstract contract ERC721AOneOfOneMintExtension is
     IERC721OneOfOneMintExtension,
     Ownable,
     ERC165Storage,
     AccessControl,
     ERC721AMinterExtension,
-    ERC721PerTokenMetadataExtension
+    ERC721APerTokenMetadataExtension
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
@@ -66,7 +66,7 @@ abstract contract ERC721OneOfOneMintExtension is
             ERC165Storage,
             AccessControl,
             ERC721AMinterExtension,
-            ERC721PerTokenMetadataExtension
+            ERC721APerTokenMetadataExtension
         )
         returns (bool)
     {
@@ -79,19 +79,19 @@ abstract contract ERC721OneOfOneMintExtension is
         virtual
         override(
             ERC721A,
-            ERC721PerTokenMetadataExtension,
+            ERC721APerTokenMetadataExtension,
             IERC721OneOfOneMintExtension
         )
         returns (string memory)
     {
-        return ERC721PerTokenMetadataExtension.tokenURI(tokenId);
+        return ERC721APerTokenMetadataExtension.tokenURI(tokenId);
     }
 
     function _burn(uint256 tokenId)
         internal
         virtual
-        override(ERC721A, ERC721PerTokenMetadataExtension)
+        override(ERC721A, ERC721APerTokenMetadataExtension)
     {
-        return ERC721PerTokenMetadataExtension._burn(tokenId);
+        return ERC721APerTokenMetadataExtension._burn(tokenId);
     }
 }

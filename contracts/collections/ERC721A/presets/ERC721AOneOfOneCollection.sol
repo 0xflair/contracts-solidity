@@ -3,16 +3,15 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../../ERC721/extensions/ERC721CollectionMetadataExtension.sol";
 import "../../ERC721/extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
-import "../extensions/ERC721PerTokenMetadataExtension.sol";
-import "../extensions/ERC721OneOfOneMintExtension.sol";
-import "../extensions/ERC721OwnerMintExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasExtension.sol";
+import "../extensions/ERC721APerTokenMetadataExtension.sol";
+import "../extensions/ERC721AOneOfOneMintExtension.sol";
+import "../extensions/ERC721AOwnerMintExtension.sol";
+import "../extensions/ERC721AOpenSeaNoGasExtension.sol";
 
 contract ERC721AOneOfOneCollection is
     Ownable,
@@ -21,11 +20,11 @@ contract ERC721AOneOfOneCollection is
     ERC721A,
     ERC721AMinterExtension,
     ERC721CollectionMetadataExtension,
-    ERC721OwnerMintExtension,
-    ERC721PerTokenMetadataExtension,
-    ERC721OneOfOneMintExtension,
+    ERC721AOwnerMintExtension,
+    ERC721APerTokenMetadataExtension,
+    ERC721AOneOfOneMintExtension,
     ERC721RoyaltyExtension,
-    ERC721OpenSeaNoGasExtension
+    ERC721AOpenSeaNoGasExtension
 {
     struct Config {
         string name;
@@ -42,14 +41,14 @@ contract ERC721AOneOfOneCollection is
     constructor(Config memory config)
         ERC721A(config.name, config.symbol)
         ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721PerTokenMetadataExtension()
-        ERC721OneOfOneMintExtension()
+        ERC721APerTokenMetadataExtension()
+        ERC721AOneOfOneMintExtension()
         ERC721AMinterExtension(config.maxSupply)
         ERC721RoyaltyExtension(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
         )
-        ERC721OpenSeaNoGasExtension(
+        ERC721AOpenSeaNoGasExtension(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
         )
@@ -64,11 +63,11 @@ contract ERC721AOneOfOneCollection is
         virtual
         override(
             ERC721A,
-            ERC721PerTokenMetadataExtension,
-            ERC721OneOfOneMintExtension
+            ERC721APerTokenMetadataExtension,
+            ERC721AOneOfOneMintExtension
         )
     {
-        return ERC721OneOfOneMintExtension._burn(tokenId);
+        return ERC721AOneOfOneMintExtension._burn(tokenId);
     }
 
     function _msgSender()
@@ -102,11 +101,11 @@ contract ERC721AOneOfOneCollection is
             ERC721A,
             ERC721AMinterExtension,
             ERC721CollectionMetadataExtension,
-            ERC721OwnerMintExtension,
-            ERC721OneOfOneMintExtension,
-            ERC721PerTokenMetadataExtension,
+            ERC721AOwnerMintExtension,
+            ERC721AOneOfOneMintExtension,
+            ERC721APerTokenMetadataExtension,
             ERC721RoyaltyExtension,
-            ERC721OpenSeaNoGasExtension
+            ERC721AOpenSeaNoGasExtension
         )
         returns (bool)
     {
@@ -119,7 +118,7 @@ contract ERC721AOneOfOneCollection is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(ERC721A, ERC721OpenSeaNoGasExtension)
+        override(ERC721A, ERC721AOpenSeaNoGasExtension)
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);
@@ -131,12 +130,12 @@ contract ERC721AOneOfOneCollection is
         virtual
         override(
             ERC721A,
-            ERC721OneOfOneMintExtension,
-            ERC721PerTokenMetadataExtension
+            ERC721AOneOfOneMintExtension,
+            ERC721APerTokenMetadataExtension
         )
         returns (string memory)
     {
-        return ERC721OneOfOneMintExtension.tokenURI(_tokenId);
+        return ERC721AOneOfOneMintExtension.tokenURI(_tokenId);
     }
 
     function getInfo()

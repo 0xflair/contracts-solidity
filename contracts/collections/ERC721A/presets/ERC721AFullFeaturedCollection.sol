@@ -3,19 +3,18 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../../ERC721/extensions/ERC721CollectionMetadataExtension.sol";
 import "../../ERC721/extensions/ERC721SimpleProceedsExtension.sol";
 import "../../ERC721/extensions/ERC721RoyaltyExtension.sol";
-import "../extensions/ERC721PrefixedMetadataExtension.sol";
+import "../extensions/ERC721APrefixedMetadataExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
-import "../extensions/ERC721OwnerMintExtension.sol";
-import "../extensions/ERC721PreSaleExtension.sol";
-import "../extensions/ERC721PublicSaleExtension.sol";
-import "../extensions/ERC721RoleBasedMintExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasExtension.sol";
+import "../extensions/ERC721AOwnerMintExtension.sol";
+import "../extensions/ERC721APreSaleExtension.sol";
+import "../extensions/ERC721APublicSaleExtension.sol";
+import "../extensions/ERC721ARoleBasedMintExtension.sol";
+import "../extensions/ERC721AOpenSeaNoGasExtension.sol";
 
 contract ERC721AFullFeaturedCollection is
     Ownable,
@@ -23,15 +22,15 @@ contract ERC721AFullFeaturedCollection is
     ERC721A,
     ERC2771ContextOwnable,
     ERC721CollectionMetadataExtension,
-    ERC721PrefixedMetadataExtension,
+    ERC721APrefixedMetadataExtension,
     ERC721AMinterExtension,
-    ERC721OwnerMintExtension,
-    ERC721PreSaleExtension,
-    ERC721PublicSaleExtension,
+    ERC721AOwnerMintExtension,
+    ERC721APreSaleExtension,
+    ERC721APublicSaleExtension,
     ERC721SimpleProceedsExtension,
-    ERC721RoleBasedMintExtension,
+    ERC721ARoleBasedMintExtension,
     ERC721RoyaltyExtension,
-    ERC721OpenSeaNoGasExtension
+    ERC721AOpenSeaNoGasExtension
 {
     struct Config {
         string name;
@@ -53,13 +52,13 @@ contract ERC721AFullFeaturedCollection is
     constructor(Config memory config)
         ERC721A(config.name, config.symbol)
         ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721PrefixedMetadataExtension(config.placeholderURI)
+        ERC721APrefixedMetadataExtension(config.placeholderURI)
         ERC721AMinterExtension(config.maxSupply)
-        ERC721PreSaleExtension(
+        ERC721APreSaleExtension(
             config.preSalePrice,
             config.preSaleMaxMintPerWallet
         )
-        ERC721PublicSaleExtension(
+        ERC721APublicSaleExtension(
             config.publicSalePrice,
             config.publicSaleMaxMintPerTx
         )
@@ -67,7 +66,7 @@ contract ERC721AFullFeaturedCollection is
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
         )
-        ERC721OpenSeaNoGasExtension(
+        ERC721AOpenSeaNoGasExtension(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
         )
@@ -107,15 +106,15 @@ contract ERC721AFullFeaturedCollection is
             ERC165Storage,
             ERC721A,
             ERC721CollectionMetadataExtension,
-            ERC721PrefixedMetadataExtension,
+            ERC721APrefixedMetadataExtension,
             ERC721AMinterExtension,
-            ERC721PreSaleExtension,
-            ERC721PublicSaleExtension,
+            ERC721APreSaleExtension,
+            ERC721APublicSaleExtension,
             ERC721SimpleProceedsExtension,
-            ERC721OwnerMintExtension,
-            ERC721RoleBasedMintExtension,
+            ERC721AOwnerMintExtension,
+            ERC721ARoleBasedMintExtension,
             ERC721RoyaltyExtension,
-            ERC721OpenSeaNoGasExtension
+            ERC721AOpenSeaNoGasExtension
         )
         returns (bool)
     {
@@ -128,7 +127,7 @@ contract ERC721AFullFeaturedCollection is
     function isApprovedForAll(address owner, address operator)
         public
         view
-        override(ERC721A, ERC721OpenSeaNoGasExtension)
+        override(ERC721A, ERC721AOpenSeaNoGasExtension)
         returns (bool)
     {
         return super.isApprovedForAll(owner, operator);
@@ -138,10 +137,10 @@ contract ERC721AFullFeaturedCollection is
         public
         view
         virtual
-        override(ERC721A, ERC721PrefixedMetadataExtension)
+        override(ERC721A, ERC721APrefixedMetadataExtension)
         returns (string memory)
     {
-        return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);
+        return ERC721APrefixedMetadataExtension.tokenURI(_tokenId);
     }
 
     function getInfo()

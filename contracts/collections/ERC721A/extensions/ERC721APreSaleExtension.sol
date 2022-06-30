@@ -15,7 +15,7 @@ import {IERC721PreSaleExtension} from "../../ERC721/extensions/ERC721PreSaleExte
 /**
  * @dev Extension to provide pre-sale capabilities for certain collectors to mint for a specific price.
  */
-abstract contract ERC721PreSaleExtension is
+abstract contract ERC721APreSaleExtension is
     IERC721PreSaleExtension,
     ERC165Storage,
     ERC721AMinterExtension,
