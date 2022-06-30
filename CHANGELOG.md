@@ -1,3 +1,10 @@
+### [1.11.5](https://github.com/0xflair/evm-contracts/compare/v1.11.4...v1.11.5) (2022-06-30)
+
+
+### Bug Fixes
+
+* use unique names for erc721a files ([#11](https://github.com/0xflair/evm-contracts/issues/11)) ([dbb22a0](https://github.com/0xflair/evm-contracts/commit/dbb22a089e06843a30971991c2b200ede7db875f))
+
 ### [1.11.4](https://github.com/0xflair/evm-contracts/compare/v1.11.3...v1.11.4) (2022-06-30)
 
 
