@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "@openzeppelin/contracts/utils/Address.sol";
@@ -24,7 +24,7 @@ abstract contract ERC721EqualSplitExtension is
     IERC721EqualSplitExtension,
     Initializable,
     ERC165Storage,
-    OwnableUpgradeable,
+    Ownable,
     ERC721MultiTokenStream
 {
     // Total number of ERC721 tokens to calculate their equal split share
@@ -36,7 +36,6 @@ abstract contract ERC721EqualSplitExtension is
         internal
         onlyInitializing
     {
-        __Context_init();
         __ERC721EqualSplitExtension_init_unchained(_totalTickets);
     }
 

@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "@openzeppelin/contracts/utils/Address.sol";
@@ -32,7 +32,7 @@ abstract contract ERC721ShareSplitExtension is
     IERC721ShareSplitExtension,
     Initializable,
     ERC165Storage,
-    OwnableUpgradeable,
+    Ownable,
     ERC721MultiTokenStream
 {
     event SharesUpdated(uint256 tokenId, uint256 prevShares, uint256 newShares);
@@ -49,7 +49,6 @@ abstract contract ERC721ShareSplitExtension is
         uint256[] memory _tokenIds,
         uint256[] memory _shares
     ) internal onlyInitializing {
-        __Context_init();
         __ERC721ShareSplitExtension_init_unchained(_tokenIds, _shares);
     }
 
@@ -57,7 +56,8 @@ abstract contract ERC721ShareSplitExtension is
         uint256[] memory _tokenIds,
         uint256[] memory _shares
     ) internal onlyInitializing {
-        setSharesForTokens(_tokenIds, _shares);
+        require(_shares.length == _tokenIds.length, "STREAM/ARGS_MISMATCH");
+        _updateShares(_tokenIds, _shares);
 
         _registerInterface(type(IERC721ShareSplitExtension).interfaceId);
     }
@@ -69,9 +69,7 @@ abstract contract ERC721ShareSplitExtension is
         require(_shares.length == _tokenIds.length, "STREAM/ARGS_MISMATCH");
         require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
 
-        for (uint256 i = 0; i < _shares.length; i++) {
-            _updateShares(_tokenIds[i], _shares[i]);
-        }
+        _updateShares(_tokenIds, _shares);
     }
 
     /* PUBLIC */
@@ -105,6 +103,14 @@ abstract contract ERC721ShareSplitExtension is
     }
 
     /* INTERNAL */
+
+    function _updateShares(uint256[] memory _tokenIds, uint256[] memory _shares)
+        private
+    {
+        for (uint256 i = 0; i < _shares.length; i++) {
+            _updateShares(_tokenIds[i], _shares[i]);
+        }
+    }
 
     function _updateShares(uint256 tokenId, uint256 newShares) private {
         uint256 prevShares = shares[tokenId];

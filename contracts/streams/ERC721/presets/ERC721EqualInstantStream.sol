@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -16,7 +16,7 @@ import "../extensions/ERC721EqualSplitExtension.sol";
 
 contract ERC721EqualInstantStream is
     Initializable,
-    OwnableUpgradeable,
+    Ownable,
     ERC721InstantReleaseExtension,
     ERC721EqualSplitExtension
 {
@@ -35,12 +35,14 @@ contract ERC721EqualInstantStream is
     /* INTERNAL */
 
     constructor(Config memory config) {
-        initialize(config);
+        initialize(config, msg.sender);
     }
 
-    function initialize(Config memory config) public initializer {
-        __Context_init();
-        __Ownable_init();
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
+        _transferOwnership(deployer);
         __ERC721MultiTokenStream_init(
             config.ticketToken,
             config.lockedUntilTimestamp

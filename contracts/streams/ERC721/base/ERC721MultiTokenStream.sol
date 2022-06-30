@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "@openzeppelin/contracts/utils/Address.sol";
@@ -77,7 +77,7 @@ abstract contract ERC721MultiTokenStream is
     IERC721MultiTokenStream,
     Initializable,
     ERC165Storage,
-    OwnableUpgradeable,
+    Ownable,
     ReentrancyGuard
 {
     using Address for address;
@@ -122,7 +122,6 @@ abstract contract ERC721MultiTokenStream is
         address _ticketToken,
         uint64 _lockedUntilTimestamp
     ) internal onlyInitializing {
-        __Context_init();
         __ERC721MultiTokenStream_init_unchained(
             _ticketToken,
             _lockedUntilTimestamp

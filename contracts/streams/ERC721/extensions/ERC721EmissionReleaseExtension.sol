@@ -2,8 +2,8 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
 import "@openzeppelin/contracts/utils/Address.sol";
@@ -40,7 +40,7 @@ abstract contract ERC721EmissionReleaseExtension is
     IERC721EmissionReleaseExtension,
     Initializable,
     ERC165Storage,
-    OwnableUpgradeable,
+    Ownable,
     ERC721MultiTokenStream
 {
     // Number of tokens released every `emissionTimeUnit`
@@ -63,7 +63,6 @@ abstract contract ERC721EmissionReleaseExtension is
         uint64 _emissionStart,
         uint64 _emissionEnd
     ) internal onlyInitializing {
-        __Context_init();
         __ERC721EmissionReleaseExtension_init_unchained(
             _emissionRate,
             _emissionTimeUnit,

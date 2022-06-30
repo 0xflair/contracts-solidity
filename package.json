@@ -106,6 +106,7 @@
   },
   "dependencies": {
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
-    "@openzeppelin/contracts": "^4.6.0"
+    "@openzeppelin/contracts": "^4.6.0",
+    "erc721a": "^4.1.0"
   }
 }
