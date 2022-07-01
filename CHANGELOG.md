@@ -1,3 +1,10 @@
+### [1.12.5](https://github.com/0xflair/evm-contracts/compare/v1.12.4...v1.12.5) (2022-07-01)
+
+
+### Bug Fixes
+
+* update azuki version of the collection presets ([257cb0c](https://github.com/0xflair/evm-contracts/commit/257cb0c2c3e61fbc3e2db5b3e2b1860e1e6cab88))
+
 ### [1.12.4](https://github.com/0xflair/evm-contracts/compare/v1.12.3...v1.12.4) (2022-07-01)
 
 
