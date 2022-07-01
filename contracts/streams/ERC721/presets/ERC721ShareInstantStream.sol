@@ -14,8 +14,6 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../extensions/ERC721InstantReleaseExtension.sol";
 import "../extensions/ERC721ShareSplitExtension.sol";
 
-import "hardhat/console.sol";
-
 contract ERC721ShareInstantStream is
     Initializable,
     Ownable,
