@@ -66,7 +66,7 @@ const config: HardhatUserConfig = {
       url: process.env.MAINNET_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 20000000000, // 20 gwei
+      gasPrice: 20_000000000, // 20 gwei
     },
     ropsten: {
       chainId: 3,
@@ -109,6 +109,7 @@ const config: HardhatUserConfig = {
       url: process.env.POLYGON_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      gasPrice: 100_000000000, // 100 gwei
     },
     polygonMumbai: {
       chainId: 80001,
