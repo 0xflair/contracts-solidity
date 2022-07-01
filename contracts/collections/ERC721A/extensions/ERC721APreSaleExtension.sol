@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
@@ -17,6 +18,7 @@ import {IERC721PreSaleExtension} from "../../ERC721/extensions/ERC721PreSaleExte
  */
 abstract contract ERC721APreSaleExtension is
     IERC721PreSaleExtension,
+    Initializable,
     ERC165Storage,
     ERC721AMinterExtension,
     ReentrancyGuard
@@ -28,7 +30,20 @@ abstract contract ERC721APreSaleExtension is
 
     mapping(address => uint256) internal preSaleAllowlistClaimed;
 
-    constructor(uint256 _preSalePrice, uint256 _preSaleMaxMintPerWallet) {
+    function __ERC721APreSaleExtension_init(
+        uint256 _preSalePrice,
+        uint256 _preSaleMaxMintPerWallet
+    ) internal onlyInitializing {
+        __ERC721APreSaleExtension_init_unchained(
+            _preSalePrice,
+            _preSaleMaxMintPerWallet
+        );
+    }
+
+    function __ERC721APreSaleExtension_init_unchained(
+        uint256 _preSalePrice,
+        uint256 _preSaleMaxMintPerWallet
+    ) internal onlyInitializing {
         _registerInterface(type(IERC721PreSaleExtension).interfaceId);
 
         preSalePrice = _preSalePrice;

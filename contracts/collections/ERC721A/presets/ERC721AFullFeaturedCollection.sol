@@ -5,9 +5,9 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
-import "../../ERC721/extensions/ERC721CollectionMetadataExtension.sol";
 import "../../ERC721/extensions/ERC721SimpleProceedsExtension.sol";
 import "../../ERC721/extensions/ERC721RoyaltyExtension.sol";
+import "../extensions/ERC721ACollectionMetadataExtension.sol";
 import "../extensions/ERC721APrefixedMetadataExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
 import "../extensions/ERC721AOwnerMintExtension.sol";
@@ -21,7 +21,7 @@ contract ERC721AFullFeaturedCollection is
     ERC165Storage,
     ERC721A,
     ERC2771ContextOwnable,
-    ERC721CollectionMetadataExtension,
+    ERC721ACollectionMetadataExtension,
     ERC721APrefixedMetadataExtension,
     ERC721AMinterExtension,
     ERC721AOwnerMintExtension,
@@ -44,36 +44,51 @@ contract ERC721AFullFeaturedCollection is
         uint256 publicSaleMaxMintPerTx;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
+        address proceedsRecipient;
         address openSeaProxyRegistryAddress;
         address openSeaExchangeAddress;
         address trustedForwarder;
     }
 
-    constructor(Config memory config)
-        ERC721A(config.name, config.symbol)
-        ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721APrefixedMetadataExtension(config.placeholderURI)
-        ERC721AMinterExtension(config.maxSupply)
-        ERC721APreSaleExtension(
+    constructor(Config memory config) ERC721A(config.name, config.symbol) {
+        initialize(config, msg.sender);
+    }
+
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, deployer);
+
+        _transferOwnership(deployer);
+
+        __ERC721ACollectionMetadataExtension_init(
+            config.name,
+            config.symbol,
+            config.contractURI
+        );
+        __ERC721APrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721AMinterExtension_init(config.maxSupply);
+        __ERC721AOwnerMintExtension_init();
+        __ERC721ARoleBasedMintExtension_init(deployer);
+        __ERC721APreSaleExtension_init_unchained(
             config.preSalePrice,
             config.preSaleMaxMintPerWallet
-        )
-        ERC721APublicSaleExtension(
+        );
+        __ERC721APublicSaleExtension_init(
             config.publicSalePrice,
             config.publicSaleMaxMintPerTx
-        )
-        ERC721RoyaltyExtension(
+        );
+        __ERC721SimpleProceedsExtension_init(config.proceedsRecipient);
+        __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        )
-        ERC721AOpenSeaNoGasExtension(
+        );
+        __ERC721AOpenSeaNoGasExtension_init(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
-        )
-        ERC2771ContextOwnable(config.trustedForwarder)
-    {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-        _setupRole(MINTER_ROLE, _msgSender());
+        );
+        __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
 
     function _msgSender()
@@ -105,7 +120,7 @@ contract ERC721AFullFeaturedCollection is
         override(
             ERC165Storage,
             ERC721A,
-            ERC721CollectionMetadataExtension,
+            ERC721ACollectionMetadataExtension,
             ERC721APrefixedMetadataExtension,
             ERC721AMinterExtension,
             ERC721APreSaleExtension,
@@ -121,6 +136,24 @@ contract ERC721AFullFeaturedCollection is
         return ERC165Storage.supportsInterface(interfaceId);
     }
 
+    function name()
+        public
+        view
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.symbol();
+    }
+
     /**
      * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
      */
@@ -130,7 +163,7 @@ contract ERC721AFullFeaturedCollection is
         override(ERC721A, ERC721AOpenSeaNoGasExtension)
         returns (bool)
     {
-        return super.isApprovedForAll(owner, operator);
+        return ERC721AOpenSeaNoGasExtension.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)

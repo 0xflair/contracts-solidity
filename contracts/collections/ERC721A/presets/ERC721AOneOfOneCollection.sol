@@ -5,9 +5,9 @@ pragma solidity ^0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
-import "../../ERC721/extensions/ERC721CollectionMetadataExtension.sol";
 import "../../ERC721/extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
+import "../extensions/ERC721ACollectionMetadataExtension.sol";
 import "../extensions/ERC721APerTokenMetadataExtension.sol";
 import "../extensions/ERC721AOneOfOneMintExtension.sol";
 import "../extensions/ERC721AOwnerMintExtension.sol";
@@ -19,9 +19,8 @@ contract ERC721AOneOfOneCollection is
     ERC2771ContextOwnable,
     ERC721A,
     ERC721AMinterExtension,
-    ERC721CollectionMetadataExtension,
+    ERC721ACollectionMetadataExtension,
     ERC721AOwnerMintExtension,
-    ERC721APerTokenMetadataExtension,
     ERC721AOneOfOneMintExtension,
     ERC721RoyaltyExtension,
     ERC721AOpenSeaNoGasExtension
@@ -38,34 +37,43 @@ contract ERC721AOneOfOneCollection is
         address trustedForwarder;
     }
 
-    constructor(Config memory config)
-        ERC721A(config.name, config.symbol)
-        ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721APerTokenMetadataExtension()
-        ERC721AOneOfOneMintExtension()
-        ERC721AMinterExtension(config.maxSupply)
-        ERC721RoyaltyExtension(
+    constructor(Config memory config) ERC721A(config.name, config.symbol) {
+        initialize(config, msg.sender);
+    }
+
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, deployer);
+        _setupRole(MINTER_ROLE, deployer);
+
+        _transferOwnership(deployer);
+
+        __ERC721ACollectionMetadataExtension_init(
+            config.name,
+            config.symbol,
+            config.contractURI
+        );
+        __ERC721APerTokenMetadataExtension_init();
+        __ERC721AOwnerMintExtension_init();
+        __ERC721AOneOfOneMintExtension_init();
+        __ERC721AMinterExtension_init(config.maxSupply);
+        __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        )
-        ERC721AOpenSeaNoGasExtension(
+        );
+        __ERC721AOpenSeaNoGasExtension_init(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
-        )
-        ERC2771ContextOwnable(config.trustedForwarder)
-    {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-        _setupRole(MINTER_ROLE, _msgSender());
+        );
+        __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
 
     function _burn(uint256 tokenId)
         internal
         virtual
-        override(
-            ERC721A,
-            ERC721APerTokenMetadataExtension,
-            ERC721AOneOfOneMintExtension
-        )
+        override(ERC721A, ERC721AOneOfOneMintExtension)
     {
         return ERC721AOneOfOneMintExtension._burn(tokenId);
     }
@@ -100,16 +108,33 @@ contract ERC721AOneOfOneCollection is
             ERC165Storage,
             ERC721A,
             ERC721AMinterExtension,
-            ERC721CollectionMetadataExtension,
+            ERC721ACollectionMetadataExtension,
             ERC721AOwnerMintExtension,
             ERC721AOneOfOneMintExtension,
-            ERC721APerTokenMetadataExtension,
             ERC721RoyaltyExtension,
             ERC721AOpenSeaNoGasExtension
         )
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
+    }
+
+    function name()
+        public
+        view
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.symbol();
     }
 
     /**
@@ -128,11 +153,7 @@ contract ERC721AOneOfOneCollection is
         public
         view
         virtual
-        override(
-            ERC721A,
-            ERC721AOneOfOneMintExtension,
-            ERC721APerTokenMetadataExtension
-        )
+        override(ERC721A, ERC721AOneOfOneMintExtension)
         returns (string memory)
     {
         return ERC721AOneOfOneMintExtension.tokenURI(_tokenId);

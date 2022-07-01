@@ -61,17 +61,7 @@ contract ERC721FullFeaturedCollection is
         _setupRole(DEFAULT_ADMIN_ROLE, deployer);
 
         _transferOwnership(deployer);
-        /*
-ERC721PrefixedMetadataExtension
-ERC721OwnerMintExtension
-ERC721PreSaleExtension
-ERC721PublicSaleExtension
-ERC721SimpleProceedsExtension
-ERC721RoleBasedMintExtension
-ERC721RoyaltyExtension
-ERC721OpenSeaNoGasExtension
-ERC2771ContextOwnable
-ERC721BulkifyExtension*/
+
         __ERC721CollectionMetadataExtension_init(
             config.name,
             config.symbol,

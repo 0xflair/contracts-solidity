@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
@@ -14,10 +15,18 @@ import {IERC721FreeMintExtension} from "../../ERC721/extensions/ERC721FreeMintEx
  */
 abstract contract ERC721AFreeMintExtension is
     IERC721FreeMintExtension,
+    Initializable,
     ERC165Storage,
     ERC721AMinterExtension
 {
-    constructor() {
+    function __ERC721AFreeMintExtension_init() internal onlyInitializing {
+        __ERC721AFreeMintExtension_init_unchained();
+    }
+
+    function __ERC721AFreeMintExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721FreeMintExtension).interfaceId);
     }
 

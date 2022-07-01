@@ -68,7 +68,54 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         maxSupply: 0,
         defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
         defaultRoyaltyBps: 0,
-        openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
+        openSeaProxyRegistryAddress:
+          "0x0000000000000000000000000000000000000000",
+        openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
+        trustedForwarder: "0x0000000000000000000000000000000000000000",
+      },
+    ]
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC721AFullFeaturedCollection",
+    [
+      {
+        name: "Collection",
+        symbol: "COL",
+        contractURI: "ipfs://contractURI",
+        placeholderURI: "ipfs://placeholderURI",
+        maxSupply: 0,
+        preSalePrice: 0,
+        preSaleMaxMintPerWallet: 0,
+        publicSalePrice: 0,
+        publicSaleMaxMintPerTx: 10,
+        defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+        defaultRoyaltyBps: 0,
+        proceedsRecipient: "0x0000000000000000000000000000000000000000",
+        openSeaProxyRegistryAddress:
+          "0x0000000000000000000000000000000000000000",
+        openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
+        trustedForwarder: "0x0000000000000000000000000000000000000000",
+      },
+    ]
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC721AOneOfOneCollection",
+    [
+      {
+        name: "Collection",
+        symbol: "COL",
+        contractURI: "ipfs://contractURI",
+        maxSupply: 0,
+        defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+        defaultRoyaltyBps: 0,
+        openSeaProxyRegistryAddress:
+          "0x0000000000000000000000000000000000000000",
         openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
       },

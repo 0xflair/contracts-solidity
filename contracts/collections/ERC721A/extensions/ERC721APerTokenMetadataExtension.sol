@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
@@ -17,6 +18,7 @@ import {IERC721PerTokenMetadataExtension} from "../../ERC721/extensions/ERC721Pe
  */
 abstract contract ERC721APerTokenMetadataExtension is
     IERC721PerTokenMetadataExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721A
@@ -28,7 +30,17 @@ abstract contract ERC721APerTokenMetadataExtension is
     // Optional mapping for token URIs
     mapping(uint256 => string) private _tokenURIs;
 
-    constructor() {
+    function __ERC721APerTokenMetadataExtension_init()
+        internal
+        onlyInitializing
+    {
+        __ERC721APerTokenMetadataExtension_init_unchained();
+    }
+
+    function __ERC721APerTokenMetadataExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721PerTokenMetadataExtension).interfaceId);
     }
 

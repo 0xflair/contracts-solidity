@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
@@ -16,6 +17,7 @@ import {IERC721OpenSeaNoGasExtension} from "../../ERC721/extensions/ERC721OpenSe
  */
 abstract contract ERC721AOpenSeaNoGasExtension is
     IERC721OpenSeaNoGasExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721A
@@ -23,10 +25,20 @@ abstract contract ERC721AOpenSeaNoGasExtension is
     address internal _openSeaProxyRegistryAddress;
     address private _openSeaExchangeAddress;
 
-    constructor(
+    function __ERC721AOpenSeaNoGasExtension_init(
         address openSeaProxyRegistryAddress,
         address openSeaExchangeAddress
-    ) {
+    ) internal onlyInitializing {
+        __ERC721AOpenSeaNoGasExtension_init_unchained(
+            openSeaProxyRegistryAddress,
+            openSeaExchangeAddress
+        );
+    }
+
+    function __ERC721AOpenSeaNoGasExtension_init_unchained(
+        address openSeaProxyRegistryAddress,
+        address openSeaExchangeAddress
+    ) internal onlyInitializing {
         _registerInterface(type(IERC721OpenSeaNoGasExtension).interfaceId);
 
         _openSeaProxyRegistryAddress = openSeaProxyRegistryAddress;

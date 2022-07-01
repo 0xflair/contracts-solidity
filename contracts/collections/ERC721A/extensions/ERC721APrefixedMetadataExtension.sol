@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -19,6 +20,7 @@ import {IERC721PrefixedMetadataExtension} from "../../ERC721/extensions/ERC721Pr
  */
 abstract contract ERC721APrefixedMetadataExtension is
     IERC721PrefixedMetadataExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721A
@@ -28,10 +30,19 @@ abstract contract ERC721APrefixedMetadataExtension is
 
     bool public baseURIFrozen;
 
-    constructor(string memory placeholderURI_) {
-        _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
+    function __ERC721APrefixedMetadataExtension_init(
+        string memory placeholderURI_
+    ) internal onlyInitializing {
+        __ERC721APrefixedMetadataExtension_init_unchained(placeholderURI_);
+    }
 
+    function __ERC721APrefixedMetadataExtension_init_unchained(
+        string memory placeholderURI_
+    ) internal onlyInitializing {
         _placeholderURI = placeholderURI_;
+
+        _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
+        _registerInterface(type(IERC721Metadata).interfaceId);
     }
 
     /* ADMIN */
