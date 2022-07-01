@@ -1,3 +1,10 @@
+### [1.12.1](https://github.com/0xflair/evm-contracts/compare/v1.12.0...v1.12.1) (2022-07-01)
+
+
+### Bug Fixes
+
+* deploy to arbitrum testnet ([68483aa](https://github.com/0xflair/evm-contracts/commit/68483aacdafa01f2daa7f48849e3f70f1a8cadbf))
+
 ## [1.12.0](https://github.com/0xflair/evm-contracts/compare/v1.11.5...v1.12.0) (2022-07-01)
 
 
