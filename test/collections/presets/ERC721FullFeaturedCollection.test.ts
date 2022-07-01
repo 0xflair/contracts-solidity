@@ -1,9 +1,8 @@
 /* eslint-disable camelcase */
 import { expect } from "chai";
 import { utils } from "ethers";
-import { ethers } from "hardhat";
+import hre, { ethers } from "hardhat";
 import web3 from "web3";
-import hre from "hardhat";
 import {
   ERC721FullFeaturedCollection,
   ERC721FullFeaturedCollection__factory,
@@ -95,6 +94,26 @@ describe("ERC721FullFeaturedCollection", function () {
 
       expect(await collection.owner()).to.equal(deployer.signer.address);
       expect(await collectionClone["owner()"]()).to.equal(userB.signer.address);
+
+      // ERC721
+      expect(await collectionClone.supportsInterface("0x80ac58cd")).to.be.equal(
+        true
+      );
+
+      // ERC721PublicSaleExtension
+      expect(await collectionClone.supportsInterface("0xbf05d618")).to.be.equal(
+        true
+      );
+
+      // Rarible Royalty
+      expect(await collectionClone.supportsInterface("0xcad96cca")).to.be.equal(
+        true
+      );
+
+      // EIP2981 Royalty
+      expect(await collectionClone.supportsInterface("0x2a55205a")).to.be.equal(
+        true
+      );
     });
   });
 
