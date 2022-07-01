@@ -1,3 +1,10 @@
+### [1.12.4](https://github.com/0xflair/evm-contracts/compare/v1.12.3...v1.12.4) (2022-07-01)
+
+
+### Bug Fixes
+
+* deploy collection master copies ([#13](https://github.com/0xflair/evm-contracts/issues/13)) ([9d186b1](https://github.com/0xflair/evm-contracts/commit/9d186b15ae2484a24836e563c5879bf408f700aa))
+
 ### [1.12.3](https://github.com/0xflair/evm-contracts/compare/v1.12.2...v1.12.3) (2022-07-01)
 
 
