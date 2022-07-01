@@ -1,3 +1,16 @@
+## [1.12.0](https://github.com/0xflair/evm-contracts/compare/v1.11.5...v1.12.0) (2022-07-01)
+
+
+### Features
+
+* deploy factory on all chains ([5b384b5](https://github.com/0xflair/evm-contracts/commit/5b384b5dfb0dd512c4192e375bbc31a1054070e9))
+
+
+### Bug Fixes
+
+* upgrade etherscan module to support sepolia ([25e7681](https://github.com/0xflair/evm-contracts/commit/25e7681adfcebcaa5be635e376a16b675fbb2792))
+* use close factory without receive function ([6ee4359](https://github.com/0xflair/evm-contracts/commit/6ee43590ebf6e26d5ae59ae7a44ae1a45a2e2148))
+
 ### [1.11.5](https://github.com/0xflair/evm-contracts/compare/v1.11.4...v1.11.5) (2022-06-30)
 
 
