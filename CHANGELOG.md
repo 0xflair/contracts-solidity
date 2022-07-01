@@ -1,3 +1,10 @@
+### [1.12.3](https://github.com/0xflair/evm-contracts/compare/v1.12.2...v1.12.3) (2022-07-01)
+
+
+### Bug Fixes
+
+* allow collections to initialize from factory ([#12](https://github.com/0xflair/evm-contracts/issues/12)) ([1fb42b9](https://github.com/0xflair/evm-contracts/commit/1fb42b972ad0b7e6f7cf93ad52eec13e5943c22a))
+
 ### [1.12.2](https://github.com/0xflair/evm-contracts/compare/v1.12.1...v1.12.2) (2022-07-01)
 
 
