@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -20,13 +21,24 @@ interface IERC721PerTokenMetadataExtension {
  */
 abstract contract ERC721PerTokenMetadataExtension is
     IERC721PerTokenMetadataExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721URIStorage
 {
     uint256 public lastFrozenTokenId;
 
-    constructor() {
+    function __ERC721PerTokenMetadataExtension_init()
+        internal
+        onlyInitializing
+    {
+        __ERC721PerTokenMetadataExtension_init_unchained();
+    }
+
+    function __ERC721PerTokenMetadataExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721PerTokenMetadataExtension).interfaceId);
     }
 

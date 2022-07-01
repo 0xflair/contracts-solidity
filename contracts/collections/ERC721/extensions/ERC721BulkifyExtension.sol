@@ -2,8 +2,10 @@
 
 pragma solidity ^0.8.9;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 interface IERC721BulkifyExtension {
     function transferFromBulk(
@@ -24,11 +26,18 @@ interface IERC721BulkifyExtension {
  */
 abstract contract ERC721BulkifyExtension is
     IERC721BulkifyExtension,
+    Initializable,
     Context,
-    ERC165Storage,
-    ERC721
+    ERC165Storage
 {
-    constructor() {
+    function __ERC721BulkifyExtension_init() internal onlyInitializing {
+        __ERC721BulkifyExtension_init_unchained();
+    }
+
+    function __ERC721BulkifyExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721BulkifyExtension).interfaceId);
     }
 
@@ -38,7 +47,7 @@ abstract contract ERC721BulkifyExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721)
+        override(ERC165Storage)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
@@ -54,8 +63,7 @@ abstract contract ERC721BulkifyExtension is
         uint256[] memory tokenIds
     ) public virtual {
         for (uint256 i = 0; i < tokenIds.length; i++) {
-            require(_isApprovedOrOwner(_msgSender(), tokenIds[i]), "NOT_OWNER");
-            _transfer(from, to, tokenIds[i]);
+            IERC721(address(this)).transferFrom(from, to, tokenIds[i]);
         }
     }
 
@@ -71,8 +79,7 @@ abstract contract ERC721BulkifyExtension is
         require(from.length == tokenIds.length, "FROM_TOKEN_LENGTH_MISMATCH");
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
-            require(_isApprovedOrOwner(_msgSender(), tokenIds[i]), "NOT_OWNER");
-            _transfer(from[i], to[i], tokenIds[i]);
+            IERC721(address(this)).transferFrom(from[i], to[i], tokenIds[i]);
         }
     }
 }

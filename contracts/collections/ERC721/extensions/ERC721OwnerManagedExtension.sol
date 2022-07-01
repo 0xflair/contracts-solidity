@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 
@@ -16,13 +17,21 @@ interface IERC721OwnerManagedExtension {
  */
 abstract contract ERC721OwnerManagedExtension is
     IERC721OwnerManagedExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721AutoIdMinterExtension
 {
     bool public managementPowerRevoked;
 
-    constructor() {
+    function __ERC721OwnerManagedExtension_init() internal onlyInitializing {
+        __ERC721OwnerManagedExtension_init_unchained();
+    }
+
+    function __ERC721OwnerManagedExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721OwnerManagedExtension).interfaceId);
     }
 

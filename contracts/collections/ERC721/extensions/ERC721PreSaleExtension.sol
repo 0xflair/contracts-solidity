@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
@@ -31,6 +32,7 @@ interface IERC721PreSaleExtension {
  * @dev Extension to provide pre-sale capabilities for certain collectors to mint for a specific price.
  */
 abstract contract ERC721PreSaleExtension is
+    Initializable,
     IERC721PreSaleExtension,
     ERC165Storage,
     ERC721AutoIdMinterExtension,
@@ -43,7 +45,20 @@ abstract contract ERC721PreSaleExtension is
 
     mapping(address => uint256) internal preSaleAllowlistClaimed;
 
-    constructor(uint256 _preSalePrice, uint256 _preSaleMaxMintPerWallet) {
+    function __ERC721PreSaleExtension_init(
+        uint256 _preSalePrice,
+        uint256 _preSaleMaxMintPerWallet
+    ) internal onlyInitializing {
+        __ERC721PreSaleExtension_init_unchained(
+            _preSalePrice,
+            _preSaleMaxMintPerWallet
+        );
+    }
+
+    function __ERC721PreSaleExtension_init_unchained(
+        uint256 _preSalePrice,
+        uint256 _preSaleMaxMintPerWallet
+    ) internal onlyInitializing {
         _registerInterface(type(IERC721PreSaleExtension).interfaceId);
 
         preSalePrice = _preSalePrice;

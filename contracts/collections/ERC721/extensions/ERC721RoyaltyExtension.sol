@@ -3,6 +3,7 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/RoyaltyOverrideCore.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
@@ -33,13 +34,27 @@ interface IERC721RoyaltyExtension {
  * Note that OpenSea is supported via Flair metadata feature.
  */
 abstract contract ERC721RoyaltyExtension is
+    Initializable,
     IERC721RoyaltyExtension,
     IRoyalties,
     Ownable,
     ERC165Storage,
     EIP2981RoyaltyOverrideCore
 {
-    constructor(address defaultRoyaltyReceiver, uint16 defaultRoyaltyBps) {
+    function __ERC721RoyaltyExtension_init(
+        address defaultRoyaltyReceiver,
+        uint16 defaultRoyaltyBps
+    ) internal onlyInitializing {
+        __ERC721RoyaltyExtension_init_unchained(
+            defaultRoyaltyReceiver,
+            defaultRoyaltyBps
+        );
+    }
+
+    function __ERC721RoyaltyExtension_init_unchained(
+        address defaultRoyaltyReceiver,
+        uint16 defaultRoyaltyBps
+    ) internal onlyInitializing {
         _registerInterface(type(IERC721RoyaltyExtension).interfaceId);
         _registerInterface(type(IEIP2981).interfaceId);
         _registerInterface(type(IEIP2981RoyaltyOverride).interfaceId);

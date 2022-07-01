@@ -3,16 +3,26 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/utils/Context.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @dev Context variant with ERC2771 support.
  */
-abstract contract ERC2771ContextOwnable is Context, Ownable {
+abstract contract ERC2771ContextOwnable is Initializable, Context, Ownable {
     address public _trustedForwarder;
 
-    /// @custom:oz-upgrades-unsafe-allow constructor
-    constructor(address trustedForwarder) {
+    function __ERC2771ContextOwnable_init(address trustedForwarder)
+        internal
+        onlyInitializing
+    {
+        __ERC2771ContextOwnable_init_unchained(trustedForwarder);
+    }
+
+    function __ERC2771ContextOwnable_init_unchained(address trustedForwarder)
+        internal
+        onlyInitializing
+    {
         _trustedForwarder = trustedForwarder;
     }
 

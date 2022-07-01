@@ -17,15 +17,12 @@ import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 contract ERC721OneOfOneCollection is
     Ownable,
     ERC165Storage,
-    ERC2771ContextOwnable,
-    ERC721,
-    ERC721AutoIdMinterExtension,
-    ERC721CollectionMetadataExtension,
-    ERC721OwnerMintExtension,
     ERC721PerTokenMetadataExtension,
-    ERC721OneOfOneMintExtension,
+    ERC721OwnerMintExtension,
     ERC721RoyaltyExtension,
-    ERC721OpenSeaNoGasExtension
+    ERC721OneOfOneMintExtension,
+    ERC721OpenSeaNoGasExtension,
+    ERC2771ContextOwnable
 {
     struct Config {
         string name;
@@ -39,24 +36,37 @@ contract ERC721OneOfOneCollection is
         address trustedForwarder;
     }
 
-    constructor(Config memory config)
-        ERC721(config.name, config.symbol)
-        ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721PerTokenMetadataExtension()
-        ERC721OneOfOneMintExtension()
-        ERC721AutoIdMinterExtension(config.maxSupply)
-        ERC721RoyaltyExtension(
+    constructor(Config memory config) ERC721(config.name, config.symbol) {
+        initialize(config, msg.sender);
+    }
+
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, deployer);
+        _setupRole(MINTER_ROLE, deployer);
+
+        _transferOwnership(deployer);
+
+        __ERC721CollectionMetadataExtension_init(
+            config.name,
+            config.symbol,
+            config.contractURI
+        );
+        __ERC721PerTokenMetadataExtension_init();
+        __ERC721OwnerMintExtension_init();
+        __ERC721OneOfOneMintExtension_init();
+        __ERC721AutoIdMinterExtension_init(config.maxSupply);
+        __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        )
-        ERC721OpenSeaNoGasExtension(
+        );
+        __ERC721OpenSeaNoGasExtension_init(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
-        )
-        ERC2771ContextOwnable(config.trustedForwarder)
-    {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-        _setupRole(MINTER_ROLE, _msgSender());
+        );
+        __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
 
     function _burn(uint256 tokenId)
@@ -95,9 +105,6 @@ contract ERC721OneOfOneCollection is
         virtual
         override(
             ERC165Storage,
-            ERC721,
-            ERC721AutoIdMinterExtension,
-            ERC721CollectionMetadataExtension,
             ERC721OwnerMintExtension,
             ERC721OneOfOneMintExtension,
             ERC721PerTokenMetadataExtension,
@@ -109,6 +116,32 @@ contract ERC721OneOfOneCollection is
         return
             ERC721.supportsInterface(interfaceId) ||
             ERC165Storage.supportsInterface(interfaceId);
+    }
+
+    function name()
+        public
+        view
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721OneOfOneMintExtension
+        )
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721OneOfOneMintExtension
+        )
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.symbol();
     }
 
     /**

@@ -41,25 +41,36 @@ contract ERC721ManagedPrefixedCollection is
         address trustedForwarder;
     }
 
-    constructor(Config memory config)
-        ERC721(config.name, config.symbol)
-        ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721PrefixedMetadataExtension(config.placeholderURI)
-        ERC721AutoIdMinterExtension(maxSupply)
-        ERC721RoyaltyExtension(
-            config.defaultRoyaltyAddress,
-            config.defaultRoyaltyBps
-        )
-        ERC2771ContextOwnable(config.trustedForwarder)
-    {
-        initialize(config);
+    constructor(Config memory config) ERC721(config.name, config.symbol) {
+        initialize(config, msg.sender);
     }
 
-    function initialize(Config memory config) public initializer {
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
         require(
             config.initialHolders.length == config.initialAmounts.length,
             "ERC721/INVALID_INITIAL_ARGS"
         );
+
+        _transferOwnership(deployer);
+
+        __ERC721CollectionMetadataExtension_init(
+            config.name,
+            config.symbol,
+            config.contractURI
+        );
+        __ERC721PrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721AutoIdMinterExtension_init(config.maxSupply);
+        __ERC721OwnerMintExtension_init();
+        __ERC721OwnerManagedExtension_init();
+        __ERC721RoyaltyExtension_init(
+            config.defaultRoyaltyAddress,
+            config.defaultRoyaltyBps
+        );
+        __ERC2771ContextOwnable_init(config.trustedForwarder);
+        __ERC721BulkifyExtension_init();
 
         maxSupply = config.maxSupply;
 
@@ -92,11 +103,37 @@ contract ERC721ManagedPrefixedCollection is
 
     /* PUBLIC */
 
+    function name()
+        public
+        view
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension
+        )
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        override(
+            ERC721,
+            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension
+        )
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.symbol();
+    }
+
     function isApprovedForAll(address owner, address operator)
         public
         view
         virtual
-        override(ERC721, ERC721OwnerManagedExtension)
+        override(ERC721, IERC721, ERC721OwnerManagedExtension)
         returns (bool)
     {
         return ERC721OwnerManagedExtension.isApprovedForAll(owner, operator);
@@ -125,7 +162,7 @@ contract ERC721ManagedPrefixedCollection is
         public
         view
         virtual
-        override(ERC721, ERC721PrefixedMetadataExtension)
+        override(ERC721, IERC721Metadata, ERC721PrefixedMetadataExtension)
         returns (string memory)
     {
         return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);

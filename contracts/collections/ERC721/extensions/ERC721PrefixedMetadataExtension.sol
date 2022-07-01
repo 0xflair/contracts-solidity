@@ -3,9 +3,12 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
+
+import "./ERC721CollectionMetadataExtension.sol";
 
 interface IERC721PrefixedMetadataExtension {
     function setPlaceholderURI(string memory newValue) external;
@@ -29,6 +32,7 @@ interface IERC721PrefixedMetadataExtension {
  */
 abstract contract ERC721PrefixedMetadataExtension is
     IERC721PrefixedMetadataExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721
@@ -38,10 +42,19 @@ abstract contract ERC721PrefixedMetadataExtension is
 
     bool public baseURIFrozen;
 
-    constructor(string memory placeholderURI_) {
-        _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
+    function __ERC721PrefixedMetadataExtension_init(
+        string memory placeholderURI_
+    ) internal onlyInitializing {
+        __ERC721PrefixedMetadataExtension_init_unchained(placeholderURI_);
+    }
 
+    function __ERC721PrefixedMetadataExtension_init_unchained(
+        string memory placeholderURI_
+    ) internal onlyInitializing {
         _placeholderURI = placeholderURI_;
+
+        _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
+        _registerInterface(type(IERC721Metadata).interfaceId);
     }
 
     /* ADMIN */

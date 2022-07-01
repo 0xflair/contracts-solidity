@@ -2,6 +2,7 @@
 
 pragma solidity ^0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
@@ -30,6 +31,7 @@ interface IERC721OneOfOneMintExtension {
  */
 abstract contract ERC721OneOfOneMintExtension is
     IERC721OneOfOneMintExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     AccessControl,
@@ -38,7 +40,14 @@ abstract contract ERC721OneOfOneMintExtension is
 {
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
-    constructor() {
+    function __ERC721OneOfOneMintExtension_init() internal onlyInitializing {
+        __ERC721OneOfOneMintExtension_init_unchained();
+    }
+
+    function __ERC721OneOfOneMintExtension_init_unchained()
+        internal
+        onlyInitializing
+    {
         _registerInterface(type(IERC721OneOfOneMintExtension).interfaceId);
     }
 
@@ -85,6 +94,26 @@ abstract contract ERC721OneOfOneMintExtension is
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
+    }
+
+    function name()
+        public
+        view
+        virtual
+        override(ERC721, ERC721AutoIdMinterExtension)
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        virtual
+        override(ERC721, ERC721AutoIdMinterExtension)
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.symbol();
     }
 
     function tokenURI(uint256 tokenId)

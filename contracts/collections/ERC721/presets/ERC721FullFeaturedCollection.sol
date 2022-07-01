@@ -21,11 +21,7 @@ import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 contract ERC721FullFeaturedCollection is
     Ownable,
     ERC165Storage,
-    ERC721,
-    ERC2771ContextOwnable,
-    ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
-    ERC721AutoIdMinterExtension,
     ERC721OwnerMintExtension,
     ERC721PreSaleExtension,
     ERC721PublicSaleExtension,
@@ -33,6 +29,7 @@ contract ERC721FullFeaturedCollection is
     ERC721RoleBasedMintExtension,
     ERC721RoyaltyExtension,
     ERC721OpenSeaNoGasExtension,
+    ERC2771ContextOwnable,
     ERC721BulkifyExtension
 {
     struct Config {
@@ -47,36 +44,62 @@ contract ERC721FullFeaturedCollection is
         uint256 publicSaleMaxMintPerTx;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
+        address proceedsRecipient;
         address openSeaProxyRegistryAddress;
         address openSeaExchangeAddress;
         address trustedForwarder;
     }
 
-    constructor(Config memory config)
-        ERC721(config.name, config.symbol)
-        ERC721CollectionMetadataExtension(config.contractURI)
-        ERC721PrefixedMetadataExtension(config.placeholderURI)
-        ERC721AutoIdMinterExtension(config.maxSupply)
-        ERC721PreSaleExtension(
+    constructor(Config memory config) ERC721(config.name, config.symbol) {
+        initialize(config, msg.sender);
+    }
+
+    function initialize(Config memory config, address deployer)
+        public
+        initializer
+    {
+        _setupRole(DEFAULT_ADMIN_ROLE, deployer);
+
+        _transferOwnership(deployer);
+        /*
+ERC721PrefixedMetadataExtension
+ERC721OwnerMintExtension
+ERC721PreSaleExtension
+ERC721PublicSaleExtension
+ERC721SimpleProceedsExtension
+ERC721RoleBasedMintExtension
+ERC721RoyaltyExtension
+ERC721OpenSeaNoGasExtension
+ERC2771ContextOwnable
+ERC721BulkifyExtension*/
+        __ERC721CollectionMetadataExtension_init(
+            config.name,
+            config.symbol,
+            config.contractURI
+        );
+        __ERC721PrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721AutoIdMinterExtension_init(config.maxSupply);
+        __ERC721OwnerMintExtension_init();
+        __ERC721RoleBasedMintExtension_init(deployer);
+        __ERC721PreSaleExtension_init_unchained(
             config.preSalePrice,
             config.preSaleMaxMintPerWallet
-        )
-        ERC721PublicSaleExtension(
+        );
+        __ERC721PublicSaleExtension_init(
             config.publicSalePrice,
             config.publicSaleMaxMintPerTx
-        )
-        ERC721RoyaltyExtension(
+        );
+        __ERC721SimpleProceedsExtension_init(config.proceedsRecipient);
+        __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        )
-        ERC721OpenSeaNoGasExtension(
+        );
+        __ERC721OpenSeaNoGasExtension_init(
             config.openSeaProxyRegistryAddress,
             config.openSeaExchangeAddress
-        )
-        ERC2771ContextOwnable(config.trustedForwarder)
-    {
-        _setupRole(DEFAULT_ADMIN_ROLE, _msgSender());
-        _setupRole(MINTER_ROLE, _msgSender());
+        );
+        __ERC2771ContextOwnable_init(config.trustedForwarder);
+        __ERC721BulkifyExtension_init();
     }
 
     function _msgSender()
@@ -101,16 +124,31 @@ contract ERC721FullFeaturedCollection is
 
     /* PUBLIC */
 
+    function name()
+        public
+        view
+        override(ERC721, ERC721AutoIdMinterExtension)
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        override(ERC721, ERC721AutoIdMinterExtension)
+        returns (string memory)
+    {
+        return ERC721AutoIdMinterExtension.symbol();
+    }
+
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
         override(
             ERC165Storage,
-            ERC721,
-            ERC721CollectionMetadataExtension,
             ERC721PrefixedMetadataExtension,
-            ERC721AutoIdMinterExtension,
             ERC721PreSaleExtension,
             ERC721PublicSaleExtension,
             ERC721SimpleProceedsExtension,
@@ -136,7 +174,9 @@ contract ERC721FullFeaturedCollection is
         override(ERC721, ERC721OpenSeaNoGasExtension)
         returns (bool)
     {
-        return super.isApprovedForAll(owner, operator);
+        return
+            ERC721.isApprovedForAll(owner, operator) ||
+            ERC721OpenSeaNoGasExtension.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)

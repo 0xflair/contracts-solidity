@@ -3,9 +3,12 @@
 pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
+
+import "./ERC721CollectionMetadataExtension.sol";
 
 interface IERC721AutoIdMinterExtension {
     function setMaxSupply(uint256 newValue) external;
@@ -22,7 +25,8 @@ abstract contract ERC721AutoIdMinterExtension is
     IERC721AutoIdMinterExtension,
     Ownable,
     ERC165Storage,
-    ERC721
+    ERC721,
+    ERC721CollectionMetadataExtension
 {
     using SafeMath for uint256;
 
@@ -31,11 +35,21 @@ abstract contract ERC721AutoIdMinterExtension is
 
     uint256 internal _currentTokenId = 0;
 
-    constructor(uint256 _maxSupply) {
+    function __ERC721AutoIdMinterExtension_init(uint256 _maxSupply)
+        internal
+        onlyInitializing
+    {
+        __ERC721AutoIdMinterExtension_init_unchained(_maxSupply);
+    }
+
+    function __ERC721AutoIdMinterExtension_init_unchained(uint256 _maxSupply)
+        internal
+        onlyInitializing
+    {
+        maxSupply = _maxSupply;
+
         _registerInterface(type(IERC721AutoIdMinterExtension).interfaceId);
         _registerInterface(type(IERC721).interfaceId);
-
-        maxSupply = _maxSupply;
     }
 
     /* ADMIN */
@@ -51,11 +65,31 @@ abstract contract ERC721AutoIdMinterExtension is
 
     /* PUBLIC */
 
+    function name()
+        public
+        view
+        virtual
+        override(ERC721, ERC721CollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721CollectionMetadataExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        virtual
+        override(ERC721, ERC721CollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721CollectionMetadataExtension.symbol();
+    }
+
     function supportsInterface(bytes4 interfaceId)
         public
         view
         virtual
-        override(ERC165Storage, ERC721)
+        override(ERC165Storage, ERC721, ERC721CollectionMetadataExtension)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
