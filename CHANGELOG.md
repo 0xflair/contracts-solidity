@@ -1,3 +1,12 @@
+### [1.12.7](https://github.com/0xflair/evm-contracts/compare/v1.12.6...v1.12.7) (2022-07-02)
+
+
+### Bug Fixes
+
+* deploy all contracts to mainnet ([936be32](https://github.com/0xflair/evm-contracts/commit/936be3224adbcef191ff9309c4f41002896187e4))
+* deploy contracts ([f18519d](https://github.com/0xflair/evm-contracts/commit/f18519d8599c28c083e24966933dec072931a3dc))
+* deploy to all networks ([bb9c458](https://github.com/0xflair/evm-contracts/commit/bb9c458a84d7f1f6e8f629ca41eb7541331c34ac))
+
 ### [1.12.6](https://github.com/0xflair/evm-contracts/compare/v1.12.5...v1.12.6) (2022-07-01)
 
 
