@@ -1,3 +1,10 @@
+### [1.12.8](https://github.com/0xflair/evm-contracts/compare/v1.12.7...v1.12.8) (2022-07-02)
+
+
+### Bug Fixes
+
+* deploy on sepolia chain ([85bfab8](https://github.com/0xflair/evm-contracts/commit/85bfab8e3a2ae3224c24c64427e7433b065b6e70))
+
 ### [1.12.7](https://github.com/0xflair/evm-contracts/compare/v1.12.6...v1.12.7) (2022-07-02)
 
 
