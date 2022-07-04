@@ -37,6 +37,7 @@ contract ERC721FullFeaturedCollection is
         string symbol;
         string contractURI;
         string placeholderURI;
+        string tokenURIPrefix;
         uint256 maxSupply;
         uint256 preSalePrice;
         uint256 preSaleMaxMintPerWallet;
@@ -67,7 +68,10 @@ contract ERC721FullFeaturedCollection is
             config.symbol,
             config.contractURI
         );
-        __ERC721PrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721PrefixedMetadataExtension_init(
+            config.placeholderURI,
+            config.tokenURIPrefix
+        );
         __ERC721AutoIdMinterExtension_init(config.maxSupply);
         __ERC721OwnerMintExtension_init();
         __ERC721RoleBasedMintExtension_init(deployer);

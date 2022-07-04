@@ -31,8 +31,8 @@ contract ERC721ManagedPrefixedCollection is
         string name;
         string symbol;
         string contractURI;
-        string baseURI;
         string placeholderURI;
+        string tokenURIPrefix;
         address[] initialHolders;
         uint256[] initialAmounts;
         uint256 maxSupply;
@@ -61,7 +61,10 @@ contract ERC721ManagedPrefixedCollection is
             config.symbol,
             config.contractURI
         );
-        __ERC721PrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721PrefixedMetadataExtension_init(
+            config.placeholderURI,
+            config.tokenURIPrefix
+        );
         __ERC721AutoIdMinterExtension_init(config.maxSupply);
         __ERC721OwnerMintExtension_init();
         __ERC721OwnerManagedExtension_init();
@@ -77,8 +80,6 @@ contract ERC721ManagedPrefixedCollection is
         for (uint256 i = 0; i < config.initialHolders.length; i++) {
             _mintTo(config.initialHolders[i], config.initialAmounts[i]);
         }
-
-        _baseTokenURI = config.baseURI;
     }
 
     function _msgSender()

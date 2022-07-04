@@ -37,6 +37,7 @@ contract ERC721AFullFeaturedCollection is
         string symbol;
         string contractURI;
         string placeholderURI;
+        string tokenURIPrefix;
         uint256 maxSupply;
         uint256 preSalePrice;
         uint256 preSaleMaxMintPerWallet;
@@ -67,7 +68,10 @@ contract ERC721AFullFeaturedCollection is
             config.symbol,
             config.contractURI
         );
-        __ERC721APrefixedMetadataExtension_init(config.placeholderURI);
+        __ERC721APrefixedMetadataExtension_init(
+            config.placeholderURI,
+            config.tokenURIPrefix
+        );
         __ERC721AMinterExtension_init(config.maxSupply);
         __ERC721AOwnerMintExtension_init();
         __ERC721ARoleBasedMintExtension_init(deployer);

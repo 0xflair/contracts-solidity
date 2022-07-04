@@ -29,10 +29,20 @@ if (args.includes("mainnet")) {
   etherScanApiKey = process.env.ARBITRUM_ONE_ETHERSCAN_API_KEY;
 } else if (args.includes("arbitrumTestnet")) {
   etherScanApiKey = process.env.ARBITRUM_TESTNET_ETHERSCAN_API_KEY;
+} else if (args.includes("opera")) {
+  etherScanApiKey = process.env.FANTOM_OPERA_ETHERSCAN_API_KEY;
+} else if (args.includes("ftmTestnet")) {
+  etherScanApiKey = process.env.FANTOM_TESTNET_ETHERSCAN_API_KEY;
+} else if (args.includes("avalanche")) {
+  etherScanApiKey = process.env.AVALANCHE_MAINNET_ETHERSCAN_API_KEY;
+} else if (args.includes("avalancheFujiTestnet")) {
+  etherScanApiKey = process.env.AVALANCHE_FUJI_TESTNET_ETHERSCAN_API_KEY;
 } else if (args.includes("polygon")) {
   etherScanApiKey = process.env.POLYGON_ETHERSCAN_API_KEY;
 } else if (args.includes("polygonMumbai")) {
   etherScanApiKey = process.env.POLYGON_MUMBAI_ETHERSCAN_API_KEY;
+} else if (args.includes("neonlabs")) {
+  etherScanApiKey = process.env.NEON_LABS_ETHERSCAN_API_KEY;
 } else if (args.includes("hardhat")) {
   etherScanApiKey = process.env.RINKEBY_ETHERSCAN_API_KEY;
 } else {
@@ -61,6 +71,7 @@ const config: HardhatUserConfig = {
     enabled: true,
   },
   networks: {
+    // Ethereum
     mainnet: {
       chainId: 1,
       url: process.env.MAINNET_URL || "",
@@ -92,6 +103,33 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // Fantom
+    opera: {
+      chainId: 250,
+      url: process.env.FANTOM_OPERA_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    ftmTestnet: {
+      chainId: 4002,
+      url: process.env.FANTOM_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Avalanche
+    avalanche: {
+      chainId: 43114,
+      url: process.env.AVALANCHE_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    avalancheFujiTestnet: {
+      chainId: 43113,
+      url: process.env.AVALANCHE_FUJI_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Arbitrum
     arbitrumOne: {
       chainId: 42161,
       url: process.env.ARBITRUM_ONE_URL || "",
@@ -104,6 +142,7 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // Polygon
     polygon: {
       chainId: 137,
       url: process.env.POLYGON_URL || "",

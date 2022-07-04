@@ -26,20 +26,27 @@ abstract contract ERC721APrefixedMetadataExtension is
     ERC721A
 {
     string internal _placeholderURI;
-    string internal _baseTokenURI;
+    string internal _tokenURIPrefix;
+    string internal _tokenURISuffix = ".json";
 
-    bool public baseURIFrozen;
+    bool public tokensURIFrozen;
 
     function __ERC721APrefixedMetadataExtension_init(
-        string memory placeholderURI_
+        string memory placeholderURI_,
+        string memory tokenURIPrefix_
     ) internal onlyInitializing {
-        __ERC721APrefixedMetadataExtension_init_unchained(placeholderURI_);
+        __ERC721APrefixedMetadataExtension_init_unchained(
+            placeholderURI_,
+            tokenURIPrefix_
+        );
     }
 
     function __ERC721APrefixedMetadataExtension_init_unchained(
-        string memory placeholderURI_
+        string memory placeholderURI_,
+        string memory tokenURIPrefix_
     ) internal onlyInitializing {
         _placeholderURI = placeholderURI_;
+        _tokenURIPrefix = tokenURIPrefix_;
 
         _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
         _registerInterface(type(IERC721Metadata).interfaceId);
@@ -51,13 +58,18 @@ abstract contract ERC721APrefixedMetadataExtension is
         _placeholderURI = newValue;
     }
 
-    function setBaseURI(string memory newValue) external onlyOwner {
-        require(!baseURIFrozen, "BASE_URI_FROZEN");
-        _baseTokenURI = newValue;
+    function setTokenURIPrefix(string memory newValue) external onlyOwner {
+        require(!tokensURIFrozen, "TOKENS_URI_FROZEN");
+        _tokenURIPrefix = newValue;
     }
 
-    function freezeBaseURI() external onlyOwner {
-        baseURIFrozen = true;
+    function setTokenURISuffix(string memory newValue) external onlyOwner {
+        require(!tokensURIFrozen, "TOKENS_URI_FROZEN");
+        _tokenURISuffix = newValue;
+    }
+
+    function freezeTokensURI() external onlyOwner {
+        tokensURIFrozen = true;
     }
 
     /* PUBLIC */
@@ -72,12 +84,16 @@ abstract contract ERC721APrefixedMetadataExtension is
         return ERC165Storage.supportsInterface(interfaceId);
     }
 
-    function baseTokenURI() public view returns (string memory) {
-        return _baseTokenURI;
-    }
-
     function placeholderURI() public view returns (string memory) {
         return _placeholderURI;
+    }
+
+    function tokenURIPrefix() public view returns (string memory) {
+        return _tokenURIPrefix;
+    }
+
+    function tokenURISuffix() public view returns (string memory) {
+        return _tokenURISuffix;
     }
 
     function tokenURI(uint256 _tokenId)
@@ -88,9 +104,13 @@ abstract contract ERC721APrefixedMetadataExtension is
         returns (string memory)
     {
         return
-            bytes(_baseTokenURI).length > 0
+            bytes(_tokenURIPrefix).length > 0
                 ? string(
-                    abi.encodePacked(_baseTokenURI, Strings.toString(_tokenId))
+                    abi.encodePacked(
+                        _tokenURIPrefix,
+                        Strings.toString(_tokenId),
+                        _tokenURISuffix
+                    )
                 )
                 : _placeholderURI;
     }

@@ -2,7 +2,6 @@ import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 
 import { deployPermanentContract } from "../hardhat.util";
-import { utils } from "ethers";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const accounts = await hre.getUnnamedAccounts();
@@ -19,6 +18,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         symbol: "COL",
         contractURI: "ipfs://contractURI",
         placeholderURI: "ipfs://placeholderURI",
+        tokenURIPrefix: "ipfs://tokenURIPrefix/",
         maxSupply: 0,
         preSalePrice: 0,
         preSaleMaxMintPerWallet: 0,
@@ -43,9 +43,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       {
         name: "Collection",
         symbol: "COL",
-        baseURI: "ipfs://baseURI/",
-        placeholderURI: "ipfs://placeholderURI",
         contractURI: "ipfs://contractURI",
+        placeholderURI: "ipfs://placeholderURI",
+        tokenURIPrefix: "ipfs://tokenURIPrefix/",
         maxSupply: 0,
         defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
         defaultRoyaltyBps: 0,
@@ -86,6 +86,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         symbol: "COL",
         contractURI: "ipfs://contractURI",
         placeholderURI: "ipfs://placeholderURI",
+        tokenURIPrefix: "ipfs://tokenURIPrefix/",
         maxSupply: 0,
         preSalePrice: 0,
         preSaleMaxMintPerWallet: 0,

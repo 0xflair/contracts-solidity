@@ -14,8 +14,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
     const collection = await ERC721ManagedPrefixedCollection.deploy({
       name: "Flair Angels",
       symbol: "ANGEL",
-      baseURI: "ipfs://xxxxx/",
       placeholderURI: "ipfs://yyyyy",
+      tokenURIPrefix: "ipfs://xxxxx/",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
@@ -31,7 +31,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
     expect(await collection.balanceOf(userB)).to.eq(1);
   });
 
-  it("should use the correct baseURI when provided on deployment", async function () {
+  it("should use the correct tokenURIPrefix when provided on deployment", async function () {
     const ERC721ManagedPrefixedCollection =
       await ethers.getContractFactory<ERC721ManagedPrefixedCollection__factory>(
         "ERC721ManagedPrefixedCollection"
@@ -39,8 +39,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
     const collection = await ERC721ManagedPrefixedCollection.deploy({
       name: "Flair Angels",
       symbol: "ANGEL",
-      baseURI: "ipfs://xxxxx/",
       placeholderURI: "ipfs://yyyyy",
+      tokenURIPrefix: "ipfs://xxxxx/",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
@@ -52,7 +52,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
 
     await collection.deployed();
 
-    expect(await collection.tokenURI("11")).to.eq(`ipfs://xxxxx/11`);
+    expect(await collection.tokenURI("11")).to.eq(`ipfs://xxxxx/11.json`);
   });
 
   it("should use the placeholder URI when baseURI is not provided on deployment", async function () {
@@ -63,8 +63,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
     const collection = await ERC721ManagedPrefixedCollection.deploy({
       name: "Flair Angels",
       symbol: "ANGEL",
-      baseURI: "",
       placeholderURI: "ipfs://yyyyy",
+      tokenURIPrefix: "",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
@@ -89,8 +89,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
     const collection = await ERC721ManagedPrefixedCollection.deploy({
       name: "Flair Angels",
       symbol: "ANGEL",
-      baseURI: "",
       placeholderURI: "ipfs://yyyyy",
+      tokenURIPrefix: "",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
@@ -116,8 +116,8 @@ describe("ERC721ManagedPrefixedCollection", function () {
     const collection = await ERC721ManagedPrefixedCollection.deploy({
       name: "Flair Angels",
       symbol: "ANGEL",
-      baseURI: "",
       placeholderURI: "ipfs://yyyyy",
+      tokenURIPrefix: "",
       contractURI: "ipfs://zzzzzz",
       maxSupply: 10,
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
