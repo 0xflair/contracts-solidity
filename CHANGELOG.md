@@ -1,3 +1,11 @@
+### [1.12.9](https://github.com/0xflair/evm-contracts/compare/v1.12.8...v1.12.9) (2022-07-04)
+
+
+### Bug Fixes
+
+* add support for suffix for metadata ([3ad62bc](https://github.com/0xflair/evm-contracts/commit/3ad62bcbec31f7a7343a0dea26bc9528b83fa3a3))
+* more consistent naming ([3c23cbf](https://github.com/0xflair/evm-contracts/commit/3c23cbf1068d14a9b60516bd92745aff60307c10))
+
 ### [1.12.8](https://github.com/0xflair/evm-contracts/compare/v1.12.7...v1.12.8) (2022-07-02)
 
 
