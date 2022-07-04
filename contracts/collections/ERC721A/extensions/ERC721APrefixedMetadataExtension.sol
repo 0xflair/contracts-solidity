@@ -29,7 +29,7 @@ abstract contract ERC721APrefixedMetadataExtension is
     string internal _tokenURIPrefix;
     string internal _tokenURISuffix = ".json";
 
-    bool public tokensURIFrozen;
+    bool public tokenURIFrozen;
 
     function __ERC721APrefixedMetadataExtension_init(
         string memory placeholderURI_,
@@ -59,17 +59,17 @@ abstract contract ERC721APrefixedMetadataExtension is
     }
 
     function setTokenURIPrefix(string memory newValue) external onlyOwner {
-        require(!tokensURIFrozen, "TOKENS_URI_FROZEN");
+        require(!tokenURIFrozen, "TOKENS_URI_FROZEN");
         _tokenURIPrefix = newValue;
     }
 
     function setTokenURISuffix(string memory newValue) external onlyOwner {
-        require(!tokensURIFrozen, "TOKENS_URI_FROZEN");
+        require(!tokenURIFrozen, "TOKENS_URI_FROZEN");
         _tokenURISuffix = newValue;
     }
 
-    function freezeTokensURI() external onlyOwner {
-        tokensURIFrozen = true;
+    function freezeTokenURI() external onlyOwner {
+        tokenURIFrozen = true;
     }
 
     /* PUBLIC */
