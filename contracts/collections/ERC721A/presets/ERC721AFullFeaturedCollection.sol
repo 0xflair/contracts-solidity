@@ -19,11 +19,9 @@ import "../extensions/ERC721AOpenSeaNoGasExtension.sol";
 contract ERC721AFullFeaturedCollection is
     Ownable,
     ERC165Storage,
-    ERC721A,
     ERC2771ContextOwnable,
     ERC721ACollectionMetadataExtension,
     ERC721APrefixedMetadataExtension,
-    ERC721AMinterExtension,
     ERC721AOwnerMintExtension,
     ERC721APreSaleExtension,
     ERC721APublicSaleExtension,
@@ -95,6 +93,8 @@ contract ERC721AFullFeaturedCollection is
         __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
 
+    /* INTERNAL */
+
     function _msgSender()
         internal
         view
@@ -123,10 +123,8 @@ contract ERC721AFullFeaturedCollection is
         virtual
         override(
             ERC165Storage,
-            ERC721A,
             ERC721ACollectionMetadataExtension,
             ERC721APrefixedMetadataExtension,
-            ERC721AMinterExtension,
             ERC721APreSaleExtension,
             ERC721APublicSaleExtension,
             ERC721SimpleProceedsExtension,
