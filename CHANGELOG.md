@@ -1,3 +1,10 @@
+### [1.12.11](https://github.com/0xflair/evm-contracts/compare/v1.12.10...v1.12.11) (2022-07-11)
+
+
+### Bug Fixes
+
+* start from token id 1 for azuki flavor ([9dde497](https://github.com/0xflair/evm-contracts/commit/9dde497b9bf206b6af968cc0ddb4177dc55f0e36))
+
 ### [1.12.10](https://github.com/0xflair/evm-contracts/compare/v1.12.9...v1.12.10) (2022-07-04)
 
 
