@@ -91,6 +91,9 @@ describe("ERC721FullFeaturedCollection", function () {
         emittedAddress
       );
 
+      expect(await collectionClone["totalSupply()"]()).to.equal(0);
+      expect(await collectionClone["tokenURISuffix()"]()).to.equal(".json");
+
       expect(await collection.maxSupply()).to.equal(8000);
       expect(await collectionClone["maxSupply()"]()).to.equal(5000);
 

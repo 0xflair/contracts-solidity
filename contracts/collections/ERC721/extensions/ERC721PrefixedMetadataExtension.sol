@@ -43,7 +43,7 @@ abstract contract ERC721PrefixedMetadataExtension is
 {
     string internal _placeholderURI;
     string internal _tokenURIPrefix;
-    string internal _tokenURISuffix = ".json";
+    string internal _tokenURISuffix;
 
     bool public tokenURIFrozen;
 
@@ -63,6 +63,7 @@ abstract contract ERC721PrefixedMetadataExtension is
     ) internal onlyInitializing {
         _placeholderURI = placeholderURI_;
         _tokenURIPrefix = tokenURIPrefix_;
+        _tokenURISuffix = ".json";
 
         _registerInterface(type(IERC721PrefixedMetadataExtension).interfaceId);
         _registerInterface(type(IERC721Metadata).interfaceId);
