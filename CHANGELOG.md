@@ -1,3 +1,10 @@
+### [1.12.17](https://github.com/0xflair/evm-contracts/compare/v1.12.16...v1.12.17) (2022-07-13)
+
+
+### Bug Fixes
+
+* deploy latest contracts on non-mainnet networks ([1fd4278](https://github.com/0xflair/evm-contracts/commit/1fd4278b3d6441ebb925218f5d5f1888aa1e1f55))
+
 ### [1.12.16](https://github.com/0xflair/evm-contracts/compare/v1.12.15...v1.12.16) (2022-07-13)
 
 
