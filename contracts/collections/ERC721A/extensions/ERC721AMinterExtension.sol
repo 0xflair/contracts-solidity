@@ -69,16 +69,6 @@ abstract contract ERC721AMinterExtension is
 
     /* INTERNAL */
 
-    function _startTokenId()
-        internal
-        pure
-        virtual
-        override(ERC721A)
-        returns (uint256)
-    {
-        return 1;
-    }
-
     function _mintTo(address to, uint256 count) internal {
         require(totalSupply() + count <= maxSupply, "EXCEEDS_MAX_SUPPLY");
         _safeMint(to, count);

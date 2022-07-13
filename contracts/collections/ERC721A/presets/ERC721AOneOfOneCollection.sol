@@ -17,6 +17,7 @@ contract ERC721AOneOfOneCollection is
     Ownable,
     ERC165Storage,
     ERC2771ContextOwnable,
+    ERC721A,
     ERC721AMinterExtension,
     ERC721ACollectionMetadataExtension,
     ERC721AOwnerMintExtension,
@@ -69,6 +70,34 @@ contract ERC721AOneOfOneCollection is
         __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
 
+    function _burn(uint256 tokenId)
+        internal
+        virtual
+        override(ERC721A, ERC721AOneOfOneMintExtension)
+    {
+        return ERC721AOneOfOneMintExtension._burn(tokenId);
+    }
+
+    function _msgSender()
+        internal
+        view
+        virtual
+        override(ERC2771ContextOwnable, Context)
+        returns (address sender)
+    {
+        return super._msgSender();
+    }
+
+    function _msgData()
+        internal
+        view
+        virtual
+        override(ERC2771ContextOwnable, Context)
+        returns (bytes calldata)
+    {
+        return super._msgData();
+    }
+
     /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
@@ -77,6 +106,7 @@ contract ERC721AOneOfOneCollection is
         virtual
         override(
             ERC165Storage,
+            ERC721A,
             ERC721AMinterExtension,
             ERC721ACollectionMetadataExtension,
             ERC721AOwnerMintExtension,
@@ -145,35 +175,5 @@ contract ERC721AOneOfOneCollection is
         }
 
         return (maxSupply, this.totalSupply(), balance);
-    }
-
-    /* INTERNAL */
-
-    function _burn(uint256 tokenId)
-        internal
-        virtual
-        override(ERC721A, ERC721AOneOfOneMintExtension)
-    {
-        return ERC721AOneOfOneMintExtension._burn(tokenId);
-    }
-
-    function _msgSender()
-        internal
-        view
-        virtual
-        override(ERC2771ContextOwnable, Context)
-        returns (address sender)
-    {
-        return super._msgSender();
-    }
-
-    function _msgData()
-        internal
-        view
-        virtual
-        override(ERC2771ContextOwnable, Context)
-        returns (bytes calldata)
-    {
-        return super._msgData();
     }
 }

@@ -10,7 +10,6 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "erc721a/contracts/ERC721A.sol";
 
 import {IERC721PerTokenMetadataExtension} from "../../ERC721/extensions/ERC721PerTokenMetadataExtension.sol";
-import "./ERC721AMinterExtension.sol";
 
 /**
  * @dev Extension to allow configuring collection and tokens metadata URI.
@@ -22,7 +21,7 @@ abstract contract ERC721APerTokenMetadataExtension is
     Initializable,
     Ownable,
     ERC165Storage,
-    ERC721AMinterExtension
+    ERC721A
 {
     uint256 public lastFrozenTokenId;
 
@@ -66,7 +65,7 @@ abstract contract ERC721APerTokenMetadataExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AMinterExtension)
+        override(ERC165Storage, ERC721A)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

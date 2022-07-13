@@ -11,7 +11,6 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "erc721a/contracts/ERC721A.sol";
 
 import {IERC721PrefixedMetadataExtension} from "../../ERC721/extensions/ERC721PrefixedMetadataExtension.sol";
-import "./ERC721AMinterExtension.sol";
 
 /**
  * @dev Extension to allow configuring tokens metadata URI.
@@ -24,7 +23,7 @@ abstract contract ERC721APrefixedMetadataExtension is
     Initializable,
     Ownable,
     ERC165Storage,
-    ERC721AMinterExtension
+    ERC721A
 {
     string internal _placeholderURI;
     string internal _tokenURIPrefix;
@@ -79,7 +78,7 @@ abstract contract ERC721APrefixedMetadataExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AMinterExtension)
+        override(ERC165Storage, ERC721A)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

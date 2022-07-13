@@ -58,7 +58,7 @@ abstract contract ERC721OneOfOneMintExtension is
         uint256 count,
         string[] memory tokenURIs
     ) external onlyOwner {
-        uint256 startingTokenId = _getNextTokenId();
+        uint256 startingTokenId = _currentTokenId;
         _mintTo(to, count);
         for (uint256 i = 0; i < count; i++) {
             _setTokenURI(startingTokenId + i, tokenURIs[i]);
@@ -72,7 +72,7 @@ abstract contract ERC721OneOfOneMintExtension is
     ) external {
         require(hasRole(MINTER_ROLE, _msgSender()), "NOT_MINTER_ROLE");
 
-        uint256 startingTokenId = _getNextTokenId();
+        uint256 startingTokenId = _currentTokenId;
         _mintTo(to, count);
         for (uint256 i = 0; i < count; i++) {
             _setTokenURI(startingTokenId + i, tokenURIs[i]);

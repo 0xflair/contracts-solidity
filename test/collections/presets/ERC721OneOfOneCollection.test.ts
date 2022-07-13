@@ -86,7 +86,7 @@ describe("ERC721OneOfOneCollection", function () {
     await collection.mintWithTokenURIsByOwner(userA, 1, ["ipfs://zzzzz"]);
 
     expect(await collection.balanceOf(userA)).to.equal(1);
-    expect(await collection.tokenURI(1)).to.equal("ipfs://zzzzz");
+    expect(await collection.tokenURI(0)).to.equal("ipfs://zzzzz");
   });
 
   it("should mint 1 one-of-one token via meta transactions", async function () {
@@ -145,8 +145,8 @@ describe("ERC721OneOfOneCollection", function () {
     await forwarder.batchExecute([metaTransaction], [signature]);
 
     expect(await collection.balanceOf(userB)).to.equal(2);
-    expect(await collection.tokenURI(1)).to.equal("ipfs://zzzzz");
-    expect(await collection.tokenURI(2)).to.equal("ipfs://wwwwww");
+    expect(await collection.tokenURI(0)).to.equal("ipfs://zzzzz");
+    expect(await collection.tokenURI(1)).to.equal("ipfs://wwwwww");
   });
 
   it("should failing minting 1 one-of-one token when not admin via meta transactions", async function () {

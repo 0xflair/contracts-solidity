@@ -101,9 +101,9 @@ describe("ERC721ManagedPrefixedCollection", function () {
     });
 
     await collection.deployed();
-    await collection.transferFrom(userA, userB, 1);
+    await collection.transferFrom(userA, userB, 0);
 
-    expect(await collection.ownerOf("1")).to.eq(userB);
+    expect(await collection.ownerOf("0")).to.eq(userB);
   });
 
   it("should reject contract owner to transfer when collection is not managed anymore", async function () {
@@ -131,10 +131,10 @@ describe("ERC721ManagedPrefixedCollection", function () {
 
     await collection.revokeManagementPower();
 
-    await expect(collection.transferFrom(userA, userB, 1)).to.be.revertedWith(
+    await expect(collection.transferFrom(userA, userB, 0)).to.be.revertedWith(
       "ERC721: transfer caller is not owner nor approved"
     );
 
-    expect(await collection.ownerOf("1")).to.eq(userA);
+    expect(await collection.ownerOf("0")).to.eq(userA);
   });
 });

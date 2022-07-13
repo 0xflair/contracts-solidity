@@ -95,8 +95,6 @@ abstract contract ERC721AOneOfOneMintExtension is
         return ERC721APerTokenMetadataExtension.tokenURI(tokenId);
     }
 
-    /* INTERNAL */
-
     function _burn(uint256 tokenId)
         internal
         virtual

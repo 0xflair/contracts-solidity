@@ -106,18 +106,10 @@ abstract contract ERC721AutoIdMinterExtension is
         require(totalSupply() + count <= maxSupply, "EXCEEDS_MAX_SUPPLY");
 
         for (uint256 i = 0; i < count; i++) {
-            uint256 newTokenId = _getNextTokenId();
+            uint256 newTokenId = _currentTokenId;
             _safeMint(to, newTokenId);
             _incrementTokenId();
         }
-    }
-
-    /**
-     * Calculates the next token ID based on value of _currentTokenId
-     * @return uint256 for the next token ID
-     */
-    function _getNextTokenId() internal view returns (uint256) {
-        return _currentTokenId.add(1);
     }
 
     /**

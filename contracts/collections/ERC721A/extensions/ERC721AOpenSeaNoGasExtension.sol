@@ -11,7 +11,6 @@ import "erc721a/contracts/ERC721A.sol";
 import "../../../misc/opensea/ProxyRegistry.sol";
 
 import {IERC721OpenSeaNoGasExtension} from "../../ERC721/extensions/ERC721OpenSeaNoGasExtension.sol";
-import "./ERC721AMinterExtension.sol";
 
 /**
  * @dev Extension that automatically approves OpenSea to avoid having users to "Approve" your collection before trading.
@@ -21,7 +20,7 @@ abstract contract ERC721AOpenSeaNoGasExtension is
     Initializable,
     Ownable,
     ERC165Storage,
-    ERC721AMinterExtension
+    ERC721A
 {
     address internal _openSeaProxyRegistryAddress;
     address private _openSeaExchangeAddress;
@@ -62,7 +61,7 @@ abstract contract ERC721AOpenSeaNoGasExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AMinterExtension)
+        override(ERC165Storage, ERC721A)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
