@@ -1,3 +1,10 @@
+### [1.12.16](https://github.com/0xflair/evm-contracts/compare/v1.12.15...v1.12.16) (2022-07-13)
+
+
+### Bug Fixes
+
+* put default suffix for azuki versions ([eab9724](https://github.com/0xflair/evm-contracts/commit/eab97245820cfd63ed0c4b2868214daa37338d1d))
+
 ### [1.12.15](https://github.com/0xflair/evm-contracts/compare/v1.12.14...v1.12.15) (2022-07-13)
 
 
