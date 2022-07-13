@@ -1,3 +1,10 @@
+## [1.13.0](https://github.com/0xflair/evm-contracts/compare/v1.12.17...v1.13.0) (2022-07-13)
+
+
+### Features
+
+* bump up the minor version ([66240b0](https://github.com/0xflair/evm-contracts/commit/66240b0f3161d024ae737605525ba88f098f255e))
+
 ### [1.12.17](https://github.com/0xflair/evm-contracts/compare/v1.12.16...v1.12.17) (2022-07-13)
 
 
