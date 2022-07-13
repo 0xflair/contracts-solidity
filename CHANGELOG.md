@@ -1,3 +1,10 @@
+### [1.12.13](https://github.com/0xflair/evm-contracts/compare/v1.12.12...v1.12.13) (2022-07-13)
+
+
+### Bug Fixes
+
+* start token IDs at 0 to be consistent with ERC721A ([#14](https://github.com/0xflair/evm-contracts/issues/14)) ([2d119ba](https://github.com/0xflair/evm-contracts/commit/2d119ba54d020d4572d51523659960e0d2c4e4bb))
+
 ### [1.12.12](https://github.com/0xflair/evm-contracts/compare/v1.12.11...v1.12.12) (2022-07-12)
 
 
