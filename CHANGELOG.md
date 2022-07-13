@@ -1,3 +1,10 @@
+### [1.12.14](https://github.com/0xflair/evm-contracts/compare/v1.12.13...v1.12.14) (2022-07-13)
+
+
+### Bug Fixes
+
+* set default suffix within init ([bd740f2](https://github.com/0xflair/evm-contracts/commit/bd740f23c88d897caeca003be3158cd15a91d6dd))
+
 ### [1.12.13](https://github.com/0xflair/evm-contracts/compare/v1.12.12...v1.12.13) (2022-07-13)
 
 
