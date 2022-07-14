@@ -11,6 +11,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
+import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721EmissionReleaseExtension.sol";
 import "../extensions/ERC721EqualSplitExtension.sol";
 
@@ -18,7 +19,8 @@ contract ERC721EqualEmissionStream is
     Initializable,
     Ownable,
     ERC721EmissionReleaseExtension,
-    ERC721EqualSplitExtension
+    ERC721EqualSplitExtension,
+    EmergencyOwnerWithdrawExtension
 {
     using Address for address;
     using Address for address payable;
@@ -51,6 +53,8 @@ contract ERC721EqualEmissionStream is
         initializer
     {
         _transferOwnership(deployer);
+
+        __EmergencyOwnerWithdrawExtension_init();
         __ERC721MultiTokenStream_init(
             config.ticketToken,
             config.lockedUntilTimestamp
