@@ -1,3 +1,10 @@
+### [1.13.1](https://github.com/0xflair/evm-contracts/compare/v1.13.0...v1.13.1) (2022-07-14)
+
+
+### Bug Fixes
+
+* deploy to mainnet ([17d43de](https://github.com/0xflair/evm-contracts/commit/17d43dec0199169d650309867ae7654c069c2868))
+
 ## [1.13.0](https://github.com/0xflair/evm-contracts/compare/v1.12.17...v1.13.0) (2022-07-13)
 
 
