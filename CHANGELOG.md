@@ -1,3 +1,10 @@
+## [1.15.0](https://github.com/0xflair/evm-contracts/compare/v1.14.0...v1.15.0) (2022-07-17)
+
+
+### Features
+
+* add lockable extension to full-featured collection ([#16](https://github.com/0xflair/evm-contracts/issues/16)) ([7f86578](https://github.com/0xflair/evm-contracts/commit/7f865780434e516f8b2d06e3a13dedae2fdd3bfa))
+
 ## [1.14.0](https://github.com/0xflair/evm-contracts/compare/v1.13.1...v1.14.0) (2022-07-17)
 
 
