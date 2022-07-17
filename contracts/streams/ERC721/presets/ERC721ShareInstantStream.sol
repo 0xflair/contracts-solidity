@@ -11,6 +11,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
+import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721InstantReleaseExtension.sol";
 import "../extensions/ERC721ShareSplitExtension.sol";
 
@@ -18,7 +19,8 @@ contract ERC721ShareInstantStream is
     Initializable,
     Ownable,
     ERC721InstantReleaseExtension,
-    ERC721ShareSplitExtension
+    ERC721ShareSplitExtension,
+    EmergencyOwnerWithdrawExtension
 {
     string public constant name = "ERC721 Share Instant Stream";
 
@@ -45,6 +47,7 @@ contract ERC721ShareInstantStream is
     {
         _transferOwnership(deployer);
 
+        __EmergencyOwnerWithdrawExtension_init();
         __ERC721MultiTokenStream_init(
             config.ticketToken,
             config.lockedUntilTimestamp
