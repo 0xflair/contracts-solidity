@@ -1,3 +1,10 @@
+### [1.15.1](https://github.com/0xflair/evm-contracts/compare/v1.15.0...v1.15.1) (2022-07-17)
+
+
+### Bug Fixes
+
+* deploy to rinkeby testnet ([40d8100](https://github.com/0xflair/evm-contracts/commit/40d8100803e12f67a7fcaa966d7b4329a0390423))
+
 ## [1.15.0](https://github.com/0xflair/evm-contracts/compare/v1.14.0...v1.15.0) (2022-07-17)
 
 
