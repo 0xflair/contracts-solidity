@@ -2,31 +2,43 @@
 import { expect } from "chai";
 import { utils } from "ethers";
 import hre, { ethers } from "hardhat";
-import web3 from "web3";
 import {
   ERC721FullFeaturedCollection,
   ERC721FullFeaturedCollection__factory,
+  ERC721AFullFeaturedCollection,
+  ERC721AFullFeaturedCollection__factory,
 } from "../../../typechain";
 
 import { setupTest } from "../../setup";
 
 const deployCollection = async function (
+  mode: "normal" | "azuki" | string,
   args?: any
-): Promise<ERC721FullFeaturedCollection> {
+): Promise<ERC721FullFeaturedCollection | ERC721AFullFeaturedCollection> {
   const ERC721FullFeaturedCollection =
     await ethers.getContractFactory<ERC721FullFeaturedCollection__factory>(
       "ERC721FullFeaturedCollection"
     );
-  return await ERC721FullFeaturedCollection.deploy({
+  const ERC721AFullFeaturedCollection =
+    await ethers.getContractFactory<ERC721AFullFeaturedCollection__factory>(
+      "ERC721AFullFeaturedCollection"
+    );
+
+  const factory =
+    mode === "azuki"
+      ? ERC721AFullFeaturedCollection
+      : ERC721FullFeaturedCollection;
+
+  return await factory.deploy({
     name: "Flair Angels",
     symbol: "ANGEL",
     contractURI: "ipfs://xxxxx",
     placeholderURI: "ipfs://yyyyy",
     tokenURIPrefix: "ipfs://yyyyy",
     maxSupply: 8000,
-    preSalePrice: web3.utils.toWei("0.06"),
+    preSalePrice: utils.parseEther("0.06"),
     preSaleMaxMintPerWallet: 2,
-    publicSalePrice: web3.utils.toWei("0.08"),
+    publicSalePrice: utils.parseEther("0.08"),
     publicSaleMaxMintPerTx: 10,
     defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
     defaultRoyaltyBps: 250,
@@ -39,154 +51,178 @@ const deployCollection = async function (
 };
 
 describe("ERC721FullFeaturedCollection", function () {
-  describe("Factory", function () {
-    it("should create collection using factory", async function () {
-      const { deployer, userA, userB } = await setupTest();
+  ["normal", "azuki"].forEach((mode) => {
+    describe(`when mode is ${mode}: `, () => {
+      it("should return collection info", async function () {
+        const collection = await deployCollection(mode);
 
-      const collection = await deployCollection();
-      const salt = utils.randomBytes(32);
-      const data = collection.interface.encodeFunctionData("initialize", [
-        {
-          name: "My Test",
-          symbol: "MTS",
-          contractURI: "ipfs://aaaaaaa",
-          placeholderURI: "ipfs://bbbbbb",
-          tokenURIPrefix: "ipfs://ccccccc",
-          maxSupply: 5000,
-          preSalePrice: web3.utils.toWei("1"),
-          preSaleMaxMintPerWallet: 2,
-          publicSalePrice: web3.utils.toWei("2"),
-          publicSaleMaxMintPerTx: 10,
-          defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
-          defaultRoyaltyBps: 250,
-          proceedsRecipient: "0x0000000000000000000000000000000000000000",
-          openSeaProxyRegistryAddress:
-            "0x0000000000000000000000000000000000000000",
-          openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
-          trustedForwarder: "0x0000000000000000000000000000000000000000",
-        },
-        userB.signer.address,
-      ]);
+        const info = await collection.getInfo();
 
-      const predictedAddress =
-        await userA.FlairFactory.predictDeterministicSimple(
-          collection.address,
-          salt
+        expect(info._maxSupply).to.be.equal(8000);
+      });
+
+      it("should return true when checking IRC721(A) interface", async function () {
+        const collection = await deployCollection(mode);
+
+        // ERC721PublicSaleExtension
+        expect(await collection.supportsInterface("0xbf05d618")).to.be.equal(
+          true
         );
 
-      const result = await userA.FlairFactory.cloneDeterministicSimple(
-        collection.address,
-        salt,
-        data
-      );
+        // Rarible Royalty
+        expect(await collection.supportsInterface("0xcad96cca")).to.be.equal(
+          true
+        );
 
-      const receipt = await result.wait();
-      const event = receipt?.events?.find((e) => e.event === "ProxyCreated");
-      const emittedAddress = event?.args?.[1];
+        // EIP2981 Royalty
+        expect(await collection.supportsInterface("0x2a55205a")).to.be.equal(
+          true
+        );
 
-      expect(emittedAddress).to.equal(predictedAddress);
+        // ERC721
+        expect(await collection.supportsInterface("0x80ac58cd")).to.be.equal(
+          true
+        );
 
-      const collectionClone = await hre.ethers.getContractAt(
-        "ERC721FullFeaturedCollection",
-        emittedAddress
-      );
+        if (mode === "azuki") {
+          // ERC721A
+          expect(await collection.supportsInterface("0xc21b8f28")).to.be.equal(
+            true
+          );
+        }
+      });
 
-      expect(await collectionClone["totalSupply()"]()).to.equal(0);
-      expect(await collectionClone["tokenURISuffix()"]()).to.equal(".json");
+      it("should create collection using factory", async function () {
+        const { deployer, userA, userB } = await setupTest();
 
-      expect(await collection.maxSupply()).to.equal(8000);
-      expect(await collectionClone["maxSupply()"]()).to.equal(5000);
+        const collection = await deployCollection(mode);
+        const salt = utils.randomBytes(32);
+        const data = collection.interface.encodeFunctionData("initialize", [
+          {
+            name: "My Test",
+            symbol: "MTS",
+            contractURI: "ipfs://aaaaaaa",
+            placeholderURI: "ipfs://bbbbbb",
+            tokenURIPrefix: "ipfs://ccccccc",
+            maxSupply: 5000,
+            preSalePrice: utils.parseEther("1"),
+            preSaleMaxMintPerWallet: 2,
+            publicSalePrice: utils.parseEther("2"),
+            publicSaleMaxMintPerTx: 10,
+            defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+            defaultRoyaltyBps: 250,
+            proceedsRecipient: "0x0000000000000000000000000000000000000000",
+            openSeaProxyRegistryAddress:
+              "0x0000000000000000000000000000000000000000",
+            openSeaExchangeAddress:
+              "0x0000000000000000000000000000000000000000",
+            trustedForwarder: "0x0000000000000000000000000000000000000000",
+          },
+          userB.signer.address,
+        ]);
 
-      expect(await collection.owner()).to.equal(deployer.signer.address);
-      expect(await collectionClone["owner()"]()).to.equal(userB.signer.address);
+        const predictedAddress =
+          await userA.FlairFactory.predictDeterministicSimple(
+            collection.address,
+            salt
+          );
 
-      // ERC721
-      expect(await collectionClone.supportsInterface("0x80ac58cd")).to.be.equal(
-        true
-      );
+        const result = await userA.FlairFactory.cloneDeterministicSimple(
+          collection.address,
+          salt,
+          data
+        );
 
-      // ERC721PublicSaleExtension
-      expect(await collectionClone.supportsInterface("0xbf05d618")).to.be.equal(
-        true
-      );
+        const receipt = await result.wait();
+        const event = receipt?.events?.find((e) => e.event === "ProxyCreated");
+        const emittedAddress = event?.args?.[1];
 
-      // Rarible Royalty
-      expect(await collectionClone.supportsInterface("0xcad96cca")).to.be.equal(
-        true
-      );
+        expect(emittedAddress).to.equal(predictedAddress);
 
-      // EIP2981 Royalty
-      expect(await collectionClone.supportsInterface("0x2a55205a")).to.be.equal(
-        true
-      );
+        const collectionClone = await hre.ethers.getContractAt(
+          "ERC721FullFeaturedCollection",
+          emittedAddress
+        );
+
+        expect(await collectionClone["totalSupply()"]()).to.equal(0);
+        expect(await collectionClone["tokenURISuffix()"]()).to.equal(".json");
+
+        expect(await collection.maxSupply()).to.equal(8000);
+        expect(await collectionClone["maxSupply()"]()).to.equal(5000);
+
+        expect(await collection.owner()).to.equal(deployer.signer.address);
+        expect(await collectionClone["owner()"]()).to.equal(
+          userB.signer.address
+        );
+
+        // ERC721
+        expect(
+          await collectionClone.supportsInterface("0x80ac58cd")
+        ).to.be.equal(true);
+
+        if (mode === "azuki") {
+          // ERC721A
+          expect(
+            await collectionClone.supportsInterface("0xc21b8f28")
+          ).to.be.equal(true);
+        }
+
+        // ERC721PublicSaleExtension
+        expect(
+          await collectionClone.supportsInterface("0xbf05d618")
+        ).to.be.equal(true);
+
+        // Rarible Royalty
+        expect(
+          await collectionClone.supportsInterface("0xcad96cca")
+        ).to.be.equal(true);
+
+        // EIP2981 Royalty
+        expect(
+          await collectionClone.supportsInterface("0x2a55205a")
+        ).to.be.equal(true);
+      });
+
+      it("should prevent transfer when token is locked", async function () {
+        const { deployer, userA, userB, userC } = await setupTest();
+
+        const collection = await deployCollection(mode as any);
+
+        await collection
+          .connect(deployer.signer)
+          .grantRole(
+            utils.keccak256(Buffer.from("LOCKER_ROLE")),
+            deployer.signer.address
+          );
+
+        await collection
+          .connect(deployer.signer)
+          .mintByOwner(userA.signer.address, 4);
+
+        expect(await collection.ownerOf(2)).to.be.equal(userA.signer.address);
+
+        await collection
+          .connect(userA.signer)
+          .transferFrom(userA.signer.address, userC.signer.address, 2);
+
+        expect(await collection.ownerOf(2)).to.be.equal(userC.signer.address);
+
+        await collection.connect(deployer.signer).lock([2, 1]);
+
+        await expect(
+          collection
+            .connect(userC.signer)
+            .transferFrom(userC.signer.address, userB.signer.address, 2)
+        ).to.be.revertedWith("ERC721/TOKEN_LOCKED");
+
+        await collection.connect(deployer.signer).unlock([2]);
+
+        await collection
+          .connect(userC.signer)
+          .transferFrom(userC.signer.address, userB.signer.address, 2);
+
+        expect(await collection.ownerOf(2)).to.be.equal(userB.signer.address);
+      });
     });
-  });
-
-  it("should return collection info", async function () {
-    const ERC721FullFeaturedCollection =
-      await ethers.getContractFactory<ERC721FullFeaturedCollection__factory>(
-        "ERC721FullFeaturedCollection"
-      );
-    const collection = await ERC721FullFeaturedCollection.deploy({
-      name: "Flair Angels",
-      symbol: "ANGEL",
-      contractURI: "ipfs://xxxxx",
-      placeholderURI: "ipfs://yyyyy",
-      tokenURIPrefix: "ipfs://yyyyy",
-      maxSupply: 8000,
-      preSalePrice: web3.utils.toWei("0.06"),
-      preSaleMaxMintPerWallet: 2,
-      publicSalePrice: web3.utils.toWei("0.08"),
-      publicSaleMaxMintPerTx: 10,
-      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
-      defaultRoyaltyBps: 250,
-      proceedsRecipient: "0x0000000000000000000000000000000000000000",
-      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
-      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
-      trustedForwarder: "0x0000000000000000000000000000000000000000",
-    });
-
-    await collection.deployed();
-
-    await collection.getInfo();
-  });
-
-  it("should return true when checking IRC721 interface", async function () {
-    const ERC721FullFeaturedCollection =
-      await ethers.getContractFactory<ERC721FullFeaturedCollection__factory>(
-        "ERC721FullFeaturedCollection"
-      );
-    const collection = await ERC721FullFeaturedCollection.deploy({
-      name: "Flair Angels",
-      symbol: "ANGEL",
-      contractURI: "ipfs://xxxxx",
-      placeholderURI: "ipfs://yyyyy",
-      tokenURIPrefix: "ipfs://yyyyy",
-      maxSupply: 8000,
-      preSalePrice: web3.utils.toWei("0.06"),
-      preSaleMaxMintPerWallet: 2,
-      publicSalePrice: web3.utils.toWei("0.08"),
-      publicSaleMaxMintPerTx: 10,
-      defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
-      defaultRoyaltyBps: 250,
-      proceedsRecipient: "0x0000000000000000000000000000000000000000",
-      openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
-      openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
-      trustedForwarder: "0x0000000000000000000000000000000000000000",
-    });
-
-    await collection.deployed();
-
-    // ERC721
-    expect(await collection.supportsInterface("0x80ac58cd")).to.be.equal(true);
-
-    // ERC721PublicSaleExtension
-    expect(await collection.supportsInterface("0xbf05d618")).to.be.equal(true);
-
-    // Rarible Royalty
-    expect(await collection.supportsInterface("0xcad96cca")).to.be.equal(true);
-
-    // EIP2981 Royalty
-    expect(await collection.supportsInterface("0x2a55205a")).to.be.equal(true);
   });
 });

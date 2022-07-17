@@ -15,6 +15,7 @@ import "../extensions/ERC721PublicSaleExtension.sol";
 import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
+import "../extensions/ERC721RoleBasedLockableExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
 import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
@@ -27,6 +28,7 @@ contract ERC721FullFeaturedCollection is
     ERC721PublicSaleExtension,
     ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
+    ERC721RoleBasedLockableExtension,
     ERC721RoyaltyExtension,
     ERC721OpenSeaNoGasExtension,
     ERC2771ContextOwnable,
@@ -93,6 +95,7 @@ contract ERC721FullFeaturedCollection is
             config.openSeaExchangeAddress
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
+        __ERC721RoleBasedLockableExtension_init();
         __ERC721BulkifyExtension_init();
     }
 
@@ -114,6 +117,14 @@ contract ERC721FullFeaturedCollection is
         returns (bytes calldata)
     {
         return super._msgData();
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal override(ERC721, ERC721LockableExtension) {
+        return ERC721LockableExtension._beforeTokenTransfer(from, to, tokenId);
     }
 
     /* PUBLIC */
@@ -150,6 +161,7 @@ contract ERC721FullFeaturedCollection is
             ERC721RoleBasedMintExtension,
             ERC721RoyaltyExtension,
             ERC721OpenSeaNoGasExtension,
+            ERC721RoleBasedLockableExtension,
             ERC721BulkifyExtension
         )
         returns (bool)

@@ -14,6 +14,7 @@ import "../extensions/ERC721AOwnerMintExtension.sol";
 import "../extensions/ERC721APreSaleExtension.sol";
 import "../extensions/ERC721APublicSaleExtension.sol";
 import "../extensions/ERC721ARoleBasedMintExtension.sol";
+import "../extensions/ERC721ARoleBasedLockableExtension.sol";
 import "../extensions/ERC721AOpenSeaNoGasExtension.sol";
 
 contract ERC721AFullFeaturedCollection is
@@ -29,6 +30,7 @@ contract ERC721AFullFeaturedCollection is
     ERC721APublicSaleExtension,
     ERC721SimpleProceedsExtension,
     ERC721ARoleBasedMintExtension,
+    ERC721ARoleBasedLockableExtension,
     ERC721RoyaltyExtension,
     ERC721AOpenSeaNoGasExtension
 {
@@ -115,6 +117,20 @@ contract ERC721AFullFeaturedCollection is
         return super._msgData();
     }
 
+    function _beforeTokenTransfers(
+        address from,
+        address to,
+        uint256 startTokenId,
+        uint256 quantity
+    ) internal virtual override(ERC721A, ERC721ALockableExtension) {
+        ERC721ALockableExtension._beforeTokenTransfers(
+            from,
+            to,
+            startTokenId,
+            quantity
+        );
+    }
+
     /* PUBLIC */
 
     function supportsInterface(bytes4 interfaceId)
@@ -132,6 +148,7 @@ contract ERC721AFullFeaturedCollection is
             ERC721SimpleProceedsExtension,
             ERC721AOwnerMintExtension,
             ERC721ARoleBasedMintExtension,
+            ERC721ARoleBasedLockableExtension,
             ERC721RoyaltyExtension,
             ERC721AOpenSeaNoGasExtension
         )
