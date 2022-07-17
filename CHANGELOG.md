@@ -1,3 +1,10 @@
+## [1.14.0](https://github.com/0xflair/evm-contracts/compare/v1.13.1...v1.14.0) (2022-07-17)
+
+
+### Features
+
+* add extension for emergency withdrawal ([45727c0](https://github.com/0xflair/evm-contracts/commit/45727c0566085faeb22dd98104dda6437d3ef77c))
+
 ### [1.13.1](https://github.com/0xflair/evm-contracts/compare/v1.13.0...v1.13.1) (2022-07-14)
 
 
