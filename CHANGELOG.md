@@ -1,3 +1,10 @@
+## [1.16.0](https://github.com/0xflair/evm-contracts/compare/v1.15.1...v1.16.0) (2022-07-18)
+
+
+### Features
+
+* add staking extension and emission staking preset ([#17](https://github.com/0xflair/evm-contracts/issues/17)) ([f3e335c](https://github.com/0xflair/evm-contracts/commit/f3e335ceeb32f0a4ed58cb06510c1246e57f4038))
+
 ### [1.15.1](https://github.com/0xflair/evm-contracts/compare/v1.15.0...v1.15.1) (2022-07-17)
 
 
