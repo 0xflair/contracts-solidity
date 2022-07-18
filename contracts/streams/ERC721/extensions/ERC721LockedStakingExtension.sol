@@ -35,7 +35,10 @@ abstract contract ERC721LockedStakingExtension is
     ERC721MultiTokenStream
 {
     // Minimum seconds that token must be locked before unstaking.
-    uint256 public minStakingLockTime;
+    uint64 public minStakingLockTime;
+
+    // Maximum sum total of all durations staking that will be counted (across all stake/unstakes for each token). Staked durations beyond this number is ignored.
+    uint64 public maxStakingTotalDurations;
 
     // Map of token ID to the time of last staking
     mapping(uint256 => uint64) public lastStakingTime;
@@ -45,26 +48,36 @@ abstract contract ERC721LockedStakingExtension is
 
     /* INIT */
 
-    function __ERC721LockedStakingExtension_init(uint64 _minStakingLockTime)
-        internal
-        onlyInitializing
-    {
-        __ERC721LockedStakingExtension_init_unchained(_minStakingLockTime);
+    function __ERC721LockedStakingExtension_init(
+        uint64 _minStakingLockTime,
+        uint64 _maxStakingTotalDurations
+    ) internal onlyInitializing {
+        __ERC721LockedStakingExtension_init_unchained(
+            _minStakingLockTime,
+            _maxStakingTotalDurations
+        );
     }
 
     function __ERC721LockedStakingExtension_init_unchained(
-        uint64 _minStakingLockTime
+        uint64 _minStakingLockTime,
+        uint64 _maxStakingTotalDurations
     ) internal onlyInitializing {
         minStakingLockTime = _minStakingLockTime;
+        maxStakingTotalDurations = _maxStakingTotalDurations;
 
         _registerInterface(type(IERC721LockedStakingExtension).interfaceId);
     }
 
     /* ADMIN */
 
-    function setMinLockTime(uint256 newValue) public onlyOwner {
+    function setMinStakingLockTime(uint64 newValue) public onlyOwner {
         require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
         minStakingLockTime = newValue;
+    }
+
+    function setMaxStakingTotalDurations(uint64 newValue) public onlyOwner {
+        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        maxStakingTotalDurations = newValue;
     }
 
     /* PUBLIC */
@@ -77,6 +90,11 @@ abstract contract ERC721LockedStakingExtension is
         require(
             _msgSender() == IERC721(ticketToken).ownerOf(tokenId),
             "STREAM/NOT_TOKEN_OWNER"
+        );
+
+        require(
+            totalStakedDuration(tokenId) < maxStakingTotalDurations,
+            "STREAM/MAX_STAKE_DURATION_EXCEEDED"
         );
 
         lastStakingTime[tokenId] = uint64(block.timestamp);
@@ -92,6 +110,11 @@ abstract contract ERC721LockedStakingExtension is
             require(
                 sender == IERC721(ticketToken).ownerOf(tokenIds[i]),
                 "STREAM/NOT_TOKEN_OWNER"
+            );
+
+            require(
+                totalStakedDuration(tokenIds[i]) < maxStakingTotalDurations,
+                "STREAM/MAX_STAKE_DURATION_EXCEEDED"
             );
 
             lastStakingTime[tokenIds[i]] = currentTime;
@@ -151,6 +174,10 @@ abstract contract ERC721LockedStakingExtension is
                     total += (targetTime - lastStakingTime[ticketTokenId]);
                 }
             }
+        }
+
+        if (total > maxStakingTotalDurations) {
+            total = maxStakingTotalDurations;
         }
 
         return total;
