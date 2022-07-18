@@ -1,3 +1,10 @@
+### [1.16.2](https://github.com/0xflair/evm-contracts/compare/v1.16.1...v1.16.2) (2022-07-18)
+
+
+### Bug Fixes
+
+* add a method to filter unlocked tokens ([84c48e7](https://github.com/0xflair/evm-contracts/commit/84c48e74c358141188273cd1b4748e064822db02))
+
 ### [1.16.1](https://github.com/0xflair/evm-contracts/compare/v1.16.0...v1.16.1) (2022-07-18)
 
 
