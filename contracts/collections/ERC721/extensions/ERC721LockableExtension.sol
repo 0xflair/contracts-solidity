@@ -59,6 +59,31 @@ abstract contract ERC721LockableExtension is
     }
 
     /**
+     * Returns if a token is locked or not.
+     */
+    function locked(uint256 tokenId) public view virtual returns (bool) {
+        return lockedTokens.get(tokenId);
+    }
+
+    function filterUnlocked(uint256[] calldata ticketTokenIds)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        uint256[] memory unlocked = new uint256[](ticketTokenIds.length);
+
+        for (uint256 i = 0; i < ticketTokenIds.length; i++) {
+            if (!locked(ticketTokenIds[i])) {
+                unlocked[i] = ticketTokenIds[i];
+            }
+        }
+
+        return unlocked;
+    }
+
+    /* INTERNAL */
+
+    /**
      * At this moment staking is only possible from a certain address (usually a smart contract).
      *
      * This is because in almost all cases you want another contract to perform custom logic on lock and unlock operations,
@@ -72,13 +97,6 @@ abstract contract ERC721LockableExtension is
     function _unlock(uint256 tokenId) internal virtual {
         require(lockedTokens.get(tokenId), "ERC721/NOT_LOCKED");
         lockedTokens.unset(tokenId);
-    }
-
-    /**
-     * Returns if a token is locked or not.
-     */
-    function locked(uint256 tokenId) public view virtual returns (bool) {
-        return lockedTokens.get(tokenId);
     }
 
     function _beforeTokenTransfer(
