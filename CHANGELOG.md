@@ -1,3 +1,10 @@
+### [1.16.1](https://github.com/0xflair/evm-contracts/compare/v1.16.0...v1.16.1) (2022-07-18)
+
+
+### Bug Fixes
+
+* add ability to set a maximum staking durations ([#19](https://github.com/0xflair/evm-contracts/issues/19)) ([a6e5f2f](https://github.com/0xflair/evm-contracts/commit/a6e5f2fa9dc40b399eb3f5e7892192402897fd1e))
+
 ## [1.16.0](https://github.com/0xflair/evm-contracts/compare/v1.15.1...v1.16.0) (2022-07-18)
 
 
