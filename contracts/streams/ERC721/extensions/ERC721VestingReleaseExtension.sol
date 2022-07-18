@@ -77,7 +77,7 @@ abstract contract ERC721VestingReleaseExtension is
 
     /* INTERNAL */
 
-    function _totalReleasedAmount(
+    function _totalStreamReleasedAmount(
         uint256 _streamTotalSupply,
         uint256 _ticketTokenId,
         address _claimToken

@@ -14,13 +14,15 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721VestingReleaseExtension.sol";
 import "../extensions/ERC721EqualSplitExtension.sol";
+import "../extensions/ERC721LockableClaimExtension.sol";
 
 contract ERC721EqualVestingStream is
     Initializable,
     Ownable,
+    EmergencyOwnerWithdrawExtension,
     ERC721VestingReleaseExtension,
     ERC721EqualSplitExtension,
-    EmergencyOwnerWithdrawExtension
+    ERC721LockableClaimExtension
 {
     using Address for address;
     using Address for address payable;
@@ -38,6 +40,8 @@ contract ERC721EqualVestingStream is
         uint64 durationSeconds;
         // Equal split extension
         uint256 totalTickets;
+        // Lockable claim extension
+        uint64 claimLockedUntil;
     }
 
     /* INTERNAL */
@@ -62,5 +66,18 @@ contract ERC721EqualVestingStream is
             config.durationSeconds
         );
         __ERC721EqualSplitExtension_init(config.totalTickets);
+        __ERC721LockableClaimExtension_init(config.claimLockedUntil);
+    }
+
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address owner_
+    ) internal override(ERC721MultiTokenStream, ERC721LockableClaimExtension) {
+        ERC721LockableClaimExtension._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            owner_
+        );
     }
 }

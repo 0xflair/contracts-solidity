@@ -14,13 +14,15 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721EmissionReleaseExtension.sol";
 import "../extensions/ERC721ShareSplitExtension.sol";
+import "../extensions/ERC721LockableClaimExtension.sol";
 
 contract ERC721ShareEmissionStream is
     Initializable,
     Ownable,
+    EmergencyOwnerWithdrawExtension,
     ERC721EmissionReleaseExtension,
     ERC721ShareSplitExtension,
-    EmergencyOwnerWithdrawExtension
+    ERC721LockableClaimExtension
 {
     using Address for address;
     using Address for address payable;
@@ -41,6 +43,8 @@ contract ERC721ShareEmissionStream is
         // Share split extension
         uint256[] tokenIds;
         uint256[] shares;
+        // Lockable claim extension
+        uint64 claimLockedUntil;
     }
 
     /* INTERNAL */
@@ -67,17 +71,30 @@ contract ERC721ShareEmissionStream is
             config.emissionEnd
         );
         __ERC721ShareSplitExtension_init(config.tokenIds, config.shares);
+        __ERC721LockableClaimExtension_init(config.claimLockedUntil);
     }
 
-    function _beforeClaim(uint256 ticketTokenId, address claimToken)
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address owner_
+    )
         internal
-        view
-        override(ERC721MultiTokenStream, ERC721EmissionReleaseExtension)
+        override(
+            ERC721MultiTokenStream,
+            ERC721LockableClaimExtension,
+            ERC721EmissionReleaseExtension
+        )
     {
-        return
-            ERC721EmissionReleaseExtension._beforeClaim(
-                ticketTokenId,
-                claimToken
-            );
+        ERC721LockableClaimExtension._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            owner_
+        );
+        ERC721EmissionReleaseExtension._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            owner_
+        );
     }
 }

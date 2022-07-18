@@ -11,6 +11,14 @@ import "./ERC721AMinterExtension.sol";
 
 interface IERC721ALockableExtension {
     function locked(uint256 tokenId) external view returns (bool);
+
+    function lock(uint256 tokenId) external;
+
+    function lock(uint256[] calldata tokenIds) external;
+
+    function unlock(uint256 tokenId) external;
+
+    function unlock(uint256[] calldata tokenIds) external;
 }
 
 /**

@@ -36,6 +36,9 @@ interface IERC721EmissionReleaseExtension {
         returns (uint256);
 }
 
+/**
+ * @author Flair (https://flair.finance)
+ */
 abstract contract ERC721EmissionReleaseExtension is
     IERC721EmissionReleaseExtension,
     Initializable,
@@ -116,6 +119,7 @@ abstract contract ERC721EmissionReleaseExtension is
     function releasedAmountUntil(uint64 calcUntil)
         public
         view
+        virtual
         returns (uint256)
     {
         return
@@ -127,6 +131,7 @@ abstract contract ERC721EmissionReleaseExtension is
     function emissionAmountUntil(uint64 calcUntil)
         public
         view
+        virtual
         returns (uint256)
     {
         return ((calcUntil - emissionStart) * emissionRate) / emissionTimeUnit;
@@ -134,11 +139,11 @@ abstract contract ERC721EmissionReleaseExtension is
 
     /* INTERNAL */
 
-    function _totalReleasedAmount(
+    function _totalStreamReleasedAmount(
         uint256 streamTotalSupply_,
         uint256 ticketTokenId_,
         address claimToken_
-    ) internal view override returns (uint256) {
+    ) internal view virtual override returns (uint256) {
         streamTotalSupply_;
         ticketTokenId_;
         claimToken_;
@@ -152,12 +157,13 @@ abstract contract ERC721EmissionReleaseExtension is
         }
     }
 
-    function _beforeClaim(uint256 ticketTokenId, address claimToken)
-        internal
-        view
-        virtual
-        override
-    {
+    function _beforeClaim(
+        uint256 ticketTokenId,
+        address claimToken,
+        address owner_
+    ) internal virtual override {
+        owner_;
+
         require(emissionStart < block.timestamp, "STREAM/NOT_STARTED");
 
         require(

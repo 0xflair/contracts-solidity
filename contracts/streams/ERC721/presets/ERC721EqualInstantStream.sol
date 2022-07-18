@@ -14,13 +14,15 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721InstantReleaseExtension.sol";
 import "../extensions/ERC721EqualSplitExtension.sol";
+import "../extensions/ERC721LockableClaimExtension.sol";
 
 contract ERC721EqualInstantStream is
     Initializable,
     Ownable,
+    EmergencyOwnerWithdrawExtension,
     ERC721InstantReleaseExtension,
     ERC721EqualSplitExtension,
-    EmergencyOwnerWithdrawExtension
+    ERC721LockableClaimExtension
 {
     string public constant name = "ERC721 Equal Instant Stream";
 
@@ -32,6 +34,8 @@ contract ERC721EqualInstantStream is
         uint64 lockedUntilTimestamp;
         // Equal split extension
         uint256 totalTickets;
+        // Lockable claim extension
+        uint64 claimLockedUntil;
     }
 
     /* INTERNAL */
@@ -52,5 +56,18 @@ contract ERC721EqualInstantStream is
             config.lockedUntilTimestamp
         );
         __ERC721EqualSplitExtension_init(config.totalTickets);
+        __ERC721LockableClaimExtension_init(config.claimLockedUntil);
+    }
+
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address owner_
+    ) internal override(ERC721MultiTokenStream, ERC721LockableClaimExtension) {
+        ERC721LockableClaimExtension._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            owner_
+        );
     }
 }

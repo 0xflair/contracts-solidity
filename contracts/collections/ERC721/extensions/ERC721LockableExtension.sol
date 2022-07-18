@@ -11,6 +11,14 @@ import "./ERC721AutoIdMinterExtension.sol";
 
 interface IERC721LockableExtension {
     function locked(uint256 tokenId) external view returns (bool);
+
+    function lock(uint256 tokenId) external;
+
+    function lock(uint256[] calldata tokenIds) external;
+
+    function unlock(uint256 tokenId) external;
+
+    function unlock(uint256[] calldata tokenIds) external;
 }
 
 /**

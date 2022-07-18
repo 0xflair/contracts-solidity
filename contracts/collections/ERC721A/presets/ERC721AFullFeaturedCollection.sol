@@ -77,6 +77,7 @@ contract ERC721AFullFeaturedCollection is
         __ERC721AMinterExtension_init(config.maxSupply);
         __ERC721AOwnerMintExtension_init();
         __ERC721ARoleBasedMintExtension_init(deployer);
+        __ERC721ARoleBasedLockableExtension_init();
         __ERC721APreSaleExtension_init_unchained(
             config.preSalePrice,
             config.preSaleMaxMintPerWallet

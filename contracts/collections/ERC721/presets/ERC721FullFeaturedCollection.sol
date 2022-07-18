@@ -77,6 +77,7 @@ contract ERC721FullFeaturedCollection is
         __ERC721AutoIdMinterExtension_init(config.maxSupply);
         __ERC721OwnerMintExtension_init();
         __ERC721RoleBasedMintExtension_init(deployer);
+        __ERC721RoleBasedLockableExtension_init();
         __ERC721PreSaleExtension_init_unchained(
             config.preSalePrice,
             config.preSaleMaxMintPerWallet
@@ -95,7 +96,6 @@ contract ERC721FullFeaturedCollection is
             config.openSeaExchangeAddress
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
-        __ERC721RoleBasedLockableExtension_init();
         __ERC721BulkifyExtension_init();
     }
 

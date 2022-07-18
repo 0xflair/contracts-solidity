@@ -21,6 +21,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         emissionTimeUnit: 0,
         emissionStart: 0,
         emissionEnd: 0,
+        claimLockedUntil: 0,
       },
     ]
   );
@@ -35,6 +36,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         lockedUntilTimestamp: 0,
         tokenIds: [],
         shares: [],
+        claimLockedUntil: 0,
       },
     ]
   );

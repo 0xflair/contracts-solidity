@@ -92,7 +92,7 @@ abstract contract ERC721ShareSplitExtension is
         return _shares;
     }
 
-    function _totalTokenShare(
+    function _totalTokenReleasedAmount(
         uint256 totalReleasedAmount_,
         uint256 ticketTokenId_,
         address claimToken_

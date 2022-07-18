@@ -160,10 +160,10 @@ abstract contract ERC721MultiTokenStream is
         nonReentrant
     {
         /* CHECKS */
-
-        _beforeClaim(ticketTokenId, claimToken);
-
         address owner = IERC721(ticketToken).ownerOf(ticketTokenId);
+
+        _beforeClaim(ticketTokenId, claimToken, owner);
+
         uint256 claimable = streamClaimableAmount(ticketTokenId, claimToken);
         require(claimable > 0, "STREAM/NOTHING_TO_CLAIM");
 
@@ -173,6 +173,8 @@ abstract contract ERC721MultiTokenStream is
         entitlements[ticketTokenId][claimToken].lastClaimedAt = block.timestamp;
 
         _streamTotalClaimed[claimToken] += claimable;
+
+        _afterClaimCalculation(ticketTokenId, claimToken, claimable);
 
         /* INTERACTIONS */
 
@@ -199,7 +201,7 @@ abstract contract ERC721MultiTokenStream is
         uint256 totalClaimable;
 
         for (uint256 i = 0; i < ticketTokenIds.length; i++) {
-            _beforeClaim(ticketTokenIds[i], claimToken);
+            _beforeClaim(ticketTokenIds[i], claimToken, owner);
 
             /* CHECKS */
             require(
@@ -221,6 +223,8 @@ abstract contract ERC721MultiTokenStream is
 
                 totalClaimable += claimable;
             }
+
+            _afterClaimCalculation(ticketTokenIds[i], claimToken, claimable);
         }
 
         _streamTotalClaimed[claimToken] += totalClaimable;
@@ -340,8 +344,8 @@ abstract contract ERC721MultiTokenStream is
         virtual
         returns (uint256)
     {
-        uint256 totalReleased = _totalTokenShare(
-            _totalReleasedAmount(
+        uint256 totalReleased = _totalTokenReleasedAmount(
+            _totalStreamReleasedAmount(
                 streamTotalSupply(claimToken),
                 ticketTokenId,
                 claimToken
@@ -355,13 +359,13 @@ abstract contract ERC721MultiTokenStream is
             entitlements[ticketTokenId][claimToken].totalClaimed;
     }
 
-    function _totalReleasedAmount(
+    function _totalStreamReleasedAmount(
         uint256 streamTotalSupply_,
         uint256 ticketTokenId_,
         address claimToken_
     ) internal view virtual returns (uint256);
 
-    function _totalTokenShare(
+    function _totalTokenReleasedAmount(
         uint256 totalReleasedAmount_,
         uint256 ticketTokenId_,
         address claimToken_
@@ -369,9 +373,15 @@ abstract contract ERC721MultiTokenStream is
 
     /* INTERNAL */
 
-    function _beforeClaim(uint256 ticketTokenId_, address claimToken_)
-        internal
-        view
-        virtual
-    {}
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address owner_
+    ) internal virtual {}
+
+    function _afterClaimCalculation(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        uint256 claimable_
+    ) internal virtual {}
 }

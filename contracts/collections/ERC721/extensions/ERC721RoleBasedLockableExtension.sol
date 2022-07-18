@@ -11,10 +11,6 @@ import "./ERC721LockableExtension.sol";
 
 interface IERC721RoleBasedLockableExtension {
     function hasRoleBasedLockableExtension() external view returns (bool);
-
-    function lock(uint256[] calldata) external;
-
-    function unlock(uint256[] calldata) external;
 }
 
 /**
@@ -49,6 +45,11 @@ abstract contract ERC721RoleBasedLockableExtension is
      * Locks token(s) to effectively lock them, while keeping in the same wallet.
      * This mechanism prevents them from being transferred, yet still will show correct owner.
      */
+    function lock(uint256 tokenId) public virtual nonReentrant {
+        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        _lock(tokenId);
+    }
+
     function lock(uint256[] calldata tokenIds) public virtual nonReentrant {
         require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
 
@@ -60,6 +61,11 @@ abstract contract ERC721RoleBasedLockableExtension is
     /**
      * Unlocks locked token(s) to be able to transfer.
      */
+    function unlock(uint256 tokenId) public virtual nonReentrant {
+        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        _unlock(tokenId);
+    }
+
     function unlock(uint256[] calldata tokenIds) public virtual nonReentrant {
         require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
 

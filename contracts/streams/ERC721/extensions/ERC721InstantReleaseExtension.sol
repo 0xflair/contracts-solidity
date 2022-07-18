@@ -46,7 +46,7 @@ abstract contract ERC721InstantReleaseExtension is
 
     /* INTERNAL */
 
-    function _totalReleasedAmount(
+    function _totalStreamReleasedAmount(
         uint256 streamTotalSupply_,
         uint256 ticketTokenId_,
         address claimToken_

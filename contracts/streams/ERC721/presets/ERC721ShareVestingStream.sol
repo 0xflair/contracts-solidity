@@ -14,13 +14,15 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721ShareSplitExtension.sol";
 import "../extensions/ERC721VestingReleaseExtension.sol";
+import "../extensions/ERC721LockableClaimExtension.sol";
 
 contract ERC721ShareVestingStream is
     Initializable,
     Ownable,
+    EmergencyOwnerWithdrawExtension,
     ERC721VestingReleaseExtension,
     ERC721ShareSplitExtension,
-    EmergencyOwnerWithdrawExtension
+    ERC721LockableClaimExtension
 {
     string public constant name = "ERC721 Share Vesting Stream";
 
@@ -36,6 +38,8 @@ contract ERC721ShareVestingStream is
         // Share split extension
         uint256[] tokenIds;
         uint256[] shares;
+        // Lockable claim extension
+        uint64 claimLockedUntil;
     }
 
     /* INTERNAL */
@@ -60,5 +64,18 @@ contract ERC721ShareVestingStream is
             config.durationSeconds
         );
         __ERC721ShareSplitExtension_init(config.tokenIds, config.shares);
+        __ERC721LockableClaimExtension_init(config.claimLockedUntil);
+    }
+
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address owner_
+    ) internal override(ERC721MultiTokenStream, ERC721LockableClaimExtension) {
+        ERC721LockableClaimExtension._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            owner_
+        );
     }
 }
