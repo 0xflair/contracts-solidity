@@ -183,6 +183,31 @@ abstract contract ERC721LockedStakingExtension is
         return total;
     }
 
+    function unlockingTime(uint256 ticketTokenId)
+        public
+        view
+        returns (uint256)
+    {
+        return
+            lastStakingTime[ticketTokenId] > 0
+                ? lastStakingTime[ticketTokenId] + minStakingLockTime
+                : 0;
+    }
+
+    function unlockingTime(uint256[] calldata ticketTokenIds)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        uint256[] memory unlockedAt = new uint256[](ticketTokenIds.length);
+
+        for (uint256 i = 0; i < ticketTokenIds.length; i++) {
+            unlockedAt[i] = unlockingTime(ticketTokenIds[i]);
+        }
+
+        return unlockedAt;
+    }
+
     /* INTERNAL */
 
     function _stakingTimeLimit() internal view virtual returns (uint64) {
