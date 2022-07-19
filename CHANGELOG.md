@@ -1,3 +1,10 @@
+### [1.16.3](https://github.com/0xflair/evm-contracts/compare/v1.16.2...v1.16.3) (2022-07-19)
+
+
+### Bug Fixes
+
+* add missing filter function ([548437f](https://github.com/0xflair/evm-contracts/commit/548437f4ac3d1f95dc235500c4d9e2d0fa94d699))
+
 ### [1.16.2](https://github.com/0xflair/evm-contracts/compare/v1.16.1...v1.16.2) (2022-07-18)
 
 
