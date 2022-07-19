@@ -81,6 +81,22 @@ abstract contract ERC721ALockableExtension is
         return lockedTokens.get(tokenId);
     }
 
+    function filterUnlocked(uint256[] calldata ticketTokenIds)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        uint256[] memory unlocked = new uint256[](ticketTokenIds.length);
+
+        for (uint256 i = 0; i < ticketTokenIds.length; i++) {
+            if (!locked(ticketTokenIds[i])) {
+                unlocked[i] = ticketTokenIds[i];
+            }
+        }
+
+        return unlocked;
+    }
+
     function _beforeTokenTransfers(
         address from,
         address to,
