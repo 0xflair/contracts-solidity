@@ -1,3 +1,10 @@
+### [1.16.6](https://github.com/0xflair/evm-contracts/compare/v1.16.5...v1.16.6) (2022-07-19)
+
+
+### Bug Fixes
+
+* correct init for lockable erc20 tokens ([fda2986](https://github.com/0xflair/evm-contracts/commit/fda29866c6e71574d30714e3653d017cdf3289ac))
+
 ### [1.16.5](https://github.com/0xflair/evm-contracts/compare/v1.16.4...v1.16.5) (2022-07-19)
 
 
