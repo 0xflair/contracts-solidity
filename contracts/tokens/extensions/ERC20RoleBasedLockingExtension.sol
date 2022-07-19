@@ -2,6 +2,7 @@
 
 pragma solidity 0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -18,6 +19,7 @@ interface ERC20RoleBasedLockingExtensionInterface {
  * @dev Extension to allow locking transfers and only allow certain addresses do to transfers.
  */
 abstract contract ERC20RoleBasedLockingExtension is
+    Initializable,
     ERC165Storage,
     AccessControl,
     ERC20,
@@ -25,12 +27,24 @@ abstract contract ERC20RoleBasedLockingExtension is
 {
     bytes32 public constant TRANSFER_ROLE = keccak256("TRANSFER_ROLE");
 
-    constructor() {
+    constructor() {}
+
+    function __ERC20RoleBasedLockingExtension_init(address deployer)
+        internal
+        onlyInitializing
+    {
+        __ERC20RoleBasedLockingExtension_init_unchained(deployer);
+    }
+
+    function __ERC20RoleBasedLockingExtension_init_unchained(address deployer)
+        internal
+        onlyInitializing
+    {
         _registerInterface(
             type(ERC20RoleBasedLockingExtensionInterface).interfaceId
         );
 
-        _grantRole(TRANSFER_ROLE, msg.sender);
+        _grantRole(TRANSFER_ROLE, deployer);
     }
 
     /* ADMIN */

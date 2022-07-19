@@ -46,6 +46,8 @@ contract ERC20LockableToken is
         _grantRole(DEFAULT_ADMIN_ROLE, deployer);
         _grantRole(PAUSER_ROLE, deployer);
         _grantRole(MINTER_ROLE, deployer);
+
+        __ERC20RoleBasedLockingExtension_init(deployer);
     }
 
     function name() public view virtual override returns (string memory) {
