@@ -1,3 +1,10 @@
+### [1.16.4](https://github.com/0xflair/evm-contracts/compare/v1.16.3...v1.16.4) (2022-07-19)
+
+
+### Bug Fixes
+
+* add helper to calculate unlocking times ([f28c880](https://github.com/0xflair/evm-contracts/commit/f28c880b7201de4b45dcb54f4be4a2dfeec08640))
+
 ### [1.16.3](https://github.com/0xflair/evm-contracts/compare/v1.16.2...v1.16.3) (2022-07-19)
 
 
