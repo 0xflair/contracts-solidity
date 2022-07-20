@@ -1,3 +1,10 @@
+### [1.16.9](https://github.com/0xflair/evm-contracts/compare/v1.16.8...v1.16.9) (2022-07-20)
+
+
+### Bug Fixes
+
+* add helper func to calculate emission amount per token ([4e90275](https://github.com/0xflair/evm-contracts/commit/4e90275854504fb472c2e5a1293ffc235a3b1d8d))
+
 ### [1.16.8](https://github.com/0xflair/evm-contracts/compare/v1.16.7...v1.16.8) (2022-07-20)
 
 
