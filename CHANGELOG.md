@@ -1,3 +1,10 @@
+### [1.16.11](https://github.com/0xflair/evm-contracts/compare/v1.16.10...v1.16.11) (2022-07-20)
+
+
+### Bug Fixes
+
+* separate staking core from lock-based staking ([2d178e9](https://github.com/0xflair/evm-contracts/commit/2d178e9027bf3be2981e7b84c2233db230680f83))
+
 ### [1.16.10](https://github.com/0xflair/evm-contracts/compare/v1.16.9...v1.16.10) (2022-07-20)
 
 
