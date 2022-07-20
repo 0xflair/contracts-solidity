@@ -1,3 +1,10 @@
+### [1.16.7](https://github.com/0xflair/evm-contracts/compare/v1.16.6...v1.16.7) (2022-07-20)
+
+
+### Bug Fixes
+
+* correctly calculate staked duration even if emission end is not set ([48d2303](https://github.com/0xflair/evm-contracts/commit/48d23038b5201f495e96c17812cb75124e6147d4))
+
 ### [1.16.6](https://github.com/0xflair/evm-contracts/compare/v1.16.5...v1.16.6) (2022-07-19)
 
 
