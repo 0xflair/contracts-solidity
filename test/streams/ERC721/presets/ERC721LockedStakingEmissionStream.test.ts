@@ -2,7 +2,7 @@ import { expect } from "chai";
 import { utils, BigNumberish } from "ethers";
 import hre, { deployments, getUnnamedAccounts } from "hardhat";
 
-import { ERC721StakingEmissionStream } from "../../../../typechain";
+import { ERC721LockedStakingEmissionStream } from "../../../../typechain";
 import { deployPermanentContract } from "../../../../hardhat.util";
 
 import { setupTest } from "../../../setup";
@@ -16,7 +16,7 @@ const deployStream = async function (args?: {
   maxStakingTotalDurations?: BigNumberish;
   emissionStart?: BigNumberish;
   emissionEnd?: BigNumberish;
-}): Promise<ERC721StakingEmissionStream> {
+}): Promise<ERC721LockedStakingEmissionStream> {
   const accounts = await getUnnamedAccounts();
   const nowMinusOneDayUnix =
     Math.floor(new Date().getTime() / 1000) - 24 * 60 * 60;
@@ -28,7 +28,7 @@ const deployStream = async function (args?: {
     deployments,
     accounts[0],
     accounts[0],
-    "ERC721StakingEmissionStream",
+    "ERC721LockedStakingEmissionStream",
     [
       {
         // Base
@@ -48,10 +48,10 @@ const deployStream = async function (args?: {
         ...(args || {}),
       },
     ]
-  )) as ERC721StakingEmissionStream;
+  )) as ERC721LockedStakingEmissionStream;
 };
 
-describe("ERC721StakingEmissionStream", function () {
+describe("ERC721LockedStakingEmissionStream", function () {
   describe("Interfaces", function () {
     it("supports IERC721LockedStakingExtension", async function () {
       await setupTest();
@@ -112,7 +112,7 @@ describe("ERC721StakingEmissionStream", function () {
       expect(emittedAddress).to.equal(predictedAddress);
 
       const streamClone = await hre.ethers.getContractAt(
-        "ERC721StakingEmissionStream",
+        "ERC721LockedStakingEmissionStream",
         emittedAddress
       );
 

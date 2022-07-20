@@ -44,7 +44,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC721StakingEmissionStream",
+    "ERC721LockedStakingEmissionStream",
     [
       {
         ticketToken: "0x0000000000000000000000000000000000000000",

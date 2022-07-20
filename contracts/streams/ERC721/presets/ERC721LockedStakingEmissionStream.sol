@@ -19,7 +19,7 @@ import "../extensions/ERC721LockableClaimExtension.sol";
 /**
  * @author Flair (https://flair.finance)
  */
-contract ERC721StakingEmissionStream is
+contract ERC721LockedStakingEmissionStream is
     Initializable,
     Ownable,
     EmergencyOwnerWithdrawExtension,
@@ -30,7 +30,7 @@ contract ERC721StakingEmissionStream is
     using Address for address;
     using Address for address payable;
 
-    string public constant name = "ERC721 Staking Emission Stream";
+    string public constant name = "ERC721 Locked Staking Emission Stream";
 
     string public constant version = "0.1";
 
@@ -168,7 +168,7 @@ contract ERC721StakingEmissionStream is
         super.stake(tokenIds);
     }
 
-    function emissionAmount(uint256 ticketTokenId)
+    function rewardAmountByToken(uint256 ticketTokenId)
         public
         view
         virtual
@@ -179,14 +179,14 @@ contract ERC721StakingEmissionStream is
             emissionTimeUnit;
     }
 
-    function emissionAmount(uint256[] calldata ticketTokenIds)
+    function rewardAmountByToken(uint256[] calldata ticketTokenIds)
         public
         view
         virtual
         returns (uint256 total)
     {
         for (uint256 i = 0; i < ticketTokenIds.length; i++) {
-            total += emissionAmount(ticketTokenIds[i]);
+            total += rewardAmountByToken(ticketTokenIds[i]);
         }
     }
 }
