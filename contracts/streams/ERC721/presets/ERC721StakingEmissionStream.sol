@@ -167,4 +167,26 @@ contract ERC721StakingEmissionStream is
 
         super.stake(tokenIds);
     }
+
+    function emissionAmount(uint256 ticketTokenId)
+        public
+        view
+        virtual
+        returns (uint256)
+    {
+        return
+            (emissionRate * totalStakedDuration(ticketTokenId)) /
+            emissionTimeUnit;
+    }
+
+    function emissionAmount(uint256[] calldata ticketTokenIds)
+        public
+        view
+        virtual
+        returns (uint256 total)
+    {
+        for (uint256 i = 0; i < ticketTokenIds.length; i++) {
+            total += emissionAmount(ticketTokenIds[i]);
+        }
+    }
 }

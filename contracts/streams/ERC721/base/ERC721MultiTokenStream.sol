@@ -174,8 +174,6 @@ abstract contract ERC721MultiTokenStream is
 
         _streamTotalClaimed[claimToken] += claimable;
 
-        _afterClaimCalculation(ticketTokenId, claimToken, claimable);
-
         /* INTERACTIONS */
 
         if (claimToken == address(0)) {
@@ -223,8 +221,6 @@ abstract contract ERC721MultiTokenStream is
 
                 totalClaimable += claimable;
             }
-
-            _afterClaimCalculation(ticketTokenIds[i], claimToken, claimable);
         }
 
         _streamTotalClaimed[claimToken] += totalClaimable;
@@ -377,11 +373,5 @@ abstract contract ERC721MultiTokenStream is
         uint256 ticketTokenId_,
         address claimToken_,
         address owner_
-    ) internal virtual {}
-
-    function _afterClaimCalculation(
-        uint256 ticketTokenId_,
-        address claimToken_,
-        uint256 claimable_
     ) internal virtual {}
 }
