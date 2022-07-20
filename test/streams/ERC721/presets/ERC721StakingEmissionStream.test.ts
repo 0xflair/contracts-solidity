@@ -14,6 +14,8 @@ const deployStream = async function (args?: {
   lockedUntilTimestamp?: BigNumberish;
   minStakingLockTime?: BigNumberish;
   maxStakingTotalDurations?: BigNumberish;
+  emissionStart?: BigNumberish;
+  emissionEnd?: BigNumberish;
 }): Promise<ERC721StakingEmissionStream> {
   const accounts = await getUnnamedAccounts();
   const nowMinusOneDayUnix =
@@ -132,7 +134,7 @@ describe("ERC721StakingEmissionStream", function () {
     });
   });
 
-  describe("Common", function () {
+  describe.only("Common", function () {
     it("should fail to claim when claiming is locked", async function () {
       const { deployer, userB } = await setupTest();
 
@@ -372,6 +374,48 @@ describe("ERC721StakingEmissionStream", function () {
       await expect(
         stream.connect(userB.signer)["stake(uint256)"](2)
       ).to.be.revertedWith("STREAM/MAX_STAKE_DURATION_EXCEEDED");
+    });
+
+    it("should correctly calculate staked duration even if emission end is not set", async function () {
+      const { deployer, userB } = await setupTest();
+
+      const lockableCollection = await deployCollection("normal");
+      const stream = await deployStream({
+        ticketToken: lockableCollection.address,
+        emissionEnd: 0,
+      });
+
+      await lockableCollection
+        .connect(deployer.signer)
+        .grantRole(
+          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
+          stream.address
+        );
+
+      await lockableCollection
+        .connect(deployer.signer)
+        .mintByOwner(userB.signer.address, 5);
+
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      expect(
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+      ).to.be.equal(0);
+      expect(
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+      ).to.be.equal(0);
+
+      await stream.connect(userB.signer)["stake(uint256)"](2);
+
+      await increaseTime(3 * 60 * 60); // 3 hours
+
+      expect(
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+      ).to.be.equal(utils.parseEther("6"));
+
+      expect(
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+      ).to.be.equal(10_800);
     });
   });
 

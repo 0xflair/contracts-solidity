@@ -117,7 +117,11 @@ contract ERC721StakingEmissionStream is
         override
         returns (uint64)
     {
-        return emissionEnd;
+        if (emissionEnd > 0) {
+            return emissionEnd;
+        }
+
+        return super._stakingTimeLimit();
     }
 
     function _beforeClaim(
