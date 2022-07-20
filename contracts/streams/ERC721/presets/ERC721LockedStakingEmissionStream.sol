@@ -13,6 +13,7 @@ import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
 import "../../../common/EmergencyOwnerWithdrawExtension.sol";
 import "../extensions/ERC721EmissionReleaseExtension.sol";
+import "../extensions/ERC721EqualSplitExtension.sol";
 import "../extensions/ERC721LockedStakingExtension.sol";
 import "../extensions/ERC721LockableClaimExtension.sol";
 
@@ -24,6 +25,7 @@ contract ERC721LockedStakingEmissionStream is
     Ownable,
     EmergencyOwnerWithdrawExtension,
     ERC721EmissionReleaseExtension,
+    ERC721EqualSplitExtension,
     ERC721LockedStakingExtension,
     ERC721LockableClaimExtension
 {
@@ -46,6 +48,8 @@ contract ERC721LockedStakingEmissionStream is
         uint64 emissionTimeUnit;
         uint64 emissionStart;
         uint64 emissionEnd;
+        // Equal split extension
+        uint256 totalTickets;
         // Lockable claim extension
         uint64 claimLockedUntil;
     }
@@ -77,6 +81,7 @@ contract ERC721LockedStakingEmissionStream is
             config.emissionStart,
             config.emissionEnd
         );
+        __ERC721EqualSplitExtension_init(config.totalTickets);
         __ERC721LockableClaimExtension_init(config.claimLockedUntil);
     }
 
@@ -99,13 +104,20 @@ contract ERC721LockedStakingEmissionStream is
         uint256 totalReleasedAmount_,
         uint256 ticketTokenId_,
         address claimToken_
-    ) internal view virtual override returns (uint256) {
+    )
+        internal
+        view
+        virtual
+        override(ERC721MultiTokenStream, ERC721EqualSplitExtension)
+        returns (uint256)
+    {
         totalReleasedAmount_;
         ticketTokenId_;
         claimToken_;
 
+        // Get the rate per token to calculate based on stake duration
         return
-            emissionRate *
+            (emissionRate / totalTickets) *
             // Intentionally rounded down
             (totalStakedDuration(ticketTokenId_) / emissionTimeUnit);
     }

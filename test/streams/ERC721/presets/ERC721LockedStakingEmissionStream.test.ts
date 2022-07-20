@@ -42,6 +42,8 @@ const deployStream = async function (args?: {
         emissionTimeUnit: 3600, // 1 hour
         emissionStart: nowMinusOneDayUnix,
         emissionEnd: nowPlusFiveDaysUnix,
+        // Equal split extension
+        totalTickets: 1,
         // Lockable claim extension
         claimLockedUntil: 0,
 
@@ -87,6 +89,8 @@ describe("ERC721LockedStakingEmissionStream", function () {
           emissionTimeUnit: 3600, // 1 hour
           emissionStart: 0,
           emissionEnd: Math.floor(+new Date() / 1000 + 100000000),
+          // Equal split extension
+          totalTickets: 1,
           // Lockable claim extension
           claimLockedUntil: 0,
         },

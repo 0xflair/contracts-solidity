@@ -67,7 +67,7 @@ abstract contract ERC721EqualSplitExtension is
         uint256 totalReleasedAmount_,
         uint256 ticketTokenId_,
         address claimToken_
-    ) internal view override returns (uint256) {
+    ) internal view virtual override returns (uint256) {
         ticketTokenId_;
         claimToken_;
 

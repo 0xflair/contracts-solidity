@@ -55,6 +55,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         emissionTimeUnit: 0,
         emissionStart: 0,
         emissionEnd: 0,
+        totalTickets: 0,
         claimLockedUntil: 0,
       },
     ]
