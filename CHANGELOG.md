@@ -1,3 +1,10 @@
+### [1.16.8](https://github.com/0xflair/evm-contracts/compare/v1.16.7...v1.16.8) (2022-07-20)
+
+
+### Bug Fixes
+
+* deploy to polygon and rinkeby ([5a3152c](https://github.com/0xflair/evm-contracts/commit/5a3152c7497c0c758b19a76f592a243e6fb76e3d))
+
 ### [1.16.7](https://github.com/0xflair/evm-contracts/compare/v1.16.6...v1.16.7) (2022-07-20)
 
 
