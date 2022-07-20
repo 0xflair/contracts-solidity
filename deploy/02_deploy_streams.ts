@@ -49,7 +49,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       {
         ticketToken: "0x0000000000000000000000000000000000000000",
         lockedUntilTimestamp: 0,
-        minStakingLockTime: 0,
+        minStakingDuration: 0,
         maxStakingTotalDurations: 0,
         emissionRate: 0,
         emissionTimeUnit: 0,

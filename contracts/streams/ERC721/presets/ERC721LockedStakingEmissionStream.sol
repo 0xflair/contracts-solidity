@@ -39,7 +39,7 @@ contract ERC721LockedStakingEmissionStream is
         address ticketToken;
         uint64 lockedUntilTimestamp;
         // Locked staking extension
-        uint64 minStakingLockTime; // in seconds. Minimum time the NFT must stay locked before unstaking.
+        uint64 minStakingDuration; // in seconds. Minimum time the NFT must stay locked before unstaking.
         uint64 maxStakingTotalDurations; // in seconds. Maximum sum total of all durations staking that will be counted (across all stake/unstakes for each token).
         // Emission release extension
         uint256 emissionRate;
@@ -68,7 +68,7 @@ contract ERC721LockedStakingEmissionStream is
             config.lockedUntilTimestamp
         );
         __ERC721LockedStakingExtension_init(
-            config.minStakingLockTime,
+            config.minStakingDuration,
             config.maxStakingTotalDurations
         );
         __ERC721EmissionReleaseExtension_init(
