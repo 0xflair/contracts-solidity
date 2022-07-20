@@ -1,3 +1,10 @@
+### [1.16.10](https://github.com/0xflair/evm-contracts/compare/v1.16.9...v1.16.10) (2022-07-20)
+
+
+### Bug Fixes
+
+* consistent method naming and deploy to polygon and rinkeby ([a5080bd](https://github.com/0xflair/evm-contracts/commit/a5080bddb6d1408445d38a8dbf3b3e99be6e5225))
+
 ### [1.16.9](https://github.com/0xflair/evm-contracts/compare/v1.16.8...v1.16.9) (2022-07-20)
 
 
