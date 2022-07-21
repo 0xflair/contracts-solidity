@@ -1,3 +1,10 @@
+### [1.16.13](https://github.com/0xflair/evm-contracts/compare/v1.16.12...v1.16.13) (2022-07-21)
+
+
+### Bug Fixes
+
+* deploy to all networks ([c7a2403](https://github.com/0xflair/evm-contracts/commit/c7a24033a8cadd48ee185a9d224d9e8d1e835e57))
+
 ### [1.16.12](https://github.com/0xflair/evm-contracts/compare/v1.16.11...v1.16.12) (2022-07-21)
 
 
