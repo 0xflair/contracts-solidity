@@ -1,3 +1,11 @@
+### [1.16.12](https://github.com/0xflair/evm-contracts/compare/v1.16.11...v1.16.12) (2022-07-21)
+
+
+### Bug Fixes
+
+* deploy to rinkeby and polygon ([4787690](https://github.com/0xflair/evm-contracts/commit/47876903d6683be4bc5547d07bec3f49828b41b8))
+* keep the emission rate a collection-level value for consistency ([23547cd](https://github.com/0xflair/evm-contracts/commit/23547cdb539af47f6aa3b5829fb2af445b31b587))
+
 ### [1.16.11](https://github.com/0xflair/evm-contracts/compare/v1.16.10...v1.16.11) (2022-07-20)
 
 
