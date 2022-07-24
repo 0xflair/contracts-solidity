@@ -1,3 +1,10 @@
+### [1.16.14](https://github.com/0xflair/evm-contracts/compare/v1.16.13...v1.16.14) (2022-07-24)
+
+
+### Bug Fixes
+
+* remove opensea no gas extension after seaport ([#20](https://github.com/0xflair/evm-contracts/issues/20)) ([b812fa1](https://github.com/0xflair/evm-contracts/commit/b812fa16c27f61bf7a712fff8abd42f2e9a3311c))
+
 ### [1.16.13](https://github.com/0xflair/evm-contracts/compare/v1.16.12...v1.16.13) (2022-07-21)
 
 
