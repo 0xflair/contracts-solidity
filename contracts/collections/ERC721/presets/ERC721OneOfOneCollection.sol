@@ -12,7 +12,6 @@ import "../extensions/ERC721OneOfOneMintExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721OneOfOneCollection is
     Ownable,
@@ -21,7 +20,6 @@ contract ERC721OneOfOneCollection is
     ERC721OwnerMintExtension,
     ERC721RoyaltyExtension,
     ERC721OneOfOneMintExtension,
-    ERC721OpenSeaNoGasExtension,
     ERC2771ContextOwnable
 {
     struct Config {
@@ -31,8 +29,6 @@ contract ERC721OneOfOneCollection is
         uint256 maxSupply;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
-        address openSeaProxyRegistryAddress;
-        address openSeaExchangeAddress;
         address trustedForwarder;
     }
 
@@ -61,10 +57,6 @@ contract ERC721OneOfOneCollection is
         __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        );
-        __ERC721OpenSeaNoGasExtension_init(
-            config.openSeaProxyRegistryAddress,
-            config.openSeaExchangeAddress
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
     }
@@ -108,8 +100,7 @@ contract ERC721OneOfOneCollection is
             ERC721OwnerMintExtension,
             ERC721OneOfOneMintExtension,
             ERC721PerTokenMetadataExtension,
-            ERC721RoyaltyExtension,
-            ERC721OpenSeaNoGasExtension
+            ERC721RoyaltyExtension
         )
         returns (bool)
     {
@@ -142,18 +133,6 @@ contract ERC721OneOfOneCollection is
         returns (string memory)
     {
         return ERC721AutoIdMinterExtension.symbol();
-    }
-
-    /**
-     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
-     */
-    function isApprovedForAll(address owner, address operator)
-        public
-        view
-        override(ERC721, ERC721OpenSeaNoGasExtension)
-        returns (bool)
-    {
-        return super.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)

@@ -43,8 +43,6 @@ export const deployCollection = async function (
     defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
     defaultRoyaltyBps: 250,
     proceedsRecipient: "0x0000000000000000000000000000000000000000",
-    openSeaProxyRegistryAddress: "0x0000000000000000000000000000000000000000",
-    openSeaExchangeAddress: "0x0000000000000000000000000000000000000000",
     trustedForwarder: "0x0000000000000000000000000000000000000000",
     ...(args || {}),
   });
@@ -112,10 +110,6 @@ describe("ERC721FullFeaturedCollection", function () {
             defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
             defaultRoyaltyBps: 250,
             proceedsRecipient: "0x0000000000000000000000000000000000000000",
-            openSeaProxyRegistryAddress:
-              "0x0000000000000000000000000000000000000000",
-            openSeaExchangeAddress:
-              "0x0000000000000000000000000000000000000000",
             trustedForwarder: "0x0000000000000000000000000000000000000000",
           },
           userB.signer.address,

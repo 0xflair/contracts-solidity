@@ -59,7 +59,7 @@ describe("ERC721LockedStakingEmissionStream", function () {
       await setupTest();
       const stream = await deployStream();
 
-      expect(await stream.supportsInterface("0x7f4fdea8")).to.equal(true);
+      expect(await stream.supportsInterface("0xd6642801")).to.equal(true);
     });
 
     it("supports IERC721EmissionReleaseExtension", async function () {
@@ -138,7 +138,7 @@ describe("ERC721LockedStakingEmissionStream", function () {
     });
   });
 
-  describe.only("Common", function () {
+  describe("Common", function () {
     it("should fail to claim when claiming is locked", async function () {
       const { deployer, userB } = await setupTest();
 

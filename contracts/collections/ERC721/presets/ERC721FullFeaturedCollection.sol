@@ -17,7 +17,6 @@ import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721RoleBasedLockableExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
-import "../extensions/ERC721OpenSeaNoGasExtension.sol";
 
 contract ERC721FullFeaturedCollection is
     Ownable,
@@ -30,7 +29,6 @@ contract ERC721FullFeaturedCollection is
     ERC721RoleBasedMintExtension,
     ERC721RoleBasedLockableExtension,
     ERC721RoyaltyExtension,
-    ERC721OpenSeaNoGasExtension,
     ERC2771ContextOwnable,
     ERC721BulkifyExtension
 {
@@ -48,8 +46,6 @@ contract ERC721FullFeaturedCollection is
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
         address proceedsRecipient;
-        address openSeaProxyRegistryAddress;
-        address openSeaExchangeAddress;
         address trustedForwarder;
     }
 
@@ -90,10 +86,6 @@ contract ERC721FullFeaturedCollection is
         __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
-        );
-        __ERC721OpenSeaNoGasExtension_init(
-            config.openSeaProxyRegistryAddress,
-            config.openSeaExchangeAddress
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
         __ERC721BulkifyExtension_init();
@@ -160,7 +152,6 @@ contract ERC721FullFeaturedCollection is
             ERC721OwnerMintExtension,
             ERC721RoleBasedMintExtension,
             ERC721RoyaltyExtension,
-            ERC721OpenSeaNoGasExtension,
             ERC721RoleBasedLockableExtension,
             ERC721BulkifyExtension
         )
@@ -169,20 +160,6 @@ contract ERC721FullFeaturedCollection is
         return
             ERC721.supportsInterface(interfaceId) ||
             ERC165Storage.supportsInterface(interfaceId);
-    }
-
-    /**
-     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
-     */
-    function isApprovedForAll(address owner, address operator)
-        public
-        view
-        override(ERC721, ERC721OpenSeaNoGasExtension)
-        returns (bool)
-    {
-        return
-            ERC721.isApprovedForAll(owner, operator) ||
-            ERC721OpenSeaNoGasExtension.isApprovedForAll(owner, operator);
     }
 
     function tokenURI(uint256 _tokenId)
