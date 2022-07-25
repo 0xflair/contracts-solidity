@@ -1,3 +1,10 @@
+## [1.17.0](https://github.com/0xflair/evm-contracts/compare/v1.16.14...v1.17.0) (2022-07-25)
+
+
+### Features
+
+* add common withdraw extension with lockability ([#18](https://github.com/0xflair/evm-contracts/issues/18)) ([269135f](https://github.com/0xflair/evm-contracts/commit/269135f9bbcd3000b0ceb26daba4923a5921ff33))
+
 ### [1.16.14](https://github.com/0xflair/evm-contracts/compare/v1.16.13...v1.16.14) (2022-07-24)
 
 
