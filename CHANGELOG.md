@@ -1,3 +1,10 @@
+### [1.17.1](https://github.com/0xflair/evm-contracts/compare/v1.17.0...v1.17.1) (2022-07-25)
+
+
+### Bug Fixes
+
+* add func to read rate per token ([#22](https://github.com/0xflair/evm-contracts/issues/22)) ([5757deb](https://github.com/0xflair/evm-contracts/commit/5757deb7a54d0cb46242e2c2888b666def6ea264))
+
 ## [1.17.0](https://github.com/0xflair/evm-contracts/compare/v1.16.14...v1.17.0) (2022-07-25)
 
 
