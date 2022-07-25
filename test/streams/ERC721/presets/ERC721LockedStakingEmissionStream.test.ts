@@ -66,7 +66,7 @@ describe("ERC721LockedStakingEmissionStream", function () {
       await setupTest();
       const stream = await deployStream();
 
-      expect(await stream.supportsInterface("0x4d0b5a49")).to.equal(true);
+      expect(await stream.supportsInterface("0xc9f600a9")).to.equal(true);
     });
   });
 

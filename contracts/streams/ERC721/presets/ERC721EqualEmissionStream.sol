@@ -70,6 +70,16 @@ contract ERC721EqualEmissionStream is
         __ERC721EqualSplitExtension_init(config.totalTickets);
     }
 
+    function rateByToken(uint256[] calldata tokenIds)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        return ((emissionRate * tokenIds.length) / totalTickets);
+    }
+
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,

@@ -74,6 +74,20 @@ contract ERC721ShareEmissionStream is
         __ERC721LockableClaimExtension_init(config.claimLockedUntil);
     }
 
+    function rateByToken(uint256[] calldata tokenIds)
+        public
+        view
+        virtual
+        override
+        returns (uint256 totalRate)
+    {
+        for (uint256 i = 0; i < tokenIds.length; i++) {
+            totalRate += emissionRate / shares[tokenIds[i]];
+        }
+
+        return totalRate;
+    }
+
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,

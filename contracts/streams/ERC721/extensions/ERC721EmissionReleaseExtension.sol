@@ -34,6 +34,11 @@ interface IERC721EmissionReleaseExtension {
         external
         view
         returns (uint256);
+
+    function rateByToken(uint256[] calldata tokenIds)
+        external
+        view
+        returns (uint256);
 }
 
 /**
@@ -136,6 +141,12 @@ abstract contract ERC721EmissionReleaseExtension is
     {
         return ((calcUntil - emissionStart) * emissionRate) / emissionTimeUnit;
     }
+
+    function rateByToken(uint256[] calldata tokenIds)
+        public
+        view
+        virtual
+        returns (uint256);
 
     /* INTERNAL */
 

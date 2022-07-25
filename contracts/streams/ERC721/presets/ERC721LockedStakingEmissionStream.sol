@@ -180,6 +180,16 @@ contract ERC721LockedStakingEmissionStream is
         super.stake(tokenIds);
     }
 
+    function rateByToken(uint256[] calldata tokenIds)
+        public
+        view
+        virtual
+        override
+        returns (uint256)
+    {
+        return (emissionRate * tokenIds.length) / totalTickets;
+    }
+
     function rewardAmountByToken(uint256 ticketTokenId)
         public
         view
@@ -187,8 +197,8 @@ contract ERC721LockedStakingEmissionStream is
         returns (uint256)
     {
         return
-            (emissionRate * totalStakedDuration(ticketTokenId)) /
-            emissionTimeUnit;
+            ((emissionRate * totalStakedDuration(ticketTokenId)) /
+                totalTickets) / emissionTimeUnit;
     }
 
     function rewardAmountByToken(uint256[] calldata ticketTokenIds)
