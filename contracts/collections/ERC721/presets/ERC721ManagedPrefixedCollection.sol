@@ -107,34 +107,26 @@ contract ERC721ManagedPrefixedCollection is
     function name()
         public
         view
-        override(
-            ERC721,
-            ERC721AutoIdMinterExtension,
-            ERC721CollectionMetadataExtension
-        )
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.name();
+        return ERC721CollectionMetadataExtension.name();
     }
 
     function symbol()
         public
         view
-        override(
-            ERC721,
-            ERC721AutoIdMinterExtension,
-            ERC721CollectionMetadataExtension
-        )
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.symbol();
+        return ERC721CollectionMetadataExtension.symbol();
     }
 
     function isApprovedForAll(address owner, address operator)
         public
         view
         virtual
-        override(ERC721, IERC721, ERC721OwnerManagedExtension)
+        override(ERC721, ERC721OwnerManagedExtension)
         returns (bool)
     {
         return ERC721OwnerManagedExtension.isApprovedForAll(owner, operator);
@@ -146,7 +138,6 @@ contract ERC721ManagedPrefixedCollection is
         virtual
         override(
             ERC165Storage,
-            ERC721AutoIdMinterExtension,
             ERC721CollectionMetadataExtension,
             ERC721OwnerMintExtension,
             ERC721OwnerManagedExtension,
@@ -163,7 +154,7 @@ contract ERC721ManagedPrefixedCollection is
         public
         view
         virtual
-        override(ERC721, IERC721Metadata, ERC721PrefixedMetadataExtension)
+        override(ERC721, ERC721PrefixedMetadataExtension)
         returns (string memory)
     {
         return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);

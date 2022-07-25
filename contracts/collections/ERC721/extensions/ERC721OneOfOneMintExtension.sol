@@ -88,7 +88,7 @@ abstract contract ERC721OneOfOneMintExtension is
         override(
             ERC165Storage,
             AccessControl,
-            ERC721AutoIdMinterExtension,
+            ERC721CollectionMetadataExtension,
             ERC721PerTokenMetadataExtension
         )
         returns (bool)
@@ -100,20 +100,20 @@ abstract contract ERC721OneOfOneMintExtension is
         public
         view
         virtual
-        override(ERC721, ERC721AutoIdMinterExtension)
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.name();
+        return ERC721CollectionMetadataExtension.name();
     }
 
     function symbol()
         public
         view
         virtual
-        override(ERC721, ERC721AutoIdMinterExtension)
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.symbol();
+        return ERC721CollectionMetadataExtension.symbol();
     }
 
     function tokenURI(uint256 tokenId)

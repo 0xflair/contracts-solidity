@@ -16,6 +16,7 @@ interface IERC721RoleBasedMintExtension {
  */
 abstract contract ERC721RoleBasedMintExtension is
     IERC721RoleBasedMintExtension,
+    Initializable,
     ERC165Storage,
     ERC721AutoIdMinterExtension,
     AccessControl
@@ -52,7 +53,11 @@ abstract contract ERC721RoleBasedMintExtension is
         public
         view
         virtual
-        override(ERC165Storage, AccessControl, ERC721AutoIdMinterExtension)
+        override(
+            ERC165Storage,
+            AccessControl,
+            ERC721CollectionMetadataExtension
+        )
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

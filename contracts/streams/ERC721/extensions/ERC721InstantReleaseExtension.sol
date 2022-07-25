@@ -21,8 +21,8 @@ interface IERC721InstantReleaseExtension {
 abstract contract ERC721InstantReleaseExtension is
     IERC721InstantReleaseExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     /* INIT */

@@ -38,7 +38,7 @@ abstract contract ERC721FreeMintExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AutoIdMinterExtension)
+        override(ERC165Storage, ERC721CollectionMetadataExtension)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

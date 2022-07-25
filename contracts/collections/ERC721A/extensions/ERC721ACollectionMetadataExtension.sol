@@ -9,6 +9,8 @@ import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/IERC721Metadata.sol";
 
+import "erc721a/contracts/ERC721A.sol";
+
 import {IERC721CollectionMetadataExtension} from "../../ERC721/extensions/ERC721CollectionMetadataExtension.sol";
 
 /**
@@ -18,7 +20,8 @@ abstract contract ERC721ACollectionMetadataExtension is
     IERC721CollectionMetadataExtension,
     Initializable,
     Ownable,
-    ERC165Storage
+    ERC165Storage,
+    ERC721A
 {
     string private _name;
 
@@ -62,11 +65,11 @@ abstract contract ERC721ACollectionMetadataExtension is
 
     /* PUBLIC */
 
-    function name() public view virtual returns (string memory) {
+    function name() public view virtual override returns (string memory) {
         return _name;
     }
 
-    function symbol() public view virtual returns (string memory) {
+    function symbol() public view virtual override returns (string memory) {
         return _symbol;
     }
 
@@ -74,7 +77,7 @@ abstract contract ERC721ACollectionMetadataExtension is
         public
         view
         virtual
-        override(ERC165Storage)
+        override(ERC165Storage, ERC721A)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

@@ -5,6 +5,7 @@ pragma solidity 0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+import "../../../common/WithdrawExtension.sol";
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
@@ -12,20 +13,20 @@ import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721PreSaleExtension.sol";
 import "../extensions/ERC721PublicSaleExtension.sol";
-import "../extensions/ERC721SimpleProceedsExtension.sol";
 import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721RoleBasedLockableExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
 
 contract ERC721FullFeaturedCollection is
+    Initializable,
     Ownable,
     ERC165Storage,
+    WithdrawExtension,
     ERC721PrefixedMetadataExtension,
     ERC721OwnerMintExtension,
     ERC721PreSaleExtension,
     ERC721PublicSaleExtension,
-    ERC721SimpleProceedsExtension,
     ERC721RoleBasedMintExtension,
     ERC721RoleBasedLockableExtension,
     ERC721RoyaltyExtension,
@@ -61,6 +62,7 @@ contract ERC721FullFeaturedCollection is
 
         _transferOwnership(deployer);
 
+        __WithdrawExtension_init(config.proceedsRecipient, WithdrawMode.ANYONE);
         __ERC721CollectionMetadataExtension_init(
             config.name,
             config.symbol,
@@ -82,7 +84,6 @@ contract ERC721FullFeaturedCollection is
             config.publicSalePrice,
             config.publicSaleMaxMintPerTx
         );
-        __ERC721SimpleProceedsExtension_init(config.proceedsRecipient);
         __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
@@ -124,19 +125,19 @@ contract ERC721FullFeaturedCollection is
     function name()
         public
         view
-        override(ERC721, ERC721AutoIdMinterExtension)
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.name();
+        return ERC721CollectionMetadataExtension.name();
     }
 
     function symbol()
         public
         view
-        override(ERC721, ERC721AutoIdMinterExtension)
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.symbol();
+        return ERC721CollectionMetadataExtension.symbol();
     }
 
     function supportsInterface(bytes4 interfaceId)
@@ -148,7 +149,6 @@ contract ERC721FullFeaturedCollection is
             ERC721PrefixedMetadataExtension,
             ERC721PreSaleExtension,
             ERC721PublicSaleExtension,
-            ERC721SimpleProceedsExtension,
             ERC721OwnerMintExtension,
             ERC721RoleBasedMintExtension,
             ERC721RoyaltyExtension,

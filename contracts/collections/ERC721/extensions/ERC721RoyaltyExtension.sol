@@ -34,9 +34,9 @@ interface IERC721RoyaltyExtension {
  * Note that OpenSea is supported via Flair metadata feature.
  */
 abstract contract ERC721RoyaltyExtension is
-    Initializable,
     IERC721RoyaltyExtension,
     IRoyalties,
+    Initializable,
     Ownable,
     ERC165Storage,
     EIP2981RoyaltyOverrideCore

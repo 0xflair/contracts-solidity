@@ -23,10 +23,6 @@ interface IERC721AutoIdMinterExtension {
  */
 abstract contract ERC721AutoIdMinterExtension is
     IERC721AutoIdMinterExtension,
-    Initializable,
-    Ownable,
-    ERC165Storage,
-    ERC721,
     ERC721CollectionMetadataExtension
 {
     using SafeMath for uint256;
@@ -65,36 +61,6 @@ abstract contract ERC721AutoIdMinterExtension is
     }
 
     /* PUBLIC */
-
-    function name()
-        public
-        view
-        virtual
-        override(ERC721, ERC721CollectionMetadataExtension)
-        returns (string memory)
-    {
-        return ERC721CollectionMetadataExtension.name();
-    }
-
-    function symbol()
-        public
-        view
-        virtual
-        override(ERC721, ERC721CollectionMetadataExtension)
-        returns (string memory)
-    {
-        return ERC721CollectionMetadataExtension.symbol();
-    }
-
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        virtual
-        override(ERC165Storage, ERC721, ERC721CollectionMetadataExtension)
-        returns (bool)
-    {
-        return ERC165Storage.supportsInterface(interfaceId);
-    }
 
     function totalSupply() public view returns (uint256) {
         return _currentTokenId;

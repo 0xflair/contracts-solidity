@@ -76,8 +76,8 @@ interface IERC721MultiTokenStream {
 abstract contract ERC721MultiTokenStream is
     IERC721MultiTokenStream,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ReentrancyGuard
 {
     using Address for address;

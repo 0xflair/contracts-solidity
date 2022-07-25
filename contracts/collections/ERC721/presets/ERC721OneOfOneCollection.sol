@@ -14,6 +14,7 @@ import "../extensions/ERC721OwnerMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
 
 contract ERC721OneOfOneCollection is
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721PerTokenMetadataExtension,
@@ -114,12 +115,12 @@ contract ERC721OneOfOneCollection is
         view
         override(
             ERC721,
-            ERC721AutoIdMinterExtension,
-            ERC721OneOfOneMintExtension
+            ERC721OneOfOneMintExtension,
+            ERC721CollectionMetadataExtension
         )
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.name();
+        return ERC721CollectionMetadataExtension.name();
     }
 
     function symbol()
@@ -127,12 +128,12 @@ contract ERC721OneOfOneCollection is
         view
         override(
             ERC721,
-            ERC721AutoIdMinterExtension,
-            ERC721OneOfOneMintExtension
+            ERC721OneOfOneMintExtension,
+            ERC721CollectionMetadataExtension
         )
         returns (string memory)
     {
-        return ERC721AutoIdMinterExtension.symbol();
+        return ERC721CollectionMetadataExtension.symbol();
     }
 
     function tokenURI(uint256 _tokenId)

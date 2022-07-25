@@ -42,8 +42,8 @@ interface IERC721EmissionReleaseExtension {
 abstract contract ERC721EmissionReleaseExtension is
     IERC721EmissionReleaseExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     // Number of tokens released every `emissionTimeUnit`

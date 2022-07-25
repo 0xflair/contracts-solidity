@@ -31,8 +31,8 @@ interface IERC721ShareSplitExtension {
 abstract contract ERC721ShareSplitExtension is
     IERC721ShareSplitExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     event SharesUpdated(uint256 tokenId, uint256 prevShares, uint256 newShares);

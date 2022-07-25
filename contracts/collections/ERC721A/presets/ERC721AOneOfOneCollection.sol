@@ -13,15 +13,14 @@ import "../extensions/ERC721AOneOfOneMintExtension.sol";
 import "../extensions/ERC721AOwnerMintExtension.sol";
 
 contract ERC721AOneOfOneCollection is
+    Initializable,
     Ownable,
     ERC165Storage,
-    ERC2771ContextOwnable,
-    ERC721A,
-    ERC721AMinterExtension,
     ERC721ACollectionMetadataExtension,
     ERC721AOwnerMintExtension,
     ERC721AOneOfOneMintExtension,
-    ERC721RoyaltyExtension
+    ERC721RoyaltyExtension,
+    ERC2771ContextOwnable
 {
     struct Config {
         string name;
@@ -98,8 +97,6 @@ contract ERC721AOneOfOneCollection is
         virtual
         override(
             ERC165Storage,
-            ERC721A,
-            ERC721AMinterExtension,
             ERC721ACollectionMetadataExtension,
             ERC721AOwnerMintExtension,
             ERC721AOneOfOneMintExtension,
@@ -113,19 +110,25 @@ contract ERC721AOneOfOneCollection is
     function name()
         public
         view
-        override(ERC721A, ERC721ACollectionMetadataExtension)
+        override(
+            ERC721ACollectionMetadataExtension,
+            ERC721AOneOfOneMintExtension
+        )
         returns (string memory)
     {
-        return ERC721ACollectionMetadataExtension.name();
+        return ERC721AOneOfOneMintExtension.name();
     }
 
     function symbol()
         public
         view
-        override(ERC721A, ERC721ACollectionMetadataExtension)
+        override(
+            ERC721ACollectionMetadataExtension,
+            ERC721AOneOfOneMintExtension
+        )
         returns (string memory)
     {
-        return ERC721ACollectionMetadataExtension.symbol();
+        return ERC721AOneOfOneMintExtension.symbol();
     }
 
     function tokenURI(uint256 _tokenId)

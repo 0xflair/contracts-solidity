@@ -3,7 +3,6 @@
 pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
@@ -27,7 +26,6 @@ interface IERC721BulkifyExtension {
 abstract contract ERC721BulkifyExtension is
     IERC721BulkifyExtension,
     Initializable,
-    Context,
     ERC165Storage
 {
     function __ERC721BulkifyExtension_init() internal onlyInitializing {

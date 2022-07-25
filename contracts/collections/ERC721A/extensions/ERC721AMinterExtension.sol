@@ -12,15 +12,12 @@ import "erc721a/contracts/ERC721A.sol";
 
 import {IERC721AutoIdMinterExtension} from "../../ERC721/extensions/ERC721AutoIdMinterExtension.sol";
 
+import "./ERC721ACollectionMetadataExtension.sol";
+
 /**
  * @dev Extension to add minting capability with an auto incremented ID for each token and a maximum supply setting.
  */
-abstract contract ERC721AMinterExtension is
-    Initializable,
-    Ownable,
-    ERC165Storage,
-    ERC721A
-{
+abstract contract ERC721AMinterExtension is ERC721ACollectionMetadataExtension {
     using SafeMath for uint256;
 
     uint256 public maxSupply;
@@ -53,18 +50,6 @@ abstract contract ERC721AMinterExtension is
 
     function freezeMaxSupply() external onlyOwner {
         maxSupplyFrozen = true;
-    }
-
-    /* PUBLIC */
-
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        virtual
-        override(ERC165Storage, ERC721A)
-        returns (bool)
-    {
-        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     /* INTERNAL */

@@ -23,8 +23,8 @@ interface IERC721EqualSplitExtension {
 abstract contract ERC721EqualSplitExtension is
     IERC721EqualSplitExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     // Total number of ERC721 tokens to calculate their equal split share

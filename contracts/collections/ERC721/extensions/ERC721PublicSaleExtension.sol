@@ -23,8 +23,8 @@ interface IERC721PublicSaleExtension {
  * @dev Extension to provide pre-sale and public-sale capabilities for collectors to mint for a specific price.
  */
 abstract contract ERC721PublicSaleExtension is
-    Initializable,
     IERC721PublicSaleExtension,
+    Initializable,
     Ownable,
     ERC165Storage,
     ERC721AutoIdMinterExtension,
@@ -74,7 +74,7 @@ abstract contract ERC721PublicSaleExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AutoIdMinterExtension)
+        override(ERC165Storage, ERC721CollectionMetadataExtension)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

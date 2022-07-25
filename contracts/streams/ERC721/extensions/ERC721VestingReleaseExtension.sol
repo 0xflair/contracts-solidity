@@ -25,8 +25,8 @@ interface IERC721VestingReleaseExtension {
 abstract contract ERC721VestingReleaseExtension is
     IERC721VestingReleaseExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     // Start of the vesting schedule

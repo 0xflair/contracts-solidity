@@ -31,8 +31,8 @@ interface IERC721StakingExtension {
 abstract contract ERC721StakingExtension is
     IERC721StakingExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     // Minimum seconds that token must be staked before unstaking.

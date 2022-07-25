@@ -23,8 +23,8 @@ interface IERC721LockableClaimExtension {
 abstract contract ERC721LockableClaimExtension is
     IERC721LockableClaimExtension,
     Initializable,
-    ERC165Storage,
     Ownable,
+    ERC165Storage,
     ERC721MultiTokenStream
 {
     // Claiming is only possible after this time (unix timestamp)

@@ -50,7 +50,11 @@ abstract contract ERC721ARoleBasedMintExtension is
         public
         view
         virtual
-        override(ERC165Storage, AccessControl, ERC721AMinterExtension)
+        override(
+            ERC165Storage,
+            AccessControl,
+            ERC721ACollectionMetadataExtension
+        )
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

@@ -52,7 +52,7 @@ abstract contract ERC721LockableExtension is
         public
         view
         virtual
-        override(ERC165Storage, ERC721AutoIdMinterExtension)
+        override(ERC165Storage, ERC721CollectionMetadataExtension)
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);

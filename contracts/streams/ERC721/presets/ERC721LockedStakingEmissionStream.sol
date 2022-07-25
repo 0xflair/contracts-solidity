@@ -11,7 +11,7 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 
-import "../../../common/EmergencyOwnerWithdrawExtension.sol";
+import "../../../common/WithdrawExtension.sol";
 import "../extensions/ERC721EmissionReleaseExtension.sol";
 import "../extensions/ERC721EqualSplitExtension.sol";
 import "../extensions/ERC721LockedStakingExtension.sol";
@@ -23,11 +23,11 @@ import "../extensions/ERC721LockableClaimExtension.sol";
 contract ERC721LockedStakingEmissionStream is
     Initializable,
     Ownable,
-    EmergencyOwnerWithdrawExtension,
     ERC721EmissionReleaseExtension,
     ERC721EqualSplitExtension,
     ERC721LockedStakingExtension,
-    ERC721LockableClaimExtension
+    ERC721LockableClaimExtension,
+    WithdrawExtension
 {
     using Address for address;
     using Address for address payable;
@@ -66,7 +66,7 @@ contract ERC721LockedStakingEmissionStream is
     {
         _transferOwnership(deployer);
 
-        __EmergencyOwnerWithdrawExtension_init();
+        __WithdrawExtension_init(deployer, WithdrawMode.OWNER);
         __ERC721MultiTokenStream_init(
             config.ticketToken,
             config.lockedUntilTimestamp

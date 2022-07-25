@@ -16,8 +16,6 @@ import {IERC721OneOfOneMintExtension} from "../../ERC721/extensions/ERC721OneOfO
  */
 abstract contract ERC721AOneOfOneMintExtension is
     IERC721OneOfOneMintExtension,
-    Ownable,
-    ERC165Storage,
     AccessControl,
     ERC721AMinterExtension,
     ERC721APerTokenMetadataExtension
@@ -71,14 +69,33 @@ abstract contract ERC721AOneOfOneMintExtension is
         view
         virtual
         override(
-            ERC165Storage,
             AccessControl,
-            ERC721AMinterExtension,
+            ERC721ACollectionMetadataExtension,
             ERC721APerTokenMetadataExtension
         )
         returns (bool)
     {
         return ERC165Storage.supportsInterface(interfaceId);
+    }
+
+    function name()
+        public
+        view
+        virtual
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.name();
+    }
+
+    function symbol()
+        public
+        view
+        virtual
+        override(ERC721A, ERC721ACollectionMetadataExtension)
+        returns (string memory)
+    {
+        return ERC721ACollectionMetadataExtension.symbol();
     }
 
     function tokenURI(uint256 tokenId)
