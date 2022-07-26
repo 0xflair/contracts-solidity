@@ -55,7 +55,7 @@ abstract contract ERC721APerTokenMetadataExtension is
         external
         onlyOwner
     {
-        require(tokenId > lastFrozenTokenId, "FROZEN_TOKEN");
+        require(tokenId > lastFrozenTokenId, "FROZEN");
         _setTokenURI(tokenId, tokenURI);
     }
 

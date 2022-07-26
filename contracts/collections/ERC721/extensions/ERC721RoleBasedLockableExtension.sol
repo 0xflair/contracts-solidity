@@ -46,12 +46,12 @@ abstract contract ERC721RoleBasedLockableExtension is
      * This mechanism prevents them from being transferred, yet still will show correct owner.
      */
     function lock(uint256 tokenId) public virtual nonReentrant {
-        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        require(hasRole(LOCKER_ROLE, msg.sender), "NOT_LOCKER_ROLE");
         _lock(tokenId);
     }
 
     function lock(uint256[] calldata tokenIds) public virtual nonReentrant {
-        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        require(hasRole(LOCKER_ROLE, msg.sender), "NOT_LOCKER_ROLE");
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
             _lock(tokenIds[i]);
@@ -62,12 +62,12 @@ abstract contract ERC721RoleBasedLockableExtension is
      * Unlocks locked token(s) to be able to transfer.
      */
     function unlock(uint256 tokenId) public virtual nonReentrant {
-        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        require(hasRole(LOCKER_ROLE, msg.sender), "NOT_LOCKER_ROLE");
         _unlock(tokenId);
     }
 
     function unlock(uint256[] calldata tokenIds) public virtual nonReentrant {
-        require(hasRole(LOCKER_ROLE, msg.sender), "ERC721/NOT_LOCKER_ROLE");
+        require(hasRole(LOCKER_ROLE, msg.sender), "NOT_LOCKER_ROLE");
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
             _unlock(tokenIds[i]);

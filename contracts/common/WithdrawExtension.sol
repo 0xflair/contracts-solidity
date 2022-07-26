@@ -81,22 +81,22 @@ abstract contract WithdrawExtension is
         external
         onlyOwner
     {
-        require(!withdrawRecipientLocked, "WITHDRAW/RECIPIENT_LOCKED");
+        require(!withdrawRecipientLocked, "LOCKED");
         withdrawRecipient = _withdrawRecipient;
     }
 
     function lockWithdrawRecipient() external onlyOwner {
-        require(!withdrawRecipientLocked, "WITHDRAW/RECIPIENT_LOCKED");
+        require(!withdrawRecipientLocked, "LOCKED");
         withdrawRecipientLocked = true;
     }
 
     function setWithdrawMode(WithdrawMode _withdrawMode) external onlyOwner {
-        require(!withdrawModeLocked, "WITHDRAW/WITHDRAW_MODE_LOCKED");
+        require(!withdrawModeLocked, "LOCKED");
         withdrawMode = _withdrawMode;
     }
 
     function lockWithdrawMode() external onlyOwner {
-        require(!withdrawModeLocked, "WITHDRAW/WITHDRAW_MODE_LOCKED");
+        require(!withdrawModeLocked, "OCKED");
         withdrawModeLocked = true;
     }
 

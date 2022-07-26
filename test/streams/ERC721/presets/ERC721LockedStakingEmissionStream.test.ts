@@ -7,7 +7,7 @@ import { deployPermanentContract } from "../../../../hardhat.util";
 
 import { setupTest } from "../../../setup";
 import { increaseTime, ZERO_ADDRESS } from "../../../utils/common";
-import { deployCollection } from "../../../collections/presets/ERC721FullFeaturedCollection.test";
+import { deployCollection } from "../../../collections/presets/ERC721SimpleSalesCollection.test";
 
 const deployStream = async function (args?: {
   ticketToken?: string;

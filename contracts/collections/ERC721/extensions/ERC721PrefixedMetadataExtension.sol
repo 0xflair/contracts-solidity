@@ -76,12 +76,12 @@ abstract contract ERC721PrefixedMetadataExtension is
     }
 
     function setTokenURIPrefix(string memory newValue) external onlyOwner {
-        require(!tokenURIFrozen, "TOKENS_URI_FROZEN");
+        require(!tokenURIFrozen, "FROZEN");
         _tokenURIPrefix = newValue;
     }
 
     function setTokenURISuffix(string memory newValue) external onlyOwner {
-        require(!tokenURIFrozen, "TOKENS_URI_FROZEN");
+        require(!tokenURIFrozen, "FROZEN");
         _tokenURISuffix = newValue;
     }
 

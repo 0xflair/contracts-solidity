@@ -18,7 +18,7 @@ import "../extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721RoleBasedLockableExtension.sol";
 import "../extensions/ERC721BulkifyExtension.sol";
 
-contract ERC721FullFeaturedCollection is
+contract ERC721SimpleSalesCollection is
     Initializable,
     Ownable,
     ERC165Storage,
@@ -157,9 +157,7 @@ contract ERC721FullFeaturedCollection is
         )
         returns (bool)
     {
-        return
-            ERC721.supportsInterface(interfaceId) ||
-            ERC165Storage.supportsInterface(interfaceId);
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function tokenURI(uint256 _tokenId)

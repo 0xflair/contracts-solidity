@@ -90,12 +90,12 @@ abstract contract ERC721LockableExtension is
      * without allowing users to directly unlock their tokens and sell them, for example.
      */
     function _lock(uint256 tokenId) internal virtual {
-        require(!lockedTokens.get(tokenId), "ERC721/ALREADY_LOCKED");
+        require(!lockedTokens.get(tokenId), "LOCKED");
         lockedTokens.set(tokenId);
     }
 
     function _unlock(uint256 tokenId) internal virtual {
-        require(lockedTokens.get(tokenId), "ERC721/NOT_LOCKED");
+        require(lockedTokens.get(tokenId), "NOT_LOCKED");
         lockedTokens.unset(tokenId);
     }
 
@@ -104,7 +104,7 @@ abstract contract ERC721LockableExtension is
         address to,
         uint256 tokenId
     ) internal virtual override(ERC721) {
-        require(!lockedTokens.get(tokenId), "ERC721/TOKEN_LOCKED");
+        require(!lockedTokens.get(tokenId), "LOCKED");
         super._beforeTokenTransfer(from, to, tokenId);
     }
 }

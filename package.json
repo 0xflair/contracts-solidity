@@ -102,6 +102,8 @@
     "hardhat-contract-sizer": "^2.5.1",
     "hardhat-deploy": "^0.11.2",
     "hardhat-gas-reporter": "^1.0.8",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.32",
     "prettier": "^2.6.0",
     "prettier-plugin-solidity": "^1.0.0-beta.13",
     "rimraf": "^3.0.2",

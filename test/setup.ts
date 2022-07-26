@@ -62,6 +62,12 @@ export const setupTest = deployments.createFixture(
         TestERC20: await ethers.getContract("TestERC20", accounts[3]),
         FlairFactory: await ethers.getContract("FlairFactory", accounts[3]),
       },
+      userD: {
+        signer: await ethers.getSigner(accounts[4]),
+        TestERC721: await ethers.getContract("TestERC721", accounts[4]),
+        TestERC20: await ethers.getContract("TestERC20", accounts[4]),
+        FlairFactory: await ethers.getContract("FlairFactory", accounts[4]),
+      },
     } as ContractDictionary;
   }
 );

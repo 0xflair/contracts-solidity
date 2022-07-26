@@ -5,31 +5,40 @@ pragma solidity 0.8.9;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+import "../../../common/WithdrawExtension.sol";
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
-import "../extensions/ERC721PerTokenMetadataExtension.sol";
-import "../extensions/ERC721OneOfOneMintExtension.sol";
+import "../extensions/ERC721PrefixedMetadataExtension.sol";
 import "../extensions/ERC721AutoIdMinterExtension.sol";
 import "../extensions/ERC721OwnerMintExtension.sol";
+import "../extensions/ERC721TieringExtension.sol";
+import "../extensions/ERC721RoleBasedMintExtension.sol";
 import "../extensions/ERC721RoyaltyExtension.sol";
+import "../extensions/ERC721RoleBasedLockableExtension.sol";
 
-contract ERC721OneOfOneCollection is
-    Initializable,
+contract ERC721TieredSalesCollection is
     Ownable,
     ERC165Storage,
-    ERC721PerTokenMetadataExtension,
+    WithdrawExtension,
+    ERC721PrefixedMetadataExtension,
     ERC721OwnerMintExtension,
+    ERC721TieringExtension,
+    ERC721RoleBasedMintExtension,
+    ERC721RoleBasedLockableExtension,
     ERC721RoyaltyExtension,
-    ERC721OneOfOneMintExtension,
     ERC2771ContextOwnable
 {
     struct Config {
         string name;
         string symbol;
         string contractURI;
+        string placeholderURI;
+        string tokenURIPrefix;
         uint256 maxSupply;
+        Tier[] tiers;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
+        address proceedsRecipient;
         address trustedForwarder;
     }
 
@@ -42,32 +51,29 @@ contract ERC721OneOfOneCollection is
         initializer
     {
         _setupRole(DEFAULT_ADMIN_ROLE, deployer);
-        _setupRole(MINTER_ROLE, deployer);
 
         _transferOwnership(deployer);
 
+        __WithdrawExtension_init(config.proceedsRecipient, WithdrawMode.ANYONE);
         __ERC721CollectionMetadataExtension_init(
             config.name,
             config.symbol,
             config.contractURI
         );
-        __ERC721PerTokenMetadataExtension_init();
-        __ERC721OwnerMintExtension_init();
-        __ERC721OneOfOneMintExtension_init();
+        __ERC721PrefixedMetadataExtension_init(
+            config.placeholderURI,
+            config.tokenURIPrefix
+        );
         __ERC721AutoIdMinterExtension_init(config.maxSupply);
+        __ERC721OwnerMintExtension_init();
+        __ERC721RoleBasedMintExtension_init(deployer);
+        __ERC721RoleBasedLockableExtension_init();
+        __ERC721TieringExtension_init(config.tiers);
         __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
-    }
-
-    function _burn(uint256 tokenId)
-        internal
-        virtual
-        override(ERC721, ERC721OneOfOneMintExtension, ERC721URIStorage)
-    {
-        return ERC721OneOfOneMintExtension._burn(tokenId);
     }
 
     function _msgSender()
@@ -77,7 +83,7 @@ contract ERC721OneOfOneCollection is
         override(ERC2771ContextOwnable, Context)
         returns (address sender)
     {
-        return super._msgSender();
+        return ERC2771ContextOwnable._msgSender();
     }
 
     function _msgData()
@@ -87,35 +93,23 @@ contract ERC721OneOfOneCollection is
         override(ERC2771ContextOwnable, Context)
         returns (bytes calldata)
     {
-        return super._msgData();
+        return ERC2771ContextOwnable._msgData();
+    }
+
+    function _beforeTokenTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal override(ERC721, ERC721LockableExtension) {
+        return ERC721LockableExtension._beforeTokenTransfer(from, to, tokenId);
     }
 
     /* PUBLIC */
 
-    function supportsInterface(bytes4 interfaceId)
-        public
-        view
-        virtual
-        override(
-            ERC165Storage,
-            ERC721OwnerMintExtension,
-            ERC721OneOfOneMintExtension,
-            ERC721PerTokenMetadataExtension,
-            ERC721RoyaltyExtension
-        )
-        returns (bool)
-    {
-        return ERC165Storage.supportsInterface(interfaceId);
-    }
-
     function name()
         public
         view
-        override(
-            ERC721,
-            ERC721OneOfOneMintExtension,
-            ERC721CollectionMetadataExtension
-        )
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
         return ERC721CollectionMetadataExtension.name();
@@ -124,41 +118,37 @@ contract ERC721OneOfOneCollection is
     function symbol()
         public
         view
-        override(
-            ERC721,
-            ERC721OneOfOneMintExtension,
-            ERC721CollectionMetadataExtension
-        )
+        override(ERC721, ERC721CollectionMetadataExtension)
         returns (string memory)
     {
         return ERC721CollectionMetadataExtension.symbol();
+    }
+
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(
+            ERC165Storage,
+            ERC721CollectionMetadataExtension,
+            ERC721PrefixedMetadataExtension,
+            ERC721OwnerMintExtension,
+            ERC721RoleBasedMintExtension,
+            ERC721RoyaltyExtension,
+            ERC721RoleBasedLockableExtension
+        )
+        returns (bool)
+    {
+        return ERC165Storage.supportsInterface(interfaceId);
     }
 
     function tokenURI(uint256 _tokenId)
         public
         view
         virtual
-        override(ERC721, ERC721OneOfOneMintExtension, ERC721URIStorage)
+        override(ERC721, ERC721PrefixedMetadataExtension)
         returns (string memory)
     {
-        return ERC721OneOfOneMintExtension.tokenURI(_tokenId);
-    }
-
-    function getInfo()
-        external
-        view
-        returns (
-            uint256 _maxSupply,
-            uint256 _totalSupply,
-            uint256 _senderBalance
-        )
-    {
-        uint256 balance = 0;
-
-        if (_msgSender() != address(0)) {
-            balance = this.balanceOf(_msgSender());
-        }
-
-        return (maxSupply, this.totalSupply(), balance);
+        return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);
     }
 }

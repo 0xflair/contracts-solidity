@@ -559,7 +559,7 @@ describe("ERC721ShareInstantStream", function () {
         stream
           .connect(deployer.signer)
           .setWithdrawRecipient(userB.signer.address)
-      ).to.be.revertedWith("WITHDRAW/RECIPIENT_LOCKED");
+      ).to.be.revertedWith("LOCKED");
     });
 
     it("should withdraw all the funds to the recipient", async function () {

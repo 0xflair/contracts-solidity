@@ -16,7 +16,7 @@ import "../extensions/ERC721APublicSaleExtension.sol";
 import "../extensions/ERC721ARoleBasedMintExtension.sol";
 import "../extensions/ERC721ARoleBasedLockableExtension.sol";
 
-contract ERC721AFullFeaturedCollection is
+contract ERC721ASimpleSalesCollection is
     Initializable,
     Ownable,
     ERC165Storage,

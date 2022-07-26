@@ -55,7 +55,7 @@ abstract contract ERC721AMinterExtension is ERC721ACollectionMetadataExtension {
     /* INTERNAL */
 
     function _mintTo(address to, uint256 count) internal {
-        require(totalSupply() + count <= maxSupply, "EXCEEDS_MAX_SUPPLY");
+        require(totalSupply() + count <= maxSupply, "EXCEEDS_SUPPLY");
         _safeMint(to, count);
     }
 }

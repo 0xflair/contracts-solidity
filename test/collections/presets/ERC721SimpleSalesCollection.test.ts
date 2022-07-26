@@ -3,10 +3,10 @@ import { expect } from "chai";
 import { utils } from "ethers";
 import hre, { ethers } from "hardhat";
 import {
-  ERC721FullFeaturedCollection,
-  ERC721FullFeaturedCollection__factory,
-  ERC721AFullFeaturedCollection,
-  ERC721AFullFeaturedCollection__factory,
+  ERC721SimpleSalesCollection,
+  ERC721SimpleSalesCollection__factory,
+  ERC721SimpleSalesCollection as ERC721ASimpleSalesCollection,
+  ERC721SimpleSalesCollection__factory as ERC721ASimpleSalesCollection__factory,
 } from "../../../typechain";
 
 import { setupTest } from "../../setup";
@@ -14,20 +14,20 @@ import { setupTest } from "../../setup";
 export const deployCollection = async function (
   mode: "normal" | "azuki" | string,
   args?: any
-): Promise<ERC721FullFeaturedCollection | ERC721AFullFeaturedCollection> {
-  const ERC721FullFeaturedCollection =
-    await ethers.getContractFactory<ERC721FullFeaturedCollection__factory>(
-      "ERC721FullFeaturedCollection"
+): Promise<ERC721SimpleSalesCollection  | ERC721ASimpleSalesCollection> {
+  const ERC721SimpleSalesCollection =
+    await ethers.getContractFactory<ERC721SimpleSalesCollection__factory>(
+      "ERC721SimpleSalesCollection"
     );
-  const ERC721AFullFeaturedCollection =
-    await ethers.getContractFactory<ERC721AFullFeaturedCollection__factory>(
-      "ERC721AFullFeaturedCollection"
+  const ERC721ASimpleSalesCollection =
+    await ethers.getContractFactory<ERC721ASimpleSalesCollection__factory>(
+      "ERC721ASimpleSalesCollection"
     );
 
   const factory =
     mode === "azuki"
-      ? ERC721AFullFeaturedCollection
-      : ERC721FullFeaturedCollection;
+      ? ERC721ASimpleSalesCollection
+      : ERC721SimpleSalesCollection;
 
   return await factory.deploy({
     name: "Flair Angels",
@@ -48,7 +48,7 @@ export const deployCollection = async function (
   });
 };
 
-describe("ERC721FullFeaturedCollection", function () {
+describe("ERC721SimpleSalesCollection", function () {
   ["normal", "azuki"].forEach((mode) => {
     describe(`when mode is ${mode}: `, () => {
       it("should return collection info", async function () {
@@ -134,7 +134,7 @@ describe("ERC721FullFeaturedCollection", function () {
         expect(emittedAddress).to.equal(predictedAddress);
 
         const collectionClone = await hre.ethers.getContractAt(
-          "ERC721FullFeaturedCollection",
+          "ERC721SimpleSalesCollection",
           emittedAddress
         );
 
@@ -207,7 +207,7 @@ describe("ERC721FullFeaturedCollection", function () {
           collection
             .connect(userC.signer)
             .transferFrom(userC.signer.address, userB.signer.address, 2)
-        ).to.be.revertedWith("ERC721/TOKEN_LOCKED");
+        ).to.be.revertedWith("LOCKED");
 
         await collection.connect(deployer.signer)["unlock(uint256[])"]([2]);
 

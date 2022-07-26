@@ -98,7 +98,7 @@ abstract contract ERC721APreSaleExtension is
         payable
         nonReentrant
     {
-        require(preSaleStatus, "PRE_SALE_NOT_ACTIVE");
+        require(preSaleStatus, "NOT_ACTIVE");
 
         address to = _msgSender();
 
@@ -108,7 +108,7 @@ abstract contract ERC721APreSaleExtension is
                 preSaleAllowlistMerkleRoot,
                 _generateMerkleLeaf(to)
             ),
-            "PRE_SALE_WRONG_PROOF"
+            "WRONG_PROOF"
         );
         require(
             preSaleAllowlistClaimed[to] + count <= preSaleMaxMintPerWallet,
