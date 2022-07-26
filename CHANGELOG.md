@@ -1,3 +1,10 @@
+### [1.18.1](https://github.com/0xflair/evm-contracts/compare/v1.18.0...v1.18.1) (2022-07-26)
+
+
+### Bug Fixes
+
+* deploy on all networks +OKX chain ([e8a482f](https://github.com/0xflair/evm-contracts/commit/e8a482f40ba52766163c437d1b1e7cb53089c168))
+
 ## [1.18.0](https://github.com/0xflair/evm-contracts/compare/v1.17.3...v1.18.0) (2022-07-26)
 
 
