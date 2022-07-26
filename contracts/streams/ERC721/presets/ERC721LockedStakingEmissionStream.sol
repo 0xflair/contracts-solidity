@@ -187,7 +187,15 @@ contract ERC721LockedStakingEmissionStream is
         override
         returns (uint256)
     {
-        return (emissionRate * tokenIds.length) / totalTickets;
+        uint256 staked;
+
+        for (uint256 i = 0; i < tokenIds.length; i++) {
+            if (lastStakingTime[tokenIds[i]] > 0) {
+                staked++;
+            }
+        }
+
+        return (emissionRate * staked) / totalTickets;
     }
 
     function rewardAmountByToken(uint256 ticketTokenId)
