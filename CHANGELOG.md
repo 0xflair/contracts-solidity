@@ -1,3 +1,10 @@
+## [1.18.0](https://github.com/0xflair/evm-contracts/compare/v1.17.3...v1.18.0) (2022-07-26)
+
+
+### Features
+
+* add multi tiering extension ([#21](https://github.com/0xflair/evm-contracts/issues/21)) ([3a6511a](https://github.com/0xflair/evm-contracts/commit/3a6511abba80df0c64514d4e5583f07f13fb12bf))
+
 ### [1.17.3](https://github.com/0xflair/evm-contracts/compare/v1.17.2...v1.17.3) (2022-07-26)
 
 
