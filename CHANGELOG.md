@@ -1,3 +1,11 @@
+### [1.17.3](https://github.com/0xflair/evm-contracts/compare/v1.17.2...v1.17.3) (2022-07-26)
+
+
+### Bug Fixes
+
+* deploy to all chains ([48c9751](https://github.com/0xflair/evm-contracts/commit/48c97513838106b7b0c2c0a1158654653a510297))
+* only count staked tokens when calculating rate ([6c82bbe](https://github.com/0xflair/evm-contracts/commit/6c82bbe7255df577e5869a7453474bb4eccc10ff))
+
 ### [1.17.2](https://github.com/0xflair/evm-contracts/compare/v1.17.1...v1.17.2) (2022-07-25)
 
 ### [1.17.1](https://github.com/0xflair/evm-contracts/compare/v1.17.0...v1.17.1) (2022-07-25)
