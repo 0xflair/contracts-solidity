@@ -90,12 +90,15 @@ abstract contract ERC721TieringExtension is
         public
         onlyOwner
     {
-        require(tier.reserved >= tierMints[tierId], "LOW_RESERVE_AMOUNT");
         require(tier.maxAllocation >= tierMints[tierId], "LOWER_THAN_MINTED");
+
+        if (tiers[tierId].reserved > 0) {
+            require(tier.reserved >= tierMints[tierId], "LOW_RESERVE_AMOUNT");
+        }
 
         if (tierMints[tierId] > 0) {
             require(
-                tier.maxPerWallet > tiers[tierId].maxPerWallet,
+                tier.maxPerWallet >= tiers[tierId].maxPerWallet,
                 "LOW_MAX_PER_WALLET"
             );
         }
