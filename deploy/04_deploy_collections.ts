@@ -31,27 +31,27 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       },
     ]
   );
-  // await deployPermanentContract(
-  //   hre.deployments,
-  //   accounts[0],
-  //   accounts[0],
-  //   "ERC721TieredSalesCollection",
-  //   [
-  //     {
-  //       name: "Collection",
-  //       symbol: "COL",
-  //       contractURI: "ipfs://contractURI",
-  //       placeholderURI: "ipfs://placeholderURI",
-  //       tokenURIPrefix: "ipfs://tokenURIPrefix/",
-  //       maxSupply: 0,
-  //       tiers: [],
-  //       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
-  //       defaultRoyaltyBps: 0,
-  //       proceedsRecipient: "0x0000000000000000000000000000000000000000",
-  //       trustedForwarder: "0x0000000000000000000000000000000000000000",
-  //     },
-  //   ]
-  // );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC721TieredSalesCollection",
+    [
+      {
+        name: "Collection",
+        symbol: "COL",
+        contractURI: "ipfs://contractURI",
+        placeholderURI: "ipfs://placeholderURI",
+        tokenURIPrefix: "ipfs://tokenURIPrefix/",
+        maxSupply: 0,
+        tiers: [],
+        defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
+        defaultRoyaltyBps: 0,
+        proceedsRecipient: "0x0000000000000000000000000000000000000000",
+        trustedForwarder: "0x0000000000000000000000000000000000000000",
+      },
+    ]
+  );
   await deployPermanentContract(
     hre.deployments,
     accounts[0],

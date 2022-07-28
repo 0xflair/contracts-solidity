@@ -92,7 +92,6 @@ abstract contract ERC721TieringExtension is
     {
         require(tier.reserved >= tierMints[tierId], "LOW_RESERVE_AMOUNT");
         require(tier.maxAllocation >= tierMints[tierId], "LOWER_THAN_MINTED");
-        require(tier.maxPerWallet > 0, "ZERO_MAX_PER_WALLET");
 
         if (tierMints[tierId] > 0) {
             require(
