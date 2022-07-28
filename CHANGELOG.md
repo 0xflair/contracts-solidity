@@ -1,3 +1,10 @@
+### [1.18.3](https://github.com/0xflair/evm-contracts/compare/v1.18.2...v1.18.3) (2022-07-28)
+
+
+### Bug Fixes
+
+* allow changing reserved and max per wallet when it is safe ([f2f18c5](https://github.com/0xflair/evm-contracts/commit/f2f18c5c4a8d85aad14c347718a523a11d04d40d))
+
 ### [1.18.2](https://github.com/0xflair/evm-contracts/compare/v1.18.1...v1.18.2) (2022-07-28)
 
 
