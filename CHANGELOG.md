@@ -1,3 +1,10 @@
+### [1.18.2](https://github.com/0xflair/evm-contracts/compare/v1.18.1...v1.18.2) (2022-07-28)
+
+
+### Bug Fixes
+
+* deploy tiered sales collection on mainnet ([44690bd](https://github.com/0xflair/evm-contracts/commit/44690bd79e695ff725a06844930ac6e399cb38f2))
+
 ### [1.18.1](https://github.com/0xflair/evm-contracts/compare/v1.18.0...v1.18.1) (2022-07-26)
 
 
