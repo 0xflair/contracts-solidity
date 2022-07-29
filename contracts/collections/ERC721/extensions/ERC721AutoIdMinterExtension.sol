@@ -51,8 +51,14 @@ abstract contract ERC721AutoIdMinterExtension is
 
     /* ADMIN */
 
-    function setMaxSupply(uint256 newValue) external onlyOwner {
+    function setMaxSupply(uint256 newValue) 
+        public
+        virtual
+        override 
+        onlyOwner 
+    {
         require(!maxSupplyFrozen, "FROZEN");
+        require(newValue >= totalSupply(), "LOWER_THAN_SUPPLY");
         maxSupply = newValue;
     }
 

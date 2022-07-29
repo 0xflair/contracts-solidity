@@ -151,4 +151,14 @@ contract ERC721TieredSalesCollection is
     {
         return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);
     }
+
+    function setMaxSupply(uint256 newValue) 
+        public 
+        virtual 
+        override(ERC721AutoIdMinterExtension, ERC721TieringExtension) 
+        onlyOwner  
+    {
+        ERC721TieringExtension.setMaxSupply(newValue);
+    }
+
 }

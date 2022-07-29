@@ -1677,6 +1677,211 @@ describe("ERC721TieredSalesCollection", function () {
         ).to.be.revertedWith("EXCEEDS_ALLOCATION");
       });
 
+      it("should fail when total remaining supply become less than remaining reserved spots", async function () {
+        const { deployer, userA } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 1,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 3,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 1,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["8", "7", "5"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 1, 1, [], {
+          value: utils.parseEther("1"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["7", "5", "5"]);
+
+        // changing total supply to be less than reserved spots
+        await expect(
+          collection.connect(deployer.signer).setMaxSupply(4)
+        ).to.be.revertedWith("LOWER_THAN_RESERVED");
+      });
+
+      it("should fail when total remaining supply becomes less than already minted supply", async function () {
+        const { deployer, userA } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 1,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 3,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 1,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["8", "7", "5"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 1, 1, [], {
+          value: utils.parseEther("1"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 1, 2, [], {
+          value: utils.parseEther("1"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["7", "6", "5"]);
+
+        // changing total supply to be less than reserved spots
+        await expect(
+          collection.connect(deployer.signer).setMaxSupply(1)
+        ).to.be.revertedWith("LOWER_THAN_SUPPLY");
+      });
+
+      it("should mint only reserved spots for a tier when new max supply equals total reserved spots", async function () {
+        const { deployer, userA, userB } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 3,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 1,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["8", "7", "5"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 1, 1, [], {
+          value: utils.parseEther("1"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["7", "5", "5"]);
+
+        await collection.connect(deployer.signer).setMaxSupply(5);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["2", "0", "0"]);
+
+        await collection.connect(userB.signer).mintByTier(0, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+      });
+
       // TODO add erc20 payment tests
     });
   });

@@ -120,6 +120,16 @@ abstract contract ERC721TieringExtension is
     }
 
     /* PUBLIC */
+    
+    function setMaxSupply(uint256 newValue) 
+        public 
+        virtual 
+        override(ERC721AutoIdMinterExtension) 
+        onlyOwner  
+    {
+        ERC721AutoIdMinterExtension.setMaxSupply(newValue);
+        require(newValue - totalSupply() >= totalReserved - reservedMints, "LOWER_THAN_RESERVED");
+    }
 
     function onTierAllowlist(
         uint256 tierId,
