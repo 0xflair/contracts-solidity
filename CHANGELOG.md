@@ -1,3 +1,10 @@
+### [1.18.5](https://github.com/0xflair/evm-contracts/compare/v1.18.4...v1.18.5) (2022-07-29)
+
+
+### Bug Fixes
+
+* add erc721a flavor for tiering extension ([#25](https://github.com/0xflair/evm-contracts/issues/25)) ([5044cc4](https://github.com/0xflair/evm-contracts/commit/5044cc40024d451bce12cc039b0a24c66e80e7f6))
+
 ### [1.18.4](https://github.com/0xflair/evm-contracts/compare/v1.18.3...v1.18.4) (2022-07-29)
 
 
