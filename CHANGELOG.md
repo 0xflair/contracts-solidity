@@ -1,3 +1,10 @@
+### [1.18.4](https://github.com/0xflair/evm-contracts/compare/v1.18.3...v1.18.4) (2022-07-29)
+
+
+### Bug Fixes
+
+* new supply not lower than reserved or minted spots ([#24](https://github.com/0xflair/evm-contracts/issues/24)) ([9de4a2e](https://github.com/0xflair/evm-contracts/commit/9de4a2ee413aa4e6e3238f99bc69728aa8a71b58))
+
 ### [1.18.3](https://github.com/0xflair/evm-contracts/compare/v1.18.2...v1.18.3) (2022-07-28)
 
 
