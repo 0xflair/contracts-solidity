@@ -3,6 +3,7 @@
 pragma solidity 0.8.9;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "../../../common/WithdrawExtension.sol";
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
@@ -11,22 +12,18 @@ import "../extensions/ERC721ACollectionMetadataExtension.sol";
 import "../extensions/ERC721APrefixedMetadataExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
 import "../extensions/ERC721AOwnerMintExtension.sol";
-import "../extensions/ERC721APreSaleExtension.sol";
-import "../extensions/ERC721APublicSaleExtension.sol";
+import "../extensions/ERC721ATieringExtension.sol";
 import "../extensions/ERC721ARoleBasedMintExtension.sol";
 import "../extensions/ERC721ARoleBasedLockableExtension.sol";
 
-contract ERC721ASimpleSalesCollection is
-    Initializable,
+contract ERC721ATieredSalesCollection is
     Ownable,
     ERC165Storage,
     WithdrawExtension,
     ERC721ACollectionMetadataExtension,
     ERC721APrefixedMetadataExtension,
-    ERC721AMinterExtension,
     ERC721AOwnerMintExtension,
-    ERC721APreSaleExtension,
-    ERC721APublicSaleExtension,
+    ERC721ATieringExtension,
     ERC721ARoleBasedMintExtension,
     ERC721ARoleBasedLockableExtension,
     ERC721RoyaltyExtension,
@@ -39,10 +36,7 @@ contract ERC721ASimpleSalesCollection is
         string placeholderURI;
         string tokenURIPrefix;
         uint256 maxSupply;
-        uint256 preSalePrice;
-        uint256 preSaleMaxMintPerWallet;
-        uint256 publicSalePrice;
-        uint256 publicSaleMaxMintPerTx;
+        Tier[] tiers;
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
         address proceedsRecipient;
@@ -75,14 +69,7 @@ contract ERC721ASimpleSalesCollection is
         __ERC721AOwnerMintExtension_init();
         __ERC721ARoleBasedMintExtension_init(deployer);
         __ERC721ARoleBasedLockableExtension_init();
-        __ERC721APreSaleExtension_init_unchained(
-            config.preSalePrice,
-            config.preSaleMaxMintPerWallet
-        );
-        __ERC721APublicSaleExtension_init(
-            config.publicSalePrice,
-            config.publicSaleMaxMintPerTx
-        );
+        __ERC721ATieringExtension_init(config.tiers);
         __ERC721RoyaltyExtension_init(
             config.defaultRoyaltyAddress,
             config.defaultRoyaltyBps
@@ -97,7 +84,7 @@ contract ERC721ASimpleSalesCollection is
         override(ERC2771ContextOwnable, Context)
         returns (address sender)
     {
-        return super._msgSender();
+        return ERC2771ContextOwnable._msgSender();
     }
 
     function _msgData()
@@ -107,7 +94,7 @@ contract ERC721ASimpleSalesCollection is
         override(ERC2771ContextOwnable, Context)
         returns (bytes calldata)
     {
-        return super._msgData();
+        return ERC2771ContextOwnable._msgData();
     }
 
     function _beforeTokenTransfers(
@@ -134,12 +121,10 @@ contract ERC721ASimpleSalesCollection is
             ERC165Storage,
             ERC721ACollectionMetadataExtension,
             ERC721APrefixedMetadataExtension,
-            ERC721APreSaleExtension,
-            ERC721APublicSaleExtension,
             ERC721AOwnerMintExtension,
             ERC721ARoleBasedMintExtension,
-            ERC721ARoleBasedLockableExtension,
-            ERC721RoyaltyExtension
+            ERC721RoyaltyExtension,
+            ERC721ARoleBasedLockableExtension
         )
         returns (bool)
     {
@@ -172,5 +157,14 @@ contract ERC721ASimpleSalesCollection is
         returns (string memory)
     {
         return ERC721APrefixedMetadataExtension.tokenURI(_tokenId);
+    }
+
+    function setMaxSupply(uint256 newValue)
+        public
+        virtual
+        override(ERC721AMinterExtension, ERC721ATieringExtension)
+        onlyOwner
+    {
+        ERC721ATieringExtension.setMaxSupply(newValue);
     }
 }

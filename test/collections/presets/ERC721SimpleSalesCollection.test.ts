@@ -5,8 +5,8 @@ import hre, { ethers } from "hardhat";
 import {
   ERC721SimpleSalesCollection,
   ERC721SimpleSalesCollection__factory,
-  ERC721SimpleSalesCollection as ERC721ASimpleSalesCollection,
-  ERC721SimpleSalesCollection__factory as ERC721ASimpleSalesCollection__factory,
+  ERC721ASimpleSalesCollection,
+  ERC721ASimpleSalesCollection__factory,
 } from "../../../typechain";
 
 import { setupTest } from "../../setup";
@@ -14,7 +14,7 @@ import { setupTest } from "../../setup";
 export const deployCollection = async function (
   mode: "normal" | "azuki" | string,
   args?: any
-): Promise<ERC721SimpleSalesCollection  | ERC721ASimpleSalesCollection> {
+): Promise<ERC721SimpleSalesCollection | ERC721ASimpleSalesCollection> {
   const ERC721SimpleSalesCollection =
     await ethers.getContractFactory<ERC721SimpleSalesCollection__factory>(
       "ERC721SimpleSalesCollection"
@@ -53,10 +53,9 @@ describe("ERC721SimpleSalesCollection", function () {
     describe(`when mode is ${mode}: `, () => {
       it("should return collection info", async function () {
         const collection = await deployCollection(mode);
+        const maxSupply = await collection.maxSupply();
 
-        const info = await collection.getInfo();
-
-        expect(info._maxSupply).to.be.equal(8000);
+        expect(maxSupply).to.be.equal(8000);
       });
 
       it("should return true when checking IRC721(A) interface", async function () {

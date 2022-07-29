@@ -6,8 +6,8 @@ import hre, { ethers } from "hardhat";
 import {
   ERC721TieredSalesCollection,
   ERC721TieredSalesCollection__factory,
-  ERC721TieredSalesCollection as ERC721ATieredSalesCollection,
-  ERC721TieredSalesCollection__factory as ERC721ATieredSalesCollection__factory,
+  ERC721ATieredSalesCollection,
+  ERC721ATieredSalesCollection__factory,
 } from "../../../typechain";
 
 import { setupTest } from "../../setup";
@@ -39,8 +39,7 @@ export const deployCollection = async function (
     );
   const ERC721ATieredSalesCollection =
     await ethers.getContractFactory<ERC721ATieredSalesCollection__factory>(
-      // "ERC721ATieredSalesCollection"
-      "ERC721TieredSalesCollection"
+      "ERC721ATieredSalesCollection"
     );
 
   const factory =
@@ -97,11 +96,11 @@ describe("ERC721TieredSalesCollection", function () {
         expect(info.price).to.be.equal(utils.parseEther("0.06"));
       });
 
-      it.skip("should return true when checking IRC721(A) interface", async function () {
+      it("should return true when checking IRC721(A) interface", async function () {
         const collection = await deployCollection(mode);
 
-        // ERC721PublicSaleExtension
-        expect(await collection.supportsInterface("0xbf05d618")).to.be.equal(
+        // ERC721TieringExtension
+        expect(await collection.supportsInterface("0x8b490290")).to.be.equal(
           true
         );
 
@@ -128,7 +127,7 @@ describe("ERC721TieredSalesCollection", function () {
         }
       });
 
-      it.skip("should create collection using factory", async function () {
+      it("should create collection using factory", async function () {
         const { deployer, userA, userB } = await setupTest();
 
         const collection = await deployCollection(mode);
@@ -207,11 +206,6 @@ describe("ERC721TieredSalesCollection", function () {
           ).to.be.equal(true);
         }
 
-        // ERC721TieringExtension
-        expect(
-          await collectionClone.supportsInterface("0x1264ddfb")
-        ).to.be.equal(true);
-
         // Rarible Royalty
         expect(
           await collectionClone.supportsInterface("0xcad96cca")
@@ -220,6 +214,11 @@ describe("ERC721TieredSalesCollection", function () {
         // EIP2981 Royalty
         expect(
           await collectionClone.supportsInterface("0x2a55205a")
+        ).to.be.equal(true);
+
+        // ERC721TieringExtension
+        expect(
+          await collectionClone.supportsInterface("0x8b490290")
         ).to.be.equal(true);
       });
 
@@ -275,9 +274,14 @@ describe("ERC721TieredSalesCollection", function () {
 
         expect(await collection.ownerOf(0)).to.be.equal(userA.signer.address);
         expect(await collection.ownerOf(1)).to.be.equal(userA.signer.address);
-        await expect(collection.ownerOf(2)).to.be.revertedWith(
-          "ERC721: owner query for nonexistent token"
-        );
+
+        if (mode === "normal") {
+          await expect(collection.ownerOf(2)).to.be.revertedWith(
+            "ERC721: owner query for nonexistent token"
+          );
+        } else {
+          await expect(collection.ownerOf(2)).to.be.reverted;
+        }
       });
 
       it("should fail when minting a non-existing tier", async function () {

@@ -8,51 +8,21 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import "./ERC721AutoIdMinterExtension.sol";
+import "./ERC721AMinterExtension.sol";
 
-interface IERC721TieringExtension {
-    struct Tier {
-        uint256 start;
-        uint256 end;
-        address currency;
-        uint256 price;
-        uint256 maxPerWallet;
-        bytes32 merkleRoot;
-        uint256 reserved;
-        uint256 maxAllocation;
-    }
+import {IERC721TieringExtension} from "../../ERC721/extensions/ERC721TieringExtension.sol";
 
-    function onTierAllowlist(
-        uint256 tierId,
-        address minter,
-        uint256 maxAllowance,
-        bytes32[] calldata proof
-    ) external view returns (bool);
-
-    function eligibleForTier(
-        uint256 tierId,
-        address minter,
-        uint256 maxAllowance,
-        bytes32[] calldata proof
-    ) external view returns (uint256);
-
-    function mintByTier(
-        uint256 tierId,
-        uint256 count,
-        uint256 maxAllowance,
-        bytes32[] calldata proof
-    ) external payable;
-}
+import "hardhat/console.sol";
 
 /**
  * @dev Extension to allow multiple tiers for minting,
  *      you can configure, different minting window, price, currency, max per wallet, and allowlist per tier.
  */
-abstract contract ERC721TieringExtension is
+abstract contract ERC721ATieringExtension is
     IERC721TieringExtension,
     Initializable,
     Ownable,
-    ERC721AutoIdMinterExtension,
+    ERC721AMinterExtension,
     ReentrancyGuard
 {
     mapping(uint256 => Tier) public tiers;
@@ -65,14 +35,14 @@ abstract contract ERC721TieringExtension is
 
     uint256 internal reservedMints;
 
-    function __ERC721TieringExtension_init(Tier[] memory _tiers)
+    function __ERC721ATieringExtension_init(Tier[] memory _tiers)
         internal
         onlyInitializing
     {
-        __ERC721TieringExtension_init_unchained(_tiers);
+        __ERC721ATieringExtension_init_unchained(_tiers);
     }
 
-    function __ERC721TieringExtension_init_unchained(Tier[] memory _tiers)
+    function __ERC721ATieringExtension_init_unchained(Tier[] memory _tiers)
         internal
         onlyInitializing
     {
@@ -124,10 +94,10 @@ abstract contract ERC721TieringExtension is
     function setMaxSupply(uint256 newValue)
         public
         virtual
-        override(ERC721AutoIdMinterExtension)
+        override(ERC721AMinterExtension)
         onlyOwner
     {
-        ERC721AutoIdMinterExtension.setMaxSupply(newValue);
+        ERC721AMinterExtension.setMaxSupply(newValue);
         require(
             newValue - totalSupply() >= totalReserved - reservedMints,
             "LOWER_THAN_RESERVED"

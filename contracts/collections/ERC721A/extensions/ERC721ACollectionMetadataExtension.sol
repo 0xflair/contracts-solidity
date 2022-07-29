@@ -54,6 +54,7 @@ abstract contract ERC721ACollectionMetadataExtension is
             type(IERC721CollectionMetadataExtension).interfaceId
         );
         _registerInterface(type(IERC721).interfaceId);
+        _registerInterface(type(IERC721A).interfaceId);
         _registerInterface(type(IERC721Metadata).interfaceId);
     }
 

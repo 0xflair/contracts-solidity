@@ -43,8 +43,9 @@ abstract contract ERC721AMinterExtension is ERC721ACollectionMetadataExtension {
 
     /* ADMIN */
 
-    function setMaxSupply(uint256 newValue) external onlyOwner {
+    function setMaxSupply(uint256 newValue) public virtual onlyOwner {
         require(!maxSupplyFrozen, "BASE_URI_FROZEN");
+        require(newValue >= totalSupply(), "LOWER_THAN_SUPPLY");
         maxSupply = newValue;
     }
 
