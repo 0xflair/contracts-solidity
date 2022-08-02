@@ -17,7 +17,7 @@ contract FlairFactory is Initializable, Ownable, WithdrawExtension {
     }
 
     function initialize() public initializer {
-        __WithdrawExtension_init(_msgSender(), WithdrawMode.RECIPIENT);
+        __WithdrawExtension_init(_msgSender(), WithdrawMode.OWNER);
     }
 
     function cloneDeterministicSimple(
