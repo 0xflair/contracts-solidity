@@ -1,3 +1,10 @@
+### [1.19.1](https://github.com/0xflair/evm-contracts/compare/v1.19.0...v1.19.1) (2022-08-02)
+
+
+### Bug Fixes
+
+* change withdraw mode to owner ([0dc12d5](https://github.com/0xflair/evm-contracts/commit/0dc12d51cb10242c173c08f1e57af0a95ffa3ebf))
+
 ## [1.19.0](https://github.com/0xflair/evm-contracts/compare/v1.18.8...v1.19.0) (2022-08-02)
 
 
