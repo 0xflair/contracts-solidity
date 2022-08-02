@@ -1,3 +1,10 @@
+### [1.19.2](https://github.com/0xflair/evm-contracts/compare/v1.19.1...v1.19.2) (2022-08-02)
+
+
+### Bug Fixes
+
+* deploy on all chains ([bfc6adb](https://github.com/0xflair/evm-contracts/commit/bfc6adbcd4142f89861336fa58143758612f6ff7))
+
 ### [1.19.1](https://github.com/0xflair/evm-contracts/compare/v1.19.0...v1.19.1) (2022-08-02)
 
 
