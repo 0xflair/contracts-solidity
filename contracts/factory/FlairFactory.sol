@@ -2,18 +2,29 @@
 
 pragma solidity 0.8.9;
 
+import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "../common/WithdrawExtension.sol";
 import "./Clones.sol";
 
-contract FlairFactory {
+contract FlairFactory is Initializable, Ownable, WithdrawExtension {
     event ProxyCreated(address indexed deployer, address indexed proxyAddress);
+
+    constructor() {
+        initialize();
+    }
+
+    function initialize() public initializer {
+        __WithdrawExtension_init(_msgSender(), WithdrawMode.RECIPIENT);
+    }
 
     function cloneDeterministicSimple(
         address implementation,
         bytes32 salt,
         bytes calldata data
-    ) external returns (address deployedProxy) {
+    ) external payable returns (address deployedProxy) {
         bytes32 _salt = keccak256(abi.encodePacked(msg.sender, salt));
         deployedProxy = Clones.cloneDeterministic(implementation, _salt);
 
