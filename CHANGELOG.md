@@ -1,3 +1,10 @@
+## [1.19.0](https://github.com/0xflair/evm-contracts/compare/v1.18.8...v1.19.0) (2022-08-02)
+
+
+### Features
+
+* add payable to factory ([14c0828](https://github.com/0xflair/evm-contracts/commit/14c0828062202409d2684a1bcd4397195a61b2ff))
+
 ### [1.18.8](https://github.com/0xflair/evm-contracts/compare/v1.18.7...v1.18.8) (2022-07-31)
 
 
