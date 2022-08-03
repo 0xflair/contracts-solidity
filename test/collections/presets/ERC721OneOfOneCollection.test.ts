@@ -194,7 +194,7 @@ describe("ERC721OneOfOneCollection", function () {
 
     await expect(
       forwarder.batchExecute([metaTransaction], [signature])
-    ).to.be.revertedWith("FWD_CALL_FAILED");
+    ).to.be.revertedWith("Ownable: caller is not the owner");
 
     expect(await collection.balanceOf(userA)).to.equal(0);
   });

@@ -137,7 +137,18 @@ contract UnorderedForwarder is EIP712, ReentrancyGuard {
             abi.encodePacked(mtx.data, mtx.from)
         );
 
-        require(success, "FWD_CALL_FAILED");
+        if (!success) {
+            // Look for revert reason and bubble it up if present
+            if (returndata.length > 0) {
+                // The easiest way to bubble the revert reason is using memory via assembly
+                assembly {
+                    let returndata_size := mload(returndata)
+                    revert(add(32, returndata), returndata_size)
+                }
+            } else {
+                revert("FWD_CALL_FAILED");
+            }
+        }
 
         return returndata;
     }
