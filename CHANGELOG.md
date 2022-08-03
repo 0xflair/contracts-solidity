@@ -1,3 +1,11 @@
+### [1.19.3](https://github.com/0xflair/evm-contracts/compare/v1.19.2...v1.19.3) (2022-08-03)
+
+
+### Bug Fixes
+
+* bubble up meta tx call errors ([5675580](https://github.com/0xflair/evm-contracts/commit/5675580e13e8a9f2ba92681ee43fc94b92d27dc9))
+* delete staker mapping after unstaking ([f869111](https://github.com/0xflair/evm-contracts/commit/f869111111883cd3c78f0c4c333638f6a33a4a63))
+
 ### [1.19.2](https://github.com/0xflair/evm-contracts/compare/v1.19.1...v1.19.2) (2022-08-02)
 
 
