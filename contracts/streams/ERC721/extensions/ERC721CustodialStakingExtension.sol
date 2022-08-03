@@ -87,6 +87,7 @@ abstract contract ERC721CustodialStakingExtension is
         address staker = _msgSender();
 
         require(stakers[tokenId] == staker, "NOT_STAKER");
+        delete stakers[tokenId];
 
         IERC721(ticketToken).transferFrom(address(this), staker, tokenId);
     }
@@ -97,6 +98,7 @@ abstract contract ERC721CustodialStakingExtension is
 
         for (uint256 i; i < tokenIds.length; i++) {
             require(stakers[tokenIds[i]] == staker, "NOT_STAKER");
+            delete stakers[tokenIds[i]];
 
             IERC721(ticketToken).transferFrom(
                 address(this),
