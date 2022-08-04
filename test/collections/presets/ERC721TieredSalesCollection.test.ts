@@ -67,7 +67,7 @@ export const deployCollection = async function (
       },
       {
         start: 0,
-        end: Math.floor(+new Date() / 1000) + 10 * 24 * 60 * 60, // +5 days
+        end: Math.floor(+new Date() / 1000) + 10 * 24 * 60 * 60, // +10 days
         price: utils.parseEther("0.2"),
         currency: ZERO_ADDRESS,
         maxPerWallet: 5,
@@ -1239,22 +1239,6 @@ describe("ERC721TieredSalesCollection", function () {
         ).to.be.revertedWith("EXCEEDS_MAX");
       });
 
-      it("should fail when minting a tier and asking for more than remaining per-wallet allocation", async function () {
-        const { userA } = await setupTest();
-
-        const collection = await deployCollection(mode as any);
-
-        await collection.connect(userA.signer).mintByTier(0, 4, 0, [], {
-          value: utils.parseEther("0.24"),
-        });
-
-        await expect(
-          collection.connect(userA.signer).mintByTier(0, 2, 0, [], {
-            value: utils.parseEther("0.12"),
-          })
-        ).to.be.revertedWith("EXCEEDS_MAX");
-      });
-
       it("should fail when minting a tier and amount + prev mints is asking for more than remaining per-wallet allocation", async function () {
         const { userA } = await setupTest();
 
@@ -1681,6 +1665,309 @@ describe("ERC721TieredSalesCollection", function () {
         ).to.be.revertedWith("EXCEEDS_ALLOCATION");
       });
 
+      it("should fail to mint by tier if remaining allocation is fully reserved (example C)", async function () {
+        const { userA, userB } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 20,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 10,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 10,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 10,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 10,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 10,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 10,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userB.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+          (await collection.remainingForTier(3)).toString(),
+        ]).to.deep.equal(["10", "0", "0", "10"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 10, 100, [], {
+          value: utils.parseEther("10"),
+        });
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+          (await collection.remainingForTier(3)).toString(),
+        ]).to.deep.equal(["0", "0", "0", "10"]);
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(0, 1, 100, [], {
+            value: utils.parseEther("1"),
+          })
+        ).to.be.revertedWith("EXCEEDS_ALLOCATION");
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(1, 1, 100, [], {
+            value: utils.parseEther("1"),
+          })
+        ).to.be.revertedWith("EXCEEDS_ALLOCATION");
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(2, 1, 100, [], {
+            value: utils.parseEther("1"),
+          })
+        ).to.be.revertedWith("EXCEEDS_ALLOCATION");
+
+        await collection.connect(userB.signer).mintByTier(3, 10, 100, [], {
+          value: utils.parseEther("10"),
+        });
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(3, 1, 100, [], {
+            value: utils.parseEther("1"),
+          })
+        ).to.be.revertedWith("EXCEEDS_MAX");
+      });
+
+      it("should mint for a tier if a new address is getting allowlisted and applied for that tier", async function () {
+        const { deployer, userA, userB } = await setupTest();
+
+        const mkt1 = generateAllowlistMerkleTree([
+          {
+            address: userA.signer.address,
+            maxAllowance: 1,
+          },
+          {
+            address: userB.signer.address,
+            maxAllowance: 1,
+          },
+        ]);
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: mkt1.getHexRoot(),
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["6", "6", "6"]);
+
+        await collection.connect(userA.signer).mintByTier(
+          0,
+          1,
+          1,
+          mkt1.getHexProof(
+            generateAllowlistLeaf({
+              address: userA.signer.address,
+              maxAllowance: 1,
+            })
+          ),
+          {
+            value: utils.parseEther("1"),
+          }
+        );
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["5", "6", "6"]);
+
+        const mkt2 = generateAllowlistMerkleTree([
+          {
+            address: userA.signer.address,
+            maxAllowance: 1,
+          },
+        ]);
+
+        await collection
+          .connect(deployer.signer)
+          [
+            "configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))"
+          ](1, {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            price: utils.parseEther("1"),
+            maxPerWallet: 2,
+            merkleRoot: mkt2.getHexRoot(),
+            reserved: 2,
+            maxAllocation: 5000,
+          });
+
+        await collection.connect(userA.signer).mintByTier(
+          1,
+          1,
+          1,
+          mkt2.getHexProof(
+            generateAllowlistLeaf({
+              address: userA.signer.address,
+              maxAllowance: 1,
+            })
+          ),
+          {
+            value: utils.parseEther("1"),
+          }
+        );
+      });
+
+      // Changing Supply Tests
+      it("should fail to mint by tier if remaining allocation is fully reserved and starts in future (example D)", async function () {
+        const { userA, userB } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 20,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 5,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 5,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 5,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) + 7 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 10 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 5,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userB.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+          (await collection.remainingForTier(3)).toString(),
+        ]).to.deep.equal(["5", "5", "5", "5"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 5, 5, [], {
+          value: utils.parseEther("5"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 5, 5, [], {
+          value: utils.parseEther("5"),
+        });
+        await collection.connect(userA.signer).mintByTier(2, 5, 5, [], {
+          value: utils.parseEther("5"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+          (await collection.remainingForTier(3)).toString(),
+        ]).to.deep.equal(["0", "0", "0", "5"]);
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(0, 1, 1, [], {
+            value: utils.parseEther("1"),
+          })
+        ).to.be.revertedWith("EXCEEDS_ALLOCATION");
+
+        await expect(
+          collection.connect(userB.signer).mintByTier(3, 5, 5, [], {
+            value: utils.parseEther("5"),
+          })
+        ).to.be.revertedWith("NOT_STARTED");
+      });
+
       it("should fail when total remaining supply become less than remaining reserved spots", async function () {
         const { deployer, userA } = await setupTest();
 
@@ -1873,6 +2160,7 @@ describe("ERC721TieredSalesCollection", function () {
           (await collection.remainingForTier(2)).toString(),
         ]).to.deep.equal(["7", "5", "5"]);
 
+        // changing total supply to be less than reserved spots
         await collection.connect(deployer.signer).setMaxSupply(5);
 
         expect([
@@ -1884,6 +2172,171 @@ describe("ERC721TieredSalesCollection", function () {
         await collection.connect(userB.signer).mintByTier(0, 2, 2, [], {
           value: utils.parseEther("2"),
         });
+      });
+
+      // Changing Reserved Spots Tests
+      it("should mint for a tier with zero reserved if there is still supply and the reserved spots for that tier increases", async function () {
+        const { deployer, userA, userB } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 3,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 2,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["8", "7", "5"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 1, 1, [], {
+          value: utils.parseEther("1"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["7", "5", "5"]);
+
+        await collection
+          .connect(deployer.signer)
+          [
+            "configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))"
+          ](2, {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            price: utils.parseEther("1"),
+            maxPerWallet: 2,
+            merkleRoot: ZERO_BYTES32,
+            reserved: 2,
+            maxAllocation: 5000,
+          });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["5", "3", "5"]);
+
+        await collection.connect(userB.signer).mintByTier(2, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+      });
+
+      it("should not be ale to increase reserved spots for a tier when the whole supply is already reserved", async function () {
+        const { deployer, userA } = await setupTest();
+
+        const collection = (
+          await deployCollection(mode as any, {
+            maxSupply: 10,
+            tiers: [
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 5,
+                maxAllocation: 5000,
+              },
+              {
+                start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+                end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+                currency: ZERO_ADDRESS,
+                maxPerWallet: 2,
+                merkleRoot: ZERO_BYTES32,
+                price: utils.parseEther("1"),
+                reserved: 0,
+                maxAllocation: 5000,
+              },
+            ],
+          })
+        ).connect(userA.signer);
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["5", "5", "0"]);
+
+        await collection.connect(userA.signer).mintByTier(0, 1, 1, [], {
+          value: utils.parseEther("1"),
+        });
+        await collection.connect(userA.signer).mintByTier(1, 2, 2, [], {
+          value: utils.parseEther("2"),
+        });
+
+        expect([
+          (await collection.remainingForTier(0)).toString(),
+          (await collection.remainingForTier(1)).toString(),
+          (await collection.remainingForTier(2)).toString(),
+        ]).to.deep.equal(["4", "3", "0"]);
+
+        await expect(
+          collection
+            .connect(deployer.signer)
+            [
+              "configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))"
+            ](2, {
+              start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+              end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+              currency: ZERO_ADDRESS,
+              price: utils.parseEther("1"),
+              maxPerWallet: 2,
+              merkleRoot: ZERO_BYTES32,
+              reserved: 2,
+              maxAllocation: 5000,
+            })
+        ).to.be.revertedWith("MAX_SUPPLY_EXCEEDED");
       });
 
       // TODO add erc20 payment tests
