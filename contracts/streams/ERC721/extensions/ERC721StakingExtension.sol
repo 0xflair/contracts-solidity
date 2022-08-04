@@ -72,12 +72,12 @@ abstract contract ERC721StakingExtension is
     /* ADMIN */
 
     function setMinStakingDuration(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         minStakingDuration = newValue;
     }
 
     function setMaxStakingTotalDurations(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         maxStakingTotalDurations = newValue;
     }
 
@@ -88,35 +88,15 @@ abstract contract ERC721StakingExtension is
     }
 
     function stake(uint256 tokenId) public virtual {
-        require(
-            _msgSender() == IERC721(ticketToken).ownerOf(tokenId),
-            "STREAM/NOT_TOKEN_OWNER"
-        );
-
-        require(
-            totalStakedDuration(tokenId) < maxStakingTotalDurations,
-            "STREAM/MAX_STAKE_DURATION_EXCEEDED"
-        );
-
-        lastStakingTime[tokenId] = uint64(block.timestamp);
+        _stake(_msgSender(), uint64(block.timestamp), tokenId);
     }
 
     function stake(uint256[] calldata tokenIds) public virtual {
-        address sender = _msgSender();
+        address operator = _msgSender();
         uint64 currentTime = uint64(block.timestamp);
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
-            require(
-                sender == IERC721(ticketToken).ownerOf(tokenIds[i]),
-                "STREAM/NOT_TOKEN_OWNER"
-            );
-
-            require(
-                totalStakedDuration(tokenIds[i]) < maxStakingTotalDurations,
-                "STREAM/MAX_STAKE_DURATION_EXCEEDED"
-            );
-
-            lastStakingTime[tokenIds[i]] = currentTime;
+            _stake(operator, currentTime, tokenIds[i]);
         }
     }
 
@@ -208,21 +188,31 @@ abstract contract ERC721StakingExtension is
         return 18_446_744_073_709_551_615; // max(uint64)
     }
 
+    function _stake(
+        address operator,
+        uint64 currentTime,
+        uint256 tokenId
+    ) internal virtual {
+        require(
+            totalStakedDuration(tokenId) < maxStakingTotalDurations,
+            "MAX_DURATION_EXCEEDED"
+        );
+
+        lastStakingTime[tokenId] = currentTime;
+    }
+
     function _unstake(
         address operator,
         uint64 currentTime,
         uint256 tokenId
-    ) internal {
-        require(lastStakingTime[tokenId] > 0, "STREAM/NOT_STAKED");
+    ) internal virtual {
+        operator;
+
+        require(lastStakingTime[tokenId] > 0, "NOT_STAKED");
 
         require(
             currentTime >= lastStakingTime[tokenId] + minStakingDuration,
-            "STREAM/NOT_STAKED_LONG_ENOUGH"
-        );
-
-        require(
-            operator == IERC721(ticketToken).ownerOf(tokenId),
-            "STREAM/NOT_TOKEN_OWNER"
+            "NOT_STAKED_LONG_ENOUGH"
         );
 
         savedStakedDurations[tokenId] = totalStakedDuration(tokenId);

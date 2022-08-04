@@ -12,8 +12,6 @@ import "./ERC721AMinterExtension.sol";
 
 import {IERC721TieringExtension} from "../../ERC721/extensions/ERC721TieringExtension.sol";
 
-import "hardhat/console.sol";
-
 /**
  * @dev Extension to allow multiple tiers for minting,
  *      you can configure, different minting window, price, currency, max per wallet, and allowlist per tier.

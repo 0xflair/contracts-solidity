@@ -60,12 +60,12 @@ abstract contract ERC721VestingReleaseExtension is
     /* ADMIN */
 
     function setVestingStartTimestamp(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         vestingStartTimestamp = newValue;
     }
 
     function setVestingDurationSeconds(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         vestingDurationSeconds = newValue;
     }
 

@@ -91,7 +91,7 @@ contract ERC721ShareEmissionStream is
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,
-        address owner_
+        address beneficiary_
     )
         internal
         override(
@@ -100,15 +100,20 @@ contract ERC721ShareEmissionStream is
             ERC721EmissionReleaseExtension
         )
     {
+        ERC721MultiTokenStream._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            beneficiary_
+        );
         ERC721LockableClaimExtension._beforeClaim(
             ticketTokenId_,
             claimToken_,
-            owner_
+            beneficiary_
         );
         ERC721EmissionReleaseExtension._beforeClaim(
             ticketTokenId_,
             claimToken_,
-            owner_
+            beneficiary_
         );
     }
 }

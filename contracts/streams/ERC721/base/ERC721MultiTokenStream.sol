@@ -141,7 +141,7 @@ abstract contract ERC721MultiTokenStream is
     /* ADMIN */
 
     function lockUntil(uint64 newValue) public onlyOwner {
-        require(newValue > lockedUntilTimestamp, "STREAM/CANNOT_REWIND");
+        require(newValue > lockedUntilTimestamp, "CANNOT_REWIND");
         lockedUntilTimestamp = newValue;
     }
 
@@ -160,12 +160,11 @@ abstract contract ERC721MultiTokenStream is
         nonReentrant
     {
         /* CHECKS */
-        address owner = IERC721(ticketToken).ownerOf(ticketTokenId);
-
-        _beforeClaim(ticketTokenId, claimToken, owner);
+        address beneficiary = _msgSender();
+        _beforeClaim(ticketTokenId, claimToken, beneficiary);
 
         uint256 claimable = streamClaimableAmount(ticketTokenId, claimToken);
-        require(claimable > 0, "STREAM/NOTHING_TO_CLAIM");
+        require(claimable > 0, "NOTHING_TO_CLAIM");
 
         /* EFFECTS */
 
@@ -177,14 +176,20 @@ abstract contract ERC721MultiTokenStream is
         /* INTERACTIONS */
 
         if (claimToken == address(0)) {
-            payable(address(owner)).sendValue(claimable);
+            payable(address(beneficiary)).sendValue(claimable);
         } else {
-            IERC20(claimToken).transfer(owner, claimable);
+            IERC20(claimToken).transfer(beneficiary, claimable);
         }
 
         /* LOGS */
 
-        emit Claim(_msgSender(), owner, ticketTokenId, claimToken, claimable);
+        emit Claim(
+            _msgSender(),
+            beneficiary,
+            ticketTokenId,
+            claimToken,
+            claimable
+        );
     }
 
     function claim(uint256[] calldata ticketTokenIds) public {
@@ -194,18 +199,12 @@ abstract contract ERC721MultiTokenStream is
     function claim(
         uint256[] calldata ticketTokenIds,
         address claimToken,
-        address owner
+        address beneficiary
     ) public nonReentrant {
         uint256 totalClaimable;
 
         for (uint256 i = 0; i < ticketTokenIds.length; i++) {
-            _beforeClaim(ticketTokenIds[i], claimToken, owner);
-
-            /* CHECKS */
-            require(
-                IERC721(ticketToken).ownerOf(ticketTokenIds[i]) == owner,
-                "STREAM/NOT_NFT_OWNER"
-            );
+            _beforeClaim(ticketTokenIds[i], claimToken, beneficiary);
 
             /* EFFECTS */
             uint256 claimable = streamClaimableAmount(
@@ -228,16 +227,16 @@ abstract contract ERC721MultiTokenStream is
         /* INTERACTIONS */
 
         if (claimToken == address(0)) {
-            payable(address(owner)).sendValue(totalClaimable);
+            payable(address(beneficiary)).sendValue(totalClaimable);
         } else {
-            IERC20(claimToken).transfer(owner, totalClaimable);
+            IERC20(claimToken).transfer(beneficiary, totalClaimable);
         }
 
         /* LOGS */
 
         emit ClaimMany(
             _msgSender(),
-            owner,
+            beneficiary,
             ticketTokenIds,
             claimToken,
             totalClaimable
@@ -372,6 +371,11 @@ abstract contract ERC721MultiTokenStream is
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,
-        address owner_
-    ) internal virtual {}
+        address beneficiary_
+    ) internal virtual {
+        require(
+            IERC721(ticketToken).ownerOf(ticketTokenId_) == beneficiary_,
+            "NOT_NFT_OWNER"
+        );
+    }
 }

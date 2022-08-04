@@ -51,7 +51,7 @@ abstract contract ERC721EqualSplitExtension is
     /* ADMIN */
 
     function setTotalTickets(uint256 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         totalTickets = newValue;
     }
 

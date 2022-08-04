@@ -139,7 +139,7 @@ contract ERC721LockedStakingEmissionStream is
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,
-        address owner_
+        address beneficiary_
     )
         internal
         override(
@@ -148,36 +148,43 @@ contract ERC721LockedStakingEmissionStream is
             ERC721LockableClaimExtension
         )
     {
+        ERC721MultiTokenStream._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            beneficiary_
+        );
         ERC721LockableClaimExtension._beforeClaim(
             ticketTokenId_,
             claimToken_,
-            owner_
+            beneficiary_
         );
         ERC721EmissionReleaseExtension._beforeClaim(
             ticketTokenId_,
             claimToken_,
-            owner_
+            beneficiary_
         );
     }
 
     /* PUBLIC */
 
-    function stake(uint256 tokenId) public override {
-        require(
-            uint64(block.timestamp) >= emissionStart,
-            "STREAM/NOT_STARTED_YET"
-        );
+    function stake(uint256 tokenId) public override nonReentrant {
+        require(uint64(block.timestamp) >= emissionStart, "NOT_STARTED_YET");
 
         super.stake(tokenId);
     }
 
-    function stake(uint256[] calldata tokenIds) public override {
-        require(
-            uint64(block.timestamp) >= emissionStart,
-            "STREAM/NOT_STARTED_YET"
-        );
+    function stake(uint256[] calldata tokenIds) public override nonReentrant {
+        require(uint64(block.timestamp) >= emissionStart, "NOT_STARTED_YET");
 
         super.stake(tokenIds);
+    }
+
+    function unstake(uint256 tokenId) public override nonReentrant {
+        super.unstake(tokenId);
+    }
+
+    function unstake(uint256[] calldata tokenIds) public override nonReentrant {
+        super.unstake(tokenIds);
     }
 
     function rateByToken(uint256[] calldata tokenIds)

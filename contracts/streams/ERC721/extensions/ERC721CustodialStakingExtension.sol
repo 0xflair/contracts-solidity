@@ -21,6 +21,12 @@ import "./ERC721StakingExtension.sol";
  */
 interface IERC721CustodialStakingExtension {
     function hasERC721CustodialStakingExtension() external view returns (bool);
+
+    function tokensInCustody(
+        address staker,
+        uint256 startTokenId,
+        uint256 endTokenId
+    ) external view returns (bool[] memory);
 }
 
 /**
@@ -58,53 +64,60 @@ abstract contract ERC721CustodialStakingExtension is
         return true;
     }
 
-    function stake(uint256 tokenId) public virtual override {
-        super.stake(tokenId);
+    function tokensInCustody(
+        address staker,
+        uint256 startTokenId,
+        uint256 endTokenId
+    ) external view returns (bool[] memory tokens) {
+        tokens = new bool[](endTokenId - startTokenId + 1);
 
-        address staker = _msgSender();
-
-        stakers[tokenId] = staker;
-        IERC721(ticketToken).transferFrom(staker, address(this), tokenId);
-    }
-
-    function stake(uint256[] calldata tokenIds) public virtual override {
-        super.stake(tokenIds);
-
-        address staker = _msgSender();
-        for (uint256 i; i < tokenIds.length; i++) {
-            stakers[tokenIds[i]] = staker;
-            IERC721(ticketToken).transferFrom(
-                staker,
-                address(this),
-                tokenIds[i]
-            );
+        for (uint256 i = startTokenId; i <= endTokenId; i++) {
+            if (stakers[i] == staker) {
+                tokens[i - startTokenId] = true;
+            }
         }
+
+        return tokens;
     }
 
-    function unstake(uint256 tokenId) public virtual override {
-        super.unstake(tokenId);
+    /* INTERNAL */
 
-        address staker = _msgSender();
+    function _stake(
+        address operator,
+        uint64 currentTime,
+        uint256 tokenId
+    ) internal virtual override {
+        stakers[tokenId] = operator;
+        super._stake(operator, currentTime, tokenId);
+        IERC721(ticketToken).transferFrom(operator, address(this), tokenId);
+    }
 
-        require(stakers[tokenId] == staker, "NOT_STAKER");
+    function _unstake(
+        address operator,
+        uint64 currentTime,
+        uint256 tokenId
+    ) internal virtual override {
+        require(stakers[tokenId] == operator, "NOT_STAKER");
         delete stakers[tokenId];
 
-        IERC721(ticketToken).transferFrom(address(this), staker, tokenId);
+        super._unstake(operator, currentTime, tokenId);
+        IERC721(ticketToken).transferFrom(address(this), operator, tokenId);
     }
 
-    function unstake(uint256[] calldata tokenIds) public virtual override {
-        super.stake(tokenIds);
-        address staker = _msgSender();
+    function _beforeClaim(
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address beneficiary_
+    ) internal virtual override {
+        claimToken_;
 
-        for (uint256 i; i < tokenIds.length; i++) {
-            require(stakers[tokenIds[i]] == staker, "NOT_STAKER");
-            delete stakers[tokenIds[i]];
-
-            IERC721(ticketToken).transferFrom(
-                address(this),
-                staker,
-                tokenIds[i]
+        if (stakers[ticketTokenId_] == address(0)) {
+            require(
+                IERC721(ticketToken).ownerOf(ticketTokenId_) == beneficiary_,
+                "NOT_NFT_OWNER"
             );
+        } else {
+            require(beneficiary_ == stakers[ticketTokenId_], "NOT_STAKER");
         }
     }
 }

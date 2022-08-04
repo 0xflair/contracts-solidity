@@ -280,11 +280,11 @@ describe("ERC721ShareInstantStream", function () {
 
       await expect(
         stream.connect(userB.signer)["claim(uint256)"](2)
-      ).to.be.revertedWith("STREAM/NOTHING_TO_CLAIM");
+      ).to.be.revertedWith("NOTHING_TO_CLAIM");
 
       await expect(
         stream.connect(userB.signer)["claim(uint256,address)"](2, ZERO_ADDRESS)
-      ).to.be.revertedWith("STREAM/NOTHING_TO_CLAIM");
+      ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should fail to claim when already claimed", async function () {
@@ -312,7 +312,7 @@ describe("ERC721ShareInstantStream", function () {
 
       await expect(
         stream.connect(userB.signer)["claim(uint256,address)"](2, ZERO_ADDRESS)
-      ).to.be.revertedWith("STREAM/NOTHING_TO_CLAIM");
+      ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should claim on behalf of current nft owner", async function () {
@@ -332,7 +332,11 @@ describe("ERC721ShareInstantStream", function () {
       await expect(
         await stream
           .connect(userC.signer)
-          ["claim(uint256,address)"](2, ZERO_ADDRESS)
+          ["claim(uint256[],address,address)"](
+            [2],
+            ZERO_ADDRESS,
+            userB.signer.address
+          )
       ).to.changeEtherBalances(
         [stream, userB.signer],
         [utils.parseEther("-0.44"), utils.parseEther("0.44")]
@@ -476,7 +480,7 @@ describe("ERC721ShareInstantStream", function () {
         stream
           .connect(userB.signer)
           ["claim(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.revertedWith("STREAM/NOTHING_TO_CLAIM");
+      ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should fail to claim when already claimed", async function () {
@@ -502,7 +506,7 @@ describe("ERC721ShareInstantStream", function () {
         stream
           .connect(userB.signer)
           ["claim(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.revertedWith("STREAM/NOTHING_TO_CLAIM");
+      ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should claim on behalf of current nft owner", async function () {
@@ -518,7 +522,11 @@ describe("ERC721ShareInstantStream", function () {
 
       await stream
         .connect(userC.signer)
-        ["claim(uint256,address)"](2, userA.TestERC20.address);
+        ["claim(uint256[],address,address)"](
+          [2],
+          userA.TestERC20.address,
+          userB.signer.address
+        );
 
       expect(await userC.TestERC20.balanceOf(userC.signer.address)).to.equal(
         utils.parseEther("0")

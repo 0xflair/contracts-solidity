@@ -56,7 +56,7 @@ abstract contract ERC721ShareSplitExtension is
         uint256[] memory _tokenIds,
         uint256[] memory _shares
     ) internal onlyInitializing {
-        require(_shares.length == _tokenIds.length, "STREAM/ARGS_MISMATCH");
+        require(_shares.length == _tokenIds.length, "ARGS_MISMATCH");
         _updateShares(_tokenIds, _shares);
 
         _registerInterface(type(IERC721ShareSplitExtension).interfaceId);
@@ -66,8 +66,8 @@ abstract contract ERC721ShareSplitExtension is
         uint256[] memory _tokenIds,
         uint256[] memory _shares
     ) public onlyOwner {
-        require(_shares.length == _tokenIds.length, "STREAM/ARGS_MISMATCH");
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(_shares.length == _tokenIds.length, "ARGS_MISMATCH");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
 
         _updateShares(_tokenIds, _shares);
     }
@@ -118,7 +118,7 @@ abstract contract ERC721ShareSplitExtension is
         shares[tokenId] = newShares;
         totalShares = totalShares + newShares - prevShares;
 
-        require(totalShares >= 0, "STREAM/NEGATIVE_SHARES");
+        require(totalShares >= 0, "NEGATIVE_SHARES");
 
         emit SharesUpdated(tokenId, prevShares, newShares);
     }

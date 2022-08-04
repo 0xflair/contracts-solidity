@@ -1,13 +1,24 @@
 import { expect } from "chai";
 import { utils, BigNumberish } from "ethers";
-import hre, { deployments, getUnnamedAccounts } from "hardhat";
+import hre, { deployments, getUnnamedAccounts, ethers } from "hardhat";
 
-import { ERC721LockedStakingEmissionStream } from "../../../../typechain";
+import {
+  ERC721CustodialStakingEmissionStream,
+  TestERC721,
+  TestERC721__factory,
+} from "../../../../typechain";
 import { deployPermanentContract } from "../../../../hardhat.util";
 
 import { setupTest } from "../../../setup";
 import { increaseTime, ZERO_ADDRESS } from "../../../utils/common";
-import { deployCollection } from "../../../collections/presets/ERC721SimpleSalesCollection.test";
+
+export const deployCollection = async function (): Promise<TestERC721> {
+  const TestERC721 = await ethers.getContractFactory<TestERC721__factory>(
+    "TestERC721"
+  );
+
+  return await TestERC721.deploy();
+};
 
 const deployStream = async function (args?: {
   ticketToken?: string;
@@ -16,7 +27,7 @@ const deployStream = async function (args?: {
   maxStakingTotalDurations?: BigNumberish;
   emissionStart?: BigNumberish;
   emissionEnd?: BigNumberish;
-}): Promise<ERC721LockedStakingEmissionStream> {
+}): Promise<ERC721CustodialStakingEmissionStream> {
   const accounts = await getUnnamedAccounts();
   const nowMinusOneDayUnix =
     Math.floor(new Date().getTime() / 1000) - 24 * 60 * 60;
@@ -28,7 +39,7 @@ const deployStream = async function (args?: {
     deployments,
     accounts[0],
     accounts[0],
-    "ERC721LockedStakingEmissionStream",
+    "ERC721CustodialStakingEmissionStream",
     [
       {
         // Base
@@ -43,23 +54,23 @@ const deployStream = async function (args?: {
         emissionStart: nowMinusOneDayUnix,
         emissionEnd: nowPlusFiveDaysUnix,
         // Equal split extension
-        totalTickets: 1,
+        totalTickets: 10,
         // Lockable claim extension
         claimLockedUntil: 0,
 
         ...(args || {}),
       },
     ]
-  )) as ERC721LockedStakingEmissionStream;
+  )) as ERC721CustodialStakingEmissionStream;
 };
 
-describe("ERC721LockedStakingEmissionStream", function () {
+describe("ERC721CustodialStakingEmissionStream", function () {
   describe("Interfaces", function () {
-    it("supports IERC721LockedStakingExtension", async function () {
+    it("supports IERC721CustodialStakingExtension", async function () {
       await setupTest();
       const stream = await deployStream();
 
-      expect(await stream.supportsInterface("0xd6642801")).to.equal(true);
+      expect(await stream.supportsInterface("0x7ef569ae")).to.equal(true);
     });
 
     it("supports IERC721EmissionReleaseExtension", async function () {
@@ -116,7 +127,7 @@ describe("ERC721LockedStakingEmissionStream", function () {
       expect(emittedAddress).to.equal(predictedAddress);
 
       const streamClone = await hre.ethers.getContractAt(
-        "ERC721LockedStakingEmissionStream",
+        "ERC721CustodialStakingEmissionStream",
         emittedAddress
       );
 
@@ -142,149 +153,170 @@ describe("ERC721LockedStakingEmissionStream", function () {
     it("should fail to claim when claiming is locked", async function () {
       const { deployer, userB } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
         minStakingDuration: 20 * 3600, // 20 hours
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(3 * 60 * 60); // 3 hours
 
       await expect(
-        stream.connect(userB.signer)["unstake(uint256)"](2)
+        stream.connect(userB.signer)["unstake(uint256)"](5)
       ).to.be.revertedWith("NOT_STAKED_LONG_ENOUGH");
 
-      expect(
-        await lockableCollection.connect(userB.signer).locked(2)
-      ).to.be.equal(true);
+      expect(await nftCollection.connect(userB.signer).ownerOf(5)).to.be.equal(
+        stream.address
+      );
+      const tokensInCustodyForUser = (
+        await stream
+          .connect(userB.signer)
+          .tokensInCustody(userB.signer.address, 0, 10000)
+      ).reduce<BigNumberish[]>(
+        (list, inCustody, tokenId) => (inCustody ? [...list, tokenId] : list),
+        []
+      );
+
+      expect(tokensInCustodyForUser).to.deep.equal([5]);
 
       await increaseTime(30 * 60 * 60); // 30 hours
 
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
 
-      expect(
-        await lockableCollection.connect(userB.signer).locked(2)
-      ).to.be.equal(false);
+      expect(await nftCollection.connect(userB.signer).ownerOf(5)).to.be.equal(
+        userB.signer.address
+      );
     });
 
     it("should fail to unstake sooner than min lock time", async function () {
       const { deployer, userB } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
         minStakingDuration: 20 * 3600, // 20 hours
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
+
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(3 * 60 * 60); // 3 hours
 
       await expect(
-        stream.connect(userB.signer)["unstake(uint256)"](2)
+        stream.connect(userB.signer)["unstake(uint256)"](5)
       ).to.be.revertedWith("NOT_STAKED_LONG_ENOUGH");
 
-      expect(
-        await lockableCollection.connect(userB.signer).locked(2)
-      ).to.be.equal(true);
+      expect(await nftCollection.connect(userB.signer).ownerOf(5)).to.be.equal(
+        stream.address
+      );
+      const tokensInCustodyForUserBefore = (
+        await stream
+          .connect(userB.signer)
+          .tokensInCustody(userB.signer.address, 0, 10000)
+      ).reduce<BigNumberish[]>(
+        (list, inCustody, tokenId) => (inCustody ? [...list, tokenId] : list),
+        []
+      );
+      expect(tokensInCustodyForUserBefore).to.deep.equal([5]);
 
       await increaseTime(30 * 60 * 60); // 30 hours
 
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
 
-      expect(
-        await lockableCollection.connect(userB.signer).locked(2)
-      ).to.be.equal(false);
+      expect(await nftCollection.connect(userB.signer).ownerOf(5)).to.be.equal(
+        userB.signer.address
+      );
+      const tokensInCustodyForUserAfter = (
+        await stream
+          .connect(userB.signer)
+          .tokensInCustody(userB.signer.address, 0, 10000)
+      ).reduce<BigNumberish[]>(
+        (list, inCustody, tokenId) => (inCustody ? [...list, tokenId] : list),
+        []
+      );
+      expect(tokensInCustodyForUserAfter).to.deep.equal([]);
     });
 
     it("should fail to unstake on behalf of current nft owner", async function () {
       const { deployer, userB, userC } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
+
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(3 * 60 * 60); // 3 hours
 
       await expect(
-        stream.connect(userC.signer)["unstake(uint256)"](2)
-      ).to.be.revertedWith("NOT_TOKEN_OWNER");
+        stream.connect(userC.signer)["unstake(uint256)"](5)
+      ).to.be.revertedWith("NOT_STAKER");
     });
 
     it("should fail to stake on behalf of current nft owner", async function () {
       const { deployer, userB, userC } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
+        .mintExact(userB.signer.address, 5);
 
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await expect(
-        stream.connect(userC.signer)["stake(uint256)"](2)
-      ).to.be.revertedWith("NOT_TOKEN_OWNER");
+        stream.connect(userC.signer)["stake(uint256)"](5)
+      ).to.be.revertedWith("ERC721: transfer from incorrect owner");
     });
 
     it("should not count more than max staking durations", async function () {
       const { deployer, userA, userB } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
         minStakingDuration: 1 * 3600, // 1 hour
         maxStakingTotalDurations: 2 * 3600, // 2 hours
       });
@@ -294,52 +326,55 @@ describe("ERC721LockedStakingEmissionStream", function () {
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(deployer.signer)
+        .mintExact(userB.signer.address, 6);
 
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(17 * 60 * 60); // 17 hours
 
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("4")); // only count 2 hours
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("0.4")); // only count 2 hours
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(7200); // only count 2 hours
 
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-4"), utils.parseEther("4")]
+        // 4 eth streamed to total of 10 tickets
+        [utils.parseEther("-0.4"), utils.parseEther("0.4")]
       );
     });
 
     it("should fail to stake if already exceeds max staking", async function () {
       const { deployer, userA, userB } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
         minStakingDuration: 1 * 3600, // 1 hour
         maxStakingTotalDurations: 2 * 3600, // 2 hours
       });
@@ -349,76 +384,74 @@ describe("ERC721LockedStakingEmissionStream", function () {
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
+        .mintExact(userB.signer.address, 5);
 
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(17 * 60 * 60); // 17 hours
 
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
 
       await expect(
-        stream.connect(userB.signer)["stake(uint256)"](2)
+        stream.connect(userB.signer)["stake(uint256)"](5)
       ).to.be.revertedWith("MAX_DURATION_EXCEEDED");
     });
 
     it("should correctly calculate staked duration even if emission end is not set", async function () {
       const { deployer, userB } = await setupTest();
 
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
         emissionEnd: 0,
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
+        .mintExact(userB.signer.address, 5);
 
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+      await increaseTime(1 * 24 * 60 * 60); // 1 day
+
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(3 * 60 * 60); // 3 hours
 
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("6"));
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("0.6"));
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(10_800);
     });
   });
@@ -426,18 +459,14 @@ describe("ERC721LockedStakingEmissionStream", function () {
   describe("Native Token Streams", function () {
     it("should top-up a native-token stream", async function () {
       const { userA } = await setupTest();
-
       const stream = await deployStream();
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("4.4"),
       });
-
       expect(await stream["streamTotalSupply()"]()).to.equal(
         utils.parseEther("4.4")
       );
-
       expect(await stream["streamTotalSupply(address)"](ZERO_ADDRESS)).to.equal(
         utils.parseEther("4.4")
       );
@@ -445,23 +474,18 @@ describe("ERC721LockedStakingEmissionStream", function () {
 
     it("should top-up multiple times", async function () {
       const { userA } = await setupTest();
-
       const stream = await deployStream();
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("3.4"),
       });
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("1.1"),
       });
-
       expect(await stream["streamTotalSupply()"]()).to.equal(
         utils.parseEther("4.5")
       );
-
       expect(await stream["streamTotalSupply(address)"](ZERO_ADDRESS)).to.equal(
         utils.parseEther("4.5")
       );
@@ -469,320 +493,259 @@ describe("ERC721LockedStakingEmissionStream", function () {
 
     it("should claim for 3 hours of staking with 1 single nft", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
 
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("6"));
-
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("0.6"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
     });
 
     it("should claim only for duration of emission not longer", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
 
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("200"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(15 * 24 * 60 * 60); // 15 days
-
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("190"));
-
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("19"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-190"), utils.parseEther("190")]
+        [utils.parseEther("-19"), utils.parseEther("19")]
       );
     });
 
     it("should not claim for un-staked nfts", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
 
       await increaseTime(3 * 60 * 60); // 3 hours
 
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
-
       await expect(
-        stream.connect(userB.signer)["claim(uint256)"](2)
+        stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should not claim when already claimed recently", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
 
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
-
       await expect(
-        stream.connect(userB.signer)["claim(uint256)"](2)
+        stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.be.revertedWith("TOO_EARLY");
     });
 
     it("should stake and claim multiple times for a single nft", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(3 * 60 * 60); // 3 hours
-
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("6"));
-
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("0.6"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
 
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
       const prevTotalDuration = await stream
         .connect(userB.signer)
-        ["totalStakedDuration(uint256)"](2);
-
+        ["totalStakedDuration(uint256)"](5);
       await increaseTime(10 * 60 * 60); // 10 hours
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(prevTotalDuration);
 
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       await increaseTime(4 * 60 * 60); // 4 hours
 
       expect(
-        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](2)
-      ).to.be.equal(utils.parseEther("8"));
-
+        await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
+      ).to.be.equal(utils.parseEther("0.8"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(prevTotalDuration);
 
       await expect(
-        await stream.connect(userB.signer)["claim(uint256)"](2)
+        await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-8"), utils.parseEther("8")]
+        [utils.parseEther("-0.8"), utils.parseEther("0.8")]
       );
     });
 
     it("should claim on behalf of current nft owner", async function () {
       const { deployer, userA, userB, userC } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
       await userA.signer.sendTransaction({
         to: stream.address,
         value: utils.parseEther("20"),
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       await expect(async () =>
         stream
           .connect(userC.signer)
           ["claim(uint256[],address,address)"](
-            [2],
+            [5],
             ZERO_ADDRESS,
             userB.signer.address
           )
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
     });
   });
@@ -790,12 +753,9 @@ describe("ERC721LockedStakingEmissionStream", function () {
   describe("ERC20-based Streams", function () {
     it("should top-up a erc20 stream", async function () {
       const { userA } = await setupTest();
-
       const stream = await deployStream();
-
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("44"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("44"));
-
       expect(
         await stream["streamTotalSupply(address)"](userA.TestERC20.address)
       ).to.equal(utils.parseEther("44"));
@@ -803,15 +763,11 @@ describe("ERC721LockedStakingEmissionStream", function () {
 
     it("should top-up multiple times", async function () {
       const { userA } = await setupTest();
-
       const stream = await deployStream();
-
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("44"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("44"));
-
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("11"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("11"));
-
       expect(
         await stream["streamTotalSupply(address)"](userA.TestERC20.address)
       ).to.equal(utils.parseEther("55"));
@@ -819,438 +775,366 @@ describe("ERC721LockedStakingEmissionStream", function () {
 
     it("should claim for 3 hours of staking with 1 single nft", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("20"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("20"));
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("6"));
-
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("0.6"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
     });
 
     it("should claim only for duration of emission not longer", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("200"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("200"));
 
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
-
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(15 * 24 * 60 * 60); // 15 days
-
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("190"));
-
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("19"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-190"), utils.parseEther("190")]
+        [utils.parseEther("-19"), utils.parseEther("19")]
       );
     });
 
     it("should not claim for un-staked nfts", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
 
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("20"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("20"));
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
-
       await increaseTime(3 * 60 * 60); // 3 hours
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
-
       await expect(
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.revertedWith("NOTHING_TO_CLAIM");
     });
 
     it("should not claim when already claimed recently", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("20"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("20"));
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
-
       await expect(
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.revertedWith("TOO_EARLY");
     });
 
     it("should stake and claim multiple times for a single nft", async function () {
       const { deployer, userA, userB } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
 
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("20"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("20"));
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("6"));
-
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("0.6"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
-
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
-
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
       const prevTotalDuration = await stream
         .connect(userB.signer)
-        ["totalStakedDuration(uint256)"](2);
-
+        ["totalStakedDuration(uint256)"](5);
       await increaseTime(10 * 60 * 60); // 10 hours
-
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(prevTotalDuration);
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(4 * 60 * 60); // 4 hours
-
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("8"));
-
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("0.8"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(prevTotalDuration);
-
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-8"), utils.parseEther("8")]
+        [utils.parseEther("-0.8"), utils.parseEther("0.8")]
       );
     });
 
     it("should claim on behalf of current nft owner", async function () {
       const { deployer, userA, userB, userC } = await setupTest();
-
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
 
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("20"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("20"));
 
-      await lockableCollection
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
-
-      await stream.connect(userB.signer)["stake(uint256)"](2);
-
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(3 * 60 * 60); // 3 hours
-
       await expect(async () =>
         stream
           .connect(userC.signer)
           ["claim(uint256[],address,address)"](
-            [2],
+            [5],
             userB.TestERC20.address,
             userB.signer.address
           )
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-6"), utils.parseEther("6")]
+        [utils.parseEther("-0.6"), utils.parseEther("0.6")]
       );
     });
 
-    it.only("should not claim anything more after unstaked", async function () {
+    it("should not claim anything more after unstaked", async function () {
       const { deployer, userA, userB } = await setupTest();
 
       // Contracts
-      const lockableCollection = await deployCollection("normal");
+      const nftCollection = await deployCollection();
       const stream = await deployStream({
-        ticketToken: lockableCollection.address,
+        ticketToken: nftCollection.address,
       });
 
       // Top-up stream
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("200"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("200"));
 
-      // Mint NFTs and grant stream
-      await lockableCollection
+      // Mint NFTs and approve stream
+      await nftCollection
         .connect(deployer.signer)
-        .grantRole(
-          utils.keccak256(utils.toUtf8Bytes("LOCKER_ROLE")),
-          stream.address
-        );
-      await lockableCollection
-        .connect(deployer.signer)
-        .mintByOwner(userB.signer.address, 5);
+        .mintExact(userB.signer.address, 5);
+      await nftCollection
+        .connect(userB.signer)
+        .setApprovalForAll(stream.address, true);
 
       await increaseTime(1 * 24 * 60 * 60); // 1 day
 
       // Check initial values
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
 
       // Stake an NFT
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
 
       // Wait and then Unstake the NFT
       await increaseTime(5 * 60 * 60); // 5 hours
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
 
       // Check expected accounting
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("10"));
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("1"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
 
       // Claim the rewards
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-10"), utils.parseEther("10")]
+        [utils.parseEther("-1"), utils.parseEther("1")]
       );
 
       // Wait while un-staked
       await increaseTime(5 * 60 * 60); // 5 hours
 
       // Stake another 4 hours
-      await stream.connect(userB.signer)["stake(uint256)"](2);
+      await stream.connect(userB.signer)["stake(uint256)"](5);
       await increaseTime(4 * 60 * 60); // 4 hours
-      await stream.connect(userB.signer)["unstake(uint256)"](2);
+      await stream.connect(userB.signer)["unstake(uint256)"](5);
 
       // Check expected accounting again for only 4 hours
       expect(
         await stream
           .connect(userB.signer)
-          ["streamClaimableAmount(uint256,address)"](2, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("8"));
+          ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
+      ).to.be.equal(utils.parseEther("0.8"));
       expect(
-        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](2)
+        await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.gt(10000);
 
       // Claim the second rewards
       await expect(async () =>
         stream
           .connect(userB.signer)
-          ["claim(uint256,address)"](2, userA.TestERC20.address)
+          ["claim(uint256,address)"](5, userA.TestERC20.address)
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-8"), utils.parseEther("8")]
+        [utils.parseEther("-0.8"), utils.parseEther("0.8")]
       );
     });
   });

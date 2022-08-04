@@ -70,12 +70,17 @@ contract ERC721ShareVestingStream is
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,
-        address owner_
+        address beneficiary_
     ) internal override(ERC721MultiTokenStream, ERC721LockableClaimExtension) {
+        ERC721MultiTokenStream._beforeClaim(
+            ticketTokenId_,
+            claimToken_,
+            beneficiary_
+        );
         ERC721LockableClaimExtension._beforeClaim(
             ticketTokenId_,
             claimToken_,
-            owner_
+            beneficiary_
         );
     }
 }

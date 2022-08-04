@@ -50,7 +50,7 @@ abstract contract ERC721LockableClaimExtension is
     /* ADMIN */
 
     function setClaimLockedUntil(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         claimLockedUntil = newValue;
     }
 
@@ -65,12 +65,12 @@ abstract contract ERC721LockableClaimExtension is
     function _beforeClaim(
         uint256 ticketTokenId_,
         address claimToken_,
-        address owner_
+        address beneficiary_
     ) internal virtual override {
         ticketTokenId_;
         claimToken_;
-        owner_;
+        beneficiary_;
 
-        require(claimLockedUntil < block.timestamp, "STREAM/CLAIM_LOCKED");
+        require(claimLockedUntil < block.timestamp, "CLAIM_LOCKED");
     }
 }

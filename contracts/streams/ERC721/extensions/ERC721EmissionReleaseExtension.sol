@@ -96,22 +96,22 @@ abstract contract ERC721EmissionReleaseExtension is
     /* ADMIN */
 
     function setEmissionRate(uint256 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         emissionRate = newValue;
     }
 
     function setEmissionTimeUnit(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         emissionTimeUnit = newValue;
     }
 
     function setEmissionStart(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         emissionStart = newValue;
     }
 
     function setEmissionEnd(uint64 newValue) public onlyOwner {
-        require(lockedUntilTimestamp < block.timestamp, "STREAM/CONFIG_LOCKED");
+        require(lockedUntilTimestamp < block.timestamp, "CONFIG_LOCKED");
         emissionEnd = newValue;
     }
 
@@ -169,18 +169,18 @@ abstract contract ERC721EmissionReleaseExtension is
     }
 
     function _beforeClaim(
-        uint256 ticketTokenId,
-        address claimToken,
-        address owner_
+        uint256 ticketTokenId_,
+        address claimToken_,
+        address beneficiary_
     ) internal virtual override {
-        owner_;
+        beneficiary_;
 
-        require(emissionStart < block.timestamp, "STREAM/NOT_STARTED");
+        require(emissionStart < block.timestamp, "NOT_STARTED");
 
         require(
-            entitlements[ticketTokenId][claimToken].lastClaimedAt <
+            entitlements[ticketTokenId_][claimToken_].lastClaimedAt <
                 block.timestamp - emissionTimeUnit,
-            "STREAM/TOO_EARLY"
+            "TOO_EARLY"
         );
     }
 }
