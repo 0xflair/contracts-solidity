@@ -1,3 +1,11 @@
+### [1.19.5](https://github.com/0xflair/evm-contracts/compare/v1.19.4...v1.19.5) (2022-08-04)
+
+
+### Bug Fixes
+
+* add more tests for tiering extension [1] ([#23](https://github.com/0xflair/evm-contracts/issues/23)) ([9fe315a](https://github.com/0xflair/evm-contracts/commit/9fe315ac409860f435268aead2811b2efa22d9f4))
+* deploy to all chains except mainnet and sepolia ([a0f69a9](https://github.com/0xflair/evm-contracts/commit/a0f69a9ab8553ef2df20b858c62620c2245552f4))
+
 ### [1.19.4](https://github.com/0xflair/evm-contracts/compare/v1.19.3...v1.19.4) (2022-08-04)
 
 ### [1.19.3](https://github.com/0xflair/evm-contracts/compare/v1.19.2...v1.19.3) (2022-08-03)
