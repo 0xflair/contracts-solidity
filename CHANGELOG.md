@@ -1,3 +1,10 @@
+### [1.19.9](https://github.com/0xflair/evm-contracts/compare/v1.19.8...v1.19.9) (2022-08-06)
+
+
+### Bug Fixes
+
+* deploy evmos testnet ([b1b2f3c](https://github.com/0xflair/evm-contracts/commit/b1b2f3c7dbe5dfc8890ee99da06c815abc820674))
+
 ### [1.19.8](https://github.com/0xflair/evm-contracts/compare/v1.19.7...v1.19.8) (2022-08-06)
 
 
