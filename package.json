@@ -48,6 +48,8 @@
     "deploy:polygonMumbai": "npx hardhat deploy --network polygonMumbai",
     "deploy:okcMainnet": "npx hardhat deploy --network okcMainnet",
     "deploy:okcTestnet": "npx hardhat deploy --network okcTestnet",
+    "deploy:evmosMainnet": "npx hardhat deploy --network evmosMainnet",
+    "deploy:evmosTestnet": "npx hardhat deploy --network evmosTestnet",
     "verify:mainnet": "npx hardhat --network mainnet sourcify && npx hardhat etherscan-verify --network mainnet",
     "verify:ropsten": "npx hardhat --network ropsten sourcify && npx hardhat etherscan-verify --network ropsten",
     "verify:rinkeby": "npx hardhat --network rinkeby sourcify && npx hardhat etherscan-verify --network rinkeby",
@@ -62,7 +64,9 @@
     "verify:polygon": "npx hardhat --network polygon sourcify && npx hardhat etherscan-verify --network polygon",
     "verify:polygonMumbai": "npx hardhat --network polygonMumbai sourcify && npx hardhat etherscan-verify --network polygonMumbai",
     "verify:okcMainnet": "npx hardhat --network okcMainnet sourcify && npx hardhat etherscan-verify --network okcMainnet",
-    "verify:okcTestnet": "npx hardhat --network okcTestnet sourcify && npx hardhat etherscan-verify --network okcTestnet"
+    "verify:okcTestnet": "npx hardhat --network okcTestnet sourcify && npx hardhat etherscan-verify --network okcTestnet",
+    "verify:evmosMainnet": "npx hardhat --network evmosMainnet sourcify && npx hardhat etherscan-verify --network evmosMainnet",
+    "verify:evmosTestnet": "npx hardhat --network evmosTestnet sourcify && npx hardhat etherscan-verify --network evmosTestnet"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.2.3",

@@ -172,6 +172,19 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // Cosmos
+    evmosTestnet: {
+      chainId: 9000,
+      url: process.env.EVMOS_TESTNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    evmosMainnet: {
+      chainId: 9001,
+      url: process.env.EVMOS_MAINNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
   },
   etherscan: {
     apiKey: etherScanApiKey,

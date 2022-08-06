@@ -15,6 +15,12 @@ const chainConfig = {
   okcMainnet: {
     chainId: 66,
   },
+  evmosTestnet: {
+    chainId: 9000,
+  },
+  evmosMainnet: {
+    chainId: 9001,
+  },
 }
 
 async function main() {
