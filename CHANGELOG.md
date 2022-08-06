@@ -1,3 +1,10 @@
+### [1.19.8](https://github.com/0xflair/evm-contracts/compare/v1.19.7...v1.19.8) (2022-08-06)
+
+
+### Bug Fixes
+
+* deploy factory to okc mainnet and testnet ([227fbe3](https://github.com/0xflair/evm-contracts/commit/227fbe3700054a637f91a51655beccfd8ba87a7a))
+
 ### [1.19.7](https://github.com/0xflair/evm-contracts/compare/v1.19.6...v1.19.7) (2022-08-05)
 
 
