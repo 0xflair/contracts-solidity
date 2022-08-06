@@ -43,6 +43,8 @@ if (args.includes("mainnet")) {
   etherScanApiKey = process.env.POLYGON_MUMBAI_ETHERSCAN_API_KEY;
 } else if (args.includes("neonlabs")) {
   etherScanApiKey = process.env.NEON_LABS_ETHERSCAN_API_KEY;
+} else if (args.includes("okxMainnet")) {
+  etherScanApiKey = "";
 } else if (args.includes("hardhat")) {
   etherScanApiKey = process.env.RINKEBY_ETHERSCAN_API_KEY;
 } else {
@@ -157,6 +159,7 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // OKX Chain
     okcTestnet: {
       chainId: 65,
       url: process.env.OKC_TESTNET_URL || "",

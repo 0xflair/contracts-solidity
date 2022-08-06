@@ -4,8 +4,18 @@ import * as rimraf from "rimraf";
 import glob from "glob";
 
 const {
-  chainConfig,
+  chainConfig: chainConfig_,
 } = require("@nomiclabs/hardhat-etherscan/dist/src/ChainConfig.js");
+
+const chainConfig = {
+  ...chainConfig_,
+  okcTestnet: {
+    chainId: 65,
+  },
+  okcMainnet: {
+    chainId: 66,
+  },
+}
 
 async function main() {
   const distPath = path.resolve(__dirname, "../dist");
