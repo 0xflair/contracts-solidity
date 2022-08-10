@@ -1,3 +1,10 @@
+### [1.19.10](https://github.com/0xflair/evm-contracts/compare/v1.19.9...v1.19.10) (2022-08-10)
+
+
+### Bug Fixes
+
+* deploy to bsc chains ([dde641f](https://github.com/0xflair/evm-contracts/commit/dde641ffd102a8fb35a95da3414fffecfabea3a0))
+
 ### [1.19.9](https://github.com/0xflair/evm-contracts/compare/v1.19.8...v1.19.9) (2022-08-06)
 
 
