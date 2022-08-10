@@ -41,6 +41,10 @@ if (args.includes("mainnet")) {
   etherScanApiKey = process.env.POLYGON_ETHERSCAN_API_KEY;
 } else if (args.includes("polygonMumbai")) {
   etherScanApiKey = process.env.POLYGON_MUMBAI_ETHERSCAN_API_KEY;
+} else if (args.includes("bsc")) {
+  etherScanApiKey = process.env.BSC_ETHERSCAN_API_KEY;
+} else if (args.includes("bscTestnet")) {
+  etherScanApiKey = process.env.BSC_TESTNET_ETHERSCAN_API_KEY;
 } else if (args.includes("neonlabs")) {
   etherScanApiKey = process.env.NEON_LABS_ETHERSCAN_API_KEY;
 } else if (args.includes("okxMainnet")) {
@@ -182,6 +186,19 @@ const config: HardhatUserConfig = {
     evmosMainnet: {
       chainId: 9001,
       url: process.env.EVMOS_MAINNET_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Binance Chain
+    bsc: {
+      chainId: 56,
+      url: process.env.BSC_URL || "",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    bscTestnet: {
+      chainId: 97,
+      url: process.env.BSC_TESTNET_URL || "",
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
