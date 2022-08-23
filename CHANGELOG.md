@@ -1,3 +1,10 @@
+### [1.19.11](https://github.com/0xflair/evm-contracts/compare/v1.19.10...v1.19.11) (2022-08-23)
+
+
+### Bug Fixes
+
+* expose number of mints per wallet for tier publicly ([629813b](https://github.com/0xflair/evm-contracts/commit/629813b3e58f05281d437a8fad0f8e786559f138))
+
 ### [1.19.10](https://github.com/0xflair/evm-contracts/compare/v1.19.9...v1.19.10) (2022-08-10)
 
 
