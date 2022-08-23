@@ -1,3 +1,10 @@
+### [1.19.12](https://github.com/0xflair/evm-contracts/compare/v1.19.11...v1.19.12) (2022-08-23)
+
+
+### Bug Fixes
+
+* deploy on some testnets ([5685276](https://github.com/0xflair/evm-contracts/commit/5685276bed78e87ba0ffe1dc78420f47166e8864))
+
 ### [1.19.11](https://github.com/0xflair/evm-contracts/compare/v1.19.10...v1.19.11) (2022-08-23)
 
 
