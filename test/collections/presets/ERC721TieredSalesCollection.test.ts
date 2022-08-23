@@ -284,6 +284,20 @@ describe("ERC721TieredSalesCollection", function () {
         }
       });
 
+      it("should get wallet minted amount by tier", async function () {
+        const { userA } = await setupTest();
+
+        const collection = await deployCollection(mode as any);
+
+        await collection.connect(userA.signer).mintByTier(0, 2, 0, [], {
+          value: utils.parseEther("0.12"),
+        });
+
+        expect(
+          await collection.walletMintedByTier(0, userA.signer.address)
+        ).to.be.equal(2);
+      });
+
       it("should fail when minting a non-existing tier", async function () {
         const { userA } = await setupTest();
 

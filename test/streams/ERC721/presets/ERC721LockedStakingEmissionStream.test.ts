@@ -1160,7 +1160,7 @@ describe("ERC721LockedStakingEmissionStream", function () {
       );
     });
 
-    it.only("should not claim anything more after unstaked", async function () {
+    it("should not claim anything more after unstaked", async function () {
       const { deployer, userA, userB } = await setupTest();
 
       // Contracts

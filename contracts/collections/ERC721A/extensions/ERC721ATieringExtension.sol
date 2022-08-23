@@ -31,7 +31,7 @@ abstract contract ERC721ATieringExtension is
 
     mapping(uint256 => mapping(address => uint256)) internal walletMinted;
 
-    uint256 internal reservedMints;
+    uint256 public reservedMints;
 
     function __ERC721ATieringExtension_init(Tier[] memory _tiers)
         internal
@@ -206,6 +206,14 @@ abstract contract ERC721ATieringExtension is
         if (tiers[tierId].reserved > 0) {
             tierRemaining += (tiers[tierId].reserved - tierMints[tierId]);
         }
+    }
+
+    function walletMintedByTier(uint256 tierId, address wallet)
+        public
+        view
+        returns (uint256)
+    {
+        return walletMinted[tierId][wallet];
     }
 
     /* PRIVATE */
