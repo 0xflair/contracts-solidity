@@ -11,6 +11,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/IERC721Receiver.sol";
 
 interface IERC721MultiTokenStream {
     // Claim native currency for a single ticket token
@@ -75,6 +76,7 @@ interface IERC721MultiTokenStream {
 
 abstract contract ERC721MultiTokenStream is
     IERC721MultiTokenStream,
+    IERC721Receiver,
     Initializable,
     Ownable,
     ERC165Storage,
@@ -149,6 +151,15 @@ abstract contract ERC721MultiTokenStream is
 
     receive() external payable {
         require(msg.value > 0);
+    }
+
+    function onERC721Received(
+        address,
+        address,
+        uint256,
+        bytes memory
+    ) public virtual override returns (bytes4) {
+        return this.onERC721Received.selector;
     }
 
     function claim(uint256 ticketTokenId) public {
