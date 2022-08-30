@@ -1,3 +1,11 @@
+### [1.19.14](https://github.com/0xflair/evm-contracts/compare/v1.19.13...v1.19.14) (2022-08-30)
+
+
+### Bug Fixes
+
+* accept erc721 tokens on streams ([8f34be3](https://github.com/0xflair/evm-contracts/commit/8f34be31786cfdb7ebd06b8759890daee8f46cc3))
+* deploy streams with erc721 receiver support ([8b17b19](https://github.com/0xflair/evm-contracts/commit/8b17b195c14e7d098f01f7c3fd7e50a2270c0e73))
+
 ### [1.19.13](https://github.com/0xflair/evm-contracts/compare/v1.19.12...v1.19.13) (2022-08-23)
 
 
