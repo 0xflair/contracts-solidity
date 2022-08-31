@@ -80,6 +80,20 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       },
     ]
   );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC721EqualInstantStream",
+    [
+      {
+        ticketToken: "0x0000000000000000000000000000000000000000",
+        lockedUntilTimestamp: 0,
+        totalTickets: 0,
+        claimLockedUntil: 0,
+      },
+    ]
+  );
 };
 
 export default func;
