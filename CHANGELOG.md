@@ -1,3 +1,10 @@
+### [1.19.15](https://github.com/0xflair/evm-contracts/compare/v1.19.14...v1.19.15) (2022-08-31)
+
+
+### Bug Fixes
+
+* deploy on expensive chains ([bbbc042](https://github.com/0xflair/evm-contracts/commit/bbbc0426924f7fb14c92a9f948f193687054fa71))
+
 ### [1.19.14](https://github.com/0xflair/evm-contracts/compare/v1.19.13...v1.19.14) (2022-08-30)
 
 
