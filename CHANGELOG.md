@@ -1,3 +1,10 @@
+### [1.19.16](https://github.com/0xflair/evm-contracts/compare/v1.19.15...v1.19.16) (2022-08-31)
+
+
+### Bug Fixes
+
+* deploy equal instant stream master copy ([4de261a](https://github.com/0xflair/evm-contracts/commit/4de261ab112d0213d05e23f35e9d4c92e80eab73))
+
 ### [1.19.15](https://github.com/0xflair/evm-contracts/compare/v1.19.14...v1.19.15) (2022-08-31)
 
 
