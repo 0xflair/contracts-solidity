@@ -1,3 +1,10 @@
+### [1.19.21](https://github.com/0xflair/evm-contracts/compare/v1.19.20...v1.19.21) (2022-09-03)
+
+
+### Bug Fixes
+
+* remove solidity analyzer pkg ([a18521f](https://github.com/0xflair/evm-contracts/commit/a18521f832a73c9f00ff55d8bbc313ef1e352b98))
+
 ### [1.19.20](https://github.com/0xflair/evm-contracts/compare/v1.19.19...v1.19.20) (2022-09-03)
 
 
