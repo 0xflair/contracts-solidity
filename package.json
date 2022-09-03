@@ -135,7 +135,6 @@
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
     "@matterlabs/hardhat-zksync-deploy": "^0.4.0",
     "@matterlabs/hardhat-zksync-solc": "^0.3.7",
-    "@nomicfoundation/solidity-analyzer-linux-x64-gnu": "^0.0.3",
     "@openzeppelin/contracts": "^4.6.0",
     "erc721a": "^4.1.0"
   },
