@@ -1,3 +1,10 @@
+### [1.19.20](https://github.com/0xflair/evm-contracts/compare/v1.19.19...v1.19.20) (2022-09-03)
+
+
+### Bug Fixes
+
+* avoid adding linux pkg in lock file ([c88fbce](https://github.com/0xflair/evm-contracts/commit/c88fbced92369fe6be428ad7d0d7706b519f9855))
+
 ### [1.19.19](https://github.com/0xflair/evm-contracts/compare/v1.19.18...v1.19.19) (2022-09-03)
 
 
