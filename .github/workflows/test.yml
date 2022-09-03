@@ -12,7 +12,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install dependencies
-        run: npm ci --legacy-peer-deps && npm i --legacy-peer-deps @nomicfoundation/solidity-analyzer-linux-x64-gnu
+        run: npm ci --legacy-peer-deps && npm i -g --legacy-peer-deps @nomicfoundation/solidity-analyzer-linux-x64-gnu
 
       - name: Build packages
         run: npm run build
