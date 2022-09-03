@@ -1,3 +1,10 @@
+### [1.19.19](https://github.com/0xflair/evm-contracts/compare/v1.19.18...v1.19.19) (2022-09-03)
+
+
+### Bug Fixes
+
+* deploy on zksync v2 testnet ([#27](https://github.com/0xflair/evm-contracts/issues/27)) ([85b2c14](https://github.com/0xflair/evm-contracts/commit/85b2c14aac97da837c956aefce0de65223767274))
+
 ### [1.19.18](https://github.com/0xflair/evm-contracts/compare/v1.19.17...v1.19.18) (2022-09-03)
 
 
