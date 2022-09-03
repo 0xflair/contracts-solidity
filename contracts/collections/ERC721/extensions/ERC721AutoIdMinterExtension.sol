@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity 0.8.9;
+pragma solidity 0.8.15;
 
 import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -51,12 +51,7 @@ abstract contract ERC721AutoIdMinterExtension is
 
     /* ADMIN */
 
-    function setMaxSupply(uint256 newValue) 
-        public
-        virtual
-        override 
-        onlyOwner 
-    {
+    function setMaxSupply(uint256 newValue) public virtual override onlyOwner {
         require(!maxSupplyFrozen, "FROZEN");
         require(newValue >= totalSupply(), "LOWER_THAN_SUPPLY");
         maxSupply = newValue;

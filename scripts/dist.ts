@@ -21,7 +21,10 @@ const chainConfig = {
   evmosMainnet: {
     chainId: 9001,
   },
-}
+  zksyncTestnet: {
+    chainId: 280,
+  },
+};
 
 async function main() {
   const distPath = path.resolve(__dirname, "../dist");
@@ -126,17 +129,28 @@ async function main() {
     }
 
     const chainId = Number(chainConfig[chainName].chainId);
-
     const deploymentJson = await fse.readJSON(
       path.resolve(deploymentsRoot, file)
     );
     const contractAddress = deploymentJson.address;
+    const artifactName = path.basename(file).split(".", -1)[0];
+    const sourceFile = `${artifactName}.sol`;
 
-    const metadata = JSON.parse(deploymentJson.metadata);
+    const files = glob.sync(`**/${sourceFile}`, {
+      cwd: path.resolve(__dirname, "../contracts"),
+      nodir: true,
+      follow: true,
+    });
 
-    const artifactKey = Object.keys(metadata.settings.compilationTarget)
-      .pop()
-      ?.slice("contracts/".length, -".sol".length);
+    if (files.length !== 1) {
+      throw new Error(
+        `Could not find contract ${artifactName} in contracts directory: ${JSON.stringify(
+          files
+        )}`
+      );
+    }
+
+    const artifactKey = files[0].split(".", -1)[0];
 
     if (!artifactKey) {
       throw new Error(`Could not get artifact key for ${file}`);

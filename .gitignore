@@ -6,5 +6,7 @@ typechain
 
 cache
 artifacts
+cache-zk
+artifacts-zk
 
 dist

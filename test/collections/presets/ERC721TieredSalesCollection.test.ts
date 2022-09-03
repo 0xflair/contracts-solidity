@@ -277,7 +277,7 @@ describe("ERC721TieredSalesCollection", function () {
 
         if (mode === "normal") {
           await expect(collection.ownerOf(2)).to.be.revertedWith(
-            "ERC721: owner query for nonexistent token"
+            "ERC721: invalid token ID"
           );
         } else {
           await expect(collection.ownerOf(2)).to.be.reverted;

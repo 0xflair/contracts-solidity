@@ -538,6 +538,8 @@ describe("ERC721CustodialStakingEmissionStream", function () {
       const nftCollection = await deployCollection();
       const stream = await deployStream({
         ticketToken: nftCollection.address,
+        minStakingDuration: 1 * 3600, // 1 hour
+        maxStakingTotalDurations: 30 * 3600, // 30 hours
       });
 
       await userA.signer.sendTransaction({
@@ -552,7 +554,8 @@ describe("ERC721CustodialStakingEmissionStream", function () {
         .connect(userB.signer)
         .setApprovalForAll(stream.address, true);
 
-      await increaseTime(1 * 24 * 60 * 60); // 1 day
+      await increaseTime(1 * 24 * 60 * 60 - 5); // 1 day
+
       expect(
         await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
@@ -560,18 +563,20 @@ describe("ERC721CustodialStakingEmissionStream", function () {
         await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
       ).to.be.equal(0);
       await stream.connect(userB.signer)["stake(uint256)"](5);
-      await increaseTime(15 * 24 * 60 * 60); // 15 days
+
+      await increaseTime(4 * 24 * 60 * 60 - 5); // 4 days
+
       expect(
         await stream.connect(userB.signer)["streamClaimableAmount(uint256)"](5)
-      ).to.be.equal(utils.parseEther("19"));
+      ).to.be.equal(utils.parseEther("6"));
       expect(
         await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
-      ).to.be.gt(10000);
+      ).to.be.equal(108_000);
       await expect(
         await stream.connect(userB.signer)["claim(uint256)"](5)
       ).to.changeEtherBalances(
         [stream, userB.signer],
-        [utils.parseEther("-19"), utils.parseEther("19")]
+        [utils.parseEther("-6"), utils.parseEther("6")]
       );
     });
 
@@ -824,6 +829,8 @@ describe("ERC721CustodialStakingEmissionStream", function () {
       const nftCollection = await deployCollection();
       const stream = await deployStream({
         ticketToken: nftCollection.address,
+        minStakingDuration: 1 * 3600, // 1 hour
+        maxStakingTotalDurations: 30 * 3600, // 30 hours
       });
 
       await nftCollection
@@ -836,7 +843,7 @@ describe("ERC721CustodialStakingEmissionStream", function () {
       await userA.TestERC20.mint(userA.signer.address, utils.parseEther("200"));
       await userA.TestERC20.transfer(stream.address, utils.parseEther("200"));
 
-      await increaseTime(1 * 24 * 60 * 60); // 1 day
+      await increaseTime(1 * 24 * 60 * 60 - 5); // 1 day
       expect(
         await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
       ).to.be.equal(0);
@@ -846,15 +853,15 @@ describe("ERC721CustodialStakingEmissionStream", function () {
           ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
       ).to.be.equal(0);
       await stream.connect(userB.signer)["stake(uint256)"](5);
-      await increaseTime(15 * 24 * 60 * 60); // 15 days
+      await increaseTime(4 * 24 * 60 * 60 - 5); // 4 days
       expect(
         await stream
           .connect(userB.signer)
           ["streamClaimableAmount(uint256,address)"](5, userA.TestERC20.address)
-      ).to.be.equal(utils.parseEther("19"));
+      ).to.be.equal(utils.parseEther("6"));
       expect(
         await stream.connect(userB.signer)["totalStakedDuration(uint256)"](5)
-      ).to.be.gt(10000);
+      ).to.be.equal(108_000);
       await expect(async () =>
         stream
           .connect(userB.signer)
@@ -862,7 +869,7 @@ describe("ERC721CustodialStakingEmissionStream", function () {
       ).to.changeTokenBalances(
         userA.TestERC20,
         [stream, userB.signer],
-        [utils.parseEther("-19"), utils.parseEther("19")]
+        [utils.parseEther("-6"), utils.parseEther("6")]
       );
     });
 

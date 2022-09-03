@@ -132,7 +132,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
     await collection.revokeManagementPower();
 
     await expect(collection.transferFrom(userA, userB, 0)).to.be.revertedWith(
-      "ERC721: transfer caller is not owner nor approved"
+      "ERC721: caller is not token owner nor approved"
     );
 
     expect(await collection.ownerOf("0")).to.eq(userA);

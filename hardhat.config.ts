@@ -9,6 +9,8 @@ import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
 import "hardhat-contract-sizer";
+import "@matterlabs/hardhat-zksync-solc";
+import "@matterlabs/hardhat-zksync-deploy";
 
 const args = process.argv.slice(2);
 
@@ -49,6 +51,8 @@ if (args.includes("mainnet")) {
   etherScanApiKey = process.env.NEON_LABS_ETHERSCAN_API_KEY;
 } else if (args.includes("okxMainnet")) {
   etherScanApiKey = "";
+} else if (args.includes("zksyncTestnet")) {
+  etherScanApiKey = "";
 } else if (args.includes("hardhat")) {
   etherScanApiKey = process.env.RINKEBY_ETHERSCAN_API_KEY;
 } else {
@@ -63,13 +67,30 @@ const config: HardhatUserConfig = {
     sources: "./contracts",
   },
   solidity: {
-    version: "0.8.9",
+    version: "0.8.15",
     settings: {
       optimizer: {
         enabled: true,
         runs: 20,
       },
     },
+  },
+  zksolc: {
+    version: "1.1.2",
+    compilerSource: "docker",
+    settings: {
+      optimizer: {
+        enabled: true,
+      },
+      experimental: {
+        dockerImage: "matterlabs/zksolc",
+        tag: "v1.1.2",
+      },
+    },
+  },
+  zkSyncDeploy: {
+    zkSyncNetwork: "https://zksync2-testnet.zksync.dev",
+    ethNetwork: "goerli",
   },
   gasReporter: {
     coinmarketcap: process.env.COIN_MARKET_CAP_API_KEY || "",
@@ -202,7 +223,16 @@ const config: HardhatUserConfig = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // zkSync
+    zksyncTestnet: {
+      chainId: 280,
+      zksync: true,
+      url: "https://zksync2-testnet.zksync.dev",
+      accounts:
+        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
   },
+
   etherscan: {
     apiKey: etherScanApiKey,
   },

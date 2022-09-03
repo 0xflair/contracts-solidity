@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity 0.8.9;
+pragma solidity 0.8.15;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
@@ -152,13 +152,12 @@ contract ERC721TieredSalesCollection is
         return ERC721PrefixedMetadataExtension.tokenURI(_tokenId);
     }
 
-    function setMaxSupply(uint256 newValue) 
-        public 
-        virtual 
-        override(ERC721AutoIdMinterExtension, ERC721TieringExtension) 
-        onlyOwner  
+    function setMaxSupply(uint256 newValue)
+        public
+        virtual
+        override(ERC721AutoIdMinterExtension, ERC721TieringExtension)
+        onlyOwner
     {
         ERC721TieringExtension.setMaxSupply(newValue);
     }
-
 }
