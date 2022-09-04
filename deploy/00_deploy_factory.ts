@@ -12,6 +12,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     "FlairFactory",
     []
   );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "FlairFactoryNewable",
+    []
+  );
 };
 
 export default func;
