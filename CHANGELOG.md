@@ -1,3 +1,10 @@
+### [1.19.22](https://github.com/0xflair/evm-contracts/compare/v1.19.21...v1.19.22) (2022-09-04)
+
+
+### Bug Fixes
+
+* use new operator for factory in zksync ([558e048](https://github.com/0xflair/evm-contracts/commit/558e048d0b7f8e9e3344ae875f04bf7866bba658))
+
 ### [1.19.21](https://github.com/0xflair/evm-contracts/compare/v1.19.20...v1.19.21) (2022-09-03)
 
 
