@@ -1,3 +1,10 @@
+## [1.20.0](https://github.com/0xflair/evm-contracts/compare/v1.19.22...v1.20.0) (2022-09-08)
+
+
+### Features
+
+* allow choosing a license for a contract ([#28](https://github.com/0xflair/evm-contracts/issues/28)) ([55cc3d9](https://github.com/0xflair/evm-contracts/commit/55cc3d96d8639f336150790f20d9a9e587f6b70a))
+
 ### [1.19.22](https://github.com/0xflair/evm-contracts/compare/v1.19.21...v1.19.22) (2022-09-04)
 
 
