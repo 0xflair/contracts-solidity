@@ -23,6 +23,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA, userB],
       initialAmounts: [2, 1],
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -48,6 +49,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [],
       initialAmounts: [],
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -72,6 +74,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [],
       initialAmounts: [],
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -98,6 +101,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA],
       initialAmounts: [1],
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -125,6 +129,7 @@ describe("ERC721ManagedPrefixedCollection", function () {
       trustedForwarder: "0x0000000000000000000000000000000000000000",
       initialHolders: [userA],
       initialAmounts: [1],
+      licenseVersion: 1,
     });
 
     await collection.deployed();

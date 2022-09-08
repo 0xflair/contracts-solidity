@@ -7,8 +7,6 @@ import {
   ERC721ManagedPrefixedCollection,
   ERC721SimpleSalesCollection,
   ERC721ASimpleSalesCollection,
-  ERC721SimpleSalesCollection__factory,
-  ERC721ASimpleSalesCollection__factory,
 } from "../../typechain";
 
 export const deploySharedInstantStream = async function (args?: {
@@ -98,6 +96,7 @@ export const deployManagedPrefixedCollection = async function (args?: {
         trustedForwarder: "0x0000000000000000000000000000000000000000",
         initialHolders: [accounts[0], accounts[1]],
         initialAmounts: [1, 1],
+        licenseVersion: 1,
         ...(args || {}),
       },
     ]
@@ -136,6 +135,7 @@ export const deploySimpleSalesCollection = async function (
         defaultRoyaltyBps: 250,
         proceedsRecipient: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 1,
         ...(args || {}),
       },
     ]

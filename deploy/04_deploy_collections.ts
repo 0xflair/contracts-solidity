@@ -28,6 +28,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyBps: 0,
         proceedsRecipient: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );
@@ -49,6 +50,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyBps: 0,
         proceedsRecipient: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );
@@ -70,6 +72,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         trustedForwarder: "0x0000000000000000000000000000000000000000",
         initialHolders: [],
         initialAmounts: [],
+        licenseVersion: 0,
       },
     ]
   );
@@ -87,6 +90,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
         defaultRoyaltyBps: 0,
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );
@@ -111,6 +115,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyBps: 0,
         proceedsRecipient: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );
@@ -132,6 +137,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyBps: 0,
         proceedsRecipient: "0x0000000000000000000000000000000000000000",
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );
@@ -149,6 +155,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
         defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
         defaultRoyaltyBps: 0,
         trustedForwarder: "0x0000000000000000000000000000000000000000",
+        licenseVersion: 0,
       },
     ]
   );

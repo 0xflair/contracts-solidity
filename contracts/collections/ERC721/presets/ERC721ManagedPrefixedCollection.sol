@@ -5,6 +5,7 @@ pragma solidity 0.8.15;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 
+import "../../../common/LicenseExtension.sol";
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PrefixedMetadataExtension.sol";
@@ -18,6 +19,7 @@ contract ERC721ManagedPrefixedCollection is
     Initializable,
     Ownable,
     ERC165Storage,
+    LicenseExtension,
     ERC2771ContextOwnable,
     ERC721CollectionMetadataExtension,
     ERC721PrefixedMetadataExtension,
@@ -39,6 +41,7 @@ contract ERC721ManagedPrefixedCollection is
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
         address trustedForwarder;
+        LicenseVersion licenseVersion;
     }
 
     constructor(Config memory config) ERC721(config.name, config.symbol) {
@@ -56,6 +59,7 @@ contract ERC721ManagedPrefixedCollection is
 
         _transferOwnership(deployer);
 
+        __LicenseExtension_init(config.licenseVersion);
         __ERC721CollectionMetadataExtension_init(
             config.name,
             config.symbol,
@@ -143,7 +147,8 @@ contract ERC721ManagedPrefixedCollection is
             ERC721OwnerManagedExtension,
             ERC721PrefixedMetadataExtension,
             ERC721RoyaltyExtension,
-            ERC721BulkifyExtension
+            ERC721BulkifyExtension,
+            LicenseExtension
         )
         returns (bool)
     {

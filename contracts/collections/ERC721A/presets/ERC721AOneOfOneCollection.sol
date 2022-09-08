@@ -4,6 +4,7 @@ pragma solidity 0.8.15;
 
 import "@openzeppelin/contracts/access/Ownable.sol";
 
+import "../../../common/LicenseExtension.sol";
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
 import "../../ERC721/extensions/ERC721RoyaltyExtension.sol";
 import "../extensions/ERC721AMinterExtension.sol";
@@ -16,6 +17,7 @@ contract ERC721AOneOfOneCollection is
     Initializable,
     Ownable,
     ERC165Storage,
+    LicenseExtension,
     ERC721ACollectionMetadataExtension,
     ERC721AOwnerMintExtension,
     ERC721AOneOfOneMintExtension,
@@ -30,6 +32,7 @@ contract ERC721AOneOfOneCollection is
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
         address trustedForwarder;
+        LicenseVersion licenseVersion;
     }
 
     constructor(Config memory config) ERC721A(config.name, config.symbol) {
@@ -59,6 +62,7 @@ contract ERC721AOneOfOneCollection is
             config.defaultRoyaltyBps
         );
         __ERC2771ContextOwnable_init(config.trustedForwarder);
+        __LicenseExtension_init(config.licenseVersion);
     }
 
     function _burn(uint256 tokenId)
@@ -100,7 +104,8 @@ contract ERC721AOneOfOneCollection is
             ERC721ACollectionMetadataExtension,
             ERC721AOwnerMintExtension,
             ERC721AOneOfOneMintExtension,
-            ERC721RoyaltyExtension
+            ERC721RoyaltyExtension,
+            LicenseExtension
         )
         returns (bool)
     {

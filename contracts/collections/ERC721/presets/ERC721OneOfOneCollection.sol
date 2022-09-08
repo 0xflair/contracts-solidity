@@ -6,6 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 import "../../../common/meta-transactions/ERC2771ContextOwnable.sol";
+import "../../../common/LicenseExtension.sol";
 import "../extensions/ERC721CollectionMetadataExtension.sol";
 import "../extensions/ERC721PerTokenMetadataExtension.sol";
 import "../extensions/ERC721OneOfOneMintExtension.sol";
@@ -17,6 +18,7 @@ contract ERC721OneOfOneCollection is
     Initializable,
     Ownable,
     ERC165Storage,
+    LicenseExtension,
     ERC721PerTokenMetadataExtension,
     ERC721OwnerMintExtension,
     ERC721RoyaltyExtension,
@@ -31,6 +33,7 @@ contract ERC721OneOfOneCollection is
         address defaultRoyaltyAddress;
         uint16 defaultRoyaltyBps;
         address trustedForwarder;
+        LicenseVersion licenseVersion;
     }
 
     constructor(Config memory config) ERC721(config.name, config.symbol) {
@@ -46,6 +49,7 @@ contract ERC721OneOfOneCollection is
 
         _transferOwnership(deployer);
 
+        __LicenseExtension_init(config.licenseVersion);
         __ERC721CollectionMetadataExtension_init(
             config.name,
             config.symbol,
@@ -101,7 +105,8 @@ contract ERC721OneOfOneCollection is
             ERC721OwnerMintExtension,
             ERC721OneOfOneMintExtension,
             ERC721PerTokenMetadataExtension,
-            ERC721RoyaltyExtension
+            ERC721RoyaltyExtension,
+            LicenseExtension
         )
         returns (bool)
     {

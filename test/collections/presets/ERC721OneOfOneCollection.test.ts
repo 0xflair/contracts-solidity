@@ -22,6 +22,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -41,6 +42,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -71,6 +73,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: "0x0000000000000000000000000000000000000000",
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -102,6 +105,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: forwarder.address,
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -160,6 +164,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: forwarder.address,
+      licenseVersion: 1,
     });
 
     await collection.deployed();
@@ -218,6 +223,7 @@ describe("ERC721OneOfOneCollection", function () {
       defaultRoyaltyAddress: "0x0000000000000000000000000000000000000000",
       defaultRoyaltyBps: 250,
       trustedForwarder: forwarder.address,
+      licenseVersion: 1,
     });
 
     await collection.deployed();

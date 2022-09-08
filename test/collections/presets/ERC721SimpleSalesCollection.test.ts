@@ -44,6 +44,7 @@ export const deployCollection = async function (
     defaultRoyaltyBps: 250,
     proceedsRecipient: "0x0000000000000000000000000000000000000000",
     trustedForwarder: "0x0000000000000000000000000000000000000000",
+    licenseVersion: 1,
     ...(args || {}),
   });
 };
@@ -110,6 +111,7 @@ describe("ERC721SimpleSalesCollection", function () {
             defaultRoyaltyBps: 250,
             proceedsRecipient: "0x0000000000000000000000000000000000000000",
             trustedForwarder: "0x0000000000000000000000000000000000000000",
+            licenseVersion: 1,
           },
           userB.signer.address,
         ]);
@@ -197,6 +199,7 @@ describe("ERC721SimpleSalesCollection", function () {
             defaultRoyaltyBps: 250,
             proceedsRecipient: "0x0000000000000000000000000000000000000000",
             trustedForwarder: "0x0000000000000000000000000000000000000000",
+            licenseVersion: 1,
           },
           userB.signer.address,
         ]);
