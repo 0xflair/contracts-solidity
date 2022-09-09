@@ -1,0 +1,43 @@
+- name: OpenZeppelin - ERC165
+  description: Provide a way to programmatically check if a contract supports a certain interface
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  source: contracts/facets/diamond/DiamondLoupe.sol
+  deployments:
+  - chainId: 4
+    address: '0x0EfD48b2D63EbF9c3C40818854b8dB967e8d680C'
+  requirements: ~
+
+- name: OpenZeppelin - access/Ownable
+  description: Provide access control using a single owner address
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  source: contracts/facets/access/ownable/Ownable.sol
+  deployments:
+  - chainId: 4
+    address: '0x79A358D2Ea856Ec11ab7E2041F9d1Df20C62849F'
+
+- name: ERC2535 - DiamondCut
+  description: Allow adding, replacing and removing facets in diamonds
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  source: contracts/facets/diamond/DiamondCut.sol
+  deployments:
+  - chainId: 4
+    address: '0xD2B534da4cdB37A1BaEAb467E5a0596bb5d480B5'
+  requirements:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    source: contracts/facets/access/ownable/Ownable.sol
+
+- name: ERC2535 - DiamondLoupe
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  source: contracts/facets/diamond/DiamondLoupe.sol
+  deployments:
+  - chainId: 4
+    address: '0x5D5faF43C07C218B3FFAc7cB3c71689350888846'
+  requirements:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    source: contracts/facets/access/ownable/Ownable.sol

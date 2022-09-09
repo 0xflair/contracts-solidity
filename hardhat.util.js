@@ -86,7 +86,12 @@ const deployPermanentContract = async (
     ...additionalOptions,
   });
 
-  return hre.ethers.getContractAt(name, result.address);
+  return hre.ethers.getContractAt(
+    additionalOptions && additionalOptions.contract
+      ? additionalOptions.contract
+      : name,
+    result.address
+  );
 };
 
 module.exports = {
