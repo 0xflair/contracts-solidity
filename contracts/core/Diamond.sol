@@ -5,6 +5,7 @@ pragma solidity 0.8.15;
 import {OwnableStorage} from "../facets/access/ownable/OwnableStorage.sol";
 import {IERC173} from "../facets/access/ownable/IERC173.sol";
 import {IERC165, ERC165Storage} from "../facets/introspection/ERC165.sol";
+import {ERC2771Context} from "../facets/metatx/ERC2771Context.sol";
 import {IDiamondCut} from "../facets/diamond/IDiamondCut.sol";
 import {IDiamondLoupe} from "../facets/diamond/IDiamondLoupe.sol";
 
@@ -18,8 +19,9 @@ contract Diamond {
         address owner,
         address diamondCutFacet,
         address diamondLoupeFacet,
+        address erc165Facet,
         address ownableFacet,
-        address erc165Facet
+        address contextFacet
     ) {
         ERC165Storage.Layout storage erc165 = ERC165Storage.layout();
 
@@ -42,6 +44,13 @@ contract Diamond {
 
         erc165.setSupportedInterface(type(IDiamondLoupe).interfaceId, true);
 
+        // register ERC165 (supportsInterface)
+
+        bytes4[] memory selectorsERC165 = new bytes4[](1);
+        selectorsERC165[0] = IERC165.supportsInterface.selector;
+
+        erc165.setSupportedInterface(type(IERC165).interfaceId, true);
+
         // register ERC173 (Ownable)
 
         bytes4[] memory selectorsOwnable = new bytes4[](2);
@@ -50,39 +59,20 @@ contract Diamond {
 
         erc165.setSupportedInterface(type(IERC173).interfaceId, true);
 
-        // register ERC165 (supportsInterface)
+        // register ERC2771 (Context)
 
-        bytes4[] memory selectorsERC165 = new bytes4[](1);
-        selectorsERC165[0] = IERC165.supportsInterface.selector;
-
-        erc165.setSupportedInterface(type(IERC165).interfaceId, true);
+        bytes4[] memory selectorsContext = new bytes4[](2);
+        selectorsContext[0] = ERC2771Context.setTrustedForwarder.selector;
+        selectorsContext[1] = ERC2771Context.isTrustedForwarder.selector;
 
         // execute the first ever diamond cut
+        // we are calling the addFunctions directly to save ~ %50 gas
 
-        IDiamondCut.FacetCut[] memory facetCuts = new IDiamondCut.FacetCut[](4);
-
-        facetCuts[0] = IDiamondCut.FacetCut({
-            facetAddress: diamondCutFacet,
-            action: IDiamondCut.FacetCutAction.Add,
-            functionSelectors: selectorsDiamondCut
-        });
-        facetCuts[1] = IDiamondCut.FacetCut({
-            facetAddress: diamondLoupeFacet,
-            action: IDiamondCut.FacetCutAction.Add,
-            functionSelectors: selectorsDiamondLoupe
-        });
-        facetCuts[2] = IDiamondCut.FacetCut({
-            facetAddress: ownableFacet,
-            action: IDiamondCut.FacetCutAction.Add,
-            functionSelectors: selectorsOwnable
-        });
-        facetCuts[3] = IDiamondCut.FacetCut({
-            facetAddress: erc165Facet,
-            action: IDiamondCut.FacetCutAction.Add,
-            functionSelectors: selectorsERC165
-        });
-
-        DiamondStorage.diamondCut(facetCuts, address(0), "");
+        DiamondStorage.addFunctions(diamondCutFacet, selectorsDiamondCut);
+        DiamondStorage.addFunctions(diamondLoupeFacet, selectorsDiamondLoupe);
+        DiamondStorage.addFunctions(erc165Facet, selectorsERC165);
+        DiamondStorage.addFunctions(ownableFacet, selectorsOwnable);
+        DiamondStorage.addFunctions(contextFacet, selectorsContext);
 
         // set owner
 

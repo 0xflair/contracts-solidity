@@ -1,43 +1,193 @@
-- name: OpenZeppelin - ERC165
+- name: ERC165 - supportsInterface
   description: Provide a way to programmatically check if a contract supports a certain interface
   repo: github.com/0xflair/evm-contracts
   ref: main
-  source: contracts/facets/diamond/DiamondLoupe.sol
+  artifact: contracts/facets/diamond/DiamondLoupe.sol
   deployments:
   - chainId: 4
     address: '0x0EfD48b2D63EbF9c3C40818854b8dB967e8d680C'
-  requirements: ~
+  extends: ~
+  dependencies: []
+  conflicts: []
+  selectors:
+  - supportsInterface(bytes4): ~
 
-- name: OpenZeppelin - access/Ownable
+- name: ERC2771 - Context
+  description: Allow overriding msg.sender by trusted forwarders to enable meta-transactions
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/metatx/ERC2771Context.sol
+  deployments:
+  - chainId: 4
+    address: '0x4aEc16908Fd783a041C0de4B58cA496bC4df6937'
+  extends: ~
+  dependencies: []
+  conflicts: []
+  selectors:
+  - setTrustedForwarder(address): ~
+  - isTrustedForwarder(address): ~
+
+- name: ERC173 - Ownable
   description: Provide access control using a single owner address
   repo: github.com/0xflair/evm-contracts
   ref: main
-  source: contracts/facets/access/ownable/Ownable.sol
+  artifact: contracts/facets/access/ownable/Ownable.sol
   deployments:
   - chainId: 4
-    address: '0x79A358D2Ea856Ec11ab7E2041F9d1Df20C62849F'
+    address: '0x6969BE56da6707E0bBCdCf7961fb11F43205a655'
+  extends: ~
+  dependencies: []
+  conflicts: []
+  selectors:
+  - owner(): ~
+  - renounceOwnership(): ~
+  - transferOwnership(address): ~
 
 - name: ERC2535 - DiamondCut
-  description: Allow adding, replacing and removing facets in diamonds
+  description: Allow adding, replacing and removing facets in the diamond
   repo: github.com/0xflair/evm-contracts
   ref: main
-  source: contracts/facets/diamond/DiamondCut.sol
+  artifact: contracts/facets/diamond/DiamondCut.sol
   deployments:
   - chainId: 4
-    address: '0xD2B534da4cdB37A1BaEAb467E5a0596bb5d480B5'
-  requirements:
+    address: '0xb852f51850a071fE9403aA44B80618fB45B9Dc2F'
+  extends: ~
+  dependencies:
   - repo: github.com/0xflair/evm-contracts
     ref: main
-    source: contracts/facets/access/ownable/Ownable.sol
+    artifact: contracts/facets/access/ownable/Ownable.sol
+  conflicts: []
+  selectors:
+  - diamondCut((address,uint,(bytes4)),address,bytes): ~
 
-- name: ERC2535 - DiamondLoupe
+- name: ERC2535 - Diamond Loupe
+  description: Allow explorers to inspect facets and functions of diamonds
   repo: github.com/0xflair/evm-contracts
   ref: main
-  source: contracts/facets/diamond/DiamondLoupe.sol
+  artifact: contracts/facets/diamond/DiamondLoupe.sol
   deployments:
   - chainId: 4
-    address: '0x5D5faF43C07C218B3FFAc7cB3c71689350888846'
-  requirements:
+    address: '0x08f85f8A7E521427a8554FB50ab2B88e693B9EB3'
+  extends: ~
+  dependencies: []
+  conflicts: []
+  selectors:
+  - facets(): ~
+  - facetFunctionSelectors(address): ~
+  - facetAddresses(): ~
+  - facetAddress(bytes4): ~
+
+- name: ERC1155 - Minimal Base
+  description: Standard functionalities defined in EIP-1155 as base to add other utility extensions such as minting or burning.
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  deployments:
+  - chainId: 4
+    address: '0x8eab156D36C974AA92D9B81Ae90B910568eF8F93'
+  extends: ~
+  dependencies: []
+  conflicts: []
+  selectors:
+  - balanceOf(address,uint256): ~
+  - balanceOfBatch((address),(uint256)): ~
+  - isApprovedForAll(address,address): ~
+  - setApprovalForAll(address,bool): ~
+  - safeTransferFrom(address,address,uint256,uint256,bytes): ~
+  - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
+
+- name: ERC1155 - with Supply
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/supply/ERC1155Supply.sol
+  deployments:
+  - chainId: 4
+    address: '0x4a338b129f22BF0509BA1F69f9C574B659D02c6B'
+  extends:
+    repo: github.com/0xflair/evm-contracts
+    ref: main
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  dependencies: []
+  conflicts:
   - repo: github.com/0xflair/evm-contracts
     ref: main
-    source: contracts/facets/access/ownable/Ownable.sol
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  selectors:
+  - balanceOf(address,uint256): ~
+  - balanceOfBatch((address),(uint256)): ~
+  - isApprovedForAll(address,address): ~
+  - setApprovalForAll(address,bool): ~
+  - safeTransferFrom(address,address,uint256,uint256,bytes): ~
+  - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
+  - totalSupply(uint256): ~
+  - exists(uint256): ~
+
+- name: ERC1155 - Mint by facet
+  description: Allows other facets (sales, renting, in-game logic, etc) to mint new tokens
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/mint/ERC1155MintByFacet.sol
+  deployments:
+  - chainId: 4
+    address: '0x93a9fcF89709f991e96EA14EB67DB992a01d958C'
+  extends: ~
+  dependencies:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  conflicts: []
+  selectors:
+  - mintByFacet(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 - Mint by owner
+  description: Allows current owner of the diamond to mint any tokens
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/mint/ERC1155MintByOwner.sol
+  deployments:
+  - chainId: 4
+    address: '0x76d850B75E66aF32D12084068669CaaF7889CAB7'
+  extends: ~
+  dependencies:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  conflicts: []
+  selectors:
+  - mintByOwner(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 - Burn by facet
+  description: Allows other facets (sales, renting, in-game logic, etc) to burn tokens
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/burn/ERC1155BurnByFacet.sol
+  deployments:
+  - chainId: 4
+    address: '0xcE965f07578E56Db09031F78bF8Ad10D9fE0b821'
+  extends: ~
+  dependencies:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  conflicts: []
+  selectors:
+  - burn(address,uint256,uint256): ~
+  - burnBatch(address,(uint256),(uint256)): ~
+
+- name: ERC1155 - Burn by account
+  description: Allows holders or approved operators of the NFTs to burn any amount
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/token/ERC1155/burn/ERC1155BurnByAccount.sol
+  deployments:
+  - chainId: 4
+    address: '0x10a3cb810DA01da493a410f8a12314699cB0bc48'
+  extends: ~
+  dependencies:
+  - repo: github.com/0xflair/evm-contracts
+    ref: main
+    artifact: contracts/facets/token/ERC1155/base/ERC1155Base.sol
+  conflicts: []
+  selectors:
+  - burn(address,uint256,uint256): ~
+  - burnBatch(address,(uint256),(uint256)): ~

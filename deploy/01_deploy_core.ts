@@ -7,8 +7,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   const diamondCutFacet = await hre.ethers.getContract("DiamondCut");
   const diamondLoupeFacet = await hre.ethers.getContract("DiamondLoupe");
-  const ownableFacet = await hre.ethers.getContract("Ownable");
   const erc165Facet = await hre.ethers.getContract("ERC165");
+  const ownableFacet = await hre.ethers.getContract("Ownable");
+  const contextFacet = await hre.ethers.getContract("ERC2771Context");
 
   await deployPermanentContract(
     hre.deployments,
@@ -19,8 +20,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       "0x0000000000000000000000000000000000000000", // owner
       diamondCutFacet.address,
       diamondLoupeFacet.address,
-      ownableFacet.address,
       erc165Facet.address,
+      ownableFacet.address,
+      contextFacet.address,
     ]
   );
 };

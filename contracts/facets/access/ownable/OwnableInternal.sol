@@ -3,9 +3,9 @@
 pragma solidity 0.8.15;
 
 import {OwnableStorage} from "./OwnableStorage.sol";
-import {IERC173Event} from "./IERC173Event.sol";
+import {IERC173Events} from "./IERC173Events.sol";
 
-abstract contract OwnableInternal is IERC173Event {
+abstract contract OwnableInternal is IERC173Events {
     using OwnableStorage for OwnableStorage.Layout;
 
     modifier onlyOwner() {
