@@ -1,0 +1,84 @@
+{
+  "address": "0xAc828d0D40a16676082AC50Ec389e3570bbCECCb",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "URI",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "uri",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x52f7e885c5780459ad7a1695d99c4974adb8def9eb7fdfa116b7ecef5a29721c",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xAc828d0D40a16676082AC50Ec389e3570bbCECCb",
+    "transactionIndex": 10,
+    "gasUsed": "53000",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x63a293b019424a9f59fcc5acc2db7ddb8e18a4d1ca12e2abbc96d170a01313ee",
+    "transactionHash": "0x52f7e885c5780459ad7a1695d99c4974adb8def9eb7fdfa116b7ecef5a29721c",
+    "logs": [],
+    "blockNumber": 11362665,
+    "cumulativeGasUsed": "4284017",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bb75506489ae03badb974195638b1eb4",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"URI\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"uri\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC1155 metadata extensions\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"uri(uint256)\":{\"notice\":\"inheritdoc IERC1155Metadata\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/features/token/ERC1155/facets/metadata/ERC1155Metadata.sol\":\"ERC1155Metadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":20},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport {IERC1155Metadata} from \\\"./IERC1155Metadata.sol\\\";\\nimport {ERC1155MetadataInternal} from \\\"./ERC1155MetadataInternal.sol\\\";\\nimport {ERC1155MetadataStorage} from \\\"./ERC1155MetadataStorage.sol\\\";\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\n/**\\n * @title ERC1155 metadata extensions\\n */\\nabstract contract ERC1155Metadata is IERC1155Metadata, ERC1155MetadataInternal {\\n    /**\\n     * @notice inheritdoc IERC1155Metadata\\n     */\\n    function uri(uint256 tokenId) public view virtual returns (string memory) {\\n        ERC1155MetadataStorage.Layout storage l = ERC1155MetadataStorage\\n            .layout();\\n\\n        string memory tokenIdURI = l.tokenURIs[tokenId];\\n        string memory baseURI = l.baseURI;\\n\\n        if (bytes(baseURI).length == 0) {\\n            return tokenIdURI;\\n        } else if (bytes(tokenIdURI).length > 0) {\\n            return string(abi.encodePacked(baseURI, tokenIdURI));\\n        } else {\\n            return\\n                string(\\n                    abi.encodePacked(\\n                        baseURI,\\n                        l.fallbackURI,\\n                        Strings.toString(tokenId)\\n                    )\\n                );\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xffa7e20b2d82efb19338dce955611d06d2cfd53936b3078e8c8fa4c68c52f5c3\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport {IERC1155MetadataEvents} from \\\"./IERC1155MetadataEvents.sol\\\";\\nimport {ERC1155MetadataStorage} from \\\"./ERC1155MetadataStorage.sol\\\";\\n\\n/**\\n * @title ERC1155Metadata internal functions\\n */\\nabstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {\\n    function _setBaseURI(string memory baseURI) internal {\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setFallbackURI(string memory baseURI) internal {\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setTokenURI(uint256 tokenId, string memory tokenURI) internal {\\n        ERC1155MetadataStorage.layout().tokenURIs[tokenId] = tokenURI;\\n        emit URI(tokenURI, tokenId);\\n    }\\n}\\n\",\"keccak256\":\"0xfe66d5dac89b1ddb167e97ee44e9e89cd10bcc17c70881721e986b33b9fd5e17\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title ERC1155 metadata extensions\\n */\\nlibrary ERC1155MetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"v1.flair.contracts.storage.ERC1155Metadata\\\");\\n\\n    struct Layout {\\n        string baseURI;\\n        string fallbackURI;\\n        mapping(uint256 => string) tokenURIs;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x15646a839d832ac603d98804b3ad4508ff25f81f1d9b3de8b5b010efa0c9751b\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/IERC1155Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155Metadata {\\n    /**\\n     * @dev Returns the URI for token type `id`.\\n     *\\n     * If the `\\\\{id\\\\}` substring is present in the URI, it must be replaced by\\n     * clients with the actual token type ID.\\n     */\\n    function uri(uint256 id) external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x06e9faa914aad892109cae7c0ae1c7f5f185510536cb75e6afdf49051e100e38\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/IERC1155MetadataEvents.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155MetadataEvents {\\n    event URI(string value, uint256 indexed tokenId);\\n}\\n\",\"keccak256\":\"0x6c2413e5d685f420399db32888a545321422521fb5e4ffb72de3c5e53cbd503c\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC1155 metadata extensions",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "uri(uint256)": {
+        "notice": "inheritdoc IERC1155Metadata"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

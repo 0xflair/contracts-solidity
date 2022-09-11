@@ -1,0 +1,57 @@
+- name: ERC1155 + Mintable and Supply Extensions
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyMintable.sol
+  deployments:
+    - chainId: 4
+      address: "0xA443B1c9c7F0bBA3398079265599e5AFEb270003"
+  dependencies:
+    - repo: github.com/0xflair/evm-contracts
+      ref: main
+      artifact: contracts/facets/access/ownable/Ownable.sol
+  selectors:
+    # ERC115 Base
+    - balanceOf(address,uint256): ~
+    - balanceOfBatch((address),(uint256)): ~
+    - isApprovedForAll(address,address): ~
+    - setApprovalForAll(address,bool): ~
+    - safeTransferFrom(address,address,uint256,uint256,bytes): ~
+    - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
+    # Supply Extension
+    - totalSupply(uint256): ~
+    - exists(uint256): ~
+    - maxSupply(uint256): ~
+    # Mint by Owner Extension
+    - mintByOwner(address,uint256,uint256,bytes): ~
+    # Mint by Facet Extension
+    - mintByFacet(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 + Mintable, Lockable, Burnable and Supply Extensions
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyLockableMintableBurnable.sol
+  deployments:
+    - chainId: 4
+      address: "0x6c703B41FD6bc7BFC5965eA48f19f90fd97673cD"
+  selectors:
+    # ERC115 Base
+    - balanceOf(address,uint256): ~
+    - balanceOfBatch((address),(uint256)): ~
+    - isApprovedForAll(address,address): ~
+    - setApprovalForAll(address,bool): ~
+    - safeTransferFrom(address,address,uint256,uint256,bytes): ~
+    - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
+    # Mint by Owner Extension
+    - mintByOwner(address,uint256,uint256,bytes): ~
+    # Mint by Facet Extension
+    - mintByFacet(address,uint256,uint256,bytes): ~
+    # Lockable Extension
+    - locked(address,uint256): ~
+    - locked(address,(uint256)): ~
+    # Burnable Extension
+    - burn(address,uint256,uint256): ~
+    - burnBatch(address,(uint256),(uint256)): ~
+    # Supply Extension
+    - totalSupply(uint256): ~
+    - exists(uint256): ~
+    - maxSupply(uint256): ~

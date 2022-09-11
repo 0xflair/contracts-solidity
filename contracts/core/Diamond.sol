@@ -2,12 +2,12 @@
 
 pragma solidity 0.8.15;
 
-import {OwnableStorage} from "../facets/access/ownable/OwnableStorage.sol";
-import {IERC173} from "../facets/access/ownable/IERC173.sol";
-import {IERC165, ERC165Storage} from "../facets/introspection/ERC165.sol";
-import {ERC2771Context} from "../facets/metatx/ERC2771Context.sol";
-import {IDiamondCut} from "../facets/diamond/IDiamondCut.sol";
-import {IDiamondLoupe} from "../facets/diamond/IDiamondLoupe.sol";
+import {OwnableStorage} from "../features/access/ownable/OwnableStorage.sol";
+import {IERC173} from "../features/access/ownable/IERC173.sol";
+import {IERC165, ERC165Storage} from "../features/introspection/ERC165.sol";
+import {ERC2771Context} from "../features/metatx/ERC2771Context.sol";
+import {IDiamondCut} from "../features/diamond/IDiamondCut.sol";
+import {IDiamondLoupe} from "../features/diamond/IDiamondLoupe.sol";
 
 import {DiamondStorage} from "./DiamondStorage.sol";
 

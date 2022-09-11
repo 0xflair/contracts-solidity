@@ -7,7 +7,7 @@ pragma solidity 0.8.15;
 * EIP-2535 Diamonds: https://eips.ethereum.org/EIPS/eip-2535
 /******************************************************************************/
 
-import {IDiamondCut} from "../facets/diamond/IDiamondCut.sol";
+import {IDiamondCut} from "../features/diamond/IDiamondCut.sol";
 
 // Remember to add the loupe functions from DiamondLoupeFacet to the diamond.
 // The loupe functions are required by the EIP2535 Diamonds standard

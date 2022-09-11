@@ -1,0 +1,11 @@
+- name: ERC2771 - Context
+  description: Allow overriding msg.sender by trusted forwarders to enable meta-transactions
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/metatx/ERC2771Context.sol
+  deployments:
+    - chainId: 4
+      address: "0x9c583203Ca6fD9aE8aA1DB2abcc44E362d0404Fd"
+  selectors:
+    - setTrustedForwarder(address): ~
+    - isTrustedForwarder(address): ~

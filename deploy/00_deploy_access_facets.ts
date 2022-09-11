@@ -12,7 +12,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     "Ownable",
     [],
     {
-      contract: "contracts/facets/access/ownable/Ownable.sol:Ownable",
+      contract: "contracts/features/access/ownable/Ownable.sol:Ownable",
     }
   );
 };

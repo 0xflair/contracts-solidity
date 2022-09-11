@@ -12,7 +12,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     "ERC2771Context",
     [],
     {
-      contract: "contracts/facets/metatx/ERC2771Context.sol:ERC2771Context",
+      contract: "contracts/features/metatx/ERC2771Context.sol:ERC2771Context",
     }
   );
 };

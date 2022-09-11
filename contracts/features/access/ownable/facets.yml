@@ -1,0 +1,12 @@
+- name: ERC173 - Ownable
+  description: Provide access control using a single owner address
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/access/ownable/Ownable.sol
+  deployments:
+    - chainId: 4
+      address: "0x5f6d4A179D0f36029d5E314Bde9FDd50b5F77cf0"
+  selectors:
+    - owner(): ~
+    - renounceOwnership(): ~
+    - transferOwnership(address): ~

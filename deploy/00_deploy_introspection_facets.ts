@@ -12,7 +12,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     "ERC165",
     [],
     {
-      contract: "contracts/facets/introspection/ERC165.sol:ERC165",
+      contract: "contracts/features/introspection/ERC165.sol:ERC165",
     }
   );
 };

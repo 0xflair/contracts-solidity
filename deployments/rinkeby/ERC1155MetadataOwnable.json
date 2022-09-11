@@ -1,0 +1,192 @@
+{
+  "address": "0xC5A5f0a8A699D2C26C5F851C9e8c3516C1097D57",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "URI",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "lockBaseURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lockFallbackURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockTokenURIUntil",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newBaseURI",
+          "type": "string"
+        }
+      ],
+      "name": "setBaseURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "newFallbackURI",
+          "type": "string"
+        }
+      ],
+      "name": "setFallbackURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "string",
+          "name": "newTokenURI",
+          "type": "string"
+        }
+      ],
+      "name": "setTokenURI",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "string[]",
+          "name": "newTokenURIs",
+          "type": "string[]"
+        }
+      ],
+      "name": "setTokenURIBatch",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "uri",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x6c5bc84d92a51533b73f743ad3e351d0e944721ee551deca6c9f68e5ade24181",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xC5A5f0a8A699D2C26C5F851C9e8c3516C1097D57",
+    "transactionIndex": 13,
+    "gasUsed": "53000",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xecc6e5367a8a1a617f2cb78e1550ce416b1a18a36d93451ab9cb01b4c69bbd63",
+    "transactionHash": "0x6c5bc84d92a51533b73f743ad3e351d0e944721ee551deca6c9f68e5ade24181",
+    "logs": [],
+    "blockNumber": 11362841,
+    "cumulativeGasUsed": "2835986",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "91d6e3f6f6454e9c575fbf169d898653",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"URI\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"lockBaseURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lockFallbackURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"lockTokenURIUntil\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newBaseURI\",\"type\":\"string\"}],\"name\":\"setBaseURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"newFallbackURI\",\"type\":\"string\"}],\"name\":\"setFallbackURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"newTokenURI\",\"type\":\"string\"}],\"name\":\"setTokenURI\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"tokenIds\",\"type\":\"uint256[]\"},{\"internalType\":\"string[]\",\"name\":\"newTokenURIs\",\"type\":\"string[]\"}],\"name\":\"setTokenURIBatch\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"uri\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"uri(uint256)\":{\"details\":\"Returns the URI for token type `id`. If the `\\\\{id\\\\}` substring is present in the URI, it must be replaced by clients with the actual token type ID.\"}},\"title\":\"ERC1155 metadata extension to allow updating as contract owner\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataOwnable.sol\":\"ERC1155MetadataOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":20},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"contracts/features/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(\\n        address indexed previousOwner,\\n        address indexed newOwner\\n    );\\n}\\n\",\"keccak256\":\"0xaa69cf8eab7188097d9aa84c92692ec30614ee2f6bf8d2255482162611255db4\",\"license\":\"MIT\"},\"contracts/features/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport {OwnableStorage} from \\\"./OwnableStorage.sol\\\";\\nimport {IERC173Events} from \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(msg.sender == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(msg.sender, account);\\n    }\\n}\\n\",\"keccak256\":\"0x8789cacff1b43be2f20333233dc5f70aed9311cc8b4abaf70d20c979146a5404\",\"license\":\"MIT\"},\"contracts/features/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0x26eea1f665c393b0046c3dcb9421f3caa1322ca996689fa0aa941eff5a1dcda2\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport {IERC1155MetadataEvents} from \\\"./IERC1155MetadataEvents.sol\\\";\\nimport {ERC1155MetadataStorage} from \\\"./ERC1155MetadataStorage.sol\\\";\\n\\n/**\\n * @title ERC1155Metadata internal functions\\n */\\nabstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {\\n    function _setBaseURI(string memory baseURI) internal {\\n        require(\\n            !ERC1155MetadataStorage.layout().baseURILocked,\\n            \\\"ERC1155Metadata: baseURI locked\\\"\\n        );\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setFallbackURI(string memory baseURI) internal {\\n        require(\\n            !ERC1155MetadataStorage.layout().fallbackURILocked,\\n            \\\"ERC1155Metadata: fallbackURI locked\\\"\\n        );\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setTokenURI(uint256 tokenId, string memory tokenURI) internal {\\n        require(\\n            tokenId > ERC1155MetadataStorage.layout().lastLockedTokenId,\\n            \\\"ERC1155Metadata: tokenURI locked\\\"\\n        );\\n        ERC1155MetadataStorage.layout().tokenURIs[tokenId] = tokenURI;\\n        emit URI(tokenURI, tokenId);\\n    }\\n\\n    function _lockBaseURI() internal {\\n        ERC1155MetadataStorage.layout().baseURILocked = true;\\n    }\\n\\n    function _lockFallbackURI() internal {\\n        ERC1155MetadataStorage.layout().fallbackURILocked = true;\\n    }\\n\\n    function _lockTokenURIUntil(uint256 tokenId) internal {\\n        ERC1155MetadataStorage.layout().lastLockedTokenId = tokenId;\\n    }\\n}\\n\",\"keccak256\":\"0xa78ff20925c4d8ecb538ba28b9a38d0ecbb50fbb0a357086dc60699a9ef98ea7\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport {IERC1155Metadata} from \\\"./IERC1155Metadata.sol\\\";\\nimport {ERC1155MetadataInternal} from \\\"./ERC1155MetadataInternal.sol\\\";\\nimport {ERC1155MetadataStorage} from \\\"./ERC1155MetadataStorage.sol\\\";\\nimport {OwnableInternal} from \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\n/**\\n * @title ERC1155 metadata extension to allow updating as contract owner\\n */\\nabstract contract ERC1155MetadataOwnable is\\n    IERC1155Metadata,\\n    ERC1155MetadataInternal,\\n    OwnableInternal\\n{\\n    function setBaseURI(string calldata newBaseURI) public onlyOwner {\\n        _setBaseURI(newBaseURI);\\n    }\\n\\n    function setFallbackURI(string calldata newFallbackURI) public onlyOwner {\\n        _setFallbackURI(newFallbackURI);\\n    }\\n\\n    function setTokenURI(uint256 tokenId, string calldata newTokenURI)\\n        public\\n        onlyOwner\\n    {\\n        _setTokenURI(tokenId, newTokenURI);\\n    }\\n\\n    function setTokenURIBatch(\\n        uint256[] calldata tokenIds,\\n        string[] calldata newTokenURIs\\n    ) public onlyOwner {\\n        for (uint256 i = 0; i < tokenIds.length; i++) {\\n            _setTokenURI(tokenIds[i], newTokenURIs[i]);\\n        }\\n    }\\n\\n    function lockBaseURI() public onlyOwner {\\n        _lockBaseURI();\\n    }\\n\\n    function lockFallbackURI() public onlyOwner {\\n        _lockFallbackURI();\\n    }\\n\\n    function lockTokenURIUntil(uint256 tokenId) public onlyOwner {\\n        _lockTokenURIUntil(tokenId);\\n    }\\n}\\n\",\"keccak256\":\"0xa4771f71c6484e58a1ef1751212d915d2636711ac145bcba6b33f3b4955a6866\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/ERC1155MetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title ERC1155 metadata extensions\\n */\\nlibrary ERC1155MetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"v1.flair.contracts.storage.ERC1155Metadata\\\");\\n\\n    struct Layout {\\n        string baseURI;\\n        string fallbackURI;\\n        bool baseURILocked;\\n        bool fallbackURILocked;\\n        uint256 lastLockedTokenId;\\n        mapping(uint256 => string) tokenURIs;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x9c5020a73adf06f0081c1e3ed1d8455f0dc5b0e3c565ea30399975252e3b5ff0\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/IERC1155Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155Metadata {\\n    /**\\n     * @dev Returns the URI for token type `id`.\\n     *\\n     * If the `\\\\{id\\\\}` substring is present in the URI, it must be replaced by\\n     * clients with the actual token type ID.\\n     */\\n    function uri(uint256 id) external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x06e9faa914aad892109cae7c0ae1c7f5f185510536cb75e6afdf49051e100e38\",\"license\":\"MIT\"},\"contracts/features/token/ERC1155/facets/metadata/IERC1155MetadataEvents.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155MetadataEvents {\\n    event URI(string value, uint256 indexed tokenId);\\n}\\n\",\"keccak256\":\"0x6c2413e5d685f420399db32888a545321422521fb5e4ffb72de3c5e53cbd503c\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "uri(uint256)": {
+        "details": "Returns the URI for token type `id`. If the `\\{id\\}` substring is present in the URI, it must be replaced by clients with the actual token type ID."
+      }
+    },
+    "title": "ERC1155 metadata extension to allow updating as contract owner",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
