@@ -15,6 +15,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
       contract: "contracts/features/introspection/ERC165.sol:ERC165",
     }
   );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC165Ownable",
+    []
+  );
 };
 
 export default func;

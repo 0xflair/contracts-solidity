@@ -9,11 +9,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC2771Context",
-    [],
-    {
-      contract: "contracts/features/metatx/ERC2771Context.sol:ERC2771Context",
-    }
+    "TieredSalesOwnable",
+    []
   );
 };
 

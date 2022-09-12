@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import {ITieredSales} from "./ITieredSales.sol";
+import "./ITieredSales.sol";
 
 library TieredSalesStorage {
     struct Layout {

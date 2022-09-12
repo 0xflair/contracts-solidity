@@ -1,7 +1,7 @@
-- name: ERC1155 + Mintable and Supply Extensions
+- name: ERC1155 + Supply, Mintable, Lockable Extensions
   repo: github.com/0xflair/evm-contracts
   ref: main
-  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyMintable.sol
+  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyMintableLockable.sol
   deployments:
     - chainId: 4
       address: "0xA443B1c9c7F0bBA3398079265599e5AFEb270003"
@@ -21,15 +21,17 @@
     - totalSupply(uint256): ~
     - exists(uint256): ~
     - maxSupply(uint256): ~
-    # Mint by Owner Extension
+    # Mintable Extensions
     - mintByOwner(address,uint256,uint256,bytes): ~
-    # Mint by Facet Extension
     - mintByFacet(address,uint256,uint256,bytes): ~
+    # Lockable Extension
+    - locked(address,uint256): ~
+    - locked(address,(uint256)): ~
 
-- name: ERC1155 + Mintable, Lockable, Burnable and Supply Extensions
+- name: ERC1155 + Supply, Mintable, Lockable, Burnable Extensions
   repo: github.com/0xflair/evm-contracts
   ref: main
-  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyLockableMintableBurnable.sol
+  artifact: contracts/features/token/ERC1155/presets/ERC1155SupplyMintableLockableBurnable.sol
   deployments:
     - chainId: 4
       address: "0x6c703B41FD6bc7BFC5965eA48f19f90fd97673cD"
@@ -41,9 +43,12 @@
     - setApprovalForAll(address,bool): ~
     - safeTransferFrom(address,address,uint256,uint256,bytes): ~
     - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
-    # Mint by Owner Extension
+    # Supply Extension
+    - totalSupply(uint256): ~
+    - exists(uint256): ~
+    - maxSupply(uint256): ~
+    # Mintable Extensions
     - mintByOwner(address,uint256,uint256,bytes): ~
-    # Mint by Facet Extension
     - mintByFacet(address,uint256,uint256,bytes): ~
     # Lockable Extension
     - locked(address,uint256): ~
@@ -51,7 +56,3 @@
     # Burnable Extension
     - burn(address,uint256,uint256): ~
     - burnBatch(address,(uint256),(uint256)): ~
-    # Supply Extension
-    - totalSupply(uint256): ~
-    - exists(uint256): ~
-    - maxSupply(uint256): ~

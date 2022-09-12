@@ -1,0 +1,10 @@
+- name: Tiered Sales Extension - Ownable
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/features/finance/sales/TieredSalesOwnable.sol
+  deployments:
+    - chainId: 4
+      address: "0xf8b766Fea083A81e4BFa8d0B10cFE55d1E7a4405"
+  selectors:
+    - configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,uint256)): ~
+    - configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,uint256)[]): ~

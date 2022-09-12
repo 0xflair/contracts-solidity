@@ -2,21 +2,14 @@
 
 pragma solidity 0.8.15;
 
-import {IERC1155Metadata} from "./IERC1155Metadata.sol";
-import {ERC1155MetadataInternal} from "./ERC1155MetadataInternal.sol";
-import {ERC1155MetadataStorage} from "./ERC1155MetadataStorage.sol";
-import {OwnableInternal} from "../../../../access/ownable/OwnableInternal.sol";
-
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-/**
- * @title ERC1155 metadata extension to allow updating as contract owner
- */
-abstract contract ERC1155MetadataOwnable is
-    IERC1155Metadata,
-    ERC1155MetadataInternal,
-    OwnableInternal
-{
+import "../../../../access/ownable/OwnableInternal.sol";
+
+import "./ERC1155MetadataInternal.sol";
+import "./ERC1155MetadataStorage.sol";
+
+contract ERC1155MetadataOwnable is ERC1155MetadataInternal, OwnableInternal {
     function setBaseURI(string calldata newBaseURI) public onlyOwner {
         _setBaseURI(newBaseURI);
     }
@@ -25,19 +18,19 @@ abstract contract ERC1155MetadataOwnable is
         _setFallbackURI(newFallbackURI);
     }
 
-    function setTokenURI(uint256 tokenId, string calldata newTokenURI)
+    function setURI(uint256 tokenId, string calldata newTokenURI)
         public
         onlyOwner
     {
-        _setTokenURI(tokenId, newTokenURI);
+        _setURI(tokenId, newTokenURI);
     }
 
-    function setTokenURIBatch(
+    function setURIBatch(
         uint256[] calldata tokenIds,
         string[] calldata newTokenURIs
     ) public onlyOwner {
         for (uint256 i = 0; i < tokenIds.length; i++) {
-            _setTokenURI(tokenIds[i], newTokenURIs[i]);
+            _setURI(tokenIds[i], newTokenURIs[i]);
         }
     }
 
@@ -49,7 +42,7 @@ abstract contract ERC1155MetadataOwnable is
         _lockFallbackURI();
     }
 
-    function lockTokenURIUntil(uint256 tokenId) public onlyOwner {
-        _lockTokenURIUntil(tokenId);
+    function lockURIUntil(uint256 tokenId) public onlyOwner {
+        _lockURIUntil(tokenId);
     }
 }

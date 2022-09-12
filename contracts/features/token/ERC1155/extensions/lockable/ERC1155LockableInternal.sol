@@ -57,15 +57,17 @@ abstract contract ERC1155LockableInternal is ERC1155BaseInternal {
         uint256[] memory amounts,
         bytes memory data
     ) internal virtual override {
-        for (uint256 i = 0; i < ids.length; i++) {
-            require(
-                _balanceOf(from, ids[i]) -
-                    ERC1155LockableStorage.layout().lockedAmount[from][
-                        ids[i]
-                    ] >=
-                    amounts[i],
-                "LOCKED"
-            );
+        if (from != address(0)) {
+            for (uint256 i = 0; i < ids.length; i++) {
+                require(
+                    _balanceOf(from, ids[i]) -
+                        ERC1155LockableStorage.layout().lockedAmount[from][
+                            ids[i]
+                        ] >=
+                        amounts[i],
+                    "LOCKED"
+                );
+            }
         }
 
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);

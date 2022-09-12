@@ -2,9 +2,6 @@
 
 pragma solidity 0.8.15;
 
-/**
- * @title ERC1155 metadata extensions
- */
 library ERC1155MetadataStorage {
     bytes32 internal constant STORAGE_SLOT =
         keccak256("v1.flair.contracts.storage.ERC1155Metadata");

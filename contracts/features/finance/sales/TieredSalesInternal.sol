@@ -8,28 +8,23 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import {ITieredSalesEvents} from "./ITieredSalesEvents.sol";
-import {TieredSalesStorage} from "./TieredSalesStorage.sol";
+import "./ITieredSalesInternal.sol";
+import "./TieredSalesStorage.sol";
 
-import {OwnableInternal} from "../../access/ownable/OwnableInternal.sol";
-import {ERC2771ContextInternal} from "../../metatx/ERC2771ContextInternal.sol";
+import "../../access/ownable/OwnableInternal.sol";
+import "../../metatx/ERC2771ContextInternal.sol";
 
 /**
  * @title Sales mechanism for NFTs with multiple tiered pricing, allowlist and allocation plans
  */
 abstract contract TieredSalesInternal is
-    ITieredSalesEvents,
+    ITieredSalesInternal,
     ERC2771ContextInternal,
     OwnableInternal
 {
     using TieredSalesStorage for TieredSalesStorage.Layout;
 
-    /* ADMIN */
-
-    function configureTiering(uint256 tierId, Tier calldata tier)
-        public
-        onlyOwner
-    {
+    function _configureTiering(uint256 tierId, Tier calldata tier) internal {
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(tier.maxAllocation >= l.tierMints[tierId], "LOWER_THAN_MINTED");
@@ -50,16 +45,14 @@ abstract contract TieredSalesInternal is
         l.totalReserved += tier.reserved;
     }
 
-    function configureTiering(
+    function _configureTiering(
         uint256[] calldata _tierIds,
         Tier[] calldata _tiers
-    ) public onlyOwner {
+    ) internal {
         for (uint256 i = 0; i < _tierIds.length; i++) {
-            configureTiering(_tierIds[i], _tiers[i]);
+            _configureTiering(_tierIds[i], _tiers[i]);
         }
     }
-
-    /* PUBLIC */
 
     function _onTierAllowlist(
         uint256 tierId,
@@ -152,14 +145,6 @@ abstract contract TieredSalesInternal is
         if (l.tiers[tierId].reserved > 0) {
             l.reservedMints += count;
         }
-    }
-
-    function walletMintedByTier(uint256 tierId, address wallet)
-        public
-        view
-        returns (uint256)
-    {
-        return TieredSalesStorage.layout().walletMinted[tierId][wallet];
     }
 
     /* PRIVATE */

@@ -2,12 +2,9 @@
 
 pragma solidity 0.8.15;
 
-import {IERC1155MetadataEvents} from "./IERC1155MetadataEvents.sol";
-import {ERC1155MetadataStorage} from "./ERC1155MetadataStorage.sol";
+import "./IERC1155MetadataEvents.sol";
+import "./ERC1155MetadataStorage.sol";
 
-/**
- * @title ERC1155Metadata internal functions
- */
 abstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {
     function _setBaseURI(string memory baseURI) internal {
         require(
@@ -25,7 +22,7 @@ abstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {
         ERC1155MetadataStorage.layout().baseURI = baseURI;
     }
 
-    function _setTokenURI(uint256 tokenId, string memory tokenURI) internal {
+    function _setURI(uint256 tokenId, string memory tokenURI) internal {
         require(
             tokenId > ERC1155MetadataStorage.layout().lastLockedTokenId,
             "ERC1155Metadata: tokenURI locked"
@@ -42,7 +39,7 @@ abstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {
         ERC1155MetadataStorage.layout().fallbackURILocked = true;
     }
 
-    function _lockTokenURIUntil(uint256 tokenId) internal {
+    function _lockURIUntil(uint256 tokenId) internal {
         ERC1155MetadataStorage.layout().lastLockedTokenId = tokenId;
     }
 }

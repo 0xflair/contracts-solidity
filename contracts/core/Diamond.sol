@@ -9,19 +9,31 @@ import {ERC2771Context} from "../features/metatx/ERC2771Context.sol";
 import {IDiamondCut} from "../features/diamond/IDiamondCut.sol";
 import {IDiamondLoupe} from "../features/diamond/IDiamondLoupe.sol";
 
+import "@openzeppelin/contracts/utils/Multicall.sol";
+
 import {DiamondStorage} from "./DiamondStorage.sol";
 
-contract Diamond {
+contract Diamond is Multicall {
     using ERC165Storage for ERC165Storage.Layout;
     using OwnableStorage for OwnableStorage.Layout;
 
+    struct Initialization {
+        address initContract;
+        bytes initData;
+    }
+
+    struct CoreFacets {
+        address diamondCutFacet;
+        address diamondLoupeFacet;
+        address erc165Facet;
+        address erc173Facet;
+    }
+
     constructor(
         address owner,
-        address diamondCutFacet,
-        address diamondLoupeFacet,
-        address erc165Facet,
-        address ownableFacet,
-        address contextFacet
+        CoreFacets memory _coreFacets,
+        IDiamondCut.FacetCut[] memory _facets,
+        Initialization[] memory _initializations
     ) {
         ERC165Storage.Layout storage erc165 = ERC165Storage.layout();
 
@@ -53,30 +65,45 @@ contract Diamond {
 
         // register ERC173 (Ownable)
 
-        bytes4[] memory selectorsOwnable = new bytes4[](2);
-        selectorsOwnable[0] = IERC173.owner.selector;
-        selectorsOwnable[1] = IERC173.transferOwnership.selector;
+        bytes4[] memory selectorsERC173 = new bytes4[](2);
+        selectorsERC173[0] = IERC173.owner.selector;
+        selectorsERC173[1] = IERC173.transferOwnership.selector;
 
         erc165.setSupportedInterface(type(IERC173).interfaceId, true);
 
-        // register ERC2771 (Context)
-
-        bytes4[] memory selectorsContext = new bytes4[](2);
-        selectorsContext[0] = ERC2771Context.setTrustedForwarder.selector;
-        selectorsContext[1] = ERC2771Context.isTrustedForwarder.selector;
-
-        // execute the first ever diamond cut
+        // execute the first ever diamond cut,
         // we are calling the addFunctions directly to save ~ %50 gas
 
-        DiamondStorage.addFunctions(diamondCutFacet, selectorsDiamondCut);
-        DiamondStorage.addFunctions(diamondLoupeFacet, selectorsDiamondLoupe);
-        DiamondStorage.addFunctions(erc165Facet, selectorsERC165);
-        DiamondStorage.addFunctions(ownableFacet, selectorsOwnable);
-        DiamondStorage.addFunctions(contextFacet, selectorsContext);
+        DiamondStorage.addFunctions(
+            _coreFacets.diamondCutFacet,
+            selectorsDiamondCut
+        );
+        DiamondStorage.addFunctions(
+            _coreFacets.diamondLoupeFacet,
+            selectorsDiamondLoupe
+        );
+        DiamondStorage.addFunctions(_coreFacets.erc165Facet, selectorsERC165);
+        DiamondStorage.addFunctions(_coreFacets.erc173Facet, selectorsERC173);
 
         // set owner
 
         OwnableStorage.layout().setOwner(owner);
+
+        // initialization
+
+        for (uint256 i = 0; i < _facets.length; i++) {
+            DiamondStorage.addFunctions(
+                _facets[i].facetAddress,
+                _facets[i].functionSelectors
+            );
+        }
+
+        for (uint256 i = 0; i < _initializations.length; i++) {
+            DiamondStorage.initializeDiamondCut(
+                _initializations[i].initContract,
+                _initializations[i].initData
+            );
+        }
     }
 
     // Find facet for function that is called and execute the

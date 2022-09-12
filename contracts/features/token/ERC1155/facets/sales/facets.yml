@@ -3,9 +3,10 @@
   ref: main
   artifact: contracts/features/token/ERC1155/facets/sales/ERC1155TieredSales.sol
   deployments:
-  - chainId: 4
-    address: '0xf8b766Fea083A81e4BFa8d0B10cFE55d1E7a4405'
+    - chainId: 4
+      address: "0xf8b766Fea083A81e4BFa8d0B10cFE55d1E7a4405"
   selectors:
-  - eligibleForTier(uint256,address,uint256,(bytes32)): ~
-  - onTierAllowlist(uint256,address,uint256,(bytes32)): ~
-  - mintByTier(uint256,uint256,uint256,(bytes32)): ~
+    - eligibleForTier(uint256,address,uint256,bytes32[]): ~
+    - mintByTier(uint256,uint256,uint256,bytes32[]): ~
+    - onTierAllowlist(uint256,address,uint256,bytes32[]): ~
+    - walletMintedByTier(uint256,address): ~

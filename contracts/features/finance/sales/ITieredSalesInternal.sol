@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-interface ITieredSalesEvents {
+interface ITieredSalesInternal {
     struct Tier {
         uint256 start;
         uint256 end;
@@ -12,6 +12,6 @@ interface ITieredSalesEvents {
         bytes32 merkleRoot;
         uint256 reserved;
         uint256 maxAllocation;
-        uint256 assetId;
+        uint256 extra;
     }
 }

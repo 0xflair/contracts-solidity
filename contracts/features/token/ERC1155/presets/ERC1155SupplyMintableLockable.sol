@@ -2,17 +2,15 @@
 
 pragma solidity 0.8.15;
 
-import {ERC1155Base, ERC1155BaseInternal} from "../base/ERC1155Base.sol";
-import {ERC1155Supply, ERC1155SupplyInternal} from "../extensions/supply/ERC1155Supply.sol";
-import {ERC1155Lockable, ERC1155LockableInternal} from "../extensions/lockable/ERC1155Lockable.sol";
-import {ERC1155MintByFacet} from "../extensions/mintable/ERC1155MintByFacet.sol";
-import {ERC1155MintByOwner} from "../extensions/mintable/ERC1155MintByOwner.sol";
+import "../base/ERC1155Base.sol";
+import "../extensions/supply/ERC1155Supply.sol";
+import "../extensions/lockable/ERC1155Lockable.sol";
+import "../extensions/mintable/ERC1155Mintable.sol";
 
-contract ERC1155SupplyLockableMintable is
+contract ERC1155SupplyMintableLockable is
     ERC1155Base,
     ERC1155Supply,
-    ERC1155MintByFacet,
-    ERC1155MintByOwner,
+    ERC1155Mintable,
     ERC1155Lockable
 {
     function _beforeTokenTransfer(

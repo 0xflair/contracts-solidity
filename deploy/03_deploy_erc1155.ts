@@ -12,34 +12,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC1155LockableMintable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155MintableBurnable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155SupplyLockableMintable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155SupplyLockableMintableBurnable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
     "ERC1155SupplyMintable",
     []
   );
@@ -47,7 +19,14 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC1155SupplyMintableBurnable",
+    "ERC1155SupplyMintableLockable",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155SupplyMintableLockableBurnable",
     []
   );
 
@@ -65,6 +44,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
+    "ERC1155MetadataOwnable",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
     "ERC1155SupplyOwnable",
     []
   );
@@ -73,20 +59,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     accounts[0],
     accounts[0],
     "ERC1155TieredSales",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155Metadata",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155MetadataOwnable",
     []
   );
 };

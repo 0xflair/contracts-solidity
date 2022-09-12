@@ -2,9 +2,9 @@
 
 pragma solidity 0.8.15;
 
-import {ITieredSalesEvents} from "./ITieredSalesEvents.sol";
+import "./ITieredSalesInternal.sol";
 
-interface ITieredSales is ITieredSalesEvents {
+interface ITieredSales is ITieredSalesInternal {
     function onTierAllowlist(
         uint256 tierId,
         address minter,

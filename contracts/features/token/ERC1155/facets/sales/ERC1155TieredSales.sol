@@ -8,9 +8,9 @@ import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import {TieredSalesStorage} from "../../../../finance/sales/TieredSalesStorage.sol";
-import {TieredSales} from "../../../../finance/sales/TieredSales.sol";
-import {IERC1155MintByFacet} from "../../extensions/mintable/IERC1155MintByFacet.sol";
+import "../../../../finance/sales/TieredSalesStorage.sol";
+import "../../../../finance/sales/TieredSales.sol";
+import "../../extensions/mintable/IERC1155MintByFacet.sol";
 
 /**
  * @title Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.
@@ -28,7 +28,7 @@ contract ERC1155TieredSales is ReentrancyGuard, TieredSales {
 
         IERC1155MintByFacet(address(this)).mintByFacet(
             _msgSender(),
-            TieredSalesStorage.layout().tiers[tierId].assetId,
+            TieredSalesStorage.layout().tiers[tierId].extra,
             count,
             ""
         );

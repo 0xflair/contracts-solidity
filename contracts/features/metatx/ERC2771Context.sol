@@ -4,12 +4,9 @@ pragma solidity 0.8.15;
 
 import {ERC2771ContextStorage} from "./ERC2771ContextStorage.sol";
 import {ERC2771ContextInternal} from "./ERC2771ContextInternal.sol";
-import {OwnableInternal} from "../access/ownable/OwnableInternal.sol";
 
-contract ERC2771Context is ERC2771ContextInternal, OwnableInternal {
-    function setTrustedForwarder(address trustedForwarder) public onlyOwner {
-        ERC2771ContextStorage.layout().trustedForwarder = trustedForwarder;
-    }
+contract ERC2771Context is ERC2771ContextInternal {
+    using ERC2771ContextStorage for ERC2771ContextStorage.Layout;
 
     function isTrustedForwarder(address forwarder)
         public
