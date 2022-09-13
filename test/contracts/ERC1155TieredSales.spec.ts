@@ -1,3 +1,7 @@
+import "hardhat-deploy";
+import "@nomiclabs/hardhat-ethers";
+import "@nomiclabs/hardhat-waffle";
+
 import hre from "hardhat";
 import { expect } from "chai";
 import { utils } from "ethers";
@@ -207,4 +211,26 @@ describe("ERC1155 Tiered Sales", function () {
 
     expect(await erc1155Facet.balanceOf(userA.signer.address, 0)).to.equal(3);
   });
+
+  it("should mint by tier when 1 tier, no allowlist, with native currency", async function () {
+    const { userA } = await setupTest();
+
+    const diamond = await deployERC1155WithSales();
+    const erc1155Facet = await hre.ethers.getContractAt<ERC1155Base>(
+      "ERC1155Base",
+      diamond.address
+    );
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>(
+      "ERC1155TieredSales",
+      diamond.address
+    );
+
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+      value: utils.parseEther("0.12"),
+    });
+
+    expect(await erc1155Facet.balanceOf(userA.signer.address, 0)).to.be.equal(2);
+    expect(await erc1155Facet.balanceOf(userA.signer.address, 1)).to.be.equal(0);
+  });
+
 });

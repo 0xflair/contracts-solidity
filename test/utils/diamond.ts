@@ -1,5 +1,8 @@
+import "hardhat-deploy";
+import "@nomiclabs/hardhat-ethers";
 import hre from "hardhat";
 import { utils } from "ethers";
+import { Diamond } from "../../typechain";
 
 export enum FacetCutAction {
   Add,
@@ -107,5 +110,5 @@ export const deployDiamond = async (
     ],
   });
 
-  return await hre.ethers.getContractAt("Diamond", diamond.address);
+  return await hre.ethers.getContractAt<Diamond>("Diamond", diamond.address);
 };
