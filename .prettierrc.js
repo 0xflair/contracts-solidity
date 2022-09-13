@@ -5,7 +5,7 @@ module.exports = {
   printWidth: 120,
   tabWidth: 2,
   useTabs: false,
-  bracketSpacing: false,
+  bracketSpacing: true,
   arrowParens: 'always',
   overrides: [
     {
@@ -14,7 +14,7 @@ module.exports = {
         printWidth: 120,
         tabWidth: 4,
         singleQuote: false,
-        bracketSpacing: false,
+        bracketSpacing: true,
         explicitTypes: 'always',
       },
     },

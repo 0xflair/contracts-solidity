@@ -11,5 +11,13 @@
     "esModuleInterop": true
   },
   "exclude": ["dist", "node_modules"],
-  "include": ["./contracts", "./test", "./deploy", "./scripts", ".eslistrc.js"]
+  "include": [
+    "./contracts",
+    "./test",
+    "./deploy",
+    "./scripts",
+    "hardhat.config.ts",
+    "hardhat.util.ts",
+    "openzeppelin.config.ts"
+  ]
 }

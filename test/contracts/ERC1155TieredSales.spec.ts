@@ -6,14 +6,7 @@ import {expect} from 'chai';
 import {BigNumberish, utils} from 'ethers';
 import hre from 'hardhat';
 
-import {
-  ERC165,
-  ERC1155Supply,
-  ERC1155SupplyOwnable,
-  ERC1155TieredSales,
-  ERC1155TieredSalesOwnable,
-  TieredSalesOwnable,
-} from '../../typechain';
+import {ERC165, ERC1155Supply, ERC1155SupplyOwnable, ERC1155TieredSales, TieredSalesOwnable} from '../../typechain';
 import {ERC1155Base} from '../../typechain/ERC1155Base';
 import {setupTest} from '../setup';
 import {generateAllowlistLeaf, generateAllowlistMerkleTree} from '../utils/allowlists';
