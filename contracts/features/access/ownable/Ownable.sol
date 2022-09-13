@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.15;
 
-import {IERC173} from "./IERC173.sol";
-import {OwnableInternal} from "./OwnableInternal.sol";
+import "./IERC173.sol";
+import "./OwnableInternal.sol";
 
 /**
  * @title Ownership access control based on ERC173

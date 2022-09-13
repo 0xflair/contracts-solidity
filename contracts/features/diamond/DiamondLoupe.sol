@@ -7,10 +7,10 @@ pragma solidity 0.8.15;
 * EIP-2535 Diamonds: https://eips.ethereum.org/EIPS/eip-2535
 /******************************************************************************/
 
-import {IERC165} from "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
-import {DiamondStorage} from "../../core/DiamondStorage.sol";
-import {IDiamondLoupe} from "./IDiamondLoupe.sol";
+import "../../core/DiamondStorage.sol";
+import "./IDiamondLoupe.sol";
 
 // The functions in DiamondLoupe MUST be added to a diamond.
 // The EIP-2535 Diamond standard requires these functions.
@@ -25,9 +25,7 @@ contract DiamondLoupe is IDiamondLoupe {
         for (uint256 i; i < numFacets; i++) {
             address facetAddress_ = l.facetAddresses[i];
             facets_[i].facetAddress = facetAddress_;
-            facets_[i].functionSelectors = l
-                .facetFunctionSelectors[facetAddress_]
-                .functionSelectors;
+            facets_[i].functionSelectors = l.facetFunctionSelectors[facetAddress_].functionSelectors;
         }
     }
 
@@ -41,19 +39,12 @@ contract DiamondLoupe is IDiamondLoupe {
         returns (bytes4[] memory facetFunctionSelectors_)
     {
         DiamondStorage.Layout storage l = DiamondStorage.layout();
-        facetFunctionSelectors_ = l
-            .facetFunctionSelectors[_facet]
-            .functionSelectors;
+        facetFunctionSelectors_ = l.facetFunctionSelectors[_facet].functionSelectors;
     }
 
     /// @notice Get all the facet addresses used by a diamond.
     /// @return facetAddresses_
-    function facetAddresses()
-        external
-        view
-        override
-        returns (address[] memory facetAddresses_)
-    {
+    function facetAddresses() external view override returns (address[] memory facetAddresses_) {
         DiamondStorage.Layout storage l = DiamondStorage.layout();
         facetAddresses_ = l.facetAddresses;
     }
@@ -62,15 +53,8 @@ contract DiamondLoupe is IDiamondLoupe {
     /// @dev If facet is not found return address(0).
     /// @param _functionSelector The function selector.
     /// @return facetAddress_ The facet address.
-    function facetAddress(bytes4 _functionSelector)
-        external
-        view
-        override
-        returns (address facetAddress_)
-    {
+    function facetAddress(bytes4 _functionSelector) external view override returns (address facetAddress_) {
         DiamondStorage.Layout storage l = DiamondStorage.layout();
-        facetAddress_ = l
-            .selectorToFacetAndPosition[_functionSelector]
-            .facetAddress;
+        facetAddress_ = l.selectorToFacetAndPosition[_functionSelector].facetAddress;
     }
 }

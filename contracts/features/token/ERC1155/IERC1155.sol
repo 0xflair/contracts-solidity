@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.15;
 
-import {IERC1155Events} from "./IERC1155Events.sol";
-import {IERC165} from "../../introspection/IERC165.sol";
+import "./IERC1155Events.sol";
+import "../../introspection/IERC165.sol";
 
 /**
  * @title ERC1155 interface
@@ -16,10 +16,7 @@ interface IERC1155 is IERC1155Events {
      * @param id token to query
      * @return token balance
      */
-    function balanceOf(address account, uint256 id)
-        external
-        view
-        returns (uint256);
+    function balanceOf(address account, uint256 id) external view returns (uint256);
 
     /**
      * @notice query the balances of given tokens held by given addresses
@@ -38,10 +35,7 @@ interface IERC1155 is IERC1155Events {
      * @param operator address to query for approval received
      * @return whether operator is approved to spend tokens held by account
      */
-    function isApprovedForAll(address account, address operator)
-        external
-        view
-        returns (bool);
+    function isApprovedForAll(address account, address operator) external view returns (bool);
 
     /**
      * @notice grant approval to or revoke approval from given operator to spend held tokens

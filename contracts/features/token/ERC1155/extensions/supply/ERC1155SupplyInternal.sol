@@ -3,7 +3,7 @@
 pragma solidity 0.8.15;
 
 import "../../base/ERC1155BaseInternal.sol";
-import {ERC1155SupplyStorage} from "./ERC1155SupplyStorage.sol";
+import "./ERC1155SupplyStorage.sol";
 
 /**
  * @dev Extension of ERC1155 that adds tracking of total supply per id.
@@ -40,13 +40,8 @@ abstract contract ERC1155SupplyInternal is ERC1155BaseInternal {
     /**
      * @dev Sets maximum amount of tokens possible to exist for multiple token IDs.
      */
-    function _setMaxSupplyBatch(
-        uint256[] calldata tokenIds,
-        uint256[] calldata newValues
-    ) internal {
-        mapping(uint256 => uint256) storage l = ERC1155SupplyStorage
-            .layout()
-            .maxSupply;
+    function _setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) internal {
+        mapping(uint256 => uint256) storage l = ERC1155SupplyStorage.layout().maxSupply;
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
             l[tokenIds[i]] = newValues[i];
@@ -74,34 +69,24 @@ abstract contract ERC1155SupplyInternal is ERC1155BaseInternal {
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
 
         if (from == address(0)) {
-            mapping(uint256 => uint256)
-                storage totalSupply = ERC1155SupplyStorage.layout().totalSupply;
-            mapping(uint256 => uint256) storage maxSupply = ERC1155SupplyStorage
-                .layout()
-                .maxSupply;
+            mapping(uint256 => uint256) storage totalSupply = ERC1155SupplyStorage.layout().totalSupply;
+            mapping(uint256 => uint256) storage maxSupply = ERC1155SupplyStorage.layout().maxSupply;
 
             for (uint256 i = 0; i < ids.length; ++i) {
                 totalSupply[ids[i]] += amounts[i];
 
-                require(
-                    totalSupply[ids[i]] <= maxSupply[ids[i]],
-                    "SUPPLY_EXCEED_MAX"
-                );
+                require(totalSupply[ids[i]] <= maxSupply[ids[i]], "SUPPLY_EXCEED_MAX");
             }
         }
 
         if (to == address(0)) {
-            mapping(uint256 => uint256)
-                storage totalSupply = ERC1155SupplyStorage.layout().totalSupply;
+            mapping(uint256 => uint256) storage totalSupply = ERC1155SupplyStorage.layout().totalSupply;
 
             for (uint256 i = 0; i < ids.length; ++i) {
                 uint256 id = ids[i];
                 uint256 amount = amounts[i];
                 uint256 supply = totalSupply[id];
-                require(
-                    supply >= amount,
-                    "ERC1155: burn amount exceeds totalSupply"
-                );
+                require(supply >= amount, "ERC1155: burn amount exceeds totalSupply");
                 unchecked {
                     totalSupply[id] = supply - amount;
                 }

@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.15;
 
-import {IERC165} from "./IERC165.sol";
-import {ERC165Storage} from "./ERC165Storage.sol";
+import "./IERC165.sol";
+import "./ERC165Storage.sol";
 
 /**
  * @title ERC165 implementation

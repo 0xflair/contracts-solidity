@@ -2,16 +2,16 @@
 
 pragma solidity 0.8.15;
 
-import {OwnableStorage} from "../features/access/ownable/OwnableStorage.sol";
-import {IERC173} from "../features/access/ownable/IERC173.sol";
-import {IERC165, ERC165Storage} from "../features/introspection/ERC165.sol";
-import {ERC2771Context} from "../features/metatx/ERC2771Context.sol";
-import {IDiamondCut} from "../features/diamond/IDiamondCut.sol";
-import {IDiamondLoupe} from "../features/diamond/IDiamondLoupe.sol";
+import "../features/access/ownable/OwnableStorage.sol";
+import "../features/access/ownable/IERC173.sol";
+import "../features/introspection/ERC165.sol";
+import "../features/metatx/ERC2771Context.sol";
+import "../features/diamond/IDiamondCut.sol";
+import "../features/diamond/IDiamondLoupe.sol";
 
 import "@openzeppelin/contracts/utils/Multicall.sol";
 
-import {DiamondStorage} from "./DiamondStorage.sol";
+import "./DiamondStorage.sol";
 
 contract Diamond is Multicall {
     using ERC165Storage for ERC165Storage.Layout;
@@ -48,9 +48,7 @@ contract Diamond is Multicall {
 
         bytes4[] memory selectorsDiamondLoupe = new bytes4[](4);
         selectorsDiamondLoupe[0] = IDiamondLoupe.facets.selector;
-        selectorsDiamondLoupe[1] = IDiamondLoupe
-            .facetFunctionSelectors
-            .selector;
+        selectorsDiamondLoupe[1] = IDiamondLoupe.facetFunctionSelectors.selector;
         selectorsDiamondLoupe[2] = IDiamondLoupe.facetAddresses.selector;
         selectorsDiamondLoupe[3] = IDiamondLoupe.facetAddress.selector;
 
@@ -74,14 +72,8 @@ contract Diamond is Multicall {
         // execute the first ever diamond cut,
         // we are calling the addFunctions directly to save ~ %50 gas
 
-        DiamondStorage.addFunctions(
-            _coreFacets.diamondCutFacet,
-            selectorsDiamondCut
-        );
-        DiamondStorage.addFunctions(
-            _coreFacets.diamondLoupeFacet,
-            selectorsDiamondLoupe
-        );
+        DiamondStorage.addFunctions(_coreFacets.diamondCutFacet, selectorsDiamondCut);
+        DiamondStorage.addFunctions(_coreFacets.diamondLoupeFacet, selectorsDiamondLoupe);
         DiamondStorage.addFunctions(_coreFacets.erc165Facet, selectorsERC165);
         DiamondStorage.addFunctions(_coreFacets.erc173Facet, selectorsERC173);
 
@@ -92,17 +84,11 @@ contract Diamond is Multicall {
         // initialization
 
         for (uint256 i = 0; i < _facets.length; i++) {
-            DiamondStorage.addFunctions(
-                _facets[i].facetAddress,
-                _facets[i].functionSelectors
-            );
+            DiamondStorage.addFunctions(_facets[i].facetAddress, _facets[i].functionSelectors);
         }
 
         for (uint256 i = 0; i < _initializations.length; i++) {
-            DiamondStorage.initializeDiamondCut(
-                _initializations[i].initContract,
-                _initializations[i].initData
-            );
+            DiamondStorage.initializeDiamondCut(_initializations[i].initContract, _initializations[i].initData);
         }
     }
 

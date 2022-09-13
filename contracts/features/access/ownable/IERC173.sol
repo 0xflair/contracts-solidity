@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import {IERC173Events} from "./IERC173Events.sol";
+import "./IERC173Events.sol";
 
 /**
  * @title Contract ownership standard interface

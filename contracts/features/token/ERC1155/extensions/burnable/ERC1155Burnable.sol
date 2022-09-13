@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import {SenderIsNotSelf} from "../../../../../common/Errors.sol";
+import "../../../../../common/Errors.sol";
 import "../../IERC1155.sol";
 import "../../base/ERC1155BaseInternal.sol";
 

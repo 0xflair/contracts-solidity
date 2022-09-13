@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.15;
 
-import {ERC1155BaseInternal} from "../../base/ERC1155BaseInternal.sol";
-import {ERC1155LockableStorage} from "./ERC1155LockableStorage.sol";
+import "../../base/ERC1155BaseInternal.sol";
+import "./ERC1155LockableStorage.sol";
 
 abstract contract ERC1155LockableInternal is ERC1155BaseInternal {
     using ERC1155LockableStorage for ERC1155LockableStorage.Layout;

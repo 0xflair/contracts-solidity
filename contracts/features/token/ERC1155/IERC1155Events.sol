@@ -2,19 +2,13 @@
 
 pragma solidity 0.8.15;
 
-import {IERC165} from "../../introspection/IERC165.sol";
+import "../../introspection/IERC165.sol";
 
 /**
  * @title Partial ERC1155 interface needed by internal functions
  */
 interface IERC1155Events {
-    event TransferSingle(
-        address indexed operator,
-        address indexed from,
-        address indexed to,
-        uint256 id,
-        uint256 value
-    );
+    event TransferSingle(address indexed operator, address indexed from, address indexed to, uint256 id, uint256 value);
 
     event TransferBatch(
         address indexed operator,
@@ -24,9 +18,5 @@ interface IERC1155Events {
         uint256[] values
     );
 
-    event ApprovalForAll(
-        address indexed account,
-        address indexed operator,
-        bool approved
-    );
+    event ApprovalForAll(address indexed account, address indexed operator, bool approved);
 }

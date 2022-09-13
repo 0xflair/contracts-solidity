@@ -2,12 +2,6 @@
 
 pragma solidity 0.8.15;
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
-import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-
 import "./ITieredSales.sol";
 import "./TieredSalesInternal.sol";
 
@@ -33,7 +27,24 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
         return super._eligibleForTier(tierId, minter, maxAllowance, proof);
     }
 
+    function remainingForTier(uint256 tierId) public view returns (uint256) {
+        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
+
+        uint256 availableSupply = _availableSupplyForTier(tierId);
+        uint256 availableAllocation = l.tiers[tierId].maxAllocation - l.tierMints[tierId];
+
+        if (availableSupply < availableAllocation) {
+            return availableSupply;
+        } else {
+            return availableAllocation;
+        }
+    }
+
     function walletMintedByTier(uint256 tierId, address wallet) public view returns (uint256) {
         return TieredSalesStorage.layout().walletMinted[tierId][wallet];
+    }
+
+    function tierMints(uint256 tierId) public view returns (uint256) {
+        return TieredSalesStorage.layout().tierMints[tierId];
     }
 }

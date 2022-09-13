@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import {IERC165} from "../../introspection/IERC165.sol";
+import "../../introspection/IERC165.sol";
 
 /**
  * @title ERC1155 transfer receiver interface

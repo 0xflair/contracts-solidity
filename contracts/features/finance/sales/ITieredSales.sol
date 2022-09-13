@@ -25,4 +25,10 @@ interface ITieredSales is ITieredSalesInternal {
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable;
+
+    function remainingForTier(uint256 tierId) external view returns (uint256);
+
+    function walletMintedByTier(uint256 tierId, address wallet) external view returns (uint256);
+
+    function tierMints(uint256 tierId) external view returns (uint256);
 }

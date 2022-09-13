@@ -2,6 +2,7 @@
 
 pragma solidity 0.8.15;
 
+import "./IERC1155Supply.sol";
 import "./ERC1155SupplyInternal.sol";
 
 /**
@@ -12,23 +13,23 @@ import "./ERC1155SupplyInternal.sol";
  * corresponding is an NFT, there is no guarantees that no other token with the
  * same id are not going to be minted.
  */
-abstract contract ERC1155Supply is ERC1155SupplyInternal {
+abstract contract ERC1155Supply is IERC1155Supply, ERC1155SupplyInternal {
     /**
-     * @dev Total amount of tokens in with a given id.
+     * @inheritdoc IERC1155Supply
      */
     function totalSupply(uint256 id) public view virtual returns (uint256) {
         return _totalSupply(id);
     }
 
     /**
-     * @dev Maximum amount of tokens possible to exist for a given id.
+     * @inheritdoc IERC1155Supply
      */
     function maxSupply(uint256 id) public view virtual returns (uint256) {
         return _maxSupply(id);
     }
 
     /**
-     * @dev Indicates whether any token exist with a given id, or not.
+     * @inheritdoc IERC1155Supply
      */
     function exists(uint256 id) public view virtual returns (bool) {
         return _exists(id);

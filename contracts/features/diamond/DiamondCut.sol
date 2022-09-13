@@ -7,9 +7,9 @@ pragma solidity 0.8.15;
 * EIP-2535 Diamonds: https://eips.ethereum.org/EIPS/eip-2535
 /******************************************************************************/
 
-import {IDiamondCut} from "./IDiamondCut.sol";
-import {DiamondStorage} from "../../core/DiamondStorage.sol";
-import {OwnableInternal} from "../access/ownable/OwnableInternal.sol";
+import "./IDiamondCut.sol";
+import "../../core/DiamondStorage.sol";
+import "../access/ownable/OwnableInternal.sol";
 
 // Remember to add the loupe functions from DiamondLoupeFacet to the diamond.
 // The loupe functions are required by the EIP2535 Diamonds standard

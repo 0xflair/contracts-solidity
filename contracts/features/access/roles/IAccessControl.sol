@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import {IAccessControlEvents} from "./IAccessControlEvents.sol";
+import "./IAccessControlEvents.sol";
 
 /**
  * @dev External interface of AccessControl declared to support ERC165 detection.
@@ -11,10 +11,7 @@ interface IAccessControl is IAccessControlEvents {
     /**
      * @dev Returns `true` if `account` has been granted `role`.
      */
-    function hasRole(bytes32 role, address account)
-        external
-        view
-        returns (bool);
+    function hasRole(bytes32 role, address account) external view returns (bool);
 
     /**
      * @dev Returns the admin role that controls `role`. See {grantRole} and

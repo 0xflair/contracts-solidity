@@ -2,10 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 import "./ITieredSalesInternal.sol";
@@ -83,6 +80,18 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
+    function _availableSupplyForTier(uint256 tierId) internal view returns (uint256 remaining) {
+        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
+
+        // Substract all the remaining reserved spots from the total remaining supply...
+        remaining = _remainingSupplyForTier(tierId) - (l.totalReserved - l.reservedMints);
+
+        // If this tier has reserved spots, add remaining spots back to result...
+        if (l.tiers[tierId].reserved > 0) {
+            remaining += (l.tiers[tierId].reserved - l.tierMints[tierId]);
+        }
+    }
+
     function _executeSale(
         uint256 tierId,
         uint256 count,
@@ -96,6 +105,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(count <= maxMintable, "EXCEEDS_MAX");
+        require(count <= _availableSupplyForTier(tierId), "EXCEEDS_ALLOCATION");
         require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
         if (l.tiers[tierId].currency == address(0)) {
@@ -110,6 +120,12 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         if (l.tiers[tierId].reserved > 0) {
             l.reservedMints += count;
         }
+    }
+
+    function _remainingSupplyForTier(
+        uint256 /*tierId*/
+    ) internal view virtual returns (uint256) {
+        return type(uint256).max;
     }
 
     /* PRIVATE */
