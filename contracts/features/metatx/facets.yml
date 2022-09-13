@@ -5,7 +5,17 @@
   artifact: contracts/facets/metatx/ERC2771Context.sol
   deployments:
     - chainId: 4
-      address: "0x9c583203Ca6fD9aE8aA1DB2abcc44E362d0404Fd"
+      address: '0x37a42705d1C1ECE5eBc021b6B14eB7e9B239868a'
+  selectors:
+    - isTrustedForwarder(address): ~
+
+- name: ERC2771 - Context - Admin - Ownable
+  description: Manage trusted forwarder of ERC2771 as diamond owner
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/features/metatx/ERC2771ContextOwnable.sol
+  deployments:
+    - chainId: 4
+      address: '0x7dD27F4c95699b459b860Cc67649addA9a0354CA'
   selectors:
     - setTrustedForwarder(address): ~
-    - isTrustedForwarder(address): ~

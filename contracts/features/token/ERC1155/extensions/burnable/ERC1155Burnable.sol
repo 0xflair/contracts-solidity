@@ -9,15 +9,14 @@ import "../../base/ERC1155BaseInternal.sol";
 /**
  * @title Extension of {ERC1155} that allows users or approved operators to burn tokens.
  */
-contract ERC1155Burnable is ERC1155BaseInternal {
+abstract contract ERC1155Burnable is ERC1155BaseInternal {
     function burn(
         address account,
         uint256 id,
         uint256 value
     ) public virtual {
         require(
-            account == _msgSender() ||
-                IERC1155(address(this)).isApprovedForAll(account, _msgSender()),
+            account == _msgSender() || IERC1155(address(this)).isApprovedForAll(account, _msgSender()),
             "ERC1155: caller is not owner nor approved"
         );
 
@@ -30,8 +29,7 @@ contract ERC1155Burnable is ERC1155BaseInternal {
         uint256[] memory values
     ) public virtual {
         require(
-            account == _msgSender() ||
-                IERC1155(address(this)).isApprovedForAll(account, _msgSender()),
+            account == _msgSender() || IERC1155(address(this)).isApprovedForAll(account, _msgSender()),
             "ERC1155: caller is not owner nor approved"
         );
 

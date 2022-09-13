@@ -33,6 +33,17 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   //
   // Facets
   //
+
+  // Supply
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155SupplyOwnable",
+    []
+  );
+
+  // Metadata
   await deployPermanentContract(
     hre.deployments,
     accounts[0],
@@ -47,18 +58,84 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     "ERC1155MetadataOwnable",
     []
   );
+
+  // Burnable
   await deployPermanentContract(
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC1155SupplyOwnable",
+    "ERC1155BurnableOwnable",
+    []
+  );
+
+  // Lockable
+
+  // TODO
+  // await deployPermanentContract(
+  //   hre.deployments,
+  //   accounts[0],
+  //   accounts[0],
+  //   "ERC1155LockByOwner",
+  //   []
+  // );
+  // await deployPermanentContract(
+  //   hre.deployments,
+  //   accounts[0],
+  //   accounts[0],
+  //   "ERC1155LockByRole",
+  //   []
+  // );
+
+  // Mintable
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155MintByOwner",
     []
   );
   await deployPermanentContract(
     hre.deployments,
     accounts[0],
     accounts[0],
+    "ERC1155MintByOwnerERC2771",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155MintByRole",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155MintByRoleERC2771",
+    []
+  );
+
+  // Tiered Sales
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
     "ERC1155TieredSales",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155TieredSalesERC2771",
+    []
+  );
+  await deployPermanentContract(
+    hre.deployments,
+    accounts[0],
+    accounts[0],
+    "ERC1155TieredSalesOwnable",
     []
   );
 };

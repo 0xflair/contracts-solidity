@@ -12,12 +12,11 @@ import "../access/ownable/OwnableInternal.sol";
 contract ERC165Ownable is OwnableInternal {
     using ERC165Storage for ERC165Storage.Layout;
 
-    /// @param interfaceIds list of interface id to set as supported
-    /// @param interfaceIdsToRemove list of interface id to unset as supported
-    function setERC165(
-        bytes4[] calldata interfaceIds,
-        bytes4[] calldata interfaceIdsToRemove
-    ) public onlyOwner {
+    /**
+     * @param interfaceIds list of interface id to set as supported
+     * @param interfaceIdsToRemove list of interface id to unset as supported
+     */
+    function setERC165(bytes4[] calldata interfaceIds, bytes4[] calldata interfaceIdsToRemove) public onlyOwner {
         ERC165Storage.Layout storage l = ERC165Storage.layout();
 
         l.supportedInterfaces[type(IERC165).interfaceId] = true;

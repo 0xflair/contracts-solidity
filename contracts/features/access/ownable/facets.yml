@@ -5,7 +5,20 @@
   artifact: contracts/facets/access/ownable/Ownable.sol
   deployments:
     - chainId: 4
-      address: "0x5f6d4A179D0f36029d5E314Bde9FDd50b5F77cf0"
+      address: '0x4d658Eb80033eb8F8c90F0261420B2f6F339ED17'
+  selectors:
+    - owner(): ~
+    - renounceOwnership(): ~
+    - transferOwnership(address): ~
+
+- name: ERC173 - Ownable - ERC2771 Context
+  description: Ownable extension with meta-transactions support via ERC2771
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/facets/access/ownable/OwnableERC2771.sol
+  deployments:
+    - chainId: 4
+      address: '0x5683890a1de7AbDCab4ac33DfdF05F1A4459E0C7'
   selectors:
     - owner(): ~
     - renounceOwnership(): ~

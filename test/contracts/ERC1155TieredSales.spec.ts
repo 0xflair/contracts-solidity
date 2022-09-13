@@ -18,7 +18,6 @@ import { ERC1155Base } from "../../typechain/ERC1155Base";
 
 const DEFAULT_TIERS: Tier[] = [
   {
-    extra: 33,
     start: 0,
     end: Math.floor(+new Date() / 1000) + 10 * 24 * 60 * 60, // +10 days
     price: utils.parseEther("0.06"),
@@ -29,7 +28,6 @@ const DEFAULT_TIERS: Tier[] = [
     maxAllocation: 5000,
   },
   {
-    extra: 44,
     start: 0,
     end: Math.floor(+new Date() / 1000) + 10 * 24 * 60 * 60, // +10 days
     price: utils.parseEther("0.2"),
@@ -65,18 +63,24 @@ const deployERC1155WithSales = async ({
       {
         facet: "ERC1155SupplyOwnable",
         function: "setMaxSupply",
-        args: [33, 1000],
+        args: [0, 1000],
       },
       {
         facet: "ERC1155SupplyOwnable",
         function: "setMaxSupply",
-        args: [44, 1000],
+        args: [1, 1000],
       },
       {
         facet: "TieredSalesOwnable",
         function:
-          "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,uint256)[])",
+          "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])",
         args: [Object.keys(tiers), Object.values(tiers)],
+      },
+      {
+        facet: "ERC1155TieredSalesOwnable",
+        function:
+          "configureTierTokenId(uint256[],uint256[])",
+        args: [Object.keys(tiers), Object.keys(tiers)], // Use tier index as token id
       },
     ],
   });
@@ -126,7 +130,6 @@ describe("ERC1155 Tiered Sales", function () {
           price: utils.parseEther("0.06"),
           reserved: 0,
           maxAllocation: 5000,
-          extra: 33,
         },
       ],
     });
@@ -201,6 +204,6 @@ describe("ERC1155 Tiered Sales", function () {
       )
     ).to.be.revertedWith("MAXED_ALLOWANCE");
 
-    expect(await erc1155Facet.balanceOf(userA.signer.address, 33)).to.equal(3);
+    expect(await erc1155Facet.balanceOf(userA.signer.address, 0)).to.equal(3);
   });
 });

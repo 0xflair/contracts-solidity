@@ -2,21 +2,18 @@
 
 pragma solidity 0.8.15;
 
-import {Address} from "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
 
-import {ERC2771ContextInternal} from "../../../metatx/ERC2771ContextInternal.sol";
-import {IERC1155Events} from "../IERC1155Events.sol";
-import {IERC1155Receiver} from "../IERC1155Receiver.sol";
-import {ERC1155BaseStorage} from "./ERC1155BaseStorage.sol";
+import "../IERC1155Events.sol";
+import "../IERC1155Receiver.sol";
+import "./ERC1155BaseStorage.sol";
 
 /**
  * @title Base ERC1155 internal functions
  * @dev derived from https://github.com/OpenZeppelin/openzeppelin-contracts/ (MIT license)
  */
-abstract contract ERC1155BaseInternal is
-    ERC2771ContextInternal,
-    IERC1155Events
-{
+abstract contract ERC1155BaseInternal is Context, IERC1155Events {
     using Address for address;
 
     /**
@@ -25,16 +22,8 @@ abstract contract ERC1155BaseInternal is
      * @param id token to query
      * @return token balance
      */
-    function _balanceOf(address account, uint256 id)
-        internal
-        view
-        virtual
-        returns (uint256)
-    {
-        require(
-            account != address(0),
-            "ERC1155: balance query for the zero address"
-        );
+    function _balanceOf(address account, uint256 id) internal view virtual returns (uint256) {
+        require(account != address(0), "ERC1155: balance query for the zero address");
         return ERC1155BaseStorage.layout().balances[id][account];
     }
 
@@ -52,21 +41,14 @@ abstract contract ERC1155BaseInternal is
         uint256 amount,
         bytes memory data
     ) internal virtual {
-        address sender = _msgSender();
+        address operator = _msgSender();
         require(account != address(0), "ERC1155: mint to the zero address");
 
-        _beforeTokenTransfer(
-            sender,
-            address(0),
-            account,
-            _asSingletonArray(id),
-            _asSingletonArray(amount),
-            data
-        );
+        _beforeTokenTransfer(operator, address(0), account, _asSingletonArray(id), _asSingletonArray(amount), data);
 
         ERC1155BaseStorage.layout().balances[id][account] += amount;
 
-        emit TransferSingle(sender, address(0), account, id, amount);
+        emit TransferSingle(operator, address(0), account, id, amount);
     }
 
     /**
@@ -84,14 +66,7 @@ abstract contract ERC1155BaseInternal is
     ) internal virtual {
         _mint(account, id, amount, data);
 
-        _doSafeTransferAcceptanceCheck(
-            _msgSender(),
-            address(0),
-            account,
-            id,
-            amount,
-            data
-        );
+        _doSafeTransferAcceptanceCheck(_msgSender(), address(0), account, id, amount, data);
     }
 
     /**
@@ -109,17 +84,13 @@ abstract contract ERC1155BaseInternal is
         bytes memory data
     ) internal virtual {
         require(account != address(0), "ERC1155: mint to the zero address");
-        require(
-            ids.length == amounts.length,
-            "ERC1155: ids and amounts length mismatch"
-        );
+        require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
 
         address sender = _msgSender();
 
         _beforeTokenTransfer(sender, address(0), account, ids, amounts, data);
 
-        mapping(uint256 => mapping(address => uint256))
-            storage balances = ERC1155BaseStorage.layout().balances;
+        mapping(uint256 => mapping(address => uint256)) storage balances = ERC1155BaseStorage.layout().balances;
 
         for (uint256 i; i < ids.length; ) {
             balances[ids[i]][account] += amounts[i];
@@ -146,14 +117,7 @@ abstract contract ERC1155BaseInternal is
     ) internal virtual {
         _mintBatch(account, ids, amounts, data);
 
-        _doSafeBatchTransferAcceptanceCheck(
-            _msgSender(),
-            address(0),
-            account,
-            ids,
-            amounts,
-            data
-        );
+        _doSafeBatchTransferAcceptanceCheck(_msgSender(), address(0), account, ids, amounts, data);
     }
 
     /**
@@ -171,24 +135,12 @@ abstract contract ERC1155BaseInternal is
 
         address sender = _msgSender();
 
-        _beforeTokenTransfer(
-            sender,
-            account,
-            address(0),
-            _asSingletonArray(id),
-            _asSingletonArray(amount),
-            ""
-        );
+        _beforeTokenTransfer(sender, account, address(0), _asSingletonArray(id), _asSingletonArray(amount), "");
 
-        mapping(address => uint256) storage balances = ERC1155BaseStorage
-            .layout()
-            .balances[id];
+        mapping(address => uint256) storage balances = ERC1155BaseStorage.layout().balances[id];
 
         unchecked {
-            require(
-                balances[account] >= amount,
-                "ERC1155: burn amount exceeds balance"
-            );
+            require(balances[account] >= amount, "ERC1155: burn amount exceeds balance");
             balances[account] -= amount;
         }
 
@@ -207,25 +159,18 @@ abstract contract ERC1155BaseInternal is
         uint256[] memory amounts
     ) internal virtual {
         require(account != address(0), "ERC1155: burn from the zero address");
-        require(
-            ids.length == amounts.length,
-            "ERC1155: ids and amounts length mismatch"
-        );
+        require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
 
         address sender = _msgSender();
 
         _beforeTokenTransfer(sender, account, address(0), ids, amounts, "");
 
-        mapping(uint256 => mapping(address => uint256))
-            storage balances = ERC1155BaseStorage.layout().balances;
+        mapping(uint256 => mapping(address => uint256)) storage balances = ERC1155BaseStorage.layout().balances;
 
         unchecked {
             for (uint256 i; i < ids.length; i++) {
                 uint256 id = ids[i];
-                require(
-                    balances[id][account] >= amounts[i],
-                    "ERC1155: burn amount exceeds balance"
-                );
+                require(balances[id][account] >= amounts[i], "ERC1155: burn amount exceeds balance");
                 balances[id][account] -= amounts[i];
             }
         }
@@ -251,29 +196,15 @@ abstract contract ERC1155BaseInternal is
         uint256 amount,
         bytes memory data
     ) internal virtual {
-        require(
-            recipient != address(0),
-            "ERC1155: transfer to the zero address"
-        );
+        require(recipient != address(0), "ERC1155: transfer to the zero address");
 
-        _beforeTokenTransfer(
-            operator,
-            sender,
-            recipient,
-            _asSingletonArray(id),
-            _asSingletonArray(amount),
-            data
-        );
+        _beforeTokenTransfer(operator, sender, recipient, _asSingletonArray(id), _asSingletonArray(amount), data);
 
-        mapping(uint256 => mapping(address => uint256))
-            storage balances = ERC1155BaseStorage.layout().balances;
+        mapping(uint256 => mapping(address => uint256)) storage balances = ERC1155BaseStorage.layout().balances;
 
         unchecked {
             uint256 senderBalance = balances[id][sender];
-            require(
-                senderBalance >= amount,
-                "ERC1155: insufficient balances for transfer"
-            );
+            require(senderBalance >= amount, "ERC1155: insufficient balances for transfer");
             balances[id][sender] = senderBalance - amount;
         }
 
@@ -301,14 +232,7 @@ abstract contract ERC1155BaseInternal is
     ) internal virtual {
         _transfer(operator, sender, recipient, id, amount, data);
 
-        _doSafeTransferAcceptanceCheck(
-            operator,
-            sender,
-            recipient,
-            id,
-            amount,
-            data
-        );
+        _doSafeTransferAcceptanceCheck(operator, sender, recipient, id, amount, data);
     }
 
     /**
@@ -329,19 +253,12 @@ abstract contract ERC1155BaseInternal is
         uint256[] memory amounts,
         bytes memory data
     ) internal virtual {
-        require(
-            recipient != address(0),
-            "ERC1155: transfer to the zero address"
-        );
-        require(
-            ids.length == amounts.length,
-            "ERC1155: ids and amounts length mismatch"
-        );
+        require(recipient != address(0), "ERC1155: transfer to the zero address");
+        require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
 
         _beforeTokenTransfer(operator, sender, recipient, ids, amounts, data);
 
-        mapping(uint256 => mapping(address => uint256))
-            storage balances = ERC1155BaseStorage.layout().balances;
+        mapping(uint256 => mapping(address => uint256)) storage balances = ERC1155BaseStorage.layout().balances;
 
         for (uint256 i; i < ids.length; ) {
             uint256 token = ids[i];
@@ -350,10 +267,7 @@ abstract contract ERC1155BaseInternal is
             unchecked {
                 uint256 senderBalance = balances[token][sender];
 
-                require(
-                    senderBalance >= amount,
-                    "ERC1155: insufficient balances for transfer"
-                );
+                require(senderBalance >= amount, "ERC1155: insufficient balances for transfer");
 
                 balances[token][sender] = senderBalance - amount;
 
@@ -386,14 +300,7 @@ abstract contract ERC1155BaseInternal is
     ) internal virtual {
         _transferBatch(operator, sender, recipient, ids, amounts, data);
 
-        _doSafeBatchTransferAcceptanceCheck(
-            operator,
-            sender,
-            recipient,
-            ids,
-            amounts,
-            data
-        );
+        _doSafeBatchTransferAcceptanceCheck(operator, sender, recipient, ids, amounts, data);
     }
 
     /**
@@ -401,11 +308,7 @@ abstract contract ERC1155BaseInternal is
      * @param element element to wrap
      * @return singleton array
      */
-    function _asSingletonArray(uint256 element)
-        private
-        pure
-        returns (uint256[] memory)
-    {
+    function _asSingletonArray(uint256 element) private pure returns (uint256[] memory) {
         uint256[] memory array = new uint256[](1);
         array[0] = element;
         return array;
@@ -429,15 +332,7 @@ abstract contract ERC1155BaseInternal is
         bytes memory data
     ) private {
         if (to.isContract()) {
-            try
-                IERC1155Receiver(to).onERC1155Received(
-                    operator,
-                    from,
-                    id,
-                    amount,
-                    data
-                )
-            returns (bytes4 response) {
+            try IERC1155Receiver(to).onERC1155Received(operator, from, id, amount, data) returns (bytes4 response) {
                 require(
                     response == IERC1155Receiver.onERC1155Received.selector,
                     "ERC1155: ERC1155Receiver rejected tokens"
@@ -468,18 +363,11 @@ abstract contract ERC1155BaseInternal is
         bytes memory data
     ) private {
         if (to.isContract()) {
-            try
-                IERC1155Receiver(to).onERC1155BatchReceived(
-                    operator,
-                    from,
-                    ids,
-                    amounts,
-                    data
-                )
-            returns (bytes4 response) {
+            try IERC1155Receiver(to).onERC1155BatchReceived(operator, from, ids, amounts, data) returns (
+                bytes4 response
+            ) {
                 require(
-                    response ==
-                        IERC1155Receiver.onERC1155BatchReceived.selector,
+                    response == IERC1155Receiver.onERC1155BatchReceived.selector,
                     "ERC1155: ERC1155Receiver rejected tokens"
                 );
             } catch Error(string memory reason) {

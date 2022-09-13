@@ -12,7 +12,7 @@ import "./ERC1155SupplyInternal.sol";
  * corresponding is an NFT, there is no guarantees that no other token with the
  * same id are not going to be minted.
  */
-contract ERC1155Supply is ERC1155SupplyInternal {
+abstract contract ERC1155Supply is ERC1155SupplyInternal {
     /**
      * @dev Total amount of tokens in with a given id.
      */

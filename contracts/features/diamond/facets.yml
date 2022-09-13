@@ -2,10 +2,10 @@
   description: Allow adding, replacing and removing facets in the diamond
   repo: github.com/0xflair/evm-contracts
   ref: main
-  artifact: contracts/facets/diamond/DiamondCut.sol
+  artifact: contracts/features/diamond/DiamondCut.sol
   deployments:
     - chainId: 4
-      address: "0x8d4e0b2f7e483cF1ea91efb3109EB2C0EFca84Ba"
+      address: '0xeE5A6E4cc595d90BD5C5691Fe602d24Bed79f649'
   selectors:
     - diamondCut((address,uint,(bytes4)),address,bytes): ~
 
@@ -13,10 +13,10 @@
   description: Allow explorers to inspect facets and functions of diamonds
   repo: github.com/0xflair/evm-contracts
   ref: main
-  artifact: contracts/facets/diamond/DiamondLoupe.sol
+  artifact: contracts/features/diamond/DiamondLoupe.sol
   deployments:
     - chainId: 4
-      address: "0x883A5b91f21e3529d3A9B31D955b37Cd7382D3e2"
+      address: '0x464C0392703e31D5b63F2FA3cC9Dc6301D832aB3'
   selectors:
     - facets(): ~
     - facetFunctionSelectors(address): ~

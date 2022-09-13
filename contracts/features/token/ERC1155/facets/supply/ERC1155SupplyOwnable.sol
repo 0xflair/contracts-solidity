@@ -4,7 +4,7 @@ pragma solidity 0.8.15;
 
 import "../../extensions/supply/ERC1155SupplyInternal.sol";
 import "../../extensions/supply/ERC1155SupplyStorage.sol";
-import {OwnableInternal} from "../../../../access/ownable/OwnableInternal.sol";
+import "../../../../access/ownable/OwnableInternal.sol";
 
 /**
  * @dev Extension of ERC1155 to allow owner to change the max supply per token ID.
@@ -16,10 +16,7 @@ contract ERC1155SupplyOwnable is ERC1155SupplyInternal, OwnableInternal {
         _setMaxSupply(tokenId, newValue);
     }
 
-    function setMaxSupplyBatch(
-        uint256[] calldata tokenIds,
-        uint256[] calldata newValues
-    ) public onlyOwner {
+    function setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) public onlyOwner {
         _setMaxSupplyBatch(tokenIds, newValues);
     }
 }

@@ -2,14 +2,16 @@
 
 pragma solidity 0.8.15;
 
-import {OwnableStorage} from "./OwnableStorage.sol";
-import {IERC173Events} from "./IERC173Events.sol";
+import "@openzeppelin/contracts/utils/Context.sol";
 
-abstract contract OwnableInternal is IERC173Events {
+import "./OwnableStorage.sol";
+import "./IERC173Events.sol";
+
+abstract contract OwnableInternal is IERC173Events, Context {
     using OwnableStorage for OwnableStorage.Layout;
 
     modifier onlyOwner() {
-        require(msg.sender == _owner(), "Ownable: sender must be owner");
+        require(_msgSender() == _owner(), "Ownable: sender must be owner");
         _;
     }
 
@@ -19,6 +21,6 @@ abstract contract OwnableInternal is IERC173Events {
 
     function _transferOwnership(address account) internal virtual {
         OwnableStorage.layout().setOwner(account);
-        emit OwnershipTransferred(msg.sender, account);
+        emit OwnershipTransferred(_msgSender(), account);
     }
 }

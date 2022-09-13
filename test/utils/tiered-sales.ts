@@ -9,5 +9,4 @@ export type Tier = {
   merkleRoot: BytesLike;
   reserved: BigNumberish;
   maxAllocation: BigNumberish;
-  extra: BigNumberish;
 };

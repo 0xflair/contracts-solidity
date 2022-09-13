@@ -2,7 +2,7 @@ import hre from "hardhat";
 import { expect } from "chai";
 
 import { deployDiamond } from "../utils/diamond";
-import { ERC1155MintByFacet, Multicall } from "../../typechain";
+import { ERC1155Mintable, ERC1155MintByFacet, Multicall } from "../../typechain";
 import { setupTest } from "../setup";
 
 const deployERC1155 = async () => {
@@ -18,19 +18,19 @@ const deployERC1155 = async () => {
   });
 };
 
-describe("ERC1155MintByFacet", function () {
+describe("ERC1155Mintable", function () {
   it("should not be able to mint when external account calls", async function () {
     const { userA } = await setupTest();
 
     const diamond = await deployERC1155();
 
-    const mintFacet = await hre.ethers.getContractAt<ERC1155MintByFacet>(
-      "ERC1155MintByFacet",
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>(
+      "ERC1155Mintable",
       diamond.address
     );
 
     await expect(
-      mintFacet
+      mintableFacet
         .connect(userA.signer)
         .mintByFacet(userA.signer.address, 33, 1, "0x")
     ).to.be.revertedWith("SenderIsNotSelf()");
@@ -46,12 +46,12 @@ describe("ERC1155MintByFacet", function () {
       diamond.address
     );
 
-    const mintFacet = await hre.ethers.getContractAt<ERC1155MintByFacet>(
-      "ERC1155MintByFacet",
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>(
+      "ERC1155Mintable",
       diamond.address
     );
 
-    const callData = mintFacet.interface.encodeFunctionData("mintByFacet", [
+    const callData = mintableFacet.interface.encodeFunctionData("mintByFacet", [
       userA.signer.address,
       33,
       1,
@@ -73,12 +73,12 @@ describe("ERC1155MintByFacet", function () {
       diamond.address
     );
 
-    const mintFacet = await hre.ethers.getContractAt<ERC1155MintByFacet>(
-      "ERC1155MintByFacet",
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>(
+      "ERC1155Mintable",
       diamond.address
     );
 
-    const callData = mintFacet.interface.encodeFunctionData("mintByFacet", [
+    const callData = mintableFacet.interface.encodeFunctionData("mintByFacet", [
       userA.signer.address,
       33,
       1,

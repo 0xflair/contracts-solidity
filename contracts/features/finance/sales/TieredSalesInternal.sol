@@ -12,16 +12,11 @@ import "./ITieredSalesInternal.sol";
 import "./TieredSalesStorage.sol";
 
 import "../../access/ownable/OwnableInternal.sol";
-import "../../metatx/ERC2771ContextInternal.sol";
 
 /**
  * @title Sales mechanism for NFTs with multiple tiered pricing, allowlist and allocation plans
  */
-abstract contract TieredSalesInternal is
-    ITieredSalesInternal,
-    ERC2771ContextInternal,
-    OwnableInternal
-{
+abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableInternal {
     using TieredSalesStorage for TieredSalesStorage.Layout;
 
     function _configureTiering(uint256 tierId, Tier calldata tier) internal {
@@ -34,10 +29,7 @@ abstract contract TieredSalesInternal is
         }
 
         if (l.tierMints[tierId] > 0) {
-            require(
-                tier.maxPerWallet >= l.tiers[tierId].maxPerWallet,
-                "LOW_MAX_PER_WALLET"
-            );
+            require(tier.maxPerWallet >= l.tiers[tierId].maxPerWallet, "LOW_MAX_PER_WALLET");
         }
 
         l.totalReserved -= l.tiers[tierId].reserved;
@@ -45,10 +37,7 @@ abstract contract TieredSalesInternal is
         l.totalReserved += tier.reserved;
     }
 
-    function _configureTiering(
-        uint256[] calldata _tierIds,
-        Tier[] calldata _tiers
-    ) internal {
+    function _configureTiering(uint256[] calldata _tierIds, Tier[] calldata _tiers) internal {
         for (uint256 i = 0; i < _tierIds.length; i++) {
             _configureTiering(_tierIds[i], _tiers[i]);
         }
@@ -80,22 +69,13 @@ abstract contract TieredSalesInternal is
         require(block.timestamp >= l.tiers[tierId].start, "NOT_STARTED");
         require(block.timestamp <= l.tiers[tierId].end, "ALREADY_ENDED");
 
-        maxMintable =
-            l.tiers[tierId].maxPerWallet -
-            l.walletMinted[tierId][minter];
+        maxMintable = l.tiers[tierId].maxPerWallet - l.walletMinted[tierId][minter];
 
         if (l.tiers[tierId].merkleRoot != bytes32(0)) {
-            require(
-                l.walletMinted[tierId][minter] < maxAllowance,
-                "MAXED_ALLOWANCE"
-            );
-            require(
-                _onTierAllowlist(tierId, minter, maxAllowance, proof),
-                "NOT_ALLOWLISTED"
-            );
+            require(l.walletMinted[tierId][minter] < maxAllowance, "MAXED_ALLOWANCE");
+            require(_onTierAllowlist(tierId, minter, maxAllowance, proof), "NOT_ALLOWLISTED");
 
-            uint256 remainingAllowance = maxAllowance -
-                l.walletMinted[tierId][minter];
+            uint256 remainingAllowance = maxAllowance - l.walletMinted[tierId][minter];
 
             if (maxMintable > remainingAllowance) {
                 maxMintable = remainingAllowance;
@@ -111,32 +91,17 @@ abstract contract TieredSalesInternal is
     ) internal {
         address minter = _msgSender();
 
-        uint256 maxMintable = _eligibleForTier(
-            tierId,
-            minter,
-            maxAllowance,
-            proof
-        );
+        uint256 maxMintable = _eligibleForTier(tierId, minter, maxAllowance, proof);
 
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(count <= maxMintable, "EXCEEDS_MAX");
-        require(
-            count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation,
-            "EXCEEDS_ALLOCATION"
-        );
+        require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
         if (l.tiers[tierId].currency == address(0)) {
-            require(
-                l.tiers[tierId].price * count <= msg.value,
-                "INSUFFICIENT_AMOUNT"
-            );
+            require(l.tiers[tierId].price * count <= msg.value, "INSUFFICIENT_AMOUNT");
         } else {
-            IERC20(l.tiers[tierId].currency).transferFrom(
-                minter,
-                address(this),
-                l.tiers[tierId].price * count
-            );
+            IERC20(l.tiers[tierId].currency).transferFrom(minter, address(this), l.tiers[tierId].price * count);
         }
 
         l.walletMinted[tierId][minter] += count;
@@ -149,11 +114,7 @@ abstract contract TieredSalesInternal is
 
     /* PRIVATE */
 
-    function _generateMerkleLeaf(address account, uint256 maxAllowance)
-        private
-        pure
-        returns (bytes32)
-    {
+    function _generateMerkleLeaf(address account, uint256 maxAllowance) private pure returns (bytes32) {
         return keccak256(abi.encodePacked(account, maxAllowance));
     }
 }
