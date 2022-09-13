@@ -7,7 +7,7 @@ import { setupTest } from "../setup";
 
 const deployERC1155 = async () => {
   return await deployDiamond({
-    facets: ["ERC1155SupplyMintableLockableBurnable"],
+    facets: ["ERC1155"],
     initializations: [
       {
         facet: "ERC1155SupplyOwnable",

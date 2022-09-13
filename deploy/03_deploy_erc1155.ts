@@ -12,21 +12,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
     hre.deployments,
     accounts[0],
     accounts[0],
-    "ERC1155SupplyMintable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155SupplyMintableLockable",
-    []
-  );
-  await deployPermanentContract(
-    hre.deployments,
-    accounts[0],
-    accounts[0],
-    "ERC1155SupplyMintableLockableBurnable",
+    "ERC1155",
     []
   );
 

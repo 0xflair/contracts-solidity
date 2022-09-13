@@ -46,12 +46,13 @@ const deployERC1155WithSales = async ({
 } = {}) => {
   return await deployDiamond({
     facets: [
-      "ERC165Ownable",
-      "ERC2771Context",
-      "ERC2771ContextOwnable",
-      "ERC1155SupplyMintableLockableBurnable",
-      "ERC1155SupplyOwnable",
+      // Base
+      "ERC1155",
+      // Features
       "ERC1155TieredSales",
+      // Administration
+      "ERC165Ownable",
+      "ERC1155SupplyOwnable",
       "TieredSalesOwnable",
     ],
     initializations: [

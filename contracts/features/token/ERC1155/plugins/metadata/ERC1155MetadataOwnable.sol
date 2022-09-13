@@ -9,6 +9,14 @@ import "../../../../access/ownable/OwnableInternal.sol";
 import "./ERC1155MetadataInternal.sol";
 import "./ERC1155MetadataStorage.sol";
 
+/**
+ * @title ERC1155 - Metadata Extension - Admin - Ownable
+ * @notice Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.
+ * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions
+ *
+ * @custom:facet
+ * @custom:dependency contracts/features/token/ERC1155/facets/metadata/ERC1155Metadata.sol
+ */
 contract ERC1155MetadataOwnable is ERC1155MetadataInternal, OwnableInternal {
     function setBaseURI(string calldata newBaseURI) public onlyOwner {
         _setBaseURI(newBaseURI);
@@ -18,17 +26,11 @@ contract ERC1155MetadataOwnable is ERC1155MetadataInternal, OwnableInternal {
         _setFallbackURI(newFallbackURI);
     }
 
-    function setURI(uint256 tokenId, string calldata newTokenURI)
-        public
-        onlyOwner
-    {
+    function setURI(uint256 tokenId, string calldata newTokenURI) public onlyOwner {
         _setURI(tokenId, newTokenURI);
     }
 
-    function setURIBatch(
-        uint256[] calldata tokenIds,
-        string[] calldata newTokenURIs
-    ) public onlyOwner {
+    function setURIBatch(uint256[] calldata tokenIds, string[] calldata newTokenURIs) public onlyOwner {
         for (uint256 i = 0; i < tokenIds.length; i++) {
             _setURI(tokenIds[i], newTokenURIs[i]);
         }
