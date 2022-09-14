@@ -4,7 +4,7 @@ import hre from 'hardhat';
 import {HardhatRuntimeEnvironment} from 'hardhat/types';
 import {DeployOptions} from 'hardhat-deploy/types';
 
-const deployUpgradableContract = async (
+export const deployUpgradableContract = async (
   deployments: HardhatRuntimeEnvironment['deployments'],
   from: string,
   owner: string,
@@ -72,7 +72,7 @@ const deployUpgradableContract = async (
   return contract;
 };
 
-const deployPermanentContract = async (
+export const deployPermanentContract = async (
   deployments: HardhatRuntimeEnvironment['deployments'],
   from: string,
   name: string,
@@ -92,9 +92,4 @@ const deployPermanentContract = async (
     additionalOptions && additionalOptions.contract ? additionalOptions.contract.toString() : name,
     result.address,
   );
-};
-
-module.exports = {
-  deployUpgradableContract,
-  deployPermanentContract,
 };

@@ -93,7 +93,7 @@ describe('ERC1155 Tiered Sales', function () {
     const diamond = await deployERC1155WithSales();
 
     const erc165Facet = await hre.ethers.getContractAt<ERC165>(
-      'contracts/features/introspection/ERC165.sol:ERC165',
+      'contracts/introspection/ERC165.sol:ERC165',
       diamond.address,
     );
 

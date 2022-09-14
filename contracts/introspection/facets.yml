@@ -1,0 +1,21 @@
+- name: ERC165 - supportsInterface
+  description: Provide a way to programmatically check if a contract supports a certain interface
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/introspection/ERC165.sol
+  deployments:
+    - chainId: 4
+      address: '0xC469c73296Cb5A19e1541BC0E332B5Bcfe193175'
+  selectors:
+    - supportsInterface(bytes4): ~
+
+- name: ERC165 - supportsInterface - Admin - Ownable
+  description: Manage supported ERC165 interfaces as owner of diamond
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/introspection/ERC165Ownable.sol
+  deployments:
+    - chainId: 4
+      address: '0x11e4e5d0344E708a09F2Ea30B8D3161F7c1053ae'
+  selectors:
+    - setERC165(bytes4[],bytes4[]): ~

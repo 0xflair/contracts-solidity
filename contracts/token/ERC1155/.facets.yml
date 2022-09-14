@@ -1,0 +1,29 @@
+- name: ERC1155 - Supply, Mintable, Lockable, Burnable Extensions
+  repo: github.com/0xflair/evm-contracts
+  ref: main
+  artifact: contracts/token/ERC1155/ERC1155.sol
+  deployments:
+    - chainId: 4
+      address: '0x24aDF4B87a81C56611Da1e816b33e14d3FeA9557'
+  selectors:
+    # ERC115 Base
+    - balanceOf(address,uint256): ~
+    - balanceOfBatch((address),(uint256)): ~
+    - isApprovedForAll(address,address): ~
+    - setApprovalForAll(address,bool): ~
+    - safeTransferFrom(address,address,uint256,uint256,bytes): ~
+    - safeBatchTransferFrom(address,address,(uint256),(uint256),bytes): ~
+    # Supply Extension
+    - totalSupply(uint256): ~
+    - exists(uint256): ~
+    - maxSupply(uint256): ~
+    # Mintable Extensions
+    - mintByFacet(address,uint256,uint256,bytes): ~
+    # Lockable Extension
+    - lockByFacet(address,uint256,uint256): ~
+    - unlockByFacet(address,uint256,uint256): ~
+    - locked(address,uint256): ~
+    - locked(address,(uint256)): ~
+    # Burnable Extension
+    - burn(address,uint256,uint256): ~
+    - burnBatch(address,(uint256),(uint256)): ~
