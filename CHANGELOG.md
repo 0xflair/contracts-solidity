@@ -1,1 +1,8 @@
+### [2.0.1](https://github.com/flair-sdk/contracts/compare/v2.0.0...v2.0.1) (2022-09-14)
+
+
+### Bug Fixes
+
+* consistent naming and removing facet yml files for now ([a2a6191](https://github.com/flair-sdk/contracts/commit/a2a6191f6d25cbb40f5f37a1c188417af3af9d54))
+
 ## [2.0.0](https://github.com/flair-sdk/contracts/compare/v1.0.1...v2.0.0) (2022-09-14)
