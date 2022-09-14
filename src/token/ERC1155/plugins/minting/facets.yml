@@ -1,0 +1,39 @@
+- name: ERC1155 - Mint by Owner Extension
+  repo: github.com/flair-sdk/contracts
+  ref: main
+  artifact: contracts/token/ERC1155/facets/minting/ERC1155MintByOwner.sol
+  deployments:
+    - chainId: 4
+      address: 'xxxxx'
+  selectors:
+    - mintByOwner(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 - Mint by Role Extension
+  repo: github.com/flair-sdk/contracts
+  ref: main
+  artifact: contracts/token/ERC1155/facets/minting/ERC1155MintByRole.sol
+  deployments:
+    - chainId: 4
+      address: 'xxxxx'
+  selectors:
+    - mintByRole(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 - Mint by Owner Extension - with ERC2771 Meta-transactions
+  repo: github.com/flair-sdk/contracts
+  ref: main
+  artifact: contracts/token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771.sol
+  deployments:
+    - chainId: 4
+      address: 'xxxxx'
+  selectors:
+    - mintByOwner(address,uint256,uint256,bytes): ~
+
+- name: ERC1155 - Mint by Role Extension - with ERC2771 Meta-transactions
+  repo: github.com/flair-sdk/contracts
+  ref: main
+  artifact: contracts/token/ERC1155/facets/minting/ERC1155MintByRoleERC2771.sol
+  deployments:
+    - chainId: 4
+      address: 'xxxxx'
+  selectors:
+    - mintByRole(address,uint256,uint256,bytes): ~

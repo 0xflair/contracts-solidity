@@ -10,10 +10,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/0xflair/evm-contracts.git"
+    "url": "git+https://github.com/flair-sdk/contracts.git"
   },
   "engines": {
-    "node": ">=16.0.0"
+    "node": ">=14.0.0"
   },
   "main": "typechain/index.ts",
   "module": "typechain/index.ts",

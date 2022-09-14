@@ -2,17 +2,17 @@ import 'hardhat-deploy';
 import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 
-import {expect} from 'chai';
-import {BigNumberish, utils} from 'ethers';
+import { expect } from 'chai';
+import { BigNumberish, utils } from 'ethers';
 import hre from 'hardhat';
 
-import {ERC165, ERC1155Supply, ERC1155SupplyOwnable, ERC1155TieredSales, TieredSalesOwnable} from '../../typechain';
-import {ERC1155Base} from '../../typechain/ERC1155Base';
-import {setupTest} from '../setup';
-import {generateAllowlistLeaf, generateAllowlistMerkleTree} from '../utils/allowlists';
-import {ZERO_ADDRESS, ZERO_BYTES32} from '../utils/common';
-import {deployDiamond, Initialization} from '../utils/diamond';
-import {Tier} from '../utils/tiered-sales';
+import { ERC165, ERC1155Supply, ERC1155SupplyOwnable, ERC1155TieredSales, TieredSalesOwnable } from '../../typechain';
+import { ERC1155Base } from '../../typechain/ERC1155Base';
+import { setupTest } from '../setup';
+import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
+import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
+import { deployDiamond, Initialization } from '../utils/diamond';
+import { Tier } from '../utils/tiered-sales';
 
 const DEFAULT_TIERS: Tier[] = [
   {
@@ -41,7 +41,7 @@ const deployERC1155WithSales = async ({
   tiers = DEFAULT_TIERS,
   initializations = [],
 }: {
-  tiers?: (Tier & {overrideTokenId?: BigNumberish})[];
+  tiers?: (Tier & { overrideTokenId?: BigNumberish })[];
   initializations?: Initialization[];
 } = {}) => {
   return deployDiamond({
@@ -91,18 +91,14 @@ describe('ERC1155 Tiered Sales', function () {
     await setupTest();
 
     const diamond = await deployERC1155WithSales();
-
-    const erc165Facet = await hre.ethers.getContractAt<ERC165>(
-      'contracts/introspection/ERC165.sol:ERC165',
-      diamond.address,
-    );
+    const erc165Facet = await hre.ethers.getContractAt<ERC165>('src/introspection/ERC165.sol:ERC165', diamond.address);
 
     // ERC1155
     expect(await erc165Facet.supportsInterface('0xd9b67a26')).to.be.equal(true);
   });
 
   it('should mint by tier multiple times until reached max allowance in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -202,7 +198,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier when 1 tier, no allowlist, with native currency', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const erc1155Facet = await hre.ethers.getContractAt<ERC1155Base>('ERC1155Base', diamond.address);
@@ -217,7 +213,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should get wallet minted amount by tier', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
@@ -230,7 +226,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a non-existing tier', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
@@ -243,7 +239,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier that is not started yet', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -269,7 +265,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier that is already ended', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -295,7 +291,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and wallet is not allowlisted', async function () {
-    const {userA, userB, userC, userD} = await setupTest();
+    const { userA, userB, userC, userD } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -361,7 +357,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and passed max allowance is wrong vs allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -427,7 +423,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and amount is higher than max allowance in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -493,7 +489,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and amount + prev mints is higher than max allowance in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -574,7 +570,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier when amount is equal to max per wallet even though allowance is high in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -638,7 +634,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and amount is higher than max per wallet even though allowance is high enough in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -704,7 +700,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and amount + prev mints is higher than max per wallet even though allowance is high enough in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -785,7 +781,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier multiple times until reached max allowance in allowlist', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -881,7 +877,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail to mint by tier if tier allocation is filled up', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -948,7 +944,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier with allowlist without proof', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -989,7 +985,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier with allowlist with proof of another wallet', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -1055,7 +1051,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier when wallet is allowlisted', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -1119,7 +1115,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier when wallet is allowlisted one by one', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -1197,7 +1193,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier when max per wallet is reached', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
@@ -1214,7 +1210,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and amount + prev mints is asking for more than remaining per-wallet allocation', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
@@ -1231,7 +1227,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail when minting a tier and not enough ether is sent', async function () {
-    const {userA} = await setupTest();
+    const { userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
@@ -1244,7 +1240,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint by tier when multiple tiers and have dedicated max per wallet', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
 
     const mkt = generateAllowlistMerkleTree([
       {
@@ -1358,7 +1354,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example A)', async function () {
-    const {userA, userB, userC} = await setupTest();
+    const { userA, userB, userC } = await setupTest();
     const TIER_ZERO = 0;
     const TIER_ONE = 1;
     const TIER_TWO = 2;
@@ -1492,7 +1488,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example B)', async function () {
-    const {userA, userB} = await setupTest();
+    const { userA, userB } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -1648,7 +1644,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example C)', async function () {
-    const {userA, userB} = await setupTest();
+    const { userA, userB } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -1754,7 +1750,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint for a tier if a new address is getting allowlisted and applied for that tier', async function () {
-    const {deployer, userA, userB} = await setupTest();
+    const { deployer, userA, userB } = await setupTest();
 
     const mkt1 = generateAllowlistMerkleTree([
       {
@@ -1885,7 +1881,7 @@ describe('ERC1155 Tiered Sales', function () {
   //
 
   it('should fail to mint by tier if remaining allocation is fully reserved and starts in future (example D)', async function () {
-    const {userA, userB} = await setupTest();
+    const { userA, userB } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -1983,7 +1979,7 @@ describe('ERC1155 Tiered Sales', function () {
 
   // TODO Should we override setMaxSupply when using TieredSales in 1155 cleanly?
   it.skip('should fail when total remaining supply become less than remaining reserved spots', async function () {
-    const {deployer, userA} = await setupTest();
+    const { deployer, userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -2062,7 +2058,7 @@ describe('ERC1155 Tiered Sales', function () {
 
   // TODO Should we override setMaxSupply when using TieredSales in 1155 cleanly?
   it.skip('should fail when total remaining supply becomes less than already minted supply', async function () {
-    const {deployer, userA} = await setupTest();
+    const { deployer, userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -2137,7 +2133,7 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should mint only reserved spots for a tier when new max supply equals total reserved spots', async function () {
-    const {deployer, userA, userB} = await setupTest();
+    const { deployer, userA, userB } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -2227,7 +2223,7 @@ describe('ERC1155 Tiered Sales', function () {
   //
 
   it('should mint for a tier with zero reserved if there is still supply and the reserved spots for that tier increases', async function () {
-    const {deployer, userA, userB} = await setupTest();
+    const { deployer, userA, userB } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [
@@ -2324,7 +2320,7 @@ describe('ERC1155 Tiered Sales', function () {
 
   // TODO Should we enforce max supply in tiered sales extension of 1155?
   it.skip('should not be ale to increase reserved spots for a tier when the whole supply is already reserved', async function () {
-    const {deployer, userA} = await setupTest();
+    const { deployer, userA } = await setupTest();
 
     const diamond = await deployERC1155WithSales({
       tiers: [

@@ -10,7 +10,7 @@ import '@matterlabs/hardhat-zksync-solc';
 import '@matterlabs/hardhat-zksync-deploy';
 
 import * as dotenv from 'dotenv';
-import {HardhatUserConfig} from 'hardhat/config';
+import { HardhatUserConfig } from 'hardhat/config';
 
 const args = process.argv.slice(2);
 
@@ -64,7 +64,7 @@ if (args.includes('mainnet')) {
 
 const config: HardhatUserConfig = {
   paths: {
-    sources: './contracts',
+    sources: './src',
   },
   solidity: {
     version: '0.8.15',

@@ -1,10 +1,10 @@
 import 'hardhat-deploy';
 import '@nomiclabs/hardhat-ethers';
 
-import {utils} from 'ethers';
+import { utils } from 'ethers';
 import hre from 'hardhat';
 
-import {Diamond} from '../../typechain';
+import { Diamond } from '../../typechain';
 
 export enum FacetCutAction {
   Add,
@@ -36,7 +36,7 @@ export const deployDiamond = async (
   }: {
     facets?: Facet[];
     initializations?: Initialization[];
-  } = {facets: [], initializations: []},
+  } = { facets: [], initializations: [] },
 ) => {
   const accounts = await hre.getUnnamedAccounts();
 
