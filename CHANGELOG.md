@@ -1,3 +1,10 @@
+### [2.0.2](https://github.com/flair-sdk/contracts/compare/v2.0.1...v2.0.2) (2022-09-19)
+
+
+### Bug Fixes
+
+* copy package-lock to dist ([b772326](https://github.com/flair-sdk/contracts/commit/b77232672d866fe2df5ecc55bd748082dc084c72))
+
 ### [2.0.1](https://github.com/flair-sdk/contracts/compare/v2.0.0...v2.0.1) (2022-09-14)
 
 
