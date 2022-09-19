@@ -165,6 +165,7 @@ async function main() {
 
   // Add package files
   fse.copySync(path.resolve(__dirname, '../package.json'), distPath + '/package.json');
+  fse.copySync(path.resolve(__dirname, '../package-lock.json'), distPath + '/package-lock.json');
   fse.copySync(path.resolve(__dirname, '../README.md'), distPath + '/README.md');
 
   // TODO Auto-generate facets
