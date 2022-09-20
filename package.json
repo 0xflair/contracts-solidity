@@ -29,7 +29,7 @@
     "compile-openzeppelin": "npx hardhat compile --config openzeppelin.config.ts --network hardhat",
     "build": "npm run clean && npm run compile",
     "dist": "ts-node ./scripts/dist.ts",
-    "prepublishOnly": "ts-node ./scripts/dist.ts",
+    "prepublishOnly": "npm run dist",
     "clean": "npx hardhat clean --network hardhat && rimraf ./dist",
     "coverage": "npm run build && npx hardhat coverage --temp artifacts --network hardhat",
     "release": "semantic-release --debug",
