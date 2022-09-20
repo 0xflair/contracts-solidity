@@ -24,19 +24,22 @@ const chainConfig = {
   },
 };
 
-type Dependency = string;
+type EIP165InterfaceID = string;
 
-type Facet = {
+type FacetManifest = {
+  category: string;
   title: string;
+  notice: string;
+  icon?: string;
   repo: string;
   ref: string;
   fqn: string;
   version: string;
-  peer_dependencies: Dependency[];
-  dependencies: Dependency[];
   addresses: Record<string, string>;
-  providesInterfaces: string[];
+  providesInterfaces: EIP165InterfaceID[];
   functionSelectors: string[];
+  peerDependencies: EIP165InterfaceID[];
+  requiredDependencies: EIP165InterfaceID[];
 };
 
 async function main() {
@@ -99,7 +102,7 @@ async function main() {
   }
 
   // Add deployment addresses
-  const contractNameToChainToAddress: Record<string, Record<string, string>> = {};
+  const contractFqnToChainToAddress: Record<string, Record<string, string>> = {};
   const deploymentsRoot = path.resolve(__dirname, '../deployments');
   const deploymentFiles = glob.sync('*/*.json', {
     nodir: true,
@@ -129,21 +132,21 @@ async function main() {
       throw new Error(`Could not find contract ${artifactName} in src/ directory: ${JSON.stringify(files)}`);
     }
 
-    const artifactKey = files[0].split('.', -1)[0];
+    const contractFqn = files[0].split('.', -1)[0];
 
-    if (!artifactKey) {
+    if (!contractFqn) {
       throw new Error(`Could not get artifact key for ${file}`);
     }
 
-    if (!contractNameToChainToAddress[artifactKey]) {
-      contractNameToChainToAddress[artifactKey] = {};
+    if (!contractFqnToChainToAddress[contractFqn]) {
+      contractFqnToChainToAddress[contractFqn] = {};
     }
 
-    contractNameToChainToAddress[artifactKey][chainId] = contractAddress;
-    contractNameToChainToAddress[artifactKey][chainName] = contractAddress;
+    contractFqnToChainToAddress[contractFqn][chainId] = contractAddress;
+    contractFqnToChainToAddress[contractFqn][chainName] = contractAddress;
   }
 
-  fse.writeJSONSync(path.resolve(distPath, 'addresses.json'), contractNameToChainToAddress);
+  fse.writeJSONSync(path.resolve(distPath, 'addresses.json'), contractFqnToChainToAddress);
 
   // Add build info
   const buildInfoRoot = path.resolve(__dirname, '../artifacts/build-info');
@@ -168,7 +171,14 @@ async function main() {
   fse.copySync(path.resolve(__dirname, '../package-lock.json'), distPath + '/package-lock.json');
   fse.copySync(path.resolve(__dirname, '../README.md'), distPath + '/README.md');
 
-  // TODO Auto-generate facets
+  const facets = await scanForFacets(
+    buildInfo,
+    contractFqnToChainToAddress,
+    process.env.REPO || 'unknown',
+    process.env.REF || 'unknown',
+    process.env.VERSION || 'unknown',
+  );
+  fse.writeJSONSync(path.resolve(distPath, 'facets.json'), facets);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -177,3 +187,66 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+async function scanForFacets(
+  buildInfo: any,
+  addressesRegistry: Record<string, Record<string, string>>,
+  repo: string,
+  ref: string,
+  version: string,
+): Promise<Record<string, FacetManifest>> {
+  const facets: Record<string, FacetManifest> = {};
+
+  for (const [fqn, addresses] of Object.entries(addressesRegistry)) {
+    const artifact = fqn.split('/').pop();
+    const source = `src/${fqn}.sol`;
+
+    const annotations = {
+      ...((artifact && buildInfo?.output?.contracts?.[source]?.[artifact]?.devdoc) || {}),
+      ...((artifact && buildInfo?.output?.contracts?.[source]?.[artifact]?.userdoc) || {}),
+    };
+
+    const {
+      'custom:type': type,
+      'custom:category': category = 'Other',
+      'custom:peer-dependencies': peerDependencies = '',
+      'custom:required-dependencies': requiredDependencies = '',
+      'custom:provides-interfaces': providesInterfaces = '',
+      title,
+      notice,
+    } = annotations;
+
+    if (!artifact || type !== 'eip-2535-facet') {
+      continue;
+    }
+
+    const functionSelectors = Object.keys(
+      buildInfo?.output?.contracts?.[source]?.[artifact]?.evm.methodIdentifiers || {},
+    );
+
+    facets[fqn] = {
+      category,
+      title,
+      notice,
+      repo,
+      ref,
+      fqn,
+      version,
+      addresses,
+      functionSelectors,
+      providesInterfaces: stringListToArray(providesInterfaces),
+      peerDependencies: stringListToArray(peerDependencies),
+      requiredDependencies: stringListToArray(requiredDependencies),
+    };
+  }
+
+  return facets;
+}
+
+export const BYTES32_HEX_REGEXP = /0x[a-fA-F0-9]{8}/g;
+
+function stringListToArray(input: any): string[] {
+  const items = [...input.matchAll(BYTES32_HEX_REGEXP)].map((match) => match[0]).filter((address) => Boolean(address));
+
+  return items.map((s: string) => s.trim());
+}

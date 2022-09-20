@@ -9,13 +9,14 @@ import "./ERC1155MetadataInternal.sol";
 import "./ERC1155MetadataStorage.sol";
 
 /**
- * @title ERC1155 - Metadata Extension
+ * @title ERC1155 - Metadata
  * @notice Provides metadata for ERC1155 tokens according to standard. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.
  * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions
  *
- * @custom:facet
- * @custom:dependency contracts/token/ERC1155/base/ERC1155Base.sol
- * @custom:peer-dependency contracts/token/ERC1155/facets/metadata/ERC1155MetadataOwnable.sol
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:peer-dependencies 0xd9b67a26
+ * @custom:provides-interfaces 0x0e89341c
  */
 contract ERC1155Metadata is IERC1155Metadata, ERC1155MetadataInternal {
     /**

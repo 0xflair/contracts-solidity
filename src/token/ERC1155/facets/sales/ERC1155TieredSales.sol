@@ -12,7 +12,13 @@ import "../../extensions/supply/IERC1155Supply.sol";
 import "./ERC1155TieredSalesStorage.sol";
 
 /**
- * @title Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.
+ * @title ERC1155 - Tiered Sales
+ * @notice Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:required-dependencies 0xb164884b
+ * @custom:provides-interfaces 0x91cb770f
  */
 contract ERC1155TieredSales is ReentrancyGuard, TieredSales {
     using ERC165Storage for ERC165Storage.Layout;

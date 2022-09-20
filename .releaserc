@@ -82,6 +82,12 @@
     ],
     "@semantic-release/changelog",
     [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "REF=$REF VERSION=${nextRelease.version} npm run dist"
+      }
+    ],
+    [
       "@semantic-release/npm",
       {
         "pkgRoot": "./dist/"

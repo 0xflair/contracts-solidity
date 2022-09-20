@@ -11,12 +11,14 @@ import "./ERC1155MetadataStorage.sol";
 import "./IERC1155MetadataAdmin.sol";
 
 /**
- * @title ERC1155 - Metadata Extension - Admin - Ownable
+ * @title ERC1155 - Metadata - Admin - Ownable
  * @notice Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.
  * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions
  *
- * @custom:facet
- * @custom:dependency contracts/token/ERC1155/facets/metadata/ERC1155Metadata.sol
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:peer-dependencies 0x0e89341c
+ * @custom:provides-interfaces 0x0dfe03d4
  */
 contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInternal, OwnableInternal {
     function setBaseURI(string calldata newBaseURI) public onlyOwner {

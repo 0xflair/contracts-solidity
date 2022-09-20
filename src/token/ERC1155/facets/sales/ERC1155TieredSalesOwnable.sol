@@ -7,7 +7,13 @@ import "./ERC1155TieredSalesStorage.sol";
 import "./IERC1155TieredSalesAdmin.sol";
 
 /**
- * @title Allow owner of diamond to manage ERC1155 sale tiers.
+ * @title ERC1155 - Tiered Sales - Admin - Ownable
+ * @notice Used to manage which ERC1155 token is related to which the sales tier.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:peer-dependencies 0x91cb770f
+ * @custom:provides-interfaces 0x76c5dd21
  */
 contract ERC1155TieredSalesOwnable is IERC1155TieredSalesAdmin, OwnableInternal {
     using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;

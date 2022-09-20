@@ -42,9 +42,9 @@ jobs:
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
           npm whoami
           npm config set access public
-          npm run dist
-          npm run release
+          REF=$GITHUB_REF_NAME npm run release
         env:
+          REPO: github.com/flair-sdk/contracts
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
