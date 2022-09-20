@@ -3,6 +3,8 @@ import glob from 'glob';
 import * as path from 'path';
 import * as rimraf from 'rimraf';
 
+import pkgJson from '../package.json';
+
 const { chainConfig: chainConfig_ } = require('@nomiclabs/hardhat-etherscan/dist/src/ChainConfig.js');
 
 const chainConfig = {
@@ -174,19 +176,23 @@ async function main() {
   const facets = await scanForFacets(
     buildInfo,
     contractFqnToChainToAddress,
-    process.env.REPO || 'unknown',
-    process.env.REF || 'unknown',
-    process.env.VERSION || 'unknown',
+    process.env.REPO || pkgJson?.repository?.url || 'unknown',
+    process.env.REF || 'main',
+    process.env.VERSION || pkgJson?.version || 'unknown',
   );
   fse.writeJSONSync(path.resolve(distPath, 'facets.json'), facets);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+main()
+  .then(() => {
+    console.log('Finished generating dist files.');
+  })
+  .catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
 
 async function scanForFacets(
   buildInfo: any,
