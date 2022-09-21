@@ -1,3 +1,10 @@
+## [2.1.0](https://github.com/flair-sdk/contracts/compare/v2.0.7...v2.1.0) (2022-09-21)
+
+
+### Features
+
+* add interfaces for public variables ([4377d5a](https://github.com/flair-sdk/contracts/commit/4377d5ad531ee7fd9903fd9dc267284c6b85d190))
+
 ### [2.0.7](https://github.com/flair-sdk/contracts/compare/v2.0.6...v2.0.7) (2022-09-21)
 
 ### [2.0.6](https://github.com/flair-sdk/contracts/compare/v2.0.5...v2.0.6) (2022-09-20)
