@@ -2,14 +2,20 @@
 
 pragma solidity 0.8.15;
 
+import "../access/ownable/OwnableInternal.sol";
 import "./IERC165.sol";
 import "./ERC165Storage.sol";
-import "../access/ownable/OwnableInternal.sol";
+import "./IERC165Admin.sol";
 
 /**
- * @title ERC165 management facet using Ownable extension for access control
+ * @title ERC165 - Admin - Ownable
+ * @notice Standard EIP-165 management facet using Ownable extension for access control.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Diamonds
+ * @custom:provides-interfaces 0x2a848091
  */
-contract ERC165Ownable is OwnableInternal {
+contract ERC165Ownable is IERC165Admin, OwnableInternal {
     using ERC165Storage for ERC165Storage.Layout;
 
     /**

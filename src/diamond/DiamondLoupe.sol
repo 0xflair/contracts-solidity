@@ -15,6 +15,14 @@ import "./IDiamondLoupe.sol";
 // The functions in DiamondLoupe MUST be added to a diamond.
 // The EIP-2535 Diamond standard requires these functions.
 
+/**
+ * @title Diamond - Loupe
+ * @notice Standard EIP-2535 loupe functions to allow inspecting a diamond for explorers.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Diamonds
+ * @custom:provides-interfaces 0x48e2b093
+ */
 contract DiamondLoupe is IDiamondLoupe {
     /// @notice Gets all facets and their selectors.
     /// @return facets_ Facet

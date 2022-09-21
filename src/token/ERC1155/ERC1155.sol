@@ -11,7 +11,6 @@ import "./extensions/burnable/ERC1155Burnable.sol";
 /**
  * @title ERC1155 - Standard
  * @notice Standard EIP-1155 NFTs with core capabilities of Mintable, Burnable and Lockable.
- * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs

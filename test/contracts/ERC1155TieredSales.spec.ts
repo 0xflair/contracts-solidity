@@ -6,7 +6,14 @@ import { expect } from 'chai';
 import { BigNumberish, utils } from 'ethers';
 import hre from 'hardhat';
 
-import { ERC165, ERC1155Supply, ERC1155SupplyOwnable, ERC1155TieredSales, TieredSalesOwnable } from '../../typechain';
+import {
+  DiamondLoupe,
+  ERC165,
+  ERC1155Supply,
+  ERC1155SupplyOwnable,
+  ERC1155TieredSales,
+  TieredSalesOwnable,
+} from '../../typechain';
 import { ERC1155Base } from '../../typechain/ERC1155Base';
 import { setupTest } from '../setup';
 import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
@@ -87,6 +94,17 @@ const deployERC1155WithSales = async ({
 };
 
 describe('ERC1155 Tiered Sales', function () {
+  it('should return facets', async function () {
+    await setupTest();
+
+    const diamond = await deployERC1155WithSales();
+    const diamondLoupeFacet = await hre.ethers.getContractAt<DiamondLoupe>('DiamondLoupe', diamond.address);
+
+    const facets = await diamondLoupeFacet.facets();
+
+    expect(facets.length).to.be.equal(9);
+  });
+
   it('should return true when checking interfaces', async function () {
     await setupTest();
 

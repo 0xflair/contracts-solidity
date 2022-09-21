@@ -10,7 +10,6 @@ import "./IERC1155SupplyAdmin.sol";
 /**
  * @title ERC1155 - Supply - Admin - Ownable
  * @notice Allows owner of a EIP-1155 contract to change max supply of token IDs.
- * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs

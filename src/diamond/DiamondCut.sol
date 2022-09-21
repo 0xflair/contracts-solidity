@@ -14,6 +14,14 @@ import "../access/ownable/OwnableInternal.sol";
 // Remember to add the loupe functions from DiamondLoupeFacet to the diamond.
 // The loupe functions are required by the EIP2535 Diamonds standard
 
+/**
+ * @title Diamond - Cut
+ * @notice Standard EIP-2535 cut functionality to add, replace and remove facets from a diamond.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Diamonds
+ * @custom:provides-interfaces 0x1f931c1c
+ */
 contract DiamondCut is IDiamondCut, OwnableInternal {
     /// @notice Add/replace/remove any number of functions and optionally execute
     ///         a function with delegatecall
