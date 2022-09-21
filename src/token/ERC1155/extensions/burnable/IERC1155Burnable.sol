@@ -6,6 +6,8 @@ pragma solidity 0.8.15;
  * @dev Extension of {ERC1155} that allows holders or approved operators to burn tokens.
  */
 interface IERC1155Burnable {
+    function burnablePausedUntil() external view returns (uint256);
+
     function burn(
         address account,
         uint256 id,

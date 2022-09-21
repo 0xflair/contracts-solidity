@@ -18,7 +18,7 @@ import "./ERC1155TieredSalesStorage.sol";
  * @custom:type eip-2535-facet
  * @custom:category NFTs
  * @custom:required-dependencies 0xb164884b
- * @custom:provides-interfaces 0x91cb770f
+ * @custom:provides-interfaces 0x79f33254
  */
 contract ERC1155TieredSales is ReentrancyGuard, TieredSales {
     using ERC165Storage for ERC165Storage.Layout;

@@ -47,4 +47,16 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
     function tierMints(uint256 tierId) public view returns (uint256) {
         return TieredSalesStorage.layout().tierMints[tierId];
     }
+
+    function totalReserved() external view returns (uint256) {
+        return TieredSalesStorage.layout().totalReserved;
+    }
+
+    function reservedMints() external view returns (uint256) {
+        return TieredSalesStorage.layout().reservedMints;
+    }
+
+    function tiers(uint256 tierId) external view returns (Tier memory) {
+        return TieredSalesStorage.layout().tiers[tierId];
+    }
 }

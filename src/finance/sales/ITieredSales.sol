@@ -31,4 +31,10 @@ interface ITieredSales is ITieredSalesInternal {
     function walletMintedByTier(uint256 tierId, address wallet) external view returns (uint256);
 
     function tierMints(uint256 tierId) external view returns (uint256);
+
+    function totalReserved() external view returns (uint256);
+
+    function reservedMints() external view returns (uint256);
+
+    function tiers(uint256 tierId) external view returns (Tier memory);
 }
