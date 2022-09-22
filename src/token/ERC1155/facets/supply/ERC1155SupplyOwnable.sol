@@ -13,7 +13,7 @@ import "./IERC1155SupplyAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0xd9b67a26 0x744f4bd4
+ * @custom:peer-dependencies eip165:0xd9b67a26 eip165:0x744f4bd4
  * @custom:provides-interfaces 0x5b2cf486
  */
 contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, OwnableInternal {

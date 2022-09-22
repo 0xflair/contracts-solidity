@@ -10,6 +10,7 @@ import "../../extensions/mintable/IERC1155Mintable.sol";
 import "../../extensions/supply/ERC1155SupplyStorage.sol";
 import "../../extensions/supply/IERC1155Supply.sol";
 import "./ERC1155TieredSalesStorage.sol";
+import "./IERC1155TieredSales.sol";
 
 /**
  * @title ERC1155 - Tiered Sales
@@ -17,10 +18,10 @@ import "./ERC1155TieredSalesStorage.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies 0xb164884b
- * @custom:provides-interfaces 0x79f33254
+ * @custom:required-dependencies eip165:0xb164884b
+ * @custom:provides-interfaces 0x79f33254 0x5ae18a74
  */
-contract ERC1155TieredSales is ReentrancyGuard, TieredSales {
+contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales {
     using ERC165Storage for ERC165Storage.Layout;
     using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;
     using ERC1155SupplyStorage for ERC1155SupplyStorage.Layout;
@@ -39,6 +40,20 @@ contract ERC1155TieredSales is ReentrancyGuard, TieredSales {
             count,
             ""
         );
+    }
+
+    function tierToTokenId(uint256 tierId) external view returns (uint256) {
+        return ERC1155TieredSalesStorage.layout().tierToTokenId[tierId];
+    }
+
+    function tierToTokenId(uint256[] calldata tierIds) external view returns (uint256[] memory) {
+        uint256[] memory tokenIds = new uint256[](tierIds.length);
+
+        for (uint256 i = 0; i < tierIds.length; i++) {
+            tokenIds[i] = ERC1155TieredSalesStorage.layout().tierToTokenId[tierIds[i]];
+        }
+
+        return tokenIds;
     }
 
     function _remainingSupplyForTier(uint256 tierId) internal view override returns (uint256) {

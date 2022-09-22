@@ -13,7 +13,7 @@ import "../../access/ownable/OwnableInternal.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0x79f33254
+ * @custom:peer-dependencies eip165:0x79f33254
  * @custom:provides-interfaces 0xf8458dcd
  */
 contract TieredSalesOwnable is ITieredSalesAdmin, OwnableInternal, TieredSalesInternal {

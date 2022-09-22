@@ -12,7 +12,7 @@ import "./IERC1155BurnableAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0xdc290004
+ * @custom:peer-dependencies eip165:0xdc290004
  * @custom:provides-interfaces 0x710fb577
  */
 contract ERC1155BurnableOwnable is IERC1155BurnableAdmin, OwnableInternal {
