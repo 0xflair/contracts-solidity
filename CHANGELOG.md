@@ -1,3 +1,10 @@
+## [2.2.0](https://github.com/flair-sdk/contracts/compare/v2.1.0...v2.2.0) (2022-09-22)
+
+
+### Features
+
+* add batch uri method and batch tier token id ([a10d02b](https://github.com/flair-sdk/contracts/commit/a10d02b674c4a8cff55018d8fd090f1202321e51))
+
 ## [2.1.0](https://github.com/flair-sdk/contracts/compare/v2.0.7...v2.1.0) (2022-09-21)
 
 
