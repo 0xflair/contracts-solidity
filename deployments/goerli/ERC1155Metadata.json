@@ -1,0 +1,200 @@
+{
+  "address": "0xdeA60aca7e5bFa2D482bF4eEc9c1Ba0580B26a5b",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "value",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "URI",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "baseURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "baseURILocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fallbackURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fallbackURILocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastLockedTokenId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "uri",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "uriBatch",
+      "outputs": [
+        {
+          "internalType": "string[]",
+          "name": "",
+          "type": "string[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uriSuffix",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uriSuffixLocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x4bd9d690bde274e9f69e39860a9423fd8a970ac992f18761c5aeaa1e9670cd8f",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xdeA60aca7e5bFa2D482bF4eEc9c1Ba0580B26a5b",
+    "transactionIndex": 106,
+    "gasUsed": "619838",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xb13cc7e8e03276984e081e878a4b83fa45afad5de8f027e981f17ee7669965d7",
+    "transactionHash": "0x4bd9d690bde274e9f69e39860a9423fd8a970ac992f18761c5aeaa1e9670cd8f",
+    "logs": [],
+    "blockNumber": 7639799,
+    "cumulativeGasUsed": "26293654",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "203d1016fd15d99d2bcb54f167e7a882",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"value\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"URI\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"baseURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseURILocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fallbackURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fallbackURILocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastLockedTokenId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"uri\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"tokenIds\",\"type\":\"uint256[]\"}],\"name\":\"uriBatch\",\"outputs\":[{\"internalType\":\"string[]\",\"name\":\"\",\"type\":\"string[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"uriSuffix\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"uriSuffixLocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:peer-dependencies\":\"eip165:0xd9b67a26\",\"custom:provides-interfaces\":\"0x0e89341c 0x57bbc86d\",\"custom:type\":\"eip-2535-facet\",\"details\":\"See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC1155 - Metadata\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"uri(uint256)\":{\"notice\":\"inheritdoc IERC1155Metadata\"}},\"notice\":\"Provides metadata for ERC1155 tokens according to standard. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC1155/facets/metadata/ERC1155Metadata.sol\":\"ERC1155Metadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/ERC1155Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"./IERC1155Metadata.sol\\\";\\nimport \\\"./IERC1155MetadataExtra.sol\\\";\\nimport \\\"./ERC1155MetadataInternal.sol\\\";\\nimport \\\"./ERC1155MetadataStorage.sol\\\";\\n\\n/**\\n * @title ERC1155 - Metadata\\n * @notice Provides metadata for ERC1155 tokens according to standard. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.\\n * @dev See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:peer-dependencies eip165:0xd9b67a26\\n * @custom:provides-interfaces 0x0e89341c 0x57bbc86d\\n */\\ncontract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155MetadataInternal {\\n    /**\\n     * @notice inheritdoc IERC1155Metadata\\n     */\\n    function uri(uint256 tokenId) public view virtual returns (string memory) {\\n        ERC1155MetadataStorage.Layout storage l = ERC1155MetadataStorage.layout();\\n\\n        string memory _tokenIdURI = l.tokenURIs[tokenId];\\n        string memory _baseURI = l.baseURI;\\n\\n        if (bytes(_baseURI).length == 0) {\\n            return _tokenIdURI;\\n        } else if (bytes(_tokenIdURI).length > 0) {\\n            return string(abi.encodePacked(_baseURI, _tokenIdURI));\\n        } else {\\n            return string(abi.encodePacked(_baseURI, l.fallbackURI, Strings.toString(tokenId)));\\n        }\\n    }\\n\\n    function uriBatch(uint256[] calldata tokenIds) external view returns (string[] memory) {\\n        string[] memory uris = new string[](tokenIds.length);\\n\\n        for (uint256 i = 0; i < tokenIds.length; i++) {\\n            uris[i] = uri(tokenIds[i]);\\n        }\\n\\n        return uris;\\n    }\\n\\n    function baseURI() external view returns (string memory) {\\n        return ERC1155MetadataStorage.layout().baseURI;\\n    }\\n\\n    function fallbackURI() external view returns (string memory) {\\n        return ERC1155MetadataStorage.layout().fallbackURI;\\n    }\\n\\n    function uriSuffix() external view returns (string memory) {\\n        return ERC1155MetadataStorage.layout().uriSuffix;\\n    }\\n\\n    function baseURILocked() external view returns (bool) {\\n        return ERC1155MetadataStorage.layout().baseURILocked;\\n    }\\n\\n    function fallbackURILocked() external view returns (bool) {\\n        return ERC1155MetadataStorage.layout().fallbackURILocked;\\n    }\\n\\n    function uriSuffixLocked() external view returns (bool) {\\n        return ERC1155MetadataStorage.layout().uriSuffixLocked;\\n    }\\n\\n    function lastLockedTokenId() external view returns (uint256) {\\n        return ERC1155MetadataStorage.layout().lastLockedTokenId;\\n    }\\n}\\n\",\"keccak256\":\"0x2d02a1f9bcbbe652b2222a5f6ae3e107aa6dfa3d41e46607c8ba56b9aaee2672\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/ERC1155MetadataInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./IERC1155MetadataEvents.sol\\\";\\nimport \\\"./ERC1155MetadataStorage.sol\\\";\\n\\nabstract contract ERC1155MetadataInternal is IERC1155MetadataEvents {\\n    function _setBaseURI(string memory baseURI) internal {\\n        require(!ERC1155MetadataStorage.layout().baseURILocked, \\\"ERC1155Metadata: baseURI locked\\\");\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setFallbackURI(string memory baseURI) internal {\\n        require(!ERC1155MetadataStorage.layout().fallbackURILocked, \\\"ERC1155Metadata: fallbackURI locked\\\");\\n        ERC1155MetadataStorage.layout().baseURI = baseURI;\\n    }\\n\\n    function _setURI(uint256 tokenId, string memory tokenURI) internal {\\n        require(tokenId > ERC1155MetadataStorage.layout().lastLockedTokenId, \\\"ERC1155Metadata: tokenURI locked\\\");\\n        ERC1155MetadataStorage.layout().tokenURIs[tokenId] = tokenURI;\\n        emit URI(tokenURI, tokenId);\\n    }\\n\\n    function _setURISuffix(string memory uriSuffix) internal {\\n        require(!ERC1155MetadataStorage.layout().uriSuffixLocked, \\\"ERC1155Metadata: uriSuffix locked\\\");\\n        ERC1155MetadataStorage.layout().uriSuffix = uriSuffix;\\n    }\\n\\n    function _lockBaseURI() internal {\\n        ERC1155MetadataStorage.layout().baseURILocked = true;\\n    }\\n\\n    function _lockFallbackURI() internal {\\n        ERC1155MetadataStorage.layout().fallbackURILocked = true;\\n    }\\n\\n    function _lockURIUntil(uint256 tokenId) internal {\\n        ERC1155MetadataStorage.layout().lastLockedTokenId = tokenId;\\n    }\\n\\n    function _lockURISuffix() internal {\\n        ERC1155MetadataStorage.layout().uriSuffixLocked = true;\\n    }\\n}\\n\",\"keccak256\":\"0x71099081f0e0ad1ee3517f2021f40ba968ce1b534f13e7ce39b65023f752a902\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/ERC1155MetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary ERC1155MetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC1155Metadata\\\");\\n\\n    struct Layout {\\n        string baseURI;\\n        bool baseURILocked;\\n        string fallbackURI;\\n        bool fallbackURILocked;\\n        string uriSuffix;\\n        bool uriSuffixLocked;\\n        uint256 lastLockedTokenId;\\n        mapping(uint256 => string) tokenURIs;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x3f02b5db8b301940348dd04e0625c6e27825aec9be0addd0385f1e9ec3b37260\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/IERC1155Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155Metadata {\\n    /**\\n     * @dev Returns the URI for token type `id`.\\n     *\\n     * If the `\\\\{id\\\\}` substring is present in the URI, it must be replaced by\\n     * clients with the actual token type ID.\\n     */\\n    function uri(uint256 id) external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x06e9faa914aad892109cae7c0ae1c7f5f185510536cb75e6afdf49051e100e38\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/IERC1155MetadataEvents.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155MetadataEvents {\\n    event URI(string value, uint256 indexed tokenId);\\n}\\n\",\"keccak256\":\"0x6c2413e5d685f420399db32888a545321422521fb5e4ffb72de3c5e53cbd503c\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/metadata/IERC1155MetadataExtra.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155MetadataExtra {\\n    function baseURI() external view returns (string memory);\\n\\n    function fallbackURI() external view returns (string memory);\\n\\n    function uriSuffix() external view returns (string memory);\\n\\n    function baseURILocked() external view returns (bool);\\n\\n    function fallbackURILocked() external view returns (bool);\\n\\n    function uriSuffixLocked() external view returns (bool);\\n\\n    function lastLockedTokenId() external view returns (uint256);\\n\\n    function uriBatch(uint256[] calldata tokenIds) external view returns (string[] memory);\\n}\\n\",\"keccak256\":\"0xd269e850865ea8344741224a73e1f105895ec6b19f8f7561b40958255aaf9664\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610a42806100206000396000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c80635d148e5c116100765780636c0360eb1161005b5780636c0360eb1461016d57806396d7e22914610175578063c4ef3e051461019557600080fd5b80635d148e5c146101135780636b95c5041461013d57600080fd5b8063067f0848146100a85780630c7d9752146100e35780630e89341c146100f85780635503a0e81461010b575b600080fd5b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceee5460ff165b60405190151581526020015b60405180910390f35b6100eb6101bf565b6040516100da91906106f6565b6100eb610106366004610710565b610273565b6100eb610447565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceec5460ff166100ce565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef1546040519081526020016100da565b6100eb610478565b610188610183366004610729565b6104a6565b6040516100da919061079e565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef05460ff166100ce565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb60020180546101f090610800565b80601f016020809104026020016040519081016040528092919081815260200182805461021c90610800565b80156102695780601f1061023e57610100808354040283529160200191610269565b820191906000526020600020905b81548152906001019060200180831161024c57829003601f168201915b5050505050905090565b60008181527f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef26020526040812080546060927f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb9290916102d290610800565b80601f01602080910402602001604051908101604052809291908181526020018280546102fe90610800565b801561034b5780601f106103205761010080835404028352916020019161034b565b820191906000526020600020905b81548152906001019060200180831161032e57829003601f168201915b50505050509050600082600001805461036390610800565b80601f016020809104026020016040519081016040528092919081815260200182805461038f90610800565b80156103dc5780601f106103b1576101008083540402835291602001916103dc565b820191906000526020600020905b8154815290600101906020018083116103bf57829003601f168201915b5050505050905080516000036103f457509392505050565b81511561042757808260405160200161040e929190610856565b6040516020818303038152906040529350505050919050565b80836002016104358761055d565b60405160200161040e93929190610885565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb60040180546101f090610800565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb80546101f090610800565b606060008267ffffffffffffffff8111156104c3576104c3610944565b6040519080825280602002602001820160405280156104f657816020015b60608152602001906001900390816104e15790505b50905060005b83811015610555576105258585838181106105195761051961095a565b90506020020135610273565b8282815181106105375761053761095a565b6020026020010181905250808061054d90610986565b9150506104fc565b509392505050565b6060816000036105a057505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b81156105ca57806105b481610986565b91506105c39050600a836109b5565b91506105a4565b60008167ffffffffffffffff8111156105e5576105e5610944565b6040519080825280601f01601f19166020018201604052801561060f576020820181803683370190505b5090505b8415610692576106246001836109c9565b9150610631600a866109e0565b61063c9060306109f4565b60f81b8183815181106106515761065161095a565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a90535061068b600a866109b5565b9450610613565b949350505050565b60005b838110156106b557818101518382015260200161069d565b838111156106c4576000848401525b50505050565b600081518084526106e281602086016020860161069a565b601f01601f19169290920160200192915050565b60208152600061070960208301846106ca565b9392505050565b60006020828403121561072257600080fd5b5035919050565b6000806020838503121561073c57600080fd5b823567ffffffffffffffff8082111561075457600080fd5b818501915085601f83011261076857600080fd5b81358181111561077757600080fd5b8660208260051b850101111561078c57600080fd5b60209290920196919550909350505050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b828110156107f357603f198886030184526107e18583516106ca565b945092850192908501906001016107c5565b5092979650505050505050565b600181811c9082168061081457607f821691505b60208210810361083457634e487b7160e01b600052602260045260246000fd5b50919050565b6000815161084c81856020860161069a565b9290920192915050565b6000835161086881846020880161069a565b83519083019061087c81836020880161069a565b01949350505050565b6000845160206108988285838a0161069a565b855491840191600090600181811c90808316806108b657607f831692505b85831081036108d357634e487b7160e01b85526022600452602485fd5b8080156108e757600181146108fc57610929565b60ff1985168852831515840288019550610929565b60008c81526020902060005b858110156109215781548a820152908401908801610908565b505083880195505b5050505050610938818761083a565b98975050505050505050565b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b60006001820161099857610998610970565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826109c4576109c461099f565b500490565b6000828210156109db576109db610970565b500390565b6000826109ef576109ef61099f565b500690565b60008219821115610a0757610a07610970565b50019056fea26469706673582212209bede0178701a3aa471cbadbabfd091f6a15970905a86a04e58b36398c4aa2e064736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c80635d148e5c116100765780636c0360eb1161005b5780636c0360eb1461016d57806396d7e22914610175578063c4ef3e051461019557600080fd5b80635d148e5c146101135780636b95c5041461013d57600080fd5b8063067f0848146100a85780630c7d9752146100e35780630e89341c146100f85780635503a0e81461010b575b600080fd5b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceee5460ff165b60405190151581526020015b60405180910390f35b6100eb6101bf565b6040516100da91906106f6565b6100eb610106366004610710565b610273565b6100eb610447565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceec5460ff166100ce565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef1546040519081526020016100da565b6100eb610478565b610188610183366004610729565b6104a6565b6040516100da919061079e565b7f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef05460ff166100ce565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb60020180546101f090610800565b80601f016020809104026020016040519081016040528092919081815260200182805461021c90610800565b80156102695780601f1061023e57610100808354040283529160200191610269565b820191906000526020600020905b81548152906001019060200180831161024c57829003601f168201915b5050505050905090565b60008181527f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bcef26020526040812080546060927f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb9290916102d290610800565b80601f01602080910402602001604051908101604052809291908181526020018280546102fe90610800565b801561034b5780601f106103205761010080835404028352916020019161034b565b820191906000526020600020905b81548152906001019060200180831161032e57829003601f168201915b50505050509050600082600001805461036390610800565b80601f016020809104026020016040519081016040528092919081815260200182805461038f90610800565b80156103dc5780601f106103b1576101008083540402835291602001916103dc565b820191906000526020600020905b8154815290600101906020018083116103bf57829003601f168201915b5050505050905080516000036103f457509392505050565b81511561042757808260405160200161040e929190610856565b6040516020818303038152906040529350505050919050565b80836002016104358761055d565b60405160200161040e93929190610885565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb60040180546101f090610800565b60607f7df186493127afbe76aac5b5b4ed702314d47975d114f419dbfeec69750bceeb80546101f090610800565b606060008267ffffffffffffffff8111156104c3576104c3610944565b6040519080825280602002602001820160405280156104f657816020015b60608152602001906001900390816104e15790505b50905060005b83811015610555576105258585838181106105195761051961095a565b90506020020135610273565b8282815181106105375761053761095a565b6020026020010181905250808061054d90610986565b9150506104fc565b509392505050565b6060816000036105a057505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b81156105ca57806105b481610986565b91506105c39050600a836109b5565b91506105a4565b60008167ffffffffffffffff8111156105e5576105e5610944565b6040519080825280601f01601f19166020018201604052801561060f576020820181803683370190505b5090505b8415610692576106246001836109c9565b9150610631600a866109e0565b61063c9060306109f4565b60f81b8183815181106106515761065161095a565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a90535061068b600a866109b5565b9450610613565b949350505050565b60005b838110156106b557818101518382015260200161069d565b838111156106c4576000848401525b50505050565b600081518084526106e281602086016020860161069a565b601f01601f19169290920160200192915050565b60208152600061070960208301846106ca565b9392505050565b60006020828403121561072257600080fd5b5035919050565b6000806020838503121561073c57600080fd5b823567ffffffffffffffff8082111561075457600080fd5b818501915085601f83011261076857600080fd5b81358181111561077757600080fd5b8660208260051b850101111561078c57600080fd5b60209290920196919550909350505050565b6000602080830181845280855180835260408601915060408160051b870101925083870160005b828110156107f357603f198886030184526107e18583516106ca565b945092850192908501906001016107c5565b5092979650505050505050565b600181811c9082168061081457607f821691505b60208210810361083457634e487b7160e01b600052602260045260246000fd5b50919050565b6000815161084c81856020860161069a565b9290920192915050565b6000835161086881846020880161069a565b83519083019061087c81836020880161069a565b01949350505050565b6000845160206108988285838a0161069a565b855491840191600090600181811c90808316806108b657607f831692505b85831081036108d357634e487b7160e01b85526022600452602485fd5b8080156108e757600181146108fc57610929565b60ff1985168852831515840288019550610929565b60008c81526020902060005b858110156109215781548a820152908401908801610908565b505083880195505b5050505050610938818761083a565b98975050505050505050565b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b60006001820161099857610998610970565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826109c4576109c461099f565b500490565b6000828210156109db576109db610970565b500390565b6000826109ef576109ef61099f565b500690565b60008219821115610a0757610a07610970565b50019056fea26469706673582212209bede0178701a3aa471cbadbabfd091f6a15970905a86a04e58b36398c4aa2e064736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:peer-dependencies": "eip165:0xd9b67a26",
+    "custom:provides-interfaces": "0x0e89341c 0x57bbc86d",
+    "custom:type": "eip-2535-facet",
+    "details": "See https://eips.ethereum.org/EIPS/eip-1155#metadata-extensions",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC1155 - Metadata",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "uri(uint256)": {
+        "notice": "inheritdoc IERC1155Metadata"
+      }
+    },
+    "notice": "Provides metadata for ERC1155 tokens according to standard. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
