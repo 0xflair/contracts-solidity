@@ -7,9 +7,11 @@ library ERC1155MetadataStorage {
 
     struct Layout {
         string baseURI;
-        string fallbackURI;
         bool baseURILocked;
+        string fallbackURI;
         bool fallbackURILocked;
+        string uriSuffix;
+        bool uriSuffixLocked;
         uint256 lastLockedTokenId;
         mapping(uint256 => string) tokenURIs;
     }

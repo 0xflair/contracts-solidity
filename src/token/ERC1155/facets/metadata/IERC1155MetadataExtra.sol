@@ -7,9 +7,13 @@ interface IERC1155MetadataExtra {
 
     function fallbackURI() external view returns (string memory);
 
+    function uriSuffix() external view returns (string memory);
+
     function baseURILocked() external view returns (bool);
 
     function fallbackURILocked() external view returns (bool);
+
+    function uriSuffixLocked() external view returns (bool);
 
     function lastLockedTokenId() external view returns (uint256);
 

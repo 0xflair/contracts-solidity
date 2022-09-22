@@ -18,7 +18,7 @@ import "./IERC1155MetadataAdmin.sol";
  * @custom:type eip-2535-facet
  * @custom:category NFTs
  * @custom:peer-dependencies eip165:0x0e89341c
- * @custom:provides-interfaces 0x0dfe03d4
+ * @custom:provides-interfaces 0x3f963a7f
  */
 contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInternal, OwnableInternal {
     function setBaseURI(string calldata newBaseURI) public onlyOwner {
@@ -27,6 +27,10 @@ contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInterna
 
     function setFallbackURI(string calldata newFallbackURI) public onlyOwner {
         _setFallbackURI(newFallbackURI);
+    }
+
+    function setURISuffix(string calldata newURISuffix) public onlyOwner {
+        _setURISuffix(newURISuffix);
     }
 
     function setURI(uint256 tokenId, string calldata newTokenURI) public onlyOwner {
@@ -45,6 +49,10 @@ contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInterna
 
     function lockFallbackURI() public onlyOwner {
         _lockFallbackURI();
+    }
+
+    function lockURISuffix() public onlyOwner {
+        _lockURISuffix();
     }
 
     function lockURIUntil(uint256 tokenId) public onlyOwner {
