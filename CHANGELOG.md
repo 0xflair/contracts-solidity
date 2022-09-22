@@ -1,3 +1,10 @@
+## [2.3.0](https://github.com/flair-sdk/contracts/compare/v2.2.0...v2.3.0) (2022-09-22)
+
+
+### Features
+
+* add uri suffix and expose publicly ([c199f88](https://github.com/flair-sdk/contracts/commit/c199f88cff3ce36fd2e5d43f77b10c2da7ddd806))
+
 ## [2.2.0](https://github.com/flair-sdk/contracts/compare/v2.1.0...v2.2.0) (2022-09-22)
 
 

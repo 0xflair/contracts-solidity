@@ -1,6 +1,6 @@
 {
   "name": "@flair-sdk/contracts",
-  "version": "2.2.0",
+  "version": "2.3.0",
   "description": "A monorepo containing all evm-based smart contracts and extensions used on Flair platform.",
   "author": "flair.finance",
   "license": "MIT",
