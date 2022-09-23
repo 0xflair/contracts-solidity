@@ -1,3 +1,10 @@
+## [2.4.0](https://github.com/flair-sdk/contracts/compare/v2.3.1...v2.4.0) (2022-09-23)
+
+
+### Features
+
+* add extra batch view funcs to erc1155 supply extension ([5db274b](https://github.com/flair-sdk/contracts/commit/5db274b4dcde2a37554e2e9d2ad8e846137747f2))
+
 ### [2.3.1](https://github.com/flair-sdk/contracts/compare/v2.3.0...v2.3.1) (2022-09-22)
 
 ## [2.3.0](https://github.com/flair-sdk/contracts/compare/v2.2.0...v2.3.0) (2022-09-22)
