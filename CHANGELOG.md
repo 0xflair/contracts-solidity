@@ -1,3 +1,10 @@
+### [2.4.1](https://github.com/flair-sdk/contracts/compare/v2.4.0...v2.4.1) (2022-09-23)
+
+
+### Bug Fixes
+
+* streamlined logic for metadata uri calculation ([7f22f8c](https://github.com/flair-sdk/contracts/commit/7f22f8c2989b0af310a8eef6a60c0af362adddad))
+
 ## [2.4.0](https://github.com/flair-sdk/contracts/compare/v2.3.1...v2.4.0) (2022-09-23)
 
 
