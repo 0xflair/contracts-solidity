@@ -2,8 +2,9 @@
 
 pragma solidity 0.8.15;
 
-import "./IERC1155Supply.sol";
 import "./ERC1155SupplyInternal.sol";
+import "./IERC1155Supply.sol";
+import "./IERC1155SupplyExtra.sol";
 
 /**
  * @dev Extension of ERC1155 that adds tracking of total supply per id.
@@ -13,7 +14,7 @@ import "./ERC1155SupplyInternal.sol";
  * corresponding is an NFT, there is no guarantees that no other token with the
  * same id are not going to be minted.
  */
-abstract contract ERC1155Supply is IERC1155Supply, ERC1155SupplyInternal {
+abstract contract ERC1155Supply is IERC1155Supply, IERC1155SupplyExtra, ERC1155SupplyInternal {
     /**
      * @inheritdoc IERC1155Supply
      */
@@ -33,5 +34,38 @@ abstract contract ERC1155Supply is IERC1155Supply, ERC1155SupplyInternal {
      */
     function exists(uint256 id) public view virtual returns (bool) {
         return _exists(id);
+    }
+
+    /**
+     * @inheritdoc IERC1155SupplyExtra
+     */
+    function totalSupplyBatch(uint256[] calldata ids) public view virtual override returns (uint256[] memory) {
+        uint256[] memory totalSupplies = new uint256[](ids.length);
+        for (uint256 i = 0; i < ids.length; i++) {
+            totalSupplies[i] = _totalSupply(ids[i]);
+        }
+        return totalSupplies;
+    }
+
+    /**
+     * @inheritdoc IERC1155SupplyExtra
+     */
+    function maxSupplyBatch(uint256[] calldata ids) public view virtual override returns (uint256[] memory) {
+        uint256[] memory maxSupplies = new uint256[](ids.length);
+        for (uint256 i = 0; i < ids.length; i++) {
+            maxSupplies[i] = _maxSupply(ids[i]);
+        }
+        return maxSupplies;
+    }
+
+    /**
+     * @inheritdoc IERC1155SupplyExtra
+     */
+    function existsBatch(uint256[] calldata ids) public view virtual override returns (bool[] memory) {
+        bool[] memory existences = new bool[](ids.length);
+        for (uint256 i = 0; i < ids.length; i++) {
+            existences[i] = _exists(ids[i]);
+        }
+        return existences;
     }
 }
