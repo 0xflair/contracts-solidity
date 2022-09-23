@@ -29,12 +29,14 @@ contract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155Meta
         string memory _tokenIdURI = l.tokenURIs[tokenId];
         string memory _baseURI = l.baseURI;
 
-        if (bytes(_baseURI).length == 0) {
+        if (bytes(_tokenIdURI).length > 0) {
             return _tokenIdURI;
-        } else if (bytes(_tokenIdURI).length > 0) {
-            return string(abi.encodePacked(_baseURI, _tokenIdURI));
+        } else if (bytes(l.fallbackURI).length > 0) {
+            return l.fallbackURI;
+        } else if (bytes(_baseURI).length > 0) {
+            return string(abi.encodePacked(_baseURI, Strings.toString(tokenId)));
         } else {
-            return string(abi.encodePacked(_baseURI, l.fallbackURI, Strings.toString(tokenId)));
+            return "";
         }
     }
 
