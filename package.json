@@ -140,6 +140,7 @@
   },
   "dependencies": {
     "@a16z/contracts": "^0.0.8",
+    "@flair-sdk/common": "^2.6.0",
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
     "@openzeppelin/contracts": "^4.7.3",
     "erc721a": "^4.1.0"

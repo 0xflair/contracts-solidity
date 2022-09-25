@@ -1,3 +1,4 @@
+import { FacetManifest } from '@flair-sdk/common';
 import * as fse from 'fs-extra';
 import glob from 'glob';
 import * as path from 'path';
@@ -26,44 +27,9 @@ const chainConfig = {
   },
 };
 
-// Examples: flair-sdk:token/ERC1155/ERC1155 openzeppelin:token/ERC1155/ERC1155
-export type FacetFqn = string;
-
-// Examples: 1.2.0   ...   1.2.5-alpha.1
-export type SemanticVersion = string;
-
-// Examples: flair-sdk:token/ERC1155/ERC1155:^1.2.0
-export type FacetReference = string;
-
-// Examples: 0x80ac58cd
-export type EIP165InterfaceID = string;
-
-// Examples: git+ssh://github.com/flair-dao/contracts.git#my-branch   ...   npm:@flair-sdk/contracts@1.0.0
-export type SourceReference = string;
-
-export type FacetManifest = {
-  // Mandatory
-  addresses: Record<string, string>;
-  functionSelectors: string[];
-
-  // Recommended
-  fqn?: FacetFqn;
-  version?: SemanticVersion;
-  providesInterfaces?: EIP165InterfaceID[];
-  peerDependencies?: (EIP165InterfaceID | FacetReference)[];
-  requiredDependencies?: (EIP165InterfaceID | FacetReference)[];
-
-  // Informational
-  category?: string;
-  title?: string;
-  author?: string;
-  notice?: string;
-  icon?: string;
-  source?: string;
-};
-
 const FQN_PREFIX = 'flair-sdk:';
 const SOURCE_PREFIX = 'npm:@flair-sdk/contracts@';
+const FACETS_AUTHOR = 'flair-sdk.eth';
 
 async function main() {
   const distPath = path.resolve(__dirname, '../dist');
@@ -199,6 +165,7 @@ async function main() {
     contractFqnToChainToAddress,
     pkgJson?.version || 'unknown',
     `${SOURCE_PREFIX}${pkgJson?.version}`,
+    FACETS_AUTHOR,
   );
   fse.writeJSONSync(path.resolve(distPath, 'facets.json'), facets);
 }
@@ -219,6 +186,7 @@ async function scanForFacets(
   addressesRegistry: Record<string, Record<string, string>>,
   version: string,
   source: string,
+  author: string,
 ): Promise<Record<string, FacetManifest>> {
   const facets: Record<string, FacetManifest> = {};
 
@@ -263,6 +231,7 @@ async function scanForFacets(
       title,
       notice,
       source,
+      author,
     };
   }
 
