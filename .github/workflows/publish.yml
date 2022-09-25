@@ -43,8 +43,7 @@ jobs:
           npm whoami
           npm config set access public
           npm i -g ts-node
-          mkdir -p ./dist
-          cp package*.json ./dist
+          npm run build
           npm run release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
