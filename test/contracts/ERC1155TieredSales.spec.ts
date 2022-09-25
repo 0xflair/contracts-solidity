@@ -13,8 +13,8 @@ import {
   ERC1155SupplyOwnable,
   ERC1155TieredSales,
   TieredSalesOwnable,
-} from '../../typechain';
-import { ERC1155Base } from '../../typechain/ERC1155Base';
+} from '../../src/typechain';
+import { ERC1155Base } from '../../src/typechain/ERC1155Base';
 import { setupTest } from '../setup';
 import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';

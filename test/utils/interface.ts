@@ -10,8 +10,6 @@ export async function getInterfaceIDByContractName(name: string) {
     interfaceID = interfaceID.xor(contractInterface.getSighash(functions[i]));
   }
 
-  console.log("interfaceID === ", interfaceID);
-
   return interfaceID;
 }
 

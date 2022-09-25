@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import hre from 'hardhat';
 
-import { ERC1155Mintable, Multicall } from '../../typechain';
+import { ERC1155Mintable, Multicall } from '../../src/typechain';
 import { setupTest } from '../setup';
 import { deployDiamond } from '../utils/diamond';
 

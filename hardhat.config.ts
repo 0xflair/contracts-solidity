@@ -88,6 +88,9 @@ const config: HardhatUserConfig = {
       },
     },
   },
+  typechain: {
+    outDir: './typechain',
+  },
   zkSyncDeploy: {
     zkSyncNetwork: 'https://zksync2-testnet.zksync.dev',
     ethNetwork: 'goerli',
@@ -216,6 +219,7 @@ const config: HardhatUserConfig = {
   etherscan: {
     apiKey: etherScanApiKey,
   },
+
   contractSizer: {
     alphaSort: false,
     runOnCompile: true,

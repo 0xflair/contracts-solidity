@@ -4,7 +4,7 @@ import '@nomiclabs/hardhat-ethers';
 import { utils } from 'ethers';
 import hre from 'hardhat';
 
-import { Diamond } from '../../typechain';
+import { Diamond } from '../../src/typechain';
 
 export enum FacetCutAction {
   Add,
