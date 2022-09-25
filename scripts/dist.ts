@@ -26,23 +26,44 @@ const chainConfig = {
   },
 };
 
-type EIP165InterfaceID = string;
+// Examples: flair-sdk:token/ERC1155/ERC1155 openzeppelin:token/ERC1155/ERC1155
+export type FacetFqn = string;
 
-type FacetManifest = {
-  category: string;
-  title: string;
-  notice: string;
-  icon?: string;
-  repo: string;
-  ref: string;
-  fqn: string;
-  version: string;
+// Examples: 1.2.0   ...   1.2.5-alpha.1
+export type SemanticVersion = string;
+
+// Examples: flair-sdk:token/ERC1155/ERC1155:^1.2.0
+export type FacetReference = string;
+
+// Examples: 0x80ac58cd
+export type EIP165InterfaceID = string;
+
+// Examples: git+ssh://github.com/flair-dao/contracts.git#my-branch   ...   npm:@flair-sdk/contracts@1.0.0
+export type SourceReference = string;
+
+export type FacetManifest = {
+  // Mandatory
   addresses: Record<string, string>;
-  providesInterfaces: EIP165InterfaceID[];
   functionSelectors: string[];
-  peerDependencies: EIP165InterfaceID[];
-  requiredDependencies: EIP165InterfaceID[];
+
+  // Recommended
+  fqn?: FacetFqn;
+  version?: SemanticVersion;
+  providesInterfaces?: EIP165InterfaceID[];
+  peerDependencies?: (EIP165InterfaceID | FacetReference)[];
+  requiredDependencies?: (EIP165InterfaceID | FacetReference)[];
+
+  // Informational
+  category?: string;
+  title?: string;
+  author?: string;
+  notice?: string;
+  icon?: string;
+  source?: string;
 };
+
+const FQN_PREFIX = 'flair-sdk:';
+const SOURCE_PREFIX = 'npm:@flair-sdk/contracts@';
 
 async function main() {
   const distPath = path.resolve(__dirname, '../dist');
@@ -134,7 +155,7 @@ async function main() {
       throw new Error(`Could not find contract ${artifactName} in src/ directory: ${JSON.stringify(files)}`);
     }
 
-    const contractFqn = files[0].split('.', -1)[0];
+    const contractFqn = `${FQN_PREFIX}${files[0].split('.', -1)[0]}`;
 
     if (!contractFqn) {
       throw new Error(`Could not get artifact key for ${file}`);
@@ -176,9 +197,8 @@ async function main() {
   const facets = await scanForFacets(
     buildInfo,
     contractFqnToChainToAddress,
-    process.env.REPO || pkgJson?.repository?.url || 'unknown',
-    process.env.REF || 'main',
-    process.env.VERSION || pkgJson?.version || 'unknown',
+    pkgJson?.version || 'unknown',
+    `${SOURCE_PREFIX}${pkgJson?.version}`,
   );
   fse.writeJSONSync(path.resolve(distPath, 'facets.json'), facets);
 }
@@ -197,19 +217,18 @@ main()
 async function scanForFacets(
   buildInfo: any,
   addressesRegistry: Record<string, Record<string, string>>,
-  repo: string,
-  ref: string,
   version: string,
+  source: string,
 ): Promise<Record<string, FacetManifest>> {
   const facets: Record<string, FacetManifest> = {};
 
   for (const [fqn, addresses] of Object.entries(addressesRegistry)) {
     const artifact = fqn.split('/').pop();
-    const source = `src/${fqn}.sol`;
+    const file = `src/${fqn.split(':')[1]}.sol`;
 
     const annotations = {
-      ...((artifact && buildInfo?.output?.contracts?.[source]?.[artifact]?.devdoc) || {}),
-      ...((artifact && buildInfo?.output?.contracts?.[source]?.[artifact]?.userdoc) || {}),
+      ...((artifact && buildInfo?.output?.contracts?.[file]?.[artifact]?.devdoc) || {}),
+      ...((artifact && buildInfo?.output?.contracts?.[file]?.[artifact]?.userdoc) || {}),
     };
 
     const {
@@ -227,22 +246,23 @@ async function scanForFacets(
     }
 
     const functionSelectors = Object.keys(
-      buildInfo?.output?.contracts?.[source]?.[artifact]?.evm.methodIdentifiers || {},
+      buildInfo?.output?.contracts?.[file]?.[artifact]?.evm.methodIdentifiers || {},
     );
 
     facets[fqn] = {
-      category,
-      title,
-      notice,
-      repo,
-      ref,
-      fqn,
-      version,
       addresses,
       functionSelectors,
+
+      fqn,
+      version,
       providesInterfaces: stringListToArray(providesInterfaces),
       peerDependencies: stringListToArray(peerDependencies),
       requiredDependencies: stringListToArray(requiredDependencies),
+
+      category,
+      title,
+      notice,
+      source,
     };
   }
 

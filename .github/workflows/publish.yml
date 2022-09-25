@@ -45,9 +45,8 @@ jobs:
           npm i -g ts-node
           mkdir -p ./dist
           cp package*.json ./dist
-          REF=$GITHUB_REF_NAME npm run release
+          npm run release
         env:
-          REPO: github.com/flair-sdk/contracts
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
