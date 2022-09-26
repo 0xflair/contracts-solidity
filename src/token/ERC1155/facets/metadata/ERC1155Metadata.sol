@@ -16,7 +16,7 @@ import "./ERC1155MetadataStorage.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies eip165:0xd9b67a26
+ * @custom:peer-dependencies 0xd9b67a26
  * @custom:provides-interfaces 0x0e89341c 0x57bbc86d
  */
 contract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155MetadataInternal {

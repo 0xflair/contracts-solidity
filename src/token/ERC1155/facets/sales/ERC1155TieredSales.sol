@@ -18,7 +18,7 @@ import "./IERC1155TieredSales.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies eip165:0xb164884b
+ * @custom:required-dependencies 0xb164884b
  * @custom:provides-interfaces 0x79f33254 0x5ae18a74
  */
 contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales {

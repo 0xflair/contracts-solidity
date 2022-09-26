@@ -9,7 +9,7 @@ import * as pkgJson from '../package.json';
 type ContractManifest = any; // TODO get from registry
 
 const FQN_PREFIX = 'flair-sdk:';
-const FACETS_SOURCE_PREFIX = 'npm:@flair-sdk/contracts@';
+const FACETS_SOURCE_TEMPLATE = 'https://github.com/flair-sdk/contracts/blob/v{VERSION}/src/{ARTIFACT_KEY}.sol';
 const FACETS_AUTHOR = 'flair-sdk.eth';
 
 async function main() {
@@ -118,7 +118,7 @@ async function main() {
     buildInfo,
     registry,
     pkgJson?.version || 'unknown',
-    `${FACETS_SOURCE_PREFIX}${pkgJson?.version}`,
+    `${FACETS_SOURCE_TEMPLATE.replace('{VERSION}', pkgJson?.version)}`,
     FACETS_AUTHOR,
   );
 
@@ -147,7 +147,8 @@ async function scanForFacets(
 
   for (const fqn in registry) {
     const artifact = fqn.split('/').pop();
-    const file = `src/${fqn.split(':')[1]}.sol`;
+    const artifactKey = fqn.split(':')[1];
+    const file = `src/${artifactKey}.sol`;
 
     const annotations = {
       ...((artifact && buildInfo?.output?.contracts?.[file]?.[artifact]?.devdoc) || {}),
@@ -185,7 +186,7 @@ async function scanForFacets(
       category,
       title,
       notice,
-      source,
+      source: source.replace('{ARTIFACT_KEY}', artifactKey),
       author,
     };
   }

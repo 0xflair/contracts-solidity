@@ -17,7 +17,7 @@ import "./IERC1155MetadataAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies eip165:0x0e89341c
+ * @custom:peer-dependencies 0x0e89341c
  * @custom:provides-interfaces 0x3f963a7f
  */
 contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInternal, OwnableInternal {
