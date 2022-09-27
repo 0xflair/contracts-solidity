@@ -1,12 +1,11 @@
 import { FacetManifest } from '@flair-sdk/common';
+import { ContractManifest } from '@flair-sdk/registry';
 import * as fse from 'fs-extra';
 import glob from 'glob';
 import * as path from 'path';
 import { dirname } from 'path';
 
 import * as pkgJson from '../package.json';
-// import { ContractManifest } from '../src/types';
-type ContractManifest = any; // TODO get from registry
 
 const FQN_PREFIX = 'flair-sdk:';
 const FACETS_SOURCE_TEMPLATE = 'https://github.com/flair-sdk/contracts/blob/v{VERSION}/src/{ARTIFACT_KEY}.sol';
@@ -65,7 +64,9 @@ async function main() {
     (registry[contractFqn].address as any)[chainName] = contractAddress;
   }
 
-  // Add ABI artifacts
+  //
+  // 2. Add ABI artifacts
+  //
   const artifactsRoot = path.resolve(__dirname, '../artifacts/src');
   const files = glob.sync('**/*.json', {
     nodir: true,
@@ -102,11 +103,16 @@ async function main() {
     registry[contractFqn].sourceCode = fse.readFileSync(sourcePath).toString();
   }
 
+  //
+  // 3. Write contracts registry
+  //
   fse.writeJSONSync(path.resolve(srcPath, 'contracts.json'), registry, {
     spaces: 2,
   });
 
-  // Get build info
+  //
+  // 4. Get build info
+  //
   const buildInfoRoot = path.resolve(__dirname, '../artifacts/build-info');
   const buildInfoFiles = glob.sync('*.json', {
     nodir: true,
@@ -124,6 +130,9 @@ async function main() {
     FACETS_AUTHOR,
   );
 
+  //
+  // 5. Write facets
+  //
   fse.writeJSONSync(path.resolve(srcPath, 'facets.json'), facets, {
     spaces: 2,
   });
