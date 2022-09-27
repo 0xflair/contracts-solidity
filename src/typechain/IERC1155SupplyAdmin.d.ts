@@ -21,10 +21,20 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
 export interface IERC1155SupplyAdminInterface extends ethers.utils.Interface {
   functions: {
+    "freezeMaxSupply(uint256)": FunctionFragment;
+    "freezeMaxSupplyBatch(uint256[])": FunctionFragment;
     "setMaxSupply(uint256,uint256)": FunctionFragment;
     "setMaxSupplyBatch(uint256[],uint256[])": FunctionFragment;
   };
 
+  encodeFunctionData(
+    functionFragment: "freezeMaxSupply",
+    values: [BigNumberish]
+  ): string;
+  encodeFunctionData(
+    functionFragment: "freezeMaxSupplyBatch",
+    values: [BigNumberish[]]
+  ): string;
   encodeFunctionData(
     functionFragment: "setMaxSupply",
     values: [BigNumberish, BigNumberish]
@@ -34,6 +44,14 @@ export interface IERC1155SupplyAdminInterface extends ethers.utils.Interface {
     values: [BigNumberish[], BigNumberish[]]
   ): string;
 
+  decodeFunctionResult(
+    functionFragment: "freezeMaxSupply",
+    data: BytesLike
+  ): Result;
+  decodeFunctionResult(
+    functionFragment: "freezeMaxSupplyBatch",
+    data: BytesLike
+  ): Result;
   decodeFunctionResult(
     functionFragment: "setMaxSupply",
     data: BytesLike
@@ -90,6 +108,16 @@ export class IERC1155SupplyAdmin extends BaseContract {
   interface: IERC1155SupplyAdminInterface;
 
   functions: {
+    freezeMaxSupply(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    freezeMaxSupplyBatch(
+      tokenIds: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
     setMaxSupply(
       tokenId: BigNumberish,
       newValue: BigNumberish,
@@ -102,6 +130,16 @@ export class IERC1155SupplyAdmin extends BaseContract {
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
   };
+
+  freezeMaxSupply(
+    tokenId: BigNumberish,
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  freezeMaxSupplyBatch(
+    tokenIds: BigNumberish[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
 
   setMaxSupply(
     tokenId: BigNumberish,
@@ -116,6 +154,16 @@ export class IERC1155SupplyAdmin extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
+    freezeMaxSupply(
+      tokenId: BigNumberish,
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    freezeMaxSupplyBatch(
+      tokenIds: BigNumberish[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
     setMaxSupply(
       tokenId: BigNumberish,
       newValue: BigNumberish,
@@ -132,6 +180,16 @@ export class IERC1155SupplyAdmin extends BaseContract {
   filters: {};
 
   estimateGas: {
+    freezeMaxSupply(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    freezeMaxSupplyBatch(
+      tokenIds: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
     setMaxSupply(
       tokenId: BigNumberish,
       newValue: BigNumberish,
@@ -146,6 +204,16 @@ export class IERC1155SupplyAdmin extends BaseContract {
   };
 
   populateTransaction: {
+    freezeMaxSupply(
+      tokenId: BigNumberish,
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    freezeMaxSupplyBatch(
+      tokenIds: BigNumberish[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
     setMaxSupply(
       tokenId: BigNumberish,
       newValue: BigNumberish,

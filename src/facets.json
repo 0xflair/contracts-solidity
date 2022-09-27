@@ -212,13 +212,15 @@
       "ropsten": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4"
     },
     "functionSelectors": [
+      "freezeMaxSupply(uint256)",
+      "freezeMaxSupplyBatch(uint256[])",
       "setMaxSupply(uint256,uint256)",
       "setMaxSupplyBatch(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
     "version": "2.4.8",
     "providesInterfaces": [
-      "0x5b2cf486"
+      "0xf0d6039e"
     ],
     "peerDependencies": [
       "0xd9b67a26",
