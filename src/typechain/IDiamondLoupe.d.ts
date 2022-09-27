@@ -18,7 +18,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface IDiamondLoupeInterface extends ethers.utils.Interface {
+export interface IDiamondLoupeInterface extends ethers.utils.Interface {
   functions: {
     "facetAddress(bytes4)": FunctionFragment;
     "facetAddresses()": FunctionFragment;

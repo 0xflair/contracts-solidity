@@ -18,7 +18,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface IERC1155SupplyExtraInterface extends ethers.utils.Interface {
+export interface IERC1155SupplyExtraInterface extends ethers.utils.Interface {
   functions: {
     "existsBatch(uint256[])": FunctionFragment;
     "maxSupplyBatch(uint256[])": FunctionFragment;

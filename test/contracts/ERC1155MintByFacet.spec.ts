@@ -26,9 +26,11 @@ describe('ERC1155Mintable', function () {
 
     const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
 
-    await expect(mintableFacet.connect(userA.signer).mintByFacet(userA.signer.address, 33, 1, '0x')).to.be.revertedWith(
-      'SenderIsNotSelf()',
-    );
+    await expect(
+      mintableFacet
+        .connect(userA.signer)
+        ['mintByFacet(address,uint256,uint256,bytes)'](userA.signer.address, 33, 1, '0x'),
+    ).to.be.revertedWith('SenderIsNotSelf()');
   });
 
   it('should not be able to mint when calling via multicall', async function () {
@@ -40,7 +42,13 @@ describe('ERC1155Mintable', function () {
 
     const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
 
-    const callData = mintableFacet.interface.encodeFunctionData('mintByFacet', [userA.signer.address, 33, 1, '0x']);
+    // @ts-ignore
+    const callData = mintableFacet.interface.encodeFunctionData('mintByFacet(address,uint256,uint256,bytes)', [
+      userA.signer.address,
+      33,
+      1,
+      '0x',
+    ]);
 
     await expect(multiCallContract.connect(userA.signer).multicall([callData])).to.be.revertedWith('SenderIsNotSelf()');
   });
@@ -54,7 +62,13 @@ describe('ERC1155Mintable', function () {
 
     const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
 
-    const callData = mintableFacet.interface.encodeFunctionData('mintByFacet', [userA.signer.address, 33, 1, '0x']);
+    // @ts-ignore
+    const callData = mintableFacet.interface.encodeFunctionData('mintByFacet(address,uint256,uint256,bytes)', [
+      userA.signer.address,
+      33,
+      1,
+      '0x',
+    ]);
 
     const callDataNested = multiCallContract.interface.encodeFunctionData('multicall', [[callData]]);
 

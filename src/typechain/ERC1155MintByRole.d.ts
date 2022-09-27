@@ -19,11 +19,11 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface ERC1155MintByRoleInterface extends ethers.utils.Interface {
+export interface ERC1155MintByRoleInterface extends ethers.utils.Interface {
   functions: {
     "DEFAULT_ADMIN_ROLE()": FunctionFragment;
     "MINTER_ROLE()": FunctionFragment;
-    "mintByRole(address,uint256,uint256,bytes)": FunctionFragment;
+    "mintByRole(address[],uint256[],uint256[],bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
@@ -36,7 +36,7 @@ interface ERC1155MintByRoleInterface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "mintByRole",
-    values: [string, BigNumberish, BigNumberish, BytesLike]
+    values: [string[], BigNumberish[], BigNumberish[], BytesLike[]]
   ): string;
 
   decodeFunctionResult(
@@ -124,7 +124,15 @@ export class ERC1155MintByRole extends BaseContract {
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<[string]>;
 
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -137,7 +145,15 @@ export class ERC1155MintByRole extends BaseContract {
 
   MINTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-  mintByRole(
+  "mintByRole(address[],uint256[],uint256[],bytes[])"(
+    tos: string[],
+    ids: BigNumberish[],
+    amounts: BigNumberish[],
+    datas: BytesLike[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "mintByRole(address,uint256,uint256,bytes)"(
     to: string,
     id: BigNumberish,
     amount: BigNumberish,
@@ -150,7 +166,15 @@ export class ERC1155MintByRole extends BaseContract {
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<string>;
 
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -220,7 +244,15 @@ export class ERC1155MintByRole extends BaseContract {
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<BigNumber>;
 
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -236,7 +268,15 @@ export class ERC1155MintByRole extends BaseContract {
 
     MINTER_ROLE(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,

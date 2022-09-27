@@ -19,7 +19,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface ERC2771ContextOwnableInterface extends ethers.utils.Interface {
+export interface ERC2771ContextOwnableInterface extends ethers.utils.Interface {
   functions: {
     "setTrustedForwarder(address)": FunctionFragment;
   };

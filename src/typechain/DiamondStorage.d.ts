@@ -17,7 +17,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface DiamondStorageInterface extends ethers.utils.Interface {
+export interface DiamondStorageInterface extends ethers.utils.Interface {
   functions: {};
 
   events: {

@@ -19,14 +19,14 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface IERC1155MintableInterface extends ethers.utils.Interface {
+export interface IERC1155MintableInterface extends ethers.utils.Interface {
   functions: {
-    "mintByFacet(address,uint256,uint256,bytes)": FunctionFragment;
+    "mintByFacet(address[],uint256[],uint256[],bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "mintByFacet",
-    values: [string, BigNumberish, BigNumberish, BytesLike]
+    values: [string[], BigNumberish[], BigNumberish[], BytesLike[]]
   ): string;
 
   decodeFunctionResult(
@@ -81,7 +81,15 @@ export class IERC1155Mintable extends BaseContract {
   interface: IERC1155MintableInterface;
 
   functions: {
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -90,7 +98,15 @@ export class IERC1155Mintable extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  mintByFacet(
+  "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+    tos: string[],
+    ids: BigNumberish[],
+    amounts: BigNumberish[],
+    datas: BytesLike[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "mintByFacet(address,uint256,uint256,bytes)"(
     to: string,
     id: BigNumberish,
     amount: BigNumberish,
@@ -99,7 +115,15 @@ export class IERC1155Mintable extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -111,7 +135,15 @@ export class IERC1155Mintable extends BaseContract {
   filters: {};
 
   estimateGas: {
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -121,7 +153,15 @@ export class IERC1155Mintable extends BaseContract {
   };
 
   populateTransaction: {
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,

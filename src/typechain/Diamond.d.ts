@@ -19,7 +19,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface DiamondInterface extends ethers.utils.Interface {
+export interface DiamondInterface extends ethers.utils.Interface {
   functions: {
     "multicall(bytes[])": FunctionFragment;
   };

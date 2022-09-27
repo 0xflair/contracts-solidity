@@ -19,14 +19,14 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface IERC1155MintByRoleInterface extends ethers.utils.Interface {
+export interface IERC1155MintByRoleInterface extends ethers.utils.Interface {
   functions: {
-    "mintByRole(address,uint256,uint256,bytes)": FunctionFragment;
+    "mintByRole(address[],uint256[],uint256[],bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "mintByRole",
-    values: [string, BigNumberish, BigNumberish, BytesLike]
+    values: [string[], BigNumberish[], BigNumberish[], BytesLike[]]
   ): string;
 
   decodeFunctionResult(functionFragment: "mintByRole", data: BytesLike): Result;
@@ -78,7 +78,15 @@ export class IERC1155MintByRole extends BaseContract {
   interface: IERC1155MintByRoleInterface;
 
   functions: {
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      data: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -87,7 +95,15 @@ export class IERC1155MintByRole extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  mintByRole(
+  "mintByRole(address[],uint256[],uint256[],bytes[])"(
+    tos: string[],
+    ids: BigNumberish[],
+    amounts: BigNumberish[],
+    data: BytesLike[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "mintByRole(address,uint256,uint256,bytes)"(
     to: string,
     id: BigNumberish,
     amount: BigNumberish,
@@ -96,7 +112,15 @@ export class IERC1155MintByRole extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      data: BytesLike[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -108,7 +132,15 @@ export class IERC1155MintByRole extends BaseContract {
   filters: {};
 
   estimateGas: {
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      data: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -118,7 +150,15 @@ export class IERC1155MintByRole extends BaseContract {
   };
 
   populateTransaction: {
-    mintByRole(
+    "mintByRole(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      data: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "mintByRole(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,

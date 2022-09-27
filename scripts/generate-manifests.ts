@@ -102,7 +102,9 @@ async function main() {
     registry[contractFqn].sourceCode = fse.readFileSync(sourcePath).toString();
   }
 
-  fse.writeJSONSync(path.resolve(srcPath, 'contracts.json'), registry);
+  fse.writeJSONSync(path.resolve(srcPath, 'contracts.json'), registry, {
+    spaces: 2,
+  });
 
   // Get build info
   const buildInfoRoot = path.resolve(__dirname, '../artifacts/build-info');
@@ -122,7 +124,9 @@ async function main() {
     FACETS_AUTHOR,
   );
 
-  fse.writeJSONSync(path.resolve(srcPath, 'facets.json'), facets);
+  fse.writeJSONSync(path.resolve(srcPath, 'facets.json'), facets, {
+    spaces: 2,
+  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere

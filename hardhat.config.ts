@@ -89,7 +89,7 @@ const config: HardhatUserConfig = {
     },
   },
   typechain: {
-    outDir: './typechain',
+    outDir: './src/typechain',
   },
   zkSyncDeploy: {
     zkSyncNetwork: 'https://zksync2-testnet.zksync.dev',

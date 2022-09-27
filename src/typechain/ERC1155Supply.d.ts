@@ -18,7 +18,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface ERC1155SupplyInterface extends ethers.utils.Interface {
+export interface ERC1155SupplyInterface extends ethers.utils.Interface {
   functions: {
     "exists(uint256)": FunctionFragment;
     "existsBatch(uint256[])": FunctionFragment;

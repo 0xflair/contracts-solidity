@@ -19,7 +19,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface ERC1155WithERC2771Interface extends ethers.utils.Interface {
+export interface ERC1155WithERC2771Interface extends ethers.utils.Interface {
   functions: {
     "balanceOf(address,uint256)": FunctionFragment;
     "balanceOfBatch(address[],uint256[])": FunctionFragment;
@@ -35,7 +35,7 @@ interface ERC1155WithERC2771Interface extends ethers.utils.Interface {
     "locked(address,uint256[])": FunctionFragment;
     "maxSupply(uint256)": FunctionFragment;
     "maxSupplyBatch(uint256[])": FunctionFragment;
-    "mintByFacet(address,uint256,uint256,bytes)": FunctionFragment;
+    "mintByFacet(address[],uint256[],uint256[],bytes[])": FunctionFragment;
     "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)": FunctionFragment;
     "safeTransferFrom(address,address,uint256,uint256,bytes)": FunctionFragment;
     "setApprovalForAll(address,bool)": FunctionFragment;
@@ -102,7 +102,7 @@ interface ERC1155WithERC2771Interface extends ethers.utils.Interface {
   ): string;
   encodeFunctionData(
     functionFragment: "mintByFacet",
-    values: [string, BigNumberish, BigNumberish, BytesLike]
+    values: [string[], BigNumberish[], BigNumberish[], BytesLike[]]
   ): string;
   encodeFunctionData(
     functionFragment: "safeBatchTransferFrom",
@@ -363,7 +363,15 @@ export class ERC1155WithERC2771 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[BigNumber[]]>;
 
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -494,7 +502,15 @@ export class ERC1155WithERC2771 extends BaseContract {
     overrides?: CallOverrides
   ): Promise<BigNumber[]>;
 
-  mintByFacet(
+  "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+    tos: string[],
+    ids: BigNumberish[],
+    amounts: BigNumberish[],
+    datas: BytesLike[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "mintByFacet(address,uint256,uint256,bytes)"(
     to: string,
     id: BigNumberish,
     amount: BigNumberish,
@@ -622,7 +638,15 @@ export class ERC1155WithERC2771 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber[]>;
 
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -842,7 +866,15 @@ export class ERC1155WithERC2771 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -982,7 +1014,15 @@ export class ERC1155WithERC2771 extends BaseContract {
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
-    mintByFacet(
+    "mintByFacet(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "mintByFacet(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,

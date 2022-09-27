@@ -19,7 +19,7 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface IERC1155BurnableAdminInterface extends ethers.utils.Interface {
+export interface IERC1155BurnableAdminInterface extends ethers.utils.Interface {
   functions: {
     "setBurnablePausedUntil(uint256)": FunctionFragment;
   };

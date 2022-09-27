@@ -117,6 +117,34 @@ const _abi = [
   {
     inputs: [
       {
+        internalType: "address[]",
+        name: "tos",
+        type: "address[]",
+      },
+      {
+        internalType: "uint256[]",
+        name: "ids",
+        type: "uint256[]",
+      },
+      {
+        internalType: "uint256[]",
+        name: "amounts",
+        type: "uint256[]",
+      },
+      {
+        internalType: "bytes[]",
+        name: "datas",
+        type: "bytes[]",
+      },
+    ],
+    name: "mintByFacet",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
         internalType: "address",
         name: "to",
         type: "address",

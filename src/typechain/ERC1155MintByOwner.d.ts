@@ -19,14 +19,14 @@ import { Listener, Provider } from "@ethersproject/providers";
 import { FunctionFragment, EventFragment, Result } from "@ethersproject/abi";
 import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 
-interface ERC1155MintByOwnerInterface extends ethers.utils.Interface {
+export interface ERC1155MintByOwnerInterface extends ethers.utils.Interface {
   functions: {
-    "mintByOwner(address,uint256,uint256,bytes)": FunctionFragment;
+    "mintByOwner(address[],uint256[],uint256[],bytes[])": FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "mintByOwner",
-    values: [string, BigNumberish, BigNumberish, BytesLike]
+    values: [string[], BigNumberish[], BigNumberish[], BytesLike[]]
   ): string;
 
   decodeFunctionResult(
@@ -89,7 +89,15 @@ export class ERC1155MintByOwner extends BaseContract {
   interface: ERC1155MintByOwnerInterface;
 
   functions: {
-    mintByOwner(
+    "mintByOwner(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<ContractTransaction>;
+
+    "mintByOwner(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -98,7 +106,15 @@ export class ERC1155MintByOwner extends BaseContract {
     ): Promise<ContractTransaction>;
   };
 
-  mintByOwner(
+  "mintByOwner(address[],uint256[],uint256[],bytes[])"(
+    tos: string[],
+    ids: BigNumberish[],
+    amounts: BigNumberish[],
+    datas: BytesLike[],
+    overrides?: Overrides & { from?: string | Promise<string> }
+  ): Promise<ContractTransaction>;
+
+  "mintByOwner(address,uint256,uint256,bytes)"(
     to: string,
     id: BigNumberish,
     amount: BigNumberish,
@@ -107,7 +123,15 @@ export class ERC1155MintByOwner extends BaseContract {
   ): Promise<ContractTransaction>;
 
   callStatic: {
-    mintByOwner(
+    "mintByOwner(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: CallOverrides
+    ): Promise<void>;
+
+    "mintByOwner(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -135,7 +159,15 @@ export class ERC1155MintByOwner extends BaseContract {
   };
 
   estimateGas: {
-    mintByOwner(
+    "mintByOwner(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<BigNumber>;
+
+    "mintByOwner(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
@@ -145,7 +177,15 @@ export class ERC1155MintByOwner extends BaseContract {
   };
 
   populateTransaction: {
-    mintByOwner(
+    "mintByOwner(address[],uint256[],uint256[],bytes[])"(
+      tos: string[],
+      ids: BigNumberish[],
+      amounts: BigNumberish[],
+      datas: BytesLike[],
+      overrides?: Overrides & { from?: string | Promise<string> }
+    ): Promise<PopulatedTransaction>;
+
+    "mintByOwner(address,uint256,uint256,bytes)"(
       to: string,
       id: BigNumberish,
       amount: BigNumberish,
