@@ -34,7 +34,7 @@
     "clean": "npx hardhat clean --network hardhat && rimraf ./dist",
     "build-contracts": "npm run compile",
     "build-typescript": "rollup -c",
-    "dist": "mkdir -p ./dist && cp -r ./package*.json ./dist/",
+    "dist": "mkdir -p ./dist && cp -r ./package*.json ./dist/ && cp -r ./src/* ./dist/",
     "build": "npm run clean && npm run dist && npm run build-contracts && npm run generate-manifests && npm run build-typescript && npm run typechain",
     "coverage": "npm run build && npx hardhat coverage --temp artifacts --network hardhat",
     "release": "semantic-release --debug",
