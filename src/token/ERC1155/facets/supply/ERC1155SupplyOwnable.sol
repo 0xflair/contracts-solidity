@@ -19,11 +19,11 @@ import "./IERC1155SupplyAdmin.sol";
 contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, OwnableInternal {
     using ERC1155SupplyStorage for ERC1155SupplyStorage.Layout;
 
-    function setMaxSupply(uint256 tokenId, uint256 newValue) public onlyOwner {
+    function setMaxSupply(uint256 tokenId, uint256 newValue) public virtual onlyOwner {
         _setMaxSupply(tokenId, newValue);
     }
 
-    function setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) public onlyOwner {
+    function setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) public virtual onlyOwner {
         _setMaxSupplyBatch(tokenIds, newValues);
     }
 }

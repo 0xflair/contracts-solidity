@@ -25,4 +25,16 @@ contract ERC1155MintByRole is IERC1155MintByRole, AccessControlInternal {
     ) public virtual onlyRole(MINTER_ROLE) {
         IERC1155Mintable(address(this)).mintByFacet(to, id, amount, data);
     }
+
+    /**
+     * @inheritdoc IERC1155MintByRole
+     */
+    function mintByRole(
+        address[] calldata tos,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata datas
+    ) public virtual onlyRole(MINTER_ROLE) {
+        IERC1155Mintable(address(this)).mintByFacet(tos, ids, amounts, datas);
+    }
 }

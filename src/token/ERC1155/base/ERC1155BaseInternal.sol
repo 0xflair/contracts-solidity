@@ -39,7 +39,7 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         address account,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) internal virtual {
         address operator = _msgSender();
         require(account != address(0), "ERC1155: mint to the zero address");
@@ -62,7 +62,7 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         address account,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) internal virtual {
         _mint(account, id, amount, data);
 
@@ -79,9 +79,9 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
      */
     function _mintBatch(
         address account,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes calldata data
     ) internal virtual {
         require(account != address(0), "ERC1155: mint to the zero address");
         require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
@@ -102,6 +102,39 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         emit TransferBatch(sender, address(0), account, ids, amounts);
     }
 
+    function _mintBatch(
+        address[] calldata accounts,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata datas
+    ) internal virtual {
+        require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
+        require(accounts.length == amounts.length, "ERC1155: accounts and amounts length mismatch");
+
+        address operator = _msgSender();
+
+        mapping(uint256 => mapping(address => uint256)) storage balances = ERC1155BaseStorage.layout().balances;
+
+        for (uint256 i; i < ids.length; ) {
+            _beforeTokenTransfer(
+                operator,
+                address(0),
+                accounts[i],
+                _asSingletonArray(ids[i]),
+                _asSingletonArray(amounts[i]),
+                datas[i]
+            );
+
+            balances[ids[i]][accounts[i]] += amounts[i];
+
+            emit TransferSingle(operator, address(0), accounts[i], ids[i], amounts[i]);
+
+            unchecked {
+                i++;
+            }
+        }
+    }
+
     /**
      * @notice mint batch of tokens for given address
      * @param account beneficiary of minting
@@ -111,9 +144,9 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
      */
     function _safeMintBatch(
         address account,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes calldata data
     ) internal virtual {
         _mintBatch(account, ids, amounts, data);
 
@@ -155,8 +188,8 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
      */
     function _burnBatch(
         address account,
-        uint256[] memory ids,
-        uint256[] memory amounts
+        uint256[] calldata ids,
+        uint256[] calldata amounts
     ) internal virtual {
         require(account != address(0), "ERC1155: burn from the zero address");
         require(ids.length == amounts.length, "ERC1155: ids and amounts length mismatch");
@@ -194,7 +227,7 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         address recipient,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) internal virtual {
         require(recipient != address(0), "ERC1155: transfer to the zero address");
 
@@ -228,7 +261,7 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         address recipient,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) internal virtual {
         _transfer(operator, sender, recipient, id, amount, data);
 

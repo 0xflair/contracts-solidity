@@ -31,7 +31,7 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         uint256 count,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) external payable nonReentrant {
+    ) external payable virtual nonReentrant {
         super._executeSale(tierId, count, maxAllowance, proof);
 
         IERC1155Mintable(address(this)).mintByFacet(
@@ -42,11 +42,11 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         );
     }
 
-    function tierToTokenId(uint256 tierId) external view returns (uint256) {
+    function tierToTokenId(uint256 tierId) external view virtual returns (uint256) {
         return ERC1155TieredSalesStorage.layout().tierToTokenId[tierId];
     }
 
-    function tierToTokenId(uint256[] calldata tierIds) external view returns (uint256[] memory) {
+    function tierToTokenId(uint256[] calldata tierIds) external view virtual returns (uint256[] memory) {
         uint256[] memory tokenIds = new uint256[](tierIds.length);
 
         for (uint256 i = 0; i < tierIds.length; i++) {
@@ -56,7 +56,7 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         return tokenIds;
     }
 
-    function _remainingSupplyForTier(uint256 tierId) internal view override returns (uint256) {
+    function _remainingSupplyForTier(uint256 tierId) internal view virtual override returns (uint256) {
         if (!ERC165Storage.layout().supportedInterfaces[type(IERC1155Supply).interfaceId]) {
             return type(uint256).max;
         }

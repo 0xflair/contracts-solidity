@@ -19,6 +19,13 @@ interface IERC1155MintByRole {
         address to,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
+    ) external;
+
+    function mintByRole(
+        address[] calldata tos,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata data
     ) external;
 }

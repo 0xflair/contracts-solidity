@@ -31,8 +31,8 @@ abstract contract ERC1155Burnable is IERC1155Burnable, ERC1155BaseInternal {
 
     function burnBatch(
         address account,
-        uint256[] memory ids,
-        uint256[] memory values
+        uint256[] calldata ids,
+        uint256[] calldata values
     ) public virtual {
         require(
             account == _msgSender() || IERC1155(address(this)).isApprovedForAll(account, _msgSender()),
@@ -56,8 +56,8 @@ abstract contract ERC1155Burnable is IERC1155Burnable, ERC1155BaseInternal {
 
     function burnBatchByFacet(
         address account,
-        uint256[] memory ids,
-        uint256[] memory values
+        uint256[] calldata ids,
+        uint256[] calldata values
     ) public virtual {
         if (address(this) != msg.sender) {
             revert SenderIsNotSelf();

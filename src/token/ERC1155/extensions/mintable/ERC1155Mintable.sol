@@ -17,12 +17,28 @@ abstract contract ERC1155Mintable is IERC1155Mintable, ERC1155BaseInternal {
         address to,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) public virtual {
         if (address(this) != msg.sender) {
             revert SenderIsNotSelf();
         }
 
         _mint(to, id, amount, data);
+    }
+
+    /**
+     * @inheritdoc IERC1155Mintable
+     */
+    function mintByFacet(
+        address[] calldata tos,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata datas
+    ) public virtual {
+        if (address(this) != msg.sender) {
+            revert SenderIsNotSelf();
+        }
+
+        _mintBatch(tos, ids, amounts, datas);
     }
 }

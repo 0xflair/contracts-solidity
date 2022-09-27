@@ -18,11 +18,11 @@ import "./IERC1155TieredSalesAdmin.sol";
 contract ERC1155TieredSalesOwnable is IERC1155TieredSalesAdmin, OwnableInternal {
     using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;
 
-    function configureTierTokenId(uint256 tierId, uint256 tokenId) external onlyOwner {
+    function configureTierTokenId(uint256 tierId, uint256 tokenId) external virtual onlyOwner {
         ERC1155TieredSalesStorage.layout().tierToTokenId[tierId] = tokenId;
     }
 
-    function configureTierTokenId(uint256[] calldata tierIds, uint256[] calldata tokenIds) external onlyOwner {
+    function configureTierTokenId(uint256[] calldata tierIds, uint256[] calldata tokenIds) external virtual onlyOwner {
         require(
             tierIds.length == tokenIds.length,
             "ERC1155TieredSalesOwnable: tierIds and tokenIds must be same length"

@@ -68,7 +68,7 @@ contract ERC1155Base is IERC1155, ERC1155BaseInternal {
         address to,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
     ) public virtual {
         address sender = _msgSender();
         require(from == sender || isApprovedForAll(from, sender), "ERC1155: caller is not owner nor approved");

@@ -11,7 +11,7 @@ abstract contract ERC1155Lockable is IERC1155Lockable, ERC1155LockableInternal {
         return super._locked(account, tokenId);
     }
 
-    function locked(address account, uint256[] calldata ticketTokenIds) public view returns (uint256[] memory) {
+    function locked(address account, uint256[] calldata ticketTokenIds) public view virtual returns (uint256[] memory) {
         uint256[] memory amounts = new uint256[](ticketTokenIds.length);
 
         for (uint256 i = 0; i < ticketTokenIds.length; i++) {

@@ -18,7 +18,7 @@ import "./IERC1155BurnableAdmin.sol";
 contract ERC1155BurnableOwnable is IERC1155BurnableAdmin, OwnableInternal {
     using ERC1155BurnableStorage for ERC1155BurnableStorage.Layout;
 
-    function setBurnablePausedUntil(uint256 newTimestamp) public onlyOwner {
+    function setBurnablePausedUntil(uint256 newTimestamp) public virtual onlyOwner {
         ERC1155BurnableStorage.layout().pausedUntil = newTimestamp;
     }
 }

@@ -40,7 +40,7 @@ contract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155Meta
         }
     }
 
-    function uriBatch(uint256[] calldata tokenIds) external view returns (string[] memory) {
+    function uriBatch(uint256[] calldata tokenIds) external view virtual returns (string[] memory) {
         string[] memory uris = new string[](tokenIds.length);
 
         for (uint256 i = 0; i < tokenIds.length; i++) {
@@ -50,31 +50,31 @@ contract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155Meta
         return uris;
     }
 
-    function baseURI() external view returns (string memory) {
+    function baseURI() external view virtual returns (string memory) {
         return ERC1155MetadataStorage.layout().baseURI;
     }
 
-    function fallbackURI() external view returns (string memory) {
+    function fallbackURI() external view virtual returns (string memory) {
         return ERC1155MetadataStorage.layout().fallbackURI;
     }
 
-    function uriSuffix() external view returns (string memory) {
+    function uriSuffix() external view virtual returns (string memory) {
         return ERC1155MetadataStorage.layout().uriSuffix;
     }
 
-    function baseURILocked() external view returns (bool) {
+    function baseURILocked() external view virtual returns (bool) {
         return ERC1155MetadataStorage.layout().baseURILocked;
     }
 
-    function fallbackURILocked() external view returns (bool) {
+    function fallbackURILocked() external view virtual returns (bool) {
         return ERC1155MetadataStorage.layout().fallbackURILocked;
     }
 
-    function uriSuffixLocked() external view returns (bool) {
+    function uriSuffixLocked() external view virtual returns (bool) {
         return ERC1155MetadataStorage.layout().uriSuffixLocked;
     }
 
-    function lastLockedTokenId() external view returns (uint256) {
+    function lastLockedTokenId() external view virtual returns (uint256) {
         return ERC1155MetadataStorage.layout().lastLockedTokenId;
     }
 }

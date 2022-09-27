@@ -16,7 +16,7 @@ import "../../access/ownable/OwnableInternal.sol";
 abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableInternal {
     using TieredSalesStorage for TieredSalesStorage.Layout;
 
-    function _configureTiering(uint256 tierId, Tier calldata tier) internal {
+    function _configureTiering(uint256 tierId, Tier calldata tier) internal virtual {
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(tier.maxAllocation >= l.tierMints[tierId], "LOWER_THAN_MINTED");
@@ -34,7 +34,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         l.totalReserved += tier.reserved;
     }
 
-    function _configureTiering(uint256[] calldata _tierIds, Tier[] calldata _tiers) internal {
+    function _configureTiering(uint256[] calldata _tierIds, Tier[] calldata _tiers) internal virtual {
         for (uint256 i = 0; i < _tierIds.length; i++) {
             _configureTiering(_tierIds[i], _tiers[i]);
         }
@@ -45,7 +45,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         address minter,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) internal view returns (bool) {
+    ) internal view virtual returns (bool) {
         return
             MerkleProof.verify(
                 proof,
@@ -59,7 +59,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         address minter,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) internal view returns (uint256 maxMintable) {
+    ) internal view virtual returns (uint256 maxMintable) {
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(l.tiers[tierId].maxPerWallet > 0, "NOT_EXISTS");
@@ -80,7 +80,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
-    function _availableSupplyForTier(uint256 tierId) internal view returns (uint256 remaining) {
+    function _availableSupplyForTier(uint256 tierId) internal view virtual returns (uint256 remaining) {
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         // Substract all the remaining reserved spots from the total remaining supply...
@@ -97,7 +97,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         uint256 count,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) internal {
+    ) internal virtual {
         address minter = _msgSender();
 
         uint256 maxMintable = _eligibleForTier(tierId, minter, maxAllowance, proof);

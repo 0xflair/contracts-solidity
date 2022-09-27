@@ -21,41 +21,41 @@ import "./IERC1155MetadataAdmin.sol";
  * @custom:provides-interfaces 0x3f963a7f
  */
 contract ERC1155MetadataOwnable is IERC1155MetadataAdmin, ERC1155MetadataInternal, OwnableInternal {
-    function setBaseURI(string calldata newBaseURI) public onlyOwner {
+    function setBaseURI(string calldata newBaseURI) public virtual onlyOwner {
         _setBaseURI(newBaseURI);
     }
 
-    function setFallbackURI(string calldata newFallbackURI) public onlyOwner {
+    function setFallbackURI(string calldata newFallbackURI) public virtual onlyOwner {
         _setFallbackURI(newFallbackURI);
     }
 
-    function setURISuffix(string calldata newURISuffix) public onlyOwner {
+    function setURISuffix(string calldata newURISuffix) public virtual onlyOwner {
         _setURISuffix(newURISuffix);
     }
 
-    function setURI(uint256 tokenId, string calldata newTokenURI) public onlyOwner {
+    function setURI(uint256 tokenId, string calldata newTokenURI) public virtual onlyOwner {
         _setURI(tokenId, newTokenURI);
     }
 
-    function setURIBatch(uint256[] calldata tokenIds, string[] calldata newTokenURIs) public onlyOwner {
+    function setURIBatch(uint256[] calldata tokenIds, string[] calldata newTokenURIs) public virtual onlyOwner {
         for (uint256 i = 0; i < tokenIds.length; i++) {
             _setURI(tokenIds[i], newTokenURIs[i]);
         }
     }
 
-    function lockBaseURI() public onlyOwner {
+    function lockBaseURI() public virtual onlyOwner {
         _lockBaseURI();
     }
 
-    function lockFallbackURI() public onlyOwner {
+    function lockFallbackURI() public virtual onlyOwner {
         _lockFallbackURI();
     }
 
-    function lockURISuffix() public onlyOwner {
+    function lockURISuffix() public virtual onlyOwner {
         _lockURISuffix();
     }
 
-    function lockURIUntil(uint256 tokenId) public onlyOwner {
+    function lockURIUntil(uint256 tokenId) public virtual onlyOwner {
         _lockURIUntil(tokenId);
     }
 }

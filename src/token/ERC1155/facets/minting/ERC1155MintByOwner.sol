@@ -23,4 +23,16 @@ contract ERC1155MintByOwner is IERC1155MintByOwner, OwnableInternal {
     ) public virtual onlyOwner {
         IERC1155Mintable(address(this)).mintByFacet(to, id, amount, data);
     }
+
+    /**
+     * @inheritdoc IERC1155MintByOwner
+     */
+    function mintByOwner(
+        address[] calldata tos,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata datas
+    ) public virtual onlyOwner {
+        IERC1155Mintable(address(this)).mintByFacet(tos, ids, amounts, datas);
+    }
 }

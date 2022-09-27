@@ -19,6 +19,13 @@ interface IERC1155Mintable {
         address to,
         uint256 id,
         uint256 amount,
-        bytes memory data
+        bytes calldata data
+    ) external;
+
+    function mintByFacet(
+        address[] calldata tos,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes[] calldata datas
     ) external;
 }

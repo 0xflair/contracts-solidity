@@ -14,7 +14,7 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
         address minter,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) public view returns (bool) {
+    ) public view virtual returns (bool) {
         return super._onTierAllowlist(tierId, minter, maxAllowance, proof);
     }
 
@@ -23,11 +23,11 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
         address minter,
         uint256 maxAllowance,
         bytes32[] calldata proof
-    ) public view returns (uint256 maxMintable) {
+    ) public view virtual returns (uint256 maxMintable) {
         return super._eligibleForTier(tierId, minter, maxAllowance, proof);
     }
 
-    function remainingForTier(uint256 tierId) public view returns (uint256) {
+    function remainingForTier(uint256 tierId) public view virtual returns (uint256) {
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         uint256 availableSupply = _availableSupplyForTier(tierId);
@@ -40,23 +40,23 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
         }
     }
 
-    function walletMintedByTier(uint256 tierId, address wallet) public view returns (uint256) {
+    function walletMintedByTier(uint256 tierId, address wallet) public view virtual returns (uint256) {
         return TieredSalesStorage.layout().walletMinted[tierId][wallet];
     }
 
-    function tierMints(uint256 tierId) public view returns (uint256) {
+    function tierMints(uint256 tierId) public view virtual returns (uint256) {
         return TieredSalesStorage.layout().tierMints[tierId];
     }
 
-    function totalReserved() external view returns (uint256) {
+    function totalReserved() external view virtual returns (uint256) {
         return TieredSalesStorage.layout().totalReserved;
     }
 
-    function reservedMints() external view returns (uint256) {
+    function reservedMints() external view virtual returns (uint256) {
         return TieredSalesStorage.layout().reservedMints;
     }
 
-    function tiers(uint256 tierId) external view returns (Tier memory) {
+    function tiers(uint256 tierId) external view virtual returns (Tier memory) {
         return TieredSalesStorage.layout().tiers[tierId];
     }
 }
