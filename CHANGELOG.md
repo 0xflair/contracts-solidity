@@ -1,3 +1,10 @@
+## [2.6.0](https://github.com/flair-sdk/contracts/compare/v2.5.0...v2.6.0) (2022-09-27)
+
+
+### Features
+
+* allow freezing max supply for erc1155 tokens ([e00f6da](https://github.com/flair-sdk/contracts/commit/e00f6dac33e5a7b92cfd92e90b62c806eaf0ad76))
+
 ## [2.5.0](https://github.com/flair-sdk/contracts/compare/v2.4.8...v2.5.0) (2022-09-27)
 
 
