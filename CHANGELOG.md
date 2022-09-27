@@ -1,3 +1,10 @@
+## [2.5.0](https://github.com/flair-sdk/contracts/compare/v2.4.8...v2.5.0) (2022-09-27)
+
+
+### Features
+
+* mark functions as virtual for override ([e647d70](https://github.com/flair-sdk/contracts/commit/e647d70702baa3bfbf677c485af501e77af8a457))
+
 ### [2.4.8](https://github.com/flair-sdk/contracts/compare/v2.4.7...v2.4.8) (2022-09-27)
 
 ### [2.4.7](https://github.com/flair-sdk/contracts/compare/v2.4.6...v2.4.7) (2022-09-27)
