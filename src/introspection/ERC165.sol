@@ -6,7 +6,12 @@ import "./IERC165.sol";
 import "./ERC165Storage.sol";
 
 /**
- * @title ERC165 implementation
+ * @title ERC165
+ * @notice Standard EIP-165 facet which would be already included as a core facet in Flair's Diamond contract.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Introspection
+ * @custom:provides-interfaces 0x01ffc9a7
  */
 contract ERC165 is IERC165 {
     using ERC165Storage for ERC165Storage.Layout;

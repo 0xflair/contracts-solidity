@@ -19,14 +19,7 @@
   "types": "dist/types.d.ts",
   "files": [
     "dist",
-    "access",
-    "common",
-    "diamond",
-    "factory",
-    "finance",
-    "introspection",
-    "metatx",
-    "token"
+    "**/*.sol"
   ],
   "scripts": {
     "lint": "eslint \"**/*.{js,ts}\" && solhint src/**/*.sol",
@@ -45,7 +38,7 @@
     "dist": "mkdir -p ./dist && cp -r ./package*.json ./dist/",
     "build": "npm run clean && npm run dist && npm run build-contracts && npm run fix-typechain && npm run generate-manifests && npm run build-typescript",
     "coverage": "npm run build && npx hardhat coverage --temp artifacts --network hardhat",
-    "prepublishOnly": "ls -lash ./ && ls -lash ./dist && cat ./package.json && cat ./dist/package.json && npm run generate-manifests && npm run build-typescript && cp -r ./src/* ./",
+    "prepublishOnly": "npm run generate-manifests && npm run build-typescript && cp -r ./src/* ./",
     "release": "semantic-release --debug",
     "release:dry": "semantic-release --dry-run --no-ci",
     "deploy:expensive": "npm run deploy:arbitrumOne && npm run deploy:mainnet",

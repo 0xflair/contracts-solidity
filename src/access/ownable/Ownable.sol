@@ -6,7 +6,12 @@ import "./IERC173.sol";
 import "./OwnableInternal.sol";
 
 /**
- * @title Ownership access control based on ERC173
+ * @title ERC173 - Ownable
+ * @notice Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Access
+ * @custom:provides-interfaces 0x7f5828d0
  */
 contract Ownable is IERC173, OwnableInternal {
     /**
