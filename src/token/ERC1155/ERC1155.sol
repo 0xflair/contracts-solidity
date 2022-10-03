@@ -14,7 +14,7 @@ import "./extensions/burnable/ERC1155Burnable.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:provides-interfaces 0xd9b67a26 0x744f4bd4 0x813a0876 0xdc290004 0xff3508c6 0xb164884b
+ * @custom:provides-interfaces 0xd9b67a26 0x744f4bd4 0x813a0876 0xdc290004 0xff3508c6 0xbb774d48
  */
 contract ERC1155 is ERC1155Base, ERC1155Supply, ERC1155Mintable, ERC1155Burnable, ERC1155Lockable {
     /**

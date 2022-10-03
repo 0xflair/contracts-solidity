@@ -3,21 +3,18 @@
 pragma solidity 0.8.15;
 
 import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
 
-import "../common/WithdrawExtension.sol";
 import "./Clones.sol";
 
-contract FlairFactory is Initializable, Ownable, WithdrawExtension {
+contract FlairFactory is Initializable, Ownable {
+    using Address for address payable;
+
     event ProxyCreated(address indexed deployer, address indexed proxyAddress);
 
-    constructor() {
-        initialize();
-    }
-
-    function initialize() public initializer {
-        __WithdrawExtension_init(_msgSender(), WithdrawMode.OWNER);
+    function withdraw() public {
+        payable(owner()).sendValue(address(this).balance);
     }
 
     function cloneDeterministicSimple(
@@ -54,9 +51,6 @@ contract FlairFactory is Initializable, Ownable, WithdrawExtension {
         returns (address deployedProxy)
     {
         bytes32 _salt = keccak256(abi.encodePacked(msg.sender, salt));
-        deployedProxy = Clones.predictDeterministicAddress(
-            implementation,
-            _salt
-        );
+        deployedProxy = Clones.predictDeterministicAddress(implementation, _salt);
     }
 }

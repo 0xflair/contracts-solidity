@@ -6,19 +6,16 @@ import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-import "../common/WithdrawExtension.sol";
 import "./Clones.sol";
 import "./MinimalProxy.sol";
 
-contract FlairFactoryNewable is Initializable, Ownable, WithdrawExtension {
+contract FlairFactoryNewable is Initializable, Ownable {
+    using Address for address payable;
+
     event ProxyCreated(address indexed deployer, address indexed proxyAddress);
 
-    constructor() {
-        initialize();
-    }
-
-    function initialize() public initializer {
-        __WithdrawExtension_init(_msgSender(), WithdrawMode.OWNER);
+    function withdraw() public {
+        payable(owner()).sendValue(address(this).balance);
     }
 
     function cloneDeterministicSimple(
@@ -26,7 +23,7 @@ contract FlairFactoryNewable is Initializable, Ownable, WithdrawExtension {
         bytes32 salt,
         bytes calldata data
     ) external payable returns (address deployedProxy) {
-        MinimalProxy p = new MinimalProxy{salt: salt}(implementation);
+        MinimalProxy p = new MinimalProxy{ salt: salt }(implementation);
         deployedProxy = address(p);
 
         if (data.length > 0) {

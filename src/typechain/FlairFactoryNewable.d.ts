@@ -23,39 +23,15 @@ import type { TypedEventFilter, TypedEvent, TypedListener } from "./common";
 export interface FlairFactoryNewableInterface extends ethers.utils.Interface {
   functions: {
     "cloneDeterministicSimple(address,bytes32,bytes)": FunctionFragment;
-    "initialize()": FunctionFragment;
-    "lockWithdrawMode()": FunctionFragment;
-    "lockWithdrawRecipient()": FunctionFragment;
     "owner()": FunctionFragment;
     "renounceOwnership()": FunctionFragment;
-    "revokeWithdrawPower()": FunctionFragment;
-    "setWithdrawMode(uint8)": FunctionFragment;
-    "setWithdrawRecipient(address)": FunctionFragment;
-    "supportsInterface(bytes4)": FunctionFragment;
     "transferOwnership(address)": FunctionFragment;
-    "withdraw(address[],uint256[])": FunctionFragment;
-    "withdrawMode()": FunctionFragment;
-    "withdrawModeLocked()": FunctionFragment;
-    "withdrawPowerRevoked()": FunctionFragment;
-    "withdrawRecipient()": FunctionFragment;
-    "withdrawRecipientLocked()": FunctionFragment;
+    "withdraw()": FunctionFragment;
   };
 
   encodeFunctionData(
     functionFragment: "cloneDeterministicSimple",
     values: [string, BytesLike, BytesLike]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "initialize",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "lockWithdrawMode",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "lockWithdrawRecipient",
-    values?: undefined
   ): string;
   encodeFunctionData(functionFragment: "owner", values?: undefined): string;
   encodeFunctionData(
@@ -63,61 +39,13 @@ export interface FlairFactoryNewableInterface extends ethers.utils.Interface {
     values?: undefined
   ): string;
   encodeFunctionData(
-    functionFragment: "revokeWithdrawPower",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setWithdrawMode",
-    values: [BigNumberish]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "setWithdrawRecipient",
-    values: [string]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "supportsInterface",
-    values: [BytesLike]
-  ): string;
-  encodeFunctionData(
     functionFragment: "transferOwnership",
     values: [string]
   ): string;
-  encodeFunctionData(
-    functionFragment: "withdraw",
-    values: [string[], BigNumberish[]]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawMode",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawModeLocked",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawPowerRevoked",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawRecipient",
-    values?: undefined
-  ): string;
-  encodeFunctionData(
-    functionFragment: "withdrawRecipientLocked",
-    values?: undefined
-  ): string;
+  encodeFunctionData(functionFragment: "withdraw", values?: undefined): string;
 
   decodeFunctionResult(
     functionFragment: "cloneDeterministicSimple",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(functionFragment: "initialize", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "lockWithdrawMode",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "lockWithdrawRecipient",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "owner", data: BytesLike): Result;
@@ -126,60 +54,20 @@ export interface FlairFactoryNewableInterface extends ethers.utils.Interface {
     data: BytesLike
   ): Result;
   decodeFunctionResult(
-    functionFragment: "revokeWithdrawPower",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setWithdrawMode",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "setWithdrawRecipient",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "supportsInterface",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
     functionFragment: "transferOwnership",
     data: BytesLike
   ): Result;
   decodeFunctionResult(functionFragment: "withdraw", data: BytesLike): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawMode",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawModeLocked",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawPowerRevoked",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawRecipient",
-    data: BytesLike
-  ): Result;
-  decodeFunctionResult(
-    functionFragment: "withdrawRecipientLocked",
-    data: BytesLike
-  ): Result;
 
   events: {
     "Initialized(uint8)": EventFragment;
     "OwnershipTransferred(address,address)": EventFragment;
     "ProxyCreated(address,address)": EventFragment;
-    "WithdrawPowerRevoked()": EventFragment;
-    "Withdrawn(address[],uint256[])": EventFragment;
   };
 
   getEvent(nameOrSignatureOrTopic: "Initialized"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "OwnershipTransferred"): EventFragment;
   getEvent(nameOrSignatureOrTopic: "ProxyCreated"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "WithdrawPowerRevoked"): EventFragment;
-  getEvent(nameOrSignatureOrTopic: "Withdrawn"): EventFragment;
 }
 
 export type InitializedEvent = TypedEvent<[number] & { version: number }>;
@@ -190,12 +78,6 @@ export type OwnershipTransferredEvent = TypedEvent<
 
 export type ProxyCreatedEvent = TypedEvent<
   [string, string] & { deployer: string; proxyAddress: string }
->;
-
-export type WithdrawPowerRevokedEvent = TypedEvent<[] & {}>;
-
-export type WithdrawnEvent = TypedEvent<
-  [string[], BigNumber[]] & { claimTokens: string[]; amounts: BigNumber[] }
 >;
 
 export class FlairFactoryNewable extends BaseContract {
@@ -249,42 +131,11 @@ export class FlairFactoryNewable extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
 
-    initialize(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    lockWithdrawMode(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    lockWithdrawRecipient(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
     owner(overrides?: CallOverrides): Promise<[string]>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
-
-    revokeWithdrawPower(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    setWithdrawMode(
-      _withdrawMode: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    setWithdrawRecipient(
-      _withdrawRecipient: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<ContractTransaction>;
-
-    supportsInterface(
-      interfaceId: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>;
 
     transferOwnership(
       newOwner: string,
@@ -292,20 +143,8 @@ export class FlairFactoryNewable extends BaseContract {
     ): Promise<ContractTransaction>;
 
     withdraw(
-      claimTokens: string[],
-      amounts: BigNumberish[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<ContractTransaction>;
-
-    withdrawMode(overrides?: CallOverrides): Promise<[number]>;
-
-    withdrawModeLocked(overrides?: CallOverrides): Promise<[boolean]>;
-
-    withdrawPowerRevoked(overrides?: CallOverrides): Promise<[boolean]>;
-
-    withdrawRecipient(overrides?: CallOverrides): Promise<[string]>;
-
-    withdrawRecipientLocked(overrides?: CallOverrides): Promise<[boolean]>;
   };
 
   cloneDeterministicSimple(
@@ -315,42 +154,11 @@ export class FlairFactoryNewable extends BaseContract {
     overrides?: PayableOverrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
 
-  initialize(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  lockWithdrawMode(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  lockWithdrawRecipient(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
   owner(overrides?: CallOverrides): Promise<string>;
 
   renounceOwnership(
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
-
-  revokeWithdrawPower(
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  setWithdrawMode(
-    _withdrawMode: BigNumberish,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  setWithdrawRecipient(
-    _withdrawRecipient: string,
-    overrides?: Overrides & { from?: string | Promise<string> }
-  ): Promise<ContractTransaction>;
-
-  supportsInterface(
-    interfaceId: BytesLike,
-    overrides?: CallOverrides
-  ): Promise<boolean>;
 
   transferOwnership(
     newOwner: string,
@@ -358,20 +166,8 @@ export class FlairFactoryNewable extends BaseContract {
   ): Promise<ContractTransaction>;
 
   withdraw(
-    claimTokens: string[],
-    amounts: BigNumberish[],
     overrides?: Overrides & { from?: string | Promise<string> }
   ): Promise<ContractTransaction>;
-
-  withdrawMode(overrides?: CallOverrides): Promise<number>;
-
-  withdrawModeLocked(overrides?: CallOverrides): Promise<boolean>;
-
-  withdrawPowerRevoked(overrides?: CallOverrides): Promise<boolean>;
-
-  withdrawRecipient(overrides?: CallOverrides): Promise<string>;
-
-  withdrawRecipientLocked(overrides?: CallOverrides): Promise<boolean>;
 
   callStatic: {
     cloneDeterministicSimple(
@@ -381,53 +177,16 @@ export class FlairFactoryNewable extends BaseContract {
       overrides?: CallOverrides
     ): Promise<string>;
 
-    initialize(overrides?: CallOverrides): Promise<void>;
-
-    lockWithdrawMode(overrides?: CallOverrides): Promise<void>;
-
-    lockWithdrawRecipient(overrides?: CallOverrides): Promise<void>;
-
     owner(overrides?: CallOverrides): Promise<string>;
 
     renounceOwnership(overrides?: CallOverrides): Promise<void>;
-
-    revokeWithdrawPower(overrides?: CallOverrides): Promise<void>;
-
-    setWithdrawMode(
-      _withdrawMode: BigNumberish,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    setWithdrawRecipient(
-      _withdrawRecipient: string,
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    supportsInterface(
-      interfaceId: BytesLike,
-      overrides?: CallOverrides
-    ): Promise<boolean>;
 
     transferOwnership(
       newOwner: string,
       overrides?: CallOverrides
     ): Promise<void>;
 
-    withdraw(
-      claimTokens: string[],
-      amounts: BigNumberish[],
-      overrides?: CallOverrides
-    ): Promise<void>;
-
-    withdrawMode(overrides?: CallOverrides): Promise<number>;
-
-    withdrawModeLocked(overrides?: CallOverrides): Promise<boolean>;
-
-    withdrawPowerRevoked(overrides?: CallOverrides): Promise<boolean>;
-
-    withdrawRecipient(overrides?: CallOverrides): Promise<string>;
-
-    withdrawRecipientLocked(overrides?: CallOverrides): Promise<boolean>;
+    withdraw(overrides?: CallOverrides): Promise<void>;
   };
 
   filters: {
@@ -470,26 +229,6 @@ export class FlairFactoryNewable extends BaseContract {
       [string, string],
       { deployer: string; proxyAddress: string }
     >;
-
-    "WithdrawPowerRevoked()"(): TypedEventFilter<[], {}>;
-
-    WithdrawPowerRevoked(): TypedEventFilter<[], {}>;
-
-    "Withdrawn(address[],uint256[])"(
-      claimTokens?: null,
-      amounts?: null
-    ): TypedEventFilter<
-      [string[], BigNumber[]],
-      { claimTokens: string[]; amounts: BigNumber[] }
-    >;
-
-    Withdrawn(
-      claimTokens?: null,
-      amounts?: null
-    ): TypedEventFilter<
-      [string[], BigNumber[]],
-      { claimTokens: string[]; amounts: BigNumber[] }
-    >;
   };
 
   estimateGas: {
@@ -500,41 +239,10 @@ export class FlairFactoryNewable extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
 
-    initialize(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    lockWithdrawMode(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    lockWithdrawRecipient(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
     owner(overrides?: CallOverrides): Promise<BigNumber>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    revokeWithdrawPower(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    setWithdrawMode(
-      _withdrawMode: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    setWithdrawRecipient(
-      _withdrawRecipient: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<BigNumber>;
-
-    supportsInterface(
-      interfaceId: BytesLike,
-      overrides?: CallOverrides
     ): Promise<BigNumber>;
 
     transferOwnership(
@@ -543,20 +251,8 @@ export class FlairFactoryNewable extends BaseContract {
     ): Promise<BigNumber>;
 
     withdraw(
-      claimTokens: string[],
-      amounts: BigNumberish[],
       overrides?: Overrides & { from?: string | Promise<string> }
     ): Promise<BigNumber>;
-
-    withdrawMode(overrides?: CallOverrides): Promise<BigNumber>;
-
-    withdrawModeLocked(overrides?: CallOverrides): Promise<BigNumber>;
-
-    withdrawPowerRevoked(overrides?: CallOverrides): Promise<BigNumber>;
-
-    withdrawRecipient(overrides?: CallOverrides): Promise<BigNumber>;
-
-    withdrawRecipientLocked(overrides?: CallOverrides): Promise<BigNumber>;
   };
 
   populateTransaction: {
@@ -567,41 +263,10 @@ export class FlairFactoryNewable extends BaseContract {
       overrides?: PayableOverrides & { from?: string | Promise<string> }
     ): Promise<PopulatedTransaction>;
 
-    initialize(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    lockWithdrawMode(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    lockWithdrawRecipient(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
     owner(overrides?: CallOverrides): Promise<PopulatedTransaction>;
 
     renounceOwnership(
       overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    revokeWithdrawPower(
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    setWithdrawMode(
-      _withdrawMode: BigNumberish,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    setWithdrawRecipient(
-      _withdrawRecipient: string,
-      overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    supportsInterface(
-      interfaceId: BytesLike,
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
     transferOwnership(
@@ -610,25 +275,7 @@ export class FlairFactoryNewable extends BaseContract {
     ): Promise<PopulatedTransaction>;
 
     withdraw(
-      claimTokens: string[],
-      amounts: BigNumberish[],
       overrides?: Overrides & { from?: string | Promise<string> }
-    ): Promise<PopulatedTransaction>;
-
-    withdrawMode(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    withdrawModeLocked(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    withdrawPowerRevoked(
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    withdrawRecipient(overrides?: CallOverrides): Promise<PopulatedTransaction>;
-
-    withdrawRecipientLocked(
-      overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
   };
 }

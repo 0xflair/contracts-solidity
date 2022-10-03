@@ -2,17 +2,19 @@
   "flair-sdk:diamond/DiamondCut": {
     "addresses": {
       "3": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
-      "4": "0x34d0fd8aA560340707B364c03D1CC4F70c132Da3",
+      "4": "0x0923BD6dA9442377a709dfB2A9fB4f0296DAC6da",
       "5": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
+      "137": "0xc29e42df7CCa32aA5D750441F41B2A798F08781E",
       "goerli": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
-      "rinkeby": "0x34d0fd8aA560340707B364c03D1CC4F70c132Da3",
+      "polygon": "0xc29e42df7CCa32aA5D750441F41B2A798F08781E",
+      "rinkeby": "0x0923BD6dA9442377a709dfB2A9fB4f0296DAC6da",
       "ropsten": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b"
     },
     "functionSelectors": [
       "diamondCut((address,uint8,bytes4[])[],address,bytes)"
     ],
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x1f931c1c"
     ],
@@ -21,16 +23,18 @@
     "category": "Diamonds",
     "title": "Diamond - Cut",
     "notice": "Standard EIP-2535 cut functionality to add, replace and remove facets from a diamond.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/diamond/DiamondCut.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/diamond/DiamondCut.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "addresses": {
       "3": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
-      "4": "0x702355611a2d7F54275f9d6660082F2A72Ba5DF6",
+      "4": "0xDb97BB71629A79730156c6C662154B71047E50AB",
       "5": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
+      "137": "0x39e8Ba263E6fAF61A8D5b8F99755bA0F582e0b86",
       "goerli": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
-      "rinkeby": "0x702355611a2d7F54275f9d6660082F2A72Ba5DF6",
+      "polygon": "0x39e8Ba263E6fAF61A8D5b8F99755bA0F582e0b86",
+      "rinkeby": "0xDb97BB71629A79730156c6C662154B71047E50AB",
       "ropsten": "0x9d938a88094296ff207966671bBCAF14Bf28286f"
     },
     "functionSelectors": [
@@ -40,7 +44,7 @@
       "facets()"
     ],
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x48e2b093"
     ],
@@ -49,16 +53,18 @@
     "category": "Diamonds",
     "title": "Diamond - Loupe",
     "notice": "Standard EIP-2535 loupe functions to allow inspecting a diamond for explorers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/diamond/DiamondLoupe.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/diamond/DiamondLoupe.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "addresses": {
       "3": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
-      "4": "0x724C344e5a9e01997D542F99ef0D2f7B419819de",
-      "5": "0xeFC898Ef20d668e418a399b2b3a039b7B55f92eB",
-      "goerli": "0xeFC898Ef20d668e418a399b2b3a039b7B55f92eB",
-      "rinkeby": "0x724C344e5a9e01997D542F99ef0D2f7B419819de",
+      "4": "0x21D3F612234EB96D7aeD25653450895a74b36a81",
+      "5": "0x01D02F547eAD45D40218415804Dcb604A11BF76a",
+      "137": "0x145E826dd5FaCAB891c02B4591B1706800076c84",
+      "goerli": "0x01D02F547eAD45D40218415804Dcb604A11BF76a",
+      "polygon": "0x145E826dd5FaCAB891c02B4591B1706800076c84",
+      "rinkeby": "0x21D3F612234EB96D7aeD25653450895a74b36a81",
       "ropsten": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492"
     },
     "functionSelectors": [
@@ -87,37 +93,39 @@
       "unlockByFacet(address,uint256,uint256)"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0xd9b67a26",
       "0x744f4bd4",
       "0x813a0876",
       "0xdc290004",
       "0xff3508c6",
-      "0xb164884b"
+      "0xbb774d48"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Standard",
     "notice": "Standard EIP-1155 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/ERC1155.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/ERC1155.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/burnable/ERC1155BurnableOwnable": {
     "addresses": {
       "3": "0x48F9152b91103E158029921C59Ff844d30468288",
-      "4": "0x784F5AE3d12E03112564b0318c60653EB84FA4Cf",
-      "5": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
-      "goerli": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
-      "rinkeby": "0x784F5AE3d12E03112564b0318c60653EB84FA4Cf",
+      "4": "0xA6Bf892D72fDC16161654d8308653a2e55B44999",
+      "5": "0x599D1b5B9C74a3Eb8cAfb21AdEF63f97CE232871",
+      "137": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
+      "goerli": "0x599D1b5B9C74a3Eb8cAfb21AdEF63f97CE232871",
+      "polygon": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
+      "rinkeby": "0xA6Bf892D72fDC16161654d8308653a2e55B44999",
       "ropsten": "0x48F9152b91103E158029921C59Ff844d30468288"
     },
     "functionSelectors": [
       "setBurnablePausedUntil(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/burnable/ERC1155BurnableOwnable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x710fb577"
     ],
@@ -128,16 +136,18 @@
     "category": "NFTs",
     "title": "ERC1155 - Burnable - Admin - Ownable",
     "notice": "Extension of ERC1155 to allow owner to manage burning mechanism.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/burnable/ERC1155BurnableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/burnable/ERC1155BurnableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "addresses": {
       "3": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
-      "4": "0x877546CE36fC055d2506aCe87838FD22eED420Be",
-      "5": "0x5dd91C4418e15fcca4DB1D01b5C6f875Ca405055",
-      "goerli": "0x5dd91C4418e15fcca4DB1D01b5C6f875Ca405055",
-      "rinkeby": "0x877546CE36fC055d2506aCe87838FD22eED420Be",
+      "4": "0x8Fba79C409Ad02b776846630f2018F3c58BA2086",
+      "5": "0x9Ff09f931c70565F1178A377A5e9c0662bD07304",
+      "137": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738",
+      "goerli": "0x9Ff09f931c70565F1178A377A5e9c0662bD07304",
+      "polygon": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738",
+      "rinkeby": "0x8Fba79C409Ad02b776846630f2018F3c58BA2086",
       "ropsten": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e"
     },
     "functionSelectors": [
@@ -152,7 +162,7 @@
       "uriSuffixLocked()"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x0e89341c",
       "0x57bbc86d"
@@ -164,16 +174,18 @@
     "category": "NFTs",
     "title": "ERC1155 - Metadata",
     "notice": "Provides metadata for ERC1155 tokens according to standard. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataOwnable": {
     "addresses": {
       "3": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
-      "4": "0x7b151958c3Fc4261fF3AD87c614163dAB22e7B6B",
-      "5": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
-      "goerli": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
-      "rinkeby": "0x7b151958c3Fc4261fF3AD87c614163dAB22e7B6B",
+      "4": "0x32930EAf6d685E8c5820Db72f86cD60ce6100c82",
+      "5": "0x157A16464338BF64bbF910bEd17216B2A8edaFB3",
+      "137": "0x4A065AD386D7E9e51bD1DeeBED3A95F77c6bB2b7",
+      "goerli": "0x157A16464338BF64bbF910bEd17216B2A8edaFB3",
+      "polygon": "0x4A065AD386D7E9e51bD1DeeBED3A95F77c6bB2b7",
+      "rinkeby": "0x32930EAf6d685E8c5820Db72f86cD60ce6100c82",
       "ropsten": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54"
     },
     "functionSelectors": [
@@ -188,7 +200,7 @@
       "setURISuffix(string)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataOwnable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x3f963a7f"
     ],
@@ -199,16 +211,78 @@
     "category": "NFTs",
     "title": "ERC1155 - Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/metadata/ERC1155MetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/metadata/ERC1155MetadataOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwner": {
+    "addresses": {
+      "3": "0x00232A8326af43515C8413A00b49282e25f50017",
+      "4": "0x9fFF3910097fdCE1E1E232Bd644a40949E92463e",
+      "5": "0xaab8A7aE4bFe790d60269Df4A7f9ae1616cA1CA3",
+      "137": "0x48633956a162777628eE43DEdD902655d3B6D253",
+      "goerli": "0xaab8A7aE4bFe790d60269Df4A7f9ae1616cA1CA3",
+      "polygon": "0x48633956a162777628eE43DEdD902655d3B6D253",
+      "rinkeby": "0x9fFF3910097fdCE1E1E232Bd644a40949E92463e",
+      "ropsten": "0x00232A8326af43515C8413A00b49282e25f50017"
+    },
+    "functionSelectors": [
+      "mintByOwner(address,uint256,uint256,bytes)",
+      "mintByOwner(address[],uint256[],uint256[],bytes[])"
+    ],
+    "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwner",
+    "version": "2.6.4",
+    "providesInterfaces": [
+      "0x6c5e99c7"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0xbb774d48"
+    ],
+    "category": "NFTs",
+    "title": "ERC1155 - Mint as Owner",
+    "notice": "Allow minting as contract owner with no restrictions.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/minting/ERC1155MintByOwner.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771": {
+    "addresses": {
+      "3": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
+      "4": "0x0A9cB03948923E481C453E2633A648677c05dBa4",
+      "5": "0x6538B78482B0cb8086a4d324d5107395d80aFD5f",
+      "137": "0x38b70a36fAd4CC4CB3fddA3fd53F474572171101",
+      "goerli": "0x6538B78482B0cb8086a4d324d5107395d80aFD5f",
+      "polygon": "0x38b70a36fAd4CC4CB3fddA3fd53F474572171101",
+      "rinkeby": "0x0A9cB03948923E481C453E2633A648677c05dBa4",
+      "ropsten": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1"
+    },
+    "functionSelectors": [
+      "mintByOwner(address,uint256,uint256,bytes)",
+      "mintByOwner(address[],uint256[],uint256[],bytes[])"
+    ],
+    "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771",
+    "version": "2.6.4",
+    "providesInterfaces": [
+      "0x6c5e99c7"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0xbb774d48"
+    ],
+    "category": "NFTs",
+    "title": "ERC1155 - Mint as Owner - With ERC2771 Context",
+    "notice": "Allow minting as owner via meta transactions (signed by the owner private key)",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "addresses": {
       "3": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
-      "4": "0x5ca0011fF1695bd67DB02F4fAEA7328Aa9CF5589",
-      "5": "0x185C57DCb7787BB94B183aAFf951DF934F89FFf5",
-      "goerli": "0x185C57DCb7787BB94B183aAFf951DF934F89FFf5",
-      "rinkeby": "0x5ca0011fF1695bd67DB02F4fAEA7328Aa9CF5589",
+      "4": "0x90e5B241eECB7471d65Ff2d4021163589A4a0D0E",
+      "5": "0x53F52Ab81c5aaD85161cE43763f8Efe7865F6219",
+      "137": "0xBA158DF19A7f0C23288c0609AC06Fc72022846a9",
+      "goerli": "0x53F52Ab81c5aaD85161cE43763f8Efe7865F6219",
+      "polygon": "0xBA158DF19A7f0C23288c0609AC06Fc72022846a9",
+      "rinkeby": "0x90e5B241eECB7471d65Ff2d4021163589A4a0D0E",
       "ropsten": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4"
     },
     "functionSelectors": [
@@ -218,7 +292,7 @@
       "setMaxSupplyBatch(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0xf0d6039e"
     ],
@@ -230,16 +304,18 @@
     "category": "NFTs",
     "title": "ERC1155 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-1155 contract to change max supply of token IDs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "addresses": {
       "3": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
-      "4": "0x21c5968a500c87E1116fBf034E131795498d8cBf",
-      "5": "0x3f871e44fDdB11d7b82dD687efe2E6c501525c7b",
-      "goerli": "0x3f871e44fDdB11d7b82dD687efe2E6c501525c7b",
-      "rinkeby": "0x21c5968a500c87E1116fBf034E131795498d8cBf",
+      "4": "0xf6865Ea9DE1Ff554Aeb6c18FAF04592659C4cFF0",
+      "5": "0x41c39528F91226C2468ECaE59D41ECB429383bBe",
+      "137": "0x636b46b22CE86DFfF7FE85C46e7C89196f4a016a",
+      "goerli": "0x41c39528F91226C2468ECaE59D41ECB429383bBe",
+      "polygon": "0x636b46b22CE86DFfF7FE85C46e7C89196f4a016a",
+      "rinkeby": "0xf6865Ea9DE1Ff554Aeb6c18FAF04592659C4cFF0",
       "ropsten": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5"
     },
     "functionSelectors": [
@@ -256,28 +332,30 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x79f33254",
       "0x5ae18a74"
     ],
     "peerDependencies": [],
     "requiredDependencies": [
-      "0xb164884b"
+      "0xbb774d48"
     ],
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales",
     "notice": "Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "addresses": {
       "3": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
-      "4": "0xD6C73dc3D628BC2f7d422350cEaB79C5f7e878F7",
-      "5": "0xDFB72f3159C8a3C99D08048299a552De323c6f0e",
-      "goerli": "0xDFB72f3159C8a3C99D08048299a552De323c6f0e",
-      "rinkeby": "0xD6C73dc3D628BC2f7d422350cEaB79C5f7e878F7",
+      "4": "0xc9C48bEF060842FfBE81d98BC140C71b470Ac9A0",
+      "5": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333",
+      "137": "0x37a855a8BcAb76cFd000D13DDaA299AA2e6d6704",
+      "goerli": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333",
+      "polygon": "0x37a855a8BcAb76cFd000D13DDaA299AA2e6d6704",
+      "rinkeby": "0xc9C48bEF060842FfBE81d98BC140C71b470Ac9A0",
       "ropsten": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78"
     },
     "functionSelectors": [
@@ -285,7 +363,7 @@
       "configureTierTokenId(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x76c5dd21"
     ],
@@ -296,23 +374,79 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - Admin - Ownable",
     "notice": "Used to manage which ERC1155 token is related to which the sales tier.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
+    "addresses": {
+      "3": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
+      "4": "0x59DBC28fc7059590947eE3eD9423B850Bb865911",
+      "5": "0x93EA5c5f0961E9912E77211ef5888618E4DC7e7e",
+      "137": "0x336714ae64A9143c61066a8A00cA9fA99A006B31",
+      "goerli": "0x93EA5c5f0961E9912E77211ef5888618E4DC7e7e",
+      "polygon": "0x336714ae64A9143c61066a8A00cA9fA99A006B31",
+      "rinkeby": "0x59DBC28fc7059590947eE3eD9423B850Bb865911",
+      "ropsten": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD"
+    },
+    "functionSelectors": [
+      "balanceOf(address,uint256)",
+      "balanceOfBatch(address[],uint256[])",
+      "burn(address,uint256,uint256)",
+      "burnBatch(address,uint256[],uint256[])",
+      "burnBatchByFacet(address,uint256[],uint256[])",
+      "burnByFacet(address,uint256,uint256)",
+      "burnablePausedUntil()",
+      "exists(uint256)",
+      "existsBatch(uint256[])",
+      "isApprovedForAll(address,address)",
+      "lockByFacet(address,uint256,uint256)",
+      "locked(address,uint256)",
+      "locked(address,uint256[])",
+      "maxSupply(uint256)",
+      "maxSupplyBatch(uint256[])",
+      "mintByFacet(address,uint256,uint256,bytes)",
+      "mintByFacet(address[],uint256[],uint256[],bytes[])",
+      "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
+      "safeTransferFrom(address,address,uint256,uint256,bytes)",
+      "setApprovalForAll(address,bool)",
+      "totalSupply(uint256)",
+      "totalSupplyBatch(uint256[])",
+      "unlockByFacet(address,uint256,uint256)"
+    ],
+    "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
+    "version": "2.6.4",
+    "providesInterfaces": [
+      "0xd9b67a26",
+      "0x744f4bd4",
+      "0x813a0876",
+      "0xdc290004",
+      "0xff3508c6",
+      "0xbb774d48"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "NFTs",
+    "title": "ERC1155 - With ERC2771 Context",
+    "notice": "Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/token/ERC1155/ERC1155WithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165": {
     "addresses": {
       "3": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
-      "4": "0x0A42B5Df15924b40fb98dedb0a0A9f3CC962c09E",
-      "5": "0xE59823282f481889A1264469ACa219f6aCa2fE40",
-      "goerli": "0xE59823282f481889A1264469ACa219f6aCa2fE40",
-      "rinkeby": "0x0A42B5Df15924b40fb98dedb0a0A9f3CC962c09E",
+      "4": "0xfB92E8190b37E4057AcC04e9E318733ceE70184A",
+      "5": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
+      "137": "0x257F52da6c2e3e3e54e55Bdc3F01623c41d1f72d",
+      "goerli": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
+      "polygon": "0x257F52da6c2e3e3e54e55Bdc3F01623c41d1f72d",
+      "rinkeby": "0xfB92E8190b37E4057AcC04e9E318733ceE70184A",
       "ropsten": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3"
     },
     "functionSelectors": [
       "supportsInterface(bytes4)"
     ],
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x01ffc9a7"
     ],
@@ -321,23 +455,25 @@
     "category": "Introspection",
     "title": "ERC165",
     "notice": "Standard EIP-165 facet which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/introspection/ERC165.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/introspection/ERC165.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "addresses": {
       "3": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
-      "4": "0xdd13cD39976d4Ae6c7Bb6F0333bB68Abcd0b8f88",
+      "4": "0x8A486123a2CC2cd72c4DA106af25E6619f55e4b0",
       "5": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
+      "137": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
       "goerli": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
-      "rinkeby": "0xdd13cD39976d4Ae6c7Bb6F0333bB68Abcd0b8f88",
+      "polygon": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
+      "rinkeby": "0x8A486123a2CC2cd72c4DA106af25E6619f55e4b0",
       "ropsten": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455"
     },
     "functionSelectors": [
       "setERC165(bytes4[],bytes4[])"
     ],
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x2a848091"
     ],
@@ -346,16 +482,18 @@
     "category": "Diamonds",
     "title": "ERC165 - Admin - Ownable",
     "notice": "Standard EIP-165 management facet using Ownable extension for access control.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/introspection/ERC165Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/introspection/ERC165Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/ownable/Ownable": {
     "addresses": {
       "3": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
-      "4": "0x2620537bcb9d8c3442547D8D8D1d19f62B187079",
-      "5": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
-      "goerli": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
-      "rinkeby": "0x2620537bcb9d8c3442547D8D8D1d19f62B187079",
+      "4": "0x619cf6Aa38bBAf9A0d04EdFF02751a9b43699057",
+      "5": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
+      "137": "0x7EC5b4F1C3e0d017B2996D32f229a776B3302138",
+      "goerli": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
+      "polygon": "0x7EC5b4F1C3e0d017B2996D32f229a776B3302138",
+      "rinkeby": "0x619cf6Aa38bBAf9A0d04EdFF02751a9b43699057",
       "ropsten": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96"
     },
     "functionSelectors": [
@@ -364,7 +502,7 @@
       "transferOwnership(address)"
     ],
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0x7f5828d0"
     ],
@@ -373,16 +511,18 @@
     "category": "Access",
     "title": "ERC173 - Ownable",
     "notice": "Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/access/ownable/Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/access/ownable/Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "addresses": {
       "3": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
-      "4": "0x80b613989a974AD6877b163eE2fa59535d462F47",
-      "5": "0xedE905c334D4278194fF240a3B2009E05C09879A",
-      "goerli": "0xedE905c334D4278194fF240a3B2009E05C09879A",
-      "rinkeby": "0x80b613989a974AD6877b163eE2fa59535d462F47",
+      "4": "0x05B23378e4e8A5D083a99eA61D9325dd6C2b0cB5",
+      "5": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
+      "137": "0x42f9Df85471f595a219c6c4E2d585571d325864f",
+      "goerli": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
+      "polygon": "0x42f9Df85471f595a219c6c4E2d585571d325864f",
+      "rinkeby": "0x05B23378e4e8A5D083a99eA61D9325dd6C2b0cB5",
       "ropsten": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1"
     },
     "functionSelectors": [
@@ -390,7 +530,7 @@
       "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])"
     ],
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.6.2",
+    "version": "2.6.4",
     "providesInterfaces": [
       "0xf8458dcd"
     ],
@@ -401,7 +541,59 @@
     "category": "NFTs",
     "title": "Tiered Sales - Admin - Ownable",
     "notice": "Allow contract owner to manage sale tiers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.2/src/finance/sales/TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/finance/sales/TieredSalesOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:common/withdraw/Withdrawable": {
+    "addresses": {
+      "5": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
+      "137": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7",
+      "goerli": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
+      "polygon": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7"
+    },
+    "functionSelectors": [
+      "withdraw(address[],uint256[])"
+    ],
+    "fqn": "flair-sdk:common/withdraw/Withdrawable",
+    "version": "2.6.4",
+    "providesInterfaces": [
+      "0xde6d6d96"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Finance",
+    "title": "Withdrawable",
+    "notice": "Allow withdrwaing any ERC20 or native tokens from the contract.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/common/withdraw/Withdrawable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:common/withdraw/WithdrawableOwnable": {
+    "addresses": {
+      "5": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+      "137": "0xF21c3D0fdb3faFC9620f31aDdCA7DDCcE94955EF",
+      "goerli": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+      "polygon": "0xF21c3D0fdb3faFC9620f31aDdCA7DDCcE94955EF"
+    },
+    "functionSelectors": [
+      "lockWithdrawMode()",
+      "lockWithdrawRecipient()",
+      "revokeWithdrawPower()",
+      "setWithdrawMode(uint8)",
+      "setWithdrawRecipient(address)"
+    ],
+    "fqn": "flair-sdk:common/withdraw/WithdrawableOwnable",
+    "version": "2.6.4",
+    "providesInterfaces": [
+      "0x7246cea5"
+    ],
+    "peerDependencies": [
+      "0xde6d6d96"
+    ],
+    "requiredDependencies": [],
+    "category": "NFTs",
+    "title": "Withdrawable - Admin - Ownable",
+    "notice": "Allow contract owner to manage who can withdraw funds and how.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.6.4/src/common/withdraw/WithdrawableOwnable.sol",
     "author": "flair-sdk.eth"
   }
 }

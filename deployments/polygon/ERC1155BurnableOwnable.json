@@ -1,0 +1,95 @@
+{
+  "address": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBurnablePausedUntil",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xec483b9547ba0e46282414fd97d6a9ec95766fe8893c95bf213d50877d4c5ced",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
+    "transactionIndex": 1,
+    "gasUsed": "128185",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000008000000000000000000000000000200000000000000000000000000000800000000000000400000100000000000000000000000000000000000000000000000000000000000080000000000000000000000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000004000000100000000000001000000000000000000000000000000100000000000002000000000000000001000000000000000000000000000000000000000100000",
+    "blockHash": "0xda0d9714cb7d515fd08a884d0b27532f489f817ea73da08e2896f5287408dd96",
+    "transactionHash": "0xec483b9547ba0e46282414fd97d6a9ec95766fe8893c95bf213d50877d4c5ced",
+    "logs": [
+      {
+        "transactionIndex": 1,
+        "blockNumber": 33809286,
+        "transactionHash": "0xec483b9547ba0e46282414fd97d6a9ec95766fe8893c95bf213d50877d4c5ced",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000b68d649f181bde8a8fee367535a606cc3c09fccd",
+          "0x0000000000000000000000001efecb61a2f80aa34d3b9218b564a64d05946290"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002d8a5b9af05129000000000000000000000000000000000000000000000001cbf8dd568732f0940000000000000000000000000000000000000000000012bb0ac8568a284425a8000000000000000000000000000000000000000000000001cbcb52faec429f6b0000000000000000000000000000000000000000000012bb0af5e0e5c33476d1",
+        "logIndex": 2,
+        "blockHash": "0xda0d9714cb7d515fd08a884d0b27532f489f817ea73da08e2896f5287408dd96"
+      }
+    ],
+    "blockNumber": 33809286,
+    "cumulativeGasUsed": "284621",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "a9fa8c998440b5be2b92171b1128d13c",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newTimestamp\",\"type\":\"uint256\"}],\"name\":\"setBurnablePausedUntil\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:peer-dependencies\":\"0xdc290004\",\"custom:provides-interfaces\":\"0x710fb577\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC1155 - Burnable - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Extension of ERC1155 to allow owner to manage burning mechanism.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC1155/facets/burnable/ERC1155BurnableOwnable.sol\":\"ERC1155BurnableOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(\\n        address indexed previousOwner,\\n        address indexed newOwner\\n    );\\n}\\n\",\"keccak256\":\"0xaa69cf8eab7188097d9aa84c92692ec30614ee2f6bf8d2255482162611255db4\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0xa0149e5c5964ce521c9589ff1a559844eb24fd8481634dda76a3f24d6991039b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0x26eea1f665c393b0046c3dcb9421f3caa1322ca996689fa0aa941eff5a1dcda2\",\"license\":\"MIT\"},\"src/token/ERC1155/extensions/burnable/ERC1155BurnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary ERC1155BurnableStorage {\\n    struct Layout {\\n        uint256 pausedUntil;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC1155Burnable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xb89ef67e0dea1c9e9156fbd1c8244bbfe3471e331531076f7fcefb23d5566af2\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/burnable/ERC1155BurnableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"../../extensions/burnable/ERC1155BurnableStorage.sol\\\";\\nimport \\\"./IERC1155BurnableAdmin.sol\\\";\\n\\n/**\\n * @title ERC1155 - Burnable - Admin - Ownable\\n * @notice Extension of ERC1155 to allow owner to manage burning mechanism.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:peer-dependencies 0xdc290004\\n * @custom:provides-interfaces 0x710fb577\\n */\\ncontract ERC1155BurnableOwnable is IERC1155BurnableAdmin, OwnableInternal {\\n    using ERC1155BurnableStorage for ERC1155BurnableStorage.Layout;\\n\\n    function setBurnablePausedUntil(uint256 newTimestamp) public virtual onlyOwner {\\n        ERC1155BurnableStorage.layout().pausedUntil = newTimestamp;\\n    }\\n}\\n\",\"keccak256\":\"0xadfa549c97f8c997d95107380f9daf0335294b20d4620904b32fb3fe313552f8\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/burnable/IERC1155BurnableAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface IERC1155BurnableAdmin {\\n    function setBurnablePausedUntil(uint256 newTimestamp) external;\\n}\\n\",\"keccak256\":\"0xb6dfb4a0bf88639a3c245e08c78cb9e3fb984b88040501966be84db1d2ec1b27\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061015c806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063710fb57714610030575b600080fd5b61004361003e36600461010d565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f20cb9ad5a22f74f90c7fecbece6b6ab3beb2a63812efb8693c5ff39f2b73ee0f55565b60006020828403121561011f57600080fd5b503591905056fea26469706673582212206c99731766a7fd553b9cb87936ddc69a04183755a6d5583aefe99304397e2e3664736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063710fb57714610030575b600080fd5b61004361003e36600461010d565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f20cb9ad5a22f74f90c7fecbece6b6ab3beb2a63812efb8693c5ff39f2b73ee0f55565b60006020828403121561011f57600080fd5b503591905056fea26469706673582212206c99731766a7fd553b9cb87936ddc69a04183755a6d5583aefe99304397e2e3664736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:peer-dependencies": "0xdc290004",
+    "custom:provides-interfaces": "0x710fb577",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC1155 - Burnable - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Extension of ERC1155 to allow owner to manage burning mechanism.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

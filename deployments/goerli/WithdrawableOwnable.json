@@ -1,0 +1,123 @@
+{
+  "address": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "WithdrawModeLocked",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "WithdrawRecipientLocked",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "lockWithdrawMode",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lockWithdrawRecipient",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "revokeWithdrawPower",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum IWithdrawable.Mode",
+          "name": "_mode",
+          "type": "uint8"
+        }
+      ],
+      "name": "setWithdrawMode",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_recipient",
+          "type": "address"
+        }
+      ],
+      "name": "setWithdrawRecipient",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xb592539272b725164dabba3002cd75f0549b28bf1637548dd9668ddea30f3223",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+    "transactionIndex": 38,
+    "gasUsed": "417624",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x374415572d33fe013e24cb52ae28fce40b6c6ea2b914573afe8afc0cca6834da",
+    "transactionHash": "0xb592539272b725164dabba3002cd75f0549b28bf1637548dd9668ddea30f3223",
+    "logs": [],
+    "blockNumber": 7705112,
+    "cumulativeGasUsed": "12838020",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "9932f08b76ff3c8d25eae92113779e3f",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"WithdrawModeLocked\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawRecipientLocked\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"lockWithdrawMode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lockWithdrawRecipient\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"revokeWithdrawPower\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enum IWithdrawable.Mode\",\"name\":\"_mode\",\"type\":\"uint8\"}],\"name\":\"setWithdrawMode\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"}],\"name\":\"setWithdrawRecipient\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:peer-dependencies\":\"0xde6d6d96\",\"custom:provides-interfaces\":\"0x7246cea5\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Withdrawable - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow contract owner to manage who can withdraw funds and how.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/common/withdraw/WithdrawableOwnable.sol\":\"WithdrawableOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(\\n        address indexed previousOwner,\\n        address indexed newOwner\\n    );\\n}\\n\",\"keccak256\":\"0xaa69cf8eab7188097d9aa84c92692ec30614ee2f6bf8d2255482162611255db4\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0xa0149e5c5964ce521c9589ff1a559844eb24fd8481634dda76a3f24d6991039b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0x26eea1f665c393b0046c3dcb9421f3caa1322ca996689fa0aa941eff5a1dcda2\",\"license\":\"MIT\"},\"src/common/withdraw/IWithdrawable.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity 0.8.15;\\n\\ninterface IWithdrawable {\\n    enum Mode {\\n        OWNER,\\n        RECIPIENT,\\n        ANYONE,\\n        NOBODY\\n    }\\n\\n    error WithdrawOnlyRecipient();\\n    error WithdrawOnlyOwner();\\n    error WithdrawImpossible();\\n\\n    event Withdrawn(address[] claimTokens, uint256[] amounts);\\n\\n    function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external;\\n}\\n\",\"keccak256\":\"0x37f6da6052780993059eec44be4c058f213aaf508c1b093330891decccfb197d\",\"license\":\"AGPL-3.0\"},\"src/common/withdraw/IWithdrawableAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./IWithdrawable.sol\\\";\\n\\ninterface IWithdrawableAdmin {\\n    error WithdrawModeLocked();\\n    error WithdrawRecipientLocked();\\n\\n    function setWithdrawRecipient(address _recipient) external;\\n\\n    function lockWithdrawRecipient() external;\\n\\n    function revokeWithdrawPower() external;\\n\\n    function setWithdrawMode(IWithdrawable.Mode _mode) external;\\n\\n    function lockWithdrawMode() external;\\n}\\n\",\"keccak256\":\"0x43d017e744e1be0b3e2c2fb886052be70bcba2d0ea7f7c99fa1ea5fccdcfc1c1\",\"license\":\"MIT\"},\"src/common/withdraw/WithdrawableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"../../access/ownable/OwnableInternal.sol\\\";\\n\\nimport \\\"./WithdrawableStorage.sol\\\";\\nimport \\\"./IWithdrawableAdmin.sol\\\";\\n\\n/**\\n * @title Withdrawable - Admin - Ownable\\n * @notice Allow contract owner to manage who can withdraw funds and how.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:peer-dependencies 0xde6d6d96\\n * @custom:provides-interfaces 0x7246cea5\\n */\\ncontract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal {\\n    using WithdrawableStorage for WithdrawableStorage.Layout;\\n\\n    function setWithdrawRecipient(address _recipient) external override onlyOwner {\\n        if (WithdrawableStorage.layout().recipientLocked) {\\n            revert WithdrawRecipientLocked();\\n        }\\n\\n        WithdrawableStorage.layout().recipient = _recipient;\\n    }\\n\\n    function lockWithdrawRecipient() external override onlyOwner {\\n        WithdrawableStorage.layout().recipientLocked = true;\\n    }\\n\\n    function revokeWithdrawPower() external override onlyOwner {\\n        WithdrawableStorage.layout().powerRevoked = true;\\n    }\\n\\n    function setWithdrawMode(IWithdrawable.Mode _mode) external override onlyOwner {\\n        if (WithdrawableStorage.layout().modeLocked) {\\n            revert WithdrawModeLocked();\\n        }\\n\\n        WithdrawableStorage.layout().mode = _mode;\\n    }\\n\\n    function lockWithdrawMode() external override onlyOwner {\\n        WithdrawableStorage.layout().modeLocked = true;\\n    }\\n}\\n\",\"keccak256\":\"0xd26baa7af7f32b82ebc0a27d785292b918267b1b8bdd7d252472bc20412cf963\",\"license\":\"MIT\"},\"src/common/withdraw/WithdrawableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./IWithdrawable.sol\\\";\\n\\nlibrary WithdrawableStorage {\\n    struct Layout {\\n        address recipient;\\n        bool recipientLocked;\\n        bool powerRevoked;\\n        IWithdrawable.Mode mode;\\n        bool modeLocked;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.Withdrawable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x5da7471f7fdbbf19e7d31ec653547a350c1ec72696bfae4fdf42a318c3a6fb19\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506106a4806100206000396000f3fe608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea2646970667358221220c48eb70335a6a74b0c6e5eeda9f15e12a79080ba119ad58739bdde26bb7492b364736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea2646970667358221220c48eb70335a6a74b0c6e5eeda9f15e12a79080ba119ad58739bdde26bb7492b364736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:peer-dependencies": "0xde6d6d96",
+    "custom:provides-interfaces": "0x7246cea5",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "Withdrawable - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow contract owner to manage who can withdraw funds and how.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

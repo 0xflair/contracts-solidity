@@ -9,7 +9,13 @@ import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155MintByOwner.sol";
 
 /**
- * @dev Extension of {ERC1155} that allows owner to mint new tokens.
+ * @title ERC1155 - Mint as Owner
+ * @notice Allow minting as contract owner with no restrictions.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:required-dependencies 0xbb774d48
+ * @custom:provides-interfaces 0x6c5e99c7
  */
 contract ERC1155MintByOwner is IERC1155MintByOwner, OwnableInternal {
     /**

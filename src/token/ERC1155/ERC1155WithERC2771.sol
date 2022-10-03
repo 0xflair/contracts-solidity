@@ -8,6 +8,14 @@ import "./extensions/lockable/ERC1155Lockable.sol";
 import "./extensions/mintable/ERC1155Mintable.sol";
 import "./extensions/burnable/ERC1155Burnable.sol";
 
+/**
+ * @title ERC1155 - With ERC2771 Context
+ * @notice Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category NFTs
+ * @custom:provides-interfaces 0xd9b67a26 0x744f4bd4 0x813a0876 0xdc290004 0xff3508c6 0xbb774d48
+ */
 contract ERC1155WithERC2771 is ERC1155BaseERC2771, ERC1155Supply, ERC1155Mintable, ERC1155Burnable, ERC1155Lockable {
     function _beforeTokenTransfer(
         address operator,
