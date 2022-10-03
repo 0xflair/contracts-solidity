@@ -1,3 +1,10 @@
+## [2.7.0](https://github.com/flair-sdk/contracts/compare/v2.6.4...v2.7.0) (2022-10-03)
+
+
+### Features
+
+* add withdrawable facet ([d96049c](https://github.com/flair-sdk/contracts/commit/d96049c0589ad89f712aa8cb771685602ce61367))
+
 ### [2.6.4](https://github.com/flair-sdk/contracts/compare/v2.6.3...v2.6.4) (2022-09-28)
 
 ### [2.6.3](https://github.com/flair-sdk/contracts/compare/v2.6.2...v2.6.3) (2022-09-27)
