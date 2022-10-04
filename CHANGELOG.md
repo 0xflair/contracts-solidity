@@ -1,3 +1,10 @@
+## [2.8.0](https://github.com/flair-sdk/contracts/compare/v2.7.0...v2.8.0) (2022-10-04)
+
+
+### Features
+
+* add royalty facet ([462baab](https://github.com/flair-sdk/contracts/commit/462baab30c713280f41b918afb80a4084c7d08f6))
+
 ## [2.7.0](https://github.com/flair-sdk/contracts/compare/v2.6.4...v2.7.0) (2022-10-03)
 
 
