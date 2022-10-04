@@ -1,7 +1,7 @@
 {
   "flair-sdk:diamond/Diamond": {
     "fqn": "flair-sdk:diamond/Diamond",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "4": "0xBFC33Be1f355f03662958eDE94cc4a5e16C23908",
@@ -147,7 +147,7 @@
   },
   "flair-sdk:diamond/DiamondCut": {
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "4": "0x0923BD6dA9442377a709dfB2A9fB4f0296DAC6da",
@@ -306,7 +306,7 @@
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "4": "0xDb97BB71629A79730156c6C662154B71047E50AB",
@@ -408,7 +408,7 @@
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "4": "0x21D3F612234EB96D7aeD25653450895a74b36a81",
@@ -1063,7 +1063,7 @@
   },
   "flair-sdk:token/ERC1155/facets/burnable/ERC1155BurnableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/burnable/ERC1155BurnableOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x48F9152b91103E158029921C59Ff844d30468288",
       "4": "0xA6Bf892D72fDC16161654d8308653a2e55B44999",
@@ -1121,7 +1121,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "4": "0x8Fba79C409Ad02b776846630f2018F3c58BA2086",
@@ -1295,7 +1295,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
       "4": "0x32930EAf6d685E8c5820Db72f86cD60ce6100c82",
@@ -1468,7 +1468,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwner": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwner",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x00232A8326af43515C8413A00b49282e25f50017",
       "4": "0x9fFF3910097fdCE1E1E232Bd644a40949E92463e",
@@ -1569,7 +1569,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "4": "0x0A9cB03948923E481C453E2633A648677c05dBa4",
@@ -1670,7 +1670,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByRole": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByRole",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "4": "0x1BA18116eF2b0aC2249D60C72660F928643797Bc",
@@ -1853,7 +1853,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByRoleERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByRoleERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "4": "0x0ECf3D1eF3bBaEc2b7C5fFA828d85a9B5Ed639bb",
@@ -2036,7 +2036,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "4": "0x90e5B241eECB7471d65Ff2d4021163589A4a0D0E",
@@ -2247,7 +2247,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "4": "0xf6865Ea9DE1Ff554Aeb6c18FAF04592659C4cFF0",
@@ -2575,7 +2575,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xe9832698308707D18dE429Aaf6260355196CEFB7",
       "4": "0x28c8c2C67129ba7771ef9Ca6114825Df60b6FF03",
@@ -2903,7 +2903,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "4": "0xc9C48bEF060842FfBE81d98BC140C71b470Ac9A0",
@@ -2984,7 +2984,7 @@
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "4": "0x59DBC28fc7059590947eE3eD9423B850Bb865911",
@@ -3639,7 +3639,7 @@
   },
   "flair-sdk:introspection/ERC165": {
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "4": "0xfB92E8190b37E4057AcC04e9E318733ceE70184A",
@@ -3684,7 +3684,7 @@
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "4": "0x8A486123a2CC2cd72c4DA106af25E6619f55e4b0",
@@ -3747,7 +3747,7 @@
   },
   "flair-sdk:metatx/ERC2771Context": {
     "fqn": "flair-sdk:metatx/ERC2771Context",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x4c4226c746c9ce072710f44d7ee8798c6f6dcffd",
       "4": "0x9343Ede7c4CA536dCDA6356009886643249E4914",
@@ -3792,7 +3792,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "4": "0xa1a0FC322531012437288c7B44869b1662945824",
@@ -3850,7 +3850,7 @@
   },
   "flair-sdk:factory/FlairFactory": {
     "fqn": "flair-sdk:factory/FlairFactory",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "4": "0x35526513a05afc068B5b0C395000cC40e8123473",
@@ -4020,7 +4020,7 @@
   },
   "flair-sdk:factory/FlairFactoryNewable": {
     "fqn": "flair-sdk:factory/FlairFactoryNewable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "4": "0x06bb337fB5EC4103a35Fda3518e37D7c355B7cEF",
@@ -4166,7 +4166,7 @@
   },
   "flair-sdk:access/ownable/Ownable": {
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "4": "0x619cf6Aa38bBAf9A0d04EdFF02751a9b43699057",
@@ -4242,9 +4242,408 @@
     },
     "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IERC173.sol\";\nimport \"./OwnableInternal.sol\";\n\n/**\n * @title ERC173 - Ownable\n * @notice Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.\n *\n * @custom:type eip-2535-facet\n * @custom:category Access\n * @custom:provides-interfaces 0x7f5828d0\n */\ncontract Ownable is IERC173, OwnableInternal {\n    /**\n     * @inheritdoc IERC173\n     */\n    function owner() public view virtual returns (address) {\n        return _owner();\n    }\n\n    /**\n     * @dev Leaves the contract without owner. It will not be possible to call\n     * `onlyOwner` functions anymore. Can only be called by the current owner.\n     *\n     * NOTE: Renouncing ownership will leave the contract without an owner,\n     * thereby removing any functionality that is only available to the owner.\n     */\n    function renounceOwnership() public virtual onlyOwner {\n        _transferOwnership(address(0));\n    }\n\n    /**\n     * @inheritdoc IERC173\n     */\n    function transferOwnership(address account) public virtual onlyOwner {\n        _transferOwnership(account);\n    }\n}\n"
   },
+  "flair-sdk:finance/royalty/Royalty": {
+    "fqn": "flair-sdk:finance/royalty/Royalty",
+    "version": "2.7.0",
+    "address": {
+      "5": "0x622e5156527a396FF2Aded25F32caFFe84e88C68",
+      "goerli": "0x622e5156527a396FF2Aded25F32caFFe84e88C68"
+    },
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "Royalty",
+      "sourceName": "src/finance/royalty/Royalty.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "DefaultRoyaltySet",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenRoyaltyRemoved",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "TokenRoyaltySet",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getFeeBps",
+          "outputs": [
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getFeeRecipients",
+          "outputs": [
+            {
+              "internalType": "address payable[]",
+              "name": "",
+              "type": "address[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getFees",
+          "outputs": [
+            {
+              "internalType": "address payable[]",
+              "name": "",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "",
+              "type": "uint256[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "getRaribleV2Royalties",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address payable",
+                  "name": "account",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "value",
+                  "type": "uint96"
+                }
+              ],
+              "internalType": "struct LibPart.Part[]",
+              "name": "result",
+              "type": "tuple[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getTokenRoyaltiesCount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "name": "getTokenRoyaltyByIndex",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyaltyConfig",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "royaltyInfo",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x608060405234801561001057600080fd5b50610884806100206000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80637e9803421161005b5780637e9803421461011b578063b9c4d9fb14610131578063cad96cca14610151578063d5a06d4c1461017157600080fd5b80630653aca5146100825780630ebd4c7f146100c95780632a55205a146100e9575b600080fd5b610095610090366004610680565b610192565b60408051825181526020808401516001600160a01b0316908201529181015161ffff16908201526060015b60405180910390f35b6100dc6100d7366004610680565b6101be565b6040516100c091906106d4565b6100fc6100f73660046106e7565b61021b565b604080516001600160a01b0390931683526020830191909152016100c0565b610123610234565b6040519081526020016100c0565b61014461013f366004610680565b610243565b6040516100c09190610742565b61016461015f366004610680565b6102ad565b6040516100c09190610755565b61018461017f366004610680565b610381565b6040516100c09291906107bb565b60408051606081018252600080825260208201819052918101919091526101b88261043d565b92915050565b604080516001808252818301909252606091600091906020808301908036833701905050905060006101f284612710610509565b9150508082600081518110610209576102096107e9565b60209081029190910101525092915050565b6000806102288484610509565b915091505b9250929050565b600061023e61060e565b905090565b6040805160018082528183019092526060916000919060208083019080368337019050509050600061027784612710610509565b509050808260008151811061028e5761028e6107e9565b6001600160a01b03909216602092830291909101909101525092915050565b604080516001808252818301909252606091816020015b60408051808201909152600080825260208201528152602001906001900390816102c45790505090506000806102fc84612710610509565b915091508183600081518110610314576103146107e9565b6020026020010151600001906001600160a01b031690816001600160a01b031681525050808360008151811061034c5761034c6107e9565b6020026020010151602001906bffffffffffffffffffffffff1690816bffffffffffffffffffffffff16815250505050919050565b60408051600180825281830190925260609182916000916020808301908036833750506040805160018082528183019092529293506000929150602080830190803683370190505090506000806103da87612710610509565b9150915081846000815181106103f2576103f26107e9565b60200260200101906001600160a01b031690816001600160a01b0316815250508083600081518110610426576104266107e9565b602090810291909101015250919590945092505050565b60408051606081018252600080825260208201819052918101829052907fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075906104a67fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07785610639565b6000818152600190930160209081526040938490208451808601865290546001600160a01b03808216835261ffff600160a01b90920482168385019081528751606081018952958652925116928401929092525116928101929092525092915050565b60008281527fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea076602052604081205481907fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075906001600160a01b0316156105b25760008581526001820160205260409020546001600160a01b038116906127109061059e90600160a01b900461ffff16876107ff565b6105a8919061082c565b925092505061022d565b80546001600160a01b0316158015906105d657508054600160a01b900461ffff1615155b156106015780546001600160a01b038116906127109061059e90600160a01b900461ffff16876107ff565b5060009485945092505050565b600061023e7fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07761064c565b60006106458383610656565b9392505050565b60006101b8825490565b600082600001828154811061066d5761066d6107e9565b9060005260206000200154905092915050565b60006020828403121561069257600080fd5b5035919050565b600081518084526020808501945080840160005b838110156106c9578151875295820195908201906001016106ad565b509495945050505050565b6020815260006106456020830184610699565b600080604083850312156106fa57600080fd5b50508035926020909101359150565b600081518084526020808501945080840160005b838110156106c95781516001600160a01b03168752958201959082019060010161071d565b6020815260006106456020830184610709565b602080825282518282018190526000919060409081850190868401855b828110156107ae57815180516001600160a01b031685528601516bffffffffffffffffffffffff16868501529284019290850190600101610772565b5091979650505050505050565b6040815260006107ce6040830185610709565b82810360208401526107e08185610699565b95945050505050565b634e487b7160e01b600052603260045260246000fd5b600081600019048311821515161561082757634e487b7160e01b600052601160045260246000fd5b500290565b60008261084957634e487b7160e01b600052601260045260246000fd5b50049056fea2646970667358221220787aa8423d384ab5619fbd0b58e78bce010ce4eb60e3181ab3989c4787cebf6d64736f6c634300080f0033",
+      "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80637e9803421161005b5780637e9803421461011b578063b9c4d9fb14610131578063cad96cca14610151578063d5a06d4c1461017157600080fd5b80630653aca5146100825780630ebd4c7f146100c95780632a55205a146100e9575b600080fd5b610095610090366004610680565b610192565b60408051825181526020808401516001600160a01b0316908201529181015161ffff16908201526060015b60405180910390f35b6100dc6100d7366004610680565b6101be565b6040516100c091906106d4565b6100fc6100f73660046106e7565b61021b565b604080516001600160a01b0390931683526020830191909152016100c0565b610123610234565b6040519081526020016100c0565b61014461013f366004610680565b610243565b6040516100c09190610742565b61016461015f366004610680565b6102ad565b6040516100c09190610755565b61018461017f366004610680565b610381565b6040516100c09291906107bb565b60408051606081018252600080825260208201819052918101919091526101b88261043d565b92915050565b604080516001808252818301909252606091600091906020808301908036833701905050905060006101f284612710610509565b9150508082600081518110610209576102096107e9565b60209081029190910101525092915050565b6000806102288484610509565b915091505b9250929050565b600061023e61060e565b905090565b6040805160018082528183019092526060916000919060208083019080368337019050509050600061027784612710610509565b509050808260008151811061028e5761028e6107e9565b6001600160a01b03909216602092830291909101909101525092915050565b604080516001808252818301909252606091816020015b60408051808201909152600080825260208201528152602001906001900390816102c45790505090506000806102fc84612710610509565b915091508183600081518110610314576103146107e9565b6020026020010151600001906001600160a01b031690816001600160a01b031681525050808360008151811061034c5761034c6107e9565b6020026020010151602001906bffffffffffffffffffffffff1690816bffffffffffffffffffffffff16815250505050919050565b60408051600180825281830190925260609182916000916020808301908036833750506040805160018082528183019092529293506000929150602080830190803683370190505090506000806103da87612710610509565b9150915081846000815181106103f2576103f26107e9565b60200260200101906001600160a01b031690816001600160a01b0316815250508083600081518110610426576104266107e9565b602090810291909101015250919590945092505050565b60408051606081018252600080825260208201819052918101829052907fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075906104a67fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07785610639565b6000818152600190930160209081526040938490208451808601865290546001600160a01b03808216835261ffff600160a01b90920482168385019081528751606081018952958652925116928401929092525116928101929092525092915050565b60008281527fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea076602052604081205481907fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075906001600160a01b0316156105b25760008581526001820160205260409020546001600160a01b038116906127109061059e90600160a01b900461ffff16876107ff565b6105a8919061082c565b925092505061022d565b80546001600160a01b0316158015906105d657508054600160a01b900461ffff1615155b156106015780546001600160a01b038116906127109061059e90600160a01b900461ffff16876107ff565b5060009485945092505050565b600061023e7fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07761064c565b60006106458383610656565b9392505050565b60006101b8825490565b600082600001828154811061066d5761066d6107e9565b9060005260206000200154905092915050565b60006020828403121561069257600080fd5b5035919050565b600081518084526020808501945080840160005b838110156106c9578151875295820195908201906001016106ad565b509495945050505050565b6020815260006106456020830184610699565b600080604083850312156106fa57600080fd5b50508035926020909101359150565b600081518084526020808501945080840160005b838110156106c95781516001600160a01b03168752958201959082019060010161071d565b6020815260006106456020830184610709565b602080825282518282018190526000919060409081850190868401855b828110156107ae57815180516001600160a01b031685528601516bffffffffffffffffffffffff16868501529284019290850190600101610772565b5091979650505050505050565b6040815260006107ce6040830185610709565b82810360208401526107e08185610699565b95945050505050565b634e487b7160e01b600052603260045260246000fd5b600081600019048311821515161561082757634e487b7160e01b600052601160045260246000fd5b500290565b60008261084957634e487b7160e01b600052601260045260246000fd5b50049056fea2646970667358221220787aa8423d384ab5619fbd0b58e78bce010ce4eb60e3181ab3989c4787cebf6d64736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"./RoyaltyInternal.sol\";\nimport \"./RoyaltyStorage.sol\";\nimport \"./IRoyalty.sol\";\n\n/**\n * @title ERC2981 - Royalty\n * @notice Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.\n *\n * @custom:type eip-2535-facet\n * @custom:category Finance\n * @custom:provides-interfaces 0xcad96cca 0xc69dbd8f\n */\ncontract Royalty is IRoyalty, RoyaltyInternal {\n    /**\n     * @dev EIP-2981\n     */\n    function royaltyInfo(uint256 tokenId, uint256 value) external view virtual returns (address, uint256) {\n        return _royaltyInfo(tokenId, value);\n    }\n\n    /**\n     * @dev IEIP2981RoyaltyOverride (Manifold)\n     */\n    function getTokenRoyaltiesCount() external view virtual override returns (uint256) {\n        return _getTokenRoyaltiesCount();\n    }\n\n    function getTokenRoyaltyByIndex(uint256 index) external view virtual override returns (TokenRoyaltyConfig memory) {\n        return _getTokenRoyaltyByIndex(index);\n    }\n\n    /**\n     * @dev IFoundation\n     */\n    function getFees(uint256 tokenId) external view virtual returns (address payable[] memory, uint256[] memory) {\n        address payable[] memory receivers = new address payable[](1);\n        uint256[] memory bps = new uint256[](1);\n\n        (address receiver, uint256 value) = _royaltyInfo(tokenId, 10000);\n\n        receivers[0] = payable(receiver);\n        bps[0] = value;\n\n        return (receivers, bps);\n    }\n\n    /**\n     * @dev IRaribleV1\n     */\n    function getFeeRecipients(uint256 tokenId) external view virtual returns (address payable[] memory) {\n        address payable[] memory receivers = new address payable[](1);\n\n        (address receiver, ) = _royaltyInfo(tokenId, 10000);\n        receivers[0] = payable(receiver);\n\n        return receivers;\n    }\n\n    function getFeeBps(uint256 tokenId) external view virtual returns (uint256[] memory) {\n        uint256[] memory bps = new uint256[](1);\n\n        (, uint256 value) = _royaltyInfo(tokenId, 10000);\n\n        bps[0] = value;\n\n        return bps;\n    }\n\n    /**\n     * @dev IRaribleV2\n     */\n    function getRaribleV2Royalties(uint256 tokenId)\n        external\n        view\n        override(IRoyalties)\n        returns (LibPart.Part[] memory result)\n    {\n        result = new LibPart.Part[](1);\n\n        // Passing 10,000 as value will give us the bps (basis points, out of 10,000) of the royalty.\n        (address account, uint256 value) = _royaltyInfo(tokenId, 10000);\n\n        result[0].account = payable(account);\n        result[0].value = uint96(value);\n    }\n}\n"
+  },
+  "flair-sdk:finance/royalty/RoyaltyOwnable": {
+    "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
+    "version": "2.7.0",
+    "address": {
+      "5": "0xE72d19BC0766373516D1cD1e6F621B47C48634B2",
+      "goerli": "0xE72d19BC0766373516D1cD1e6F621B47C48634B2"
+    },
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "RoyaltyOwnable",
+      "sourceName": "src/finance/royalty/RoyaltyOwnable.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "DefaultRoyaltySet",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenRoyaltyRemoved",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "TokenRoyaltySet",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyalty",
+              "name": "royalty",
+              "type": "tuple"
+            }
+          ],
+          "name": "setDefaultRoyalty",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyaltyConfig[]",
+              "name": "royalties",
+              "type": "tuple[]"
+            }
+          ],
+          "name": "setTokenRoyalties",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x608060405234801561001057600080fd5b506108cf806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80635136dcc71461003b578063ef60ceaf14610050575b600080fd5b61004e610049366004610690565b610063565b005b61004e61005e366004610705565b610140565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146100e15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b61013c8282808060200260200160405190810160405280939291908181526020016000905b82821015610132576101236060830286013681900381019061074b565b81526020019060010190610106565b50505050506101d3565b5050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146101b95760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100d8565b6101d06101cb368390038301836107be565b610407565b50565b7fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07560005b825181101561040257600083828151811061021457610214610827565b60200260200101519050612710816040015161ffff16106102775760405162461bcd60e51b815260206004820152600b60248201527f496e76616c69642062707300000000000000000000000000000000000000000060448201526064016100d8565b60208101516001600160a01b031661030357805160009081526001840160205260409020805475ffffffffffffffffffffffffffffffffffffffffffff1916905580516102c890600285019061052d565b5080516040519081527fa2870857763bd9ae76c957f869f16b31c18dd3bb4c7b4d3a4496dc5c57c657f99060200160405180910390a16103ef565b6040805180820182526020808401516001600160a01b0390811683528484015161ffff9081168385019081528651600090815260018a0190945294909220925183549451909216740100000000000000000000000000000000000000000275ffffffffffffffffffffffffffffffffffffffffffff199094169116179190911790558051610395906002850190610542565b50805160208083015160408085015181519485526001600160a01b039092169284019290925261ffff1682820152517f389b70fb0887f01e83784eb1c4c589f740eca53b00ed0f45e41db5d079719abb9181900360600190a15b50806103fa81610853565b9150506101f7565b505050565b612710816020015161ffff16106104605760405162461bcd60e51b815260206004820152600b60248201527f496e76616c69642062707300000000000000000000000000000000000000000060448201526064016100d8565b60408051808201825282516001600160a01b039081168083526020808601805161ffff9081169583018690527fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075805475ffffffffffffffffffffffffffffffffffffffffffff1916909417740100000000000000000000000000000000000000009096029590951790925585519151855192909316825291909216908201527f2c5ea6e4103e78cb101e796fb2dace540362fc542cbff5145eaa24af7dd8fe41910160405180910390a150565b6000610539838361054e565b90505b92915050565b60006105398383610641565b6000818152600183016020526040812054801561063757600061057260018361086c565b85549091506000906105869060019061086c565b90508181146105eb5760008660000182815481106105a6576105a6610827565b90600052602060002001549050808760000184815481106105c9576105c9610827565b6000918252602080832090910192909255918252600188019052604090208390555b85548690806105fc576105fc610883565b60019003818190600052602060002001600090559055856001016000868152602001908152602001600020600090556001935050505061053c565b600091505061053c565b60008181526001830160205260408120546106885750815460018181018455600084815260208082209093018490558454848252828601909352604090209190915561053c565b50600061053c565b600080602083850312156106a357600080fd5b823567ffffffffffffffff808211156106bb57600080fd5b818501915085601f8301126106cf57600080fd5b8135818111156106de57600080fd5b8660206060830285010111156106f357600080fd5b60209290920196919550909350505050565b60006040828403121561071757600080fd5b50919050565b80356001600160a01b038116811461073457600080fd5b919050565b803561ffff8116811461073457600080fd5b60006060828403121561075d57600080fd5b6040516060810181811067ffffffffffffffff8211171561078e57634e487b7160e01b600052604160045260246000fd5b604052823581526107a16020840161071d565b60208201526107b260408401610739565b60408201529392505050565b6000604082840312156107d057600080fd5b6040516040810181811067ffffffffffffffff8211171561080157634e487b7160e01b600052604160045260246000fd5b60405261080d8361071d565b815261081b60208401610739565b60208201529392505050565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b6000600182016108655761086561083d565b5060010190565b60008282101561087e5761087e61083d565b500390565b634e487b7160e01b600052603160045260246000fdfea2646970667358221220e662a2a59f6fc84e12760b1e565184ba472e53562ff505891c6263a2db23807364736f6c634300080f0033",
+      "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80635136dcc71461003b578063ef60ceaf14610050575b600080fd5b61004e610049366004610690565b610063565b005b61004e61005e366004610705565b610140565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146100e15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b61013c8282808060200260200160405190810160405280939291908181526020016000905b82821015610132576101236060830286013681900381019061074b565b81526020019060010190610106565b50505050506101d3565b5050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146101b95760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100d8565b6101d06101cb368390038301836107be565b610407565b50565b7fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea07560005b825181101561040257600083828151811061021457610214610827565b60200260200101519050612710816040015161ffff16106102775760405162461bcd60e51b815260206004820152600b60248201527f496e76616c69642062707300000000000000000000000000000000000000000060448201526064016100d8565b60208101516001600160a01b031661030357805160009081526001840160205260409020805475ffffffffffffffffffffffffffffffffffffffffffff1916905580516102c890600285019061052d565b5080516040519081527fa2870857763bd9ae76c957f869f16b31c18dd3bb4c7b4d3a4496dc5c57c657f99060200160405180910390a16103ef565b6040805180820182526020808401516001600160a01b0390811683528484015161ffff9081168385019081528651600090815260018a0190945294909220925183549451909216740100000000000000000000000000000000000000000275ffffffffffffffffffffffffffffffffffffffffffff199094169116179190911790558051610395906002850190610542565b50805160208083015160408085015181519485526001600160a01b039092169284019290925261ffff1682820152517f389b70fb0887f01e83784eb1c4c589f740eca53b00ed0f45e41db5d079719abb9181900360600190a15b50806103fa81610853565b9150506101f7565b505050565b612710816020015161ffff16106104605760405162461bcd60e51b815260206004820152600b60248201527f496e76616c69642062707300000000000000000000000000000000000000000060448201526064016100d8565b60408051808201825282516001600160a01b039081168083526020808601805161ffff9081169583018690527fad41a88d044cfe4c318a78970a1f122259b5b1a56fdee398e17d1e83109ea075805475ffffffffffffffffffffffffffffffffffffffffffff1916909417740100000000000000000000000000000000000000009096029590951790925585519151855192909316825291909216908201527f2c5ea6e4103e78cb101e796fb2dace540362fc542cbff5145eaa24af7dd8fe41910160405180910390a150565b6000610539838361054e565b90505b92915050565b60006105398383610641565b6000818152600183016020526040812054801561063757600061057260018361086c565b85549091506000906105869060019061086c565b90508181146105eb5760008660000182815481106105a6576105a6610827565b90600052602060002001549050808760000184815481106105c9576105c9610827565b6000918252602080832090910192909255918252600188019052604090208390555b85548690806105fc576105fc610883565b60019003818190600052602060002001600090559055856001016000868152602001908152602001600020600090556001935050505061053c565b600091505061053c565b60008181526001830160205260408120546106885750815460018181018455600084815260208082209093018490558454848252828601909352604090209190915561053c565b50600061053c565b600080602083850312156106a357600080fd5b823567ffffffffffffffff808211156106bb57600080fd5b818501915085601f8301126106cf57600080fd5b8135818111156106de57600080fd5b8660206060830285010111156106f357600080fd5b60209290920196919550909350505050565b60006040828403121561071757600080fd5b50919050565b80356001600160a01b038116811461073457600080fd5b919050565b803561ffff8116811461073457600080fd5b60006060828403121561075d57600080fd5b6040516060810181811067ffffffffffffffff8211171561078e57634e487b7160e01b600052604160045260246000fd5b604052823581526107a16020840161071d565b60208201526107b260408401610739565b60408201529392505050565b6000604082840312156107d057600080fd5b6040516040810181811067ffffffffffffffff8211171561080157634e487b7160e01b600052604160045260246000fd5b60405261080d8361071d565b815261081b60208401610739565b60208201529392505050565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b6000600182016108655761086561083d565b5060010190565b60008282101561087e5761087e61083d565b500390565b634e487b7160e01b600052603160045260246000fdfea2646970667358221220e662a2a59f6fc84e12760b1e565184ba472e53562ff505891c6263a2db23807364736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"../../access/ownable/OwnableInternal.sol\";\n\nimport \"./RoyaltyStorage.sol\";\nimport \"./RoyaltyInternal.sol\";\nimport \"./IRoyaltyAdmin.sol\";\n\n/**\n * @title Royalty - Admin - Ownable\n * @notice Allow contract owner to manage token royalties.\n *\n * @custom:type eip-2535-facet\n * @custom:category Finance\n * @custom:peer-dependencies 0xcad96cca 0xc69dbd8f\n * @custom:provides-interfaces 0xbe561268\n */\ncontract RoyaltyOwnable is IRoyaltyAdmin, RoyaltyInternal, OwnableInternal {\n    using RoyaltyStorage for RoyaltyStorage.Layout;\n\n    function setTokenRoyalties(TokenRoyaltyConfig[] calldata royalties) external override onlyOwner {\n        _setTokenRoyalties(royalties);\n    }\n\n    function setDefaultRoyalty(TokenRoyalty calldata royalty) external override onlyOwner {\n        _setDefaultRoyalty(royalty);\n    }\n}\n"
+  },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "4": "0x05B23378e4e8A5D083a99eA61D9325dd6C2b0cB5",
@@ -4409,7 +4808,7 @@
   },
   "flair-sdk:common/UnorderedForwarder": {
     "fqn": "flair-sdk:common/UnorderedForwarder",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "address": {
       "3": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "4": "0xfaB7F865aE93404Ee9FCd85c9E51412dDaC69E84",
@@ -4636,19 +5035,19 @@
     },
     "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/utils/Context.sol\";\nimport \"@openzeppelin/contracts/utils/cryptography/ECDSA.sol\";\nimport \"@openzeppelin/contracts/utils/cryptography/draft-EIP712.sol\";\nimport \"@openzeppelin/contracts/security/ReentrancyGuard.sol\";\n\ncontract UnorderedForwarder is EIP712, ReentrancyGuard {\n    using ECDSA for bytes32;\n\n    struct MetaTransaction {\n        address from;\n        address to;\n        uint256 value;\n        uint256 minGasPrice;\n        uint256 maxGasPrice;\n        uint256 expiresAt;\n        uint256 nonce;\n        bytes data;\n    }\n\n    bytes32 private constant _TYPEHASH =\n        keccak256(\n            \"MetaTransaction(address from,address to,uint256 value,uint256 minGasPrice,uint256 maxGasPrice,uint256 expiresAt,uint256 nonce,bytes data)\"\n        );\n\n    mapping(bytes32 => uint256) mtxHashToExecutedBlockNumber;\n\n    constructor() EIP712(\"UnorderedForwarder\", \"0.0.1\") {}\n\n    /// @dev Refunds up to `msg.value` leftover ETH at the end of the call.\n    modifier refundsAttachedEth() {\n        _;\n        uint256 remainingBalance = msg.value > address(this).balance\n            ? address(this).balance\n            : msg.value;\n        if (remainingBalance > 0) {\n            payable(msg.sender).transfer(remainingBalance);\n        }\n    }\n\n    /// @dev Ensures that the ETH balance of `this` does not go below the\n    ///      initial ETH balance before the call (excluding ETH attached to the call).\n    modifier doesNotReduceEthBalance() {\n        uint256 initialBalance = address(this).balance - msg.value;\n        _;\n        require(initialBalance <= address(this).balance, \"FWD_ETH_LEAK\");\n    }\n\n    function verify(MetaTransaction calldata mtx, bytes calldata signature)\n        public\n        view\n        returns (bytes32 mtxHash)\n    {\n        mtxHash = _hashTypedDataV4(\n            keccak256(\n                abi.encode(\n                    _TYPEHASH,\n                    mtx.from,\n                    mtx.to,\n                    mtx.value,\n                    mtx.minGasPrice,\n                    mtx.maxGasPrice,\n                    mtx.expiresAt,\n                    mtx.nonce,\n                    keccak256(mtx.data)\n                )\n            )\n        );\n\n        // Must not be expired.\n        require(mtx.expiresAt > block.timestamp, \"FWD_EXPIRED\");\n\n        // Must be signed by the signer.\n        require(\n            mtxHash.recover(signature) == mtx.from,\n            \"FWD_INVALID_SIGNATURE\"\n        );\n\n        // Transaction must not have been already executed.\n        require(mtxHashToExecutedBlockNumber[mtxHash] == 0, \"FWD_REPLAYED\");\n\n        return mtxHash;\n    }\n\n    function execute(MetaTransaction calldata mtx, bytes calldata signature)\n        public\n        payable\n        nonReentrant\n        doesNotReduceEthBalance\n        refundsAttachedEth\n        returns (bytes memory)\n    {\n        return _execute(mtx, signature);\n    }\n\n    function batchExecute(\n        MetaTransaction[] calldata mtxs,\n        bytes[] calldata signatures\n    )\n        public\n        payable\n        nonReentrant\n        doesNotReduceEthBalance\n        refundsAttachedEth\n        returns (bytes[] memory returnResults)\n    {\n        require(mtxs.length == signatures.length, \"FWD_MISMATCH_SIGNATURES\");\n\n        returnResults = new bytes[](mtxs.length);\n\n        for (uint256 i = 0; i < mtxs.length; ++i) {\n            returnResults[i] = _execute(mtxs[i], signatures[i]);\n        }\n    }\n\n    function _execute(MetaTransaction calldata mtx, bytes calldata signature)\n        internal\n        returns (bytes memory)\n    {\n        // Must have a valid gas price.\n        require(\n            mtx.minGasPrice <= tx.gasprice && tx.gasprice <= mtx.maxGasPrice,\n            \"FWD_INVALID_GAS\"\n        );\n\n        // Must have enough ETH.\n        require(mtx.value <= address(this).balance, \"FWD_INVALID_VALUE\");\n\n        bytes32 mtxHash = verify(mtx, signature);\n\n        mtxHashToExecutedBlockNumber[mtxHash] = block.number;\n\n        (bool success, bytes memory returndata) = mtx.to.call{value: mtx.value}(\n            abi.encodePacked(mtx.data, mtx.from)\n        );\n\n        if (!success) {\n            // Look for revert reason and bubble it up if present\n            if (returndata.length > 0) {\n                // The easiest way to bubble the revert reason is using memory via assembly\n                assembly {\n                    let returndata_size := mload(returndata)\n                    revert(add(32, returndata), returndata_size)\n                }\n            } else {\n                revert(\"FWD_CALL_FAILED\");\n            }\n        }\n\n        return returndata;\n    }\n}\n"
   },
-  "flair-sdk:common/withdraw/Withdrawable": {
-    "fqn": "flair-sdk:common/withdraw/Withdrawable",
-    "version": "2.6.4",
+  "flair-sdk:finance/withdraw/Withdrawable": {
+    "fqn": "flair-sdk:finance/withdraw/Withdrawable",
+    "version": "2.7.0",
     "address": {
-      "5": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
+      "5": "0x9BA50Cf5Bb96482eB1cf9aF45fDc72377B0f7094",
       "137": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7",
-      "goerli": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
+      "goerli": "0x9BA50Cf5Bb96482eB1cf9aF45fDc72377B0f7094",
       "polygon": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "Withdrawable",
-      "sourceName": "src/common/withdraw/Withdrawable.sol",
+      "sourceName": "src/finance/withdraw/Withdrawable.sol",
       "abi": [
         {
           "inputs": [],
@@ -4722,26 +5121,26 @@
           "type": "function"
         }
       ],
-      "bytecode": "0x608060405234801561001057600080fd5b506106ed806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063de6d6d9614610030575b600080fd5b61004361003e3660046104fd565b610045565b005b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe38054600390600160b01b900460ff168181111561008557610085610569565b036100a3576040516341d0304760e01b815260040160405180910390fd5b60018154600160b01b900460ff1660038111156100c2576100c2610569565b0361010f5780546001600160a01b0316331461010a576040517f1643985300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101a5565b60008154600160b01b900460ff16600381111561012e5761012e610569565b036101a557336101657fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031690565b6001600160a01b0316146101a5576040517f94db469900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80547501000000000000000000000000000000000000000000900460ff16156101e1576040516341d0304760e01b815260040160405180910390fd5b60005b848110156103495760008686838181106102005761020061057f565b905060200201602081019061021591906105b1565b6001600160a01b031603610257576102528484838181106102385761023861057f565b85546001600160a01b03169260209091020135905061038e565b610337565b8585828181106102695761026961057f565b905060200201602081019061027e91906105b1565b82546001600160a01b039182169163a9059cbb91168686858181106102a5576102a561057f565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e087901b1681526001600160a01b03909416600485015260200291909101356024830152506044016020604051808303816000875af1158015610311573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061033591906105d3565b505b80610341816105f5565b9150506101e4565b507fd40c399a83caf67d15628b821aa7c7bd940e563c57a047e2bd3b8c602bcaf5a58585858560405161037f949392919061061c565b60405180910390a15050505050565b804710156103e35760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064015b60405180910390fd5b6000826001600160a01b03168260405160006040518083038185875af1925050503d8060008114610430576040519150601f19603f3d011682016040523d82523d6000602084013e610435565b606091505b50509050806104ac5760405162461bcd60e51b815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016103da565b505050565b60008083601f8401126104c357600080fd5b50813567ffffffffffffffff8111156104db57600080fd5b6020830191508360208260051b85010111156104f657600080fd5b9250929050565b6000806000806040858703121561051357600080fd5b843567ffffffffffffffff8082111561052b57600080fd5b610537888389016104b1565b9096509450602087013591508082111561055057600080fd5b5061055d878288016104b1565b95989497509550505050565b634e487b7160e01b600052602160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b80356001600160a01b03811681146105ac57600080fd5b919050565b6000602082840312156105c357600080fd5b6105cc82610595565b9392505050565b6000602082840312156105e557600080fd5b815180151581146105cc57600080fd5b60006001820161061557634e487b7160e01b600052601160045260246000fd5b5060010190565b6040808252810184905260008560608301825b8781101561065d576001600160a01b0361064884610595565b1682526020928301929091019060010161062f565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561069657600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea2646970667358221220645c951e510ac89cbea6535db806a2d6b0f590f225b97fa11615eb32a5b14c8c64736f6c634300080f0033",
-      "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063de6d6d9614610030575b600080fd5b61004361003e3660046104fd565b610045565b005b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe38054600390600160b01b900460ff168181111561008557610085610569565b036100a3576040516341d0304760e01b815260040160405180910390fd5b60018154600160b01b900460ff1660038111156100c2576100c2610569565b0361010f5780546001600160a01b0316331461010a576040517f1643985300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101a5565b60008154600160b01b900460ff16600381111561012e5761012e610569565b036101a557336101657fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031690565b6001600160a01b0316146101a5576040517f94db469900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80547501000000000000000000000000000000000000000000900460ff16156101e1576040516341d0304760e01b815260040160405180910390fd5b60005b848110156103495760008686838181106102005761020061057f565b905060200201602081019061021591906105b1565b6001600160a01b031603610257576102528484838181106102385761023861057f565b85546001600160a01b03169260209091020135905061038e565b610337565b8585828181106102695761026961057f565b905060200201602081019061027e91906105b1565b82546001600160a01b039182169163a9059cbb91168686858181106102a5576102a561057f565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e087901b1681526001600160a01b03909416600485015260200291909101356024830152506044016020604051808303816000875af1158015610311573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061033591906105d3565b505b80610341816105f5565b9150506101e4565b507fd40c399a83caf67d15628b821aa7c7bd940e563c57a047e2bd3b8c602bcaf5a58585858560405161037f949392919061061c565b60405180910390a15050505050565b804710156103e35760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064015b60405180910390fd5b6000826001600160a01b03168260405160006040518083038185875af1925050503d8060008114610430576040519150601f19603f3d011682016040523d82523d6000602084013e610435565b606091505b50509050806104ac5760405162461bcd60e51b815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016103da565b505050565b60008083601f8401126104c357600080fd5b50813567ffffffffffffffff8111156104db57600080fd5b6020830191508360208260051b85010111156104f657600080fd5b9250929050565b6000806000806040858703121561051357600080fd5b843567ffffffffffffffff8082111561052b57600080fd5b610537888389016104b1565b9096509450602087013591508082111561055057600080fd5b5061055d878288016104b1565b95989497509550505050565b634e487b7160e01b600052602160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b80356001600160a01b03811681146105ac57600080fd5b919050565b6000602082840312156105c357600080fd5b6105cc82610595565b9392505050565b6000602082840312156105e557600080fd5b815180151581146105cc57600080fd5b60006001820161061557634e487b7160e01b600052601160045260246000fd5b5060010190565b6040808252810184905260008560608301825b8781101561065d576001600160a01b0361064884610595565b1682526020928301929091019060010161062f565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561069657600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea2646970667358221220645c951e510ac89cbea6535db806a2d6b0f590f225b97fa11615eb32a5b14c8c64736f6c634300080f0033",
+      "bytecode": "0x608060405234801561001057600080fd5b506106ed806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063de6d6d9614610030575b600080fd5b61004361003e3660046104fd565b610045565b005b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe38054600390600160b01b900460ff168181111561008557610085610569565b036100a3576040516341d0304760e01b815260040160405180910390fd5b60018154600160b01b900460ff1660038111156100c2576100c2610569565b0361010f5780546001600160a01b0316331461010a576040517f1643985300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101a5565b60008154600160b01b900460ff16600381111561012e5761012e610569565b036101a557336101657fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031690565b6001600160a01b0316146101a5576040517f94db469900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80547501000000000000000000000000000000000000000000900460ff16156101e1576040516341d0304760e01b815260040160405180910390fd5b60005b848110156103495760008686838181106102005761020061057f565b905060200201602081019061021591906105b1565b6001600160a01b031603610257576102528484838181106102385761023861057f565b85546001600160a01b03169260209091020135905061038e565b610337565b8585828181106102695761026961057f565b905060200201602081019061027e91906105b1565b82546001600160a01b039182169163a9059cbb91168686858181106102a5576102a561057f565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e087901b1681526001600160a01b03909416600485015260200291909101356024830152506044016020604051808303816000875af1158015610311573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061033591906105d3565b505b80610341816105f5565b9150506101e4565b507fd40c399a83caf67d15628b821aa7c7bd940e563c57a047e2bd3b8c602bcaf5a58585858560405161037f949392919061061c565b60405180910390a15050505050565b804710156103e35760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064015b60405180910390fd5b6000826001600160a01b03168260405160006040518083038185875af1925050503d8060008114610430576040519150601f19603f3d011682016040523d82523d6000602084013e610435565b606091505b50509050806104ac5760405162461bcd60e51b815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016103da565b505050565b60008083601f8401126104c357600080fd5b50813567ffffffffffffffff8111156104db57600080fd5b6020830191508360208260051b85010111156104f657600080fd5b9250929050565b6000806000806040858703121561051357600080fd5b843567ffffffffffffffff8082111561052b57600080fd5b610537888389016104b1565b9096509450602087013591508082111561055057600080fd5b5061055d878288016104b1565b95989497509550505050565b634e487b7160e01b600052602160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b80356001600160a01b03811681146105ac57600080fd5b919050565b6000602082840312156105c357600080fd5b6105cc82610595565b9392505050565b6000602082840312156105e557600080fd5b815180151581146105cc57600080fd5b60006001820161061557634e487b7160e01b600052601160045260246000fd5b5060010190565b6040808252810184905260008560608301825b8781101561065d576001600160a01b0361064884610595565b1682526020928301929091019060010161062f565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561069657600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea26469706673582212202b25e835c99dba37868ddfe74954e8097b489fe277b54d0f36bd4687b6587c5964736f6c634300080f0033",
+      "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063de6d6d9614610030575b600080fd5b61004361003e3660046104fd565b610045565b005b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe38054600390600160b01b900460ff168181111561008557610085610569565b036100a3576040516341d0304760e01b815260040160405180910390fd5b60018154600160b01b900460ff1660038111156100c2576100c2610569565b0361010f5780546001600160a01b0316331461010a576040517f1643985300000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b6101a5565b60008154600160b01b900460ff16600381111561012e5761012e610569565b036101a557336101657fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031690565b6001600160a01b0316146101a5576040517f94db469900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80547501000000000000000000000000000000000000000000900460ff16156101e1576040516341d0304760e01b815260040160405180910390fd5b60005b848110156103495760008686838181106102005761020061057f565b905060200201602081019061021591906105b1565b6001600160a01b031603610257576102528484838181106102385761023861057f565b85546001600160a01b03169260209091020135905061038e565b610337565b8585828181106102695761026961057f565b905060200201602081019061027e91906105b1565b82546001600160a01b039182169163a9059cbb91168686858181106102a5576102a561057f565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e087901b1681526001600160a01b03909416600485015260200291909101356024830152506044016020604051808303816000875af1158015610311573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061033591906105d3565b505b80610341816105f5565b9150506101e4565b507fd40c399a83caf67d15628b821aa7c7bd940e563c57a047e2bd3b8c602bcaf5a58585858560405161037f949392919061061c565b60405180910390a15050505050565b804710156103e35760405162461bcd60e51b815260206004820152601d60248201527f416464726573733a20696e73756666696369656e742062616c616e636500000060448201526064015b60405180910390fd5b6000826001600160a01b03168260405160006040518083038185875af1925050503d8060008114610430576040519150601f19603f3d011682016040523d82523d6000602084013e610435565b606091505b50509050806104ac5760405162461bcd60e51b815260206004820152603a60248201527f416464726573733a20756e61626c6520746f2073656e642076616c75652c207260448201527f6563697069656e74206d6179206861766520726576657274656400000000000060648201526084016103da565b505050565b60008083601f8401126104c357600080fd5b50813567ffffffffffffffff8111156104db57600080fd5b6020830191508360208260051b85010111156104f657600080fd5b9250929050565b6000806000806040858703121561051357600080fd5b843567ffffffffffffffff8082111561052b57600080fd5b610537888389016104b1565b9096509450602087013591508082111561055057600080fd5b5061055d878288016104b1565b95989497509550505050565b634e487b7160e01b600052602160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b80356001600160a01b03811681146105ac57600080fd5b919050565b6000602082840312156105c357600080fd5b6105cc82610595565b9392505050565b6000602082840312156105e557600080fd5b815180151581146105cc57600080fd5b60006001820161061557634e487b7160e01b600052601160045260246000fd5b5060010190565b6040808252810184905260008560608301825b8781101561065d576001600160a01b0361064884610595565b1682526020928301929091019060010161062f565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561069657600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea26469706673582212202b25e835c99dba37868ddfe74954e8097b489fe277b54d0f36bd4687b6587c5964736f6c634300080f0033",
       "linkReferences": {},
       "deployedLinkReferences": {}
     },
     "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/proxy/utils/Initializable.sol\";\nimport \"@openzeppelin/contracts/access/Ownable.sol\";\nimport \"@openzeppelin/contracts/utils/introspection/ERC165Storage.sol\";\n\nimport \"@openzeppelin/contracts/utils/Address.sol\";\nimport \"@openzeppelin/contracts/utils/Counters.sol\";\nimport \"@openzeppelin/contracts/token/ERC20/IERC20.sol\";\n\nimport \"../../access/ownable/OwnableInternal.sol\";\nimport \"./WithdrawableStorage.sol\";\nimport \"./IWithdrawable.sol\";\n\n/**\n * @title Withdrawable\n * @notice Allow withdrwaing any ERC20 or native tokens from the contract.\n *\n * @custom:type eip-2535-facet\n * @custom:category Finance\n * @custom:provides-interfaces 0xde6d6d96\n */\ncontract Withdrawable is IWithdrawable, OwnableInternal {\n    using WithdrawableStorage for WithdrawableStorage.Layout;\n\n    using Address for address payable;\n\n    function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external {\n        WithdrawableStorage.Layout storage l = WithdrawableStorage.layout();\n\n        /**\n         * We are using msg.sender for smaller attack surface when evaluating\n         * the sender of the function call. If in future we want to handle \"withdraw\"\n         * functionality via meta transactions, we should consider using `_msgSender`\n         */\n\n        if (l.mode == IWithdrawable.Mode.NOBODY) {\n            revert WithdrawImpossible();\n        } else if (l.mode == IWithdrawable.Mode.RECIPIENT) {\n            if (l.recipient != msg.sender) {\n                revert WithdrawOnlyRecipient();\n            }\n        } else if (l.mode == IWithdrawable.Mode.OWNER) {\n            if (_owner() != msg.sender) {\n                revert WithdrawOnlyOwner();\n            }\n        }\n\n        if (l.powerRevoked) {\n            revert WithdrawImpossible();\n        }\n\n        for (uint256 i = 0; i < claimTokens.length; i++) {\n            if (claimTokens[i] == address(0)) {\n                payable(l.recipient).sendValue(amounts[i]);\n            } else {\n                IERC20(claimTokens[i]).transfer(address(l.recipient), amounts[i]);\n            }\n        }\n\n        emit Withdrawn(claimTokens, amounts);\n    }\n}\n"
   },
-  "flair-sdk:common/withdraw/WithdrawableOwnable": {
-    "fqn": "flair-sdk:common/withdraw/WithdrawableOwnable",
-    "version": "2.6.4",
+  "flair-sdk:finance/withdraw/WithdrawableOwnable": {
+    "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
+    "version": "2.7.0",
     "address": {
-      "5": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+      "5": "0xBD0bE37046C6143c1D72E6d27b798feAAD7e8648",
       "137": "0xF21c3D0fdb3faFC9620f31aDdCA7DDCcE94955EF",
-      "goerli": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+      "goerli": "0xBD0bE37046C6143c1D72E6d27b798feAAD7e8648",
       "polygon": "0xF21c3D0fdb3faFC9620f31aDdCA7DDCcE94955EF"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "WithdrawableOwnable",
-      "sourceName": "src/common/withdraw/WithdrawableOwnable.sol",
+      "sourceName": "src/finance/withdraw/WithdrawableOwnable.sol",
       "abi": [
         {
           "inputs": [],
@@ -4820,16 +5219,16 @@
           "type": "function"
         }
       ],
-      "bytecode": "0x608060405234801561001057600080fd5b506106a4806100206000396000f3fe608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea2646970667358221220c48eb70335a6a74b0c6e5eeda9f15e12a79080ba119ad58739bdde26bb7492b364736f6c634300080f0033",
-      "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea2646970667358221220c48eb70335a6a74b0c6e5eeda9f15e12a79080ba119ad58739bdde26bb7492b364736f6c634300080f0033",
+      "bytecode": "0x608060405234801561001057600080fd5b506106a4806100206000396000f3fe608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea26469706673582212209881e97c2025c3ed2c162b8eec744ee781c74bc28af4f89584692b46a1fb0f3f64736f6c634300080f0033",
+      "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100675760003560e01c8063c0bb38ff11610050578063c0bb38ff14610089578063c723955a1461009c578063da82b227146100a457600080fd5b80632c2330671461006c578063837fe14014610081575b600080fd5b61007f61007a3660046105ee565b6100ac565b005b61007f610219565b61007f610097366004610616565b6102f2565b61007f610438565b61007f610514565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35477010000000000000000000000000000000000000000000000900460ff16156101a1576040517f674492e200000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b807f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffff167601000000000000000000000000000000000000000000008360038111156102115761021161063f565b021790555050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146102925760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffff1674010000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461036b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe35474010000000000000000000000000000000000000000900460ff16156103df576040517fbbc3137b00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffffffff0000000000000000000000000000000000000000166001600160a01b0392909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b031633146104b15760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffffffff1677010000000000000000000000000000000000000000000000179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed4546001600160a01b0316331461058d5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b7f90911dd6b04582315fdcc835c92eb07b11f82eb9def7c511af0f2f9de3ddcfe380547fffffffffffffffffffff00ffffffffffffffffffffffffffffffffffffffffff167501000000000000000000000000000000000000000000179055565b60006020828403121561060057600080fd5b81356004811061060f57600080fd5b9392505050565b60006020828403121561062857600080fd5b81356001600160a01b038116811461060f57600080fd5b7f4e487b7100000000000000000000000000000000000000000000000000000000600052602160045260246000fdfea26469706673582212209881e97c2025c3ed2c162b8eec744ee781c74bc28af4f89584692b46a1fb0f3f64736f6c634300080f0033",
       "linkReferences": {},
       "deployedLinkReferences": {}
     },
-    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"../../access/ownable/OwnableInternal.sol\";\n\nimport \"./WithdrawableStorage.sol\";\nimport \"./IWithdrawableAdmin.sol\";\n\n/**\n * @title Withdrawable - Admin - Ownable\n * @notice Allow contract owner to manage who can withdraw funds and how.\n *\n * @custom:type eip-2535-facet\n * @custom:category NFTs\n * @custom:peer-dependencies 0xde6d6d96\n * @custom:provides-interfaces 0x7246cea5\n */\ncontract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal {\n    using WithdrawableStorage for WithdrawableStorage.Layout;\n\n    function setWithdrawRecipient(address _recipient) external override onlyOwner {\n        if (WithdrawableStorage.layout().recipientLocked) {\n            revert WithdrawRecipientLocked();\n        }\n\n        WithdrawableStorage.layout().recipient = _recipient;\n    }\n\n    function lockWithdrawRecipient() external override onlyOwner {\n        WithdrawableStorage.layout().recipientLocked = true;\n    }\n\n    function revokeWithdrawPower() external override onlyOwner {\n        WithdrawableStorage.layout().powerRevoked = true;\n    }\n\n    function setWithdrawMode(IWithdrawable.Mode _mode) external override onlyOwner {\n        if (WithdrawableStorage.layout().modeLocked) {\n            revert WithdrawModeLocked();\n        }\n\n        WithdrawableStorage.layout().mode = _mode;\n    }\n\n    function lockWithdrawMode() external override onlyOwner {\n        WithdrawableStorage.layout().modeLocked = true;\n    }\n}\n"
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"../../access/ownable/OwnableInternal.sol\";\n\nimport \"./WithdrawableStorage.sol\";\nimport \"./IWithdrawableAdmin.sol\";\n\n/**\n * @title Withdrawable - Admin - Ownable\n * @notice Allow contract owner to manage who can withdraw funds and how.\n *\n * @custom:type eip-2535-facet\n * @custom:category Finance\n * @custom:peer-dependencies 0xde6d6d96\n * @custom:provides-interfaces 0x7246cea5\n */\ncontract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal {\n    using WithdrawableStorage for WithdrawableStorage.Layout;\n\n    function setWithdrawRecipient(address _recipient) external override onlyOwner {\n        if (WithdrawableStorage.layout().recipientLocked) {\n            revert WithdrawRecipientLocked();\n        }\n\n        WithdrawableStorage.layout().recipient = _recipient;\n    }\n\n    function lockWithdrawRecipient() external override onlyOwner {\n        WithdrawableStorage.layout().recipientLocked = true;\n    }\n\n    function revokeWithdrawPower() external override onlyOwner {\n        WithdrawableStorage.layout().powerRevoked = true;\n    }\n\n    function setWithdrawMode(IWithdrawable.Mode _mode) external override onlyOwner {\n        if (WithdrawableStorage.layout().modeLocked) {\n            revert WithdrawModeLocked();\n        }\n\n        WithdrawableStorage.layout().mode = _mode;\n    }\n\n    function lockWithdrawMode() external override onlyOwner {\n        WithdrawableStorage.layout().modeLocked = true;\n    }\n}\n"
   },
   "flair-sdk:access/ownable/IERC173": {
     "fqn": "flair-sdk:access/ownable/IERC173",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173",
@@ -4890,7 +5289,7 @@
   },
   "flair-sdk:access/ownable/IERC173Events": {
     "fqn": "flair-sdk:access/ownable/IERC173Events",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173Events",
@@ -4925,7 +5324,7 @@
   },
   "flair-sdk:access/ownable/OwnableERC2771": {
     "fqn": "flair-sdk:access/ownable/OwnableERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableERC2771",
@@ -4993,7 +5392,7 @@
   },
   "flair-sdk:access/ownable/OwnableInternal": {
     "fqn": "flair-sdk:access/ownable/OwnableInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableInternal",
@@ -5028,7 +5427,7 @@
   },
   "flair-sdk:access/ownable/OwnableStorage": {
     "fqn": "flair-sdk:access/ownable/OwnableStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableStorage",
@@ -5043,7 +5442,7 @@
   },
   "flair-sdk:access/roles/AccessControl": {
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControl",
@@ -5244,7 +5643,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerable",
@@ -5488,7 +5887,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableERC2771",
@@ -5732,7 +6131,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableStorage",
@@ -5747,7 +6146,7 @@
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlERC2771",
@@ -5948,7 +6347,7 @@
   },
   "flair-sdk:access/roles/AccessControlInternal": {
     "fqn": "flair-sdk:access/roles/AccessControlInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlInternal",
@@ -6052,7 +6451,7 @@
   },
   "flair-sdk:access/roles/AccessControlStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlStorage",
@@ -6067,7 +6466,7 @@
   },
   "flair-sdk:access/roles/IAccessControl": {
     "fqn": "flair-sdk:access/roles/IAccessControl",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControl",
@@ -6255,7 +6654,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/IAccessControlEnumerable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEnumerable",
@@ -6486,7 +6885,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEvents": {
     "fqn": "flair-sdk:access/roles/IAccessControlEvents",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEvents",
@@ -6575,165 +6974,9 @@
     },
     "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\n/**\n * @dev External interface of AccessControl declared to support ERC165 detection.\n */\ninterface IAccessControlEvents {\n    /**\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\n     *\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\n     * {RoleAdminChanged} not being emitted signaling this.\n     *\n     * _Available since v3.1._\n     */\n    event RoleAdminChanged(\n        bytes32 indexed role,\n        bytes32 indexed previousAdminRole,\n        bytes32 indexed newAdminRole\n    );\n\n    /**\n     * @dev Emitted when `account` is granted `role`.\n     *\n     * `sender` is the account that originated the contract call, an admin role\n     * bearer except when using {AccessControl-_setupRole}.\n     */\n    event RoleGranted(\n        bytes32 indexed role,\n        address indexed account,\n        address indexed sender\n    );\n\n    /**\n     * @dev Emitted when `account` is revoked `role`.\n     *\n     * `sender` is the account that originated the contract call:\n     *   - if using `revokeRole`, it is the admin role bearer\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\n     */\n    event RoleRevoked(\n        bytes32 indexed role,\n        address indexed account,\n        address indexed sender\n    );\n}\n"
   },
-  "flair-sdk:common/withdraw/IWithdrawable": {
-    "fqn": "flair-sdk:common/withdraw/IWithdrawable",
-    "version": "2.6.4",
-    "artifact": {
-      "_format": "hh-sol-artifact-1",
-      "contractName": "IWithdrawable",
-      "sourceName": "src/common/withdraw/IWithdrawable.sol",
-      "abi": [
-        {
-          "inputs": [],
-          "name": "WithdrawImpossible",
-          "type": "error"
-        },
-        {
-          "inputs": [],
-          "name": "WithdrawOnlyOwner",
-          "type": "error"
-        },
-        {
-          "inputs": [],
-          "name": "WithdrawOnlyRecipient",
-          "type": "error"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": false,
-              "internalType": "address[]",
-              "name": "claimTokens",
-              "type": "address[]"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256[]",
-              "name": "amounts",
-              "type": "uint256[]"
-            }
-          ],
-          "name": "Withdrawn",
-          "type": "event"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address[]",
-              "name": "claimTokens",
-              "type": "address[]"
-            },
-            {
-              "internalType": "uint256[]",
-              "name": "amounts",
-              "type": "uint256[]"
-            }
-          ],
-          "name": "withdraw",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
-      ],
-      "bytecode": "0x",
-      "deployedBytecode": "0x",
-      "linkReferences": {},
-      "deployedLinkReferences": {}
-    },
-    "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\ninterface IWithdrawable {\n    enum Mode {\n        OWNER,\n        RECIPIENT,\n        ANYONE,\n        NOBODY\n    }\n\n    error WithdrawOnlyRecipient();\n    error WithdrawOnlyOwner();\n    error WithdrawImpossible();\n\n    event Withdrawn(address[] claimTokens, uint256[] amounts);\n\n    function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external;\n}\n"
-  },
-  "flair-sdk:common/withdraw/IWithdrawableAdmin": {
-    "fqn": "flair-sdk:common/withdraw/IWithdrawableAdmin",
-    "version": "2.6.4",
-    "artifact": {
-      "_format": "hh-sol-artifact-1",
-      "contractName": "IWithdrawableAdmin",
-      "sourceName": "src/common/withdraw/IWithdrawableAdmin.sol",
-      "abi": [
-        {
-          "inputs": [],
-          "name": "WithdrawModeLocked",
-          "type": "error"
-        },
-        {
-          "inputs": [],
-          "name": "WithdrawRecipientLocked",
-          "type": "error"
-        },
-        {
-          "inputs": [],
-          "name": "lockWithdrawMode",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "lockWithdrawRecipient",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [],
-          "name": "revokeWithdrawPower",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "enum IWithdrawable.Mode",
-              "name": "_mode",
-              "type": "uint8"
-            }
-          ],
-          "name": "setWithdrawMode",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "_recipient",
-              "type": "address"
-            }
-          ],
-          "name": "setWithdrawRecipient",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        }
-      ],
-      "bytecode": "0x",
-      "deployedBytecode": "0x",
-      "linkReferences": {},
-      "deployedLinkReferences": {}
-    },
-    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IWithdrawable.sol\";\n\ninterface IWithdrawableAdmin {\n    error WithdrawModeLocked();\n    error WithdrawRecipientLocked();\n\n    function setWithdrawRecipient(address _recipient) external;\n\n    function lockWithdrawRecipient() external;\n\n    function revokeWithdrawPower() external;\n\n    function setWithdrawMode(IWithdrawable.Mode _mode) external;\n\n    function lockWithdrawMode() external;\n}\n"
-  },
-  "flair-sdk:common/withdraw/WithdrawableStorage": {
-    "fqn": "flair-sdk:common/withdraw/WithdrawableStorage",
-    "version": "2.6.4",
-    "artifact": {
-      "_format": "hh-sol-artifact-1",
-      "contractName": "WithdrawableStorage",
-      "sourceName": "src/common/withdraw/WithdrawableStorage.sol",
-      "abi": [],
-      "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e4f0f9d070101662a78c1c1b70383e0bbd14f448cb3dc1c2d81fb02a6cfdc87b64736f6c634300080f0033",
-      "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220e4f0f9d070101662a78c1c1b70383e0bbd14f448cb3dc1c2d81fb02a6cfdc87b64736f6c634300080f0033",
-      "linkReferences": {},
-      "deployedLinkReferences": {}
-    },
-    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IWithdrawable.sol\";\n\nlibrary WithdrawableStorage {\n    struct Layout {\n        address recipient;\n        bool recipientLocked;\n        bool powerRevoked;\n        IWithdrawable.Mode mode;\n        bool modeLocked;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"v2.flair.contracts.storage.Withdrawable\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
-  },
   "flair-sdk:diamond/DiamondStorage": {
     "fqn": "flair-sdk:diamond/DiamondStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "DiamondStorage",
@@ -6791,7 +7034,7 @@
   },
   "flair-sdk:diamond/IDiamondCut": {
     "fqn": "flair-sdk:diamond/IDiamondCut",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondCut",
@@ -6889,7 +7132,7 @@
   },
   "flair-sdk:diamond/IDiamondLoupe": {
     "fqn": "flair-sdk:diamond/IDiamondLoupe",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondLoupe",
@@ -6981,7 +7224,7 @@
   },
   "flair-sdk:factory/Clones": {
     "fqn": "flair-sdk:factory/Clones",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "Clones",
@@ -6996,7 +7239,7 @@
   },
   "flair-sdk:factory/MinimalProxy": {
     "fqn": "flair-sdk:factory/MinimalProxy",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MinimalProxy",
@@ -7029,9 +7272,485 @@
     },
     "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/proxy/Proxy.sol\";\nimport \"@openzeppelin/contracts/utils/StorageSlot.sol\";\n\ncontract MinimalProxy is Proxy {\n    /**\n     * @dev Storage slot with the address of the current implementation.\n     * This is the keccak-256 hash of \"eip1967.proxy.implementation\" subtracted by 1, and is\n     * validated in the constructor.\n     */\n    bytes32 internal constant _IMPLEMENTATION_SLOT =\n        0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc;\n\n    constructor(address _impl) payable {\n        StorageSlot.getAddressSlot(_IMPLEMENTATION_SLOT).value = _impl;\n    }\n\n    function _implementation() internal view override returns (address) {\n        return StorageSlot.getAddressSlot(_IMPLEMENTATION_SLOT).value;\n    }\n}\n"
   },
+  "flair-sdk:finance/royalty/IRoyalty": {
+    "fqn": "flair-sdk:finance/royalty/IRoyalty",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IRoyalty",
+      "sourceName": "src/finance/royalty/IRoyalty.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "DefaultRoyaltySet",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenRoyaltyRemoved",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "TokenRoyaltySet",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "getRaribleV2Royalties",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address payable",
+                  "name": "account",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "value",
+                  "type": "uint96"
+                }
+              ],
+              "internalType": "struct LibPart.Part[]",
+              "name": "",
+              "type": "tuple[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getTokenRoyaltiesCount",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "index",
+              "type": "uint256"
+            }
+          ],
+          "name": "getTokenRoyaltyByIndex",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyaltyConfig",
+              "name": "",
+              "type": "tuple"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol\";\n\nimport \"./rarible/IRoyalties.sol\";\nimport \"./rarible/LibPart.sol\";\nimport \"./IRoyaltyInternal.sol\";\n\ninterface IRoyalty is IRoyaltyInternal, IRoyalties {\n    /**\n     * @dev Get the number of token specific overrides.  Used to enumerate over all configurations\n     */\n    function getTokenRoyaltiesCount() external view returns (uint256);\n\n    /**\n     * @dev Get a token royalty configuration by index.  Use in conjunction with getTokenRoyaltiesCount to get all per token configurations\n     */\n    function getTokenRoyaltyByIndex(uint256 index) external view returns (TokenRoyaltyConfig memory);\n}\n"
+  },
+  "flair-sdk:finance/royalty/IRoyaltyAdmin": {
+    "fqn": "flair-sdk:finance/royalty/IRoyaltyAdmin",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IRoyaltyAdmin",
+      "sourceName": "src/finance/royalty/IRoyaltyAdmin.sol",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyalty",
+              "name": "royalty",
+              "type": "tuple"
+            }
+          ],
+          "name": "setDefaultRoyalty",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "uint256",
+                  "name": "tokenId",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "address",
+                  "name": "recipient",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint16",
+                  "name": "bps",
+                  "type": "uint16"
+                }
+              ],
+              "internalType": "struct IRoyaltyInternal.TokenRoyaltyConfig[]",
+              "name": "royalties",
+              "type": "tuple[]"
+            }
+          ],
+          "name": "setTokenRoyalties",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\nimport \"./IRoyaltyInternal.sol\";\n\ninterface IRoyaltyAdmin {\n    /**\n     * @dev Set per token royalties.  Passing a recipient of address(0) will delete any existing configuration\n     */\n    function setTokenRoyalties(IRoyaltyInternal.TokenRoyaltyConfig[] calldata royalties) external;\n\n    /**\n     * @dev Set a default royalty configuration.  Will be used if no token specific configuration is set\n     */\n    function setDefaultRoyalty(IRoyaltyInternal.TokenRoyalty calldata royalty) external;\n}\n"
+  },
+  "flair-sdk:finance/royalty/IRoyaltyInternal": {
+    "fqn": "flair-sdk:finance/royalty/IRoyaltyInternal",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IRoyaltyInternal",
+      "sourceName": "src/finance/royalty/IRoyaltyInternal.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "DefaultRoyaltySet",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenRoyaltyRemoved",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "TokenRoyaltySet",
+          "type": "event"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\ninterface IRoyaltyInternal {\n    event TokenRoyaltyRemoved(uint256 tokenId);\n    event TokenRoyaltySet(uint256 tokenId, address recipient, uint16 bps);\n    event DefaultRoyaltySet(address recipient, uint16 bps);\n\n    struct TokenRoyalty {\n        address recipient;\n        uint16 bps;\n    }\n\n    struct TokenRoyaltyConfig {\n        uint256 tokenId;\n        address recipient;\n        uint16 bps;\n    }\n}\n"
+  },
+  "flair-sdk:finance/royalty/rarible/IRoyalties": {
+    "fqn": "flair-sdk:finance/royalty/rarible/IRoyalties",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IRoyalties",
+      "sourceName": "src/finance/royalty/rarible/IRoyalties.sol",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "id",
+              "type": "uint256"
+            }
+          ],
+          "name": "getRaribleV2Royalties",
+          "outputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address payable",
+                  "name": "account",
+                  "type": "address"
+                },
+                {
+                  "internalType": "uint96",
+                  "name": "value",
+                  "type": "uint96"
+                }
+              ],
+              "internalType": "struct LibPart.Part[]",
+              "name": "",
+              "type": "tuple[]"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\npragma abicoder v2;\n\nimport \"./LibPart.sol\";\n\ninterface IRoyalties {\n    function getRaribleV2Royalties(uint256 id)\n        external\n        view\n        returns (LibPart.Part[] memory);\n}\n"
+  },
+  "flair-sdk:finance/royalty/rarible/LibPart": {
+    "fqn": "flair-sdk:finance/royalty/rarible/LibPart",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "LibPart",
+      "sourceName": "src/finance/royalty/rarible/LibPart.sol",
+      "abi": [
+        {
+          "inputs": [],
+          "name": "TYPE_HASH",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x60a6610038600b82828239805160001a607314602b57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060335760003560e01c806364d4c819146038575b600080fd5b605e7f397e04204c1e1a60ee8724b71f8244e10ab5f2e9009854d80f602bda21b59ebb81565b60405190815260200160405180910390f3fea2646970667358221220f80b48f62d7fe48ad40b3fc802a09d56f27dd0b6e419e49e3624b2861a3f573064736f6c634300080f0033",
+      "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060335760003560e01c806364d4c819146038575b600080fd5b605e7f397e04204c1e1a60ee8724b71f8244e10ab5f2e9009854d80f602bda21b59ebb81565b60405190815260200160405180910390f3fea2646970667358221220f80b48f62d7fe48ad40b3fc802a09d56f27dd0b6e419e49e3624b2861a3f573064736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nlibrary LibPart {\n    bytes32 public constant TYPE_HASH =\n        keccak256(\"Part(address account,uint96 value)\");\n\n    struct Part {\n        address payable account;\n        uint96 value;\n    }\n\n    function hash(Part memory part) internal pure returns (bytes32) {\n        return keccak256(abi.encode(TYPE_HASH, part.account, part.value));\n    }\n}\n"
+  },
+  "flair-sdk:finance/royalty/rarible/LibRoyaltiesV2": {
+    "fqn": "flair-sdk:finance/royalty/rarible/LibRoyaltiesV2",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "LibRoyaltiesV2",
+      "sourceName": "src/finance/royalty/rarible/LibRoyaltiesV2.sol",
+      "abi": [],
+      "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a52bf87a71b664b9e3680b43ac9c0c281b4b7525d9a5b601b805d387c16be4a164736f6c634300080f0033",
+      "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220a52bf87a71b664b9e3680b43ac9c0c281b4b7525d9a5b601b805d387c16be4a164736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nlibrary LibRoyaltiesV2 {\n    /*\n     * bytes4(keccak256('getRaribleV2Royalties(uint256)')) == 0xcad96cca\n     */\n    bytes4 constant _INTERFACE_ID_ROYALTIES = 0xcad96cca;\n}\n"
+  },
+  "flair-sdk:finance/royalty/RoyaltyInternal": {
+    "fqn": "flair-sdk:finance/royalty/RoyaltyInternal",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "RoyaltyInternal",
+      "sourceName": "src/finance/royalty/RoyaltyInternal.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "DefaultRoyaltySet",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokenRoyaltyRemoved",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint16",
+              "name": "bps",
+              "type": "uint16"
+            }
+          ],
+          "name": "TokenRoyaltySet",
+          "type": "event"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol\";\nimport \"@openzeppelin/contracts/utils/structs/EnumerableSet.sol\";\n\nimport \"./IRoyaltyInternal.sol\";\nimport \"./RoyaltyStorage.sol\";\n\n/**\n * @title Royalty standard functionality base on EIP-2981 (derived from Manifold.xyz contracts to adopt Diamond architecture)\n */\nabstract contract RoyaltyInternal is IRoyaltyInternal {\n    using RoyaltyStorage for RoyaltyStorage.Layout;\n    using EnumerableSet for EnumerableSet.UintSet;\n\n    /**\n     * @dev Sets token royalties. When you override this in the implementation contract\n     * ensure that you access restrict it to the contract owner or admin\n     */\n    function _setTokenRoyalties(TokenRoyaltyConfig[] memory royaltyConfigs) internal virtual {\n        RoyaltyStorage.Layout storage l = RoyaltyStorage.layout();\n\n        for (uint256 i = 0; i < royaltyConfigs.length; i++) {\n            TokenRoyaltyConfig memory royaltyConfig = royaltyConfigs[i];\n\n            require(royaltyConfig.bps < 10000, \"Invalid bps\");\n\n            if (royaltyConfig.recipient == address(0)) {\n                delete l.tokenRoyalties[royaltyConfig.tokenId];\n                l.tokensWithRoyalties.remove(royaltyConfig.tokenId);\n\n                emit TokenRoyaltyRemoved(royaltyConfig.tokenId);\n            } else {\n                l.tokenRoyalties[royaltyConfig.tokenId] = TokenRoyalty(royaltyConfig.recipient, royaltyConfig.bps);\n                l.tokensWithRoyalties.add(royaltyConfig.tokenId);\n\n                emit TokenRoyaltySet(royaltyConfig.tokenId, royaltyConfig.recipient, royaltyConfig.bps);\n            }\n        }\n    }\n\n    /**\n     * @dev Sets default royalty. When you override this in the implementation contract\n     * ensure that you access restrict it to the contract owner or admin\n     */\n    function _setDefaultRoyalty(TokenRoyalty memory royalty) internal virtual {\n        require(royalty.bps < 10000, \"Invalid bps\");\n\n        RoyaltyStorage.layout().defaultRoyalty = TokenRoyalty(royalty.recipient, royalty.bps);\n\n        emit DefaultRoyaltySet(royalty.recipient, royalty.bps);\n    }\n\n    /**\n     * @dev See {IEIP2981RoyaltyOverride-getTokenRoyaltiesCount}.\n     */\n    function _getTokenRoyaltiesCount() internal view virtual returns (uint256) {\n        return RoyaltyStorage.layout().tokensWithRoyalties.length();\n    }\n\n    /**\n     * @dev See {IEIP2981RoyaltyOverride-getTokenRoyaltyByIndex}.\n     */\n    function _getTokenRoyaltyByIndex(uint256 index) internal view virtual returns (TokenRoyaltyConfig memory) {\n        RoyaltyStorage.Layout storage l = RoyaltyStorage.layout();\n\n        uint256 tokenId = l.tokensWithRoyalties.at(index);\n        TokenRoyalty memory royalty = l.tokenRoyalties[tokenId];\n\n        return TokenRoyaltyConfig(tokenId, royalty.recipient, royalty.bps);\n    }\n\n    /**\n     * @dev See {IEIP2981RoyaltyOverride-royaltyInfo}.\n     */\n    function _royaltyInfo(uint256 tokenId, uint256 value) internal view virtual returns (address, uint256) {\n        RoyaltyStorage.Layout storage l = RoyaltyStorage.layout();\n\n        if (l.tokenRoyalties[tokenId].recipient != address(0)) {\n            return (l.tokenRoyalties[tokenId].recipient, (value * l.tokenRoyalties[tokenId].bps) / 10000);\n        }\n\n        if (l.defaultRoyalty.recipient != address(0) && l.defaultRoyalty.bps != 0) {\n            return (l.defaultRoyalty.recipient, (value * l.defaultRoyalty.bps) / 10000);\n        }\n\n        return (address(0), 0);\n    }\n}\n"
+  },
+  "flair-sdk:finance/royalty/RoyaltyStorage": {
+    "fqn": "flair-sdk:finance/royalty/RoyaltyStorage",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "RoyaltyStorage",
+      "sourceName": "src/finance/royalty/RoyaltyStorage.sol",
+      "abi": [],
+      "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f3f1a35433ee332e28b19380c8c0b2784a0d7e2d0744f3036282e130b5db722964736f6c634300080f0033",
+      "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220f3f1a35433ee332e28b19380c8c0b2784a0d7e2d0744f3036282e130b5db722964736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/utils/structs/EnumerableSet.sol\";\n\nimport \"./IRoyaltyInternal.sol\";\nimport \"./IRoyalty.sol\";\n\nlibrary RoyaltyStorage {\n    using EnumerableSet for EnumerableSet.UintSet;\n\n    struct Layout {\n        IRoyaltyInternal.TokenRoyalty defaultRoyalty;\n        mapping(uint256 => IRoyaltyInternal.TokenRoyalty) tokenRoyalties;\n        EnumerableSet.UintSet tokensWithRoyalties;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"v2.flair.contracts.storage.Royalty\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
+  },
   "flair-sdk:finance/sales/ITieredSales": {
     "fqn": "flair-sdk:finance/sales/ITieredSales",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSales",
@@ -7292,7 +8011,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesAdmin": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesAdmin",
@@ -7428,7 +8147,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesInternal",
@@ -7443,7 +8162,7 @@
   },
   "flair-sdk:finance/sales/TieredSales": {
     "fqn": "flair-sdk:finance/sales/TieredSales",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSales",
@@ -7723,7 +8442,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesERC2771": {
     "fqn": "flair-sdk:finance/sales/TieredSalesERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesERC2771",
@@ -8003,7 +8722,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/TieredSalesInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesInternal",
@@ -8038,7 +8757,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesStorage": {
     "fqn": "flair-sdk:finance/sales/TieredSalesStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesStorage",
@@ -8051,9 +8770,165 @@
     },
     "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./ITieredSales.sol\";\n\nlibrary TieredSalesStorage {\n    struct Layout {\n        uint256 totalReserved;\n        uint256 reservedMints;\n        mapping(uint256 => ITieredSales.Tier) tiers;\n        mapping(uint256 => uint256) tierMints;\n        mapping(uint256 => mapping(address => uint256)) walletMinted;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"v2.flair.contracts.storage.TieredSales\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
   },
+  "flair-sdk:finance/withdraw/IWithdrawable": {
+    "fqn": "flair-sdk:finance/withdraw/IWithdrawable",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IWithdrawable",
+      "sourceName": "src/finance/withdraw/IWithdrawable.sol",
+      "abi": [
+        {
+          "inputs": [],
+          "name": "WithdrawImpossible",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "WithdrawOnlyOwner",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "WithdrawOnlyRecipient",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "address[]",
+              "name": "claimTokens",
+              "type": "address[]"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256[]",
+              "name": "amounts",
+              "type": "uint256[]"
+            }
+          ],
+          "name": "Withdrawn",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "claimTokens",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "amounts",
+              "type": "uint256[]"
+            }
+          ],
+          "name": "withdraw",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: AGPL-3.0\n\npragma solidity 0.8.15;\n\ninterface IWithdrawable {\n    enum Mode {\n        OWNER,\n        RECIPIENT,\n        ANYONE,\n        NOBODY\n    }\n\n    error WithdrawOnlyRecipient();\n    error WithdrawOnlyOwner();\n    error WithdrawImpossible();\n\n    event Withdrawn(address[] claimTokens, uint256[] amounts);\n\n    function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external;\n}\n"
+  },
+  "flair-sdk:finance/withdraw/IWithdrawableAdmin": {
+    "fqn": "flair-sdk:finance/withdraw/IWithdrawableAdmin",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "IWithdrawableAdmin",
+      "sourceName": "src/finance/withdraw/IWithdrawableAdmin.sol",
+      "abi": [
+        {
+          "inputs": [],
+          "name": "WithdrawModeLocked",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "WithdrawRecipientLocked",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "lockWithdrawMode",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "lockWithdrawRecipient",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "revokeWithdrawPower",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "enum IWithdrawable.Mode",
+              "name": "_mode",
+              "type": "uint8"
+            }
+          ],
+          "name": "setWithdrawMode",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "_recipient",
+              "type": "address"
+            }
+          ],
+          "name": "setWithdrawRecipient",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IWithdrawable.sol\";\n\ninterface IWithdrawableAdmin {\n    error WithdrawModeLocked();\n    error WithdrawRecipientLocked();\n\n    function setWithdrawRecipient(address _recipient) external;\n\n    function lockWithdrawRecipient() external;\n\n    function revokeWithdrawPower() external;\n\n    function setWithdrawMode(IWithdrawable.Mode _mode) external;\n\n    function lockWithdrawMode() external;\n}\n"
+  },
+  "flair-sdk:finance/withdraw/WithdrawableStorage": {
+    "fqn": "flair-sdk:finance/withdraw/WithdrawableStorage",
+    "version": "2.7.0",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "WithdrawableStorage",
+      "sourceName": "src/finance/withdraw/WithdrawableStorage.sol",
+      "abi": [],
+      "bytecode": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122074dbdf216d97a8ebefa34fe01ec54acebae3515eb571141ffe0b13926563e81b64736f6c634300080f0033",
+      "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122074dbdf216d97a8ebefa34fe01ec54acebae3515eb571141ffe0b13926563e81b64736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IWithdrawable.sol\";\n\nlibrary WithdrawableStorage {\n    struct Layout {\n        address recipient;\n        bool recipientLocked;\n        bool powerRevoked;\n        IWithdrawable.Mode mode;\n        bool modeLocked;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"v2.flair.contracts.storage.Withdrawable\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
+  },
   "flair-sdk:introspection/ERC165Storage": {
     "fqn": "flair-sdk:introspection/ERC165Storage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC165Storage",
@@ -8068,7 +8943,7 @@
   },
   "flair-sdk:introspection/IERC165": {
     "fqn": "flair-sdk:introspection/IERC165",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC165",
@@ -8103,7 +8978,7 @@
   },
   "flair-sdk:introspection/IERC165Admin": {
     "fqn": "flair-sdk:introspection/IERC165Admin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC165Admin",
@@ -8137,7 +9012,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextInternal": {
     "fqn": "flair-sdk:metatx/ERC2771ContextInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextInternal",
@@ -8152,7 +9027,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextStorage": {
     "fqn": "flair-sdk:metatx/ERC2771ContextStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextStorage",
@@ -8167,7 +9042,7 @@
   },
   "flair-sdk:metatx/IERC2771Context": {
     "fqn": "flair-sdk:metatx/IERC2771Context",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771Context",
@@ -8202,7 +9077,7 @@
   },
   "flair-sdk:metatx/IERC2771ContextAdmin": {
     "fqn": "flair-sdk:metatx/IERC2771ContextAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771ContextAdmin",
@@ -8231,7 +9106,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155Base": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155Base",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Base",
@@ -8502,7 +9377,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseERC2771",
@@ -8773,7 +9648,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseInternal": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseInternal",
@@ -8888,7 +9763,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseStorage": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseStorage",
@@ -8903,7 +9778,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/ERC1155Burnable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/ERC1155Burnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Burnable",
@@ -9128,7 +10003,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BurnableStorage",
@@ -9143,7 +10018,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/IERC1155Burnable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/IERC1155Burnable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Burnable",
@@ -9264,7 +10139,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155Lockable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155Lockable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Lockable",
@@ -9478,7 +10353,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableInternal",
@@ -9593,7 +10468,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableStorage",
@@ -9608,7 +10483,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/IERC1155Lockable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/IERC1155Lockable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Lockable",
@@ -9670,7 +10545,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/ERC1155Mintable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/ERC1155Mintable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Mintable",
@@ -9846,7 +10721,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/IERC1155Mintable": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/IERC1155Mintable",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Mintable",
@@ -9918,7 +10793,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155Supply": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155Supply",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Supply",
@@ -10147,7 +11022,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyInternal",
@@ -10262,7 +11137,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyStorage",
@@ -10277,7 +11152,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/IERC1155Supply": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/IERC1155Supply",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Supply",
@@ -10350,7 +11225,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtra": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtra",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyExtra",
@@ -10423,7 +11298,7 @@
   },
   "flair-sdk:token/ERC1155/facets/burnable/IERC1155BurnableAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/burnable/IERC1155BurnableAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155BurnableAdmin",
@@ -10452,7 +11327,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataInternal": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataInternal",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155MetadataInternal",
@@ -10487,7 +11362,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155MetadataStorage",
@@ -10502,7 +11377,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Metadata",
@@ -10537,7 +11412,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MetadataAdmin",
@@ -10662,7 +11537,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataEvents": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataEvents",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MetadataEvents",
@@ -10697,7 +11572,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataExtra": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155MetadataExtra",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MetadataExtra",
@@ -10823,7 +11698,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintByOwner": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintByOwner",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintByOwner",
@@ -10895,7 +11770,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintByRole": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintByRole",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintByRole",
@@ -10967,7 +11842,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155TieredSalesStorage",
@@ -10982,7 +11857,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSales",
@@ -11036,7 +11911,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSalesAdmin",
@@ -11088,7 +11963,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyAdminStorage",
@@ -11103,7 +11978,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyAdmin",
@@ -11186,7 +12061,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155",
@@ -11457,7 +12332,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Events": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Events",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Events",
@@ -11572,7 +12447,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Receiver": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Receiver",
-    "version": "2.6.4",
+    "version": "2.7.0",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Receiver",

@@ -12,7 +12,7 @@ import "./IWithdrawableAdmin.sol";
  * @notice Allow contract owner to manage who can withdraw funds and how.
  *
  * @custom:type eip-2535-facet
- * @custom:category NFTs
+ * @custom:category Finance
  * @custom:peer-dependencies 0xde6d6d96
  * @custom:provides-interfaces 0x7246cea5
  */
