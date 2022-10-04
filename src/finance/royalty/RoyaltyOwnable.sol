@@ -14,7 +14,7 @@ import "./IRoyaltyAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:peer-dependencies 0xcad96cca 0xc69dbd8f
+ * @custom:peer-dependencies 0x78cbafe7 0xc69dbd8f
  * @custom:provides-interfaces 0xbe561268
  */
 contract RoyaltyOwnable is IRoyaltyAdmin, RoyaltyInternal, OwnableInternal {

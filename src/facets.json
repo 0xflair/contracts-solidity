@@ -516,8 +516,8 @@
   },
   "flair-sdk:finance/royalty/Royalty": {
     "addresses": {
-      "5": "0x622e5156527a396FF2Aded25F32caFFe84e88C68",
-      "goerli": "0x622e5156527a396FF2Aded25F32caFFe84e88C68"
+      "5": "0x310aC50d2be97C3DB184B21F10F5ADb1c6b1fcD2",
+      "goerli": "0x310aC50d2be97C3DB184B21F10F5ADb1c6b1fcD2"
     },
     "functionSelectors": [
       "getFeeBps(uint256)",
@@ -531,8 +531,10 @@
     "fqn": "flair-sdk:finance/royalty/Royalty",
     "version": "2.7.0",
     "providesInterfaces": [
-      "0xcad96cca",
-      "0xc69dbd8f"
+      "0x2a55205a",
+      "0x78cbafe7",
+      "0xc69dbd8f",
+      "0xcad96cca"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -557,7 +559,7 @@
       "0xbe561268"
     ],
     "peerDependencies": [
-      "0xcad96cca",
+      "0x78cbafe7",
       "0xc69dbd8f"
     ],
     "requiredDependencies": [],
