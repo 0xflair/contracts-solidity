@@ -15,6 +15,12 @@ import "./IRoyalty.sol";
  * @custom:provides-interfaces 0x2a55205a 0x78cbafe7 0xc69dbd8f 0xcad96cca
  */
 contract Royalty is IRoyalty, RoyaltyInternal {
+    using RoyaltyStorage for RoyaltyStorage.Layout;
+
+    function defaultRoyalty() external view virtual returns (TokenRoyalty memory) {
+        return RoyaltyStorage.layout().defaultRoyalty;
+    }
+
     /**
      * @dev EIP-2981
      */

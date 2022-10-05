@@ -10,6 +10,16 @@ import "./IRoyaltyInternal.sol";
 
 interface IRoyalty is IRoyaltyInternal, IRoyalties {
     /**
+     * @dev Default royalty for all tokens without a specific royalty.
+     */
+    function defaultRoyalty() external view returns (TokenRoyalty memory);
+
+    /**
+     * @dev EIP-2981 method to return the royalty amount for a given token and value.
+     */
+    function royaltyInfo(uint256 tokenId, uint256 value) external view returns (address, uint256);
+
+    /**
      * @dev Get the number of token specific overrides.  Used to enumerate over all configurations
      */
     function getTokenRoyaltiesCount() external view returns (uint256);
