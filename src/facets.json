@@ -4,20 +4,14 @@
       "3": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "4": "0x0923BD6dA9442377a709dfB2A9fB4f0296DAC6da",
       "5": "0xDFDB39cEa0095BE1f240ad0f84c8b8Cf82B725Ba",
-      "137": "0xa5B0F2d55a590320E14Ec6C43Ea5fA0cBa591060",
       "goerli": "0xDFDB39cEa0095BE1f240ad0f84c8b8Cf82B725Ba",
-      "polygon": "0xa5B0F2d55a590320E14Ec6C43Ea5fA0cBa591060",
       "rinkeby": "0x0923BD6dA9442377a709dfB2A9fB4f0296DAC6da",
       "ropsten": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b"
     },
-    "functionSelectors": [
-      "diamondCut((address,uint8,bytes4[])[],address,bytes)"
-    ],
+    "functionSelectors": ["diamondCut((address,uint8,bytes4[])[],address,bytes)"],
     "fqn": "flair-sdk:diamond/DiamondCut",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x1f931c1c"
-    ],
+    "providesInterfaces": ["0x1f931c1c"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Diamonds",
@@ -31,23 +25,14 @@
       "3": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "4": "0xDb97BB71629A79730156c6C662154B71047E50AB",
       "5": "0xD1E6730c7721392Ba222d3b934a22eF905F780EC",
-      "137": "0x89651333032D863be62433a767b3DAC72863CF22",
       "goerli": "0xD1E6730c7721392Ba222d3b934a22eF905F780EC",
-      "polygon": "0x89651333032D863be62433a767b3DAC72863CF22",
       "rinkeby": "0xDb97BB71629A79730156c6C662154B71047E50AB",
       "ropsten": "0x9d938a88094296ff207966671bBCAF14Bf28286f"
     },
-    "functionSelectors": [
-      "facetAddress(bytes4)",
-      "facetAddresses()",
-      "facetFunctionSelectors(address)",
-      "facets()"
-    ],
+    "functionSelectors": ["facetAddress(bytes4)", "facetAddresses()", "facetFunctionSelectors(address)", "facets()"],
     "fqn": "flair-sdk:diamond/DiamondLoupe",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x48e2b093"
-    ],
+    "providesInterfaces": ["0x48e2b093"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Diamonds",
@@ -61,9 +46,7 @@
       "3": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "4": "0x21D3F612234EB96D7aeD25653450895a74b36a81",
       "5": "0x26788a8f60E079356b05e13bfBA2a16AbE03AA05",
-      "137": "0x10D1eaDcEa361d1a6a33823324375F280F4C1311",
       "goerli": "0x26788a8f60E079356b05e13bfBA2a16AbE03AA05",
-      "polygon": "0x10D1eaDcEa361d1a6a33823324375F280F4C1311",
       "rinkeby": "0x21D3F612234EB96D7aeD25653450895a74b36a81",
       "ropsten": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492"
     },
@@ -94,14 +77,7 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xd9b67a26",
-      "0x744f4bd4",
-      "0x813a0876",
-      "0xdc290004",
-      "0xff3508c6",
-      "0xbb774d48"
-    ],
+    "providesInterfaces": ["0xd9b67a26", "0x744f4bd4", "0x813a0876", "0xdc290004", "0xff3508c6", "0xbb774d48"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "NFTs",
@@ -115,23 +91,15 @@
       "3": "0x48F9152b91103E158029921C59Ff844d30468288",
       "4": "0xA6Bf892D72fDC16161654d8308653a2e55B44999",
       "5": "0x599D1b5B9C74a3Eb8cAfb21AdEF63f97CE232871",
-      "137": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
       "goerli": "0x599D1b5B9C74a3Eb8cAfb21AdEF63f97CE232871",
-      "polygon": "0xb7383c3F44A84cb6305922Bc82E3902544909b62",
       "rinkeby": "0xA6Bf892D72fDC16161654d8308653a2e55B44999",
       "ropsten": "0x48F9152b91103E158029921C59Ff844d30468288"
     },
-    "functionSelectors": [
-      "setBurnablePausedUntil(uint256)"
-    ],
+    "functionSelectors": ["setBurnablePausedUntil(uint256)"],
     "fqn": "flair-sdk:token/ERC1155/facets/burnable/ERC1155BurnableOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x710fb577"
-    ],
-    "peerDependencies": [
-      "0xdc290004"
-    ],
+    "providesInterfaces": ["0x710fb577"],
+    "peerDependencies": ["0xdc290004"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Burnable - Admin - Ownable",
@@ -144,9 +112,7 @@
       "3": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "4": "0x8Fba79C409Ad02b776846630f2018F3c58BA2086",
       "5": "0x9Ff09f931c70565F1178A377A5e9c0662bD07304",
-      "137": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738",
       "goerli": "0x9Ff09f931c70565F1178A377A5e9c0662bD07304",
-      "polygon": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738",
       "rinkeby": "0x8Fba79C409Ad02b776846630f2018F3c58BA2086",
       "ropsten": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e"
     },
@@ -163,13 +129,8 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x0e89341c",
-      "0x57bbc86d"
-    ],
-    "peerDependencies": [
-      "0xd9b67a26"
-    ],
+    "providesInterfaces": ["0x0e89341c", "0x57bbc86d"],
+    "peerDependencies": ["0xd9b67a26"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Metadata",
@@ -182,9 +143,7 @@
       "3": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
       "4": "0x32930EAf6d685E8c5820Db72f86cD60ce6100c82",
       "5": "0x157A16464338BF64bbF910bEd17216B2A8edaFB3",
-      "137": "0x4A065AD386D7E9e51bD1DeeBED3A95F77c6bB2b7",
       "goerli": "0x157A16464338BF64bbF910bEd17216B2A8edaFB3",
-      "polygon": "0x4A065AD386D7E9e51bD1DeeBED3A95F77c6bB2b7",
       "rinkeby": "0x32930EAf6d685E8c5820Db72f86cD60ce6100c82",
       "ropsten": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54"
     },
@@ -201,12 +160,8 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155MetadataOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x3f963a7f"
-    ],
-    "peerDependencies": [
-      "0x0e89341c"
-    ],
+    "providesInterfaces": ["0x3f963a7f"],
+    "peerDependencies": ["0x0e89341c"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Metadata - Admin - Ownable",
@@ -219,9 +174,7 @@
       "3": "0x00232A8326af43515C8413A00b49282e25f50017",
       "4": "0x9fFF3910097fdCE1E1E232Bd644a40949E92463e",
       "5": "0xe05c859D9668212e35b6ec7427540f67bdE7673e",
-      "137": "0x40fD57b4E82B7Df9bdd78013AaBFe8Fc4F9B920c",
       "goerli": "0xe05c859D9668212e35b6ec7427540f67bdE7673e",
-      "polygon": "0x40fD57b4E82B7Df9bdd78013AaBFe8Fc4F9B920c",
       "rinkeby": "0x9fFF3910097fdCE1E1E232Bd644a40949E92463e",
       "ropsten": "0x00232A8326af43515C8413A00b49282e25f50017"
     },
@@ -231,13 +184,9 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwner",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x6c5e99c7"
-    ],
+    "providesInterfaces": ["0x6c5e99c7"],
     "peerDependencies": [],
-    "requiredDependencies": [
-      "0xbb774d48"
-    ],
+    "requiredDependencies": ["0xbb774d48"],
     "category": "NFTs",
     "title": "ERC1155 - Mint as Owner",
     "notice": "Allow minting as contract owner with no restrictions.",
@@ -249,9 +198,7 @@
       "3": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "4": "0x0A9cB03948923E481C453E2633A648677c05dBa4",
       "5": "0x380563a8d55cBE277E3CabDC8B1F1d5004C5432d",
-      "137": "0x19D7D6c8Ab4dC9b35561c0B9E5BE6eAD62228E4C",
       "goerli": "0x380563a8d55cBE277E3CabDC8B1F1d5004C5432d",
-      "polygon": "0x19D7D6c8Ab4dC9b35561c0B9E5BE6eAD62228E4C",
       "rinkeby": "0x0A9cB03948923E481C453E2633A648677c05dBa4",
       "ropsten": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1"
     },
@@ -261,13 +208,9 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintByOwnerERC2771",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x6c5e99c7"
-    ],
+    "providesInterfaces": ["0x6c5e99c7"],
     "peerDependencies": [],
-    "requiredDependencies": [
-      "0xbb774d48"
-    ],
+    "requiredDependencies": ["0xbb774d48"],
     "category": "NFTs",
     "title": "ERC1155 - Mint as Owner - With ERC2771 Context",
     "notice": "Allow minting as owner via meta transactions (signed by the owner private key)",
@@ -279,9 +222,7 @@
       "3": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "4": "0x90e5B241eECB7471d65Ff2d4021163589A4a0D0E",
       "5": "0xd483B589Ab1BD195cFdaa3B5ceFc144002b79c92",
-      "137": "0x83e5e5A1B683C80A69A0e8F369527bf371c9CB39",
       "goerli": "0xd483B589Ab1BD195cFdaa3B5ceFc144002b79c92",
-      "polygon": "0x83e5e5A1B683C80A69A0e8F369527bf371c9CB39",
       "rinkeby": "0x90e5B241eECB7471d65Ff2d4021163589A4a0D0E",
       "ropsten": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4"
     },
@@ -293,13 +234,8 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xf0d6039e"
-    ],
-    "peerDependencies": [
-      "0xd9b67a26",
-      "0x744f4bd4"
-    ],
+    "providesInterfaces": ["0xf0d6039e"],
+    "peerDependencies": ["0xd9b67a26", "0x744f4bd4"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Supply - Admin - Ownable",
@@ -312,9 +248,7 @@
       "3": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "4": "0xf6865Ea9DE1Ff554Aeb6c18FAF04592659C4cFF0",
       "5": "0x41c39528F91226C2468ECaE59D41ECB429383bBe",
-      "137": "0x636b46b22CE86DFfF7FE85C46e7C89196f4a016a",
       "goerli": "0x41c39528F91226C2468ECaE59D41ECB429383bBe",
-      "polygon": "0x636b46b22CE86DFfF7FE85C46e7C89196f4a016a",
       "rinkeby": "0xf6865Ea9DE1Ff554Aeb6c18FAF04592659C4cFF0",
       "ropsten": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5"
     },
@@ -333,14 +267,9 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x79f33254",
-      "0x5ae18a74"
-    ],
+    "providesInterfaces": ["0x79f33254", "0x5ae18a74"],
     "peerDependencies": [],
-    "requiredDependencies": [
-      "0xbb774d48"
-    ],
+    "requiredDependencies": ["0xbb774d48"],
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales",
     "notice": "Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.",
@@ -352,24 +281,15 @@
       "3": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "4": "0xc9C48bEF060842FfBE81d98BC140C71b470Ac9A0",
       "5": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333",
-      "137": "0x37a855a8BcAb76cFd000D13DDaA299AA2e6d6704",
       "goerli": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333",
-      "polygon": "0x37a855a8BcAb76cFd000D13DDaA299AA2e6d6704",
       "rinkeby": "0xc9C48bEF060842FfBE81d98BC140C71b470Ac9A0",
       "ropsten": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78"
     },
-    "functionSelectors": [
-      "configureTierTokenId(uint256,uint256)",
-      "configureTierTokenId(uint256[],uint256[])"
-    ],
+    "functionSelectors": ["configureTierTokenId(uint256,uint256)", "configureTierTokenId(uint256[],uint256[])"],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x76c5dd21"
-    ],
-    "peerDependencies": [
-      "0x79f33254"
-    ],
+    "providesInterfaces": ["0x76c5dd21"],
+    "peerDependencies": ["0x79f33254"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - Admin - Ownable",
@@ -382,9 +302,7 @@
       "3": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "4": "0x59DBC28fc7059590947eE3eD9423B850Bb865911",
       "5": "0x388dDb62bC40574e589309303f0b249585B189c9",
-      "137": "0xdeA3efb58c1f469E416ec76628A604B0b3F1F949",
       "goerli": "0x388dDb62bC40574e589309303f0b249585B189c9",
-      "polygon": "0xdeA3efb58c1f469E416ec76628A604B0b3F1F949",
       "rinkeby": "0x59DBC28fc7059590947eE3eD9423B850Bb865911",
       "ropsten": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD"
     },
@@ -415,14 +333,7 @@
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xd9b67a26",
-      "0x744f4bd4",
-      "0x813a0876",
-      "0xdc290004",
-      "0xff3508c6",
-      "0xbb774d48"
-    ],
+    "providesInterfaces": ["0xd9b67a26", "0x744f4bd4", "0x813a0876", "0xdc290004", "0xff3508c6", "0xbb774d48"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "NFTs",
@@ -436,20 +347,16 @@
       "3": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "4": "0xfB92E8190b37E4057AcC04e9E318733ceE70184A",
       "5": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
-      "137": "0x257F52da6c2e3e3e54e55Bdc3F01623c41d1f72d",
+      "137": "0xce7A910d028396DBa738fFE2860dD26F49Fd84b1",
       "goerli": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
-      "polygon": "0x257F52da6c2e3e3e54e55Bdc3F01623c41d1f72d",
+      "polygon": "0xce7A910d028396DBa738fFE2860dD26F49Fd84b1",
       "rinkeby": "0xfB92E8190b37E4057AcC04e9E318733ceE70184A",
       "ropsten": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3"
     },
-    "functionSelectors": [
-      "supportsInterface(bytes4)"
-    ],
+    "functionSelectors": ["supportsInterface(bytes4)"],
     "fqn": "flair-sdk:introspection/ERC165",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x01ffc9a7"
-    ],
+    "providesInterfaces": ["0x01ffc9a7"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Introspection",
@@ -463,20 +370,16 @@
       "3": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "4": "0x8A486123a2CC2cd72c4DA106af25E6619f55e4b0",
       "5": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
-      "137": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
+      "137": "0x880e7B4987BE5ddE633FA051911bc03a777f2431",
       "goerli": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
-      "polygon": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
+      "polygon": "0x880e7B4987BE5ddE633FA051911bc03a777f2431",
       "rinkeby": "0x8A486123a2CC2cd72c4DA106af25E6619f55e4b0",
       "ropsten": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455"
     },
-    "functionSelectors": [
-      "setERC165(bytes4[],bytes4[])"
-    ],
+    "functionSelectors": ["setERC165(bytes4[],bytes4[])"],
     "fqn": "flair-sdk:introspection/ERC165Ownable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x2a848091"
-    ],
+    "providesInterfaces": ["0x2a848091"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Diamonds",
@@ -485,27 +388,63 @@
     "source": "https://github.com/flair-sdk/contracts/blob/v2.9.1/src/introspection/ERC165Ownable.sol",
     "author": "flair-sdk.eth"
   },
+  "flair-sdk:legal/license/License": {
+    "addresses": {
+      "4": "0xe47c23e28b40124C2853ed1639FCDE86D3AB19EA",
+      "5": "0xaF55F247527296Bd2eBc1748ec69A6Af986e302a",
+      "137": "0x327bea93A89A02d8844f7c2EA57F2d73C88868c2",
+      "goerli": "0xaF55F247527296Bd2eBc1748ec69A6Af986e302a",
+      "polygon": "0x327bea93A89A02d8844f7c2EA57F2d73C88868c2",
+      "rinkeby": "0xe47c23e28b40124C2853ed1639FCDE86D3AB19EA"
+    },
+    "functionSelectors": ["getLicenseName()", "getLicenseURI()"],
+    "fqn": "flair-sdk:legal/license/License",
+    "version": "2.9.1",
+    "providesInterfaces": ["0x649a51a8"],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Legal",
+    "title": "License",
+    "notice": "Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \"Can't Be Evil\".",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.9.1/src/legal/license/License.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:legal/license/LicenseOwnable": {
+    "addresses": {
+      "4": "0x0059dd61E6bEBAef9266e42E1fF9d46e03071f13",
+      "5": "0xe23b78C6E13BD044895bc7f962Db64eD424A59E7",
+      "137": "0x003f74767Fbe106440C5B4e188B5C756b4505529",
+      "goerli": "0xe23b78C6E13BD044895bc7f962Db64eD424A59E7",
+      "polygon": "0x003f74767Fbe106440C5B4e188B5C756b4505529",
+      "rinkeby": "0x0059dd61E6bEBAef9266e42E1fF9d46e03071f13"
+    },
+    "functionSelectors": ["lockLicenseVersion()", "setLicenseVersion(uint8)"],
+    "fqn": "flair-sdk:legal/license/LicenseOwnable",
+    "version": "2.9.1",
+    "providesInterfaces": ["0x06ff95be"],
+    "peerDependencies": ["0x649a51a8"],
+    "requiredDependencies": [],
+    "category": "Legal",
+    "title": "License - Admin - Ownable",
+    "notice": "Allow contract owner to manage license version, name and URI.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.9.1/src/legal/license/LicenseOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
   "flair-sdk:access/ownable/Ownable": {
     "addresses": {
       "3": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "4": "0x619cf6Aa38bBAf9A0d04EdFF02751a9b43699057",
       "5": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
-      "137": "0x7EC5b4F1C3e0d017B2996D32f229a776B3302138",
+      "137": "0xd6C288241F1b2779a0FfF0E8ED838B31F0B94FCF",
       "goerli": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
-      "polygon": "0x7EC5b4F1C3e0d017B2996D32f229a776B3302138",
+      "polygon": "0xd6C288241F1b2779a0FfF0E8ED838B31F0B94FCF",
       "rinkeby": "0x619cf6Aa38bBAf9A0d04EdFF02751a9b43699057",
       "ropsten": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96"
     },
-    "functionSelectors": [
-      "owner()",
-      "renounceOwnership()",
-      "transferOwnership(address)"
-    ],
+    "functionSelectors": ["owner()", "renounceOwnership()", "transferOwnership(address)"],
     "fqn": "flair-sdk:access/ownable/Ownable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x7f5828d0"
-    ],
+    "providesInterfaces": ["0x7f5828d0"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Access",
@@ -516,10 +455,8 @@
   },
   "flair-sdk:finance/royalty/Royalty": {
     "addresses": {
-      "5": "0xDd7f7fb73B68b344Bb7b10F8C7951eB0ff331418",
-      "137": "0x9d73Cda1121b25D4EB652eaC980235722B866625",
-      "goerli": "0xDd7f7fb73B68b344Bb7b10F8C7951eB0ff331418",
-      "polygon": "0x9d73Cda1121b25D4EB652eaC980235722B866625"
+      "5": "0x0d4A7feC9835D5466e052558D1916bB6A444364a",
+      "goerli": "0x0d4A7feC9835D5466e052558D1916bB6A444364a"
     },
     "functionSelectors": [
       "defaultRoyalty()",
@@ -533,44 +470,29 @@
     ],
     "fqn": "flair-sdk:finance/royalty/Royalty",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x2a55205a",
-      "0x78cbafe7",
-      "0xc69dbd8f",
-      "0xcad96cca"
-    ],
+    "providesInterfaces": ["0x2a55205a", "0x78cbafe7", "0xc69dbd8f", "0xcad96cca"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Finance",
-    "title": "Royalty (ERC2981)",
+    "title": "ERC2981 - Royalty",
     "notice": "Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.",
     "source": "https://github.com/flair-sdk/contracts/blob/v2.9.1/src/finance/royalty/Royalty.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
     "addresses": {
-      "5": "0xDA8Fc379752C0E4A5e2D962314cCeCde39327212",
-      "137": "0x516962658f2D1A3c969F74864338fD3f74F22531",
-      "goerli": "0xDA8Fc379752C0E4A5e2D962314cCeCde39327212",
-      "polygon": "0x516962658f2D1A3c969F74864338fD3f74F22531"
+      "5": "0xEC5bF5A9dB53818A85c87d3896eB249392bbC4CB",
+      "goerli": "0xEC5bF5A9dB53818A85c87d3896eB249392bbC4CB"
     },
-    "functionSelectors": [
-      "setDefaultRoyalty((address,uint16))",
-      "setTokenRoyalties((uint256,address,uint16)[])"
-    ],
+    "functionSelectors": ["setDefaultRoyalty((address,uint16))", "setTokenRoyalties((uint256,address,uint16)[])"],
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xbe561268"
-    ],
-    "peerDependencies": [
-      "0x78cbafe7",
-      "0xc69dbd8f"
-    ],
+    "providesInterfaces": ["0xbe561268"],
+    "peerDependencies": ["0x78cbafe7", "0xc69dbd8f"],
     "requiredDependencies": [],
     "category": "Finance",
-    "title": "Royalty - Admin - Ownable",
-    "notice": "Allow contract owner to manage token royalties.",
+    "title": "ERC2981 - Royalty - Admin - Ownable",
+    "notice": "Allow contract owner to manage token royalties based on EIP-2981 standard.",
     "source": "https://github.com/flair-sdk/contracts/blob/v2.9.1/src/finance/royalty/RoyaltyOwnable.sol",
     "author": "flair-sdk.eth"
   },
@@ -579,9 +501,7 @@
       "3": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "4": "0x05B23378e4e8A5D083a99eA61D9325dd6C2b0cB5",
       "5": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
-      "137": "0x42f9Df85471f595a219c6c4E2d585571d325864f",
       "goerli": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
-      "polygon": "0x42f9Df85471f595a219c6c4E2d585571d325864f",
       "rinkeby": "0x05B23378e4e8A5D083a99eA61D9325dd6C2b0cB5",
       "ropsten": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1"
     },
@@ -591,12 +511,8 @@
     ],
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xf8458dcd"
-    ],
-    "peerDependencies": [
-      "0x79f33254"
-    ],
+    "providesInterfaces": ["0xf8458dcd"],
+    "peerDependencies": ["0x79f33254"],
     "requiredDependencies": [],
     "category": "NFTs",
     "title": "Tiered Sales - Admin - Ownable",
@@ -607,9 +523,7 @@
   "flair-sdk:finance/withdraw/Withdrawable": {
     "addresses": {
       "5": "0x36071b50f8223026Ca9f91DbB2014E04C2a7664F",
-      "137": "0xB2d200A72D59B4FfA34E5235675ccC6aBefC1182",
-      "goerli": "0x36071b50f8223026Ca9f91DbB2014E04C2a7664F",
-      "polygon": "0xB2d200A72D59B4FfA34E5235675ccC6aBefC1182"
+      "goerli": "0x36071b50f8223026Ca9f91DbB2014E04C2a7664F"
     },
     "functionSelectors": [
       "withdraw(address[],uint256[])",
@@ -621,9 +535,7 @@
     ],
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0xa9c00e2f"
-    ],
+    "providesInterfaces": ["0xa9c00e2f"],
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "Finance",
@@ -635,9 +547,7 @@
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "addresses": {
       "5": "0xf184A05234163Acfe0bf45520147601b0343F8f0",
-      "137": "0xa3E111da8847FCF96999a9B55E93695fF33ca896",
-      "goerli": "0xf184A05234163Acfe0bf45520147601b0343F8f0",
-      "polygon": "0xa3E111da8847FCF96999a9B55E93695fF33ca896"
+      "goerli": "0xf184A05234163Acfe0bf45520147601b0343F8f0"
     },
     "functionSelectors": [
       "lockWithdrawMode()",
@@ -648,12 +558,8 @@
     ],
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
     "version": "2.9.1",
-    "providesInterfaces": [
-      "0x7246cea5"
-    ],
-    "peerDependencies": [
-      "0xa9c00e2f"
-    ],
+    "providesInterfaces": ["0x7246cea5"],
+    "peerDependencies": ["0xa9c00e2f"],
     "requiredDependencies": [],
     "category": "Finance",
     "title": "Withdrawable - Admin - Ownable",

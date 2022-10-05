@@ -7,7 +7,7 @@ import "./RoyaltyStorage.sol";
 import "./IRoyalty.sol";
 
 /**
- * @title Royalty (ERC2981)
+ * @title ERC2981 - Royalty
  * @notice Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.
  *
  * @custom:type eip-2535-facet

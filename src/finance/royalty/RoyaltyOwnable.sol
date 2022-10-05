@@ -9,8 +9,8 @@ import "./RoyaltyInternal.sol";
 import "./IRoyaltyAdmin.sol";
 
 /**
- * @title Royalty - Admin - Ownable
- * @notice Allow contract owner to manage token royalties.
+ * @title ERC2981 - Royalty - Admin - Ownable
+ * @notice Allow contract owner to manage token royalties based on EIP-2981 standard.
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
