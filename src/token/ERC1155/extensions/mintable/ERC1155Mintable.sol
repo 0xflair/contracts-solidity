@@ -20,7 +20,7 @@ abstract contract ERC1155Mintable is IERC1155Mintable, ERC1155BaseInternal {
         bytes calldata data
     ) public virtual {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _mint(to, id, amount, data);
@@ -36,7 +36,7 @@ abstract contract ERC1155Mintable is IERC1155Mintable, ERC1155BaseInternal {
         bytes[] calldata datas
     ) public virtual {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _mintBatch(tos, ids, amounts, datas);

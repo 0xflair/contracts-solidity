@@ -5,9 +5,6 @@ pragma solidity 0.8.15;
 import "./IWithdrawable.sol";
 
 interface IWithdrawableAdmin {
-    error WithdrawModeLocked();
-    error WithdrawRecipientLocked();
-
     function setWithdrawRecipient(address _recipient) external;
 
     function lockWithdrawRecipient() external;

@@ -23,7 +23,7 @@ contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, Own
 
     function setMaxSupply(uint256 tokenId, uint256 newValue) public virtual onlyOwner {
         if (ERC1155SupplyAdminStorage.layout().maxSupplyFrozen[tokenId]) {
-            revert MaxSupplyFrozen();
+            revert ErrMaxSupplyFrozen();
         }
 
         _setMaxSupply(tokenId, newValue);
@@ -32,7 +32,7 @@ contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, Own
     function setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) public virtual onlyOwner {
         for (uint256 i = 0; i < tokenIds.length; i++) {
             if (ERC1155SupplyAdminStorage.layout().maxSupplyFrozen[tokenIds[i]]) {
-                revert MaxSupplyFrozen();
+                revert ErrMaxSupplyFrozen();
             }
         }
 

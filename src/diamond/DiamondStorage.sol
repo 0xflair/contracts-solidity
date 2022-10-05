@@ -12,8 +12,8 @@ import "../diamond/IDiamondCut.sol";
 // Remember to add the loupe functions from DiamondLoupeFacet to the diamond.
 // The loupe functions are required by the EIP2535 Diamonds standard
 
-error DiamondFacetAlreadyExists(address facet, bytes4 selector);
-error DiamondFacetSameFunction(address facet, bytes4 selector);
+error ErrDiamondFacetAlreadyExists(address facet, bytes4 selector);
+error ErrDiamondFacetSameFunction(address facet, bytes4 selector);
 
 library DiamondStorage {
     bytes32 constant DIAMOND_STORAGE_POSITION = keccak256("diamond.standard.diamond.storage");
@@ -89,7 +89,7 @@ library DiamondStorage {
             address oldFacetAddress = l.selectorToFacetAndPosition[selector].facetAddress;
 
             if (oldFacetAddress != address(0)) {
-                revert DiamondFacetAlreadyExists(oldFacetAddress, selector);
+                revert ErrDiamondFacetAlreadyExists(oldFacetAddress, selector);
             }
 
             addFunction(l, selector, selectorPosition, _facetAddress);
@@ -117,7 +117,7 @@ library DiamondStorage {
             address oldFacetAddress = l.selectorToFacetAndPosition[selector].facetAddress;
 
             if (oldFacetAddress == _facetAddress) {
-                revert DiamondFacetSameFunction(oldFacetAddress, selector);
+                revert ErrDiamondFacetSameFunction(oldFacetAddress, selector);
             }
 
             removeFunction(l, oldFacetAddress, selector);

@@ -30,7 +30,7 @@ abstract contract ERC1155Lockable is IERC1155Lockable, ERC1155LockableInternal {
         uint256 amount
     ) public virtual override {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _lock(account, id, amount);
@@ -45,7 +45,7 @@ abstract contract ERC1155Lockable is IERC1155Lockable, ERC1155LockableInternal {
         uint256 amount
     ) public virtual override {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _unlock(account, id, amount);

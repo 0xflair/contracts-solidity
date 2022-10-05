@@ -48,7 +48,7 @@ abstract contract ERC1155Burnable is IERC1155Burnable, ERC1155BaseInternal {
         uint256 amount
     ) public virtual {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _burn(account, id, amount);
@@ -60,7 +60,7 @@ abstract contract ERC1155Burnable is IERC1155Burnable, ERC1155BaseInternal {
         uint256[] calldata values
     ) public virtual {
         if (address(this) != msg.sender) {
-            revert SenderIsNotSelf();
+            revert ErrSenderIsNotSelf();
         }
 
         _burnBatch(account, ids, values);

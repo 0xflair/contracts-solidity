@@ -4,7 +4,7 @@ pragma solidity 0.8.15;
 
 import "../../access/ownable/OwnableInternal.sol";
 
-import "./WithdrawableStorage.sol";
+import "./WithdrawableInternal.sol";
 import "./IWithdrawableAdmin.sol";
 
 /**
@@ -13,37 +13,27 @@ import "./IWithdrawableAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:peer-dependencies 0xde6d6d96
+ * @custom:peer-dependencies 0xa9c00e2f
  * @custom:provides-interfaces 0x7246cea5
  */
-contract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal {
-    using WithdrawableStorage for WithdrawableStorage.Layout;
-
-    function setWithdrawRecipient(address _recipient) external override onlyOwner {
-        if (WithdrawableStorage.layout().recipientLocked) {
-            revert WithdrawRecipientLocked();
-        }
-
-        WithdrawableStorage.layout().recipient = _recipient;
+contract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal, WithdrawableInternal {
+    function setWithdrawRecipient(address recipient) external onlyOwner {
+        _setWithdrawRecipient(recipient);
     }
 
-    function lockWithdrawRecipient() external override onlyOwner {
-        WithdrawableStorage.layout().recipientLocked = true;
+    function lockWithdrawRecipient() external onlyOwner {
+        _lockWithdrawRecipient();
     }
 
-    function revokeWithdrawPower() external override onlyOwner {
-        WithdrawableStorage.layout().powerRevoked = true;
+    function revokeWithdrawPower() external onlyOwner {
+        _revokeWithdrawPower();
     }
 
-    function setWithdrawMode(IWithdrawable.Mode _mode) external override onlyOwner {
-        if (WithdrawableStorage.layout().modeLocked) {
-            revert WithdrawModeLocked();
-        }
-
-        WithdrawableStorage.layout().mode = _mode;
+    function setWithdrawMode(Mode mode) external onlyOwner {
+        _setWithdrawMode(mode);
     }
 
-    function lockWithdrawMode() external override onlyOwner {
-        WithdrawableStorage.layout().modeLocked = true;
+    function lockWithdrawMode() external onlyOwner {
+        _lockWithdrawMode();
     }
 }

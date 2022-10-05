@@ -2,19 +2,18 @@
 
 pragma solidity 0.8.15;
 
-interface IWithdrawable {
-    enum Mode {
-        OWNER,
-        RECIPIENT,
-        ANYONE,
-        NOBODY
-    }
+import "./IWithdrawableInternal.sol";
 
-    error WithdrawOnlyRecipient();
-    error WithdrawOnlyOwner();
-    error WithdrawImpossible();
-
-    event Withdrawn(address[] claimTokens, uint256[] amounts);
-
+interface IWithdrawable is IWithdrawableInternal {
     function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external;
+
+    function withdrawRecipient() external view returns (address);
+
+    function withdrawRecipientLocked() external view returns (bool);
+
+    function withdrawPowerRevoked() external view returns (bool);
+
+    function withdrawMode() external view returns (Mode);
+
+    function withdrawModeLocked() external view returns (bool);
 }

@@ -2,14 +2,14 @@
 
 pragma solidity 0.8.15;
 
-import "./IWithdrawable.sol";
+import "./IWithdrawableInternal.sol";
 
 library WithdrawableStorage {
     struct Layout {
         address recipient;
-        bool recipientLocked;
+        IWithdrawableInternal.Mode mode;
         bool powerRevoked;
-        IWithdrawable.Mode mode;
+        bool recipientLocked;
         bool modeLocked;
     }
 

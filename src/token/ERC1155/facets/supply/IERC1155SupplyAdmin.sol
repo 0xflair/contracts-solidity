@@ -3,7 +3,7 @@
 pragma solidity 0.8.15;
 
 interface IERC1155SupplyAdmin {
-    error MaxSupplyFrozen();
+    error ErrMaxSupplyFrozen();
 
     function setMaxSupply(uint256 tokenId, uint256 newValue) external;
 
