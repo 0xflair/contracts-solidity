@@ -1,3 +1,10 @@
+## [2.11.0](https://github.com/flair-sdk/contracts/compare/v2.10.0...v2.11.0) (2022-10-05)
+
+
+### Features
+
+* add license facet based on a16z cant be evil ([d73ac36](https://github.com/flair-sdk/contracts/commit/d73ac3695654be15b97dc3ac040fc46649802234))
+
 ## [2.10.0](https://github.com/flair-sdk/contracts/compare/v2.9.1...v2.10.0) (2022-10-05)
 
 
