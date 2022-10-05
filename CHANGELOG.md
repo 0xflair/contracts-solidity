@@ -1,3 +1,10 @@
+## [2.9.0](https://github.com/flair-sdk/contracts/compare/v2.8.1...v2.9.0) (2022-10-05)
+
+
+### Features
+
+* add defaultRoyalty public method ([0b8eea6](https://github.com/flair-sdk/contracts/commit/0b8eea66efc9ac65514582841d891ee38c8c27af))
+
 ### [2.8.1](https://github.com/flair-sdk/contracts/compare/v2.8.0...v2.8.1) (2022-10-04)
 
 ## [2.8.0](https://github.com/flair-sdk/contracts/compare/v2.7.0...v2.8.0) (2022-10-04)
