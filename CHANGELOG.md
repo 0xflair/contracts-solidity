@@ -1,3 +1,10 @@
+## [2.10.0](https://github.com/flair-sdk/contracts/compare/v2.9.1...v2.10.0) (2022-10-05)
+
+
+### Features
+
+* expose public variables for withdrawable facet ([137cd84](https://github.com/flair-sdk/contracts/commit/137cd84e92304273a1b44bd09c407995eb4fdde7))
+
 ### [2.9.1](https://github.com/flair-sdk/contracts/compare/v2.9.0...v2.9.1) (2022-10-05)
 
 ## [2.9.0](https://github.com/flair-sdk/contracts/compare/v2.8.1...v2.9.0) (2022-10-05)
