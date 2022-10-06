@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-interface IERC1155MetadataAdmin {
+interface IMetadataAdmin {
     function setBaseURI(string calldata newBaseURI) external;
 
     function setFallbackURI(string calldata newFallbackURI) external;

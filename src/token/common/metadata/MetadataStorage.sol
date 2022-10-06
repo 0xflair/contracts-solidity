@@ -2,8 +2,8 @@
 
 pragma solidity 0.8.15;
 
-library ERC1155MetadataStorage {
-    bytes32 internal constant STORAGE_SLOT = keccak256("v2.flair.contracts.storage.ERC1155Metadata");
+library MetadataStorage {
+    bytes32 internal constant STORAGE_SLOT = keccak256("v2.flair.contracts.storage.Metadata");
 
     struct Layout {
         string baseURI;

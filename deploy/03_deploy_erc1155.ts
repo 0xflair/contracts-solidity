@@ -21,7 +21,6 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   // Metadata
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155Metadata', []);
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MetadataOwnable', []);
 
   // Burnable
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155BurnableOwnable', []);
