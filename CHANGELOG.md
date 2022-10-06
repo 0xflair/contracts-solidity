@@ -1,3 +1,10 @@
+## [2.12.0](https://github.com/flair-sdk/contracts/compare/v2.11.2...v2.12.0) (2022-10-06)
+
+
+### Features
+
+* decouple common metadata functionality ([85c804a](https://github.com/flair-sdk/contracts/commit/85c804a31a3a5449d8999af9e00e3893f8add917))
+
 ### [2.11.2](https://github.com/flair-sdk/contracts/compare/v2.11.1...v2.11.2) (2022-10-06)
 
 
