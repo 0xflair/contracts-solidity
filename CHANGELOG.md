@@ -1,3 +1,10 @@
+### [2.11.2](https://github.com/flair-sdk/contracts/compare/v2.11.1...v2.11.2) (2022-10-06)
+
+
+### Bug Fixes
+
+* append uri suffix to default metadata ([c81dbf6](https://github.com/flair-sdk/contracts/commit/c81dbf65487de271d0cb099adc858a8ffc5c7e5a))
+
 ### [2.11.1](https://github.com/flair-sdk/contracts/compare/v2.11.0...v2.11.1) (2022-10-05)
 
 ## [2.11.0](https://github.com/flair-sdk/contracts/compare/v2.10.0...v2.11.0) (2022-10-05)
