@@ -34,7 +34,7 @@ contract ERC1155Metadata is IERC1155Metadata, IERC1155MetadataExtra, ERC1155Meta
         } else if (bytes(l.fallbackURI).length > 0) {
             return l.fallbackURI;
         } else if (bytes(_baseURI).length > 0) {
-            return string(abi.encodePacked(_baseURI, Strings.toString(tokenId)));
+            return string(abi.encodePacked(_baseURI, Strings.toString(tokenId), l.uriSuffix));
         } else {
             return "";
         }
