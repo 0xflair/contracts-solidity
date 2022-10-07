@@ -1,3 +1,11 @@
+## [2.13.0](https://github.com/flair-sdk/contracts/compare/v2.12.0...v2.13.0) (2022-10-07)
+
+
+### Features
+
+* add ERC721 base and extensions ([cea8539](https://github.com/flair-sdk/contracts/commit/cea853944998ca75dcd1c01aaf47f120d0027807))
+* add initial facets for ERC721 ([154b592](https://github.com/flair-sdk/contracts/commit/154b592dcb17ea5be081c27ba904a4b9976a71b5))
+
 ## [2.12.0](https://github.com/flair-sdk/contracts/compare/v2.11.2...v2.12.0) (2022-10-06)
 
 
