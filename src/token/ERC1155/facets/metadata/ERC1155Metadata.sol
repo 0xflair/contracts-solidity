@@ -14,8 +14,8 @@ import "./IERC1155Metadata.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0xc16c2a44
- * @custom:provides-interfaces 0x0e89341c
+ * @custom:peer-dependencies IERC1155
+ * @custom:provides-interfaces IERC1155Metadata
  */
 contract ERC1155Metadata is IERC1155Metadata {
     using MetadataStorage for MetadataStorage.Layout;

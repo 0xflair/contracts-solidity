@@ -45,8 +45,6 @@
     "deploy:cheap": "npm run deploy:polygon && npm run deploy:ropsten && npm run deploy:rinkeby && npm run deploy:goerli && npm run deploy:arbitrumTestnet && npm run deploy:opera && npm run deploy:ftmTestnet && npm run deploy:avalanche && npm run deploy:avalancheFujiTestnet && npm run deploy:okcMainnet && npm run deploy:sepolia",
     "verify:all": "npm run verify:mainnet && npm run verify:polygon && npm run verify:ropsten && npm run verify:rinkeby && npm run verify:goerli && npm run verify:arbitrumOne && npm run verify:arbitrumTestnet && npm run verify:opera && npm run verify:ftmTestnet && npm run verify:avalanche && npm run verify:avalancheFujiTestnet && npm run verify:sepolia",
     "deploy:mainnet": "npx hardhat deploy --network mainnet",
-    "deploy:ropsten": "npx hardhat deploy --network ropsten",
-    "deploy:rinkeby": "npx hardhat deploy --network rinkeby",
     "deploy:goerli": "npx hardhat deploy --network goerli",
     "deploy:sepolia": "npx hardhat deploy --network sepolia",
     "deploy:opera": "npx hardhat deploy --network opera",
@@ -65,8 +63,6 @@
     "deploy:evmosTestnet": "npx hardhat deploy --network evmosTestnet",
     "deploy:zksyncTestnet": "npx hardhat deploy --network zksyncTestnet",
     "verify:mainnet": "npx hardhat --network mainnet sourcify & npx hardhat etherscan-verify --network mainnet",
-    "verify:ropsten": "npx hardhat --network ropsten sourcify & npx hardhat etherscan-verify --network ropsten",
-    "verify:rinkeby": "npx hardhat --network rinkeby sourcify & npx hardhat etherscan-verify --network rinkeby",
     "verify:goerli": "npx hardhat --network goerli sourcify & npx hardhat etherscan-verify --network goerli",
     "verify:sepolia": "npx hardhat --network sepolia sourcify & npx hardhat etherscan-verify --network sepolia",
     "verify:opera": "npx hardhat --network opera sourcify & npx hardhat etherscan-verify --network opera",
@@ -86,14 +82,18 @@
     "verify:zksyncTestnet": "npx hardhat --network zksyncTestnet sourcify & npx hardhat etherscan-verify --network zksyncTestnet"
   },
   "devDependencies": {
+    "@a16z/contracts": "^0.0.8",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
+    "@flair-sdk/common": "^2.23.3",
+    "@flair-sdk/registry": "^2.23.3",
     "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
     "@matterlabs/hardhat-zksync-deploy": "^0.4.0",
     "@matterlabs/hardhat-zksync-solc": "^0.3.7",
     "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers@^0.3.0-beta.13",
     "@nomiclabs/hardhat-etherscan": "^3.1.0",
     "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "@openzeppelin/contracts": "^4.7.3",
     "@rollup/plugin-commonjs": "^21.0.2",
     "@rollup/plugin-dynamic-import-vars": "^1.4.4",
     "@rollup/plugin-json": "^4.1.0",
@@ -119,6 +119,7 @@
     "@typescript-eslint/parser": "^5.16.0",
     "chai": "^4.3.6",
     "dotenv": "^10.0.0",
+    "erc721a-upgradeable": "^4.2.2",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
@@ -156,16 +157,22 @@
   "peerDependencies": {
     "@flair-sdk/common": "*",
     "@flair-sdk/registry": "*",
-    "ethers": "*",
-    "bignumber": "*"
+    "bignumber": "*",
+    "ethers": "*"
   },
-  "dependencies": {
-    "@a16z/contracts": "^0.0.8",
-    "@flair-sdk/common": "^2.6.0",
-    "@flair-sdk/registry": "^2.7.0",
-    "@manifoldxyz/royalty-registry-solidity": "^1.0.9",
-    "@openzeppelin/contracts": "^4.7.3",
-    "erc721a": "^4.1.0"
+  "peerDependenciesMeta": {
+    "@flair-sdk/common": {
+      "optional": true
+    },
+    "@flair-sdk/registry": {
+      "optional": true
+    },
+    "bignumber": {
+      "optional": true
+    },
+    "ethers": {
+      "optional": true
+    }
   },
   "overrides": {
     "hardhat-deploy": {

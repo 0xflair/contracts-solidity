@@ -1,5 +1,5 @@
-import hre from "hardhat";
-import { ethers } from "ethers";
+import { ethers } from 'ethers';
+import hre from 'hardhat';
 
 export async function getInterfaceIDByContractName(name: string) {
   const contractInterface = (await hre.ethers.getContract(name)).interface;

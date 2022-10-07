@@ -19,6 +19,12 @@ interface IERC1155Lockable {
         uint256 amount
     ) external;
 
+    function lockByFacet(
+        address[] memory accounts,
+        uint256[] memory ids,
+        uint256[] memory amounts
+    ) external;
+
     /**
      * @dev Un-locks `amount` of tokens of `account`, of token type `id`.
      *
@@ -30,5 +36,11 @@ interface IERC1155Lockable {
         address account,
         uint256 id,
         uint256 amount
+    ) external;
+
+    function unlockByFacet(
+        address[] memory accounts,
+        uint256[] memory ids,
+        uint256[] memory amounts
     ) external;
 }

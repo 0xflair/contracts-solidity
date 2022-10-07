@@ -1,11 +1,13 @@
-import { FacetManifest } from '@flair-sdk/common';
-import { ContractManifest } from '@flair-sdk/registry';
+import { ContractManifest, FacetManifest } from '@flair-sdk/registry';
+import { ethers, utils } from 'ethers';
 import * as fse from 'fs-extra';
 import glob from 'glob';
+import hre from 'hardhat';
 import * as path from 'path';
 import { dirname } from 'path';
 
 import * as pkgJson from '../package.json';
+import { getInterfaceID } from '../test/utils/interface';
 
 const FQN_PREFIX = 'flair-sdk:';
 const FACETS_SOURCE_TEMPLATE = 'https://github.com/flair-sdk/contracts/blob/v{VERSION}/src/{ARTIFACT_KEY}.sol';
@@ -186,15 +188,19 @@ async function scanForFacets(
       buildInfo?.output?.contracts?.[file]?.[artifact]?.evm.methodIdentifiers || {},
     );
 
+    if (!registry[fqn].address || !Object.keys(registry[fqn].address || {}).length) {
+      throw new Error(`No address found for ${fqn}, have you deployed on any chain yet?`);
+    }
+
     facets[fqn] = {
       addresses: registry[fqn].address as Record<string, string>,
       functionSelectors,
 
       fqn,
       version,
-      providesInterfaces: stringListToArray(providesInterfaces),
-      peerDependencies: stringListToArray(peerDependencies),
-      requiredDependencies: stringListToArray(requiredDependencies),
+      providesInterfaces: await resolveInterfaces(stringListToArray(providesInterfaces)),
+      peerDependencies: await resolveInterfaces(stringListToArray(peerDependencies)),
+      requiredDependencies: await resolveInterfaces(stringListToArray(requiredDependencies)),
 
       category,
       title,
@@ -207,10 +213,29 @@ async function scanForFacets(
   return facets;
 }
 
-export const BYTES32_HEX_REGEXP = /0x[a-fA-F0-9]{8}/g;
+export const BYTES32_HEX_REGEXP = /(0x[a-fA-F0-9]{8}|[A-Za-z0-9]+)/g;
 
 function stringListToArray(input: any): string[] {
   const items = [...input.matchAll(BYTES32_HEX_REGEXP)].map((match) => match[0]).filter((address) => Boolean(address));
 
   return items.map((s: string) => s.trim());
+}
+
+async function resolveInterfaces(input: string[]): Promise<string[]> {
+  const interfaces: string[] = [];
+
+  for (const item of input) {
+    if (item.startsWith('0x')) {
+      interfaces.push(item);
+      continue;
+    }
+
+    const iface = new utils.Interface(await (await hre.artifacts.readArtifact(item)).abi);
+
+    const eip165InterfaceId = getInterfaceID(iface);
+
+    interfaces.push(eip165InterfaceId.toHexString());
+  }
+
+  return interfaces;
 }

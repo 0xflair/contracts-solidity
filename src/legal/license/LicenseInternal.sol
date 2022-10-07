@@ -66,16 +66,16 @@ abstract contract LicenseInternal is ILicenseInternal {
         emit CustomLicenseSet(_customLicenseName, _customLicenseURI);
     }
 
-    function _setLicenseVersion(LicenseVersion _licenseVersion) internal virtual {
+    function _setLicenseVersion(LicenseVersion _newVersion) internal virtual {
         LicenseStorage.Layout storage l = LicenseStorage.layout();
 
         if (l.licenseVersionLocked) {
             revert ErrLicenseLocked();
         }
 
-        l.licenseVersion = _licenseVersion;
+        l.licenseVersion = _newVersion;
 
-        emit LicenseVersionSet(_licenseVersion);
+        emit LicenseVersionSet(_newVersion);
     }
 
     function _lockLicenseVersion() internal virtual {

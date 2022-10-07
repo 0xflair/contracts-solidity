@@ -6,16 +6,11 @@ import "../../../../common/Errors.sol";
 import "../../IERC1155.sol";
 import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155Burnable.sol";
-import "./ERC1155BurnableStorage.sol";
 
 /**
  * @title Extension of {ERC1155} that allows users or approved operators to burn tokens.
  */
 abstract contract ERC1155Burnable is IERC1155Burnable, ERC1155BaseInternal {
-    function burnablePausedUntil() public view override returns (uint256) {
-        return ERC1155BurnableStorage.layout().pausedUntil;
-    }
-
     function burn(
         address account,
         uint256 id,

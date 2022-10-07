@@ -39,6 +39,25 @@ abstract contract ERC1155Lockable is IERC1155Lockable, ERC1155LockableInternal {
     /**
      * @inheritdoc IERC1155Lockable
      */
+    function lockByFacet(
+        address[] memory accounts,
+        uint256[] memory ids,
+        uint256[] memory amounts
+    ) public virtual override {
+        if (address(this) != msg.sender) {
+            revert ErrSenderIsNotSelf();
+        }
+
+        require(accounts.length == ids.length && accounts.length == amounts.length, "INVALID_ARRAY_LENGTH");
+
+        for (uint256 i = 0; i < accounts.length; i++) {
+            _lock(accounts[i], ids[i], amounts[i]);
+        }
+    }
+
+    /**
+     * @inheritdoc IERC1155Lockable
+     */
     function unlockByFacet(
         address account,
         uint256 id,
@@ -49,5 +68,24 @@ abstract contract ERC1155Lockable is IERC1155Lockable, ERC1155LockableInternal {
         }
 
         _unlock(account, id, amount);
+    }
+
+    /**
+     * @inheritdoc IERC1155Lockable
+     */
+    function unlockByFacet(
+        address[] memory accounts,
+        uint256[] memory ids,
+        uint256[] memory amounts
+    ) public virtual override {
+        if (address(this) != msg.sender) {
+            revert ErrSenderIsNotSelf();
+        }
+
+        require(accounts.length == ids.length && accounts.length == amounts.length, "INVALID_ARRAY_LENGTH");
+
+        for (uint256 i = 0; i < accounts.length; i++) {
+            _unlock(accounts[i], ids[i], amounts[i]);
+        }
     }
 }

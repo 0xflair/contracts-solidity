@@ -22,26 +22,9 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   // Metadata
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155Metadata', []);
 
-  // Burnable
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155BurnableOwnable', []);
-
   // Lockable
-
-  // TODO
-  // await deployPermanentContract(
-  //   hre.deployments,
-  //   accounts[0],
-  //   accounts[0],
-  //   "ERC1155LockByOwner",
-  //   []
-  // );
-  // await deployPermanentContract(
-  //   hre.deployments,
-  //   accounts[0],
-  //   accounts[0],
-  //   "ERC1155LockByRole",
-  //   []
-  // );
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockByOwner', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockByRole', []);
 
   // Mintable
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintByOwner', []);
