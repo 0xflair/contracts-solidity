@@ -21,7 +21,7 @@ import "./IDiamondLoupe.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Diamonds
- * @custom:provides-interfaces 0x48e2b093
+ * @custom:provides-interfaces IDiamondLoupe
  */
 contract DiamondLoupe is IDiamondLoupe {
     /// @notice Gets all facets and their selectors.

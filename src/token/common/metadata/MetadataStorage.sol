@@ -6,6 +6,9 @@ library MetadataStorage {
     bytes32 internal constant STORAGE_SLOT = keccak256("v2.flair.contracts.storage.Metadata");
 
     struct Layout {
+        string name;
+        string symbol;
+        bool nameAndSymbolLocked;
         string baseURI;
         bool baseURILocked;
         string fallbackURI;

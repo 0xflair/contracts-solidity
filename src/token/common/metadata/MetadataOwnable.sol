@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "../../../access/ownable/OwnableInternal.sol";
 
-import "./MetadataInternal.sol";
+import "./MetadataAdminInternal.sol";
 import "./MetadataStorage.sol";
 import "./IMetadataAdmin.sol";
 
@@ -16,10 +16,22 @@ import "./IMetadataAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0x0e89341c
- * @custom:provides-interfaces 0x3f963a7f
+ * @custom:peer-dependencies IMetadata
+ * @custom:provides-interfaces IMetadataAdmin
  */
-contract MetadataOwnable is IMetadataAdmin, MetadataInternal, OwnableInternal {
+contract MetadataOwnable is IMetadataAdmin, MetadataAdminInternal, OwnableInternal {
+    function setName(string calldata name) external virtual override onlyOwner {
+        _setName(name);
+    }
+
+    function setSymbol(string calldata symbol) external virtual override onlyOwner {
+        _setSymbol(symbol);
+    }
+
+    function lockNameAndSymbol() external virtual override onlyOwner {
+        _lockNameAndSymbol();
+    }
+
     function setBaseURI(string calldata newBaseURI) public virtual onlyOwner {
         _setBaseURI(newBaseURI);
     }

@@ -11,7 +11,7 @@ import "./OwnableInternal.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Access
- * @custom:provides-interfaces 0x7f5828d0
+ * @custom:provides-interfaces IERC173
  */
 contract Ownable is IERC173, OwnableInternal {
     /**

@@ -12,7 +12,7 @@ import "./IRoyalty.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:provides-interfaces 0x2a55205a 0x78cbafe7 0xc69dbd8f 0xcad96cca
+ * @custom:provides-interfaces IEIP2981 IRoyalty IRaribleV1 IRaribleV2 IFoundation IEIP2981RoyaltyOverride
  */
 contract Royalty is IRoyalty, RoyaltyInternal {
     using RoyaltyStorage for RoyaltyStorage.Layout;
@@ -79,13 +79,8 @@ contract Royalty is IRoyalty, RoyaltyInternal {
     /**
      * @dev IRaribleV2
      */
-    function getRaribleV2Royalties(uint256 tokenId)
-        external
-        view
-        override(IRoyalties)
-        returns (LibPart.Part[] memory result)
-    {
-        result = new LibPart.Part[](1);
+    function getRaribleV2Royalties(uint256 tokenId) external view override returns (IRaribleV2.Part[] memory result) {
+        result = new IRaribleV2.Part[](1);
 
         // Passing 10,000 as value will give us the bps (basis points, out of 10,000) of the royalty.
         (address account, uint256 value) = _royaltyInfo(tokenId, 10000);

@@ -27,7 +27,7 @@ contract ERC1155LockByRole is IERC1155LockByRole, AccessControlInternal {
         address account,
         uint256 id,
         uint256 amount
-    ) public virtual onlyRole(LOCKER_ROLE) {
+    ) external virtual onlyRole(LOCKER_ROLE) {
         IERC1155Lockable(address(this)).lockByFacet(account, id, amount);
     }
 
@@ -38,7 +38,7 @@ contract ERC1155LockByRole is IERC1155LockByRole, AccessControlInternal {
         address[] memory accounts,
         uint256[] memory ids,
         uint256[] memory amounts
-    ) public virtual onlyRole(LOCKER_ROLE) {
+    ) external virtual onlyRole(LOCKER_ROLE) {
         IERC1155Lockable(address(this)).lockByFacet(accounts, ids, amounts);
     }
 }

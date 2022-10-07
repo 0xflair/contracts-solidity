@@ -15,10 +15,24 @@ import "./IERC1155Metadata.sol";
  * @custom:type eip-2535-facet
  * @custom:category NFTs
  * @custom:peer-dependencies IERC1155
- * @custom:provides-interfaces IERC1155Metadata
+ * @custom:provides-interfaces IMetadata IERC1155Metadata
  */
 contract ERC1155Metadata is IERC1155Metadata {
     using MetadataStorage for MetadataStorage.Layout;
+
+    /**
+     * @dev IMetadata
+     */
+    function name() external view returns (string memory) {
+        return MetadataStorage.layout().name;
+    }
+
+    /**
+     * @dev IMetadata
+     */
+    function symbol() external view returns (string memory) {
+        return MetadataStorage.layout().symbol;
+    }
 
     /**
      * @notice inheritdoc IERC1155Metadata

@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: MIT
+
+pragma solidity 0.8.15;
+
+interface IERC721SupplyAdmin {
+    error ErrMaxSupplyFrozen();
+
+    function setMaxSupply(uint256 newValue) external;
+
+    function freezeMaxSupply() external;
+}

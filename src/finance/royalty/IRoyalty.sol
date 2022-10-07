@@ -2,22 +2,17 @@
 
 pragma solidity 0.8.15;
 
-import "@manifoldxyz/royalty-registry-solidity/contracts/overrides/IRoyaltyOverride.sol";
+import "@manifoldxyz/royalty-registry-solidity/contracts/specs/IEIP2981.sol";
+import "@manifoldxyz/royalty-registry-solidity/contracts/specs/IRarible.sol";
+import "@manifoldxyz/royalty-registry-solidity/contracts/specs/IFoundation.sol";
 
-import "./rarible/IRoyalties.sol";
-import "./rarible/LibPart.sol";
 import "./IRoyaltyInternal.sol";
 
-interface IRoyalty is IRoyaltyInternal, IRoyalties {
+interface IRoyalty is IEIP2981, IRaribleV1, IRaribleV2, IFoundation, IRoyaltyInternal {
     /**
      * @dev Default royalty for all tokens without a specific royalty.
      */
     function defaultRoyalty() external view returns (TokenRoyalty memory);
-
-    /**
-     * @dev EIP-2981 method to return the royalty amount for a given token and value.
-     */
-    function royaltyInfo(uint256 tokenId, uint256 value) external view returns (address, uint256);
 
     /**
      * @dev Get the number of token specific overrides.  Used to enumerate over all configurations

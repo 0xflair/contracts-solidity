@@ -20,7 +20,7 @@ import "../access/ownable/OwnableInternal.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Diamonds
- * @custom:provides-interfaces 0x1f931c1c
+ * @custom:provides-interfaces IDiamondCut
  */
 contract DiamondCut is IDiamondCut, OwnableInternal {
     /// @notice Add/replace/remove any number of functions and optionally execute

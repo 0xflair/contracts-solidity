@@ -12,49 +12,49 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
     /**
      * @inheritdoc IERC721ABase
      */
-    function totalSupply() public view virtual returns (uint256) {
+    function totalSupply() external view virtual returns (uint256) {
         return _totalSupply();
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function balanceOf(address owner) public view virtual returns (uint256) {
+    function balanceOf(address owner) external view virtual returns (uint256) {
         return _balanceOf(owner);
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function ownerOf(uint256 tokenId) public view virtual returns (address) {
+    function ownerOf(uint256 tokenId) external view virtual returns (address) {
         return _ownerOf(tokenId);
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function approve(address to, uint256 tokenId) public virtual {
+    function approve(address to, uint256 tokenId) external virtual {
         _approve(to, tokenId);
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function getApproved(uint256 tokenId) public view virtual override returns (address) {
+    function getApproved(uint256 tokenId) external view virtual override returns (address) {
         return _getApproved(tokenId);
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function setApprovalForAll(address operator, bool approved) public virtual override {
+    function setApprovalForAll(address operator, bool approved) external virtual override {
         _setApprovalForAll(operator, approved);
     }
 
     /**
      * @inheritdoc IERC721ABase
      */
-    function isApprovedForAll(address owner, address operator) public view virtual override returns (bool) {
+    function isApprovedForAll(address owner, address operator) external view virtual override returns (bool) {
         return _isApprovedForAll(owner, operator);
     }
 
@@ -65,7 +65,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address from,
         address to,
         uint256 tokenId
-    ) public virtual override {
+    ) external virtual override {
         _transferFrom(from, to, tokenId);
     }
 
@@ -76,7 +76,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address from,
         address to,
         uint256 tokenId
-    ) public virtual override {
+    ) external virtual override {
         _safeTransferFrom(from, to, tokenId, "");
     }
 
@@ -88,7 +88,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address to,
         uint256 tokenId,
         bytes memory _data
-    ) public virtual override {
+    ) external virtual override {
         _safeTransferFrom(from, to, tokenId, _data);
     }
 }

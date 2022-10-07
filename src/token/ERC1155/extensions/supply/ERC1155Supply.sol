@@ -8,11 +8,6 @@ import "./IERC1155SupplyExtra.sol";
 
 /**
  * @dev Extension of ERC1155 that adds tracking of total supply per id.
- *
- * Useful for scenarios where Fungible and Non-fungible tokens have to be
- * clearly identified. Note: While a totalSupply of 1 might mean the
- * corresponding is an NFT, there is no guarantees that no other token with the
- * same id are not going to be minted.
  */
 abstract contract ERC1155Supply is IERC1155Supply, IERC1155SupplyExtra, ERC1155SupplyInternal {
     /**

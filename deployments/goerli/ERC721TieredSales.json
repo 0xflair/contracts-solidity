@@ -1,0 +1,326 @@
+{
+  "address": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "minter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxAllowance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "proof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "eligibleForTier",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "maxMintable",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "count",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxAllowance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "proof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "mintByTier",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "minter",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "maxAllowance",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes32[]",
+          "name": "proof",
+          "type": "bytes32[]"
+        }
+      ],
+      "name": "onTierAllowlist",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        }
+      ],
+      "name": "remainingForTier",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "reservedMints",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tierMints",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tiers",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint256",
+              "name": "start",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "end",
+              "type": "uint256"
+            },
+            {
+              "internalType": "address",
+              "name": "currency",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "price",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxPerWallet",
+              "type": "uint256"
+            },
+            {
+              "internalType": "bytes32",
+              "name": "merkleRoot",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint256",
+              "name": "reserved",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "maxAllocation",
+              "type": "uint256"
+            }
+          ],
+          "internalType": "struct ITieredSalesInternal.Tier",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "totalReserved",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "wallet",
+          "type": "address"
+        }
+      ],
+      "name": "walletMintedByTier",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x22b8a505ffe3271056647f35d3eb459c6f173069c6fcccad1321deca34e0442e",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x12F970659844A8b5CBb52BD677f3338BB9bABd94",
+    "transactionIndex": 45,
+    "gasUsed": "952561",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x335d5d36eb1922af819c17c327384c7bece5353309f2f512fda5638b6cc31146",
+    "transactionHash": "0x22b8a505ffe3271056647f35d3eb459c6f173069c6fcccad1321deca34e0442e",
+    "logs": [],
+    "blockNumber": 7730025,
+    "cumulativeGasUsed": "7590354",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "342733d52a8c0a80464cb61009012365",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"minter\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"maxAllowance\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"proof\",\"type\":\"bytes32[]\"}],\"name\":\"eligibleForTier\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"maxMintable\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"count\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxAllowance\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"proof\",\"type\":\"bytes32[]\"}],\"name\":\"mintByTier\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"minter\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"maxAllowance\",\"type\":\"uint256\"},{\"internalType\":\"bytes32[]\",\"name\":\"proof\",\"type\":\"bytes32[]\"}],\"name\":\"onTierAllowlist\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"}],\"name\":\"remainingForTier\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"reservedMints\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"}],\"name\":\"tierMints\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"}],\"name\":\"tiers\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"start\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"end\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"currency\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"price\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxPerWallet\",\"type\":\"uint256\"},{\"internalType\":\"bytes32\",\"name\":\"merkleRoot\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"reserved\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"maxAllocation\",\"type\":\"uint256\"}],\"internalType\":\"struct ITieredSalesInternal.Tier\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalReserved\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"wallet\",\"type\":\"address\"}],\"name\":\"walletMintedByTier\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"ITieredSales\",\"custom:required-dependencies\":\"IERC721Mintable\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC721 - Tiered Sales\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC721/facets/sales/ERC721TieredSales.sol\":\"ERC721TieredSales\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/security/ReentrancyGuard.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (security/ReentrancyGuard.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Contract module that helps prevent reentrant calls to a function.\\n *\\n * Inheriting from `ReentrancyGuard` will make the {nonReentrant} modifier\\n * available, which can be applied to functions to make sure there are no nested\\n * (reentrant) calls to them.\\n *\\n * Note that because there is a single `nonReentrant` guard, functions marked as\\n * `nonReentrant` may not call one another. This can be worked around by making\\n * those functions `private`, and then adding `external` `nonReentrant` entry\\n * points to them.\\n *\\n * TIP: If you would like to learn more about reentrancy and alternative ways\\n * to protect against it, check out our blog post\\n * https://blog.openzeppelin.com/reentrancy-after-istanbul/[Reentrancy After Istanbul].\\n */\\nabstract contract ReentrancyGuard {\\n    // Booleans are more expensive than uint256 or any type that takes up a full\\n    // word because each write operation emits an extra SLOAD to first read the\\n    // slot's contents, replace the bits taken up by the boolean, and then write\\n    // back. This is the compiler's defense against contract upgrades and\\n    // pointer aliasing, and it cannot be disabled.\\n\\n    // The values being non-zero value makes deployment a bit more expensive,\\n    // but in exchange the refund on every call to nonReentrant will be lower in\\n    // amount. Since refunds are capped to a percentage of the total\\n    // transaction's gas, it is best to keep them low in cases like this one, to\\n    // increase the likelihood of the full refund coming into effect.\\n    uint256 private constant _NOT_ENTERED = 1;\\n    uint256 private constant _ENTERED = 2;\\n\\n    uint256 private _status;\\n\\n    constructor() {\\n        _status = _NOT_ENTERED;\\n    }\\n\\n    /**\\n     * @dev Prevents a contract from calling itself, directly or indirectly.\\n     * Calling a `nonReentrant` function from another `nonReentrant`\\n     * function is not supported. It is possible to prevent this from happening\\n     * by making the `nonReentrant` function external, and making it call a\\n     * `private` function that does the actual work.\\n     */\\n    modifier nonReentrant() {\\n        // On the first call to nonReentrant, _notEntered will be true\\n        require(_status != _ENTERED, \\\"ReentrancyGuard: reentrant call\\\");\\n\\n        // Any calls to nonReentrant after this point will fail\\n        _status = _ENTERED;\\n\\n        _;\\n\\n        // By storing the original value once again, a refund is triggered (see\\n        // https://eips.ethereum.org/EIPS/eip-2200)\\n        _status = _NOT_ENTERED;\\n    }\\n}\\n\",\"keccak256\":\"0x0e9621f60b2faabe65549f7ed0f24e8853a45c1b7990d47e8160e523683f3935\",\"license\":\"MIT\"},\"@openzeppelin/contracts/token/ERC20/IERC20.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.6.0) (token/ERC20/IERC20.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC20 standard as defined in the EIP.\\n */\\ninterface IERC20 {\\n    /**\\n     * @dev Emitted when `value` tokens are moved from one account (`from`) to\\n     * another (`to`).\\n     *\\n     * Note that `value` may be zero.\\n     */\\n    event Transfer(address indexed from, address indexed to, uint256 value);\\n\\n    /**\\n     * @dev Emitted when the allowance of a `spender` for an `owner` is set by\\n     * a call to {approve}. `value` is the new allowance.\\n     */\\n    event Approval(address indexed owner, address indexed spender, uint256 value);\\n\\n    /**\\n     * @dev Returns the amount of tokens in existence.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Returns the amount of tokens owned by `account`.\\n     */\\n    function balanceOf(address account) external view returns (uint256);\\n\\n    /**\\n     * @dev Moves `amount` tokens from the caller's account to `to`.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transfer(address to, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Returns the remaining number of tokens that `spender` will be\\n     * allowed to spend on behalf of `owner` through {transferFrom}. This is\\n     * zero by default.\\n     *\\n     * This value changes when {approve} or {transferFrom} are called.\\n     */\\n    function allowance(address owner, address spender) external view returns (uint256);\\n\\n    /**\\n     * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * IMPORTANT: Beware that changing an allowance with this method brings the risk\\n     * that someone may use both the old and the new allowance by unfortunate\\n     * transaction ordering. One possible solution to mitigate this race\\n     * condition is to first reduce the spender's allowance to 0 and set the\\n     * desired value afterwards:\\n     * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729\\n     *\\n     * Emits an {Approval} event.\\n     */\\n    function approve(address spender, uint256 amount) external returns (bool);\\n\\n    /**\\n     * @dev Moves `amount` tokens from `from` to `to` using the\\n     * allowance mechanism. `amount` is then deducted from the caller's\\n     * allowance.\\n     *\\n     * Returns a boolean value indicating whether the operation succeeded.\\n     *\\n     * Emits a {Transfer} event.\\n     */\\n    function transferFrom(\\n        address from,\\n        address to,\\n        uint256 amount\\n    ) external returns (bool);\\n}\\n\",\"keccak256\":\"0x9750c6b834f7b43000631af5cc30001c5f547b3ceb3635488f140f60e897ea6b\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/cryptography/MerkleProof.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/cryptography/MerkleProof.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev These functions deal with verification of Merkle Tree proofs.\\n *\\n * The proofs can be generated using the JavaScript library\\n * https://github.com/miguelmota/merkletreejs[merkletreejs].\\n * Note: the hashing algorithm should be keccak256 and pair sorting should be enabled.\\n *\\n * See `test/utils/cryptography/MerkleProof.test.js` for some examples.\\n *\\n * WARNING: You should avoid using leaf values that are 64 bytes long prior to\\n * hashing, or use a hash function other than keccak256 for hashing leaves.\\n * This is because the concatenation of a sorted pair of internal nodes in\\n * the merkle tree could be reinterpreted as a leaf value.\\n */\\nlibrary MerkleProof {\\n    /**\\n     * @dev Returns true if a `leaf` can be proved to be a part of a Merkle tree\\n     * defined by `root`. For this, a `proof` must be provided, containing\\n     * sibling hashes on the branch from the leaf to the root of the tree. Each\\n     * pair of leaves and each pair of pre-images are assumed to be sorted.\\n     */\\n    function verify(\\n        bytes32[] memory proof,\\n        bytes32 root,\\n        bytes32 leaf\\n    ) internal pure returns (bool) {\\n        return processProof(proof, leaf) == root;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {verify}\\n     *\\n     * _Available since v4.7._\\n     */\\n    function verifyCalldata(\\n        bytes32[] calldata proof,\\n        bytes32 root,\\n        bytes32 leaf\\n    ) internal pure returns (bool) {\\n        return processProofCalldata(proof, leaf) == root;\\n    }\\n\\n    /**\\n     * @dev Returns the rebuilt hash obtained by traversing a Merkle tree up\\n     * from `leaf` using `proof`. A `proof` is valid if and only if the rebuilt\\n     * hash matches the root of the tree. When processing the proof, the pairs\\n     * of leafs & pre-images are assumed to be sorted.\\n     *\\n     * _Available since v4.4._\\n     */\\n    function processProof(bytes32[] memory proof, bytes32 leaf) internal pure returns (bytes32) {\\n        bytes32 computedHash = leaf;\\n        for (uint256 i = 0; i < proof.length; i++) {\\n            computedHash = _hashPair(computedHash, proof[i]);\\n        }\\n        return computedHash;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {processProof}\\n     *\\n     * _Available since v4.7._\\n     */\\n    function processProofCalldata(bytes32[] calldata proof, bytes32 leaf) internal pure returns (bytes32) {\\n        bytes32 computedHash = leaf;\\n        for (uint256 i = 0; i < proof.length; i++) {\\n            computedHash = _hashPair(computedHash, proof[i]);\\n        }\\n        return computedHash;\\n    }\\n\\n    /**\\n     * @dev Returns true if the `leaves` can be proved to be a part of a Merkle tree defined by\\n     * `root`, according to `proof` and `proofFlags` as described in {processMultiProof}.\\n     *\\n     * _Available since v4.7._\\n     */\\n    function multiProofVerify(\\n        bytes32[] memory proof,\\n        bool[] memory proofFlags,\\n        bytes32 root,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bool) {\\n        return processMultiProof(proof, proofFlags, leaves) == root;\\n    }\\n\\n    /**\\n     * @dev Calldata version of {multiProofVerify}\\n     *\\n     * _Available since v4.7._\\n     */\\n    function multiProofVerifyCalldata(\\n        bytes32[] calldata proof,\\n        bool[] calldata proofFlags,\\n        bytes32 root,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bool) {\\n        return processMultiProofCalldata(proof, proofFlags, leaves) == root;\\n    }\\n\\n    /**\\n     * @dev Returns the root of a tree reconstructed from `leaves` and the sibling nodes in `proof`,\\n     * consuming from one or the other at each step according to the instructions given by\\n     * `proofFlags`.\\n     *\\n     * _Available since v4.7._\\n     */\\n    function processMultiProof(\\n        bytes32[] memory proof,\\n        bool[] memory proofFlags,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bytes32 merkleRoot) {\\n        // This function rebuild the root hash by traversing the tree up from the leaves. The root is rebuilt by\\n        // consuming and producing values on a queue. The queue starts with the `leaves` array, then goes onto the\\n        // `hashes` array. At the end of the process, the last hash in the `hashes` array should contain the root of\\n        // the merkle tree.\\n        uint256 leavesLen = leaves.length;\\n        uint256 totalHashes = proofFlags.length;\\n\\n        // Check proof validity.\\n        require(leavesLen + proof.length - 1 == totalHashes, \\\"MerkleProof: invalid multiproof\\\");\\n\\n        // The xxxPos values are \\\"pointers\\\" to the next value to consume in each array. All accesses are done using\\n        // `xxx[xxxPos++]`, which return the current value and increment the pointer, thus mimicking a queue's \\\"pop\\\".\\n        bytes32[] memory hashes = new bytes32[](totalHashes);\\n        uint256 leafPos = 0;\\n        uint256 hashPos = 0;\\n        uint256 proofPos = 0;\\n        // At each step, we compute the next hash using two values:\\n        // - a value from the \\\"main queue\\\". If not all leaves have been consumed, we get the next leaf, otherwise we\\n        //   get the next hash.\\n        // - depending on the flag, either another value for the \\\"main queue\\\" (merging branches) or an element from the\\n        //   `proof` array.\\n        for (uint256 i = 0; i < totalHashes; i++) {\\n            bytes32 a = leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++];\\n            bytes32 b = proofFlags[i] ? leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++] : proof[proofPos++];\\n            hashes[i] = _hashPair(a, b);\\n        }\\n\\n        if (totalHashes > 0) {\\n            return hashes[totalHashes - 1];\\n        } else if (leavesLen > 0) {\\n            return leaves[0];\\n        } else {\\n            return proof[0];\\n        }\\n    }\\n\\n    /**\\n     * @dev Calldata version of {processMultiProof}\\n     *\\n     * _Available since v4.7._\\n     */\\n    function processMultiProofCalldata(\\n        bytes32[] calldata proof,\\n        bool[] calldata proofFlags,\\n        bytes32[] memory leaves\\n    ) internal pure returns (bytes32 merkleRoot) {\\n        // This function rebuild the root hash by traversing the tree up from the leaves. The root is rebuilt by\\n        // consuming and producing values on a queue. The queue starts with the `leaves` array, then goes onto the\\n        // `hashes` array. At the end of the process, the last hash in the `hashes` array should contain the root of\\n        // the merkle tree.\\n        uint256 leavesLen = leaves.length;\\n        uint256 totalHashes = proofFlags.length;\\n\\n        // Check proof validity.\\n        require(leavesLen + proof.length - 1 == totalHashes, \\\"MerkleProof: invalid multiproof\\\");\\n\\n        // The xxxPos values are \\\"pointers\\\" to the next value to consume in each array. All accesses are done using\\n        // `xxx[xxxPos++]`, which return the current value and increment the pointer, thus mimicking a queue's \\\"pop\\\".\\n        bytes32[] memory hashes = new bytes32[](totalHashes);\\n        uint256 leafPos = 0;\\n        uint256 hashPos = 0;\\n        uint256 proofPos = 0;\\n        // At each step, we compute the next hash using two values:\\n        // - a value from the \\\"main queue\\\". If not all leaves have been consumed, we get the next leaf, otherwise we\\n        //   get the next hash.\\n        // - depending on the flag, either another value for the \\\"main queue\\\" (merging branches) or an element from the\\n        //   `proof` array.\\n        for (uint256 i = 0; i < totalHashes; i++) {\\n            bytes32 a = leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++];\\n            bytes32 b = proofFlags[i] ? leafPos < leavesLen ? leaves[leafPos++] : hashes[hashPos++] : proof[proofPos++];\\n            hashes[i] = _hashPair(a, b);\\n        }\\n\\n        if (totalHashes > 0) {\\n            return hashes[totalHashes - 1];\\n        } else if (leavesLen > 0) {\\n            return leaves[0];\\n        } else {\\n            return proof[0];\\n        }\\n    }\\n\\n    function _hashPair(bytes32 a, bytes32 b) private pure returns (bytes32) {\\n        return a < b ? _efficientHash(a, b) : _efficientHash(b, a);\\n    }\\n\\n    function _efficientHash(bytes32 a, bytes32 b) private pure returns (bytes32 value) {\\n        /// @solidity memory-safe-assembly\\n        assembly {\\n            mstore(0x00, a)\\n            mstore(0x20, b)\\n            value := keccak256(0x00, 0x40)\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x596ed72a251d391b814a4aa19d7acb02ebdcc92ba27d3fff74a6f0c158b12ab7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(\\n        address indexed previousOwner,\\n        address indexed newOwner\\n    );\\n}\\n\",\"keccak256\":\"0xaa69cf8eab7188097d9aa84c92692ec30614ee2f6bf8d2255482162611255db4\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0xa0149e5c5964ce521c9589ff1a559844eb24fd8481634dda76a3f24d6991039b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT =\\n        keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0x26eea1f665c393b0046c3dcb9421f3caa1322ca996689fa0aa941eff5a1dcda2\",\"license\":\"MIT\"},\"src/finance/sales/ITieredSales.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./ITieredSalesInternal.sol\\\";\\n\\ninterface ITieredSales is ITieredSalesInternal {\\n    function onTierAllowlist(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) external view returns (bool);\\n\\n    function eligibleForTier(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) external view returns (uint256);\\n\\n    function mintByTier(\\n        uint256 tierId,\\n        uint256 count,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) external payable;\\n\\n    function remainingForTier(uint256 tierId) external view returns (uint256);\\n\\n    function walletMintedByTier(uint256 tierId, address wallet) external view returns (uint256);\\n\\n    function tierMints(uint256 tierId) external view returns (uint256);\\n\\n    function totalReserved() external view returns (uint256);\\n\\n    function reservedMints() external view returns (uint256);\\n\\n    function tiers(uint256 tierId) external view returns (Tier memory);\\n}\\n\",\"keccak256\":\"0x449398eab8e8af9b259885fe9f4b8deac24073c3d4493d0ecf5e0d66a25cbef9\",\"license\":\"MIT\"},\"src/finance/sales/ITieredSalesInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\ninterface ITieredSalesInternal {\\n    struct Tier {\\n        uint256 start;\\n        uint256 end;\\n        address currency;\\n        uint256 price;\\n        uint256 maxPerWallet;\\n        bytes32 merkleRoot;\\n        uint256 reserved;\\n        uint256 maxAllocation;\\n    }\\n}\\n\",\"keccak256\":\"0xa87792c1daf6d11b1bd8f273abc127bc19f2197caca0074db77e56098531834b\",\"license\":\"MIT\"},\"src/finance/sales/TieredSales.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./ITieredSales.sol\\\";\\nimport \\\"./TieredSalesInternal.sol\\\";\\n\\n/**\\n * @title Abstract sales mechanism for any asset (e.g NFTs) with multiple tiered pricing, allowlist and allocation plans.\\n */\\nabstract contract TieredSales is ITieredSales, TieredSalesInternal {\\n    function onTierAllowlist(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) public view virtual returns (bool) {\\n        return super._onTierAllowlist(tierId, minter, maxAllowance, proof);\\n    }\\n\\n    function eligibleForTier(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) public view virtual returns (uint256 maxMintable) {\\n        return super._eligibleForTier(tierId, minter, maxAllowance, proof);\\n    }\\n\\n    function remainingForTier(uint256 tierId) public view virtual returns (uint256) {\\n        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();\\n\\n        uint256 availableSupply = _availableSupplyForTier(tierId);\\n        uint256 availableAllocation = l.tiers[tierId].maxAllocation - l.tierMints[tierId];\\n\\n        if (availableSupply < availableAllocation) {\\n            return availableSupply;\\n        } else {\\n            return availableAllocation;\\n        }\\n    }\\n\\n    function walletMintedByTier(uint256 tierId, address wallet) public view virtual returns (uint256) {\\n        return TieredSalesStorage.layout().walletMinted[tierId][wallet];\\n    }\\n\\n    function tierMints(uint256 tierId) public view virtual returns (uint256) {\\n        return TieredSalesStorage.layout().tierMints[tierId];\\n    }\\n\\n    function totalReserved() external view virtual returns (uint256) {\\n        return TieredSalesStorage.layout().totalReserved;\\n    }\\n\\n    function reservedMints() external view virtual returns (uint256) {\\n        return TieredSalesStorage.layout().reservedMints;\\n    }\\n\\n    function tiers(uint256 tierId) external view virtual returns (Tier memory) {\\n        return TieredSalesStorage.layout().tiers[tierId];\\n    }\\n}\\n\",\"keccak256\":\"0x3580acdf4d1e707e15d44d573ba1d7cfa96e8ecc623df27c41e3e24e35db532e\",\"license\":\"MIT\"},\"src/finance/sales/TieredSalesInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/cryptography/MerkleProof.sol\\\";\\nimport \\\"@openzeppelin/contracts/token/ERC20/IERC20.sol\\\";\\n\\nimport \\\"./ITieredSalesInternal.sol\\\";\\nimport \\\"./TieredSalesStorage.sol\\\";\\n\\nimport \\\"../../access/ownable/OwnableInternal.sol\\\";\\n\\n/**\\n * @title Sales mechanism for NFTs with multiple tiered pricing, allowlist and allocation plans\\n */\\nabstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableInternal {\\n    using TieredSalesStorage for TieredSalesStorage.Layout;\\n\\n    function _configureTiering(uint256 tierId, Tier calldata tier) internal virtual {\\n        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();\\n\\n        require(tier.maxAllocation >= l.tierMints[tierId], \\\"LOWER_THAN_MINTED\\\");\\n\\n        if (l.tiers[tierId].reserved > 0) {\\n            require(tier.reserved >= l.tierMints[tierId], \\\"LOW_RESERVE_AMOUNT\\\");\\n        }\\n\\n        if (l.tierMints[tierId] > 0) {\\n            require(tier.maxPerWallet >= l.tiers[tierId].maxPerWallet, \\\"LOW_MAX_PER_WALLET\\\");\\n        }\\n\\n        l.totalReserved -= l.tiers[tierId].reserved;\\n        l.tiers[tierId] = tier;\\n        l.totalReserved += tier.reserved;\\n    }\\n\\n    function _configureTiering(uint256[] calldata _tierIds, Tier[] calldata _tiers) internal virtual {\\n        for (uint256 i = 0; i < _tierIds.length; i++) {\\n            _configureTiering(_tierIds[i], _tiers[i]);\\n        }\\n    }\\n\\n    function _onTierAllowlist(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) internal view virtual returns (bool) {\\n        return\\n            MerkleProof.verify(\\n                proof,\\n                TieredSalesStorage.layout().tiers[tierId].merkleRoot,\\n                _generateMerkleLeaf(minter, maxAllowance)\\n            );\\n    }\\n\\n    function _eligibleForTier(\\n        uint256 tierId,\\n        address minter,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) internal view virtual returns (uint256 maxMintable) {\\n        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();\\n\\n        require(l.tiers[tierId].maxPerWallet > 0, \\\"NOT_EXISTS\\\");\\n        require(block.timestamp >= l.tiers[tierId].start, \\\"NOT_STARTED\\\");\\n        require(block.timestamp <= l.tiers[tierId].end, \\\"ALREADY_ENDED\\\");\\n\\n        maxMintable = l.tiers[tierId].maxPerWallet - l.walletMinted[tierId][minter];\\n\\n        if (l.tiers[tierId].merkleRoot != bytes32(0)) {\\n            require(l.walletMinted[tierId][minter] < maxAllowance, \\\"MAXED_ALLOWANCE\\\");\\n            require(_onTierAllowlist(tierId, minter, maxAllowance, proof), \\\"NOT_ALLOWLISTED\\\");\\n\\n            uint256 remainingAllowance = maxAllowance - l.walletMinted[tierId][minter];\\n\\n            if (maxMintable > remainingAllowance) {\\n                maxMintable = remainingAllowance;\\n            }\\n        }\\n    }\\n\\n    function _availableSupplyForTier(uint256 tierId) internal view virtual returns (uint256 remaining) {\\n        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();\\n\\n        // Substract all the remaining reserved spots from the total remaining supply...\\n        remaining = _remainingSupplyForTier(tierId) - (l.totalReserved - l.reservedMints);\\n\\n        // If this tier has reserved spots, add remaining spots back to result...\\n        if (l.tiers[tierId].reserved > 0) {\\n            remaining += (l.tiers[tierId].reserved - l.tierMints[tierId]);\\n        }\\n    }\\n\\n    function _executeSale(\\n        uint256 tierId,\\n        uint256 count,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) internal virtual {\\n        address minter = _msgSender();\\n\\n        uint256 maxMintable = _eligibleForTier(tierId, minter, maxAllowance, proof);\\n\\n        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();\\n\\n        require(count <= maxMintable, \\\"EXCEEDS_MAX\\\");\\n        require(count <= _availableSupplyForTier(tierId), \\\"EXCEEDS_ALLOCATION\\\");\\n        require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, \\\"EXCEEDS_ALLOCATION\\\");\\n\\n        if (l.tiers[tierId].currency == address(0)) {\\n            require(l.tiers[tierId].price * count <= msg.value, \\\"INSUFFICIENT_AMOUNT\\\");\\n        } else {\\n            IERC20(l.tiers[tierId].currency).transferFrom(minter, address(this), l.tiers[tierId].price * count);\\n        }\\n\\n        l.walletMinted[tierId][minter] += count;\\n        l.tierMints[tierId] += count;\\n\\n        if (l.tiers[tierId].reserved > 0) {\\n            l.reservedMints += count;\\n        }\\n    }\\n\\n    function _remainingSupplyForTier(\\n        uint256 /*tierId*/\\n    ) internal view virtual returns (uint256) {\\n        return type(uint256).max;\\n    }\\n\\n    /* PRIVATE */\\n\\n    function _generateMerkleLeaf(address account, uint256 maxAllowance) private pure returns (bytes32) {\\n        return keccak256(abi.encodePacked(account, maxAllowance));\\n    }\\n}\\n\",\"keccak256\":\"0x3881ec0a19d983699dc2ef9dd4d19b860d20c5c1b7776fb47f3ae5d7cf621116\",\"license\":\"MIT\"},\"src/finance/sales/TieredSalesStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./ITieredSales.sol\\\";\\n\\nlibrary TieredSalesStorage {\\n    struct Layout {\\n        uint256 totalReserved;\\n        uint256 reservedMints;\\n        mapping(uint256 => ITieredSales.Tier) tiers;\\n        mapping(uint256 => uint256) tierMints;\\n        mapping(uint256 => mapping(address => uint256)) walletMinted;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.TieredSales\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xffe3323cd374edf50e6d431e638527e0868de7f81623362e96a153d044f23e25\",\"license\":\"MIT\"},\"src/introspection/ERC165Storage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary ERC165Storage {\\n    struct Layout {\\n        mapping(bytes4 => bool) supportedInterfaces;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.ERC165\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function isSupportedInterface(Layout storage l, bytes4 interfaceId) internal view returns (bool) {\\n        return l.supportedInterfaces[interfaceId];\\n    }\\n\\n    function setSupportedInterface(\\n        Layout storage l,\\n        bytes4 interfaceId,\\n        bool status\\n    ) internal {\\n        require(interfaceId != 0xffffffff, \\\"ERC165: invalid interface id\\\");\\n        l.supportedInterfaces[interfaceId] = status;\\n    }\\n}\\n\",\"keccak256\":\"0x636f4f2767ec384741cf56d2a1e8974c0bba208ca07de7258d4c98f93e680e1a\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/mintable/IERC721Mintable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721A} that allows other facets from the diamond to mint tokens.\\n */\\ninterface IERC721Mintable {\\n    /**\\n     * @dev Creates `amount` new tokens for `to`, of token type `id`.\\n     *\\n     * See {ERC721A-_mint}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond itself (other facets).\\n     */\\n    function mintByFacet(address to, uint256 amount) external;\\n\\n    function mintByFacet(address[] memory tos, uint256[] memory amounts) external;\\n}\\n\",\"keccak256\":\"0x3927b2230b64be498f899aa364e314da368690d6e58164d8f52d8556d03a9c1c\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/supply/ERC721SupplyStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nlibrary ERC721SupplyStorage {\\n    struct Layout {\\n        uint256 maxSupply;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC721Supply\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x7d20b311e92c328d1a4dc0b929ba4ebbe0a7997fc1b724a32d0a9885e340105d\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/supply/IERC721Supply.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"./IERC721SupplyInternal.sol\\\";\\n\\n/**\\n * @dev Extension of {ERC721} that tracks supply and defines a max supply cap.\\n */\\ninterface IERC721Supply is IERC721SupplyInternal {\\n    /**\\n     * @dev Total amount of tokens that exist in the collection.\\n     */\\n    function totalSupply() external view returns (uint256);\\n\\n    /**\\n     * @dev Maximum amount of tokens possible to exist.\\n     */\\n    function maxSupply() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x428434d1e2cf7ce7e76a7cf42528a6aa825ac2f09af42f2273b7ef96e370a024\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/supply/IERC721SupplyInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721} that tracks supply and defines a max supply cap.\\n */\\ninterface IERC721SupplyInternal {\\n    error ErrMaxSupplyExceeded();\\n}\\n\",\"keccak256\":\"0x7eb5aebc3c0439a02144cae402d69fe4402d5892267ddd02d1231e08c42ecd69\",\"license\":\"MIT\"},\"src/token/ERC721/facets/sales/ERC721TieredSales.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity 0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/security/ReentrancyGuard.sol\\\";\\n\\nimport \\\"../../../../introspection/ERC165Storage.sol\\\";\\nimport \\\"../../../../finance/sales/TieredSales.sol\\\";\\nimport \\\"../../extensions/mintable/IERC721Mintable.sol\\\";\\nimport \\\"../../extensions/supply/ERC721SupplyStorage.sol\\\";\\nimport \\\"../../extensions/supply/IERC721Supply.sol\\\";\\n\\n/**\\n * @title ERC721 - Tiered Sales\\n * @notice Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:required-dependencies IERC721Mintable\\n * @custom:provides-interfaces ITieredSales\\n */\\ncontract ERC721TieredSales is ReentrancyGuard, TieredSales {\\n    using ERC165Storage for ERC165Storage.Layout;\\n    using ERC721SupplyStorage for ERC721SupplyStorage.Layout;\\n\\n    function mintByTier(\\n        uint256 tierId,\\n        uint256 count,\\n        uint256 maxAllowance,\\n        bytes32[] calldata proof\\n    ) external payable virtual nonReentrant {\\n        super._executeSale(tierId, count, maxAllowance, proof);\\n\\n        IERC721Mintable(address(this)).mintByFacet(_msgSender(), count);\\n    }\\n}\\n\",\"keccak256\":\"0xe1ae2083590e0f935902cd8fe815fe3c58dadf5892ae4bc886b4a6bc37c304fc\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506001600055610feb806100256000396000f3fe6080604052600436106100965760003560e01c80635897f8781161006957806368c7d37c1161004e57806368c7d37c14610253578063bd2c18f714610283578063c71b0e1c146102a357600080fd5b80635897f8781461021e5780635ea2c91b1461023e57600080fd5b8063039af9eb1461009b5780631123f2ef1461012e5780632cb9b2ac1461019e57806353367f08146101d2575b600080fd5b3480156100a757600080fd5b506100bb6100b6366004610da7565b6102d7565b604051610125919060006101008201905082518252602083015160208301526001600160a01b036040840151166040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015260e083015160e083015292915050565b60405180910390f35b34801561013a57600080fd5b50610190610149366004610ddc565b60009182527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbf602090815260408084206001600160a01b0393909316845291905290205490565b604051908152602001610125565b3480156101aa57600080fd5b507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbc54610190565b3480156101de57600080fd5b506101906101ed366004610da7565b60009081527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbe602052604090205490565b34801561022a57600080fd5b50610190610239366004610da7565b6103c1565b61025161024c366004610e54565b610438565b005b34801561025f57600080fd5b5061027361026e366004610eb5565b61052c565b6040519015158152602001610125565b34801561028f57600080fd5b5061019061029e366004610eb5565b610545565b3480156102af57600080fd5b507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb54610190565b61032b604051806101000160405280600081526020016000815260200160006001600160a01b0316815260200160008152602001600081526020016000801916815260200160008152602001600081525090565b5060009081527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbd60209081526040918290208251610100810184528154815260018201549281019290925260028101546001600160a01b0316928201929092526003820154606082015260048201546080820152600582015460a0820152600682015460c082015260079091015460e082015290565b60007fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb816103ee84610578565b600085815260038401602090815260408083205460028701909252822060070154929350909161041e9190610f16565b90508082101561043057509392505050565b949350505050565b60026000540361048f5760405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b60026000556104a18585858585610630565b30632d4f475f336040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b1681526001600160a01b03909116600482015260248101879052604401600060405180830381600087803b15801561050857600080fd5b505af115801561051c573d6000803e3d6000fd5b5050600160005550505050505050565b600061053b8686868686610984565b9695505050505050565b600061053b8686868686610a40565b7fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb90565b7fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbc547fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb80546000926105c991610f16565b6105d590600019610f16565b60008481526002830160205260409020600601549092501561062a576000838152600382016020908152604080832054600285019092529091206006015461061d9190610f16565b6106279083610f2d565b91505b50919050565b3360006106408783878787610a40565b90507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb818711156106b35760405162461bcd60e51b815260206004820152600b60248201527f455843454544535f4d41580000000000000000000000000000000000000000006044820152606401610486565b6106bc88610578565b87111561070b5760405162461bcd60e51b815260206004820152601260248201527f455843454544535f414c4c4f434154494f4e00000000000000000000000000006044820152606401610486565b600088815260028201602090815260408083206007015460038501909252909120546107379089610f2d565b11156107855760405162461bcd60e51b815260206004820152601260248201527f455843454544535f414c4c4f434154494f4e00000000000000000000000000006044820152606401610486565b60008881526002808301602052604090912001546001600160a01b031661081a57600088815260028201602052604090206003015434906107c7908990610f45565b11156108155760405162461bcd60e51b815260206004820152601360248201527f494e53554646494349454e545f414d4f554e54000000000000000000000000006044820152606401610486565b6108e9565b600088815260028083016020526040909120908101546003909101546001600160a01b03909116906323b872dd9085903090610857908c90610f45565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e086901b1681526001600160a01b03938416600482015292909116602483015260448201526064016020604051808303816000875af11580156108c3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108e79190610f64565b505b600088815260048201602090815260408083206001600160a01b03871684529091528120805489929061091d908490610f2d565b9091555050600088815260038201602052604081208054899290610942908490610f2d565b909155505060008881526002820160205260409020600601541561097a57868160010160008282546109749190610f2d565b90915550505b5050505050505050565b600061053b8383808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152506109c69250610554915050565b60008981526002919091016020526040902060050154610a3b88886040517fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606084901b1660208201526034810182905260009060540160405160208183030381529060405280519060200120905092915050565b610d12565b60008581527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbd60205260408120600401547fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb90610adf5760405162461bcd60e51b815260206004820152600a60248201527f4e4f545f455849535453000000000000000000000000000000000000000000006044820152606401610486565b6000878152600282016020526040902054421015610b3f5760405162461bcd60e51b815260206004820152600b60248201527f4e4f545f535441525445440000000000000000000000000000000000000000006044820152606401610486565b6000878152600282016020526040902060010154421115610ba25760405162461bcd60e51b815260206004820152600d60248201527f414c52454144595f454e444544000000000000000000000000000000000000006044820152606401610486565b60008781526004808301602090815260408084206001600160a01b038b1685528252808420548b8552600286019092529092200154610be19190610f16565b600088815260028301602052604090206005015490925015610d0857600087815260048201602090815260408083206001600160a01b038a1684529091529020548511610c705760405162461bcd60e51b815260206004820152600f60248201527f4d415845445f414c4c4f57414e434500000000000000000000000000000000006044820152606401610486565b610c7d8787878787610984565b610cc95760405162461bcd60e51b815260206004820152600f60248201527f4e4f545f414c4c4f574c495354454400000000000000000000000000000000006044820152606401610486565b600087815260048201602090815260408083206001600160a01b038a168452909152812054610cf89087610f16565b905080831115610d06578092505b505b5095945050505050565b600082610d1f8584610d28565b14949350505050565b600081815b8451811015610d6d57610d5982868381518110610d4c57610d4c610f86565b6020026020010151610d75565b915080610d6581610f9c565b915050610d2d565b509392505050565b6000818310610d91576000828152602084905260409020610da0565b60008381526020839052604090205b9392505050565b600060208284031215610db957600080fd5b5035919050565b80356001600160a01b0381168114610dd757600080fd5b919050565b60008060408385031215610def57600080fd5b82359150610dff60208401610dc0565b90509250929050565b60008083601f840112610e1a57600080fd5b50813567ffffffffffffffff811115610e3257600080fd5b6020830191508360208260051b8501011115610e4d57600080fd5b9250929050565b600080600080600060808688031215610e6c57600080fd5b853594506020860135935060408601359250606086013567ffffffffffffffff811115610e9857600080fd5b610ea488828901610e08565b969995985093965092949392505050565b600080600080600060808688031215610ecd57600080fd5b85359450610edd60208701610dc0565b935060408601359250606086013567ffffffffffffffff811115610e9857600080fd5b634e487b7160e01b600052601160045260246000fd5b600082821015610f2857610f28610f00565b500390565b60008219821115610f4057610f40610f00565b500190565b6000816000190483118215151615610f5f57610f5f610f00565b500290565b600060208284031215610f7657600080fd5b81518015158114610da057600080fd5b634e487b7160e01b600052603260045260246000fd5b600060018201610fae57610fae610f00565b506001019056fea2646970667358221220d4ba90fc49328f524625f6e8b5084aec5edbb603feed2491af979250f194ebc564736f6c634300080f0033",
+  "deployedBytecode": "0x6080604052600436106100965760003560e01c80635897f8781161006957806368c7d37c1161004e57806368c7d37c14610253578063bd2c18f714610283578063c71b0e1c146102a357600080fd5b80635897f8781461021e5780635ea2c91b1461023e57600080fd5b8063039af9eb1461009b5780631123f2ef1461012e5780632cb9b2ac1461019e57806353367f08146101d2575b600080fd5b3480156100a757600080fd5b506100bb6100b6366004610da7565b6102d7565b604051610125919060006101008201905082518252602083015160208301526001600160a01b036040840151166040830152606083015160608301526080830151608083015260a083015160a083015260c083015160c083015260e083015160e083015292915050565b60405180910390f35b34801561013a57600080fd5b50610190610149366004610ddc565b60009182527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbf602090815260408084206001600160a01b0393909316845291905290205490565b604051908152602001610125565b3480156101aa57600080fd5b507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbc54610190565b3480156101de57600080fd5b506101906101ed366004610da7565b60009081527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbe602052604090205490565b34801561022a57600080fd5b50610190610239366004610da7565b6103c1565b61025161024c366004610e54565b610438565b005b34801561025f57600080fd5b5061027361026e366004610eb5565b61052c565b6040519015158152602001610125565b34801561028f57600080fd5b5061019061029e366004610eb5565b610545565b3480156102af57600080fd5b507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb54610190565b61032b604051806101000160405280600081526020016000815260200160006001600160a01b0316815260200160008152602001600081526020016000801916815260200160008152602001600081525090565b5060009081527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbd60209081526040918290208251610100810184528154815260018201549281019290925260028101546001600160a01b0316928201929092526003820154606082015260048201546080820152600582015460a0820152600682015460c082015260079091015460e082015290565b60007fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb816103ee84610578565b600085815260038401602090815260408083205460028701909252822060070154929350909161041e9190610f16565b90508082101561043057509392505050565b949350505050565b60026000540361048f5760405162461bcd60e51b815260206004820152601f60248201527f5265656e7472616e637947756172643a207265656e7472616e742063616c6c0060448201526064015b60405180910390fd5b60026000556104a18585858585610630565b30632d4f475f336040517fffffffff0000000000000000000000000000000000000000000000000000000060e084901b1681526001600160a01b03909116600482015260248101879052604401600060405180830381600087803b15801561050857600080fd5b505af115801561051c573d6000803e3d6000fd5b5050600160005550505050505050565b600061053b8686868686610984565b9695505050505050565b600061053b8686868686610a40565b7fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb90565b7fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbc547fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb80546000926105c991610f16565b6105d590600019610f16565b60008481526002830160205260409020600601549092501561062a576000838152600382016020908152604080832054600285019092529091206006015461061d9190610f16565b6106279083610f2d565b91505b50919050565b3360006106408783878787610a40565b90507fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb818711156106b35760405162461bcd60e51b815260206004820152600b60248201527f455843454544535f4d41580000000000000000000000000000000000000000006044820152606401610486565b6106bc88610578565b87111561070b5760405162461bcd60e51b815260206004820152601260248201527f455843454544535f414c4c4f434154494f4e00000000000000000000000000006044820152606401610486565b600088815260028201602090815260408083206007015460038501909252909120546107379089610f2d565b11156107855760405162461bcd60e51b815260206004820152601260248201527f455843454544535f414c4c4f434154494f4e00000000000000000000000000006044820152606401610486565b60008881526002808301602052604090912001546001600160a01b031661081a57600088815260028201602052604090206003015434906107c7908990610f45565b11156108155760405162461bcd60e51b815260206004820152601360248201527f494e53554646494349454e545f414d4f554e54000000000000000000000000006044820152606401610486565b6108e9565b600088815260028083016020526040909120908101546003909101546001600160a01b03909116906323b872dd9085903090610857908c90610f45565b6040517fffffffff0000000000000000000000000000000000000000000000000000000060e086901b1681526001600160a01b03938416600482015292909116602483015260448201526064016020604051808303816000875af11580156108c3573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906108e79190610f64565b505b600088815260048201602090815260408083206001600160a01b03871684529091528120805489929061091d908490610f2d565b9091555050600088815260038201602052604081208054899290610942908490610f2d565b909155505060008881526002820160205260409020600601541561097a57868160010160008282546109749190610f2d565b90915550505b5050505050505050565b600061053b8383808060200260200160405190810160405280939291908181526020018383602002808284376000920191909152506109c69250610554915050565b60008981526002919091016020526040902060050154610a3b88886040517fffffffffffffffffffffffffffffffffffffffff000000000000000000000000606084901b1660208201526034810182905260009060540160405160208183030381529060405280519060200120905092915050565b610d12565b60008581527fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbd60205260408120600401547fb7471df0c7246ed3d4a380504edfbb03f5845b709c7716243791636e4ba46cbb90610adf5760405162461bcd60e51b815260206004820152600a60248201527f4e4f545f455849535453000000000000000000000000000000000000000000006044820152606401610486565b6000878152600282016020526040902054421015610b3f5760405162461bcd60e51b815260206004820152600b60248201527f4e4f545f535441525445440000000000000000000000000000000000000000006044820152606401610486565b6000878152600282016020526040902060010154421115610ba25760405162461bcd60e51b815260206004820152600d60248201527f414c52454144595f454e444544000000000000000000000000000000000000006044820152606401610486565b60008781526004808301602090815260408084206001600160a01b038b1685528252808420548b8552600286019092529092200154610be19190610f16565b600088815260028301602052604090206005015490925015610d0857600087815260048201602090815260408083206001600160a01b038a1684529091529020548511610c705760405162461bcd60e51b815260206004820152600f60248201527f4d415845445f414c4c4f57414e434500000000000000000000000000000000006044820152606401610486565b610c7d8787878787610984565b610cc95760405162461bcd60e51b815260206004820152600f60248201527f4e4f545f414c4c4f574c495354454400000000000000000000000000000000006044820152606401610486565b600087815260048201602090815260408083206001600160a01b038a168452909152812054610cf89087610f16565b905080831115610d06578092505b505b5095945050505050565b600082610d1f8584610d28565b14949350505050565b600081815b8451811015610d6d57610d5982868381518110610d4c57610d4c610f86565b6020026020010151610d75565b915080610d6581610f9c565b915050610d2d565b509392505050565b6000818310610d91576000828152602084905260409020610da0565b60008381526020839052604090205b9392505050565b600060208284031215610db957600080fd5b5035919050565b80356001600160a01b0381168114610dd757600080fd5b919050565b60008060408385031215610def57600080fd5b82359150610dff60208401610dc0565b90509250929050565b60008083601f840112610e1a57600080fd5b50813567ffffffffffffffff811115610e3257600080fd5b6020830191508360208260051b8501011115610e4d57600080fd5b9250929050565b600080600080600060808688031215610e6c57600080fd5b853594506020860135935060408601359250606086013567ffffffffffffffff811115610e9857600080fd5b610ea488828901610e08565b969995985093965092949392505050565b600080600080600060808688031215610ecd57600080fd5b85359450610edd60208701610dc0565b935060408601359250606086013567ffffffffffffffff811115610e9857600080fd5b634e487b7160e01b600052601160045260246000fd5b600082821015610f2857610f28610f00565b500390565b60008219821115610f4057610f40610f00565b500190565b6000816000190483118215151615610f5f57610f5f610f00565b500290565b600060208284031215610f7657600080fd5b81518015158114610da057600080fd5b634e487b7160e01b600052603260045260246000fd5b600060018201610fae57610fae610f00565b506001019056fea2646970667358221220d4ba90fc49328f524625f6e8b5084aec5edbb603feed2491af979250f194ebc564736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "ITieredSales",
+    "custom:required-dependencies": "IERC721Mintable",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC721 - Tiered Sales",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 393,
+        "contract": "src/token/ERC721/facets/sales/ERC721TieredSales.sol:ERC721TieredSales",
+        "label": "_status",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

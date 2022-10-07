@@ -5,7 +5,6 @@ pragma solidity 0.8.15;
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "./IMetadata.sol";
-import "./MetadataInternal.sol";
 import "./MetadataStorage.sol";
 
 /**
@@ -14,9 +13,17 @@ import "./MetadataStorage.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:provides-interfaces 0xc16c2a44
+ * @custom:provides-interfaces IMetadata
  */
-contract Metadata is IMetadata, MetadataInternal {
+contract Metadata is IMetadata {
+    function name() external view virtual override returns (string memory) {
+        return MetadataStorage.layout().name;
+    }
+
+    function symbol() external view virtual override returns (string memory) {
+        return MetadataStorage.layout().symbol;
+    }
+
     function baseURI() external view virtual returns (string memory) {
         return MetadataStorage.layout().baseURI;
     }
