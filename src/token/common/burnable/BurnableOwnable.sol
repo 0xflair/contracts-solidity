@@ -12,8 +12,7 @@ import "./IBurnableAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0xdc290004
- * @custom:provides-interfaces 0x710fb577
+ * @custom:provides-interfaces IBurnableAdmin
  */
 contract BurnableOwnable is IBurnableAdmin, OwnableInternal {
     using BurnableStorage for BurnableStorage.Layout;

@@ -2,11 +2,13 @@ import { registerContract, registerFacet } from '@flair-sdk/registry';
 
 import ContractsJson from './contracts.json';
 import FacetsJson from './facets.json';
+import InterfacesJson from './interfaces.json';
 
 export * from './typechain';
 
-const ContractsManifests = ContractsJson;
-const FacetsManifests = FacetsJson;
+export const ContractsManifests = ContractsJson;
+export const FacetsManifests = FacetsJson;
+export const InterfacesDictionary = InterfacesJson;
 
 for (const manifest of Object.values(ContractsManifests)) {
   registerContract(manifest);

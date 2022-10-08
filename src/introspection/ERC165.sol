@@ -2,7 +2,8 @@
 
 pragma solidity 0.8.15;
 
-import "./IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+
 import "./ERC165Storage.sol";
 
 /**
@@ -11,7 +12,7 @@ import "./ERC165Storage.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Introspection
- * @custom:provides-interfaces 0x01ffc9a7
+ * @custom:provides-interfaces IERC165
  */
 contract ERC165 is IERC165 {
     using ERC165Storage for ERC165Storage.Layout;

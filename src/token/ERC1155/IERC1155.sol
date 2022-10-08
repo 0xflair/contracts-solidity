@@ -3,7 +3,6 @@
 pragma solidity 0.8.15;
 
 import "./IERC1155Events.sol";
-import "../../introspection/IERC165.sol";
 
 /**
  * @title ERC1155 interface

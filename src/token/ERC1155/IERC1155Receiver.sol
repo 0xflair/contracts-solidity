@@ -2,7 +2,7 @@
 
 pragma solidity 0.8.15;
 
-import "../../introspection/IERC165.sol";
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
 
 /**
  * @title ERC1155 transfer receiver interface

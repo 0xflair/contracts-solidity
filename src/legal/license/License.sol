@@ -16,7 +16,7 @@ import "./ILicense.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Legal
- * @custom:provides-interfaces 0xec3bb95b 0x649a51a8
+ * @custom:provides-interfaces ILicense ICantBeEvil
  */
 contract License is ILicense, LicenseInternal {
     function getLicenseURI() external view returns (string memory) {

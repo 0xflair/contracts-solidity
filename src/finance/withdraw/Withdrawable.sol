@@ -19,7 +19,7 @@ import "./IWithdrawable.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:provides-interfaces 0xa9c00e2f
+ * @custom:provides-interfaces IWithdrawable
  */
 contract Withdrawable is IWithdrawable, WithdrawableInternal {
     function withdraw(address[] calldata claimTokens, uint256[] calldata amounts) external {

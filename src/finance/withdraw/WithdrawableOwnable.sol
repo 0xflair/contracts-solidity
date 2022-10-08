@@ -13,8 +13,8 @@ import "./IWithdrawableAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:peer-dependencies 0xa9c00e2f
- * @custom:provides-interfaces 0x7246cea5
+ * @custom:peer-dependencies IWithdrawable
+ * @custom:provides-interfaces IWithdrawableAdmin
  */
 contract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal, WithdrawableInternal {
     function setWithdrawRecipient(address recipient) external onlyOwner {

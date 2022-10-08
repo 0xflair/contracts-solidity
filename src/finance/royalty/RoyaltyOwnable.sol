@@ -14,8 +14,8 @@ import "./IRoyaltyAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Finance
- * @custom:peer-dependencies 0x78cbafe7 0xc69dbd8f
- * @custom:provides-interfaces 0xbe561268
+ * @custom:peer-dependencies IRoyalty IEIP2981
+ * @custom:provides-interfaces IRoyaltyAdmin
  */
 contract RoyaltyOwnable is IRoyaltyAdmin, RoyaltyInternal, OwnableInternal {
     using RoyaltyStorage for RoyaltyStorage.Layout;

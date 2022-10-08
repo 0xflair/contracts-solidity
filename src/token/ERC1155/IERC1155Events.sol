@@ -2,8 +2,6 @@
 
 pragma solidity 0.8.15;
 
-import "../../introspection/IERC165.sol";
-
 /**
  * @title Partial ERC1155 interface needed by internal functions
  */

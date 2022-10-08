@@ -2,8 +2,9 @@
 
 pragma solidity 0.8.15;
 
+import "@openzeppelin/contracts/utils/introspection/IERC165.sol";
+
 import "../access/ownable/OwnableInternal.sol";
-import "./IERC165.sol";
 import "./ERC165Storage.sol";
 import "./IERC165Admin.sol";
 
@@ -13,7 +14,8 @@ import "./IERC165Admin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Diamonds
- * @custom:provides-interfaces 0x2a848091
+ * @custom:peer-dependencies IERC165
+ * @custom:provides-interfaces IERC165Admin
  */
 contract ERC165Ownable is IERC165Admin, OwnableInternal {
     using ERC165Storage for ERC165Storage.Layout;

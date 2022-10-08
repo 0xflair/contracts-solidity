@@ -14,8 +14,8 @@ import "./ILicenseAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category Legal
- * @custom:peer-dependencies 0xec3bb95b 0x649a51a8
- * @custom:provides-interfaces 0x06ff95be
+ * @custom:peer-dependencies ILicense ICantBeEvil
+ * @custom:provides-interfaces ILicenseAdmin
  */
 contract LicenseOwnable is ILicenseAdmin, OwnableInternal, LicenseInternal {
     using LicenseStorage for LicenseStorage.Layout;

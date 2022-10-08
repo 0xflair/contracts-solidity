@@ -12,8 +12,8 @@ import "./IERC1155TieredSalesAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0x79f33254
- * @custom:provides-interfaces 0x76c5dd21
+ * @custom:peer-dependencies IERC1155TieredSales
+ * @custom:provides-interfaces IERC1155TieredSalesAdmin
  */
 contract ERC1155TieredSalesOwnable is IERC1155TieredSalesAdmin, OwnableInternal {
     using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;

@@ -1482,13 +1482,13 @@ describe('ERC721 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(TIER_ONE, 1, 1, [], {
         value: utils.parseEther('0.2'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(TIER_TWO, 1, 1, [], {
         value: utils.parseEther('0.01'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example B)', async function () {
@@ -1618,19 +1618,19 @@ describe('ERC721 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
       value: utils.parseEther('1'),
@@ -1640,7 +1640,7 @@ describe('ERC721 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example C)', async function () {
@@ -1720,19 +1720,19 @@ describe('ERC721 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await tieredSalesFacet.connect(userB.signer).mintByTier(3, 10, 100, [], {
       value: utils.parseEther('10'),
@@ -1957,7 +1957,7 @@ describe('ERC721 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 1, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
+    ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(3, 5, 5, [], {

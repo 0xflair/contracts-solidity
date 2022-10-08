@@ -13,6 +13,8 @@ const FQN_PREFIX = 'flair-sdk:';
 const FACETS_SOURCE_TEMPLATE = 'https://github.com/flair-sdk/contracts/blob/v{VERSION}/src/{ARTIFACT_KEY}.sol';
 const FACETS_AUTHOR = 'flair-sdk.eth';
 
+const resolvedInterfaces: Record<string, string> = {};
+
 async function main() {
   const registry: Record<string, ContractManifest> = {};
   const srcPath = path.resolve(__dirname, '../src');
@@ -138,6 +140,13 @@ async function main() {
   fse.writeJSONSync(path.resolve(srcPath, 'facets.json'), facets, {
     spaces: 2,
   });
+
+  //
+  // 6. Write interfaces mapping
+  //
+  fse.writeJSONSync(path.resolve(srcPath, 'interfaces.json'), resolvedInterfaces, {
+    spaces: 2,
+  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
@@ -213,7 +222,7 @@ async function scanForFacets(
   return facets;
 }
 
-export const BYTES32_HEX_REGEXP = /(0x[a-fA-F0-9]{8}|[A-Za-z0-9]+)/g;
+export const BYTES32_HEX_REGEXP = /(0x[a-fA-F0-9]{8}|[A-Za-z0-9/\.:]+)/g;
 
 function stringListToArray(input: any): string[] {
   const items = [...input.matchAll(BYTES32_HEX_REGEXP)].map((match) => match[0]).filter((address) => Boolean(address));
@@ -235,6 +244,8 @@ async function resolveInterfaces(input: string[]): Promise<string[]> {
     const eip165InterfaceId = getInterfaceID(iface);
 
     interfaces.push(eip165InterfaceId.toHexString());
+
+    resolvedInterfaces[item] = eip165InterfaceId.toHexString();
   }
 
   return interfaces;
