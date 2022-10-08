@@ -12,13 +12,6 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
     /**
      * @inheritdoc IERC721ABase
      */
-    function totalSupply() external view virtual returns (uint256) {
-        return _totalSupply();
-    }
-
-    /**
-     * @inheritdoc IERC721ABase
-     */
     function balanceOf(address owner) external view virtual returns (uint256) {
         return _balanceOf(owner);
     }

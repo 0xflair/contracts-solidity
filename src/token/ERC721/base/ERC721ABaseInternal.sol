@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/utils/Context.sol";
 import { ERC721A__IERC721ReceiverUpgradeable } from "erc721a-upgradeable/contracts/ERC721AUpgradeable.sol";
 import "erc721a-upgradeable/contracts/ERC721AStorage.sol";
 
+import "../extensions/supply/ERC721SupplyStorage.sol";
 import "./IERC721AInternal.sol";
 
 /**
@@ -14,6 +15,7 @@ import "./IERC721AInternal.sol";
  */
 contract ERC721ABaseInternal is IERC721AInternal, Context {
     using ERC721AStorage for ERC721AStorage.Layout;
+    using ERC721SupplyStorage for ERC721SupplyStorage.Layout;
 
     // =============================================================
     //                           CONSTANTS
@@ -71,41 +73,13 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
     // =============================================================
 
     /**
-     * @dev Returns the starting token ID.
-     * To change the starting token ID, please override this function.
-     */
-    function _startTokenId() internal view virtual returns (uint256) {
-        return 0;
-    }
-
-    /**
-     * @dev Returns the next token ID to be minted.
-     */
-    function _nextTokenId() internal view virtual returns (uint256) {
-        return ERC721AStorage.layout()._currentIndex;
-    }
-
-    /**
-     * @dev Returns the total number of tokens in existence.
-     * Burned tokens will reduce the count.
-     * To get the total number of tokens minted, please see {_totalMinted}.
-     */
-    function _totalSupply() internal view virtual returns (uint256) {
-        // Counter underflow is impossible as _burnCounter cannot be incremented
-        // more than `_currentIndex - _startTokenId()` times.
-        unchecked {
-            return ERC721AStorage.layout()._currentIndex - ERC721AStorage.layout()._burnCounter - _startTokenId();
-        }
-    }
-
-    /**
      * @dev Returns the total amount of tokens minted in the contract.
      */
     function _totalMinted() internal view virtual returns (uint256) {
         // Counter underflow is impossible as `_currentIndex` does not decrement,
-        // and it is initialized to `_startTokenId()`.
+        // and it is initialized to 0.
         unchecked {
-            return ERC721AStorage.layout()._currentIndex - _startTokenId();
+            return ERC721SupplyStorage.layout().currentIndex;
         }
     }
 
@@ -113,7 +87,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
      * @dev Returns the total number of tokens burned.
      */
     function _totalBurned() internal view virtual returns (uint256) {
-        return ERC721AStorage.layout()._burnCounter;
+        return ERC721SupplyStorage.layout().burnCounter;
     }
 
     // =============================================================
@@ -221,26 +195,25 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
         uint256 curr = tokenId;
 
         unchecked {
-            if (_startTokenId() <= curr)
-                if (curr < ERC721AStorage.layout()._currentIndex) {
-                    uint256 packed = ERC721AStorage.layout()._packedOwnerships[curr];
-                    // If not burned.
-                    if (packed & _BITMASK_BURNED == 0) {
-                        // Invariant:
-                        // There will always be an initialized ownership slot
-                        // (i.e. `ownership.addr != address(0) && ownership.burned == false`)
-                        // before an unintialized ownership slot
-                        // (i.e. `ownership.addr == address(0) && ownership.burned == false`)
-                        // Hence, `curr` will not underflow.
-                        //
-                        // We can directly compare the packed value.
-                        // If the address is zero, packed will be zero.
-                        while (packed == 0) {
-                            packed = ERC721AStorage.layout()._packedOwnerships[--curr];
-                        }
-                        return packed;
+            if (curr < ERC721SupplyStorage.layout().currentIndex) {
+                uint256 packed = ERC721AStorage.layout()._packedOwnerships[curr];
+                // If not burned.
+                if (packed & _BITMASK_BURNED == 0) {
+                    // Invariant:
+                    // There will always be an initialized ownership slot
+                    // (i.e. `ownership.addr != address(0) && ownership.burned == false`)
+                    // before an unintialized ownership slot
+                    // (i.e. `ownership.addr == address(0) && ownership.burned == false`)
+                    // Hence, `curr` will not underflow.
+                    //
+                    // We can directly compare the packed value.
+                    // If the address is zero, packed will be zero.
+                    while (packed == 0) {
+                        packed = ERC721AStorage.layout()._packedOwnerships[--curr];
                     }
+                    return packed;
                 }
+            }
         }
         revert OwnerQueryForNonexistentToken();
     }
@@ -357,8 +330,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
      */
     function _exists(uint256 tokenId) internal view virtual returns (bool) {
         return
-            _startTokenId() <= tokenId &&
-            tokenId < ERC721AStorage.layout()._currentIndex && // If within bounds,
+            tokenId < ERC721SupplyStorage.layout().currentIndex && // If within bounds,
             ERC721AStorage.layout()._packedOwnerships[tokenId] & _BITMASK_BURNED == 0; // and not burned.
     }
 
@@ -464,7 +436,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
                 // If the next slot's address is zero and not burned (i.e. packed value is zero).
                 if (ERC721AStorage.layout()._packedOwnerships[nextTokenId] == 0) {
                     // If the next slot is within bounds.
-                    if (nextTokenId != ERC721AStorage.layout()._currentIndex) {
+                    if (nextTokenId != ERC721SupplyStorage.layout().currentIndex) {
                         // Initialize the next slot to maintain correctness for `ownerOf(tokenId + 1)`.
                         ERC721AStorage.layout()._packedOwnerships[nextTokenId] = prevOwnershipPacked;
                     }
@@ -607,7 +579,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
      * Emits a {Transfer} event for each mint.
      */
     function _mint(address to, uint256 quantity) internal virtual {
-        uint256 startTokenId = ERC721AStorage.layout()._currentIndex;
+        uint256 startTokenId = ERC721SupplyStorage.layout().currentIndex;
         if (quantity == 0) revert MintZeroQuantity();
 
         _beforeTokenTransfers(address(0), to, startTokenId, quantity);
@@ -664,7 +636,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
             }
             if (toMasked == 0) revert MintToZeroAddress();
 
-            ERC721AStorage.layout()._currentIndex = end;
+            ERC721SupplyStorage.layout().currentIndex = end;
         }
         _afterTokenTransfers(address(0), to, startTokenId, quantity);
     }
@@ -691,7 +663,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
      * Emits a {ConsecutiveTransfer} event.
      */
     function _mintERC2309(address to, uint256 quantity) internal virtual {
-        uint256 startTokenId = ERC721AStorage.layout()._currentIndex;
+        uint256 startTokenId = ERC721SupplyStorage.layout().currentIndex;
         if (to == address(0)) revert MintToZeroAddress();
         if (quantity == 0) revert MintZeroQuantity();
         if (quantity > _MAX_MINT_ERC2309_QUANTITY_LIMIT) revert MintERC2309QuantityExceedsLimit();
@@ -719,7 +691,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
 
             emit ConsecutiveTransfer(startTokenId, startTokenId + quantity - 1, address(0), to);
 
-            ERC721AStorage.layout()._currentIndex = startTokenId + quantity;
+            ERC721SupplyStorage.layout().currentIndex = startTokenId + quantity;
         }
         _afterTokenTransfers(address(0), to, startTokenId, quantity);
     }
@@ -746,7 +718,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
 
         unchecked {
             if (to.code.length != 0) {
-                uint256 end = ERC721AStorage.layout()._currentIndex;
+                uint256 end = ERC721SupplyStorage.layout().currentIndex;
                 uint256 index = end - quantity;
                 do {
                     if (!_checkContractOnERC721Received(address(0), to, index++, _data)) {
@@ -754,7 +726,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
                     }
                 } while (index < end);
                 // Reentrancy protection.
-                if (ERC721AStorage.layout()._currentIndex != end) revert();
+                if (ERC721SupplyStorage.layout().currentIndex != end) revert();
             }
         }
     }
@@ -838,7 +810,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
                 // If the next slot's address is zero and not burned (i.e. packed value is zero).
                 if (ERC721AStorage.layout()._packedOwnerships[nextTokenId] == 0) {
                     // If the next slot is within bounds.
-                    if (nextTokenId != ERC721AStorage.layout()._currentIndex) {
+                    if (nextTokenId != ERC721SupplyStorage.layout().currentIndex) {
                         // Initialize the next slot to maintain correctness for `ownerOf(tokenId + 1)`.
                         ERC721AStorage.layout()._packedOwnerships[nextTokenId] = prevOwnershipPacked;
                     }
@@ -851,7 +823,7 @@ contract ERC721ABaseInternal is IERC721AInternal, Context {
 
         // Overflow not possible, as _burnCounter cannot be exceed _currentIndex times.
         unchecked {
-            ERC721AStorage.layout()._burnCounter++;
+            ERC721SupplyStorage.layout().burnCounter++;
         }
     }
 

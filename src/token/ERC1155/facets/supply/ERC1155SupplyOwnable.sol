@@ -14,8 +14,8 @@ import "./IERC1155SupplyAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies 0xd9b67a26 0x744f4bd4
- * @custom:provides-interfaces 0xf0d6039e
+ * @custom:peer-dependencies IERC1155SupplyExtension
+ * @custom:provides-interfaces IERC1155SupplyAdmin
  */
 contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, OwnableInternal {
     using ERC1155SupplyStorage for ERC1155SupplyStorage.Layout;
@@ -46,6 +46,24 @@ contract ERC1155SupplyOwnable is IERC1155SupplyAdmin, ERC1155SupplyInternal, Own
     function freezeMaxSupplyBatch(uint256[] calldata tokenIds) public virtual onlyOwner {
         for (uint256 i = 0; i < tokenIds.length; i++) {
             ERC1155SupplyAdminStorage.layout().maxSupplyFrozen[tokenIds[i]] = true;
+        }
+    }
+
+    /**
+     * @dev Seta maximum amount of tokens possible to exist for a given token ID.
+     */
+    function _setMaxSupply(uint256 tokenId, uint256 newValue) internal {
+        ERC1155SupplyStorage.layout().maxSupply[tokenId] = newValue;
+    }
+
+    /**
+     * @dev Sets maximum amount of tokens possible to exist for multiple token IDs.
+     */
+    function _setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) internal {
+        mapping(uint256 => uint256) storage l = ERC1155SupplyStorage.layout().maxSupply;
+
+        for (uint256 i = 0; i < tokenIds.length; i++) {
+            l[tokenIds[i]] = newValues[i];
         }
     }
 }

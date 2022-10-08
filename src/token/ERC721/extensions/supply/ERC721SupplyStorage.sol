@@ -4,6 +4,11 @@ pragma solidity 0.8.15;
 
 library ERC721SupplyStorage {
     struct Layout {
+        // The next token ID to be minted.
+        uint256 currentIndex;
+        // The number of tokens burned.
+        uint256 burnCounter;
+        // Maximum possible supply of tokens.
         uint256 maxSupply;
     }
 

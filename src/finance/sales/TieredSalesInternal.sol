@@ -84,7 +84,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         // Substract all the remaining reserved spots from the total remaining supply...
-        remaining = _remainingSupplyForTier(tierId) - (l.totalReserved - l.reservedMints);
+        remaining = _remainingSupply(tierId) - (l.totalReserved - l.reservedMints);
 
         // If this tier has reserved spots, add remaining spots back to result...
         if (l.tiers[tierId].reserved > 0) {
@@ -122,9 +122,10 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
-    function _remainingSupplyForTier(
+    function _remainingSupply(
         uint256 /*tierId*/
     ) internal view virtual returns (uint256) {
+        // By default assume supply is unlimited (that means reserving allocation for tiers is irrelevant)
         return type(uint256).max;
     }
 

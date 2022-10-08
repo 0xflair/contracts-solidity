@@ -3,10 +3,10 @@
 pragma solidity 0.8.15;
 
 import "./base/ERC1155Base.sol";
-import "./extensions/supply/ERC1155Supply.sol";
-import "./extensions/lockable/ERC1155Lockable.sol";
-import "./extensions/mintable/ERC1155Mintable.sol";
-import "./extensions/burnable/ERC1155Burnable.sol";
+import "./extensions/supply/ERC1155SupplyExtension.sol";
+import "./extensions/lockable/ERC1155LockableExtension.sol";
+import "./extensions/mintable/ERC1155MintableExtension.sol";
+import "./extensions/burnable/ERC1155BurnableExtension.sol";
 
 /**
  * @title ERC1155 - Standard
@@ -14,9 +14,15 @@ import "./extensions/burnable/ERC1155Burnable.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:provides-interfaces IERC1155 IERC1155Burnable IERC1155Lockable IERC1155Mintable IERC1155Supply IERC1155SupplyExtra
+ * @custom:provides-interfaces IERC1155 IERC1155BurnableExtension IERC1155LockableExtension IERC1155MintableExtension IERC1155SupplyExtension IERC1155SupplyExtra
  */
-contract ERC1155 is ERC1155Base, ERC1155Supply, ERC1155Mintable, ERC1155Burnable, ERC1155Lockable {
+contract ERC1155 is
+    ERC1155Base,
+    ERC1155SupplyExtension,
+    ERC1155MintableExtension,
+    ERC1155BurnableExtension,
+    ERC1155LockableExtension
+{
     /**
      * @notice inheritdoc IERC1155Metadata
      */

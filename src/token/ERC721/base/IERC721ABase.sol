@@ -125,15 +125,4 @@ interface IERC721ABase is IERC721AInternal {
      * See {setApprovalForAll}.
      */
     function isApprovedForAll(address owner, address operator) external view returns (bool);
-
-    // =============================================================
-    //                         TOKEN COUNTERS
-    // =============================================================
-
-    /**
-     * @dev Returns the total number of tokens in existence.
-     * Burned tokens will reduce the count.
-     * To get the total number of tokens minted, please see {_totalMinted}.
-     */
-    function totalSupply() external view returns (uint256);
 }

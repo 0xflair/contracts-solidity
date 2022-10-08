@@ -11,7 +11,7 @@ import "./ERC721TieredSales.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies IERC721Mintable
+ * @custom:required-dependencies IERC721MintableExtension
  * @custom:provides-interfaces ITieredSales
  */
 contract ERC721TieredSalesERC2771 is ERC721TieredSales, ERC2771ContextInternal {

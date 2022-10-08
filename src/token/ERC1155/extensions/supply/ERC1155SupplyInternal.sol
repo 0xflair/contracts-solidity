@@ -26,24 +26,6 @@ abstract contract ERC1155SupplyInternal is ERC1155BaseInternal {
     }
 
     /**
-     * @dev Seta maximum amount of tokens possible to exist for a given token ID.
-     */
-    function _setMaxSupply(uint256 tokenId, uint256 newValue) internal {
-        ERC1155SupplyStorage.layout().maxSupply[tokenId] = newValue;
-    }
-
-    /**
-     * @dev Sets maximum amount of tokens possible to exist for multiple token IDs.
-     */
-    function _setMaxSupplyBatch(uint256[] calldata tokenIds, uint256[] calldata newValues) internal {
-        mapping(uint256 => uint256) storage l = ERC1155SupplyStorage.layout().maxSupply;
-
-        for (uint256 i = 0; i < tokenIds.length; i++) {
-            l[tokenIds[i]] = newValues[i];
-        }
-    }
-
-    /**
      * @dev Indicates whether any token exist with a given id, or not.
      */
     function _exists(uint256 id) internal view virtual returns (bool) {

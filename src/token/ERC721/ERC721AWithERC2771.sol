@@ -3,10 +3,10 @@
 pragma solidity 0.8.15;
 
 import "./base/ERC721ABaseERC2771.sol";
-import "./extensions/supply/ERC721ASupply.sol";
-import "./extensions/lockable/ERC721ALockable.sol";
-import "./extensions/mintable/ERC721AMintable.sol";
-import "./extensions/burnable/ERC721ABurnable.sol";
+import "./extensions/supply/ERC721ASupplyExtension.sol";
+import "./extensions/lockable/ERC721ALockableExtension.sol";
+import "./extensions/mintable/ERC721AMintableExtension.sol";
+import "./extensions/burnable/ERC721ABurnableExtension.sol";
 
 /**
  * @title ERC721 (A) - With ERC2771 Context
@@ -14,9 +14,15 @@ import "./extensions/burnable/ERC721ABurnable.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:provides-interfaces IERC721 IERC721ABase IERC721Supply IERC721Mintable IERC721Lockable IERC721Burnable
+ * @custom:provides-interfaces IERC721 IERC721ABase IERC721Supply IERC721MintableExtension IERC721LockableExtension IERC721BurnableExtension
  */
-contract ERC721AWithERC2771 is ERC721ABaseERC2771, ERC721ASupply, ERC721AMintable, ERC721ABurnable, ERC721ALockable {
+contract ERC721AWithERC2771 is
+    ERC721ABaseERC2771,
+    ERC721ASupplyExtension,
+    ERC721AMintableExtension,
+    ERC721ABurnableExtension,
+    ERC721ALockableExtension
+{
     /**
      * @dev See {ERC721A-_beforeTokenTransfer}.
      */
@@ -25,7 +31,7 @@ contract ERC721AWithERC2771 is ERC721ABaseERC2771, ERC721ASupply, ERC721AMintabl
         address to,
         uint256 startTokenId,
         uint256 quantity
-    ) internal virtual override(ERC721ABaseInternal, ERC721ALockableInternal, ERC721ASupplyInternal) {
+    ) internal virtual override(ERC721ABaseInternal, ERC721ALockableInternal, ERC721ASupplyExtension) {
         super._beforeTokenTransfers(from, to, startTokenId, quantity);
     }
 
@@ -35,12 +41,5 @@ contract ERC721AWithERC2771 is ERC721ABaseERC2771, ERC721ASupply, ERC721AMintabl
 
     function _msgData() internal view virtual override(Context, ERC721ABaseERC2771) returns (bytes calldata) {
         return ERC721ABaseERC2771._msgData();
-    }
-
-    /**
-     * @dev See {ERC721A-_totalSupply}.
-     */
-    function totalSupply() external view virtual override(ERC721ABase, IERC721Supply) returns (uint256) {
-        return ERC721ABaseInternal._totalSupply();
     }
 }

@@ -6,9 +6,9 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
 import "../../../../introspection/ERC165Storage.sol";
 import "../../../../finance/sales/TieredSales.sol";
-import "../../extensions/mintable/IERC1155Mintable.sol";
+import "../../extensions/mintable/IERC1155MintableExtension.sol";
 import "../../extensions/supply/ERC1155SupplyStorage.sol";
-import "../../extensions/supply/IERC1155Supply.sol";
+import "../../extensions/supply/IERC1155SupplyExtension.sol";
 import "./ERC1155TieredSalesStorage.sol";
 import "./IERC1155TieredSales.sol";
 
@@ -18,8 +18,8 @@ import "./IERC1155TieredSales.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies 0xbb774d48
- * @custom:provides-interfaces 0x79f33254 0x5ae18a74
+ * @custom:required-dependencies IERC1155MintableExtension
+ * @custom:provides-interfaces ITieredSales IERC1155TieredSales
  */
 contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales {
     using ERC165Storage for ERC165Storage.Layout;
@@ -34,7 +34,7 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
     ) external payable virtual nonReentrant {
         super._executeSale(tierId, count, maxAllowance, proof);
 
-        IERC1155Mintable(address(this)).mintByFacet(
+        IERC1155MintableExtension(address(this)).mintByFacet(
             _msgSender(),
             ERC1155TieredSalesStorage.layout().tierToTokenId[tierId],
             count,
@@ -56,8 +56,8 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         return tokenIds;
     }
 
-    function _remainingSupplyForTier(uint256 tierId) internal view virtual override returns (uint256) {
-        if (!ERC165Storage.layout().supportedInterfaces[type(IERC1155Supply).interfaceId]) {
+    function _remainingSupply(uint256 tierId) internal view virtual override returns (uint256) {
+        if (!ERC165Storage.layout().supportedInterfaces[type(IERC1155SupplyExtension).interfaceId]) {
             return type(uint256).max;
         }
 

@@ -2,12 +2,10 @@
 
 pragma solidity 0.8.15;
 
-import "./IERC721SupplyInternal.sol";
-
 /**
  * @dev Extension of {ERC721} that tracks supply and defines a max supply cap.
  */
-interface IERC721Supply is IERC721SupplyInternal {
+interface IERC721Supply {
     /**
      * @dev Total amount of tokens that exist in the collection.
      */

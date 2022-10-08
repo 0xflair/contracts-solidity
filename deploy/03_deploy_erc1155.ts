@@ -23,14 +23,14 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155Metadata', []);
 
   // Lockable
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockByOwner', []);
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockByRole', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockableOwnable', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155LockableRoleBased', []);
 
   // Mintable
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintByOwner', []);
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintByOwnerERC2771', []);
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintByRole', []);
-  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintByRoleERC2771', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintableOwnable', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintableOwnableERC2771', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintableRoleBased', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155MintableRoleBasedERC2771', []);
 
   // Tiered Sales
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC1155TieredSales', []);
