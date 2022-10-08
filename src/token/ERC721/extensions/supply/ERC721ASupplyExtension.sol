@@ -8,14 +8,8 @@ import "../../base/ERC721ABaseInternal.sol";
 import "./ERC721SupplyStorage.sol";
 import "./ERC721SupplyInternal.sol";
 import "./IERC721SupplyExtension.sol";
-import "./IERC721Supply.sol";
 
-abstract contract ERC721ASupplyExtension is
-    IERC721Supply,
-    IERC721SupplyExtension,
-    ERC721ABaseInternal,
-    ERC721SupplyInternal
-{
+abstract contract ERC721ASupplyExtension is IERC721SupplyExtension, ERC721ABaseInternal, ERC721SupplyInternal {
     using ERC721SupplyStorage for ERC721SupplyStorage.Layout;
 
     function totalSupply() external view virtual override returns (uint256) {

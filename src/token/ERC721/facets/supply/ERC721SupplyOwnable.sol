@@ -13,7 +13,7 @@ import "./IERC721SupplyAdmin.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:peer-dependencies IERC721Supply
+ * @custom:peer-dependencies IERC721SupplyExtension
  * @custom:provides-interfaces IERC721SupplyAdmin
  */
 contract ERC721SupplyOwnable is IERC721SupplyAdmin, OwnableInternal {
@@ -30,5 +30,9 @@ contract ERC721SupplyOwnable is IERC721SupplyAdmin, OwnableInternal {
 
     function freezeMaxSupply() public virtual onlyOwner {
         ERC721SupplyAdminStorage.layout().maxSupplyFrozen = true;
+    }
+
+    function maxSupplyFrozen() public view virtual override returns (bool) {
+        return ERC721SupplyAdminStorage.layout().maxSupplyFrozen;
     }
 }

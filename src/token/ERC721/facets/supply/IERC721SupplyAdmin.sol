@@ -8,4 +8,6 @@ interface IERC721SupplyAdmin {
     function setMaxSupply(uint256 newValue) external;
 
     function freezeMaxSupply() external;
+
+    function maxSupplyFrozen() external view returns (bool);
 }

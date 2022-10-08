@@ -465,8 +465,8 @@
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "addresses": {
-      "5": "0x5bfD2a978c5dEA4D12DB31738DfF1a89a07c899E",
-      "goerli": "0x5bfD2a978c5dEA4D12DB31738DfF1a89a07c899E"
+      "5": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5",
+      "goerli": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -500,8 +500,9 @@
       "0x80ac58cd",
       "0xcdbde6dc",
       "0x645b6d4b",
+      "0xc82b5d4d",
       "0x459bd11c",
-      "0xc82b5d4d"
+      "0xb45a3c0e"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -513,8 +514,8 @@
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
-      "5": "0x781f7722E76302Fe12E2d665669b7C040Dc1d14E",
-      "goerli": "0x781f7722E76302Fe12E2d665669b7C040Dc1d14E"
+      "5": "0x19737CE758700bba4dEA9B6769045B4a5C206608",
+      "goerli": "0x19737CE758700bba4dEA9B6769045B4a5C206608"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -740,17 +741,18 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
     "addresses": {
-      "5": "0xA493aEb4468Cd4f32f25ebd5d0B75e5585BE275e",
-      "goerli": "0xA493aEb4468Cd4f32f25ebd5d0B75e5585BE275e"
+      "5": "0x8C59422229D9fD731B34B3586cAC46ce5Bbf384E",
+      "goerli": "0x8C59422229D9fD731B34B3586cAC46ce5Bbf384E"
     },
     "functionSelectors": [
       "freezeMaxSupply()",
+      "maxSupplyFrozen()",
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
     "version": "2.13.0",
     "providesInterfaces": [
-      "0x79ff02b7"
+      "0x8a7b7298"
     ],
     "peerDependencies": [
       "0xcdbde6dc"
@@ -764,8 +766,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "addresses": {
-      "5": "0x46eeC512497285f134Fdad67F6F7Cb341559129b",
-      "goerli": "0x46eeC512497285f134Fdad67F6F7Cb341559129b"
+      "5": "0x79Fb49Cb22Cd08799F7aF3Cd1317EbfcC6130881",
+      "goerli": "0x79Fb49Cb22Cd08799F7aF3Cd1317EbfcC6130881"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",
@@ -796,8 +798,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "addresses": {
-      "5": "0x3230539d252290C97aeA008301Fc5fF0CDa25DD1",
-      "goerli": "0x3230539d252290C97aeA008301Fc5fF0CDa25DD1"
+      "5": "0x552839625f5F52C4F6d8C39f0f88B117622e81C0",
+      "goerli": "0x552839625f5F52C4F6d8C39f0f88B117622e81C0"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",

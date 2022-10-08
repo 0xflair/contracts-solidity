@@ -5,8 +5,9 @@ pragma solidity 0.8.15;
 import "@openzeppelin/contracts/utils/structs/BitMaps.sol";
 
 import "../../base/ERC721ABaseInternal.sol";
+import "./IERC721SupplyInternal.sol";
 
-abstract contract ERC721SupplyInternal {
+abstract contract ERC721SupplyInternal is IERC721SupplyInternal {
     using ERC721SupplyStorage for ERC721SupplyStorage.Layout;
 
     function _totalSupply() internal view virtual returns (uint256) {

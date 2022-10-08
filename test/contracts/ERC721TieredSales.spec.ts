@@ -12,7 +12,7 @@ import {
   ERC721SupplyOwnable,
   ERC721TieredSales,
   IERC721,
-  IERC721Supply,
+  IERC721SupplyExtension,
   TieredSalesOwnable,
 } from '../../src/typechain';
 import { setupTest } from '../setup';
@@ -1422,7 +1422,7 @@ describe('ERC721 Tiered Sales', function () {
         },
       ],
     });
-    const supplyExtension = await hre.ethers.getContractAt<IERC721Supply>('IERC721Supply', diamond.address);
+    const supplyExtension = await hre.ethers.getContractAt<IERC721SupplyExtension>('IERC721SupplyExtension', diamond.address);
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(0)).to.be.equal(10);

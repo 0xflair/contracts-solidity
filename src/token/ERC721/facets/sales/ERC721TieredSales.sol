@@ -16,7 +16,7 @@ import "../../extensions/supply/ERC721SupplyInternal.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies IERC721MintableExtension IERC721Supply
+ * @custom:required-dependencies IERC721MintableExtension IERC721SupplyExtension
  * @custom:provides-interfaces ITieredSales
  */
 contract ERC721TieredSales is ReentrancyGuard, TieredSales, ERC721SupplyInternal {

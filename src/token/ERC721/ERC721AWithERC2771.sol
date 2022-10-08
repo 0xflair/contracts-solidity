@@ -14,7 +14,7 @@ import "./extensions/burnable/ERC721ABurnableExtension.sol";
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:provides-interfaces IERC721 IERC721ABase IERC721Supply IERC721MintableExtension IERC721LockableExtension IERC721BurnableExtension
+ * @custom:provides-interfaces IERC721 IERC721ABase IERC721SupplyExtension IERC721MintableExtension IERC721LockableExtension IERC721BurnableExtension
  */
 contract ERC721AWithERC2771 is
     ERC721ABaseERC2771,
