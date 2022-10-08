@@ -6,7 +6,7 @@ import "../../../../metatx/ERC2771ContextInternal.sol";
 import "./ERC721MintableOwnable.sol";
 
 /**
- * @title ERC721 - Mint as Owner - With ERC2771 Context
+ * @title ERC721 - Mint as owner - With ERC2771 Context
  * @notice Allow minting as owner via meta transactions, signed by the owner private key. (supports ERC721A)
  *
  * @custom:type eip-2535-facet

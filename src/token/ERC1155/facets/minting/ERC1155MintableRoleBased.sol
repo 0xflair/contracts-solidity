@@ -9,7 +9,7 @@ import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155MintableRoleBased.sol";
 
 /**
- * @title ERC1155 - Mint as Role
+ * @title ERC1155 - Mint as role
  * @notice Allow minting for grantees of MINTER_ROLE.
  *
  * @custom:type eip-2535-facet

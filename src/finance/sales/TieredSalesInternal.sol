@@ -105,7 +105,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
 
         require(count <= maxMintable, "EXCEEDS_MAX");
-        require(count <= _availableSupplyForTier(tierId), "EXCEEDS_ALLOCATION");
+        require(count <= _availableSupplyForTier(tierId), "EXCEEDS_SUPPLY");
         require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
         if (l.tiers[tierId].currency == address(0)) {

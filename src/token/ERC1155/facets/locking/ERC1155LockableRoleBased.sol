@@ -9,7 +9,7 @@ import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155LockableRoleBased.sol";
 
 /**
- * @title ERC1155 - Lock as Role
+ * @title ERC1155 - Lock as role
  * @notice Allow locking tokens by any sender who has the LOCKER_ROLE.
  *
  * @custom:type eip-2535-facet

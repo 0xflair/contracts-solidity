@@ -9,7 +9,7 @@ import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155MintableOwnable.sol";
 
 /**
- * @title ERC1155 - Mint as Owner
+ * @title ERC1155 - Mint as owner
  * @notice Allow minting as contract owner with no restrictions.
  *
  * @custom:type eip-2535-facet

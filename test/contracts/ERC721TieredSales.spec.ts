@@ -9,12 +9,12 @@ import hre from 'hardhat';
 import {
   DiamondLoupe,
   ERC165,
-  ERC1155SupplyExtension,
-  ERC1155SupplyOwnable,
-  ERC1155TieredSales,
+  ERC721SupplyOwnable,
+  ERC721TieredSales,
+  IERC721,
+  IERC721Supply,
   TieredSalesOwnable,
 } from '../../src/typechain';
-import { ERC1155Base } from '../../src/typechain/ERC1155Base';
 import { setupTest } from '../setup';
 import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
@@ -44,22 +44,22 @@ const DEFAULT_TIERS: Tier[] = [
   },
 ];
 
-const deployERC1155WithSales = async ({
+const deployERC721WithSales = async ({
   tiers = DEFAULT_TIERS,
   initializations = [],
 }: {
-  tiers?: (Tier & { overrideTokenId?: BigNumberish })[];
+  tiers?: Tier[];
   initializations?: Initialization[];
 } = {}) => {
   return deployDiamond({
     facets: [
       // Base
-      'ERC1155',
+      'ERC721A',
       // Features
-      'ERC1155TieredSales',
+      'ERC721TieredSales',
       // Administration
       'ERC165Ownable',
-      'ERC1155SupplyOwnable',
+      'ERC721SupplyOwnable',
       'TieredSalesOwnable',
     ],
     initializations: [
@@ -69,35 +69,25 @@ const deployERC1155WithSales = async ({
         args: [['0xd9b67a26', '0x744f4bd4'], []],
       },
       {
-        facet: 'ERC1155SupplyOwnable',
+        facet: 'ERC721SupplyOwnable',
         function: 'setMaxSupply',
-        args: [0, 8000],
-      },
-      {
-        facet: 'ERC1155SupplyOwnable',
-        function: 'setMaxSupply',
-        args: [1, 8000],
+        args: [8000],
       },
       {
         facet: 'TieredSalesOwnable',
         function: 'configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])',
         args: [Object.keys(tiers), Object.values(tiers)],
       },
-      {
-        facet: 'ERC1155TieredSalesOwnable',
-        function: 'configureTierTokenId(uint256[],uint256[])',
-        args: [Object.keys(tiers), tiers.map((t, i) => (t.overrideTokenId !== undefined ? t.overrideTokenId : i))], // Use tier index as token id
-      },
       ...initializations,
     ],
   });
 };
 
-describe('ERC1155 Tiered Sales', function () {
+describe('ERC721 Tiered Sales', function () {
   it('should return facets', async function () {
     await setupTest();
 
-    const diamond = await deployERC1155WithSales();
+    const diamond = await deployERC721WithSales();
     const diamondLoupeFacet = await hre.ethers.getContractAt<DiamondLoupe>('DiamondLoupe', diamond.address);
 
     const facets = await diamondLoupeFacet.facets();
@@ -108,10 +98,10 @@ describe('ERC1155 Tiered Sales', function () {
   it('should return true when checking interfaces', async function () {
     await setupTest();
 
-    const diamond = await deployERC1155WithSales();
+    const diamond = await deployERC721WithSales();
     const erc165Facet = await hre.ethers.getContractAt<ERC165>('src/introspection/ERC165.sol:ERC165', diamond.address);
 
-    // ERC1155
+    // ERC721
     expect(await erc165Facet.supportsInterface('0xd9b67a26')).to.be.equal(true);
   });
 
@@ -133,7 +123,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -148,8 +138,8 @@ describe('ERC1155 Tiered Sales', function () {
       ],
     });
 
-    const erc1155Facet = await hre.ethers.getContractAt<ERC1155Base>('ERC1155Base', diamond.address);
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const erc721Facet = await hre.ethers.getContractAt<IERC721>('IERC721', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -212,29 +202,28 @@ describe('ERC1155 Tiered Sales', function () {
       ),
     ).to.be.revertedWith('MAXED_ALLOWANCE');
 
-    expect(await erc1155Facet.balanceOf(userA.signer.address, 0)).to.equal(3);
+    expect(await erc721Facet.balanceOf(userA.signer.address)).to.equal(3);
   });
 
   it('should mint by tier when 1 tier, no allowlist, with native currency', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const erc1155Facet = await hre.ethers.getContractAt<ERC1155Base>('ERC1155Base', diamond.address);
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const erc721Facet = await hre.ethers.getContractAt<IERC721>('IERC721', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
       value: utils.parseEther('0.12'),
     });
 
-    expect(await erc1155Facet.balanceOf(userA.signer.address, 0)).to.be.equal(2);
-    expect(await erc1155Facet.balanceOf(userA.signer.address, 1)).to.be.equal(0);
+    expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
   });
 
   it('should get wallet minted amount by tier', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
       value: utils.parseEther('0.12'),
@@ -246,8 +235,8 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a non-existing tier', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
       tieredSalesFacet.connect(userA.signer).mintByTier(555, 2, 0, [], {
@@ -259,7 +248,7 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a tier that is not started yet', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) + 4 * 24 * 60 * 60,
@@ -273,7 +262,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
       tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
@@ -285,7 +274,7 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a tier that is already ended', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -299,7 +288,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
       tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
@@ -326,7 +315,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -340,7 +329,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userD.signer).onTierAllowlist(
@@ -392,7 +381,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -406,7 +395,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userB.signer).onTierAllowlist(
@@ -458,7 +447,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -472,7 +461,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -524,7 +513,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -538,7 +527,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -605,7 +594,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -619,7 +608,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -669,7 +658,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -683,7 +672,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -735,7 +724,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -749,7 +738,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -816,7 +805,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -830,7 +819,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userA.signer).onTierAllowlist(
@@ -912,7 +901,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -926,7 +915,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(
       0,
@@ -979,7 +968,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -993,7 +982,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
       tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
@@ -1020,7 +1009,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1034,7 +1023,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userB.signer).onTierAllowlist(
@@ -1086,7 +1075,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1100,7 +1089,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userB.signer).onTierAllowlist(
@@ -1149,7 +1138,7 @@ describe('ERC1155 Tiered Sales', function () {
         maxAllowance: 4,
       },
     ]);
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1163,7 +1152,7 @@ describe('ERC1155 Tiered Sales', function () {
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(
       await tieredSalesFacet.connect(userB.signer).onTierAllowlist(
@@ -1213,8 +1202,8 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a tier when max per wallet is reached', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 5, 0, [], {
       value: utils.parseEther('0.30'),
@@ -1230,8 +1219,8 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a tier and amount + prev mints is asking for more than remaining per-wallet allocation', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 4, 0, [], {
       value: utils.parseEther('0.24'),
@@ -1247,8 +1236,8 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail when minting a tier and not enough ether is sent', async function () {
     const { userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales();
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
       tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
@@ -1275,7 +1264,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1310,13 +1299,13 @@ describe('ERC1155 Tiered Sales', function () {
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [2, 8000],
+          args: [8000],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userB.signer).mintByTier(
       0,
@@ -1392,7 +1381,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1403,7 +1392,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1414,7 +1402,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('0.2'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1425,22 +1412,18 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('0.01'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const supplyExtension = await hre.ethers.getContractAt<ERC1155SupplyExtension>(
-      'ERC1155SupplyExtension',
-      diamond.address,
-    );
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const supplyExtension = await hre.ethers.getContractAt<IERC721Supply>('IERC721Supply', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(0)).to.be.equal(10);
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(1)).to.be.equal(5);
@@ -1480,7 +1463,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     );
 
-    expect(await supplyExtension.connect(userB.signer).totalSupply(33)).to.be.equal(5);
+    expect(await supplyExtension.connect(userB.signer).totalSupply()).to.be.equal(5);
     expect(await tieredSalesFacet.connect(userB.signer).tierMints(TIER_ZERO)).to.be.equal(2);
     expect(await tieredSalesFacet.connect(userB.signer).tierMints(TIER_ONE)).to.be.equal(3);
     expect(await tieredSalesFacet.connect(userB.signer).tierMints(TIER_TWO)).to.be.equal(0);
@@ -1493,25 +1476,25 @@ describe('ERC1155 Tiered Sales', function () {
       value: utils.parseEther('0.02'),
     });
 
-    expect(await supplyExtension.connect(userB.signer).totalSupply(33)).to.be.equal(7);
+    expect(await supplyExtension.connect(userB.signer).totalSupply()).to.be.equal(7);
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(TIER_ONE, 1, 1, [], {
         value: utils.parseEther('0.2'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(TIER_TWO, 1, 1, [], {
         value: utils.parseEther('0.01'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example B)', async function () {
     const { userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1522,7 +1505,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1533,7 +1515,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1544,7 +1525,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1555,18 +1535,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 20],
+          args: [20],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect([
       (await tieredSalesFacet.remainingForTier(0)).toString(),
@@ -1639,19 +1618,19 @@ describe('ERC1155 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
       value: utils.parseEther('1'),
@@ -1661,13 +1640,13 @@ describe('ERC1155 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
   });
 
   it('should fail to mint by tier if remaining allocation is fully reserved (example C)', async function () {
     const { userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1678,7 +1657,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 10,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1689,7 +1667,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1700,7 +1677,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1711,18 +1687,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 10,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 20],
+          args: [20],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect([
       (await tieredSalesFacet.remainingForTier(0)).toString(),
@@ -1745,19 +1720,19 @@ describe('ERC1155 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await tieredSalesFacet.connect(userB.signer).mintByTier(3, 10, 100, [], {
       value: utils.parseEther('10'),
@@ -1784,7 +1759,7 @@ describe('ERC1155 Tiered Sales', function () {
       },
     ]);
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1795,7 +1770,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1806,7 +1780,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1817,18 +1790,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
     const tieredSalesOwnableFacet = await hre.ethers.getContractAt<TieredSalesOwnable>(
       'TieredSalesOwnable',
       diamond.address,
@@ -1904,7 +1876,7 @@ describe('ERC1155 Tiered Sales', function () {
   it('should fail to mint by tier if remaining allocation is fully reserved and starts in future (example D)', async function () {
     const { userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1915,7 +1887,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1926,7 +1897,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1937,7 +1907,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) + 7 * 24 * 60 * 60,
@@ -1948,18 +1917,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 20],
+          args: [20],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect([
       (await tieredSalesFacet.remainingForTier(0)).toString(),
@@ -1989,7 +1957,7 @@ describe('ERC1155 Tiered Sales', function () {
       tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 1, [], {
         value: utils.parseEther('1'),
       }),
-    ).to.be.revertedWith('EXCEEDS_SUPPLY');
+    ).to.be.revertedWith('EXCEEDS_ALLOCATION');
 
     await expect(
       tieredSalesFacet.connect(userB.signer).mintByTier(3, 5, 5, [], {
@@ -1998,11 +1966,11 @@ describe('ERC1155 Tiered Sales', function () {
     ).to.be.revertedWith('NOT_STARTED');
   });
 
-  // TODO Should we override setMaxSupply when using TieredSales in 1155 cleanly?
+  // TODO Should we override setMaxSupply when using TieredSales in 721 cleanly?
   it.skip('should fail when total remaining supply become less than remaining reserved spots', async function () {
     const { deployer, userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2013,7 +1981,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2024,7 +1991,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2035,20 +2001,19 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
-    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC1155SupplyOwnable>(
-      'ERC1155SupplyOwnable',
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC721SupplyOwnable>(
+      'ERC721SupplyOwnable',
       diamond.address,
     );
 
@@ -2072,16 +2037,16 @@ describe('ERC1155 Tiered Sales', function () {
     ]).to.deep.equal(['7', '5', '5']);
 
     // changing total supply to be less than reserved spots
-    await expect(supplyOwnableFacet.connect(deployer.signer).setMaxSupply(33, 4)).to.be.revertedWith(
+    await expect(supplyOwnableFacet.connect(deployer.signer).setMaxSupply(33)).to.be.revertedWith(
       'LOWER_THAN_RESERVED',
     );
   });
 
-  // TODO Should we override setMaxSupply when using TieredSales in 1155 cleanly?
+  // TODO Should we override setMaxSupply when using TieredSales in 721 cleanly?
   it.skip('should fail when total remaining supply becomes less than already minted supply', async function () {
     const { deployer, userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2116,15 +2081,15 @@ describe('ERC1155 Tiered Sales', function () {
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
-    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC1155SupplyOwnable>(
-      'ERC1155SupplyOwnable',
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC721SupplyOwnable>(
+      'ERC721SupplyOwnable',
       diamond.address,
     );
 
@@ -2148,15 +2113,13 @@ describe('ERC1155 Tiered Sales', function () {
     ]).to.deep.equal(['7', '6', '5']);
 
     // changing total supply to be less than reserved spots
-    await expect(supplyOwnableFacet.connect(deployer.signer).setMaxSupply(33, 1)).to.be.revertedWith(
-      'LOWER_THAN_SUPPLY',
-    );
+    await expect(supplyOwnableFacet.connect(deployer.signer).setMaxSupply(33)).to.be.revertedWith('LOWER_THAN_SUPPLY');
   });
 
   it('should mint only reserved spots for a tier when new max supply equals total reserved spots', async function () {
     const { deployer, userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2167,7 +2130,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2178,7 +2140,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2189,20 +2150,19 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
-    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC1155SupplyOwnable>(
-      'ERC1155SupplyOwnable',
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const supplyOwnableFacet = await hre.ethers.getContractAt<ERC721SupplyOwnable>(
+      'ERC721SupplyOwnable',
       diamond.address,
     );
 
@@ -2226,7 +2186,7 @@ describe('ERC1155 Tiered Sales', function () {
     ]).to.deep.equal(['7', '5', '5']);
 
     // changing total supply to be less than reserved spots
-    await supplyOwnableFacet.connect(deployer.signer).setMaxSupply(33, 5);
+    await supplyOwnableFacet.connect(deployer.signer).setMaxSupply(5);
 
     expect([
       (await tieredSalesFacet.remainingForTier(0)).toString(),
@@ -2240,9 +2200,9 @@ describe('ERC1155 Tiered Sales', function () {
   });
 
   it('should fail to mint more than configured max supply', async function () {
-    const { userA, userB } = await setupTest();
+    const { deployer, userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2253,19 +2213,18 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
 
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 9, 9, [], {
       value: utils.parseEther('9'),
@@ -2285,7 +2244,7 @@ describe('ERC1155 Tiered Sales', function () {
   it('should mint for a tier with zero reserved if there is still supply and the reserved spots for that tier increases', async function () {
     const { deployer, userA, userB } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2296,7 +2255,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2307,7 +2265,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2318,18 +2275,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
     const tieredSalesOwnableFacet = await hre.ethers.getContractAt<TieredSalesOwnable>(
       'TieredSalesOwnable',
       diamond.address,
@@ -2378,11 +2334,11 @@ describe('ERC1155 Tiered Sales', function () {
     });
   });
 
-  // TODO Should we enforce max supply in tiered sales extension of 1155?
+  // TODO Should we enforce max supply in tiered sales extension of 721?
   it.skip('should not be ale to increase reserved spots for a tier when the whole supply is already reserved', async function () {
     const { deployer, userA } = await setupTest();
 
-    const diamond = await deployERC1155WithSales({
+    const diamond = await deployERC721WithSales({
       tiers: [
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2393,7 +2349,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2404,7 +2359,6 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2415,18 +2369,17 @@ describe('ERC1155 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
-          overrideTokenId: 33,
         },
       ],
       initializations: [
         {
-          facet: 'ERC1155SupplyOwnable',
+          facet: 'ERC721SupplyOwnable',
           function: 'setMaxSupply',
-          args: [33, 10],
+          args: [10],
         },
       ],
     });
-    const tieredSalesFacet = await hre.ethers.getContractAt<ERC1155TieredSales>('ERC1155TieredSales', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
     const tieredSalesOwnableFacet = await hre.ethers.getContractAt<TieredSalesOwnable>(
       'TieredSalesOwnable',
       diamond.address,

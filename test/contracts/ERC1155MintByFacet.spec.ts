@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import hre from 'hardhat';
 
-import { ERC1155Mintable, Multicall } from '../../src/typechain';
+import { ERC1155MintableExtension, Multicall } from '../../src/typechain';
 import { setupTest } from '../setup';
 import { deployDiamond } from '../utils/diamond';
 
@@ -18,13 +18,16 @@ const deployERC1155 = async () => {
   });
 };
 
-describe('ERC1155Mintable', function () {
+describe('ERC1155MintableExtension', function () {
   it('should not be able to mint when external account calls', async function () {
     const { userA } = await setupTest();
 
     const diamond = await deployERC1155();
 
-    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155MintableExtension>(
+      'ERC1155MintableExtension',
+      diamond.address,
+    );
 
     await expect(
       mintableFacet
@@ -40,7 +43,10 @@ describe('ERC1155Mintable', function () {
 
     const multiCallContract = await hre.ethers.getContractAt<Multicall>('Multicall', diamond.address);
 
-    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155MintableExtension>(
+      'ERC1155MintableExtension',
+      diamond.address,
+    );
 
     // @ts-ignore
     const callData = mintableFacet.interface.encodeFunctionData('mintByFacet(address,uint256,uint256,bytes)', [
@@ -60,7 +66,10 @@ describe('ERC1155Mintable', function () {
 
     const multiCallContract = await hre.ethers.getContractAt<Multicall>('Multicall', diamond.address);
 
-    const mintableFacet = await hre.ethers.getContractAt<ERC1155Mintable>('ERC1155Mintable', diamond.address);
+    const mintableFacet = await hre.ethers.getContractAt<ERC1155MintableExtension>(
+      'ERC1155MintableExtension',
+      diamond.address,
+    );
 
     // @ts-ignore
     const callData = mintableFacet.interface.encodeFunctionData('mintByFacet(address,uint256,uint256,bytes)', [

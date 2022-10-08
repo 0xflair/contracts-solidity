@@ -6,8 +6,8 @@ import "../../../../metatx/ERC2771ContextInternal.sol";
 import "./ERC1155MintableOwnable.sol";
 
 /**
- * @title ERC1155 - Mint as Owner - With ERC2771 Context
- * @notice Allow minting as owner via meta transactions (signed by the owner private key)
+ * @title ERC1155 - Mint as owner - with meta transactions
+ * @notice Allow minting as owner via ERC2771 Context meta transactions (signed by the owner private key)
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs

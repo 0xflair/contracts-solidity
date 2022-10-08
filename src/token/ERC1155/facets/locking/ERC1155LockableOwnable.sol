@@ -9,7 +9,7 @@ import "../../base/ERC1155BaseInternal.sol";
 import "./IERC1155LockableOwnable.sol";
 
 /**
- * @title ERC1155 - Lock as Owner
+ * @title ERC1155 - Lock as owner
  * @notice Allow locking tokens as the contract owner.
  *
  * @custom:type eip-2535-facet

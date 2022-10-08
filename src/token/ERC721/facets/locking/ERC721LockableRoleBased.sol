@@ -8,7 +8,7 @@ import "../../extensions/lockable/IERC721LockableExtension.sol";
 import "./IERC721LockableRoleBased.sol";
 
 /**
- * @title ERC721 - Lock as Role
+ * @title ERC721 - Lock as role
  * @notice Allow locking tokens by any sender who has the LOCKER_ROLE.
  *
  * @custom:type eip-2535-facet

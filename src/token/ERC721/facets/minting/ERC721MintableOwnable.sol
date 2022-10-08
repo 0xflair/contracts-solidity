@@ -8,7 +8,7 @@ import "../../extensions/mintable/IERC721MintableExtension.sol";
 import "./IERC721MintableOwnable.sol";
 
 /**
- * @title ERC721 - Mint as Owner
+ * @title ERC721 - Mint as owner
  * @notice Allow minting as contract owner with no restrictions (supports ERC721A).
  *
  * @custom:type eip-2535-facet

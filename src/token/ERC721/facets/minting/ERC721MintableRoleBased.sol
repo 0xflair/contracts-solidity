@@ -8,7 +8,7 @@ import "../../extensions/mintable/IERC721MintableExtension.sol";
 import "./IERC721MintableRoleBased.sol";
 
 /**
- * @title ERC721 - Mint as Role
+ * @title ERC721 - Mint as role
  * @notice Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).
  *
  * @custom:type eip-2535-facet

@@ -8,7 +8,7 @@ import "../../extensions/lockable/IERC721LockableExtension.sol";
 import "./IERC721LockableOwnable.sol";
 
 /**
- * @title ERC721 - Lock as Owner
+ * @title ERC721 - Lock as owner
  * @notice Allow locking tokens as the contract owner.
  *
  * @custom:type eip-2535-facet

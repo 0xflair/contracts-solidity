@@ -6,12 +6,12 @@ import "../../../../metatx/ERC2771ContextInternal.sol";
 import "./ERC1155MintableRoleBased.sol";
 
 /**
- * @title ERC1155 - Mint as Role - Meta-transactions
+ * @title ERC1155 - Mint as role - with meta transactions
  * @notice Allow minting for grantees of MINTER_ROLE with meta-transactions supported via ERC2771.
  *
  * @custom:type eip-2535-facet
  * @custom:category NFTs
- * @custom:required-dependencies IERC1155Mintable
+ * @custom:required-dependencies IERC1155MintableExtension
  * @custom:provides-interfaces IERC1155MintableRoleBased
  */
 contract ERC1155MintableRoleBasedERC2771 is ERC1155MintableRoleBased, ERC2771ContextInternal {
