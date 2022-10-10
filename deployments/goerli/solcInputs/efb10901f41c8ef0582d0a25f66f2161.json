@@ -1,0 +1,62 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "src/token/common/metadata/MetadataOwnable.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/utils/Strings.sol\";\n\nimport \"../../../access/ownable/OwnableInternal.sol\";\n\nimport \"./MetadataAdminInternal.sol\";\nimport \"./MetadataStorage.sol\";\nimport \"./IMetadataAdmin.sol\";\n\n/**\n * @title Metadata - Admin - Ownable\n * @notice Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.\n *\n * @custom:type eip-2535-facet\n * @custom:category NFTs\n * @custom:peer-dependencies IMetadata\n * @custom:provides-interfaces IMetadataAdmin\n */\ncontract MetadataOwnable is IMetadataAdmin, MetadataAdminInternal, OwnableInternal {\n    function setName(string calldata name) external virtual override onlyOwner {\n        _setName(name);\n    }\n\n    function setSymbol(string calldata symbol) external virtual override onlyOwner {\n        _setSymbol(symbol);\n    }\n\n    function lockNameAndSymbol() external virtual override onlyOwner {\n        _lockNameAndSymbol();\n    }\n\n    function setBaseURI(string calldata newBaseURI) public virtual onlyOwner {\n        _setBaseURI(newBaseURI);\n    }\n\n    function setFallbackURI(string calldata newFallbackURI) public virtual onlyOwner {\n        _setFallbackURI(newFallbackURI);\n    }\n\n    function setURISuffix(string calldata newURISuffix) public virtual onlyOwner {\n        _setURISuffix(newURISuffix);\n    }\n\n    function setURI(uint256 tokenId, string calldata newTokenURI) public virtual onlyOwner {\n        _setURI(tokenId, newTokenURI);\n    }\n\n    function setURIBatch(uint256[] calldata tokenIds, string[] calldata newTokenURIs) public virtual onlyOwner {\n        for (uint256 i = 0; i < tokenIds.length; i++) {\n            _setURI(tokenIds[i], newTokenURIs[i]);\n        }\n    }\n\n    function lockBaseURI() public virtual onlyOwner {\n        _lockBaseURI();\n    }\n\n    function lockFallbackURI() public virtual onlyOwner {\n        _lockFallbackURI();\n    }\n\n    function lockURISuffix() public virtual onlyOwner {\n        _lockURISuffix();\n    }\n\n    function lockURIUntil(uint256 tokenId) public virtual onlyOwner {\n        _lockURIUntil(tokenId);\n    }\n}\n"
+    },
+    "src/access/ownable/OwnableInternal.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"@openzeppelin/contracts/utils/Context.sol\";\n\nimport \"./OwnableStorage.sol\";\nimport \"./IERC173Events.sol\";\n\nabstract contract OwnableInternal is IERC173Events, Context {\n    using OwnableStorage for OwnableStorage.Layout;\n\n    modifier onlyOwner() {\n        require(_msgSender() == _owner(), \"Ownable: sender must be owner\");\n        _;\n    }\n\n    function _owner() internal view virtual returns (address) {\n        return OwnableStorage.layout().owner;\n    }\n\n    function _transferOwnership(address account) internal virtual {\n        OwnableStorage.layout().setOwner(account);\n        emit OwnershipTransferred(_msgSender(), account);\n    }\n}\n"
+    },
+    "src/token/common/metadata/MetadataAdminInternal.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nimport \"./IMetadataInternal.sol\";\nimport \"./MetadataStorage.sol\";\n\nabstract contract MetadataAdminInternal is IMetadataInternal {\n    function _setName(string calldata name) internal {\n        require(!MetadataStorage.layout().nameAndSymbolLocked, \"Metadata: name is locked\");\n        MetadataStorage.layout().name = name;\n    }\n\n    function _setSymbol(string calldata symbol) internal {\n        require(!MetadataStorage.layout().nameAndSymbolLocked, \"Metadata: symbol is locked\");\n        MetadataStorage.layout().symbol = symbol;\n    }\n\n    function _lockNameAndSymbol() internal {\n        MetadataStorage.layout().nameAndSymbolLocked = true;\n    }\n\n    function _setBaseURI(string memory baseURI) internal virtual {\n        require(!MetadataStorage.layout().baseURILocked, \"Metadata: baseURI locked\");\n        MetadataStorage.layout().baseURI = baseURI;\n    }\n\n    function _setFallbackURI(string memory baseURI) internal virtual {\n        require(!MetadataStorage.layout().fallbackURILocked, \"Metadata: fallbackURI locked\");\n        MetadataStorage.layout().baseURI = baseURI;\n    }\n\n    function _setURI(uint256 tokenId, string memory tokenURI) internal virtual {\n        require(tokenId <= MetadataStorage.layout().lastLockedTokenId, \"Metadata: tokenURI locked\");\n        MetadataStorage.layout().tokenURIs[tokenId] = tokenURI;\n        emit URI(tokenURI, tokenId);\n    }\n\n    function _setURISuffix(string memory uriSuffix) internal virtual {\n        require(!MetadataStorage.layout().uriSuffixLocked, \"Metadata: uriSuffix locked\");\n        MetadataStorage.layout().uriSuffix = uriSuffix;\n    }\n\n    function _lockBaseURI() internal virtual {\n        MetadataStorage.layout().baseURILocked = true;\n    }\n\n    function _lockFallbackURI() internal virtual {\n        MetadataStorage.layout().fallbackURILocked = true;\n    }\n\n    function _lockURIUntil(uint256 tokenId) internal virtual {\n        MetadataStorage.layout().lastLockedTokenId = tokenId;\n    }\n\n    function _lockURISuffix() internal virtual {\n        MetadataStorage.layout().uriSuffixLocked = true;\n    }\n}\n"
+    },
+    "src/token/common/metadata/MetadataStorage.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nlibrary MetadataStorage {\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"v2.flair.contracts.storage.Metadata\");\n\n    struct Layout {\n        string name;\n        string symbol;\n        bool nameAndSymbolLocked;\n        string baseURI;\n        bool baseURILocked;\n        string fallbackURI;\n        bool fallbackURILocked;\n        string uriSuffix;\n        bool uriSuffixLocked;\n        uint256 lastLockedTokenId;\n        mapping(uint256 => string) tokenURIs;\n    }\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
+    },
+    "src/token/common/metadata/IMetadataAdmin.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\ninterface IMetadataAdmin {\n    function setName(string calldata name) external;\n\n    function setSymbol(string calldata symbol) external;\n\n    function lockNameAndSymbol() external;\n\n    function setBaseURI(string calldata newBaseURI) external;\n\n    function setFallbackURI(string calldata newFallbackURI) external;\n\n    function setURISuffix(string calldata newURIPrefix) external;\n\n    function setURI(uint256 tokenId, string calldata newTokenURI) external;\n\n    function setURIBatch(uint256[] calldata tokenIds, string[] calldata newTokenURIs) external;\n\n    function lockBaseURI() external;\n\n    function lockFallbackURI() external;\n\n    function lockURISuffix() external;\n\n    function lockURIUntil(uint256 tokenId) external;\n}\n"
+    },
+    "@openzeppelin/contracts/utils/Strings.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev String operations.\n */\nlibrary Strings {\n    bytes16 private constant _HEX_SYMBOLS = \"0123456789abcdef\";\n    uint8 private constant _ADDRESS_LENGTH = 20;\n\n    /**\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\n     */\n    function toString(uint256 value) internal pure returns (string memory) {\n        // Inspired by OraclizeAPI's implementation - MIT licence\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\n\n        if (value == 0) {\n            return \"0\";\n        }\n        uint256 temp = value;\n        uint256 digits;\n        while (temp != 0) {\n            digits++;\n            temp /= 10;\n        }\n        bytes memory buffer = new bytes(digits);\n        while (value != 0) {\n            digits -= 1;\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\n            value /= 10;\n        }\n        return string(buffer);\n    }\n\n    /**\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\n     */\n    function toHexString(uint256 value) internal pure returns (string memory) {\n        if (value == 0) {\n            return \"0x00\";\n        }\n        uint256 temp = value;\n        uint256 length = 0;\n        while (temp != 0) {\n            length++;\n            temp >>= 8;\n        }\n        return toHexString(value, length);\n    }\n\n    /**\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\n     */\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\n        bytes memory buffer = new bytes(2 * length + 2);\n        buffer[0] = \"0\";\n        buffer[1] = \"x\";\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\n            value >>= 4;\n        }\n        require(value == 0, \"Strings: hex length insufficient\");\n        return string(buffer);\n    }\n\n    /**\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\n     */\n    function toHexString(address addr) internal pure returns (string memory) {\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\n    }\n}\n"
+    },
+    "src/access/ownable/OwnableStorage.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\nlibrary OwnableStorage {\n    struct Layout {\n        address owner;\n    }\n\n    bytes32 internal constant STORAGE_SLOT =\n        keccak256(\"openzeppelin.contracts.storage.Ownable\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n\n    function setOwner(Layout storage l, address owner) internal {\n        l.owner = owner;\n    }\n}\n"
+    },
+    "src/access/ownable/IERC173Events.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\n/**\n * @title Contract ownership standard interface (event only)\n * @dev see https://eips.ethereum.org/EIPS/eip-173\n */\ninterface IERC173Events {\n    event OwnershipTransferred(\n        address indexed previousOwner,\n        address indexed newOwner\n    );\n}\n"
+    },
+    "@openzeppelin/contracts/utils/Context.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\nabstract contract Context {\n    function _msgSender() internal view virtual returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view virtual returns (bytes calldata) {\n        return msg.data;\n    }\n}\n"
+    },
+    "src/token/common/metadata/IMetadataInternal.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity 0.8.15;\n\ninterface IMetadataInternal {\n    event URI(string value, uint256 indexed tokenId);\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 1337
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
