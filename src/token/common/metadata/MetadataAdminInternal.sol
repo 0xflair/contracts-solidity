@@ -31,7 +31,7 @@ abstract contract MetadataAdminInternal is IMetadataInternal {
     }
 
     function _setURI(uint256 tokenId, string memory tokenURI) internal virtual {
-        require(tokenId > MetadataStorage.layout().lastLockedTokenId, "Metadata: tokenURI locked");
+        require(tokenId <= MetadataStorage.layout().lastLockedTokenId, "Metadata: tokenURI locked");
         MetadataStorage.layout().tokenURIs[tokenId] = tokenURI;
         emit URI(tokenURI, tokenId);
     }
