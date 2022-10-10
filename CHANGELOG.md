@@ -1,3 +1,10 @@
+### [2.13.3](https://github.com/flair-sdk/contracts/compare/v2.13.2...v2.13.3) (2022-10-10)
+
+
+### Bug Fixes
+
+* correct locking for dedicated token URIs ([5a332b6](https://github.com/flair-sdk/contracts/commit/5a332b6b91dbb122f09c9635b81f08abe06ae1ac))
+
 ### [2.13.2](https://github.com/flair-sdk/contracts/compare/v2.13.1...v2.13.2) (2022-10-08)
 
 ### [2.13.1](https://github.com/flair-sdk/contracts/compare/v2.13.0...v2.13.1) (2022-10-08)
