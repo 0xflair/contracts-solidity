@@ -1,3 +1,11 @@
+## [2.14.0](https://github.com/flair-sdk/contracts/compare/v2.13.4...v2.14.0) (2022-10-11)
+
+
+### Features
+
+* create an supply internal contract for usage in immutable contracts ([632d6b9](https://github.com/flair-sdk/contracts/commit/632d6b9b2580764e1e5d9215a6dbdfbdb7ff6a23))
+* use diamond-style reentrancy guard ([90b62ec](https://github.com/flair-sdk/contracts/commit/90b62ecfd85789724c7b190a7bac2e7be21c22b5))
+
 ### [2.13.4](https://github.com/flair-sdk/contracts/compare/v2.13.3...v2.13.4) (2022-10-10)
 
 ### [2.13.3](https://github.com/flair-sdk/contracts/compare/v2.13.2...v2.13.3) (2022-10-10)
