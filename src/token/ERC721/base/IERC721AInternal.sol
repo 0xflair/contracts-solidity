@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 /**
  * @dev Interface of ERC721A adopted to contain everything except public functions.

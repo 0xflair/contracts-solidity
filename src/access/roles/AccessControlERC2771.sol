@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -8,27 +8,12 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "../../metatx/ERC2771ContextInternal.sol";
 import "./AccessControl.sol";
 
-abstract contract AccessControlERC2771 is
-    ERC2771ContextInternal,
-    AccessControl
-{
-    function _msgSender()
-        internal
-        view
-        virtual
-        override(Context, ERC2771ContextInternal)
-        returns (address)
-    {
+abstract contract AccessControlERC2771 is ERC2771ContextInternal, AccessControl {
+    function _msgSender() internal view virtual override(Context, ERC2771ContextInternal) returns (address) {
         return ERC2771ContextInternal._msgSender();
     }
 
-    function _msgData()
-        internal
-        view
-        virtual
-        override(Context, ERC2771ContextInternal)
-        returns (bytes calldata)
-    {
+    function _msgData() internal view virtual override(Context, ERC2771ContextInternal) returns (bytes calldata) {
         return ERC2771ContextInternal._msgData();
     }
 }

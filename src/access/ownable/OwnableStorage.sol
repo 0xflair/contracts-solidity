@@ -1,14 +1,13 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 library OwnableStorage {
     struct Layout {
         address owner;
     }
 
-    bytes32 internal constant STORAGE_SLOT =
-        keccak256("openzeppelin.contracts.storage.Ownable");
+    bytes32 internal constant STORAGE_SLOT = keccak256("openzeppelin.contracts.storage.Ownable");
 
     function layout() internal pure returns (Layout storage l) {
         bytes32 slot = STORAGE_SLOT;

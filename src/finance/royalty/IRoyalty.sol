@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "@manifoldxyz/royalty-registry-solidity/contracts/specs/IEIP2981.sol";
 import "@manifoldxyz/royalty-registry-solidity/contracts/specs/IRarible.sol";

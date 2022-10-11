@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 /**
  * @dev Extension of {ERC721A} that allows other facets from the diamond to mint tokens.

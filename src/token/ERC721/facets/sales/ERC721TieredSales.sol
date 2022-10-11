@@ -1,9 +1,8 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
-
+import "../../../../security/ReentrancyGuard.sol";
 import "../../../../introspection/ERC165Storage.sol";
 import "../../../../finance/sales/TieredSales.sol";
 import "../../extensions/mintable/IERC721MintableExtension.sol";

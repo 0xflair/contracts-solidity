@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "../../../../common/Errors.sol";
 import "../../base/ERC1155BaseInternal.sol";

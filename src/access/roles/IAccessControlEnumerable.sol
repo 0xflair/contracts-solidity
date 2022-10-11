@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "./IAccessControl.sol";
 
@@ -20,10 +20,7 @@ interface IAccessControlEnumerable is IAccessControl {
      * https://forum.openzeppelin.com/t/iterating-over-elements-on-enumerableset-in-openzeppelin-contracts/2296[forum post]
      * for more information.
      */
-    function getRoleMember(bytes32 role, uint256 index)
-        external
-        view
-        returns (address);
+    function getRoleMember(bytes32 role, uint256 index) external view returns (address);
 
     /**
      * @dev Returns the number of accounts that have `role`. Can be used

@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 library MetadataStorage {
     bytes32 internal constant STORAGE_SLOT = keccak256("v2.flair.contracts.storage.Metadata");

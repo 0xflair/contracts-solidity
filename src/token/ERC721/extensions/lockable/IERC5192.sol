@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 interface IERC5192 {
     /// @notice Returns the locking status of an Soulbound Token

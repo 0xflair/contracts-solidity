@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.15;
+pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -31,12 +31,7 @@ abstract contract AccessControlInternal is Context, IAccessControlEvents {
     /**
      * @dev Returns `true` if `account` has been granted `role`.
      */
-    function _hasRole(bytes32 role, address account)
-        internal
-        view
-        virtual
-        returns (bool)
-    {
+    function _hasRole(bytes32 role, address account) internal view virtual returns (bool) {
         return AccessControlStorage.layout().roles[role].members[account];
     }
 
@@ -80,12 +75,7 @@ abstract contract AccessControlInternal is Context, IAccessControlEvents {
      *
      * To change a role's admin, use {_setRoleAdmin}.
      */
-    function _getRoleAdmin(bytes32 role)
-        internal
-        view
-        virtual
-        returns (bytes32)
-    {
+    function _getRoleAdmin(bytes32 role) internal view virtual returns (bytes32) {
         return AccessControlStorage.layout().roles[role].adminRole;
     }
 
@@ -106,10 +96,7 @@ abstract contract AccessControlInternal is Context, IAccessControlEvents {
      * May emit a {RoleRevoked} event.
      */
     function _renounceRole(bytes32 role, address account) internal virtual {
-        require(
-            account == _msgSender(),
-            "AccessControl: can only renounce roles for self"
-        );
+        require(account == _msgSender(), "AccessControl: can only renounce roles for self");
 
         _revokeRole(role, account);
     }
