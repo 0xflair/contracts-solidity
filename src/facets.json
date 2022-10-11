@@ -1,8 +1,8 @@
 {
   "flair-sdk:token/common/burnable/BurnableOwnable": {
     "addresses": {
-      "5": "0xdA4f104F614583598ee270FA23Bd7B67b3576038",
-      "goerli": "0xdA4f104F614583598ee270FA23Bd7B67b3576038"
+      "5": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
+      "goerli": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06"
     },
     "functionSelectors": [
       "setBurnablePausedUntil(uint256)"
@@ -22,8 +22,8 @@
   },
   "flair-sdk:diamond/DiamondCut": {
     "addresses": {
-      "5": "0x145E826dd5FaCAB891c02B4591B1706800076c84",
-      "goerli": "0x145E826dd5FaCAB891c02B4591B1706800076c84"
+      "5": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
+      "goerli": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548"
     },
     "functionSelectors": [
       "diamondCut((address,uint8,bytes4[])[],address,bytes)"
@@ -43,8 +43,8 @@
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "addresses": {
-      "5": "0x336714ae64A9143c61066a8A00cA9fA99A006B31",
-      "goerli": "0x336714ae64A9143c61066a8A00cA9fA99A006B31"
+      "5": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
+      "goerli": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8"
     },
     "functionSelectors": [
       "facetAddress(bytes4)",
@@ -67,8 +67,8 @@
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "addresses": {
-      "5": "0x439A19B19D96e22454a8C6968d7d08fBf5CdE9Bb",
-      "goerli": "0x439A19B19D96e22454a8C6968d7d08fBf5CdE9Bb"
+      "5": "0xa1aa81597bb7fddeaa02224498aa613daa01986d",
+      "goerli": "0xa1aa81597bb7fddeaa02224498aa613daa01986d"
     },
     "functionSelectors": [
       "balanceOf(address,uint256)",
@@ -112,8 +112,8 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
     "addresses": {
-      "5": "0x0a67c162dbe57878EFda7E6ab39883BBD431Dc29",
-      "goerli": "0x0a67c162dbe57878EFda7E6ab39883BBD431Dc29"
+      "5": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
+      "goerli": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a"
     },
     "functionSelectors": [
       "lockByOwner(address,uint256,uint256)",
@@ -138,8 +138,8 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
     "addresses": {
-      "5": "0xCEC6155b62ef9b58a2278d54Af6f48Ad3877cF87",
-      "goerli": "0xCEC6155b62ef9b58a2278d54Af6f48Ad3877cF87"
+      "5": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
+      "goerli": "0x20bccA536307cEd175391e893061BAf5cE80e36F"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -166,8 +166,8 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "addresses": {
-      "5": "0x0917a37788691367e3D33eF848b251B3919d951C",
-      "goerli": "0x0917a37788691367e3D33eF848b251B3919d951C"
+      "5": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943",
+      "goerli": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943"
     },
     "functionSelectors": [
       "name()",
@@ -192,8 +192,8 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
     "addresses": {
-      "5": "0x86eb3E746DaA53530aCBd1a5308349574De5990c",
-      "goerli": "0x86eb3E746DaA53530aCBd1a5308349574De5990c"
+      "5": "0xA7B51baD8d1ad82154879e3D868b726eE9417a1F",
+      "goerli": "0xA7B51baD8d1ad82154879e3D868b726eE9417a1F"
     },
     "functionSelectors": [
       "mintByOwner(address,uint256,uint256,bytes)",
@@ -216,8 +216,8 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
     "addresses": {
-      "5": "0xBF8049Ccd7994D37Afb31885E7Cd3F07B473B3a2",
-      "goerli": "0xBF8049Ccd7994D37Afb31885E7Cd3F07B473B3a2"
+      "5": "0x826E57fA5830f277d5c13D835fEe019fE2133Aa3",
+      "goerli": "0x826E57fA5830f277d5c13D835fEe019fE2133Aa3"
     },
     "functionSelectors": [
       "mintByOwner(address,uint256,uint256,bytes)",
@@ -240,8 +240,8 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
     "addresses": {
-      "5": "0x3d7d2eD0e25B1707C163293935F63521954e472D",
-      "goerli": "0x3d7d2eD0e25B1707C163293935F63521954e472D"
+      "5": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D",
+      "goerli": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -266,8 +266,8 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
     "addresses": {
-      "5": "0xf6a0957898ba2beD2CD0Ee31dA3504b510Fde0F6",
-      "goerli": "0xf6a0957898ba2beD2CD0Ee31dA3504b510Fde0F6"
+      "5": "0xDa766C39473FF06E282271bB2e2aA10100712410",
+      "goerli": "0xDa766C39473FF06E282271bB2e2aA10100712410"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -292,8 +292,8 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "addresses": {
-      "5": "0xBd01725C2C49Ac391510E3F78d040b1853d7Fe8e",
-      "goerli": "0xBd01725C2C49Ac391510E3F78d040b1853d7Fe8e"
+      "5": "0xda25087323285AE25e00E8C373a9184fb558D831",
+      "goerli": "0xda25087323285AE25e00E8C373a9184fb558D831"
     },
     "functionSelectors": [
       "freezeMaxSupply(uint256)",
@@ -318,8 +318,8 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "addresses": {
-      "5": "0x7C77693e17eA383Bf3c5Bf33c9F4F3D2457712D5",
-      "goerli": "0x7C77693e17eA383Bf3c5Bf33c9F4F3D2457712D5"
+      "5": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
+      "goerli": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",
@@ -352,8 +352,8 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "addresses": {
-      "5": "0xA1F072108aaaF41E17f9449A727217361bA5C943",
-      "goerli": "0xA1F072108aaaF41E17f9449A727217361bA5C943"
+      "5": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
+      "goerli": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab"
     },
     "functionSelectors": [
       "configureTierTokenId(uint256,uint256)",
@@ -376,8 +376,8 @@
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "addresses": {
-      "5": "0x28fbe43b52544a3947309768e11E4c1AebFDbD92",
-      "goerli": "0x28fbe43b52544a3947309768e11E4c1AebFDbD92"
+      "5": "0x5a75374be2803B9E30CD48112Ad0817773e268eA",
+      "goerli": "0x5a75374be2803B9E30CD48112Ad0817773e268eA"
     },
     "functionSelectors": [
       "balanceOf(address,uint256)",
@@ -421,8 +421,8 @@
   },
   "flair-sdk:introspection/ERC165": {
     "addresses": {
-      "5": "0x2146A2e0d639F5F3024c43b9222BC85b1Ca47cca",
-      "goerli": "0x2146A2e0d639F5F3024c43b9222BC85b1Ca47cca"
+      "5": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
+      "goerli": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF"
     },
     "functionSelectors": [
       "supportsInterface(bytes4)"
@@ -442,8 +442,8 @@
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "addresses": {
-      "5": "0x79455bD8DB7152f9084eAd01328F498124D3eE3b",
-      "goerli": "0x79455bD8DB7152f9084eAd01328F498124D3eE3b"
+      "5": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
+      "goerli": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA"
     },
     "functionSelectors": [
       "setERC165(bytes4[],bytes4[])"
@@ -465,8 +465,8 @@
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "addresses": {
-      "5": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5",
-      "goerli": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5"
+      "5": "0x867f1acc9d8132911e5e6bdaa4599d176da91e1c",
+      "goerli": "0x867f1acc9d8132911e5e6bdaa4599d176da91e1c"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -514,8 +514,8 @@
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
-      "5": "0x19737CE758700bba4dEA9B6769045B4a5C206608",
-      "goerli": "0x19737CE758700bba4dEA9B6769045B4a5C206608"
+      "5": "0xF95D05a56CFc1FFeF784DBf2BB8b1Af5f37491af",
+      "goerli": "0xF95D05a56CFc1FFeF784DBf2BB8b1Af5f37491af"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -562,8 +562,8 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
     "addresses": {
-      "5": "0x595931af6D6b9d314e77b257e79fAD36F35611dA",
-      "goerli": "0x595931af6D6b9d314e77b257e79fAD36F35611dA"
+      "5": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
+      "goerli": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120"
     },
     "functionSelectors": [
       "lockByOwner(uint256)",
@@ -588,8 +588,8 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
     "addresses": {
-      "5": "0x3aCc0Fc41Ec3F5A973025f1fe5A781Ed6b8048ce",
-      "goerli": "0x3aCc0Fc41Ec3F5A973025f1fe5A781Ed6b8048ce"
+      "5": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
+      "goerli": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -616,8 +616,8 @@
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
     "addresses": {
-      "5": "0xa3E111da8847FCF96999a9B55E93695fF33ca896",
-      "goerli": "0xa3E111da8847FCF96999a9B55E93695fF33ca896"
+      "5": "0x9fD97813197377Fef180B8E4acDcF5c1F6509AA9",
+      "goerli": "0x9fD97813197377Fef180B8E4acDcF5c1F6509AA9"
     },
     "functionSelectors": [
       "name()",
@@ -641,8 +641,8 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
     "addresses": {
-      "5": "0x0Cc844a047d6c6027ef26A019c28fabcb69632D5",
-      "goerli": "0x0Cc844a047d6c6027ef26A019c28fabcb69632D5"
+      "5": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
+      "goerli": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311"
     },
     "functionSelectors": [
       "mintByOwner(address,uint256)",
@@ -665,8 +665,8 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
     "addresses": {
-      "5": "0xC140DA71dceC48fB06599B9f7CA252f11CF975b2",
-      "goerli": "0xC140DA71dceC48fB06599B9f7CA252f11CF975b2"
+      "5": "0x134eDea1fD79F9F2F19DD3e21af0881B65A4a365",
+      "goerli": "0x134eDea1fD79F9F2F19DD3e21af0881B65A4a365"
     },
     "functionSelectors": [
       "mintByOwner(address,uint256)",
@@ -689,8 +689,8 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
     "addresses": {
-      "5": "0x5475655e219034eBDAF40B8b3a40E973b3c0B9B2",
-      "goerli": "0x5475655e219034eBDAF40B8b3a40E973b3c0B9B2"
+      "5": "0x76e43De9addA1cDCe8d946e93531C46E9D1147d9",
+      "goerli": "0x76e43De9addA1cDCe8d946e93531C46E9D1147d9"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -715,8 +715,8 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
     "addresses": {
-      "5": "0x6cB5677a327d4D26876F8580FD08C679c95cD1F3",
-      "goerli": "0x6cB5677a327d4D26876F8580FD08C679c95cD1F3"
+      "5": "0x8a7EcBE857EF9853bc4E2A940a62ae1C62C53bc8",
+      "goerli": "0x8a7EcBE857EF9853bc4E2A940a62ae1C62C53bc8"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -741,8 +741,8 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
     "addresses": {
-      "5": "0x8C59422229D9fD731B34B3586cAC46ce5Bbf384E",
-      "goerli": "0x8C59422229D9fD731B34B3586cAC46ce5Bbf384E"
+      "5": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
+      "goerli": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977"
     },
     "functionSelectors": [
       "freezeMaxSupply()",
@@ -766,8 +766,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "addresses": {
-      "5": "0x79Fb49Cb22Cd08799F7aF3Cd1317EbfcC6130881",
-      "goerli": "0x79Fb49Cb22Cd08799F7aF3Cd1317EbfcC6130881"
+      "5": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C",
+      "goerli": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",
@@ -798,8 +798,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "addresses": {
-      "5": "0x552839625f5F52C4F6d8C39f0f88B117622e81C0",
-      "goerli": "0x552839625f5F52C4F6d8C39f0f88B117622e81C0"
+      "5": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750",
+      "goerli": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750"
     },
     "functionSelectors": [
       "eligibleForTier(uint256,address,uint256,bytes32[])",
@@ -829,8 +829,8 @@
   },
   "flair-sdk:legal/license/License": {
     "addresses": {
-      "5": "0x327bea93A89A02d8844f7c2EA57F2d73C88868c2",
-      "goerli": "0x327bea93A89A02d8844f7c2EA57F2d73C88868c2"
+      "5": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D",
+      "goerli": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D"
     },
     "functionSelectors": [
       "customLicenseName()",
@@ -855,8 +855,8 @@
   },
   "flair-sdk:legal/license/LicenseOwnable": {
     "addresses": {
-      "5": "0x003f74767Fbe106440C5B4e188B5C756b4505529",
-      "goerli": "0x003f74767Fbe106440C5B4e188B5C756b4505529"
+      "5": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
+      "goerli": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a"
     },
     "functionSelectors": [
       "licenseVersionLocked()",
@@ -881,8 +881,8 @@
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "addresses": {
-      "5": "0x734d6154c5340ad9629F3Ac330D65Dd0cd2Fab71",
-      "goerli": "0x734d6154c5340ad9629F3Ac330D65Dd0cd2Fab71"
+      "5": "0xb21af8b38B8D81430Cf1e7a2080400C57Ce9A9c6",
+      "goerli": "0xb21af8b38B8D81430Cf1e7a2080400C57Ce9A9c6"
     },
     "functionSelectors": [
       "baseURI()",
@@ -910,8 +910,8 @@
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
     "addresses": {
-      "5": "0xc1b196f70787861629bB2683C4ca5f88a5b21Ac3",
-      "goerli": "0xc1b196f70787861629bB2683C4ca5f88a5b21Ac3"
+      "5": "0x37612c9c923359a4273d22d6aba6b7e410dd2201",
+      "goerli": "0x37612c9c923359a4273d22d6aba6b7e410dd2201"
     },
     "functionSelectors": [
       "lockBaseURI()",
@@ -944,8 +944,8 @@
   },
   "flair-sdk:access/ownable/Ownable": {
     "addresses": {
-      "5": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738",
-      "goerli": "0x36F0ff5a978b14aC085e9e8BC388A011933E8738"
+      "5": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
+      "goerli": "0x29199f2D68A91Bc227229DD1e11185CC639f134e"
     },
     "functionSelectors": [
       "owner()",
@@ -967,8 +967,8 @@
   },
   "flair-sdk:finance/royalty/Royalty": {
     "addresses": {
-      "5": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7",
-      "goerli": "0x11ed76A4957b9E21852c2E96a508E6bca36907d7"
+      "5": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
+      "goerli": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018"
     },
     "functionSelectors": [
       "defaultRoyalty()",
@@ -1000,8 +1000,8 @@
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
     "addresses": {
-      "5": "0xE4Dc9d19b11AF3aCb344DF7424F8f1540D4003ba",
-      "goerli": "0xE4Dc9d19b11AF3aCb344DF7424F8f1540D4003ba"
+      "5": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
+      "goerli": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b"
     },
     "functionSelectors": [
       "setDefaultRoyalty((address,uint16))",
@@ -1025,8 +1025,8 @@
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "addresses": {
-      "5": "0x9baC09D0e843d289d7d950D27c32E25CeFE5c4af",
-      "goerli": "0x9baC09D0e843d289d7d950D27c32E25CeFE5c4af"
+      "5": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
+      "goerli": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a"
     },
     "functionSelectors": [
       "configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))",
@@ -1049,8 +1049,8 @@
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
     "addresses": {
-      "5": "0x071b584C7a8D6fD3C1aA1F114C95a238cf268cAe",
-      "goerli": "0x071b584C7a8D6fD3C1aA1F114C95a238cf268cAe"
+      "5": "0xF2ac50aFC2d86c146Ee2D60619374D35cD457A0c",
+      "goerli": "0xF2ac50aFC2d86c146Ee2D60619374D35cD457A0c"
     },
     "functionSelectors": [
       "withdraw(address[],uint256[])",
@@ -1075,8 +1075,8 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "addresses": {
-      "5": "0x33B5C0909df14F6A0905177041a2DF08C7cccBcd",
-      "goerli": "0x33B5C0909df14F6A0905177041a2DF08C7cccBcd"
+      "5": "0x3f539db004cb22c96d69d0e3eb8974d46ed93254",
+      "goerli": "0x3f539db004cb22c96d69d0e3eb8974d46ed93254"
     },
     "functionSelectors": [
       "lockWithdrawMode()",
