@@ -3,8 +3,8 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 
 import { expect } from 'chai';
-import { BigNumberish, utils } from 'ethers';
-import hre from 'hardhat';
+import { BigNumberish, ethers, utils } from 'ethers';
+import hre, { getChainId } from 'hardhat';
 
 import {
   DiamondLoupe,
@@ -19,7 +19,7 @@ import { setupTest } from '../setup';
 import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
 import { deployDiamond, Initialization } from '../utils/diamond';
-import { Tier } from '../utils/tiered-sales';
+import { signTierTicket, Tier } from '../utils/tiered-sales';
 
 const DEFAULT_TIERS: Tier[] = [
   {
@@ -31,6 +31,7 @@ const DEFAULT_TIERS: Tier[] = [
     merkleRoot: ZERO_BYTES32,
     reserved: 0,
     maxAllocation: 5000,
+    signer: ZERO_ADDRESS,
   },
   {
     start: 0,
@@ -41,6 +42,7 @@ const DEFAULT_TIERS: Tier[] = [
     merkleRoot: ZERO_BYTES32,
     reserved: 0,
     maxAllocation: 5000,
+    signer: ZERO_ADDRESS,
   },
 ];
 
@@ -75,7 +77,8 @@ const deployERC721WithSales = async ({
       },
       {
         facet: 'TieredSalesOwnable',
-        function: 'configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])',
+        function:
+          'configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,address)[])',
         args: [Object.keys(tiers), Object.values(tiers)],
       },
       ...initializations,
@@ -134,6 +137,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -165,6 +169,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 3,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.18'),
       },
@@ -180,6 +186,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 3,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.06'),
       },
@@ -196,6 +204,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 3,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.06'),
         },
@@ -212,7 +222,7 @@ describe('ERC721 Tiered Sales', function () {
     const erc721Facet = await hre.ethers.getContractAt<IERC721>('IERC721', diamond.address);
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.12'),
     });
 
@@ -225,7 +235,7 @@ describe('ERC721 Tiered Sales', function () {
     const diamond = await deployERC721WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.12'),
     });
 
@@ -239,7 +249,7 @@ describe('ERC721 Tiered Sales', function () {
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(555, 2, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(555, 2, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('NOT_EXISTS');
@@ -259,13 +269,14 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('NOT_STARTED');
@@ -285,13 +296,14 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('ALREADY_ENDED');
@@ -326,6 +338,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -356,6 +369,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 2,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.12'),
         },
@@ -392,6 +407,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -422,6 +438,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 3,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.12'),
         },
@@ -458,6 +476,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -488,6 +507,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 3,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.24'),
         },
@@ -524,6 +545,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -553,6 +575,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 3,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.12'),
       },
@@ -569,6 +593,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 3,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.12'),
         },
@@ -605,6 +631,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -634,6 +661,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 30,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.30'),
       },
@@ -669,6 +698,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -699,6 +729,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 30,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.36'),
         },
@@ -735,6 +767,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -764,6 +797,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 30,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.36'),
       },
@@ -780,6 +815,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 30,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.36'),
         },
@@ -816,6 +853,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -845,6 +883,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 3,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.18'),
       },
@@ -860,6 +900,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 3,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.06'),
       },
@@ -876,6 +918,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 3,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.06'),
         },
@@ -912,6 +956,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -927,6 +972,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 8,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('5'),
       },
@@ -943,6 +990,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 8,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('1'),
         },
@@ -979,13 +1028,14 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('NOT_ALLOWLISTED');
@@ -1020,6 +1070,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -1050,6 +1101,8 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 2,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.12'),
         },
@@ -1086,6 +1139,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -1115,6 +1169,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 2,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.12'),
       },
@@ -1149,6 +1205,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
     });
@@ -1178,6 +1235,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 2,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.06'),
       },
@@ -1193,6 +1252,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 2,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.06'),
       },
@@ -1205,12 +1266,12 @@ describe('ERC721 Tiered Sales', function () {
     const diamond = await deployERC721WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 5, 0, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 5, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.30'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.06'),
       }),
     ).to.be.revertedWith('EXCEEDS_MAX');
@@ -1222,12 +1283,12 @@ describe('ERC721 Tiered Sales', function () {
     const diamond = await deployERC721WithSales();
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 4, 0, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 4, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.24'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('EXCEEDS_MAX');
@@ -1240,7 +1301,7 @@ describe('ERC721 Tiered Sales', function () {
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     await expect(
-      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.11'),
       }),
     ).to.be.revertedWith('INSUFFICIENT_AMOUNT');
@@ -1275,6 +1336,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1285,6 +1347,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.2'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1295,6 +1358,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.01'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1317,6 +1381,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 2,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.12'),
       },
@@ -1333,28 +1399,30 @@ describe('ERC721 Tiered Sales', function () {
             maxAllowance: 2,
           }),
         ),
+        '0x',
+        0,
         {
           value: utils.parseEther('0.06'),
         },
       ),
     ).to.be.revertedWith('MAXED_ALLOWANCE');
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(1, 5, 0, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(1, 5, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 0, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.6'),
       }),
     ).to.be.revertedWith('EXCEEDS_MAX');
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 0, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.01'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 0, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.01'),
       }),
     ).to.be.revertedWith('EXCEEDS_MAX');
@@ -1392,6 +1460,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.06'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1402,6 +1471,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.2'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1412,6 +1482,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('0.01'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1422,7 +1493,10 @@ describe('ERC721 Tiered Sales', function () {
         },
       ],
     });
-    const supplyExtension = await hre.ethers.getContractAt<IERC721SupplyExtension>('IERC721SupplyExtension', diamond.address);
+    const supplyExtension = await hre.ethers.getContractAt<IERC721SupplyExtension>(
+      'IERC721SupplyExtension',
+      diamond.address,
+    );
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(0)).to.be.equal(10);
@@ -1439,6 +1513,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 8,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.12'),
       },
@@ -1458,6 +1534,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 8,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('0.6'),
       },
@@ -1472,20 +1550,20 @@ describe('ERC721 Tiered Sales', function () {
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(1)).to.be.equal(2);
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(2)).to.be.equal(2);
 
-    await tieredSalesFacet.connect(userC.signer).mintByTier(TIER_TWO, 2, 0, [], {
+    await tieredSalesFacet.connect(userC.signer).mintByTier(TIER_TWO, 2, ethers.constants.MaxUint256, [], '0x', 0, {
       value: utils.parseEther('0.02'),
     });
 
     expect(await supplyExtension.connect(userB.signer).totalSupply()).to.be.equal(7);
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(TIER_ONE, 1, 1, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(TIER_ONE, 1, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.2'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(TIER_TWO, 1, 1, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(TIER_TWO, 1, ethers.constants.MaxUint256, [], '0x', 0, {
         value: utils.parseEther('0.01'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
@@ -1505,6 +1583,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1515,6 +1594,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1525,6 +1605,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1535,6 +1616,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1554,7 +1636,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['17', '12', '12', '15']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 3, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 3, 100, [], '0x', 0, {
       value: utils.parseEther('3'),
     });
     expect([
@@ -1564,7 +1646,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['14', '12', '12', '15']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 4, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 4, 100, [], '0x', 0, {
       value: utils.parseEther('4'),
     });
     expect([
@@ -1574,7 +1656,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['10', '8', '8', '11']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 7, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 7, 100, [], '0x', 0, {
       value: utils.parseEther('7'),
     });
     expect([
@@ -1584,7 +1666,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['3', '1', '1', '4']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(3, 2, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(3, 2, 100, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
     expect([
@@ -1594,7 +1676,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['3', '1', '1', '2']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 100, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
     expect([
@@ -1604,7 +1686,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['1', '1', '1', '2']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 1, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 1, 100, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
     expect([
@@ -1615,29 +1697,29 @@ describe('ERC721 Tiered Sales', function () {
     ]).to.deep.equal(['0', '0', '0', '1']);
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
@@ -1657,6 +1739,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 10,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1667,6 +1750,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1677,6 +1761,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1687,6 +1772,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 10,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1706,7 +1792,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['10', '0', '0', '10']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 10, 100, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 10, 100, [], '0x', 0, {
       value: utils.parseEther('10'),
     });
     expect([
@@ -1717,29 +1803,29 @@ describe('ERC721 Tiered Sales', function () {
     ]).to.deep.equal(['0', '0', '0', '10']);
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(1, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(2, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(3, 10, 100, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(3, 10, 100, [], '0x', 0, {
       value: utils.parseEther('10'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(3, 1, 100, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_MAX');
@@ -1770,6 +1856,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1780,6 +1867,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1790,6 +1878,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1822,6 +1911,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 1,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('1'),
       },
@@ -1842,7 +1933,7 @@ describe('ERC721 Tiered Sales', function () {
 
     await tieredSalesOwnableFacet
       .connect(deployer.signer)
-      ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))'](1, {
+      ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,address))'](1, {
         start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
         end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
         currency: ZERO_ADDRESS,
@@ -1851,6 +1942,7 @@ describe('ERC721 Tiered Sales', function () {
         merkleRoot: mkt2.getHexRoot(),
         reserved: 2,
         maxAllocation: 5000,
+        signer: ZERO_ADDRESS,
       });
 
     await tieredSalesFacet.connect(userA.signer).mintByTier(
@@ -1863,6 +1955,8 @@ describe('ERC721 Tiered Sales', function () {
           maxAllowance: 1,
         }),
       ),
+      '0x',
+      0,
       {
         value: utils.parseEther('1'),
       },
@@ -1887,6 +1981,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1897,6 +1992,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1907,6 +2003,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) + 7 * 24 * 60 * 60,
@@ -1917,6 +2014,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -1936,13 +2034,13 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(3)).toString(),
     ]).to.deep.equal(['5', '5', '5', '5']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 5, 5, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 5, 5, [], '0x', 0, {
       value: utils.parseEther('5'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 5, 5, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 5, 5, [], '0x', 0, {
       value: utils.parseEther('5'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 5, 5, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(2, 5, 5, [], '0x', 0, {
       value: utils.parseEther('5'),
     });
 
@@ -1954,13 +2052,13 @@ describe('ERC721 Tiered Sales', function () {
     ]).to.deep.equal(['0', '0', '0', '5']);
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 1, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(0, 1, 1, [], '0x', 0, {
         value: utils.parseEther('1'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(3, 5, 5, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(3, 5, 5, [], '0x', 0, {
         value: utils.parseEther('5'),
       }),
     ).to.be.revertedWith('NOT_STARTED');
@@ -1981,6 +2079,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -1991,6 +2090,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2001,6 +2101,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2023,10 +2124,10 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['8', '7', '5']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
 
@@ -2057,6 +2158,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2067,6 +2169,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2077,6 +2180,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2099,10 +2203,10 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['8', '7', '5']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 1, 2, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 1, 2, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
 
@@ -2130,6 +2234,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2140,6 +2245,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2150,6 +2256,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2172,10 +2279,10 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['8', '7', '5']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
 
@@ -2194,7 +2301,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['2', '0', '0']);
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
   });
@@ -2213,6 +2320,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2226,12 +2334,12 @@ describe('ERC721 Tiered Sales', function () {
 
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 9, 9, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 9, 9, [], '0x', 0, {
       value: utils.parseEther('9'),
     });
 
     await expect(
-      tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], {
+      tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], '0x', 0, {
         value: utils.parseEther('2'),
       }),
     ).to.be.revertedWith('EXCEEDS_SUPPLY');
@@ -2255,6 +2363,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 3,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2265,6 +2374,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2275,6 +2385,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2297,10 +2408,10 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['8', '7', '5']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
 
@@ -2312,7 +2423,7 @@ describe('ERC721 Tiered Sales', function () {
 
     await tieredSalesOwnableFacet
       .connect(deployer.signer)
-      ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))'](2, {
+      ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,address))'](2, {
         start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
         end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
         currency: ZERO_ADDRESS,
@@ -2321,6 +2432,7 @@ describe('ERC721 Tiered Sales', function () {
         merkleRoot: ZERO_BYTES32,
         reserved: 2,
         maxAllocation: 5000,
+        signer: ZERO_ADDRESS,
       });
 
     expect([
@@ -2329,7 +2441,7 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['5', '3', '5']);
 
-    await tieredSalesFacet.connect(userB.signer).mintByTier(2, 2, 2, [], {
+    await tieredSalesFacet.connect(userB.signer).mintByTier(2, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
   });
@@ -2349,6 +2461,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2359,6 +2472,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 5,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
         {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
@@ -2369,6 +2483,7 @@ describe('ERC721 Tiered Sales', function () {
           price: utils.parseEther('1'),
           reserved: 0,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         },
       ],
       initializations: [
@@ -2391,10 +2506,10 @@ describe('ERC721 Tiered Sales', function () {
       (await tieredSalesFacet.remainingForTier(2)).toString(),
     ]).to.deep.equal(['5', '5', '0']);
 
-    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 1, 1, [], '0x', 0, {
       value: utils.parseEther('1'),
     });
-    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], {
+    await tieredSalesFacet.connect(userA.signer).mintByTier(1, 2, 2, [], '0x', 0, {
       value: utils.parseEther('2'),
     });
 
@@ -2407,7 +2522,7 @@ describe('ERC721 Tiered Sales', function () {
     await expect(
       tieredSalesOwnableFacet
         .connect(deployer.signer)
-        ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))'](2, {
+        ['configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,address))'](2, {
           start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
           end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
           currency: ZERO_ADDRESS,
@@ -2416,7 +2531,276 @@ describe('ERC721 Tiered Sales', function () {
           merkleRoot: ZERO_BYTES32,
           reserved: 2,
           maxAllocation: 5000,
+          signer: ZERO_ADDRESS,
         }),
     ).to.be.revertedWith('MAX_SUPPLY_EXCEEDED');
+  });
+
+  describe('Signature-based Tiers', () => {
+    it('should mint a free tier when wallet provides correct signature', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: 0,
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil,
+        },
+        diamond.address,
+      );
+
+      await tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil);
+    });
+
+    it('should mint a paid tier when wallet provides correct signature', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: utils.parseEther('0.22'),
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil: Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60,
+        },
+        diamond.address,
+      );
+
+      const validUntil = Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60;
+      await tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil, {
+        value: utils.parseEther('0.44'),
+      });
+    });
+
+    it('should fail mint a paid tier when amount is insufficient', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: utils.parseEther('0.22'),
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil,
+        },
+        diamond.address,
+      );
+
+      await expect(
+        tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil, {
+          value: utils.parseEther('0.40'),
+        }),
+      ).to.be.revertedWith('INSUFFICIENT_AMOUNT');
+    });
+
+    it('should fail to mint tier by signature if allowance does not match the ticket', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: 0,
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil,
+        },
+        diamond.address,
+      );
+
+      await expect(
+        tieredSalesFacet.connect(userB.signer).mintByTier(0, 2, 3, [], signatureForMintingTwo, validUntil),
+      ).to.be.revertedWith('INVALID_SIGNATURE');
+    });
+
+    it('should fail to mint tier by signature if minter does not match the ticket', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: 0,
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil,
+        },
+        diamond.address,
+      );
+
+      await expect(
+        tieredSalesFacet.connect(userC.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil),
+      ).to.be.revertedWith('INVALID_SIGNATURE');
+    });
+
+    it('should fail to mint tier by signature if ticket is expired', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: 0,
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) - 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil,
+        },
+        diamond.address,
+      );
+
+      await expect(
+        tieredSalesFacet.connect(userC.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil),
+      ).to.be.revertedWith('INVALID_SIGNATURE');
+    });
+
+    it('should fail to mint tier by signature if validUntil does not match', async function () {
+      const { userA: myCustomSigner, userB, userC } = await setupTest();
+
+      const diamond = await deployERC721WithSales({
+        tiers: [
+          {
+            start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+            end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+            currency: ZERO_ADDRESS,
+            maxPerWallet: 5,
+            merkleRoot: ZERO_BYTES32,
+            price: 0,
+            reserved: 0,
+            maxAllocation: 5000,
+            signer: myCustomSigner.signer.address,
+          },
+        ],
+      });
+      const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+      const validUntil = Math.floor(+new Date() / 1000) - 1 * 24 * 60 * 60;
+      const signatureForMintingTwo = await signTierTicket(
+        myCustomSigner.signer,
+        Number(await getChainId()),
+        {
+          tierId: 0,
+          minter: userB.signer.address,
+          maxAllowance: 2,
+          validUntil: Math.floor(+new Date() / 1000) + 1 * 24 * 60 * 60,
+        },
+        diamond.address,
+      );
+
+      await expect(
+        tieredSalesFacet.connect(userC.signer).mintByTier(0, 2, 2, [], signatureForMintingTwo, validUntil),
+      ).to.be.revertedWith('INVALID_SIGNATURE');
+    });
   });
 });

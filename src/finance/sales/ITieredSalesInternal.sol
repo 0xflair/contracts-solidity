@@ -12,5 +12,6 @@ interface ITieredSalesInternal {
         bytes32 merkleRoot;
         uint256 reserved;
         uint256 maxAllocation;
+        address signer;
     }
 }

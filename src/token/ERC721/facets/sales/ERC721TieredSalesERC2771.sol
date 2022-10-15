@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.15;
 
-import "../../../../metatx/ERC2771ContextInternal.sol";
+import "../../../../metatx/erc2771/ERC2771ContextInternal.sol";
 import "./ERC721TieredSales.sol";
 
 /**

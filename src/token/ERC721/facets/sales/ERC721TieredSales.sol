@@ -26,9 +26,11 @@ contract ERC721TieredSales is ReentrancyGuard, TieredSales, ERC721SupplyInternal
         uint256 tierId,
         uint256 count,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata allowlistProof,
+        bytes calldata signature,
+        uint256 validUntil
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof);
+        super._executeSale(tierId, count, maxAllowance, allowlistProof, signature, validUntil);
 
         IERC721MintableExtension(address(this)).mintByFacet(_msgSender(), count);
     }

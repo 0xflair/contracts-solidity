@@ -9,6 +9,10 @@ import "./IERC2771Context.sol";
 contract ERC2771Context is IERC2771Context, ERC2771ContextInternal {
     using ERC2771ContextStorage for ERC2771ContextStorage.Layout;
 
+    function versionIERC2771Context() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     function isTrustedForwarder(address forwarder) public view virtual returns (bool) {
         return _isTrustedForwarder(forwarder);
     }

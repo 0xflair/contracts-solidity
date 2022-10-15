@@ -23,6 +23,10 @@ import "../access/ownable/OwnableInternal.sol";
  * @custom:provides-interfaces IDiamondCut
  */
 contract DiamondCut is IDiamondCut, OwnableInternal {
+    function versionIDiamondCut() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     /// @notice Add/replace/remove any number of functions and optionally execute
     ///         a function with delegatecall
     /// @param _diamondCut Contains the facet addresses and function selectors

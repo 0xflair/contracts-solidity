@@ -9,6 +9,10 @@ import "./AccessControlInternal.sol";
 import "./IAccessControl.sol";
 
 abstract contract AccessControl is AccessControlInternal, IAccessControl {
+    function versionIAccessControl() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     function grantRole(bytes32 role, address account) public virtual override onlyRole(_getRoleAdmin(role)) {
         _grantRole(role, account);
     }

@@ -13,18 +13,35 @@ abstract contract TieredSales is ITieredSales, TieredSalesInternal {
         uint256 tierId,
         address minter,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata allowlistProof
     ) public view virtual returns (bool) {
-        return super._onTierAllowlist(tierId, minter, maxAllowance, proof);
+        return super._onTierAllowlist(tierId, minter, maxAllowance, allowlistProof);
     }
 
-    function eligibleForTier(
+    function verifySignature(
         uint256 tierId,
         address minter,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes calldata signature,
+        uint256 validUntil
+    ) public view virtual returns (bool) {
+        return
+            super._verifySignature(
+                TieredSalesStorage.layout().tiers[tierId].signer,
+                tierId,
+                minter,
+                maxAllowance,
+                signature,
+                validUntil
+            );
+    }
+
+    function maxMintableForTier(
+        uint256 tierId,
+        address minter,
+        uint256 maxAllowance
     ) public view virtual returns (uint256 maxMintable) {
-        return super._eligibleForTier(tierId, minter, maxAllowance, proof);
+        return super._maxMintableForTier(tierId, minter, maxAllowance);
     }
 
     function remainingForTier(uint256 tierId) public view virtual returns (uint256) {

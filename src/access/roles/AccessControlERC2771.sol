@@ -5,7 +5,7 @@ pragma solidity ^0.8.15;
 import "@openzeppelin/contracts/utils/Context.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-import "../../metatx/ERC2771ContextInternal.sol";
+import "../../metatx/erc2771/ERC2771ContextInternal.sol";
 import "./AccessControl.sol";
 
 abstract contract AccessControlERC2771 is ERC2771ContextInternal, AccessControl {

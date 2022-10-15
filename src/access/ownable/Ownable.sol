@@ -14,6 +14,10 @@ import "./OwnableInternal.sol";
  * @custom:provides-interfaces IERC173
  */
 contract Ownable is IERC173, OwnableInternal {
+    function versionIERC173() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     /**
      * @inheritdoc IERC173
      */

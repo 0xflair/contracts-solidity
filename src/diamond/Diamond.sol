@@ -5,7 +5,6 @@ pragma solidity ^0.8.15;
 import "../access/ownable/OwnableStorage.sol";
 import "../access/ownable/IERC173.sol";
 import "../introspection/ERC165.sol";
-import "../metatx/ERC2771Context.sol";
 import "../diamond/IDiamondCut.sol";
 import "../diamond/IDiamondLoupe.sol";
 
@@ -27,6 +26,10 @@ contract Diamond is Multicall {
         address diamondLoupeFacet;
         address erc165Facet;
         address erc173Facet;
+    }
+
+    function versionIDiamond() external pure virtual returns (string memory) {
+        return "2.x";
     }
 
     constructor(

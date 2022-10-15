@@ -14,7 +14,7 @@
   "IERC1155MintableOwnable": "0x6c5e99c7",
   "IERC1155MintableRoleBased": "0x1abe36ba",
   "IERC1155SupplyAdmin": "0xf0d6039e",
-  "ITieredSales": "0x79f33254",
+  "ITieredSales": "0xd3160153",
   "IERC1155TieredSales": "0x5ae18a74",
   "IERC1155TieredSalesAdmin": "0x76c5dd21",
   "IERC165": "0x01ffc9a7",
@@ -44,7 +44,7 @@
   "IFoundation": "0xd5a06d4c",
   "IEIP2981RoyaltyOverride": "0xc7627428",
   "IRoyaltyAdmin": "0xbe561268",
-  "ITieredSalesAdmin": "0xf8458dcd",
+  "ITieredSalesAdmin": "0xa08ce1c4",
   "IWithdrawable": "0xa9c00e2f",
   "IWithdrawableAdmin": "0x7246cea5"
 }

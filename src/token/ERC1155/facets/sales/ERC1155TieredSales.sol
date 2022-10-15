@@ -29,9 +29,11 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         uint256 tierId,
         uint256 count,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata allowlistProof,
+        bytes calldata signature,
+        uint256 validUntil
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof);
+        super._executeSale(tierId, count, maxAllowance, allowlistProof, signature, validUntil);
 
         IERC1155MintableExtension(address(this)).mintByFacet(
             _msgSender(),

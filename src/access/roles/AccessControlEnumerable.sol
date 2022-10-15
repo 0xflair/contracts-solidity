@@ -15,6 +15,10 @@ abstract contract AccessControlEnumerable is IAccessControlEnumerable, AccessCon
     using EnumerableSet for EnumerableSet.AddressSet;
     using AccessControlEnumerableStorage for AccessControlEnumerableStorage.Layout;
 
+    function versionIAccessControlEnumerable() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     /**
      * @dev Returns one of the accounts that have `role`. `index` must be a
      * value between 0 and {getRoleMemberCount}, non-inclusive.

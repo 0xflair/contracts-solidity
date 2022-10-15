@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.15;
 
-import "../access/ownable/OwnableInternal.sol";
+import "../../access/ownable/OwnableInternal.sol";
 import "./ERC2771ContextStorage.sol";
 import "./IERC2771ContextAdmin.sol";
 

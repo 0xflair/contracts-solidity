@@ -9,21 +9,30 @@ interface ITieredSales is ITieredSalesInternal {
         uint256 tierId,
         address minter,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata allowlistProof
     ) external view returns (bool);
 
-    function eligibleForTier(
+    function verifySignature(
         uint256 tierId,
         address minter,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes calldata signature,
+        uint256 validUntil
+    ) external view returns (bool);
+
+    function maxMintableForTier(
+        uint256 tierId,
+        address minter,
+        uint256 maxAllowance
     ) external view returns (uint256);
 
     function mintByTier(
         uint256 tierId,
         uint256 count,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata allowlistProof,
+        bytes calldata signature,
+        uint256 validUntil
     ) external payable;
 
     function remainingForTier(uint256 tierId) external view returns (uint256);

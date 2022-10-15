@@ -3,7 +3,7 @@
 pragma solidity ^0.8.15;
 
 import "./Ownable.sol";
-import "../../metatx/ERC2771ContextInternal.sol";
+import "../../metatx/erc2771/ERC2771ContextInternal.sol";
 
 /**
  * @title Ownable extension with meta-transactions support via ERC2771

@@ -24,6 +24,10 @@ import "./IDiamondLoupe.sol";
  * @custom:provides-interfaces IDiamondLoupe
  */
 contract DiamondLoupe is IDiamondLoupe {
+    function versionIDiamondLoupe() external pure virtual returns (string memory) {
+        return "2.x";
+    }
+
     /// @notice Gets all facets and their selectors.
     /// @return facets_ Facet
     function facets() external view override returns (Facet[] memory facets_) {
