@@ -2266,8 +2266,8 @@
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
     "version": "2.14.0",
     "address": {
-      "5": "0xae7Bf9Cd0b3B5198c447c35A94eB284F11d777dB",
-      "goerli": "0xae7Bf9Cd0b3B5198c447c35A94eB284F11d777dB"
+      "5": "0xCFff2b5c7c9Cc0D4C3613edE8176A38Ba2506c8C",
+      "goerli": "0xCFff2b5c7c9Cc0D4C3613edE8176A38Ba2506c8C"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -2637,8 +2637,8 @@
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
     "version": "2.14.0",
     "address": {
-      "5": "0xA4c050edd78d26e0D3BF1e113cBa25E2c009585a",
-      "goerli": "0xA4c050edd78d26e0D3BF1e113cBa25E2c009585a"
+      "5": "0x70E31A8D80AC3fc7e02588894C7659B091A034e6",
+      "goerli": "0x70E31A8D80AC3fc7e02588894C7659B091A034e6"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5178,7 +5178,7 @@
       "linkReferences": {},
       "deployedLinkReferences": {}
     },
-    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"./base/ERC721ABaseERC2771.sol\";\nimport \"./extensions/supply/ERC721ASupplyExtension.sol\";\nimport \"./extensions/lockable/ERC721ALockableExtension.sol\";\nimport \"./extensions/mintable/ERC721AMintableExtension.sol\";\nimport \"./extensions/burnable/ERC721ABurnableExtension.sol\";\n\n/**\n * @title ERC721 (A) - With ERC2771 Context\n * @notice Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).\n *\n * @custom:type eip-2535-facet\n * @custom:category NFTs\n * @custom:provides-interfaces IERC721 IERC721ABase IERC721SupplyExtension IERC721MintableExtension IERC721LockableExtension IERC721BurnableExtension\n */\ncontract ERC721AWithERC2771 is\n    ERC721ABaseERC2771,\n    ERC721ASupplyExtension,\n    ERC721AMintableExtension,\n    ERC721ABurnableExtension,\n    ERC721ALockableExtension\n{\n    /**\n     * @dev See {ERC721A-_beforeTokenTransfer}.\n     */\n    function _beforeTokenTransfers(\n        address from,\n        address to,\n        uint256 startTokenId,\n        uint256 quantity\n    ) internal virtual override(ERC721ABaseInternal, ERC721ALockableInternal, ERC721ASupplyExtension) {\n        super._beforeTokenTransfers(from, to, startTokenId, quantity);\n    }\n\n    function _msgSender() internal view virtual override(Context, ERC721ABaseERC2771) returns (address) {\n        return ERC721ABaseERC2771._msgSender();\n    }\n\n    function _msgData() internal view virtual override(Context, ERC721ABaseERC2771) returns (bytes calldata) {\n        return ERC721ABaseERC2771._msgData();\n    }\n}\n"
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"./base/ERC721ABaseERC2771.sol\";\nimport \"./extensions/supply/ERC721ASupplyExtension.sol\";\nimport \"./extensions/lockable/ERC721ALockableExtension.sol\";\nimport \"./extensions/mintable/ERC721AMintableExtension.sol\";\nimport \"./extensions/burnable/ERC721ABurnableExtension.sol\";\n\n/**\n * @title ERC721 (A) - with meta-transactions\n * @notice Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).\n *\n * @custom:type eip-2535-facet\n * @custom:category NFTs\n * @custom:provides-interfaces IERC721 IERC721ABase IERC721SupplyExtension IERC721MintableExtension IERC721LockableExtension IERC721BurnableExtension\n */\ncontract ERC721AWithERC2771 is\n    ERC721ABaseERC2771,\n    ERC721ASupplyExtension,\n    ERC721AMintableExtension,\n    ERC721ABurnableExtension,\n    ERC721ALockableExtension\n{\n    /**\n     * @dev See {ERC721A-_beforeTokenTransfer}.\n     */\n    function _beforeTokenTransfers(\n        address from,\n        address to,\n        uint256 startTokenId,\n        uint256 quantity\n    ) internal virtual override(ERC721ABaseInternal, ERC721ALockableInternal, ERC721ASupplyExtension) {\n        super._beforeTokenTransfers(from, to, startTokenId, quantity);\n    }\n\n    function _msgSender() internal view virtual override(Context, ERC721ABaseERC2771) returns (address) {\n        return ERC721ABaseERC2771._msgSender();\n    }\n\n    function _msgData() internal view virtual override(Context, ERC721ABaseERC2771) returns (bytes calldata) {\n        return ERC721ABaseERC2771._msgData();\n    }\n}\n"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
@@ -6054,8 +6054,8 @@
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
     "version": "2.14.0",
     "address": {
-      "5": "0xD67d572f0514443632aD5c6f5423b705a73e2387",
-      "goerli": "0xD67d572f0514443632aD5c6f5423b705a73e2387"
+      "5": "0xaAb0d0C6Bc85720c16049B6b3725F0C98AAEcd68",
+      "goerli": "0xaAb0d0C6Bc85720c16049B6b3725F0C98AAEcd68"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6392,8 +6392,8 @@
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
     "version": "2.14.0",
     "address": {
-      "5": "0x32205565D0e6948617C8329bdc539e283C32EC28",
-      "goerli": "0x32205565D0e6948617C8329bdc539e283C32EC28"
+      "5": "0xEEb1759bf55c628f4fF7f1412f303ad1329EA5d1",
+      "goerli": "0xEEb1759bf55c628f4fF7f1412f303ad1329EA5d1"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -8123,8 +8123,8 @@
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
     "version": "2.14.0",
     "address": {
-      "5": "0x4080e4062818B15902706751269b9527984b8E8D",
-      "goerli": "0x4080e4062818B15902706751269b9527984b8E8D"
+      "5": "0x7Af8caA879c8335C0D0E9825Acb75075340F9C7f",
+      "goerli": "0x7Af8caA879c8335C0D0E9825Acb75075340F9C7f"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",

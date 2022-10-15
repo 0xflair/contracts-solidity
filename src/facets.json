@@ -320,8 +320,8 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "addresses": {
-      "5": "0xae7Bf9Cd0b3B5198c447c35A94eB284F11d777dB",
-      "goerli": "0xae7Bf9Cd0b3B5198c447c35A94eB284F11d777dB"
+      "5": "0xCFff2b5c7c9Cc0D4C3613edE8176A38Ba2506c8C",
+      "goerli": "0xCFff2b5c7c9Cc0D4C3613edE8176A38Ba2506c8C"
     },
     "functionSelectors": [
       "maxMintableForTier(uint256,address,uint256)",
@@ -769,8 +769,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "addresses": {
-      "5": "0xD67d572f0514443632aD5c6f5423b705a73e2387",
-      "goerli": "0xD67d572f0514443632aD5c6f5423b705a73e2387"
+      "5": "0xaAb0d0C6Bc85720c16049B6b3725F0C98AAEcd68",
+      "goerli": "0xaAb0d0C6Bc85720c16049B6b3725F0C98AAEcd68"
     },
     "functionSelectors": [
       "maxMintableForTier(uint256,address,uint256)",
@@ -802,8 +802,8 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "addresses": {
-      "5": "0x32205565D0e6948617C8329bdc539e283C32EC28",
-      "goerli": "0x32205565D0e6948617C8329bdc539e283C32EC28"
+      "5": "0xEEb1759bf55c628f4fF7f1412f303ad1329EA5d1",
+      "goerli": "0xEEb1759bf55c628f4fF7f1412f303ad1329EA5d1"
     },
     "functionSelectors": [
       "maxMintableForTier(uint256,address,uint256)",
@@ -1031,8 +1031,8 @@
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "addresses": {
-      "5": "0x4080e4062818B15902706751269b9527984b8E8D",
-      "goerli": "0x4080e4062818B15902706751269b9527984b8E8D"
+      "5": "0x7Af8caA879c8335C0D0E9825Acb75075340F9C7f",
+      "goerli": "0x7Af8caA879c8335C0D0E9825Acb75075340F9C7f"
     },
     "functionSelectors": [
       "configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256,address))",
