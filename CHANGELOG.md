@@ -1,3 +1,10 @@
+## [2.15.0](https://github.com/flair-sdk/contracts/compare/v2.14.0...v2.15.0) (2022-10-16)
+
+
+### Features
+
+* add simple depository contract ([9202575](https://github.com/flair-sdk/contracts/commit/920257565c8420b663cbdb46c3843b3c349ca5d8))
+
 ## [2.14.0](https://github.com/flair-sdk/contracts/compare/v2.13.4...v2.14.0) (2022-10-11)
 
 
