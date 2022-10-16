@@ -58,4 +58,6 @@ contract Depository is ReentrancyGuard, Ownable, AccessControl, Withdrawable {
             IERC20(tokens[i]).transfer(address(wallets[i]), amounts[i]);
         }
     }
+
+    receive() external payable {}
 }
