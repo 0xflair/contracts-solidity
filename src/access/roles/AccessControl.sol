@@ -21,6 +21,10 @@ abstract contract AccessControl is AccessControlInternal, IAccessControl {
         _renounceRole(role, account);
     }
 
+    function hasRole(bytes32 role, address account) public view virtual override returns (bool) {
+        return _hasRole(role, account);
+    }
+
     function getRoleAdmin(bytes32 role) public view virtual override returns (bytes32) {
         return _getRoleAdmin(role);
     }

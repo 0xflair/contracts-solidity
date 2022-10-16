@@ -14,9 +14,8 @@ import "./IWithdrawableInternal.sol";
  * @title Functionality to withdraw ERC20 or natives tokens from the contract via various modes
  */
 abstract contract WithdrawableInternal is IWithdrawableInternal, OwnableInternal {
-    using WithdrawableStorage for WithdrawableStorage.Layout;
-
     using Address for address payable;
+    using WithdrawableStorage for WithdrawableStorage.Layout;
 
     function _withdrawRecipient() internal view virtual returns (address) {
         return WithdrawableStorage.layout().recipient;
