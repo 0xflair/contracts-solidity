@@ -1,3 +1,10 @@
+### [2.15.1](https://github.com/flair-sdk/contracts/compare/v2.15.0...v2.15.1) (2022-10-16)
+
+
+### Bug Fixes
+
+* accept native transfers in depository ([3dacfeb](https://github.com/flair-sdk/contracts/commit/3dacfeb64f9e6d614e6a5a7e9d56018baee9cb7a))
+
 ## [2.15.0](https://github.com/flair-sdk/contracts/compare/v2.14.0...v2.15.0) (2022-10-16)
 
 
