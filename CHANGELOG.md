@@ -1,3 +1,10 @@
+## [2.16.0](https://github.com/flair-sdk/contracts/compare/v2.15.1...v2.16.0) (2022-10-16)
+
+
+### Features
+
+* convert depository to facet for easier deployment ([2d8390c](https://github.com/flair-sdk/contracts/commit/2d8390c82eaeb630886a7c123a37cc60f332ff5c))
+
 ### [2.15.1](https://github.com/flair-sdk/contracts/compare/v2.15.0...v2.15.1) (2022-10-16)
 
 
