@@ -1,0 +1,53 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "src/metatx/ERC2771ContextOwnable.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"../access/ownable/OwnableInternal.sol\";\nimport \"./ERC2771ContextStorage.sol\";\nimport \"./IERC2771ContextAdmin.sol\";\n\n/**\n * @title ERC2771 Context - Admin - Ownable\n * @notice Controls trusted forwarder used to accept meta transactions according to EIP-2771.\n *\n * @custom:type eip-2535-facet\n * @custom:category Meta Transactions\n * @custom:provides-interfaces IERC2771ContextAdmin\n */\ncontract ERC2771ContextOwnable is IERC2771ContextAdmin, OwnableInternal {\n    function setTrustedForwarder(address trustedForwarder) public onlyOwner {\n        ERC2771ContextStorage.layout().trustedForwarder = trustedForwarder;\n    }\n}\n"
+    },
+    "src/access/ownable/OwnableInternal.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"@openzeppelin/contracts/utils/Context.sol\";\n\nimport \"./OwnableStorage.sol\";\nimport \"./IERC173Events.sol\";\n\nabstract contract OwnableInternal is IERC173Events, Context {\n    using OwnableStorage for OwnableStorage.Layout;\n\n    modifier onlyOwner() {\n        require(_msgSender() == _owner(), \"Ownable: sender must be owner\");\n        _;\n    }\n\n    function _owner() internal view virtual returns (address) {\n        return OwnableStorage.layout().owner;\n    }\n\n    function _transferOwnership(address account) internal virtual {\n        OwnableStorage.layout().setOwner(account);\n        emit OwnershipTransferred(_msgSender(), account);\n    }\n}\n"
+    },
+    "src/metatx/ERC2771ContextStorage.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nlibrary ERC2771ContextStorage {\n    struct Layout {\n        address trustedForwarder;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"openzeppelin.contracts.storage.ERC2771Context\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n}\n"
+    },
+    "src/metatx/IERC2771ContextAdmin.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\ninterface IERC2771ContextAdmin {\n    function setTrustedForwarder(address trustedForwarder) external;\n}\n"
+    },
+    "src/access/ownable/OwnableStorage.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nlibrary OwnableStorage {\n    struct Layout {\n        address owner;\n    }\n\n    bytes32 internal constant STORAGE_SLOT = keccak256(\"openzeppelin.contracts.storage.Ownable\");\n\n    function layout() internal pure returns (Layout storage l) {\n        bytes32 slot = STORAGE_SLOT;\n        assembly {\n            l.slot := slot\n        }\n    }\n\n    function setOwner(Layout storage l, address owner) internal {\n        l.owner = owner;\n    }\n}\n"
+    },
+    "src/access/ownable/IERC173Events.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\n/**\n * @title Contract ownership standard interface (event only)\n * @dev see https://eips.ethereum.org/EIPS/eip-173\n */\ninterface IERC173Events {\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\n}\n"
+    },
+    "@openzeppelin/contracts/utils/Context.sol": {
+      "content": "// SPDX-License-Identifier: MIT\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\n\npragma solidity ^0.8.0;\n\n/**\n * @dev Provides information about the current execution context, including the\n * sender of the transaction and its data. While these are generally available\n * via msg.sender and msg.data, they should not be accessed in such a direct\n * manner, since when dealing with meta-transactions the account sending and\n * paying for execution may not be the actual sender (as far as an application\n * is concerned).\n *\n * This contract is only required for intermediate, library-like contracts.\n */\nabstract contract Context {\n    function _msgSender() internal view virtual returns (address) {\n        return msg.sender;\n    }\n\n    function _msgData() internal view virtual returns (bytes calldata) {\n        return msg.data;\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 1337
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

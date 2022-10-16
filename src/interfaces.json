@@ -20,6 +20,7 @@
   "IERC1155TieredSalesAdmin": "0x76c5dd21",
   "IERC165": "0x01ffc9a7",
   "IERC165Admin": "0x2a848091",
+  "IERC2771ContextAdmin": "0xda742228",
   "IERC721": "0x8153916a",
   "IERC721ABase": "0x80ac58cd",
   "IERC721SupplyExtension": "0xcdbde6dc",
