@@ -3,30 +3,32 @@
 pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/utils/Address.sol";
-import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-import "../access/ownable/Ownable.sol";
-import "../access/roles/AccessControl.sol";
-import "../finance/withdraw/Withdrawable.sol";
+import "../../access/roles/AccessControlInternal.sol";
+import "../../security/ReentrancyGuard.sol";
 
-contract Depository is ReentrancyGuard, Ownable, AccessControl, Withdrawable {
+import "./IDepository.sol";
+
+/**
+ * @title Depository
+ * @notice A simple depository contract to hold native or ERC20 tokens and allow certain roles to transfer or disperse.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Finance
+ * @custom:provides-interfaces IDepository
+ */
+contract Depository is IDepository, ReentrancyGuard, AccessControlInternal {
     using Address for address payable;
 
     bytes32 public constant DEPOSITOR_ROLE = keccak256("DEPOSITOR_ROLE");
 
-    constructor() {
-        _transferOwnership(msg.sender);
-
-        _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
-        _setupRole(DEPOSITOR_ROLE, msg.sender);
-    }
-
-    function depositNative(address wallet, uint256 amount) public payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
+    function transferNative(address wallet, uint256 amount) external payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
         payable(wallet).sendValue(amount);
     }
 
-    function depositNative(address[] calldata wallets, uint256[] calldata amounts)
-        public
+    function transferNative(address[] calldata wallets, uint256[] calldata amounts)
+        external
         payable
         onlyRole(DEPOSITOR_ROLE)
         nonReentrant
@@ -38,19 +40,19 @@ contract Depository is ReentrancyGuard, Ownable, AccessControl, Withdrawable {
         }
     }
 
-    function depositERC20(
+    function transferERC20(
         address token,
         address wallet,
         uint256 amount
-    ) public payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
+    ) external payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
         IERC20(token).transfer(address(wallet), amount);
     }
 
-    function depositERC20(
+    function transferERC20(
         address[] calldata tokens,
         address[] calldata wallets,
         uint256[] calldata amounts
-    ) public payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
+    ) external payable onlyRole(DEPOSITOR_ROLE) nonReentrant {
         require(wallets.length == amounts.length, "Depository: invalid length");
         require(wallets.length == tokens.length, "Depository: invalid length");
 
@@ -58,6 +60,4 @@ contract Depository is ReentrancyGuard, Ownable, AccessControl, Withdrawable {
             IERC20(tokens[i]).transfer(address(wallets[i]), amounts[i]);
         }
     }
-
-    receive() external payable {}
 }

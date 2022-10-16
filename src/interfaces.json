@@ -1,5 +1,6 @@
 {
   "IBurnableAdmin": "0x710fb577",
+  "IDepository": "0xf5164e15",
   "IDiamondCut": "0x1f931c1c",
   "IDiamondLoupe": "0x48e2b093",
   "IERC1155": "0xd9b67a26",

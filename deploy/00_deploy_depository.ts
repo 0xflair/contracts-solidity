@@ -7,6 +7,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const accounts = await hre.getUnnamedAccounts();
 
   await deployPermanentContract(hre.deployments, accounts[0], 'Depository', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'DepositoryWithERC2771', []);
 };
 
 export default func;
