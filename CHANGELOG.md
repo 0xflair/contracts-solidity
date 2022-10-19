@@ -1,3 +1,10 @@
+## [2.17.0](https://github.com/flair-sdk/contracts/compare/v2.16.1...v2.17.0) (2022-10-19)
+
+
+### Features
+
+* add contract metadata functions and add access control admin ([cdf9ebd](https://github.com/flair-sdk/contracts/commit/cdf9ebdc05b56abe7e1a66c34d8bbe89d5638b34))
+
 ### [2.16.1](https://github.com/flair-sdk/contracts/compare/v2.16.0...v2.16.1) (2022-10-16)
 
 ## [2.16.0](https://github.com/flair-sdk/contracts/compare/v2.15.1...v2.16.0) (2022-10-16)
