@@ -9,6 +9,13 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   await deployPermanentContract(hre.deployments, accounts[0], 'Ownable', [], {
     contract: 'src/access/ownable/Ownable.sol:Ownable',
   });
+
+  await deployPermanentContract(hre.deployments, accounts[0], 'AccessControl', [], {
+    contract: 'src/access/roles/AccessControl.sol:AccessControl',
+  });
+
+  await deployPermanentContract(hre.deployments, accounts[0], 'AccessControlERC2771', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'AccessControlAdmin', []);
 };
 
 export default func;

@@ -15,6 +15,7 @@ interface IWithdrawableInternal {
     error ErrWithdrawImpossible();
     error ErrWithdrawRecipientLocked();
     error ErrWithdrawModeLocked();
+    error ErrWithdrawRecipientNotSet();
 
     event WithdrawRecipientChanged(address indexed recipient);
     event WithdrawRecipientLocked();

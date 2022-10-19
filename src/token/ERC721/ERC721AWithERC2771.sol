@@ -9,7 +9,7 @@ import "./extensions/mintable/ERC721AMintableExtension.sol";
 import "./extensions/burnable/ERC721ABurnableExtension.sol";
 
 /**
- * @title ERC721 (A) - With ERC2771 Context
+ * @title ERC721 (A) - with meta-transactions
  * @notice Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).
  *
  * @custom:type eip-2535-facet

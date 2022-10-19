@@ -8,7 +8,15 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "../../metatx/ERC2771ContextInternal.sol";
 import "./AccessControl.sol";
 
-abstract contract AccessControlERC2771 is ERC2771ContextInternal, AccessControl {
+/**
+ * @title Roles - with meta-transactions
+ * @notice Role-based access control with meta-transactions enabled (mainly for grantRole, revokeRole, renounceRole)
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Access
+ * @custom:provides-interfaces IAccessControl
+ */
+contract AccessControlERC2771 is ERC2771ContextInternal, AccessControl {
     function _msgSender() internal view virtual override(Context, ERC2771ContextInternal) returns (address) {
         return ERC2771ContextInternal._msgSender();
     }

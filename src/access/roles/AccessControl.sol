@@ -8,7 +8,15 @@ import "@openzeppelin/contracts/utils/Strings.sol";
 import "./AccessControlInternal.sol";
 import "./IAccessControl.sol";
 
-abstract contract AccessControl is AccessControlInternal, IAccessControl {
+/**
+ * @title Roles
+ * @notice Role-based access control for write functions based on OpenZeppelin's AccessControl
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Access
+ * @custom:provides-interfaces IAccessControl
+ */
+contract AccessControl is AccessControlInternal, IAccessControl {
     function grantRole(bytes32 role, address account) public virtual override onlyRole(_getRoleAdmin(role)) {
         _grantRole(role, account);
     }

@@ -104,6 +104,10 @@ abstract contract WithdrawableInternal is IWithdrawableInternal, OwnableInternal
             revert ErrWithdrawImpossible();
         }
 
+        if (l.recipient == address(0)) {
+            revert ErrWithdrawRecipientNotSet();
+        }
+
         for (uint256 i = 0; i < claimTokens.length; i++) {
             if (claimTokens[i] == address(0)) {
                 payable(l.recipient).sendValue(amounts[i]);

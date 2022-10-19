@@ -1,4 +1,80 @@
 {
+  "flair-sdk:access/roles/AccessControl": {
+    "addresses": {
+      "5": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
+      "goerli": "0x942241f517203838D2318086CcF80E8E2dCd77Fa"
+    },
+    "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "getRoleAdmin(bytes32)",
+      "grantRole(bytes32,address)",
+      "hasRole(bytes32,address)",
+      "renounceRole(bytes32,address)",
+      "revokeRole(bytes32,address)"
+    ],
+    "fqn": "flair-sdk:access/roles/AccessControl",
+    "version": "2.16.0",
+    "providesInterfaces": [
+      "0x7965db0b"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Access",
+    "title": "Roles",
+    "notice": "Role-based access control for write functions based on OpenZeppelin's AccessControl",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/access/roles/AccessControl.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:access/roles/AccessControlAdmin": {
+    "addresses": {
+      "5": "0x9A9A34668072A4F85869B17CDfaa886321f3031d",
+      "goerli": "0x9A9A34668072A4F85869B17CDfaa886321f3031d"
+    },
+    "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "grantAdminRole(address)"
+    ],
+    "fqn": "flair-sdk:access/roles/AccessControlAdmin",
+    "version": "2.16.0",
+    "providesInterfaces": [
+      "0xc634b78e"
+    ],
+    "peerDependencies": [
+      "0x7965db0b"
+    ],
+    "requiredDependencies": [],
+    "category": "Finance",
+    "title": "Roles - Admin",
+    "notice": "Allows you to initiate access controls as current contract owner by giving DEFAULT_ADMIN_ROLE to an address.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/access/roles/AccessControlAdmin.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:access/roles/AccessControlERC2771": {
+    "addresses": {
+      "5": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
+      "goerli": "0xafD33B31c15E56769B67794f4B5C460395F1314A"
+    },
+    "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "getRoleAdmin(bytes32)",
+      "grantRole(bytes32,address)",
+      "hasRole(bytes32,address)",
+      "renounceRole(bytes32,address)",
+      "revokeRole(bytes32,address)"
+    ],
+    "fqn": "flair-sdk:access/roles/AccessControlERC2771",
+    "version": "2.16.0",
+    "providesInterfaces": [
+      "0x7965db0b"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Access",
+    "title": "Roles - with meta-transactions",
+    "notice": "Role-based access control with meta-transactions enabled (mainly for grantRole, revokeRole, renounceRole)",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/access/roles/AccessControlERC2771.sol",
+    "author": "flair-sdk.eth"
+  },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
     "addresses": {
       "5": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
@@ -428,8 +504,8 @@
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "addresses": {
-      "5": "0x5a75374be2803B9E30CD48112Ad0817773e268eA",
-      "goerli": "0x5a75374be2803B9E30CD48112Ad0817773e268eA"
+      "5": "0x1903d9d83B82F541a1c022410C4Aca7223cBE230",
+      "goerli": "0x1903d9d83B82F541a1c022410C4Aca7223cBE230"
     },
     "functionSelectors": [
       "balanceOf(address,uint256)",
@@ -466,7 +542,7 @@
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "NFTs",
-    "title": "ERC1155 - With ERC2771 Context",
+    "title": "ERC1155 - with meta-transactions",
     "notice": "Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).",
     "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/token/ERC1155/ERC1155WithERC2771.sol",
     "author": "flair-sdk.eth"
@@ -587,8 +663,8 @@
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
-      "5": "0x64bA2c658F3Dc50825093542f5116e865BD00e13",
-      "goerli": "0x64bA2c658F3Dc50825093542f5116e865BD00e13"
+      "5": "0x6190ff680bad8Abd11A3f872AC20A65046235B21",
+      "goerli": "0x6190ff680bad8Abd11A3f872AC20A65046235B21"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -628,7 +704,7 @@
     "peerDependencies": [],
     "requiredDependencies": [],
     "category": "NFTs",
-    "title": "ERC721 (A) - With ERC2771 Context",
+    "title": "ERC721 (A) - with meta-transactions",
     "notice": "Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).",
     "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/token/ERC721/ERC721AWithERC2771.sol",
     "author": "flair-sdk.eth"
@@ -788,8 +864,8 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
     "addresses": {
-      "5": "0x8a7EcBE857EF9853bc4E2A940a62ae1C62C53bc8",
-      "goerli": "0x8a7EcBE857EF9853bc4E2A940a62ae1C62C53bc8"
+      "5": "0x5E4DF8657cBc91c6641143971729ff7303496a23",
+      "goerli": "0x5E4DF8657cBc91c6641143971729ff7303496a23"
     },
     "functionSelectors": [
       "DEFAULT_ADMIN_ROLE()",
@@ -807,7 +883,7 @@
       "0x645b6d4b"
     ],
     "category": "NFTs",
-    "title": "ERC721 - Mint as role - with ERC2771",
+    "title": "ERC721 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC721A).",
     "source": "https://github.com/flair-sdk/contracts/blob/v2.16.0/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
@@ -954,8 +1030,8 @@
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "addresses": {
-      "5": "0xb21af8b38B8D81430Cf1e7a2080400C57Ce9A9c6",
-      "goerli": "0xb21af8b38B8D81430Cf1e7a2080400C57Ce9A9c6"
+      "5": "0xc89E1364c377731893CE0250dfF6d2E94A3516E3",
+      "goerli": "0xc89E1364c377731893CE0250dfF6d2E94A3516E3"
     },
     "functionSelectors": [
       "baseURI()",
@@ -964,6 +1040,7 @@
       "fallbackURILocked()",
       "lastLockedTokenId()",
       "name()",
+      "nameAndSymbolLocked()",
       "symbol()",
       "uriSuffix()",
       "uriSuffixLocked()"
@@ -1122,8 +1199,8 @@
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
     "addresses": {
-      "5": "0x5A3Ba64b9a7321CD8fF943cea053cF2d1df6Baf3",
-      "goerli": "0x5A3Ba64b9a7321CD8fF943cea053cF2d1df6Baf3"
+      "5": "0x1B66A8947730a857B938F7191D2603635A61Afe2",
+      "goerli": "0x1B66A8947730a857B938F7191D2603635A61Afe2"
     },
     "functionSelectors": [
       "withdraw(address[],uint256[])",
@@ -1148,8 +1225,8 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "addresses": {
-      "5": "0x8731A886328ea3f2D0b99A8cb743aaf1aAD597d5",
-      "goerli": "0x8731A886328ea3f2D0b99A8cb743aaf1aAD597d5"
+      "5": "0x607E2580c3377584596C8B02B5527CB23259E191",
+      "goerli": "0x607E2580c3377584596C8B02B5527CB23259E191"
     },
     "functionSelectors": [
       "lockWithdrawMode()",

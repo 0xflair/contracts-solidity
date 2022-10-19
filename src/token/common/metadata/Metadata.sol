@@ -36,6 +36,10 @@ contract Metadata is IMetadata {
         return MetadataStorage.layout().uriSuffix;
     }
 
+    function nameAndSymbolLocked() external view virtual returns (bool) {
+        return MetadataStorage.layout().nameAndSymbolLocked;
+    }
+
     function baseURILocked() external view virtual returns (bool) {
         return MetadataStorage.layout().baseURILocked;
     }

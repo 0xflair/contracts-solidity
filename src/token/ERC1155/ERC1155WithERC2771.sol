@@ -9,7 +9,7 @@ import "./extensions/mintable/ERC1155MintableExtension.sol";
 import "./extensions/burnable/ERC1155BurnableExtension.sol";
 
 /**
- * @title ERC1155 - With ERC2771 Context
+ * @title ERC1155 - with meta-transactions
  * @notice Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).
  *
  * @custom:type eip-2535-facet

@@ -1,4 +1,6 @@
 {
+  "IAccessControl": "0x7965db0b",
+  "IAccessControlAdmin": "0xc634b78e",
   "IBurnableAdmin": "0x710fb577",
   "IDepository": "0xf5164e15",
   "IDiamondCut": "0x1f931c1c",
