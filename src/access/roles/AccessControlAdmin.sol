@@ -12,7 +12,7 @@ import "./IAccessControlAdmin.sol";
  * @notice Allows you to initiate access controls as current contract owner by giving DEFAULT_ADMIN_ROLE to an address.
  *
  * @custom:type eip-2535-facet
- * @custom:category Finance
+ * @custom:category Access
  * @custom:peer-dependencies IAccessControl
  * @custom:provides-interfaces IAccessControlAdmin
  */
