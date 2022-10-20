@@ -1,3 +1,10 @@
+### [2.17.1](https://github.com/flair-sdk/contracts/compare/v2.17.0...v2.17.1) (2022-10-20)
+
+
+### Bug Fixes
+
+* correct category for roles admin facet ([9366e07](https://github.com/flair-sdk/contracts/commit/9366e07d8db1d781b982fc88f678f7399c06081d))
+
 ## [2.17.0](https://github.com/flair-sdk/contracts/compare/v2.16.1...v2.17.0) (2022-10-19)
 
 
