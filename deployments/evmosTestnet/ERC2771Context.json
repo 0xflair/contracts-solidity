@@ -1,0 +1,60 @@
+{
+  "address": "0x960327273C346eE9dfa122a757425B350b51F833",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "forwarder",
+          "type": "address"
+        }
+      ],
+      "name": "isTrustedForwarder",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa989d2dd45594df9ef2c52cc5094cb66902d0a32e4e5a30f6fc870a0495f93c7",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x960327273C346eE9dfa122a757425B350b51F833",
+    "transactionIndex": 20,
+    "gasUsed": "554043",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x1202d945025a8676a84ce6f4a2b9ebd4db5e303f1803f4980a0c48c6b21aa9a4",
+    "transactionHash": "0xa989d2dd45594df9ef2c52cc5094cb66902d0a32e4e5a30f6fc870a0495f93c7",
+    "logs": [],
+    "blockNumber": 7776446,
+    "cumulativeGasUsed": "3044023",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "e2f42af2f5273c7308f3825761226b47",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"forwarder\",\"type\":\"address\"}],\"name\":\"isTrustedForwarder\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/metatx/ERC2771Context.sol\":\"ERC2771Context\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/metatx/ERC2771Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./ERC2771ContextStorage.sol\\\";\\nimport \\\"./ERC2771ContextInternal.sol\\\";\\nimport \\\"./IERC2771Context.sol\\\";\\n\\ncontract ERC2771Context is IERC2771Context, ERC2771ContextInternal {\\n    using ERC2771ContextStorage for ERC2771ContextStorage.Layout;\\n\\n    function isTrustedForwarder(address forwarder) public view virtual returns (bool) {\\n        return _isTrustedForwarder(forwarder);\\n    }\\n}\\n\",\"keccak256\":\"0x5473550cfca72a4bf32f47144f81c01e655f0032776f60ec4d7eca6850bdf895\",\"license\":\"MIT\"},\"src/metatx/ERC2771ContextInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./ERC2771ContextStorage.sol\\\";\\n\\nabstract contract ERC2771ContextInternal is Context {\\n    function _isTrustedForwarder(address operator) internal view returns (bool) {\\n        return ERC2771ContextStorage.layout().trustedForwarder == operator;\\n    }\\n\\n    function _msgSender() internal view virtual override returns (address sender) {\\n        if (_isTrustedForwarder(msg.sender)) {\\n            // The assembly code is more direct than the Solidity version using `abi.decode`.\\n            /// @solidity memory-safe-assembly\\n            assembly {\\n                sender := shr(96, calldataload(sub(calldatasize(), 20)))\\n            }\\n        } else {\\n            return super._msgSender();\\n        }\\n    }\\n\\n    function _msgData() internal view virtual override returns (bytes calldata) {\\n        if (_isTrustedForwarder(msg.sender)) {\\n            return msg.data[:msg.data.length - 20];\\n        } else {\\n            return super._msgData();\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x9b78f51039de18500ce56634bfa72f8d8a0510c97dd94f175e1cbd2385d4ae37\",\"license\":\"MIT\"},\"src/metatx/ERC2771ContextStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC2771ContextStorage {\\n    struct Layout {\\n        address trustedForwarder;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.ERC2771Context\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xdb2e9e2c6145ecf4aae84a602ff668269869da26b25924e9b486b5e94936740e\",\"license\":\"MIT\"},\"src/metatx/IERC2771Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC2771Context {\\n    function isTrustedForwarder(address forwarder) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x7a4e180be11b78b5f0d8a14efc2009d08685e35e37d0c1eca767317e1145ed1f\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060fd8061001f6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063572b6c0514602d575b600080fd5b60786038366004608c565b7fdb1d5e345c4903e9a32b6674ecc8b1deaddbbb2551474fb34c9d34becbe7f4205473ffffffffffffffffffffffffffffffffffffffff90811691161490565b604051901515815260200160405180910390f35b600060208284031215609d57600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811460c057600080fd5b939250505056fea264697066735822122023ddc8d058c0345018ecfa96ecdcff3095a28d31d153eefe2bc2866560ab42c264736f6c634300080f0033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c8063572b6c0514602d575b600080fd5b60786038366004608c565b7fdb1d5e345c4903e9a32b6674ecc8b1deaddbbb2551474fb34c9d34becbe7f4205473ffffffffffffffffffffffffffffffffffffffff90811691161490565b604051901515815260200160405180910390f35b600060208284031215609d57600080fd5b813573ffffffffffffffffffffffffffffffffffffffff8116811460c057600080fd5b939250505056fea264697066735822122023ddc8d058c0345018ecfa96ecdcff3095a28d31d153eefe2bc2866560ab42c264736f6c634300080f0033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

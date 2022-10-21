@@ -19,16 +19,16 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20Metadata', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20MetadataOwnable', []);
 
-  // Supply
+  // // Supply
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20SupplyOwnable', []);
 
-  // Mintable
+  // // Mintable
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20MintableOwnable', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20MintableOwnableERC2771', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20MintableRoleBased', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20MintableRoleBasedERC2771', []);
 
-  // Tiered Sales
+  // // Tiered Sales
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20TieredSales', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20TieredSalesERC2771', []);
 };

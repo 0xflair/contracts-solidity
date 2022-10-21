@@ -1,0 +1,91 @@
+{
+  "address": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes4[]",
+          "name": "interfaceIds",
+          "type": "bytes4[]"
+        },
+        {
+          "internalType": "bytes4[]",
+          "name": "interfaceIdsToRemove",
+          "type": "bytes4[]"
+        }
+      ],
+      "name": "setERC165",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x1d0ae762e520b713662f478ddb23703549bdfb7f1f552d250617e3306b3f82e1",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+    "transactionIndex": 0,
+    "gasUsed": "634638",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xa162b09afe51f4fb629c57f30233bb6278b2756a98f0e120b0b17bdcb8ef1d52",
+    "transactionHash": "0x1d0ae762e520b713662f478ddb23703549bdfb7f1f552d250617e3306b3f82e1",
+    "logs": [],
+    "blockNumber": 6054402,
+    "cumulativeGasUsed": "867883",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "e2f42af2f5273c7308f3825761226b47",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bytes4[]\",\"name\":\"interfaceIds\",\"type\":\"bytes4[]\"},{\"internalType\":\"bytes4[]\",\"name\":\"interfaceIdsToRemove\",\"type\":\"bytes4[]\"}],\"name\":\"setERC165\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Diamonds\",\"custom:peer-dependencies\":\"IERC165\",\"custom:provides-interfaces\":\"IERC165Admin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{\"setERC165(bytes4[],bytes4[])\":{\"params\":{\"interfaceIds\":\"list of interface id to set as supported\",\"interfaceIdsToRemove\":\"list of interface id to unset as supported\"}}},\"title\":\"ERC165 - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Standard EIP-165 management facet using Ownable extension for access control.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/introspection/ERC165Ownable.sol\":\"ERC165Ownable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/introspection/IERC165.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/introspection/IERC165.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Interface of the ERC165 standard, as defined in the\\n * https://eips.ethereum.org/EIPS/eip-165[EIP].\\n *\\n * Implementers can declare support of contract interfaces, which can then be\\n * queried by others ({ERC165Checker}).\\n *\\n * For an implementation, see {ERC165}.\\n */\\ninterface IERC165 {\\n    /**\\n     * @dev Returns true if this contract implements the interface defined by\\n     * `interfaceId`. See the corresponding\\n     * https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section]\\n     * to learn more about how these ids are created.\\n     *\\n     * This function call must use less than 30 000 gas.\\n     */\\n    function supportsInterface(bytes4 interfaceId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x447a5f3ddc18419d41ff92b3773fb86471b1db25773e07f877f548918a185bf1\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/introspection/ERC165Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/introspection/IERC165.sol\\\";\\n\\nimport \\\"../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"./ERC165Storage.sol\\\";\\nimport \\\"./IERC165Admin.sol\\\";\\n\\n/**\\n * @title ERC165 - Admin - Ownable\\n * @notice Standard EIP-165 management facet using Ownable extension for access control.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Diamonds\\n * @custom:peer-dependencies IERC165\\n * @custom:provides-interfaces IERC165Admin\\n */\\ncontract ERC165Ownable is IERC165Admin, OwnableInternal {\\n    using ERC165Storage for ERC165Storage.Layout;\\n\\n    /**\\n     * @param interfaceIds list of interface id to set as supported\\n     * @param interfaceIdsToRemove list of interface id to unset as supported\\n     */\\n    function setERC165(bytes4[] calldata interfaceIds, bytes4[] calldata interfaceIdsToRemove) public onlyOwner {\\n        ERC165Storage.Layout storage l = ERC165Storage.layout();\\n\\n        l.supportedInterfaces[type(IERC165).interfaceId] = true;\\n\\n        for (uint256 i = 0; i < interfaceIds.length; i++) {\\n            l.supportedInterfaces[interfaceIds[i]] = true;\\n        }\\n\\n        for (uint256 i = 0; i < interfaceIdsToRemove.length; i++) {\\n            l.supportedInterfaces[interfaceIdsToRemove[i]] = false;\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xf4021f704eeadc67cf8a03b879ef468318c87eca9f86dd2b1b236b34b48bb8ac\",\"license\":\"MIT\"},\"src/introspection/ERC165Storage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC165Storage {\\n    struct Layout {\\n        mapping(bytes4 => bool) supportedInterfaces;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.ERC165\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function isSupportedInterface(Layout storage l, bytes4 interfaceId) internal view returns (bool) {\\n        return l.supportedInterfaces[interfaceId];\\n    }\\n\\n    function setSupportedInterface(\\n        Layout storage l,\\n        bytes4 interfaceId,\\n        bool status\\n    ) internal {\\n        require(interfaceId != 0xffffffff, \\\"ERC165: invalid interface id\\\");\\n        l.supportedInterfaces[interfaceId] = status;\\n    }\\n}\\n\",\"keccak256\":\"0x8f7ee2e4f1d03abed56da30ff881baeff0f95aca7468e0c48261a4f613b5186b\",\"license\":\"MIT\"},\"src/introspection/IERC165Admin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC165Admin {\\n    function setERC165(bytes4[] calldata interfaceIds, bytes4[] calldata interfaceIdsToRemove) external;\\n}\\n\",\"keccak256\":\"0x0f824023553d9e7cfcdd3431b9f5cc9eb76b89d17cc31ea852889887ce0720ef\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506103f0806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80632a84809114610030575b600080fd5b61004361003e3660046102c8565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f01ffc9a70000000000000000000000000000000000000000000000000000000060009081527fff923f4a67695a9cdd5da4b8580a5a20edf2183c42aa111dd7fc15dc7bed264060208190527fe1cd5a39bd0bb11debfd51073019ab01630b5cba823095c51b2463cd8445abf8805460ff19166001179055905b848110156101ea57600182600088888581811061018257610182610334565b9050602002016020810190610197919061034a565b7fffffffff000000000000000000000000000000000000000000000000000000001681526020810191909152604001600020805460ff1916911515919091179055806101e281610393565b915050610163565b5060005b82811015610274576000828186868581811061020c5761020c610334565b9050602002016020810190610221919061034a565b7fffffffff000000000000000000000000000000000000000000000000000000001681526020810191909152604001600020805460ff19169115159190911790558061026c81610393565b9150506101ee565b505050505050565b60008083601f84011261028e57600080fd5b50813567ffffffffffffffff8111156102a657600080fd5b6020830191508360208260051b85010111156102c157600080fd5b9250929050565b600080600080604085870312156102de57600080fd5b843567ffffffffffffffff808211156102f657600080fd5b6103028883890161027c565b9096509450602087013591508082111561031b57600080fd5b506103288782880161027c565b95989497509550505050565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561035c57600080fd5b81357fffffffff000000000000000000000000000000000000000000000000000000008116811461038c57600080fd5b9392505050565b6000600182016103b357634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220d1b663c4c15426a4d8147f523018ecb12f1cdb97dd4bc72ff777c258368323dd64736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80632a84809114610030575b600080fd5b61004361003e3660046102c8565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f01ffc9a70000000000000000000000000000000000000000000000000000000060009081527fff923f4a67695a9cdd5da4b8580a5a20edf2183c42aa111dd7fc15dc7bed264060208190527fe1cd5a39bd0bb11debfd51073019ab01630b5cba823095c51b2463cd8445abf8805460ff19166001179055905b848110156101ea57600182600088888581811061018257610182610334565b9050602002016020810190610197919061034a565b7fffffffff000000000000000000000000000000000000000000000000000000001681526020810191909152604001600020805460ff1916911515919091179055806101e281610393565b915050610163565b5060005b82811015610274576000828186868581811061020c5761020c610334565b9050602002016020810190610221919061034a565b7fffffffff000000000000000000000000000000000000000000000000000000001681526020810191909152604001600020805460ff19169115159190911790558061026c81610393565b9150506101ee565b505050505050565b60008083601f84011261028e57600080fd5b50813567ffffffffffffffff8111156102a657600080fd5b6020830191508360208260051b85010111156102c157600080fd5b9250929050565b600080600080604085870312156102de57600080fd5b843567ffffffffffffffff808211156102f657600080fd5b6103028883890161027c565b9096509450602087013591508082111561031b57600080fd5b506103288782880161027c565b95989497509550505050565b634e487b7160e01b600052603260045260246000fd5b60006020828403121561035c57600080fd5b81357fffffffff000000000000000000000000000000000000000000000000000000008116811461038c57600080fd5b9392505050565b6000600182016103b357634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220d1b663c4c15426a4d8147f523018ecb12f1cdb97dd4bc72ff777c258368323dd64736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Diamonds",
+    "custom:peer-dependencies": "IERC165",
+    "custom:provides-interfaces": "IERC165Admin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {
+      "setERC165(bytes4[],bytes4[])": {
+        "params": {
+          "interfaceIds": "list of interface id to set as supported",
+          "interfaceIdsToRemove": "list of interface id to unset as supported"
+        }
+      }
+    },
+    "title": "ERC165 - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Standard EIP-165 management facet using Ownable extension for access control.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

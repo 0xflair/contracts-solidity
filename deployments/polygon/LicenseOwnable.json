@@ -1,0 +1,158 @@
+{
+  "address": "0xf1293f3796BD47F3623e359d17a0a134cC84b517",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ErrLicenseLocked",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "customLicenseURI",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "customLicenseName",
+          "type": "string"
+        }
+      ],
+      "name": "CustomLicenseSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "LicenseLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "enum ILicenseInternal.LicenseVersion",
+          "name": "licenseVersion",
+          "type": "uint8"
+        }
+      ],
+      "name": "LicenseVersionSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "licenseVersionLocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lockLicenseVersion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "enum ILicenseInternal.LicenseVersion",
+          "name": "licenseVersion",
+          "type": "uint8"
+        }
+      ],
+      "name": "setLicenseVersion",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x567e3db85e47c58c607f9cbb5179968e85e3fb435dbc9fe0810886e2885675af",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xf1293f3796BD47F3623e359d17a0a134cC84b517",
+    "transactionIndex": 23,
+    "gasUsed": "250406",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000020000000008000000000000000000000000000000000000000000000000000000000800000000000000400000100000000000000000000000000000000000000000000000000000000000080000000000000000040000000040000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000004000000000000000000001000000000000000000000000000000120000000000000000000000000000001000000000000000000000000000000000000000100000",
+    "blockHash": "0xebf3112f1fc5e131512b281bd2f8a0316976ea605e9c597ede0ea53da2af6329",
+    "transactionHash": "0x567e3db85e47c58c607f9cbb5179968e85e3fb435dbc9fe0810886e2885675af",
+    "logs": [
+      {
+        "transactionIndex": 23,
+        "blockNumber": 34626611,
+        "transactionHash": "0x567e3db85e47c58c607f9cbb5179968e85e3fb435dbc9fe0810886e2885675af",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x000000000000000000000000b68d649f181bde8a8fee367535a606cc3c09fccd",
+          "0x0000000000000000000000009ead03f7136fc6b4bdb0780b00a1c14ae5a8b6d0"
+        ],
+        "data": "0x0000000000000000000000000000000000000000000000000028a42d68333efa0000000000000000000000000000000000000000000000016df3c4cb77012094000000000000000000000000000000000000000000003e37b3f8bd1ecd12afe60000000000000000000000000000000000000000000000016dcb209e0ecde19a000000000000000000000000000000000000000000003e37b421614c3545eee0",
+        "logIndex": 89,
+        "blockHash": "0xebf3112f1fc5e131512b281bd2f8a0316976ea605e9c597ede0ea53da2af6329"
+      }
+    ],
+    "blockNumber": 34626611,
+    "cumulativeGasUsed": "4031949",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "e2f42af2f5273c7308f3825761226b47",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ErrLicenseLocked\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"customLicenseURI\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"customLicenseName\",\"type\":\"string\"}],\"name\":\"CustomLicenseSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"LicenseLocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"enum ILicenseInternal.LicenseVersion\",\"name\":\"licenseVersion\",\"type\":\"uint8\"}],\"name\":\"LicenseVersionSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"licenseVersionLocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lockLicenseVersion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"enum ILicenseInternal.LicenseVersion\",\"name\":\"licenseVersion\",\"type\":\"uint8\"}],\"name\":\"setLicenseVersion\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Legal\",\"custom:peer-dependencies\":\"ILicense ICantBeEvil\",\"custom:provides-interfaces\":\"ILicenseAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"License - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow contract owner to manage license version, name and URI.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/legal/license/LicenseOwnable.sol\":\"LicenseOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/legal/license/ILicenseAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\ninterface ILicenseAdmin {\\n    function setLicenseVersion(ILicenseInternal.LicenseVersion licenseVersion) external;\\n\\n    function lockLicenseVersion() external;\\n\\n    function licenseVersionLocked() external view returns (bool);\\n}\\n\",\"keccak256\":\"0xbb7bf67394bbb50b41e6601aae99e89119fcc11734fbb7ccd18831f4ea834e41\",\"license\":\"MIT\"},\"src/legal/license/ILicenseInternal.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity ^0.8.15;\\n\\ninterface ILicenseInternal {\\n    enum LicenseVersion {\\n        CBE_CC0,\\n        CBE_ECR,\\n        CBE_NECR,\\n        CBE_NECR_HS,\\n        CBE_PR,\\n        CBE_PR_HS,\\n        CUSTOM,\\n        UNLICENSED\\n    }\\n\\n    error ErrLicenseLocked();\\n\\n    event CustomLicenseSet(string customLicenseURI, string customLicenseName);\\n    event LicenseVersionSet(LicenseVersion licenseVersion);\\n    event LicenseLocked();\\n}\\n\",\"keccak256\":\"0x54aa4ce575c120cc31f9bdfd79b490ac25993dd43e6c78ce6d153c87abbc2fa7\",\"license\":\"AGPL-3.0\"},\"src/legal/license/LicenseInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"./LicenseStorage.sol\\\";\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\n/**\\n * @title Functionality to expose license name and URI for the assets of the contract.\\n */\\nabstract contract LicenseInternal is ILicenseInternal {\\n    using Strings for uint256;\\n    using LicenseStorage for LicenseStorage.Layout;\\n\\n    string internal constant A16Z_BASE_LICENSE_URI = \\\"ar://_D9kN1WrNWbCq55BSAGRbTB4bS3v8QAPTYmBThSbX3A/\\\";\\n\\n    function _licenseVersion() internal view virtual returns (ILicenseInternal.LicenseVersion) {\\n        return LicenseStorage.layout().licenseVersion;\\n    }\\n\\n    function _getLicenseURI() internal view virtual returns (string memory) {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersion == LicenseVersion.CUSTOM) {\\n            return l.customLicenseURI;\\n        }\\n        if (l.licenseVersion == LicenseVersion.UNLICENSED) {\\n            return \\\"\\\";\\n        }\\n\\n        return string.concat(A16Z_BASE_LICENSE_URI, uint256(l.licenseVersion).toString());\\n    }\\n\\n    function _getLicenseName() internal view virtual returns (string memory) {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersion == LicenseVersion.CUSTOM) {\\n            return l.customLicenseName;\\n        }\\n\\n        if (l.licenseVersion == LicenseVersion.UNLICENSED) {\\n            return \\\"\\\";\\n        }\\n\\n        if (LicenseVersion.CBE_CC0 == l.licenseVersion) return \\\"CBE_CC0\\\";\\n        if (LicenseVersion.CBE_ECR == l.licenseVersion) return \\\"CBE_ECR\\\";\\n        if (LicenseVersion.CBE_NECR == l.licenseVersion) return \\\"CBE_NECR\\\";\\n        if (LicenseVersion.CBE_NECR_HS == l.licenseVersion) return \\\"CBE_NECR_HS\\\";\\n        if (LicenseVersion.CBE_PR == l.licenseVersion) return \\\"CBE_PR\\\";\\n        else return \\\"CBE_PR_HS\\\";\\n    }\\n\\n    function _setCustomLicense(string calldata _customLicenseName, string calldata _customLicenseURI) internal virtual {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersionLocked) {\\n            revert ErrLicenseLocked();\\n        }\\n\\n        l.licenseVersion = LicenseVersion.CUSTOM;\\n        l.customLicenseName = _customLicenseName;\\n        l.customLicenseURI = _customLicenseURI;\\n\\n        emit CustomLicenseSet(_customLicenseName, _customLicenseURI);\\n    }\\n\\n    function _setLicenseVersion(LicenseVersion _newVersion) internal virtual {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersionLocked) {\\n            revert ErrLicenseLocked();\\n        }\\n\\n        l.licenseVersion = _newVersion;\\n\\n        emit LicenseVersionSet(_newVersion);\\n    }\\n\\n    function _lockLicenseVersion() internal virtual {\\n        LicenseStorage.layout().licenseVersionLocked = true;\\n\\n        emit LicenseLocked();\\n    }\\n}\\n\",\"keccak256\":\"0x112536fa2b4f35ca20280831eb0facd89da67c6316ac4295638e13dfe9eabf1c\",\"license\":\"MIT\"},\"src/legal/license/LicenseOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../access/ownable/OwnableInternal.sol\\\";\\n\\nimport \\\"./LicenseStorage.sol\\\";\\nimport \\\"./LicenseInternal.sol\\\";\\nimport \\\"./ILicenseAdmin.sol\\\";\\n\\n/**\\n * @title License - Admin - Ownable\\n * @notice Allow contract owner to manage license version, name and URI.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Legal\\n * @custom:peer-dependencies ILicense ICantBeEvil\\n * @custom:provides-interfaces ILicenseAdmin\\n */\\ncontract LicenseOwnable is ILicenseAdmin, OwnableInternal, LicenseInternal {\\n    using LicenseStorage for LicenseStorage.Layout;\\n\\n    function setLicenseVersion(LicenseVersion licenseVersion) external override onlyOwner {\\n        _setLicenseVersion(licenseVersion);\\n    }\\n\\n    function lockLicenseVersion() external override onlyOwner {\\n        _lockLicenseVersion();\\n    }\\n\\n    function licenseVersionLocked() external view override returns (bool) {\\n        return LicenseStorage.layout().licenseVersionLocked;\\n    }\\n}\\n\",\"keccak256\":\"0x379bb4bcad7417ea923883453aad893664427684b0eee598d56f2b008f1475b1\",\"license\":\"MIT\"},\"src/legal/license/LicenseStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\nlibrary LicenseStorage {\\n    struct Layout {\\n        ILicenseInternal.LicenseVersion licenseVersion;\\n        string customLicenseURI;\\n        string customLicenseName;\\n        bool licenseVersionLocked;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.License\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xfcb98e8289385e14addd110e33cdf22499b7cdf9af83dc1c204ca1e2bad12d1b\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610392806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806364ed291314610046578063bf9b7a571461005b578063dd89c6fa14610094575b600080fd5b6100596100543660046102f6565b61009c565b005b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f95460ff16604051901515815260200160405180910390f35b610059610133565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101275760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b610130816101c3565b50565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101b95760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640161011e565b6101c161029f565b565b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f9547f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f69060ff1615610241576040517ff48a7fea00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80548290829060ff1916600183600781111561025f5761025f61031e565b02179055507f43151bff1cc6df3c0eb4f611859a071e6e4d636b029326ea9298ca84819df167826040516102939190610334565b60405180910390a15050565b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f9805460ff191660011790556040517fe8dbcfb731deb2db7b5ed93a3d4dc3676d4e5b8bd51aef007a734a98697ec78d90600090a1565b60006020828403121561030857600080fd5b81356008811061031757600080fd5b9392505050565b634e487b7160e01b600052602160045260246000fd5b602081016008831061035657634e487b7160e01b600052602160045260246000fd5b9190529056fea2646970667358221220a0b4c6385bd52d010b5b95edd56618417630077e0377aefac7d61797f9488ce264736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806364ed291314610046578063bf9b7a571461005b578063dd89c6fa14610094575b600080fd5b6100596100543660046102f6565b61009c565b005b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f95460ff16604051901515815260200160405180910390f35b610059610133565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101275760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b610130816101c3565b50565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101b95760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640161011e565b6101c161029f565b565b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f9547f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f69060ff1615610241576040517ff48a7fea00000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80548290829060ff1916600183600781111561025f5761025f61031e565b02179055507f43151bff1cc6df3c0eb4f611859a071e6e4d636b029326ea9298ca84819df167826040516102939190610334565b60405180910390a15050565b7f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f9805460ff191660011790556040517fe8dbcfb731deb2db7b5ed93a3d4dc3676d4e5b8bd51aef007a734a98697ec78d90600090a1565b60006020828403121561030857600080fd5b81356008811061031757600080fd5b9392505050565b634e487b7160e01b600052602160045260246000fd5b602081016008831061035657634e487b7160e01b600052602160045260246000fd5b9190529056fea2646970667358221220a0b4c6385bd52d010b5b95edd56618417630077e0377aefac7d61797f9488ce264736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Legal",
+    "custom:peer-dependencies": "ILicense ICantBeEvil",
+    "custom:provides-interfaces": "ILicenseAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "License - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow contract owner to manage license version, name and URI.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

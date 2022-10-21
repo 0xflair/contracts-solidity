@@ -7,9 +7,14 @@ import { IERC20Metadata } from "./IERC20Metadata.sol";
 import { ERC20MetadataInternal } from "./ERC20MetadataInternal.sol";
 
 /**
- * @title ERC20 metadata extensions
+ * @title ERC20 Metadata
+ * @notice Provides standard read methods for name, symbol and decimals metadata for an ERC20 token.
+ *
+ * @custom:type eip-2535-facet
+ * @custom:category Tokens
+ * @custom:provides-interfaces IERC20Metadata
  */
-abstract contract ERC20Metadata is Metadata, IERC20Metadata, ERC20MetadataInternal {
+contract ERC20Metadata is Metadata, IERC20Metadata, ERC20MetadataInternal {
     /**
      * @inheritdoc IERC20Metadata
      */

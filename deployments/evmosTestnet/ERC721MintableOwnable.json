@@ -1,0 +1,106 @@
+{
+  "address": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tos",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "mintByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mintByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xae980aad84cb75a15bf05a70bcf2c081b3153c31923bc12c6c4ccd8ec0135cd1",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+    "transactionIndex": 39,
+    "gasUsed": "647304",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xba034aac0e7636c2b259fd81f91d9d7a8502664eac52e2117968a90d4206ba12",
+    "transactionHash": "0xae980aad84cb75a15bf05a70bcf2c081b3153c31923bc12c6c4ccd8ec0135cd1",
+    "logs": [],
+    "blockNumber": 7776626,
+    "cumulativeGasUsed": "5502765",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "e2f42af2f5273c7308f3825761226b47",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"mintByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mintByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"IERC721MintableOwnable\",\"custom:required-dependencies\":\"IERC721MintableExtension\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{\"mintByOwner(address,uint256)\":{\"details\":\"Creates `amount` new tokens for `to`, of token type `id`. See {ERC721-_mint}. Requirements: - the caller must be diamond owner.\"}},\"title\":\"ERC721 - Mint as owner\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow minting as contract owner with no restrictions (supports ERC721A).\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC721/facets/minting/ERC721MintableOwnable.sol\":\"ERC721MintableOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/common/Errors.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * The caller must be the current contract itself.\\n */\\nerror ErrSenderIsNotSelf();\\n\",\"keccak256\":\"0xd1592cdff5defdc5c2eabccce2fcd663d930338b99dad69567c7054c81711bc9\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/mintable/IERC721MintableExtension.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721A} that allows other facets from the diamond to mint tokens.\\n */\\ninterface IERC721MintableExtension {\\n    /**\\n     * @dev Creates `amount` new tokens for `to`, of token type `id`.\\n     *\\n     * See {ERC721A-_mint}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond itself (other facets).\\n     */\\n    function mintByFacet(address to, uint256 amount) external;\\n\\n    function mintByFacet(address[] memory tos, uint256[] memory amounts) external;\\n}\\n\",\"keccak256\":\"0x8acbd67db79ebd4189a980fa17b14289585f1bbc4cb7a17fc9d0dacff39a86cf\",\"license\":\"MIT\"},\"src/token/ERC721/facets/minting/ERC721MintableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../../../common/Errors.sol\\\";\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"../../extensions/mintable/IERC721MintableExtension.sol\\\";\\nimport \\\"./IERC721MintableOwnable.sol\\\";\\n\\n/**\\n * @title ERC721 - Mint as owner\\n * @notice Allow minting as contract owner with no restrictions (supports ERC721A).\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:required-dependencies IERC721MintableExtension\\n * @custom:provides-interfaces IERC721MintableOwnable\\n */\\ncontract ERC721MintableOwnable is IERC721MintableOwnable, OwnableInternal {\\n    /**\\n     * @inheritdoc IERC721MintableOwnable\\n     */\\n    function mintByOwner(address to, uint256 amount) public virtual onlyOwner {\\n        IERC721MintableExtension(address(this)).mintByFacet(to, amount);\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721MintableOwnable\\n     */\\n    function mintByOwner(address[] calldata tos, uint256[] calldata amounts) public virtual onlyOwner {\\n        IERC721MintableExtension(address(this)).mintByFacet(tos, amounts);\\n    }\\n}\\n\",\"keccak256\":\"0x3796a50899e9010b401cce357334b265b5b39d302a096bc2f15b2dd199271866\",\"license\":\"MIT\"},\"src/token/ERC721/facets/minting/IERC721MintableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721} that allows diamond owner to mint tokens.\\n */\\ninterface IERC721MintableOwnable {\\n    /**\\n     * @dev Creates `amount` new tokens for `to`, of token type `id`.\\n     *\\n     * See {ERC721-_mint}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond owner.\\n     */\\n    function mintByOwner(address to, uint256 amount) external;\\n\\n    function mintByOwner(address[] calldata tos, uint256[] calldata amounts) external;\\n}\\n\",\"keccak256\":\"0xf3f1fa378ddb937b4c11282d6ecb7c81dda10a008835b8dbc2a908eff8db51b7\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610461806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80632c3d8acb1461003b5780633542aee214610050575b600080fd5b61004e6100493660046102c4565b610063565b005b61004e61005e366004610359565b610168565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b6040517f49142a1400000000000000000000000000000000000000000000000000000000815230906349142a1490610130908790879087908790600401610383565b600060405180830381600087803b15801561014a57600080fd5b505af115801561015e573d6000803e3d6000fd5b5050505050505050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100e5565b6040517f2d4f475f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83166004820152602481018290523090632d4f475f90604401600060405180830381600087803b15801561025c57600080fd5b505af1158015610270573d6000803e3d6000fd5b505050505050565b60008083601f84011261028a57600080fd5b50813567ffffffffffffffff8111156102a257600080fd5b6020830191508360208260051b85010111156102bd57600080fd5b9250929050565b600080600080604085870312156102da57600080fd5b843567ffffffffffffffff808211156102f257600080fd5b6102fe88838901610278565b9096509450602087013591508082111561031757600080fd5b5061032487828801610278565b95989497509550505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461035457600080fd5b919050565b6000806040838503121561036c57600080fd5b61037583610330565b946020939093013593505050565b6040808252810184905260008560608301825b878110156103d15773ffffffffffffffffffffffffffffffffffffffff6103bc84610330565b16825260209283019290910190600101610396565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561040a57600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea2646970667358221220d7931b753b512b5b7e6789c727e448cf8022b13935998f1e680edb64a38902aa64736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80632c3d8acb1461003b5780633542aee214610050575b600080fd5b61004e6100493660046102c4565b610063565b005b61004e61005e366004610359565b610168565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b6040517f49142a1400000000000000000000000000000000000000000000000000000000815230906349142a1490610130908790879087908790600401610383565b600060405180830381600087803b15801561014a57600080fd5b505af115801561015e573d6000803e3d6000fd5b5050505050505050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100e5565b6040517f2d4f475f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff83166004820152602481018290523090632d4f475f90604401600060405180830381600087803b15801561025c57600080fd5b505af1158015610270573d6000803e3d6000fd5b505050505050565b60008083601f84011261028a57600080fd5b50813567ffffffffffffffff8111156102a257600080fd5b6020830191508360208260051b85010111156102bd57600080fd5b9250929050565b600080600080604085870312156102da57600080fd5b843567ffffffffffffffff808211156102f257600080fd5b6102fe88838901610278565b9096509450602087013591508082111561031757600080fd5b5061032487828801610278565b95989497509550505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461035457600080fd5b919050565b6000806040838503121561036c57600080fd5b61037583610330565b946020939093013593505050565b6040808252810184905260008560608301825b878110156103d15773ffffffffffffffffffffffffffffffffffffffff6103bc84610330565b16825260209283019290910190600101610396565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff85111561040a57600080fd5b8460051b91508186602083013760009101602001908152969550505050505056fea2646970667358221220d7931b753b512b5b7e6789c727e448cf8022b13935998f1e680edb64a38902aa64736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "IERC721MintableOwnable",
+    "custom:required-dependencies": "IERC721MintableExtension",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {
+      "mintByOwner(address,uint256)": {
+        "details": "Creates `amount` new tokens for `to`, of token type `id`. See {ERC721-_mint}. Requirements: - the caller must be diamond owner."
+      }
+    },
+    "title": "ERC721 - Mint as owner",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow minting as contract owner with no restrictions (supports ERC721A).",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

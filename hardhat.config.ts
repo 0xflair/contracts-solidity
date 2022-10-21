@@ -29,6 +29,8 @@ if (args.includes('mainnet')) {
   etherScanApiKey = process.env.SEPOLIA_ETHERSCAN_API_KEY;
 } else if (args.includes('arbitrumOne')) {
   etherScanApiKey = process.env.ARBITRUM_ONE_ETHERSCAN_API_KEY;
+} else if (args.includes('arbitrumNova')) {
+  etherScanApiKey = process.env.ARBITRUM_NOVA_ETHERSCAN_API_KEY;
 } else if (args.includes('arbitrumTestnet')) {
   etherScanApiKey = process.env.ARBITRUM_TESTNET_ETHERSCAN_API_KEY;
 } else if (args.includes('opera')) {
@@ -53,8 +55,20 @@ if (args.includes('mainnet')) {
   etherScanApiKey = '';
 } else if (args.includes('zksyncTestnet')) {
   etherScanApiKey = '';
+} else if (args.includes('nearAurora')) {
+  etherScanApiKey = '';
+} else if (args.includes('nearAuroraTestnet')) {
+  etherScanApiKey = '';
+} else if (args.includes('cronos')) {
+  etherScanApiKey = '';
+} else if (args.includes('cronosTestnet')) {
+  etherScanApiKey = '';
+} else if (args.includes('telos')) {
+  etherScanApiKey = '';
+} else if (args.includes('telosTestnet')) {
+  etherScanApiKey = '';
 } else if (args.includes('hardhat')) {
-  etherScanApiKey = process.env.RINKEBY_ETHERSCAN_API_KEY;
+  etherScanApiKey = process.env.GOERLI_ETHERSCAN_API_KEY;
 } else {
   console.warn(`Could not get network from args! ${args.join(', ')}`);
 }
@@ -157,6 +171,11 @@ const config: HardhatUserConfig = {
       url: process.env.ARBITRUM_ONE_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    arbitrumNova: {
+      chainId: 42170,
+      url: process.env.ARBITRUM_NOVA_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
     arbitrumTestnet: {
       chainId: 421611,
       url: process.env.ARBITRUM_TESTNET_URL || '',
@@ -205,6 +224,61 @@ const config: HardhatUserConfig = {
     bscTestnet: {
       chainId: 97,
       url: process.env.BSC_TESTNET_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Near (Aurora)
+    nearAurora: {
+      chainId: 1313161554,
+      url: process.env.NEAR_AURORA_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    nearAuroraTestnet: {
+      chainId: 1313161555,
+      url: process.env.NEAR_AURORA_TESTNET_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Cronos
+    cronos: {
+      chainId: 25,
+      url: process.env.CRONOS_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    cronosTestnet: {
+      chainId: 338,
+      url: process.env.CRONOS_TESTNET_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Telos
+    telos: {
+      chainId: 40,
+      url: process.env.TELOS_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    telosTestnet: {
+      chainId: 41,
+      url: process.env.TELOS_TESTNET_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Celo
+    celo: {
+      chainId: 42220,
+      url: process.env.CELO_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    celoTestnet: {
+      chainId: 44787,
+      url: process.env.CELO_TESTNET_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Oasis
+    oasisEmerald: {
+      chainId: 42262,
+      url: process.env.OASIS_EMERALD_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    oasisEmeraldTestnet: {
+      chainId: 42261,
+      url: process.env.OASIS_EMERALD_TESTNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // zkSync

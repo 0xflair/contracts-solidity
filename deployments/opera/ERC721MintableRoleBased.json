@@ -1,0 +1,188 @@
+{
+  "address": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "previousAdminRole",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "newAdminRole",
+          "type": "bytes32"
+        }
+      ],
+      "name": "RoleAdminChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleGranted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "role",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        }
+      ],
+      "name": "RoleRevoked",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "DEFAULT_ADMIN_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "MINTER_ROLE",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "mintByRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address[]",
+          "name": "tos",
+          "type": "address[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "amounts",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "mintByRole",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xecbb213d5cc21a5cd2e7031e5510241257661105ce01299bc628c34832bfe5ad",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
+    "transactionIndex": 1,
+    "gasUsed": "622310",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x000282e7000001773b35b77a354226695bb37240c09ae32e8ab25b0c050b8fd8",
+    "transactionHash": "0xecbb213d5cc21a5cd2e7031e5510241257661105ce01299bc628c34832bfe5ad",
+    "logs": [],
+    "blockNumber": 49695847,
+    "cumulativeGasUsed": "718186",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "e2f42af2f5273c7308f3825761226b47",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"DEFAULT_ADMIN_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"MINTER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mintByRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address[]\",\"name\":\"tos\",\"type\":\"address[]\"},{\"internalType\":\"uint256[]\",\"name\":\"amounts\",\"type\":\"uint256[]\"}],\"name\":\"mintByRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"IERC721MintableRoleBased\",\"custom:required-dependencies\":\"IERC721MintableExtension\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{\"mintByRole(address,uint256)\":{\"details\":\"Creates `amount` new tokens for `to`, of token type `id`. See {ERC721-_mint}. Requirements: - the caller must have MINTER_ROLE.\"}},\"title\":\"ERC721 - Mint as role\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol\":\"ERC721MintableRoleBased\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/access/roles/AccessControlInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"./AccessControlStorage.sol\\\";\\nimport \\\"./IAccessControlEvents.sol\\\";\\n\\nabstract contract AccessControlInternal is Context, IAccessControlEvents {\\n    using AccessControlStorage for AccessControlStorage.Layout;\\n\\n    bytes32 public constant DEFAULT_ADMIN_ROLE = 0x00;\\n\\n    /**\\n     * @dev Modifier that checks that an account has a specific role. Reverts\\n     * with a standardized message including the required role.\\n     *\\n     * The format of the revert reason is given by the following regular expression:\\n     *\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\n     *\\n     * _Available since v4.1._\\n     */\\n    modifier onlyRole(bytes32 role) {\\n        _checkRole(role);\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns `true` if `account` has been granted `role`.\\n     */\\n    function _hasRole(bytes32 role, address account) internal view virtual returns (bool) {\\n        return AccessControlStorage.layout().roles[role].members[account];\\n    }\\n\\n    /**\\n     * @dev Revert with a standard message if `_msgSender()` is missing `role`.\\n     * Overriding this function changes the behavior of the {onlyRole} modifier.\\n     *\\n     * Format of the revert message is described in {_checkRole}.\\n     *\\n     * _Available since v4.6._\\n     */\\n    function _checkRole(bytes32 role) internal view virtual {\\n        _checkRole(role, _msgSender());\\n    }\\n\\n    /**\\n     * @dev Revert with a standard message if `account` is missing `role`.\\n     *\\n     * The format of the revert reason is given by the following regular expression:\\n     *\\n     *  /^AccessControl: account (0x[0-9a-f]{40}) is missing role (0x[0-9a-f]{64})$/\\n     */\\n    function _checkRole(bytes32 role, address account) internal view virtual {\\n        if (!_hasRole(role, account)) {\\n            revert(\\n                string(\\n                    abi.encodePacked(\\n                        \\\"AccessControl: account \\\",\\n                        Strings.toHexString(account),\\n                        \\\" is missing role \\\",\\n                        Strings.toHexString(uint256(role), 32)\\n                    )\\n                )\\n            );\\n        }\\n    }\\n\\n    /**\\n     * @dev Returns the admin role that controls `role`. See {grantRole} and\\n     * {revokeRole}.\\n     *\\n     * To change a role's admin, use {_setRoleAdmin}.\\n     */\\n    function _getRoleAdmin(bytes32 role) internal view virtual returns (bytes32) {\\n        return AccessControlStorage.layout().roles[role].adminRole;\\n    }\\n\\n    /**\\n     * @dev Revokes `role` from the calling account.\\n     *\\n     * Roles are often managed via {grantRole} and {revokeRole}: this function's\\n     * purpose is to provide a mechanism for accounts to lose their privileges\\n     * if they are compromised (such as when a trusted device is misplaced).\\n     *\\n     * If the calling account had been revoked `role`, emits a {RoleRevoked}\\n     * event.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be `account`.\\n     *\\n     * May emit a {RoleRevoked} event.\\n     */\\n    function _renounceRole(bytes32 role, address account) internal virtual {\\n        require(account == _msgSender(), \\\"AccessControl: can only renounce roles for self\\\");\\n\\n        _revokeRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * If `account` had not been already granted `role`, emits a {RoleGranted}\\n     * event. Note that unlike {grantRole}, this function doesn't perform any\\n     * checks on the calling account.\\n     *\\n     * May emit a {RoleGranted} event.\\n     *\\n     * [WARNING]\\n     * ====\\n     * This function should only be called from the constructor when setting\\n     * up the initial roles for the system.\\n     *\\n     * Using this function in any other way is effectively circumventing the admin\\n     * system imposed by {AccessControl}.\\n     * ====\\n     *\\n     * NOTE: This function is deprecated in favor of {_grantRole}.\\n     */\\n    function _setupRole(bytes32 role, address account) internal virtual {\\n        _grantRole(role, account);\\n    }\\n\\n    /**\\n     * @dev Sets `adminRole` as ``role``'s admin role.\\n     *\\n     * Emits a {RoleAdminChanged} event.\\n     */\\n    function _setRoleAdmin(bytes32 role, bytes32 adminRole) internal virtual {\\n        bytes32 previousAdminRole = _getRoleAdmin(role);\\n        AccessControlStorage.layout().roles[role].adminRole = adminRole;\\n        emit RoleAdminChanged(role, previousAdminRole, adminRole);\\n    }\\n\\n    /**\\n     * @dev Grants `role` to `account`.\\n     *\\n     * Internal function without access restriction.\\n     *\\n     * May emit a {RoleGranted} event.\\n     */\\n    function _grantRole(bytes32 role, address account) internal virtual {\\n        if (!_hasRole(role, account)) {\\n            AccessControlStorage.layout().roles[role].members[account] = true;\\n            emit RoleGranted(role, account, _msgSender());\\n        }\\n    }\\n\\n    /**\\n     * @dev Revokes `role` from `account`.\\n     *\\n     * Internal function without access restriction.\\n     *\\n     * May emit a {RoleRevoked} event.\\n     */\\n    function _revokeRole(bytes32 role, address account) internal virtual {\\n        if (_hasRole(role, account)) {\\n            AccessControlStorage.layout().roles[role].members[account] = false;\\n            emit RoleRevoked(role, account, _msgSender());\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x6bdd401d768e7df6002d060fc2e5287512a803ce2abc42ad99367b131e41f9bc\",\"license\":\"MIT\"},\"src/access/roles/AccessControlStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary AccessControlStorage {\\n    struct RoleData {\\n        mapping(address => bool) members;\\n        bytes32 adminRole;\\n    }\\n\\n    struct Layout {\\n        mapping(bytes32 => RoleData) roles;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.AccessControl\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x81acdea32dd524f817e7c8f4999f1c24e803dad4680a647d1be35675637a10b3\",\"license\":\"MIT\"},\"src/access/roles/IAccessControlEvents.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev External interface of AccessControl declared to support ERC165 detection.\\n */\\ninterface IAccessControlEvents {\\n    /**\\n     * @dev Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole`\\n     *\\n     * `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite\\n     * {RoleAdminChanged} not being emitted signaling this.\\n     *\\n     * _Available since v3.1._\\n     */\\n    event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole);\\n\\n    /**\\n     * @dev Emitted when `account` is granted `role`.\\n     *\\n     * `sender` is the account that originated the contract call, an admin role\\n     * bearer except when using {AccessControl-_setupRole}.\\n     */\\n    event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender);\\n\\n    /**\\n     * @dev Emitted when `account` is revoked `role`.\\n     *\\n     * `sender` is the account that originated the contract call:\\n     *   - if using `revokeRole`, it is the admin role bearer\\n     *   - if using `renounceRole`, it is the role bearer (i.e. `account`)\\n     */\\n    event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender);\\n}\\n\",\"keccak256\":\"0x7574c6d5a71b386e40e071bd7ba50eb0e43bb265385637af3620704b84d7666d\",\"license\":\"MIT\"},\"src/common/Errors.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * The caller must be the current contract itself.\\n */\\nerror ErrSenderIsNotSelf();\\n\",\"keccak256\":\"0xd1592cdff5defdc5c2eabccce2fcd663d930338b99dad69567c7054c81711bc9\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/mintable/IERC721MintableExtension.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721A} that allows other facets from the diamond to mint tokens.\\n */\\ninterface IERC721MintableExtension {\\n    /**\\n     * @dev Creates `amount` new tokens for `to`, of token type `id`.\\n     *\\n     * See {ERC721A-_mint}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond itself (other facets).\\n     */\\n    function mintByFacet(address to, uint256 amount) external;\\n\\n    function mintByFacet(address[] memory tos, uint256[] memory amounts) external;\\n}\\n\",\"keccak256\":\"0x8acbd67db79ebd4189a980fa17b14289585f1bbc4cb7a17fc9d0dacff39a86cf\",\"license\":\"MIT\"},\"src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../../../common/Errors.sol\\\";\\nimport \\\"../../../../access/roles/AccessControlInternal.sol\\\";\\nimport \\\"../../extensions/mintable/IERC721MintableExtension.sol\\\";\\nimport \\\"./IERC721MintableRoleBased.sol\\\";\\n\\n/**\\n * @title ERC721 - Mint as role\\n * @notice Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:required-dependencies IERC721MintableExtension\\n * @custom:provides-interfaces IERC721MintableRoleBased\\n */\\ncontract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInternal {\\n    bytes32 public constant MINTER_ROLE = keccak256(\\\"MINTER_ROLE\\\");\\n\\n    /**\\n     * @inheritdoc IERC721MintableRoleBased\\n     */\\n    function mintByRole(address to, uint256 amount) public virtual onlyRole(MINTER_ROLE) {\\n        IERC721MintableExtension(address(this)).mintByFacet(to, amount);\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721MintableRoleBased\\n     */\\n    function mintByRole(address[] calldata tos, uint256[] calldata amounts) public virtual onlyRole(MINTER_ROLE) {\\n        IERC721MintableExtension(address(this)).mintByFacet(tos, amounts);\\n    }\\n}\\n\",\"keccak256\":\"0x6be9c61524f4c70a01ee38578e4576643bab1f58b91e2b6c6e6395a3deb06a92\",\"license\":\"MIT\"},\"src/token/ERC721/facets/minting/IERC721MintableRoleBased.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721} that allows a specific role to mint tokens.\\n */\\ninterface IERC721MintableRoleBased {\\n    /**\\n     * @dev Creates `amount` new tokens for `to`, of token type `id`.\\n     *\\n     * See {ERC721-_mint}.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must have MINTER_ROLE.\\n     */\\n    function mintByRole(address to, uint256 amount) external;\\n\\n    function mintByRole(address[] calldata tos, uint256[] calldata amounts) external;\\n}\\n\",\"keccak256\":\"0x4fb6ab5f9ea4ccc0b7c8e1bdea9a3b998cd5cbe4c8c7c9af6c81d05421aeeb12\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610885806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80631a056e7114610051578063a217fddf14610066578063b9a47ff214610080578063d539139314610093575b600080fd5b61006461005f366004610551565b6100ba565b005b61006e600081565b60405190815260200160405180910390f35b61006461008e3660046105c7565b61016f565b61006e7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a681565b7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a66100e481610214565b6040517f2d4f475f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152602481018390523090632d4f475f90604401600060405180830381600087803b15801561015257600080fd5b505af1158015610166573d6000803e3d6000fd5b50505050505050565b7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a661019981610214565b6040517f49142a1400000000000000000000000000000000000000000000000000000000815230906349142a14906101db908890889088908890600401610633565b600060405180830381600087803b1580156101f557600080fd5b505af1158015610209573d6000803e3d6000fd5b505050505050505050565b61021e8133610221565b50565b60008281527f2e59e4c2e927cdddbb64e181e0668d9a0fa70dd88f94d999cd87d5496a20da626020908152604080832073ffffffffffffffffffffffffffffffffffffffff8516845290915290205460ff166102cb57610280816102cf565b61028b8360206102f8565b60405160200161029c92919061070b565b60408051601f198184030181529082905262461bcd60e51b82526102c29160040161078c565b60405180910390fd5b5050565b60606102f273ffffffffffffffffffffffffffffffffffffffff831660146102f8565b92915050565b606060006103078360026107d5565b6103129060026107f4565b67ffffffffffffffff81111561032a5761032a61080c565b6040519080825280601f01601f191660200182016040528015610354576020820181803683370190505b5090507f30000000000000000000000000000000000000000000000000000000000000008160008151811061038b5761038b610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053507f7800000000000000000000000000000000000000000000000000000000000000816001815181106103ee576103ee610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600061042a8460026107d5565b6104359060016107f4565b90505b60018111156104d2577f303132333435363738396162636465660000000000000000000000000000000085600f166010811061047657610476610822565b1a60f81b82828151811061048c5761048c610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a90535060049490941c936104cb81610838565b9050610438565b5083156105215760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e7460448201526064016102c2565b9392505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461054c57600080fd5b919050565b6000806040838503121561056457600080fd5b61056d83610528565b946020939093013593505050565b60008083601f84011261058d57600080fd5b50813567ffffffffffffffff8111156105a557600080fd5b6020830191508360208260051b85010111156105c057600080fd5b9250929050565b600080600080604085870312156105dd57600080fd5b843567ffffffffffffffff808211156105f557600080fd5b6106018883890161057b565b9096509450602087013591508082111561061a57600080fd5b506106278782880161057b565b95989497509550505050565b6040808252810184905260008560608301825b878110156106815773ffffffffffffffffffffffffffffffffffffffff61066c84610528565b16825260209283019290910190600101610646565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8511156106ba57600080fd5b8460051b915081866020830137600091016020019081529695505050505050565b60005b838110156106f65781810151838201526020016106de565b83811115610705576000848401525b50505050565b7f416363657373436f6e74726f6c3a206163636f756e74200000000000000000008152600083516107438160178501602088016106db565b7f206973206d697373696e6720726f6c652000000000000000000000000000000060179184019182015283516107808160288401602088016106db565b01602801949350505050565b60208152600082518060208401526107ab8160408501602087016106db565b601f01601f19169190910160400192915050565b634e487b7160e01b600052601160045260246000fd5b60008160001904831182151516156107ef576107ef6107bf565b500290565b60008219821115610807576108076107bf565b500190565b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b600081610847576108476107bf565b50600019019056fea2646970667358221220242449e1e8186ec2f5e38c8f344ce543bb6c87a7dc581c52b152fa0e4b5fc2d564736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80631a056e7114610051578063a217fddf14610066578063b9a47ff214610080578063d539139314610093575b600080fd5b61006461005f366004610551565b6100ba565b005b61006e600081565b60405190815260200160405180910390f35b61006461008e3660046105c7565b61016f565b61006e7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a681565b7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a66100e481610214565b6040517f2d4f475f00000000000000000000000000000000000000000000000000000000815273ffffffffffffffffffffffffffffffffffffffff84166004820152602481018390523090632d4f475f90604401600060405180830381600087803b15801561015257600080fd5b505af1158015610166573d6000803e3d6000fd5b50505050505050565b7f9f2df0fed2c77648de5860a4cc508cd0818c85b8b8a1ab4ceeef8d981c8956a661019981610214565b6040517f49142a1400000000000000000000000000000000000000000000000000000000815230906349142a14906101db908890889088908890600401610633565b600060405180830381600087803b1580156101f557600080fd5b505af1158015610209573d6000803e3d6000fd5b505050505050505050565b61021e8133610221565b50565b60008281527f2e59e4c2e927cdddbb64e181e0668d9a0fa70dd88f94d999cd87d5496a20da626020908152604080832073ffffffffffffffffffffffffffffffffffffffff8516845290915290205460ff166102cb57610280816102cf565b61028b8360206102f8565b60405160200161029c92919061070b565b60408051601f198184030181529082905262461bcd60e51b82526102c29160040161078c565b60405180910390fd5b5050565b60606102f273ffffffffffffffffffffffffffffffffffffffff831660146102f8565b92915050565b606060006103078360026107d5565b6103129060026107f4565b67ffffffffffffffff81111561032a5761032a61080c565b6040519080825280601f01601f191660200182016040528015610354576020820181803683370190505b5090507f30000000000000000000000000000000000000000000000000000000000000008160008151811061038b5761038b610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053507f7800000000000000000000000000000000000000000000000000000000000000816001815181106103ee576103ee610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350600061042a8460026107d5565b6104359060016107f4565b90505b60018111156104d2577f303132333435363738396162636465660000000000000000000000000000000085600f166010811061047657610476610822565b1a60f81b82828151811061048c5761048c610822565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a90535060049490941c936104cb81610838565b9050610438565b5083156105215760405162461bcd60e51b815260206004820181905260248201527f537472696e67733a20686578206c656e67746820696e73756666696369656e7460448201526064016102c2565b9392505050565b803573ffffffffffffffffffffffffffffffffffffffff8116811461054c57600080fd5b919050565b6000806040838503121561056457600080fd5b61056d83610528565b946020939093013593505050565b60008083601f84011261058d57600080fd5b50813567ffffffffffffffff8111156105a557600080fd5b6020830191508360208260051b85010111156105c057600080fd5b9250929050565b600080600080604085870312156105dd57600080fd5b843567ffffffffffffffff808211156105f557600080fd5b6106018883890161057b565b9096509450602087013591508082111561061a57600080fd5b506106278782880161057b565b95989497509550505050565b6040808252810184905260008560608301825b878110156106815773ffffffffffffffffffffffffffffffffffffffff61066c84610528565b16825260209283019290910190600101610646565b5083810360208501528481527f07ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff8511156106ba57600080fd5b8460051b915081866020830137600091016020019081529695505050505050565b60005b838110156106f65781810151838201526020016106de565b83811115610705576000848401525b50505050565b7f416363657373436f6e74726f6c3a206163636f756e74200000000000000000008152600083516107438160178501602088016106db565b7f206973206d697373696e6720726f6c652000000000000000000000000000000060179184019182015283516107808160288401602088016106db565b01602801949350505050565b60208152600082518060208401526107ab8160408501602087016106db565b601f01601f19169190910160400192915050565b634e487b7160e01b600052601160045260246000fd5b60008160001904831182151516156107ef576107ef6107bf565b500290565b60008219821115610807576108076107bf565b500190565b634e487b7160e01b600052604160045260246000fd5b634e487b7160e01b600052603260045260246000fd5b600081610847576108476107bf565b50600019019056fea2646970667358221220242449e1e8186ec2f5e38c8f344ce543bb6c87a7dc581c52b152fa0e4b5fc2d564736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "IERC721MintableRoleBased",
+    "custom:required-dependencies": "IERC721MintableExtension",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {
+      "mintByRole(address,uint256)": {
+        "details": "Creates `amount` new tokens for `to`, of token type `id`. See {ERC721-_mint}. Requirements: - the caller must have MINTER_ROLE."
+      }
+    },
+    "title": "ERC721 - Mint as role",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

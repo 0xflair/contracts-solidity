@@ -1,0 +1,78 @@
+{
+  "address": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "setBurnablePausedUntil",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x3be5714fd407e3c81e5b6374585c3a015ed8515b2538ac29fced4918297c4a18",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+    "transactionIndex": 1,
+    "gasUsed": "133377",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x6bc6bcbaed6656ac5f566d22621e5fceecf9d6024df9f9265d2b4c53e54a91d0",
+    "transactionHash": "0x3be5714fd407e3c81e5b6374585c3a015ed8515b2538ac29fced4918297c4a18",
+    "logs": [],
+    "blockNumber": 683038,
+    "cumulativeGasUsed": "133377",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "48f4524ebff8b0366d06eec787eed08d",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newTimestamp\",\"type\":\"uint256\"}],\"name\":\"setBurnablePausedUntil\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"IBurnableAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Burnable - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow contract owner to manage burning mechanism.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/common/burnable/BurnableOwnable.sol\":\"BurnableOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/token/common/burnable/BurnableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"./BurnableStorage.sol\\\";\\nimport \\\"./IBurnableAdmin.sol\\\";\\n\\n/**\\n * @title Burnable - Admin - Ownable\\n * @notice Allow contract owner to manage burning mechanism.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:provides-interfaces IBurnableAdmin\\n */\\ncontract BurnableOwnable is IBurnableAdmin, OwnableInternal {\\n    using BurnableStorage for BurnableStorage.Layout;\\n\\n    function setBurnablePausedUntil(uint256 newTimestamp) public virtual onlyOwner {\\n        BurnableStorage.layout().pausedUntil = newTimestamp;\\n    }\\n}\\n\",\"keccak256\":\"0x8c85c51e016061260007c3358b90588a4cd4f22fd95c76e89013e6f227aa3bf4\",\"license\":\"MIT\"},\"src/token/common/burnable/BurnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary BurnableStorage {\\n    struct Layout {\\n        uint256 pausedUntil;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.Burnable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x9cdc7c52c149bae79a80d887dfb622fb37f649e4ddd986f846993f4365619640\",\"license\":\"MIT\"},\"src/token/common/burnable/IBurnableAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IBurnableAdmin {\\n    function setBurnablePausedUntil(uint256 newTimestamp) external;\\n}\\n\",\"keccak256\":\"0x1e91e195c8305cf3b9c28f84361b3a92dd7ec6d27b24227e9d1f0c54e50b4152\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061015c806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c8063710fb57714610030575b600080fd5b61004361003e36600461010d565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f7b600420de2644e01d67749445036686fe1148fa35ed898145088a4de1e0640655565b60006020828403121561011f57600080fd5b503591905056fea264697066735822122049c32c1a20176418d172cac1239428d2057af58e73c186fd316671bc998ac69464736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c8063710fb57714610030575b600080fd5b61004361003e36600461010d565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f7b600420de2644e01d67749445036686fe1148fa35ed898145088a4de1e0640655565b60006020828403121561011f57600080fd5b503591905056fea264697066735822122049c32c1a20176418d172cac1239428d2057af58e73c186fd316671bc998ac69464736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "IBurnableAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "Burnable - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow contract owner to manage burning mechanism.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

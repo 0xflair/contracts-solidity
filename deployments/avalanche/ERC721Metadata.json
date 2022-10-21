@@ -1,0 +1,103 @@
+{
+  "address": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "symbol",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "tokenURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x2f890d2dd0d776d91409483767f3663cf291b54ef6d9bb827f63ae1ce5b91ace",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
+    "transactionIndex": 1,
+    "gasUsed": "474998",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x07f1a53ee903ca4255d34843ebd29c58f3669e43089703feb650f2ac4211f5d7",
+    "transactionHash": "0x2f890d2dd0d776d91409483767f3663cf291b54ef6d9bb827f63ae1ce5b91ace",
+    "logs": [],
+    "blockNumber": 21360188,
+    "cumulativeGasUsed": "648972",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "48f4524ebff8b0366d06eec787eed08d",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"tokenURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:peer-dependencies\":\"IERC721\",\"custom:provides-interfaces\":\"IERC721Metadata\",\"custom:type\":\"eip-2535-facet\",\"details\":\"See https://eips.ethereum.org/EIPS/eip-721\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC721 - Metadata\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"name()\":{\"notice\":\"A descriptive name for a collection of NFTs in this contract\"},\"symbol()\":{\"notice\":\"An abbreviated name for NFTs in this contract\"},\"tokenURI(uint256)\":{\"notice\":\"inheritdoc IERC721Metadata\"}},\"notice\":\"Provides metadata for ERC721 tokens according to standard.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC721/facets/metadata/ERC721Metadata.sol\":\"ERC721Metadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/token/ERC721/facets/metadata/ERC721Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"../../../common/metadata/MetadataStorage.sol\\\";\\nimport \\\"../../../common/metadata/TokenMetadataStorage.sol\\\";\\nimport \\\"./IERC721Metadata.sol\\\";\\n\\n/**\\n * @title ERC721 - Metadata\\n * @notice Provides metadata for ERC721 tokens according to standard.\\n * @dev See https://eips.ethereum.org/EIPS/eip-721\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:peer-dependencies IERC721\\n * @custom:provides-interfaces IERC721Metadata\\n */\\ncontract ERC721Metadata is IERC721Metadata {\\n    using MetadataStorage for MetadataStorage.Layout;\\n    using TokenMetadataStorage for TokenMetadataStorage.Layout;\\n\\n    /**\\n     * @inheritdoc IERC721Metadata\\n     */\\n    function name() external view override returns (string memory) {\\n        return MetadataStorage.layout().name;\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721Metadata\\n     */\\n    function symbol() external view override returns (string memory) {\\n        return MetadataStorage.layout().symbol;\\n    }\\n\\n    /**\\n     * @notice inheritdoc IERC721Metadata\\n     */\\n    function tokenURI(uint256 tokenId) public view virtual returns (string memory) {\\n        TokenMetadataStorage.Layout storage l = TokenMetadataStorage.layout();\\n\\n        string memory _tokenIdURI = l.tokenURIs[tokenId];\\n        string memory _baseURI = l.baseURI;\\n\\n        if (bytes(_tokenIdURI).length > 0) {\\n            return _tokenIdURI;\\n        } else if (bytes(l.fallbackURI).length > 0) {\\n            return l.fallbackURI;\\n        } else if (bytes(_baseURI).length > 0) {\\n            return string(abi.encodePacked(_baseURI, Strings.toString(tokenId), l.uriSuffix));\\n        } else {\\n            return \\\"\\\";\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x4d18a660200d54aeecf3cd9d455ac50be16d06b0d3377998befd02258fec54ef\",\"license\":\"MIT\"},\"src/token/ERC721/facets/metadata/IERC721Metadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Standard interface for ERC721, name() and symbol() are repeated here to respect the standard.\\n */\\ninterface IERC721Metadata {\\n    /// @notice A descriptive name for a collection of NFTs in this contract\\n    function name() external view returns (string memory);\\n\\n    /// @notice An abbreviated name for NFTs in this contract\\n    function symbol() external view returns (string memory);\\n\\n    /// @notice A distinct Uniform Resource Identifier (URI) for a given asset.\\n    /// @dev Throws if `_tokenId` is not a valid NFT. URIs are defined in RFC\\n    ///  3986. The URI may point to a JSON file that conforms to the \\\"ERC721\\n    ///  Metadata JSON Schema\\\".\\n    function tokenURI(uint256 _tokenId) external view returns (string memory);\\n}\\n\",\"keccak256\":\"0xb74e778724c02d17d1d48751b2c750846b217d54e3ed613247347dd11cfb5d73\",\"license\":\"MIT\"},\"src/token/common/metadata/MetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary MetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.Metadata\\\");\\n\\n    struct Layout {\\n        string name;\\n        string symbol;\\n        bool nameAndSymbolLocked;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xc40b23a3c652d05174c270e1a95d402320a5a6e33ae48f78927f3f481ce568c8\",\"license\":\"MIT\"},\"src/token/common/metadata/TokenMetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary TokenMetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.TokenMetadata\\\");\\n\\n    struct Layout {\\n        string baseURI;\\n        bool baseURILocked;\\n        string fallbackURI;\\n        bool fallbackURILocked;\\n        string uriSuffix;\\n        bool uriSuffixLocked;\\n        uint256 lastLockedTokenId;\\n        mapping(uint256 => string) tokenURIs;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xe7b5d67484815137604d1ddf75527d14f4e0a9f68eb3ab985539954566a21901\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506107a3806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde031461004657806395d89b4114610064578063c87b56dd1461006c575b600080fd5b61004e61007f565b60405161005b9190610558565b60405180910390f35b61004e610130565b61004e61007a36600461058b565b610161565b60607f70612f47e27b43eb7f87867b7b8f899a5e08503dcccf1bf322c9eef06483a1fc80546100ad906105a4565b80601f01602080910402602001604051908101604052809291908181526020018280546100d9906105a4565b80156101265780601f106100fb57610100808354040283529160200191610126565b820191906000526020600020905b81548152906001019060200180831161010957829003601f168201915b5050505050905090565b60607f70612f47e27b43eb7f87867b7b8f899a5e08503dcccf1bf322c9eef06483a1fc60010180546100ad906105a4565b60008181527f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef666020526040812080546060927f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f9290916101c0906105a4565b80601f01602080910402602001604051908101604052809291908181526020018280546101ec906105a4565b80156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505090506000826000018054610251906105a4565b80601f016020809104026020016040519081016040528092919081815260200182805461027d906105a4565b80156102ca5780601f1061029f576101008083540402835291602001916102ca565b820191906000526020600020905b8154815290600101906020018083116102ad57829003601f168201915b505050505090506000825111156102e357509392505050565b60008360020180546102f4906105a4565b905011156103935782600201805461030b906105a4565b80601f0160208091040260200160405190810160405280929190818152602001828054610337906105a4565b80156103845780601f1061035957610100808354040283529160200191610384565b820191906000526020600020905b81548152906001019060200180831161036757829003601f168201915b50505050509350505050919050565b8051156103d357806103a4866103eb565b846004016040516020016103ba939291906105de565b6040516020818303038152906040529350505050919050565b50506040805160208101909152600081529392505050565b60608160000361042e57505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b81156104585780610442816106bb565b91506104519050600a836106ea565b9150610432565b60008167ffffffffffffffff811115610473576104736106fe565b6040519080825280601f01601f19166020018201604052801561049d576020820181803683370190505b5090505b8415610520576104b2600183610714565b91506104bf600a8661072b565b6104ca90603061073f565b60f81b8183815181106104df576104df610757565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350610519600a866106ea565b94506104a1565b949350505050565b60005b8381101561054357818101518382015260200161052b565b83811115610552576000848401525b50505050565b6020815260008251806020840152610577816040850160208701610528565b601f01601f19169190910160400192915050565b60006020828403121561059d57600080fd5b5035919050565b600181811c908216806105b857607f821691505b6020821081036105d857634e487b7160e01b600052602260045260246000fd5b50919050565b6000845160206105f18285838a01610528565b8551918401916106048184848a01610528565b8554920191600090600181811c908083168061062157607f831692505b858310810361063e57634e487b7160e01b85526022600452602485fd5b808015610652576001811461066757610694565b60ff1985168852831515840288019550610694565b60008b81526020902060005b8581101561068c5781548a820152908401908801610673565b505083880195505b50939b9a5050505050505050505050565b634e487b7160e01b600052601160045260246000fd5b6000600182016106cd576106cd6106a5565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826106f9576106f96106d4565b500490565b634e487b7160e01b600052604160045260246000fd5b600082821015610726576107266106a5565b500390565b60008261073a5761073a6106d4565b500690565b60008219821115610752576107526106a5565b500190565b634e487b7160e01b600052603260045260246000fdfea2646970667358221220dda33083b99ab6655847cf3a9b349e7146bc2de1da495c1d3748805dc31c4dc664736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806306fdde031461004657806395d89b4114610064578063c87b56dd1461006c575b600080fd5b61004e61007f565b60405161005b9190610558565b60405180910390f35b61004e610130565b61004e61007a36600461058b565b610161565b60607f70612f47e27b43eb7f87867b7b8f899a5e08503dcccf1bf322c9eef06483a1fc80546100ad906105a4565b80601f01602080910402602001604051908101604052809291908181526020018280546100d9906105a4565b80156101265780601f106100fb57610100808354040283529160200191610126565b820191906000526020600020905b81548152906001019060200180831161010957829003601f168201915b5050505050905090565b60607f70612f47e27b43eb7f87867b7b8f899a5e08503dcccf1bf322c9eef06483a1fc60010180546100ad906105a4565b60008181527f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef666020526040812080546060927f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f9290916101c0906105a4565b80601f01602080910402602001604051908101604052809291908181526020018280546101ec906105a4565b80156102395780601f1061020e57610100808354040283529160200191610239565b820191906000526020600020905b81548152906001019060200180831161021c57829003601f168201915b505050505090506000826000018054610251906105a4565b80601f016020809104026020016040519081016040528092919081815260200182805461027d906105a4565b80156102ca5780601f1061029f576101008083540402835291602001916102ca565b820191906000526020600020905b8154815290600101906020018083116102ad57829003601f168201915b505050505090506000825111156102e357509392505050565b60008360020180546102f4906105a4565b905011156103935782600201805461030b906105a4565b80601f0160208091040260200160405190810160405280929190818152602001828054610337906105a4565b80156103845780601f1061035957610100808354040283529160200191610384565b820191906000526020600020905b81548152906001019060200180831161036757829003601f168201915b50505050509350505050919050565b8051156103d357806103a4866103eb565b846004016040516020016103ba939291906105de565b6040516020818303038152906040529350505050919050565b50506040805160208101909152600081529392505050565b60608160000361042e57505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b81156104585780610442816106bb565b91506104519050600a836106ea565b9150610432565b60008167ffffffffffffffff811115610473576104736106fe565b6040519080825280601f01601f19166020018201604052801561049d576020820181803683370190505b5090505b8415610520576104b2600183610714565b91506104bf600a8661072b565b6104ca90603061073f565b60f81b8183815181106104df576104df610757565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a905350610519600a866106ea565b94506104a1565b949350505050565b60005b8381101561054357818101518382015260200161052b565b83811115610552576000848401525b50505050565b6020815260008251806020840152610577816040850160208701610528565b601f01601f19169190910160400192915050565b60006020828403121561059d57600080fd5b5035919050565b600181811c908216806105b857607f821691505b6020821081036105d857634e487b7160e01b600052602260045260246000fd5b50919050565b6000845160206105f18285838a01610528565b8551918401916106048184848a01610528565b8554920191600090600181811c908083168061062157607f831692505b858310810361063e57634e487b7160e01b85526022600452602485fd5b808015610652576001811461066757610694565b60ff1985168852831515840288019550610694565b60008b81526020902060005b8581101561068c5781548a820152908401908801610673565b505083880195505b50939b9a5050505050505050505050565b634e487b7160e01b600052601160045260246000fd5b6000600182016106cd576106cd6106a5565b5060010190565b634e487b7160e01b600052601260045260246000fd5b6000826106f9576106f96106d4565b500490565b634e487b7160e01b600052604160045260246000fd5b600082821015610726576107266106a5565b500390565b60008261073a5761073a6106d4565b500690565b60008219821115610752576107526106a5565b500190565b634e487b7160e01b600052603260045260246000fdfea2646970667358221220dda33083b99ab6655847cf3a9b349e7146bc2de1da495c1d3748805dc31c4dc664736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:peer-dependencies": "IERC721",
+    "custom:provides-interfaces": "IERC721Metadata",
+    "custom:type": "eip-2535-facet",
+    "details": "See https://eips.ethereum.org/EIPS/eip-721",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC721 - Metadata",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "name()": {
+        "notice": "A descriptive name for a collection of NFTs in this contract"
+      },
+      "symbol()": {
+        "notice": "An abbreviated name for NFTs in this contract"
+      },
+      "tokenURI(uint256)": {
+        "notice": "inheritdoc IERC721Metadata"
+      }
+    },
+    "notice": "Provides metadata for ERC721 tokens according to standard.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
