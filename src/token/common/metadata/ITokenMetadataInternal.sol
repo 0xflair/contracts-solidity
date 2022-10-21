@@ -2,6 +2,6 @@
 
 pragma solidity ^0.8.15;
 
-interface IMetadataInternal {
+interface ITokenMetadataInternal {
     event URI(string value, uint256 indexed tokenId);
 }

@@ -2,6 +2,9 @@
 
 pragma solidity ^0.8.15;
 
+/**
+ * @dev Standard interface for ERC721, name() and symbol() are repeated here to respect the standard.
+ */
 interface IERC721Metadata {
     /// @notice A descriptive name for a collection of NFTs in this contract
     function name() external view returns (string memory);

@@ -5,6 +5,7 @@ pragma solidity ^0.8.15;
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 import "../../../common/metadata/MetadataStorage.sol";
+import "../../../common/metadata/TokenMetadataStorage.sol";
 import "./IERC721Metadata.sol";
 
 /**
@@ -19,6 +20,7 @@ import "./IERC721Metadata.sol";
  */
 contract ERC721Metadata is IERC721Metadata {
     using MetadataStorage for MetadataStorage.Layout;
+    using TokenMetadataStorage for TokenMetadataStorage.Layout;
 
     /**
      * @inheritdoc IERC721Metadata
@@ -38,7 +40,7 @@ contract ERC721Metadata is IERC721Metadata {
      * @notice inheritdoc IERC721Metadata
      */
     function tokenURI(uint256 tokenId) public view virtual returns (string memory) {
-        MetadataStorage.Layout storage l = MetadataStorage.layout();
+        TokenMetadataStorage.Layout storage l = TokenMetadataStorage.layout();
 
         string memory _tokenIdURI = l.tokenURIs[tokenId];
         string memory _baseURI = l.baseURI;

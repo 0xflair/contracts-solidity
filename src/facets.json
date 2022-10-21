@@ -13,7 +13,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -22,7 +22,7 @@
     "category": "Access",
     "title": "Roles",
     "notice": "Role-based access control for write functions based on OpenZeppelin's AccessControl",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/access/roles/AccessControl.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/access/roles/AccessControl.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlAdmin": {
@@ -35,7 +35,7 @@
       "grantAdminRole(address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlAdmin",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xc634b78e"
     ],
@@ -46,7 +46,7 @@
     "category": "Access",
     "title": "Roles - Admin",
     "notice": "Allows you to initiate access controls as current contract owner by giving DEFAULT_ADMIN_ROLE to an address.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/access/roles/AccessControlAdmin.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/access/roles/AccessControlAdmin.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
@@ -63,7 +63,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -72,7 +72,7 @@
     "category": "Access",
     "title": "Roles - with meta-transactions",
     "notice": "Role-based access control with meta-transactions enabled (mainly for grantRole, revokeRole, renounceRole)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/access/roles/AccessControlERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/access/roles/AccessControlERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
@@ -84,7 +84,7 @@
       "setBurnablePausedUntil(uint256)"
     ],
     "fqn": "flair-sdk:token/common/burnable/BurnableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x710fb577"
     ],
@@ -93,7 +93,7 @@
     "category": "NFTs",
     "title": "Burnable - Admin - Ownable",
     "notice": "Allow contract owner to manage burning mechanism.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/common/burnable/BurnableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/common/burnable/BurnableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/Depository": {
@@ -110,7 +110,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/Depository",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -119,7 +119,7 @@
     "category": "Finance",
     "title": "Depository",
     "notice": "A simple depository contract to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/depository/Depository.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/depository/Depository.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/DepositoryWithERC2771": {
@@ -136,7 +136,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/DepositoryWithERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -145,7 +145,7 @@
     "category": "Finance",
     "title": "Depository - with meta-transactions",
     "notice": "A simple depository contract, with ERC2771 context for meta-transactions to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/depository/DepositoryWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/depository/DepositoryWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondCut": {
@@ -157,7 +157,7 @@
       "diamondCut((address,uint8,bytes4[])[],address,bytes)"
     ],
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x1f931c1c"
     ],
@@ -166,7 +166,7 @@
     "category": "Diamonds",
     "title": "Diamond - Cut",
     "notice": "Standard EIP-2535 cut functionality to add, replace and remove facets from a diamond.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/diamond/DiamondCut.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/diamond/DiamondCut.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondLoupe": {
@@ -181,7 +181,7 @@
       "facets()"
     ],
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x48e2b093"
     ],
@@ -190,7 +190,7 @@
     "category": "Diamonds",
     "title": "Diamond - Loupe",
     "notice": "Standard EIP-2535 loupe functions to allow inspecting a diamond for explorers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/diamond/DiamondLoupe.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/diamond/DiamondLoupe.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155": {
@@ -222,7 +222,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xd9b67a26",
       "0xdc290004",
@@ -235,7 +235,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Standard",
     "notice": "Standard EIP-1155 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/ERC1155.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/ERC1155.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
@@ -250,7 +250,7 @@
       "unlockByOwner(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x7b535f1c"
     ],
@@ -261,7 +261,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
@@ -278,7 +278,7 @@
       "unlockByRole(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xd40d0af6"
     ],
@@ -289,23 +289,21 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "addresses": {
-      "5": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943",
-      "goerli": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943"
+      "5": "0x89D7b8D105e73825CDdf0b5Bb139AA227C8aA70c",
+      "goerli": "0x89D7b8D105e73825CDdf0b5Bb139AA227C8aA70c"
     },
     "functionSelectors": [
-      "name()",
-      "symbol()",
       "uri(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
-      "0x52496f06",
+      "0x93254542",
       "0x0e89341c"
     ],
     "peerDependencies": [
@@ -315,7 +313,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Metadata",
     "notice": "Provides metadata for ERC1155 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
@@ -328,7 +326,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -339,7 +337,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
@@ -352,7 +350,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -363,7 +361,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner - with meta transactions",
     "notice": "Allow minting as owner via ERC2771 Context meta transactions (signed by the owner private key)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
@@ -378,7 +376,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -389,7 +387,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role",
     "notice": "Allow minting for grantees of MINTER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
@@ -404,7 +402,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -415,7 +413,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role - with meta transactions",
     "notice": "Allow minting for grantees of MINTER_ROLE with meta-transactions supported via ERC2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
@@ -430,7 +428,7 @@
       "setMaxSupplyBatch(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xf0d6039e"
     ],
@@ -441,7 +439,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-1155 contract to change max supply of token IDs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
@@ -463,7 +461,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x79f33254",
       "0x5ae18a74"
@@ -475,7 +473,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales",
     "notice": "Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
@@ -488,7 +486,7 @@
       "configureTierTokenId(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x76c5dd21"
     ],
@@ -499,7 +497,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - Admin - Ownable",
     "notice": "Used to manage which ERC1155 token is related to which the sales tier.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
@@ -531,7 +529,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xd9b67a26",
       "0xdc290004",
@@ -544,7 +542,7 @@
     "category": "NFTs",
     "title": "ERC1155 - with meta-transactions",
     "notice": "Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC1155/ERC1155WithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC1155/ERC1155WithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165": {
@@ -556,7 +554,7 @@
       "supportsInterface(bytes4)"
     ],
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x01ffc9a7"
     ],
@@ -565,7 +563,7 @@
     "category": "Introspection",
     "title": "ERC165",
     "notice": "Standard EIP-165 facet which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/introspection/ERC165.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/introspection/ERC165.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165Ownable": {
@@ -577,7 +575,7 @@
       "setERC165(bytes4[],bytes4[])"
     ],
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x2a848091"
     ],
@@ -588,7 +586,251 @@
     "category": "Diamonds",
     "title": "ERC165 - Admin - Ownable",
     "notice": "Standard EIP-165 management facet using Ownable extension for access control.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/introspection/ERC165Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/introspection/ERC165Ownable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/ERC20": {
+    "addresses": {
+      "5": "0x7437e51C2962d9Cd418F740D00e28F85b463D3A8",
+      "goerli": "0x7437e51C2962d9Cd418F740D00e28F85b463D3A8"
+    },
+    "functionSelectors": [
+      "allowance(address,address)",
+      "approve(address,uint256)",
+      "balanceOf(address)",
+      "maxSupply()",
+      "mintByFacet(address,uint256)",
+      "mintByFacet(address[],uint256[])",
+      "totalSupply()",
+      "transfer(address,uint256)",
+      "transferFrom(address,address,uint256)"
+    ],
+    "fqn": "flair-sdk:token/ERC20/ERC20",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x36372b07",
+      "0x36372b07",
+      "0xd5abeb01",
+      "0x645b6d4b"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Tokens",
+    "title": "ERC20 - Standard",
+    "notice": "Standard EIP-20 token with mintable and max supply capability.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/ERC20.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable": {
+    "addresses": {
+      "5": "0x1FEf156F96002A8f9d72d3825e0e9F9cc5BB2857",
+      "goerli": "0x1FEf156F96002A8f9d72d3825e0e9F9cc5BB2857"
+    },
+    "functionSelectors": [
+      "lockDecimals()",
+      "setDecimals(uint8)"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x951c287d"
+    ],
+    "peerDependencies": [
+      "0xa219a025"
+    ],
+    "requiredDependencies": [],
+    "category": "Tokens",
+    "title": "ERC20 Token Metadata - Admin - Ownable",
+    "notice": "Allows diamond owner to change decimals config or freeze it forever.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable": {
+    "addresses": {
+      "5": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
+      "goerli": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4"
+    },
+    "functionSelectors": [
+      "mintByOwner(address,uint256)",
+      "mintByOwner(address[],uint256[])"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x197f2429"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Mint as owner",
+    "notice": "Allow minting as contract owner with no restrictions.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/minting/ERC20MintableOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771": {
+    "addresses": {
+      "5": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
+      "goerli": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2"
+    },
+    "functionSelectors": [
+      "mintByOwner(address,uint256)",
+      "mintByOwner(address[],uint256[])"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x197f2429"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Mint as owner - with meta-transactions",
+    "notice": "Allow minting as owner via meta transactions, signed by the owner private key.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/minting/ERC20MintableOwnableERC2771.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased": {
+    "addresses": {
+      "5": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
+      "goerli": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e"
+    },
+    "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "MINTER_ROLE()",
+      "mintByRole(address,uint256)",
+      "mintByRole(address[],uint256[])"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0xa3a11183"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Mint as role",
+    "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC20A).",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/minting/ERC20MintableRoleBased.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771": {
+    "addresses": {
+      "5": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
+      "goerli": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0"
+    },
+    "functionSelectors": [
+      "DEFAULT_ADMIN_ROLE()",
+      "MINTER_ROLE()",
+      "mintByRole(address,uint256)",
+      "mintByRole(address[],uint256[])"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0xa3a11183"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Mint as role - with meta-transactions",
+    "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC20A).",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable": {
+    "addresses": {
+      "5": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
+      "goerli": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717"
+    },
+    "functionSelectors": [
+      "freezeMaxSupply()",
+      "maxSupplyFrozen()",
+      "setMaxSupply(uint256)"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x8a7b7298"
+    ],
+    "peerDependencies": [
+      "0xd5abeb01"
+    ],
+    "requiredDependencies": [],
+    "category": "Tokens",
+    "title": "ERC20 - Supply - Admin - Ownable",
+    "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales": {
+    "addresses": {
+      "5": "0x017a54A2a38105B534BA40D8d8cE05F089009B67",
+      "goerli": "0x017a54A2a38105B534BA40D8d8cE05F089009B67"
+    },
+    "functionSelectors": [
+      "eligibleForTier(uint256,address,uint256,bytes32[])",
+      "mintByTier(uint256,uint256,uint256,bytes32[])",
+      "onTierAllowlist(uint256,address,uint256,bytes32[])",
+      "remainingForTier(uint256)",
+      "reservedMints()",
+      "tierMints(uint256)",
+      "tiers(uint256)",
+      "totalReserved()",
+      "walletMintedByTier(uint256,address)"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x79f33254"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b",
+      "0xd5abeb01"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Tiered Sales",
+    "notice": "Sales mechanism for ERC20 tokens with multiple tiered pricing, allowlist and allocation plans.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/sales/ERC20TieredSales.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771": {
+    "addresses": {
+      "5": "0x521200ca8c48b1C65A1D1cf941C062d29e89fbCc",
+      "goerli": "0x521200ca8c48b1C65A1D1cf941C062d29e89fbCc"
+    },
+    "functionSelectors": [
+      "eligibleForTier(uint256,address,uint256,bytes32[])",
+      "mintByTier(uint256,uint256,uint256,bytes32[])",
+      "onTierAllowlist(uint256,address,uint256,bytes32[])",
+      "remainingForTier(uint256)",
+      "reservedMints()",
+      "tierMints(uint256)",
+      "tiers(uint256)",
+      "totalReserved()",
+      "walletMintedByTier(uint256,address)"
+    ],
+    "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x79f33254"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [
+      "0x645b6d4b"
+    ],
+    "category": "Tokens",
+    "title": "ERC20 - Tiered Sales - with meta-transactions",
+    "notice": "Sales mechanism for ERC20 tokens with ERC2771 meta-transactions support (e.g. credit card minting).",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC20/facets/sales/ERC20TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
@@ -600,7 +842,7 @@
       "setTrustedForwarder(address)"
     ],
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xda742228"
     ],
@@ -609,13 +851,13 @@
     "category": "Meta Transactions",
     "title": "ERC2771 Context - Admin - Ownable",
     "notice": "Controls trusted forwarder used to accept meta transactions according to EIP-2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/metatx/ERC2771ContextOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/metatx/ERC2771ContextOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "addresses": {
-      "5": "0x867f1acc9d8132911e5e6bdaa4599d176da91e1c",
-      "goerli": "0x867f1acc9d8132911e5e6bdaa4599d176da91e1c"
+      "5": "0x2d8149246c288Eb999A73941bd368d3Cd7C3bb77",
+      "goerli": "0x2d8149246c288Eb999A73941bd368d3Cd7C3bb77"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -643,7 +885,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721A",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x8153916a",
       "0x80ac58cd",
@@ -658,13 +900,13 @@
     "category": "NFTs",
     "title": "ERC721 (A) - Standard",
     "notice": "Azuki's implementation of standard EIP-721 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/ERC721A.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/ERC721A.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
-      "5": "0x6190ff680bad8Abd11A3f872AC20A65046235B21",
-      "goerli": "0x6190ff680bad8Abd11A3f872AC20A65046235B21"
+      "5": "0xEBCDc45E69e83d86d2B484F8A27448b0bc27903C",
+      "goerli": "0xEBCDc45E69e83d86d2B484F8A27448b0bc27903C"
     },
     "functionSelectors": [
       "approve(address,uint256)",
@@ -692,7 +934,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721AWithERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x8153916a",
       "0x80ac58cd",
@@ -706,7 +948,7 @@
     "category": "NFTs",
     "title": "ERC721 (A) - with meta-transactions",
     "notice": "Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/ERC721AWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/ERC721AWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
@@ -721,7 +963,7 @@
       "unlockByOwner(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x822b3992"
     ],
@@ -732,7 +974,7 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
@@ -749,7 +991,7 @@
       "unlockByRole(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x28ed446a"
     ],
@@ -760,13 +1002,13 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
     "addresses": {
-      "5": "0x9fD97813197377Fef180B8E4acDcF5c1F6509AA9",
-      "goerli": "0x9fD97813197377Fef180B8E4acDcF5c1F6509AA9"
+      "5": "0xdc1b606fe1bab50ad7e3b472d05181f9efa71898",
+      "goerli": "0xdc1b606fe1bab50ad7e3b472d05181f9efa71898"
     },
     "functionSelectors": [
       "name()",
@@ -774,7 +1016,7 @@
       "tokenURI(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x5b5e139f"
     ],
@@ -785,7 +1027,7 @@
     "category": "NFTs",
     "title": "ERC721 - Metadata",
     "notice": "Provides metadata for ERC721 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
@@ -798,7 +1040,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -809,20 +1051,20 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
     "addresses": {
-      "5": "0x134eDea1fD79F9F2F19DD3e21af0881B65A4a365",
-      "goerli": "0x134eDea1fD79F9F2F19DD3e21af0881B65A4a365"
+      "5": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df",
+      "goerli": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df"
     },
     "functionSelectors": [
       "mintByOwner(address,uint256)",
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -831,9 +1073,9 @@
       "0x645b6d4b"
     ],
     "category": "NFTs",
-    "title": "ERC721 - Mint as owner - With ERC2771 Context",
+    "title": "ERC721 - Mint as owner - with meta-transactions",
     "notice": "Allow minting as owner via meta transactions, signed by the owner private key. (supports ERC721A)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
@@ -848,7 +1090,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -859,7 +1101,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
@@ -874,7 +1116,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -885,7 +1127,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
@@ -899,7 +1141,7 @@
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x8a7b7298"
     ],
@@ -910,7 +1152,7 @@
     "category": "NFTs",
     "title": "ERC721 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
@@ -930,7 +1172,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -942,7 +1184,7 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales",
     "notice": "Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
@@ -962,7 +1204,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -973,7 +1215,7 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC721 NFTs with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/License": {
@@ -989,7 +1231,7 @@
       "licenseVersion()"
     ],
     "fqn": "flair-sdk:legal/license/License",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x88a1e8f3",
       "0x649a51a8"
@@ -999,7 +1241,7 @@
     "category": "Legal",
     "title": "License",
     "notice": "Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \"Can't Be Evil\".",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/legal/license/License.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/legal/license/License.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/LicenseOwnable": {
@@ -1013,7 +1255,7 @@
       "setLicenseVersion(uint8)"
     ],
     "fqn": "flair-sdk:legal/license/LicenseOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x06ff95be"
     ],
@@ -1025,71 +1267,54 @@
     "category": "Legal",
     "title": "License - Admin - Ownable",
     "notice": "Allow contract owner to manage license version, name and URI.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/legal/license/LicenseOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/legal/license/LicenseOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "addresses": {
-      "5": "0xc89E1364c377731893CE0250dfF6d2E94A3516E3",
-      "goerli": "0xc89E1364c377731893CE0250dfF6d2E94A3516E3"
+      "5": "0x7149d1B085208E226820b63de3847718177585D6",
+      "goerli": "0x7149d1B085208E226820b63de3847718177585D6"
     },
     "functionSelectors": [
-      "baseURI()",
-      "baseURILocked()",
-      "fallbackURI()",
-      "fallbackURILocked()",
-      "lastLockedTokenId()",
       "name()",
-      "nameAndSymbolLocked()",
-      "symbol()",
-      "uriSuffix()",
-      "uriSuffixLocked()"
+      "symbol()"
     ],
     "fqn": "flair-sdk:token/common/metadata/Metadata",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
-      "0x52496f06"
+      "0x93254542"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
-    "category": "NFTs",
+    "category": "Tokens",
     "title": "Metadata",
-    "notice": "Provides common functions for various token metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/common/metadata/Metadata.sol",
+    "notice": "Provides contract name and symbol.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/common/metadata/Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
     "addresses": {
-      "5": "0x37612c9c923359a4273d22d6aba6b7e410dd2201",
-      "goerli": "0x37612c9c923359a4273d22d6aba6b7e410dd2201"
+      "5": "0x0dF0885058D018693D2B3C6648f3e451683a4613",
+      "goerli": "0x0dF0885058D018693D2B3C6648f3e451683a4613"
     },
     "functionSelectors": [
-      "lockBaseURI()",
-      "lockFallbackURI()",
       "lockNameAndSymbol()",
-      "lockURISuffix()",
-      "lockURIUntil(uint256)",
-      "setBaseURI(string)",
-      "setFallbackURI(string)",
       "setName(string)",
-      "setSymbol(string)",
-      "setURI(uint256,string)",
-      "setURIBatch(uint256[],string[])",
-      "setURISuffix(string)"
+      "setSymbol(string)"
     ],
     "fqn": "flair-sdk:token/common/metadata/MetadataOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
-      "0x209d7394"
+      "0x1f0b49eb"
     ],
     "peerDependencies": [
-      "0x52496f06"
+      "0x93254542"
     ],
     "requiredDependencies": [],
-    "category": "NFTs",
+    "category": "Tokens",
     "title": "Metadata - Admin - Ownable",
-    "notice": "Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/token/common/metadata/MetadataOwnable.sol",
+    "notice": "Allows diamond owner to change name and symbol, or freeze them forever.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/common/metadata/MetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/ownable/Ownable": {
@@ -1103,7 +1328,7 @@
       "transferOwnership(address)"
     ],
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x7f5828d0"
     ],
@@ -1112,7 +1337,7 @@
     "category": "Access",
     "title": "ERC173 - Ownable",
     "notice": "Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/access/ownable/Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/access/ownable/Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/Royalty": {
@@ -1131,7 +1356,7 @@
       "royaltyInfo(uint256,uint256)"
     ],
     "fqn": "flair-sdk:finance/royalty/Royalty",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x2a55205a",
       "0x821be678",
@@ -1145,7 +1370,7 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty",
     "notice": "Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/royalty/Royalty.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/royalty/Royalty.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
@@ -1158,7 +1383,7 @@
       "setTokenRoyalties((uint256,address,uint16)[])"
     ],
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xbe561268"
     ],
@@ -1170,7 +1395,7 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty - Admin - Ownable",
     "notice": "Allow contract owner to manage token royalties based on EIP-2981 standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/royalty/RoyaltyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/royalty/RoyaltyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
@@ -1183,7 +1408,7 @@
       "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])"
     ],
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xf8458dcd"
     ],
@@ -1194,7 +1419,65 @@
     "category": "NFTs",
     "title": "Tiered Sales - Admin - Ownable",
     "notice": "Allow contract owner to manage sale tiers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/sales/TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/sales/TieredSalesOwnable.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/common/metadata/TokenMetadata": {
+    "addresses": {
+      "5": "0x85fb73017f35fd56559d4481f37a497b53e20986",
+      "goerli": "0x85fb73017f35fd56559d4481f37a497b53e20986"
+    },
+    "functionSelectors": [
+      "baseURI()",
+      "baseURILocked()",
+      "fallbackURI()",
+      "fallbackURILocked()",
+      "lastLockedTokenId()",
+      "uriSuffix()",
+      "uriSuffixLocked()"
+    ],
+    "fqn": "flair-sdk:token/common/metadata/TokenMetadata",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0xc16c2a44"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "NFTs",
+    "title": "NFT Token Metadata",
+    "notice": "Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/common/metadata/TokenMetadata.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:token/common/metadata/TokenMetadataOwnable": {
+    "addresses": {
+      "5": "0x7c1262d9bc9622A5867e5326Ed39287691175b8D",
+      "goerli": "0x7c1262d9bc9622A5867e5326Ed39287691175b8D"
+    },
+    "functionSelectors": [
+      "lockBaseURI()",
+      "lockFallbackURI()",
+      "lockURISuffix()",
+      "lockURIUntil(uint256)",
+      "setBaseURI(string)",
+      "setFallbackURI(string)",
+      "setURI(uint256,string)",
+      "setURIBatch(uint256[],string[])",
+      "setURISuffix(string)"
+    ],
+    "fqn": "flair-sdk:token/common/metadata/TokenMetadataOwnable",
+    "version": "2.17.1",
+    "providesInterfaces": [
+      "0x3f963a7f"
+    ],
+    "peerDependencies": [
+      "0xc16c2a44"
+    ],
+    "requiredDependencies": [],
+    "category": "NFTs",
+    "title": "NFT Token Metadata - Admin - Ownable",
+    "notice": "Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/token/common/metadata/TokenMetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
@@ -1211,7 +1494,7 @@
       "withdrawRecipientLocked()"
     ],
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0xa9c00e2f"
     ],
@@ -1220,7 +1503,7 @@
     "category": "Finance",
     "title": "Withdrawable",
     "notice": "Allow withdrwaing any ERC20 or native tokens from the contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/withdraw/Withdrawable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/withdraw/Withdrawable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
@@ -1236,7 +1519,7 @@
       "setWithdrawRecipient(address)"
     ],
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
-    "version": "2.17.0",
+    "version": "2.17.1",
     "providesInterfaces": [
       "0x7246cea5"
     ],
@@ -1247,7 +1530,7 @@
     "category": "Finance",
     "title": "Withdrawable - Admin - Ownable",
     "notice": "Allow contract owner to manage who can withdraw funds and how.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.0/src/finance/withdraw/WithdrawableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.17.1/src/finance/withdraw/WithdrawableOwnable.sol",
     "author": "flair-sdk.eth"
   }
 }

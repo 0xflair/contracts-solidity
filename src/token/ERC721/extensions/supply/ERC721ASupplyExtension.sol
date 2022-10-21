@@ -29,9 +29,11 @@ abstract contract ERC721ASupplyExtension is IERC721SupplyExtension, ERC721ABaseI
         uint256 startTokenId,
         uint256 quantity
     ) internal virtual override {
-        if (to != address(0)) {
-            if (_totalSupply() + quantity > ERC721SupplyStorage.layout().maxSupply) {
-                revert ErrMaxSupplyExceeded();
+        if (from == address(0)) {
+            if (to != address(0)) {
+                if (_totalSupply() + quantity > ERC721SupplyStorage.layout().maxSupply) {
+                    revert ErrMaxSupplyExceeded();
+                }
             }
         }
 

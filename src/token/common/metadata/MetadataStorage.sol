@@ -9,14 +9,6 @@ library MetadataStorage {
         string name;
         string symbol;
         bool nameAndSymbolLocked;
-        string baseURI;
-        bool baseURILocked;
-        string fallbackURI;
-        bool fallbackURILocked;
-        string uriSuffix;
-        bool uriSuffixLocked;
-        uint256 lastLockedTokenId;
-        mapping(uint256 => string) tokenURIs;
     }
 
     function layout() internal pure returns (Layout storage l) {

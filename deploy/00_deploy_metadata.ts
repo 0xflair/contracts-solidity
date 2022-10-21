@@ -8,6 +8,8 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
 
   await deployPermanentContract(hre.deployments, accounts[0], 'Metadata', []);
   await deployPermanentContract(hre.deployments, accounts[0], 'MetadataOwnable', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'TokenMetadata', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'TokenMetadataOwnable', []);
 };
 
 export default func;

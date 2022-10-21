@@ -4,7 +4,7 @@ pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-import "../../../common/metadata/MetadataStorage.sol";
+import "../../../common/metadata/TokenMetadataStorage.sol";
 import "./IERC1155Metadata.sol";
 
 /**
@@ -18,27 +18,13 @@ import "./IERC1155Metadata.sol";
  * @custom:provides-interfaces IMetadata IERC1155Metadata
  */
 contract ERC1155Metadata is IERC1155Metadata {
-    using MetadataStorage for MetadataStorage.Layout;
-
-    /**
-     * @dev IMetadata
-     */
-    function name() external view returns (string memory) {
-        return MetadataStorage.layout().name;
-    }
-
-    /**
-     * @dev IMetadata
-     */
-    function symbol() external view returns (string memory) {
-        return MetadataStorage.layout().symbol;
-    }
+    using TokenMetadataStorage for TokenMetadataStorage.Layout;
 
     /**
      * @notice inheritdoc IERC1155Metadata
      */
     function uri(uint256 tokenId) public view virtual returns (string memory) {
-        MetadataStorage.Layout storage l = MetadataStorage.layout();
+        TokenMetadataStorage.Layout storage l = TokenMetadataStorage.layout();
 
         string memory _tokenIdURI = l.tokenURIs[tokenId];
         string memory _baseURI = l.baseURI;

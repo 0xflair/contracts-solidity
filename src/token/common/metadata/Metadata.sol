@@ -9,10 +9,10 @@ import "./MetadataStorage.sol";
 
 /**
  * @title Metadata
- * @notice Provides common functions for various token metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.
+ * @notice Provides contract name and symbol.
  *
  * @custom:type eip-2535-facet
- * @custom:category NFTs
+ * @custom:category Tokens
  * @custom:provides-interfaces IMetadata
  */
 contract Metadata is IMetadata {
@@ -22,37 +22,5 @@ contract Metadata is IMetadata {
 
     function symbol() external view virtual override returns (string memory) {
         return MetadataStorage.layout().symbol;
-    }
-
-    function baseURI() external view virtual returns (string memory) {
-        return MetadataStorage.layout().baseURI;
-    }
-
-    function fallbackURI() external view virtual returns (string memory) {
-        return MetadataStorage.layout().fallbackURI;
-    }
-
-    function uriSuffix() external view virtual returns (string memory) {
-        return MetadataStorage.layout().uriSuffix;
-    }
-
-    function nameAndSymbolLocked() external view virtual returns (bool) {
-        return MetadataStorage.layout().nameAndSymbolLocked;
-    }
-
-    function baseURILocked() external view virtual returns (bool) {
-        return MetadataStorage.layout().baseURILocked;
-    }
-
-    function fallbackURILocked() external view virtual returns (bool) {
-        return MetadataStorage.layout().fallbackURILocked;
-    }
-
-    function uriSuffixLocked() external view virtual returns (bool) {
-        return MetadataStorage.layout().uriSuffixLocked;
-    }
-
-    function lastLockedTokenId() external view virtual returns (uint256) {
-        return MetadataStorage.layout().lastLockedTokenId;
     }
 }
