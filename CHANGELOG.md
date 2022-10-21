@@ -1,3 +1,10 @@
+## [2.18.0](https://github.com/flair-sdk/contracts/compare/v2.17.1...v2.18.0) (2022-10-21)
+
+
+### Features
+
+* add erc20 basic metadata, supply and mintable facets ([ca85bcb](https://github.com/flair-sdk/contracts/commit/ca85bcb71630ab7ce1dab289f9dfd5ef1b6398ea))
+
 ### [2.17.1](https://github.com/flair-sdk/contracts/compare/v2.17.0...v2.17.1) (2022-10-20)
 
 
