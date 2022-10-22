@@ -23,4 +23,8 @@ contract Metadata is IMetadata {
     function symbol() external view virtual override returns (string memory) {
         return MetadataStorage.layout().symbol;
     }
+
+    function nameAndSymbolLocked() external view virtual returns (bool) {
+        return MetadataStorage.layout().nameAndSymbolLocked;
+    }
 }

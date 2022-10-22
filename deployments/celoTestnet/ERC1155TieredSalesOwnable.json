@@ -1,0 +1,102 @@
+{
+  "address": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "tierId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "tokenId",
+          "type": "uint256"
+        }
+      ],
+      "name": "configureTierTokenId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "tierIds",
+          "type": "uint256[]"
+        },
+        {
+          "internalType": "uint256[]",
+          "name": "tokenIds",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "configureTierTokenId",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x42f1344a8462b59ade8642ec703c8d8d0e89f60bc3f33fdae73a041f0e31ee79",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+    "transactionIndex": 2,
+    "gasUsed": "280707",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x9ba29f02f519eb1a664197fefcaad4c1cdaef3670d0612f9dedd8bf75f4f3cb1",
+    "transactionHash": "0x42f1344a8462b59ade8642ec703c8d8d0e89f60bc3f33fdae73a041f0e31ee79",
+    "logs": [],
+    "blockNumber": 14220611,
+    "cumulativeGasUsed": "450016",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "46de52cd1e8f4aeed08dbd5fd342e7fd",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tierId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"configureTierTokenId\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"tierIds\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"tokenIds\",\"type\":\"uint256[]\"}],\"name\":\"configureTierTokenId\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:peer-dependencies\":\"IERC1155TieredSales\",\"custom:provides-interfaces\":\"IERC1155TieredSalesAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC1155 - Tiered Sales - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Used to manage which ERC1155 token is related to which the sales tier.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol\":\"ERC1155TieredSalesOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"./ERC1155TieredSalesStorage.sol\\\";\\nimport \\\"./IERC1155TieredSalesAdmin.sol\\\";\\n\\n/**\\n * @title ERC1155 - Tiered Sales - Admin - Ownable\\n * @notice Used to manage which ERC1155 token is related to which the sales tier.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:peer-dependencies IERC1155TieredSales\\n * @custom:provides-interfaces IERC1155TieredSalesAdmin\\n */\\ncontract ERC1155TieredSalesOwnable is IERC1155TieredSalesAdmin, OwnableInternal {\\n    using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;\\n\\n    function configureTierTokenId(uint256 tierId, uint256 tokenId) external virtual onlyOwner {\\n        ERC1155TieredSalesStorage.layout().tierToTokenId[tierId] = tokenId;\\n    }\\n\\n    function configureTierTokenId(uint256[] calldata tierIds, uint256[] calldata tokenIds) external virtual onlyOwner {\\n        require(\\n            tierIds.length == tokenIds.length,\\n            \\\"ERC1155TieredSalesOwnable: tierIds and tokenIds must be same length\\\"\\n        );\\n\\n        for (uint256 i = 0; i < tierIds.length; i++) {\\n            ERC1155TieredSalesStorage.layout().tierToTokenId[tierIds[i]] = tokenIds[i];\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x2a0ddb2c0949c1ecec6fd243feb40646d4ea994292974b2e5b8b20c7df36162e\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/sales/ERC1155TieredSalesStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC1155TieredSalesStorage {\\n    struct Layout {\\n        mapping(uint256 => uint256) tierToTokenId;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC1155TieredSales\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x44239064b2c50b7892d0d0e7d460d80cc1efcc7c74283f1801f2b4f981bac566\",\"license\":\"MIT\"},\"src/token/ERC1155/facets/sales/IERC1155TieredSalesAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC1155TieredSalesAdmin {\\n    function configureTierTokenId(uint256 tierId, uint256 tokenId) external;\\n\\n    function configureTierTokenId(uint256[] calldata tierIds, uint256[] calldata tokenIds) external;\\n}\\n\",\"keccak256\":\"0x21b267cfb52c1a836a228d78f66470e3a44c5789bcd02ca2faff840a8b9171b0\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061041f806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063bbc2d43d1461003b578063cd07091c14610050575b600080fd5b61004e6100493660046102d2565b610063565b005b61004e61005e366004610340565b61011f565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b60009182527f46f908971db3fbea57e8a21b2e54575e0e567ff2f950ead3c0dc83f15ec67154602052604090912055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101a55760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100e5565b8281146102405760405162461bcd60e51b815260206004820152604360248201527f4552433131353554696572656453616c65734f776e61626c653a20746965724960448201527f647320616e6420746f6b656e496473206d7573742062652073616d65206c656e60648201527f6774680000000000000000000000000000000000000000000000000000000000608482015260a4016100e5565b60005b838110156102cb5782828281811061025d5761025d6103ac565b9050602002013561028b7f46f908971db3fbea57e8a21b2e54575e0e567ff2f950ead3c0dc83f15ec6715490565b600087878581811061029f5761029f6103ac565b9050602002013581526020019081526020016000208190555080806102c3906103c2565b915050610243565b5050505050565b600080604083850312156102e557600080fd5b50508035926020909101359150565b60008083601f84011261030657600080fd5b50813567ffffffffffffffff81111561031e57600080fd5b6020830191508360208260051b850101111561033957600080fd5b9250929050565b6000806000806040858703121561035657600080fd5b843567ffffffffffffffff8082111561036e57600080fd5b61037a888389016102f4565b9096509450602087013591508082111561039357600080fd5b506103a0878288016102f4565b95989497509550505050565b634e487b7160e01b600052603260045260246000fd5b6000600182016103e257634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220346a4b9add51418f39f1cae2b5b08d3e874606f61874a166c52c2f9a0ea8e0f164736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063bbc2d43d1461003b578063cd07091c14610050575b600080fd5b61004e6100493660046102d2565b610063565b005b61004e61005e366004610340565b61011f565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100ee5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b60009182527f46f908971db3fbea57e8a21b2e54575e0e567ff2f950ead3c0dc83f15ec67154602052604090912055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101a55760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100e5565b8281146102405760405162461bcd60e51b815260206004820152604360248201527f4552433131353554696572656453616c65734f776e61626c653a20746965724960448201527f647320616e6420746f6b656e496473206d7573742062652073616d65206c656e60648201527f6774680000000000000000000000000000000000000000000000000000000000608482015260a4016100e5565b60005b838110156102cb5782828281811061025d5761025d6103ac565b9050602002013561028b7f46f908971db3fbea57e8a21b2e54575e0e567ff2f950ead3c0dc83f15ec6715490565b600087878581811061029f5761029f6103ac565b9050602002013581526020019081526020016000208190555080806102c3906103c2565b915050610243565b5050505050565b600080604083850312156102e557600080fd5b50508035926020909101359150565b60008083601f84011261030657600080fd5b50813567ffffffffffffffff81111561031e57600080fd5b6020830191508360208260051b850101111561033957600080fd5b9250929050565b6000806000806040858703121561035657600080fd5b843567ffffffffffffffff8082111561036e57600080fd5b61037a888389016102f4565b9096509450602087013591508082111561039357600080fd5b506103a0878288016102f4565b95989497509550505050565b634e487b7160e01b600052603260045260246000fd5b6000600182016103e257634e487b7160e01b600052601160045260246000fd5b506001019056fea2646970667358221220346a4b9add51418f39f1cae2b5b08d3e874606f61874a166c52c2f9a0ea8e0f164736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:peer-dependencies": "IERC1155TieredSales",
+    "custom:provides-interfaces": "IERC1155TieredSalesAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC1155 - Tiered Sales - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Used to manage which ERC1155 token is related to which the sales tier.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
