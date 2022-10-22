@@ -1,3 +1,10 @@
+### [2.19.1](https://github.com/flair-sdk/contracts/compare/v2.19.0...v2.19.1) (2022-10-22)
+
+
+### Bug Fixes
+
+* add name and symbol lock state view func ([5036ce5](https://github.com/flair-sdk/contracts/commit/5036ce5445d7f5572f424ad0b6e0cffa31eaf70d))
+
 ## [2.19.0](https://github.com/flair-sdk/contracts/compare/v2.18.0...v2.19.0) (2022-10-22)
 
 
