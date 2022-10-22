@@ -21,4 +21,8 @@ contract ERC20Metadata is Metadata, IERC20Metadata, ERC20MetadataInternal {
     function decimals() external view returns (uint8) {
         return _decimals();
     }
+
+    function decimalsLocked() external view returns (bool) {
+        return _decimalsLocked();
+    }
 }
