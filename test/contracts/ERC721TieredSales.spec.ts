@@ -3,7 +3,7 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 
 import { expect } from 'chai';
-import { BigNumberish, utils } from 'ethers';
+import { utils } from 'ethers';
 import hre from 'hardhat';
 
 import {
@@ -15,6 +15,7 @@ import {
   IERC721SupplyExtension,
   TieredSalesOwnable,
 } from '../../src/typechain';
+import { ERC721MintableOwnable } from '../../src/typechain/ERC721MintableOwnable';
 import { setupTest } from '../setup';
 import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/allowlists';
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
@@ -61,6 +62,7 @@ const deployERC721WithSales = async ({
       'ERC165Ownable',
       'ERC721SupplyOwnable',
       'TieredSalesOwnable',
+      'ERC721MintableOwnable',
     ],
     initializations: [
       {
@@ -92,7 +94,7 @@ describe('ERC721 Tiered Sales', function () {
 
     const facets = await diamondLoupeFacet.facets();
 
-    expect(facets.length).to.be.equal(9);
+    expect(facets.length).to.be.equal(10);
   });
 
   it('should return true when checking interfaces', async function () {
@@ -1422,7 +1424,10 @@ describe('ERC721 Tiered Sales', function () {
         },
       ],
     });
-    const supplyExtension = await hre.ethers.getContractAt<IERC721SupplyExtension>('IERC721SupplyExtension', diamond.address);
+    const supplyExtension = await hre.ethers.getContractAt<IERC721SupplyExtension>(
+      'IERC721SupplyExtension',
+      diamond.address,
+    );
     const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
 
     expect(await tieredSalesFacet.connect(userB.signer).remainingForTier(0)).to.be.equal(10);
@@ -1867,6 +1872,47 @@ describe('ERC721 Tiered Sales', function () {
         value: utils.parseEther('1'),
       },
     );
+  });
+
+  it('should fail to mint if collection supply is reached', async function () {
+    const { deployer, userA, userB } = await setupTest();
+
+    const diamond = await deployERC721WithSales({
+      tiers: [
+        {
+          start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+          end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+          currency: ZERO_ADDRESS,
+          maxPerWallet: 1000,
+          merkleRoot: ZERO_BYTES32,
+          price: utils.parseEther('0.001'),
+          reserved: 0,
+          maxAllocation: 1000,
+        },
+      ],
+      initializations: [
+        {
+          facet: 'ERC721SupplyOwnable',
+          function: 'setMaxSupply',
+          args: [10],
+        },
+      ],
+    });
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const mintableOwnableFacet = await hre.ethers.getContractAt<ERC721MintableOwnable>(
+      'ERC721MintableOwnable',
+      diamond.address,
+    );
+
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 9, 9, [], {
+      value: utils.parseEther('10'),
+    });
+
+    await mintableOwnableFacet.connect(deployer.signer)['mintByOwner(address,uint256)'](userB.signer.address, 1);
+
+    await expect(
+      mintableOwnableFacet.connect(deployer.signer)['mintByOwner(address,uint256)'](userB.signer.address, 2),
+    ).to.be.revertedWith('ErrMaxSupplyExceeded()');
   });
 
   //
