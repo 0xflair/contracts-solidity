@@ -1,3 +1,10 @@
+## [2.19.0](https://github.com/flair-sdk/contracts/compare/v2.18.0...v2.19.0) (2022-10-22)
+
+
+### Features
+
+* add decimals locking view ([6ae14c3](https://github.com/flair-sdk/contracts/commit/6ae14c3e7132a687909e8c228945350296c8b622))
+
 ## [2.18.0](https://github.com/flair-sdk/contracts/compare/v2.17.1...v2.18.0) (2022-10-21)
 
 
