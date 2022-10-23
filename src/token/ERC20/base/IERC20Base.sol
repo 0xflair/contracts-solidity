@@ -5,7 +5,6 @@ pragma solidity ^0.8.15;
 import { IERC20BaseInternal } from "./IERC20BaseInternal.sol";
 
 /**
- * @title ERC20 interface
  * @dev see https://github.com/ethereum/EIPs/issues/20
  */
 interface IERC20Base is IERC20BaseInternal {

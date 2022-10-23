@@ -11,7 +11,7 @@ import "./ERC20MetadataStorage.sol";
 import "./IERC20MetadataAdmin.sol";
 
 /**
- * @title ERC20 Token Metadata - Admin - Ownable
+ * @title ERC20 - Metadata - Admin - Ownable
  * @notice Allows diamond owner to change decimals config or freeze it forever.
  *
  * @custom:type eip-2535-facet
