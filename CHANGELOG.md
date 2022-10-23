@@ -1,3 +1,10 @@
+### [2.19.2](https://github.com/flair-sdk/contracts/compare/v2.19.1...v2.19.2) (2022-10-23)
+
+
+### Bug Fixes
+
+* add view method to return current trusted forwarder ([e60edb5](https://github.com/flair-sdk/contracts/commit/e60edb590b03b56d7f253453e8bc342652bb14a7))
+
 ### [2.19.1](https://github.com/flair-sdk/contracts/compare/v2.19.0...v2.19.1) (2022-10-22)
 
 
