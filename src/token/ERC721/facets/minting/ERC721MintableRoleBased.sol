@@ -5,6 +5,8 @@ pragma solidity ^0.8.15;
 import "../../../../common/Errors.sol";
 import "../../../../access/roles/AccessControlInternal.sol";
 import "../../extensions/mintable/IERC721MintableExtension.sol";
+import "../../../common/metadata/TokenMetadataAdminInternal.sol";
+import "../../../ERC721/extensions/supply/ERC721SupplyStorage.sol";
 import "./IERC721MintableRoleBased.sol";
 
 /**
@@ -16,7 +18,9 @@ import "./IERC721MintableRoleBased.sol";
  * @custom:required-dependencies IERC721MintableExtension
  * @custom:provides-interfaces IERC721MintableRoleBased
  */
-contract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInternal {
+contract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInternal, TokenMetadataAdminInternal {
+    using ERC721SupplyStorage for ERC721SupplyStorage.Layout;
+
     bytes32 public constant MINTER_ROLE = keccak256("MINTER_ROLE");
 
     /**
@@ -31,5 +35,22 @@ contract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInter
      */
     function mintByRole(address[] calldata tos, uint256[] calldata amounts) public virtual onlyRole(MINTER_ROLE) {
         IERC721MintableExtension(address(this)).mintByFacet(tos, amounts);
+    }
+
+    /**
+     * @inheritdoc IERC721MintableRoleBased
+     */
+    function mintByRole(
+        address to,
+        uint256 amount,
+        string[] calldata tokenURIs
+    ) public virtual onlyRole(MINTER_ROLE) {
+        uint256 nextTokenId = ERC721SupplyStorage.layout().currentIndex;
+
+        IERC721MintableExtension(address(this)).mintByFacet(to, amount);
+
+        for (uint256 i = 0; i < amount; i++) {
+            _setURI(nextTokenId + i, tokenURIs[i]);
+        }
     }
 }

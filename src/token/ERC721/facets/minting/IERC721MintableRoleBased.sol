@@ -7,15 +7,21 @@ pragma solidity ^0.8.15;
  */
 interface IERC721MintableRoleBased {
     /**
-     * @dev Creates `amount` new tokens for `to`, of token type `id`.
-     *
-     * See {ERC721-_mint}.
-     *
-     * Requirements:
-     *
-     * - the caller must have MINTER_ROLE.
+     * @dev Mints `amount` new tokens for `to`.
      */
     function mintByRole(address to, uint256 amount) external;
 
+    /**
+     * @dev Mints multiple `amount`s of new tokens for every single address in `tos`.
+     */
     function mintByRole(address[] calldata tos, uint256[] calldata amounts) external;
+
+    /**
+     * @dev Mint a new token with a dedicated tokenURI.
+     */
+    function mintByRole(
+        address to,
+        uint256 amount,
+        string[] calldata tokenURIs
+    ) external;
 }
