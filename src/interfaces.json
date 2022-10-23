@@ -31,6 +31,7 @@
   "IERC20MintableOwnable": "0x197f2429",
   "IERC20MintableRoleBased": "0xa3a11183",
   "IERC20SupplyAdmin": "0x8a7b7298",
+  "IERC2771Context": "0x2a8bc472",
   "IERC2771ContextAdmin": "0xda742228",
   "IERC721": "0x8153916a",
   "IERC721ABase": "0x80ac58cd",
