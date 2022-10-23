@@ -1,3 +1,10 @@
+## [2.20.0](https://github.com/flair-sdk/contracts/compare/v2.19.3...v2.20.0) (2022-10-23)
+
+
+### Features
+
+* add mint method by token URIs ([b40e3ef](https://github.com/flair-sdk/contracts/commit/b40e3efb1a79e70c82f977bbb15c24763e5bd3d6))
+
 ### [2.19.3](https://github.com/flair-sdk/contracts/compare/v2.19.2...v2.19.3) (2022-10-23)
 
 ### [2.19.2](https://github.com/flair-sdk/contracts/compare/v2.19.1...v2.19.2) (2022-10-23)
