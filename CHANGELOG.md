@@ -1,3 +1,5 @@
+### [2.19.3](https://github.com/flair-sdk/contracts/compare/v2.19.2...v2.19.3) (2022-10-23)
+
 ### [2.19.2](https://github.com/flair-sdk/contracts/compare/v2.19.1...v2.19.2) (2022-10-23)
 
 
