@@ -12,7 +12,7 @@ library TokenMetadataStorage {
         bool fallbackURILocked;
         string uriSuffix;
         bool uriSuffixLocked;
-        uint256 lastLockedTokenId;
+        uint256 lastUnlockedTokenId;
         mapping(uint256 => string) tokenURIs;
     }
 

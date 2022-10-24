@@ -59,7 +59,7 @@
   "IEIP2981RoyaltyOverride": "0xc7627428",
   "IRoyaltyAdmin": "0xbe561268",
   "ITieredSalesAdmin": "0xf8458dcd",
-  "ITokenMetadata": "0xc16c2a44",
+  "ITokenMetadata": "0x52ef6f9a",
   "ITokenMetadataAdmin": "0x3f963a7f",
   "IWithdrawable": "0xa9c00e2f",
   "IWithdrawableAdmin": "0x7246cea5"

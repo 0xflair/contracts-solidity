@@ -15,5 +15,5 @@ interface ITokenMetadata {
 
     function fallbackURILocked() external view returns (bool);
 
-    function lastLockedTokenId() external view returns (uint256);
+    function lastUnlockedTokenId() external view returns (uint256);
 }

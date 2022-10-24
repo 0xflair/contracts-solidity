@@ -40,7 +40,7 @@ contract TokenMetadata is ITokenMetadata {
         return TokenMetadataStorage.layout().uriSuffixLocked;
     }
 
-    function lastLockedTokenId() external view virtual returns (uint256) {
-        return TokenMetadataStorage.layout().lastLockedTokenId;
+    function lastUnlockedTokenId() external view virtual returns (uint256) {
+        return TokenMetadataStorage.layout().lastUnlockedTokenId;
     }
 }

@@ -17,7 +17,7 @@ abstract contract TokenMetadataAdminInternal is ITokenMetadataInternal {
     }
 
     function _setURI(uint256 tokenId, string memory tokenURI) internal virtual {
-        require(tokenId <= TokenMetadataStorage.layout().lastLockedTokenId, "Metadata: tokenURI locked");
+        require(tokenId >= TokenMetadataStorage.layout().lastUnlockedTokenId, "Metadata: tokenURI locked");
         TokenMetadataStorage.layout().tokenURIs[tokenId] = tokenURI;
         emit URI(tokenURI, tokenId);
     }
@@ -36,7 +36,7 @@ abstract contract TokenMetadataAdminInternal is ITokenMetadataInternal {
     }
 
     function _lockURIUntil(uint256 tokenId) internal virtual {
-        TokenMetadataStorage.layout().lastLockedTokenId = tokenId;
+        TokenMetadataStorage.layout().lastUnlockedTokenId = tokenId;
     }
 
     function _lockURISuffix() internal virtual {
