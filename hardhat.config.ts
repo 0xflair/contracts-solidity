@@ -120,7 +120,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
       url: process.env.MAINNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 11_000000000, // 11 gwei
+      gasPrice: 10_000000000, // 10 gwei
     },
     ropsten: {
       chainId: 3,

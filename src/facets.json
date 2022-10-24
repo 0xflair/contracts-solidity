@@ -1,6 +1,7 @@
 {
   "flair-sdk:access/roles/AccessControl": {
     "addresses": {
+      "1": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "5": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
       "25": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "56": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
@@ -14,6 +15,7 @@
       "9001": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "42161": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "42170": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
+      "42220": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "43113": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
       "43114": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "44787": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
@@ -26,12 +28,14 @@
       "avalancheFujiTestnet": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
       "bsc": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "bscTestnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "celo": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "celoTestnet": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "cronos": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "evmosMainnet": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "evmosTestnet": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "ftmTestnet": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "goerli": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
+      "mainnet": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "okcMainnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "okcTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "opera": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
@@ -47,7 +51,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -56,11 +60,12 @@
     "category": "Access",
     "title": "Roles",
     "notice": "Role-based access control for write functions based on OpenZeppelin's AccessControl",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/access/roles/AccessControl.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/access/roles/AccessControl.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlAdmin": {
     "addresses": {
+      "1": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "5": "0x1a7c5FD331A388acE3385592b0a53da810ef9dC4",
       "25": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "56": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
@@ -74,6 +79,7 @@
       "9001": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "42161": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "42170": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "42220": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "43113": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
       "43114": "0x4461377e03cD75bc5B9b3D5514318b10b05B76d1",
       "44787": "0xF8fA73a567812c638e3258144965c03680CD2D87",
@@ -86,12 +92,14 @@
       "avalancheFujiTestnet": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
       "bsc": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "bscTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "celo": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "celoTestnet": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "cronos": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "evmosMainnet": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "evmosTestnet": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "ftmTestnet": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "goerli": "0x1a7c5FD331A388acE3385592b0a53da810ef9dC4",
+      "mainnet": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "okcMainnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "okcTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "opera": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
@@ -103,7 +111,7 @@
       "grantAdminRole(address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlAdmin",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xc634b78e"
     ],
@@ -114,11 +122,12 @@
     "category": "Access",
     "title": "Roles - Admin",
     "notice": "Allows you to initiate access controls as current contract owner by giving DEFAULT_ADMIN_ROLE to an address.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/access/roles/AccessControlAdmin.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/access/roles/AccessControlAdmin.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
     "addresses": {
+      "1": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "5": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
       "25": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "56": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
@@ -132,6 +141,7 @@
       "9001": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "42161": "0x6a61a408fF14Be189E8528aCa531852724D64091",
       "42170": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "42220": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "43113": "0x03EcE0a5f417eC136a78F8177De4699762389d2d",
       "43114": "0x74c654a0e916bbd1083C4E5409169c2595F64A32",
       "44787": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
@@ -144,12 +154,14 @@
       "avalancheFujiTestnet": "0x03EcE0a5f417eC136a78F8177De4699762389d2d",
       "bsc": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "bscTestnet": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "celo": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "celoTestnet": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "cronos": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "evmosMainnet": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "evmosTestnet": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "ftmTestnet": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
       "goerli": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
+      "mainnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "okcMainnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "okcTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "opera": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
@@ -165,7 +177,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -174,11 +186,12 @@
     "category": "Access",
     "title": "Roles - with meta-transactions",
     "notice": "Role-based access control with meta-transactions enabled (mainly for grantRole, revokeRole, renounceRole)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/access/roles/AccessControlERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/access/roles/AccessControlERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
     "addresses": {
+      "1": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "5": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
       "25": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "56": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
@@ -192,6 +205,7 @@
       "9001": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "42161": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "42170": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "42220": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "43113": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "43114": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "44787": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
@@ -204,12 +218,14 @@
       "avalancheFujiTestnet": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "bsc": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "bscTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "celo": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "celoTestnet": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "cronos": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "evmosMainnet": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "evmosTestnet": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "ftmTestnet": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "goerli": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
+      "mainnet": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "okcMainnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "okcTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "opera": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
@@ -220,7 +236,7 @@
       "setBurnablePausedUntil(uint256)"
     ],
     "fqn": "flair-sdk:token/common/burnable/BurnableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x710fb577"
     ],
@@ -229,11 +245,12 @@
     "category": "NFTs",
     "title": "Burnable - Admin - Ownable",
     "notice": "Allow contract owner to manage burning mechanism.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/common/burnable/BurnableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/common/burnable/BurnableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/Depository": {
     "addresses": {
+      "1": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "5": "0x4498a21260157D3c06B9329f3a43654aB3FC1364",
       "25": "0x166b5579474936a608478D6928E25F3272D92f89",
       "56": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
@@ -247,6 +264,7 @@
       "9001": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "42161": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "42170": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "42220": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "43113": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "43114": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "44787": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
@@ -259,12 +277,14 @@
       "avalancheFujiTestnet": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "bsc": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "bscTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "celo": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "celoTestnet": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "cronos": "0x166b5579474936a608478D6928E25F3272D92f89",
       "evmosMainnet": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "evmosTestnet": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "ftmTestnet": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "goerli": "0x4498a21260157D3c06B9329f3a43654aB3FC1364",
+      "mainnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "okcMainnet": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "okcTestnet": "0x166b5579474936a608478D6928E25F3272D92f89",
       "opera": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
@@ -280,7 +300,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/Depository",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -289,11 +309,12 @@
     "category": "Finance",
     "title": "Depository",
     "notice": "A simple depository contract to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/depository/Depository.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/depository/Depository.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/DepositoryWithERC2771": {
     "addresses": {
+      "1": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "5": "0x8226f05C9Fbecb29713155a0354FB56172f36034",
       "25": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "56": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
@@ -307,6 +328,7 @@
       "9001": "0x960327273C346eE9dfa122a757425B350b51F833",
       "42161": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
       "42170": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "42220": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "43113": "0x407E580A8c39B4254F89f809d00891F079026771",
       "43114": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "44787": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
@@ -319,12 +341,14 @@
       "avalancheFujiTestnet": "0x407E580A8c39B4254F89f809d00891F079026771",
       "bsc": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "bscTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "celo": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "celoTestnet": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "cronos": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "evmosMainnet": "0x960327273C346eE9dfa122a757425B350b51F833",
       "evmosTestnet": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "ftmTestnet": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "goerli": "0x8226f05C9Fbecb29713155a0354FB56172f36034",
+      "mainnet": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "okcMainnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "okcTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "opera": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
@@ -340,7 +364,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/DepositoryWithERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -349,11 +373,12 @@
     "category": "Finance",
     "title": "Depository - with meta-transactions",
     "notice": "A simple depository contract, with ERC2771 context for meta-transactions to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/depository/DepositoryWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/depository/DepositoryWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondCut": {
     "addresses": {
+      "1": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "5": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
       "25": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "56": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
@@ -367,6 +392,7 @@
       "9001": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "42161": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
       "42170": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "42220": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "43113": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "43114": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "44787": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
@@ -379,12 +405,14 @@
       "avalancheFujiTestnet": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "bsc": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "bscTestnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
+      "celo": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "celoTestnet": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "cronos": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "evmosMainnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "evmosTestnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "ftmTestnet": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "goerli": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
+      "mainnet": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "okcMainnet": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "okcTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "opera": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
@@ -395,7 +423,7 @@
       "diamondCut((address,uint8,bytes4[])[],address,bytes)"
     ],
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x1f931c1c"
     ],
@@ -404,11 +432,12 @@
     "category": "Diamonds",
     "title": "Diamond - Cut",
     "notice": "Standard EIP-2535 cut functionality to add, replace and remove facets from a diamond.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/diamond/DiamondCut.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/diamond/DiamondCut.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "addresses": {
+      "1": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "5": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
       "25": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "56": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
@@ -422,6 +451,7 @@
       "9001": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "42161": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "42170": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "42220": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "43113": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "43114": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "44787": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
@@ -434,12 +464,14 @@
       "avalancheFujiTestnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "bsc": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "bscTestnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
+      "celo": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "celoTestnet": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "cronos": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "evmosMainnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "evmosTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "ftmTestnet": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "goerli": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
+      "mainnet": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "okcMainnet": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "okcTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "opera": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
@@ -453,7 +485,7 @@
       "facets()"
     ],
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x48e2b093"
     ],
@@ -462,11 +494,12 @@
     "category": "Diamonds",
     "title": "Diamond - Loupe",
     "notice": "Standard EIP-2535 loupe functions to allow inspecting a diamond for explorers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/diamond/DiamondLoupe.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/diamond/DiamondLoupe.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "addresses": {
+      "1": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "5": "0xa1aa81597bb7fddeaa02224498aa613daa01986d",
       "25": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "56": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
@@ -480,6 +513,7 @@
       "9001": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "42161": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "42170": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "42220": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "43113": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "43114": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "44787": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
@@ -492,12 +526,14 @@
       "avalancheFujiTestnet": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "bsc": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "bscTestnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
+      "celo": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "celoTestnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "cronos": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "evmosMainnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "evmosTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "ftmTestnet": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "goerli": "0xa1aa81597bb7fddeaa02224498aa613daa01986d",
+      "mainnet": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "okcMainnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "okcTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "opera": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
@@ -528,7 +564,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xd9b67a26",
       "0xdc290004",
@@ -541,11 +577,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Standard",
     "notice": "Standard EIP-1155 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/ERC1155.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/ERC1155.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
     "addresses": {
+      "1": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "5": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
       "25": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "56": "0x614A331D14164720352ef916f4b91695c9199c7b",
@@ -559,6 +596,7 @@
       "9001": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "42161": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "42170": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "42220": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "43113": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "43114": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "44787": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
@@ -571,12 +609,14 @@
       "avalancheFujiTestnet": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "bsc": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "bscTestnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
+      "celo": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "celoTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "cronos": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "evmosMainnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "evmosTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "ftmTestnet": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "goerli": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
+      "mainnet": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "okcMainnet": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "okcTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "opera": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
@@ -590,7 +630,7 @@
       "unlockByOwner(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x7b535f1c"
     ],
@@ -601,11 +641,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
     "addresses": {
+      "1": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "5": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
       "25": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "56": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
@@ -619,6 +660,7 @@
       "9001": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "42161": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "42170": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "42220": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "43113": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "43114": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "44787": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
@@ -631,12 +673,14 @@
       "avalancheFujiTestnet": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "bsc": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "bscTestnet": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
+      "celo": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "celoTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "cronos": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "evmosMainnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "evmosTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "ftmTestnet": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "goerli": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
+      "mainnet": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "okcMainnet": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "okcTestnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "opera": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
@@ -652,7 +696,7 @@
       "unlockByRole(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xd40d0af6"
     ],
@@ -663,11 +707,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "addresses": {
+      "1": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "5": "0x89D7b8D105e73825CDdf0b5Bb139AA227C8aA70c",
       "25": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "56": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
@@ -681,6 +726,7 @@
       "9001": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "42161": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "42170": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "42220": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "43113": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "43114": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "44787": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
@@ -693,12 +739,14 @@
       "avalancheFujiTestnet": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "bsc": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "bscTestnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
+      "celo": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "celoTestnet": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "cronos": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "evmosMainnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "evmosTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "ftmTestnet": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "goerli": "0x89D7b8D105e73825CDdf0b5Bb139AA227C8aA70c",
+      "mainnet": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "okcMainnet": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
       "okcTestnet": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "opera": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
@@ -709,7 +757,7 @@
       "uri(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x93254542",
       "0x0e89341c"
@@ -721,11 +769,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Metadata",
     "notice": "Provides metadata for ERC1155 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
     "addresses": {
+      "1": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "5": "0xA7B51baD8d1ad82154879e3D868b726eE9417a1F",
       "25": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "56": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
@@ -739,6 +788,7 @@
       "9001": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "42161": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "42170": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "42220": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "43113": "0x00232A8326af43515C8413A00b49282e25f50017",
       "43114": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "44787": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
@@ -751,12 +801,14 @@
       "avalancheFujiTestnet": "0x00232A8326af43515C8413A00b49282e25f50017",
       "bsc": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "bscTestnet": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
+      "celo": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "celoTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "cronos": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "evmosMainnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "evmosTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "ftmTestnet": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "goerli": "0xA7B51baD8d1ad82154879e3D868b726eE9417a1F",
+      "mainnet": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "okcMainnet": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "okcTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "opera": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
@@ -768,7 +820,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -779,11 +831,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
     "addresses": {
+      "1": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "5": "0x826E57fA5830f277d5c13D835fEe019fE2133Aa3",
       "25": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "56": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
@@ -797,6 +850,7 @@
       "9001": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "42161": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "42170": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "42220": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "43113": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "43114": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "44787": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
@@ -809,12 +863,14 @@
       "avalancheFujiTestnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "bsc": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "bscTestnet": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
+      "celo": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "celoTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "cronos": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "evmosMainnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "evmosTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "ftmTestnet": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "goerli": "0x826E57fA5830f277d5c13D835fEe019fE2133Aa3",
+      "mainnet": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "okcMainnet": "0xb91057014bFB01df21e541335a78D930266f7869",
       "okcTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "opera": "0x88D339113E47355A9544E0665193F47A0325EBcB",
@@ -826,7 +882,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -837,11 +893,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner - with meta transactions",
     "notice": "Allow minting as owner via ERC2771 Context meta transactions (signed by the owner private key)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
     "addresses": {
+      "1": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "5": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D",
       "25": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "56": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
@@ -855,6 +912,7 @@
       "9001": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "42161": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "42170": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "42220": "0x166b5579474936a608478D6928E25F3272D92f89",
       "43113": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "43114": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "44787": "0x166b5579474936a608478D6928E25F3272D92f89",
@@ -867,12 +925,14 @@
       "avalancheFujiTestnet": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "bsc": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "bscTestnet": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
+      "celo": "0x166b5579474936a608478D6928E25F3272D92f89",
       "celoTestnet": "0x166b5579474936a608478D6928E25F3272D92f89",
       "cronos": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "evmosMainnet": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "evmosTestnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "ftmTestnet": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "goerli": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D",
+      "mainnet": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "okcMainnet": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "okcTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "opera": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
@@ -886,7 +946,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -897,11 +957,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role",
     "notice": "Allow minting for grantees of MINTER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
     "addresses": {
+      "1": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "5": "0xDa766C39473FF06E282271bB2e2aA10100712410",
       "25": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "56": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
@@ -915,6 +976,7 @@
       "9001": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "42161": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "42170": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "42220": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "43113": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "43114": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "44787": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
@@ -927,12 +989,14 @@
       "avalancheFujiTestnet": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "bsc": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "bscTestnet": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
+      "celo": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "celoTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "cronos": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "evmosMainnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "evmosTestnet": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "ftmTestnet": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "goerli": "0xDa766C39473FF06E282271bB2e2aA10100712410",
+      "mainnet": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "okcMainnet": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "okcTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "opera": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
@@ -946,7 +1010,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -957,11 +1021,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role - with meta transactions",
     "notice": "Allow minting for grantees of MINTER_ROLE with meta-transactions supported via ERC2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "addresses": {
+      "1": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "5": "0xda25087323285AE25e00E8C373a9184fb558D831",
       "25": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "56": "0xd59375B90526C16a007a779c15A844627fdBe716",
@@ -975,6 +1040,7 @@
       "9001": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "42161": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "42170": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
+      "42220": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "43113": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "43114": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "44787": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
@@ -987,12 +1053,14 @@
       "avalancheFujiTestnet": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "bsc": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "bscTestnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
+      "celo": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "celoTestnet": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "cronos": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "evmosMainnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "evmosTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "ftmTestnet": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "goerli": "0xda25087323285AE25e00E8C373a9184fb558D831",
+      "mainnet": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "okcMainnet": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
       "okcTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "opera": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
@@ -1006,7 +1074,7 @@
       "setMaxSupplyBatch(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xf0d6039e"
     ],
@@ -1017,11 +1085,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-1155 contract to change max supply of token IDs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "addresses": {
+      "1": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "5": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
       "25": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "56": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
@@ -1035,6 +1104,7 @@
       "9001": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "42161": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "42170": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
+      "42220": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "43113": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "43114": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "44787": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
@@ -1047,12 +1117,14 @@
       "avalancheFujiTestnet": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "bsc": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "bscTestnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
+      "celo": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "celoTestnet": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "cronos": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "evmosMainnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "evmosTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "ftmTestnet": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "goerli": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
+      "mainnet": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "okcMainnet": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "okcTestnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "opera": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
@@ -1073,7 +1145,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x79f33254",
       "0x5ae18a74"
@@ -1085,11 +1157,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales",
     "notice": "Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "addresses": {
+      "1": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "5": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
       "25": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "56": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
@@ -1103,6 +1176,7 @@
       "9001": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "42161": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "42170": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "42220": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "43113": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "43114": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "44787": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
@@ -1115,12 +1189,14 @@
       "avalancheFujiTestnet": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "bsc": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "bscTestnet": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
+      "celo": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "celoTestnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "cronos": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "evmosMainnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "evmosTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "ftmTestnet": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "goerli": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
+      "mainnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "okcMainnet": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "okcTestnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "opera": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
@@ -1132,7 +1208,7 @@
       "configureTierTokenId(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x76c5dd21"
     ],
@@ -1143,11 +1219,12 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - Admin - Ownable",
     "notice": "Used to manage which ERC1155 token is related to which the sales tier.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "addresses": {
+      "1": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "5": "0x1903d9d83B82F541a1c022410C4Aca7223cBE230",
       "25": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "56": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
@@ -1161,6 +1238,7 @@
       "9001": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "42161": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "42170": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
+      "42220": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "43113": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "43114": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "44787": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
@@ -1173,12 +1251,14 @@
       "avalancheFujiTestnet": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "bsc": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "bscTestnet": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
+      "celo": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "celoTestnet": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "cronos": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "evmosMainnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "evmosTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "ftmTestnet": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "goerli": "0x1903d9d83B82F541a1c022410C4Aca7223cBE230",
+      "mainnet": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "okcMainnet": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
       "okcTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "opera": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
@@ -1209,7 +1289,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xd9b67a26",
       "0xdc290004",
@@ -1222,11 +1302,12 @@
     "category": "NFTs",
     "title": "ERC1155 - with meta-transactions",
     "notice": "Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC1155/ERC1155WithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC1155/ERC1155WithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165": {
     "addresses": {
+      "1": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "5": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
       "25": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "56": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
@@ -1240,6 +1321,7 @@
       "9001": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "42161": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
       "42170": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "42220": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "43113": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "43114": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "44787": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
@@ -1252,12 +1334,14 @@
       "avalancheFujiTestnet": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "bsc": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "bscTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
+      "celo": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "celoTestnet": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "cronos": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "evmosMainnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "evmosTestnet": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "ftmTestnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "goerli": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
+      "mainnet": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "okcMainnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "okcTestnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "opera": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
@@ -1268,7 +1352,7 @@
       "supportsInterface(bytes4)"
     ],
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x01ffc9a7"
     ],
@@ -1277,11 +1361,12 @@
     "category": "Introspection",
     "title": "ERC165",
     "notice": "Standard EIP-165 facet which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/introspection/ERC165.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/introspection/ERC165.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "addresses": {
+      "1": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "5": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
       "25": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "56": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
@@ -1295,6 +1380,7 @@
       "9001": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "42161": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "42170": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
+      "42220": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "43113": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "43114": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "44787": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
@@ -1307,12 +1393,14 @@
       "avalancheFujiTestnet": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "bsc": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "bscTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
+      "celo": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "celoTestnet": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "cronos": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "evmosMainnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "evmosTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "ftmTestnet": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "goerli": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
+      "mainnet": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "okcMainnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "okcTestnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "opera": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
@@ -1323,7 +1411,7 @@
       "setERC165(bytes4[],bytes4[])"
     ],
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x2a848091"
     ],
@@ -1334,11 +1422,12 @@
     "category": "Diamonds",
     "title": "ERC165 - Admin - Ownable",
     "notice": "Standard EIP-165 management facet using Ownable extension for access control.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/introspection/ERC165Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/introspection/ERC165Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/ERC20": {
     "addresses": {
+      "1": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "5": "0x5C6e288d37cEd0F5cfAB51893349464B6DDeB720",
       "25": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "56": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
@@ -1349,9 +1438,10 @@
       "250": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "4002": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "9000": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
-      "9001": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "9001": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "42161": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "42170": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
+      "42220": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "43113": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "43114": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "44787": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
@@ -1364,12 +1454,14 @@
       "avalancheFujiTestnet": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "bsc": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "bscTestnet": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
+      "celo": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "celoTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "cronos": "0x8fa6C988b115B46Ed2910C53992864754316305f",
-      "evmosMainnet": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "evmosMainnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "evmosTestnet": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "ftmTestnet": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "goerli": "0x5C6e288d37cEd0F5cfAB51893349464B6DDeB720",
+      "mainnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "okcMainnet": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "okcTestnet": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "opera": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
@@ -1388,7 +1480,7 @@
       "transferFrom(address,address,uint256)"
     ],
     "fqn": "flair-sdk:token/ERC20/ERC20",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x36372b07",
       "0x36372b07",
@@ -1400,11 +1492,12 @@
     "category": "Tokens",
     "title": "ERC20 - Standard",
     "notice": "Standard EIP-20 token with mintable and max supply capability.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/ERC20.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/ERC20.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata": {
     "addresses": {
+      "1": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "5": "0xf8689140ff33CB5971D5D5D6e2E0c9f67A5200EB",
       "25": "0xb91057014bFB01df21e541335a78D930266f7869",
       "56": "0x107323fC6180D032B522214AF88d7A3083D67827",
@@ -1415,9 +1508,10 @@
       "250": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "4002": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "9000": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
-      "9001": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "9001": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "42161": "0x00232A8326af43515C8413A00b49282e25f50017",
       "42170": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
+      "42220": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "43113": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "43114": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
       "44787": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
@@ -1430,12 +1524,14 @@
       "avalancheFujiTestnet": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "bsc": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "bscTestnet": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
+      "celo": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "celoTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "cronos": "0xb91057014bFB01df21e541335a78D930266f7869",
-      "evmosMainnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "evmosMainnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "evmosTestnet": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "ftmTestnet": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "goerli": "0xf8689140ff33CB5971D5D5D6e2E0c9f67A5200EB",
+      "mainnet": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "okcMainnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "okcTestnet": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "opera": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
@@ -1450,7 +1546,7 @@
       "symbol()"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xa219a025"
     ],
@@ -1459,11 +1555,12 @@
     "category": "Tokens",
     "title": "ERC20 - Metadata",
     "notice": "Provides standard read methods for name, symbol and decimals metadata for an ERC20 token.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/metadata/ERC20Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/metadata/ERC20Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable": {
     "addresses": {
+      "1": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "5": "0x13B2F9D94009103C6C3b025e8Cd59b69d3F1F5b4",
       "25": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "56": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
@@ -1474,9 +1571,10 @@
       "250": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "4002": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "9000": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
-      "9001": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "9001": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "42161": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "42170": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
+      "42220": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "43113": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "43114": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
       "44787": "0xd59375B90526C16a007a779c15A844627fdBe716",
@@ -1489,12 +1587,14 @@
       "avalancheFujiTestnet": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "bsc": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "bscTestnet": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
+      "celo": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "celoTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "cronos": "0x933d6a003a024dB27926Ca44bF717658813BA570",
-      "evmosMainnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "evmosMainnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "evmosTestnet": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "ftmTestnet": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "goerli": "0x13B2F9D94009103C6C3b025e8Cd59b69d3F1F5b4",
+      "mainnet": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "okcMainnet": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "okcTestnet": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "opera": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
@@ -1506,7 +1606,7 @@
       "setDecimals(uint8)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x951c287d"
     ],
@@ -1517,11 +1617,12 @@
     "category": "Tokens",
     "title": "ERC20 - Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change decimals config or freeze it forever.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable": {
     "addresses": {
+      "1": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "5": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
       "25": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "56": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
@@ -1535,6 +1636,7 @@
       "9001": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "42161": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "42170": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "42220": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "43113": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "43114": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "44787": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
@@ -1547,12 +1649,14 @@
       "avalancheFujiTestnet": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "bsc": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "bscTestnet": "0x933d6a003a024dB27926Ca44bF717658813BA570",
+      "celo": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "celoTestnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "cronos": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "evmosMainnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "evmosTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "ftmTestnet": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "goerli": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
+      "mainnet": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "okcMainnet": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
       "okcTestnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "opera": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
@@ -1564,7 +1668,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -1575,11 +1679,12 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/minting/ERC20MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/minting/ERC20MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771": {
     "addresses": {
+      "1": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "5": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
       "25": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "56": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
@@ -1593,6 +1698,7 @@
       "9001": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "42161": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "42170": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "42220": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "43113": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "43114": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "44787": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
@@ -1605,12 +1711,14 @@
       "avalancheFujiTestnet": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "bsc": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "bscTestnet": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
+      "celo": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "celoTestnet": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "cronos": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "evmosMainnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "evmosTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "ftmTestnet": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "goerli": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
+      "mainnet": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "okcMainnet": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
       "okcTestnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "opera": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
@@ -1622,7 +1730,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -1633,11 +1741,12 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as owner - with meta-transactions",
     "notice": "Allow minting as owner via meta transactions, signed by the owner private key.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/minting/ERC20MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/minting/ERC20MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased": {
     "addresses": {
+      "1": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "5": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
       "25": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "56": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
@@ -1651,6 +1760,7 @@
       "9001": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "42161": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "42170": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
+      "42220": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "43113": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "43114": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "44787": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
@@ -1663,12 +1773,14 @@
       "avalancheFujiTestnet": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "bsc": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "bscTestnet": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
+      "celo": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "celoTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "cronos": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "evmosMainnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "evmosTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "ftmTestnet": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "goerli": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
+      "mainnet": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "okcMainnet": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
       "okcTestnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "opera": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
@@ -1682,7 +1794,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -1693,11 +1805,12 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as role",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC20A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/minting/ERC20MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/minting/ERC20MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771": {
     "addresses": {
+      "1": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "5": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
       "25": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "56": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
@@ -1711,6 +1824,7 @@
       "9001": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "42161": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "42170": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "42220": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "43113": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "43114": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "44787": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
@@ -1723,12 +1837,14 @@
       "avalancheFujiTestnet": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "bsc": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "bscTestnet": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
+      "celo": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "celoTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "cronos": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "evmosMainnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "evmosTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "ftmTestnet": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "goerli": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
+      "mainnet": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "okcMainnet": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
       "okcTestnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "opera": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
@@ -1742,7 +1858,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -1753,11 +1869,12 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC20A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable": {
     "addresses": {
+      "1": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "5": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
       "25": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "56": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
@@ -1771,6 +1888,7 @@
       "9001": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "42161": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "42170": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "42220": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "43113": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "43114": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "44787": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
@@ -1783,12 +1901,14 @@
       "avalancheFujiTestnet": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "bsc": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "bscTestnet": "0xb91057014bFB01df21e541335a78D930266f7869",
+      "celo": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "celoTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "cronos": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "evmosMainnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "evmosTestnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "ftmTestnet": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "goerli": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
+      "mainnet": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "okcMainnet": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "okcTestnet": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "opera": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
@@ -1801,7 +1921,7 @@
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x8a7b7298"
     ],
@@ -1812,11 +1932,12 @@
     "category": "Tokens",
     "title": "ERC20 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales": {
     "addresses": {
+      "1": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "5": "0x017a54A2a38105B534BA40D8d8cE05F089009B67",
       "25": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "56": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
@@ -1830,6 +1951,7 @@
       "9001": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "42161": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "42170": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "42220": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "43113": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "43114": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "44787": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
@@ -1842,12 +1964,14 @@
       "avalancheFujiTestnet": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "bsc": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "bscTestnet": "0x453ebb329780CFB54CE183f63F21db28b3106762",
+      "celo": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "celoTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "cronos": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "evmosMainnet": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "evmosTestnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "ftmTestnet": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "goerli": "0x017a54A2a38105B534BA40D8d8cE05F089009B67",
+      "mainnet": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "okcMainnet": "0x03EcE0a5f417eC136a78F8177De4699762389d2d",
       "okcTestnet": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "opera": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
@@ -1866,7 +1990,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -1878,11 +2002,12 @@
     "category": "Tokens",
     "title": "ERC20 - Tiered Sales",
     "notice": "Sales mechanism for ERC20 tokens with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/sales/ERC20TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/sales/ERC20TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771": {
     "addresses": {
+      "1": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "5": "0x521200ca8c48b1C65A1D1cf941C062d29e89fbCc",
       "25": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "56": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
@@ -1896,6 +2021,7 @@
       "9001": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "42161": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "42170": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "42220": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "43113": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "43114": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "44787": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
@@ -1908,12 +2034,14 @@
       "avalancheFujiTestnet": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "bsc": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "bscTestnet": "0x6a61a408fF14Be189E8528aCa531852724D64091",
+      "celo": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "celoTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "cronos": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "evmosMainnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "evmosTestnet": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "ftmTestnet": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "goerli": "0x521200ca8c48b1C65A1D1cf941C062d29e89fbCc",
+      "mainnet": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "okcMainnet": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
       "okcTestnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "opera": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
@@ -1932,7 +2060,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -1943,11 +2071,12 @@
     "category": "Tokens",
     "title": "ERC20 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC20 tokens with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC20/facets/sales/ERC20TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC20/facets/sales/ERC20TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:metatx/ERC2771Context": {
     "addresses": {
+      "1": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "5": "0x5684267E9c4aEBae63FFcb69074e1D1DFF606C3c",
       "25": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "56": "0x453ebb329780CFB54CE183f63F21db28b3106762",
@@ -1958,9 +2087,10 @@
       "250": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "4002": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "9000": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
-      "9001": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "9001": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "42161": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
       "42170": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
+      "42220": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "43113": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "43114": "0x53F5Dd7344Dc677963d07a5B6a9267316B52baC3",
       "44787": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
@@ -1973,12 +2103,14 @@
       "avalancheFujiTestnet": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "bsc": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "bscTestnet": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
+      "celo": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "celoTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "cronos": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
-      "evmosMainnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "evmosMainnet": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "evmosTestnet": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "ftmTestnet": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "goerli": "0x5684267E9c4aEBae63FFcb69074e1D1DFF606C3c",
+      "mainnet": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "okcMainnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "okcTestnet": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "opera": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
@@ -1990,7 +2122,7 @@
       "trustedForwarder()"
     ],
     "fqn": "flair-sdk:metatx/ERC2771Context",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x2a8bc472"
     ],
@@ -1999,11 +2131,12 @@
     "category": "Meta Transactions",
     "title": "ERC2771 Context",
     "notice": "Provides view functions about configured trusted forwarder according to EIP-2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/metatx/ERC2771Context.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/metatx/ERC2771Context.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
     "addresses": {
+      "1": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "5": "0xb3Fd2744e07B739Ee408c07b3A63F2642b25425F",
       "25": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "56": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
@@ -2017,6 +2150,7 @@
       "9001": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "42161": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
       "42170": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "42220": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "43113": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "43114": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "44787": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
@@ -2029,12 +2163,14 @@
       "avalancheFujiTestnet": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "bsc": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "bscTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "celo": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "celoTestnet": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "cronos": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "evmosMainnet": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "evmosTestnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "ftmTestnet": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "goerli": "0xb3Fd2744e07B739Ee408c07b3A63F2642b25425F",
+      "mainnet": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "okcMainnet": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "okcTestnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "opera": "0x4597efD61417c940aF99a73127c89187B63539F5",
@@ -2045,7 +2181,7 @@
       "setTrustedForwarder(address)"
     ],
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xda742228"
     ],
@@ -2054,11 +2190,12 @@
     "category": "Meta Transactions",
     "title": "ERC2771 Context - Admin - Ownable",
     "notice": "Controls trusted forwarder used to accept meta transactions according to EIP-2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/metatx/ERC2771ContextOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/metatx/ERC2771ContextOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "addresses": {
+      "1": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "5": "0x2d8149246c288Eb999A73941bd368d3Cd7C3bb77",
       "25": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "56": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
@@ -2072,6 +2209,7 @@
       "9001": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "42161": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "42170": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "42220": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "43113": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "43114": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "44787": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
@@ -2084,12 +2222,14 @@
       "avalancheFujiTestnet": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "bsc": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "bscTestnet": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
+      "celo": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "celoTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "cronos": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "evmosMainnet": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "evmosTestnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "ftmTestnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "goerli": "0x2d8149246c288Eb999A73941bd368d3Cd7C3bb77",
+      "mainnet": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "okcMainnet": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "okcTestnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "opera": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
@@ -2122,7 +2262,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721A",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x8153916a",
       "0x80ac58cd",
@@ -2137,11 +2277,12 @@
     "category": "NFTs",
     "title": "ERC721 (A) - Standard",
     "notice": "Azuki's implementation of standard EIP-721 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/ERC721A.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/ERC721A.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
+      "1": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "5": "0xEBCDc45E69e83d86d2B484F8A27448b0bc27903C",
       "25": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "56": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
@@ -2152,8 +2293,10 @@
       "250": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "4002": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "9000": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
+      "9001": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "42161": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "42170": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "42220": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "43113": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "43114": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "44787": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
@@ -2166,11 +2309,14 @@
       "avalancheFujiTestnet": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "bsc": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "bscTestnet": "0x107323fC6180D032B522214AF88d7A3083D67827",
+      "celo": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "celoTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "cronos": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
+      "evmosMainnet": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "evmosTestnet": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "ftmTestnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "goerli": "0xEBCDc45E69e83d86d2B484F8A27448b0bc27903C",
+      "mainnet": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "okcMainnet": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "okcTestnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "opera": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
@@ -2203,7 +2349,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721AWithERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x8153916a",
       "0x80ac58cd",
@@ -2217,11 +2363,12 @@
     "category": "NFTs",
     "title": "ERC721 (A) - with meta-transactions",
     "notice": "Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/ERC721AWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/ERC721AWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
     "addresses": {
+      "1": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "5": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
       "25": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "56": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
@@ -2232,8 +2379,10 @@
       "250": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "4002": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "9000": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
+      "9001": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "42161": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "42170": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "42220": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "43113": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "43114": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "44787": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
@@ -2246,11 +2395,14 @@
       "avalancheFujiTestnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "bsc": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
       "bscTestnet": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
+      "celo": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "celoTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "cronos": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
+      "evmosMainnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "evmosTestnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "ftmTestnet": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "goerli": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
+      "mainnet": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "okcMainnet": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "okcTestnet": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "opera": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
@@ -2264,7 +2416,7 @@
       "unlockByOwner(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x822b3992"
     ],
@@ -2275,11 +2427,12 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
     "addresses": {
+      "1": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "5": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
       "25": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "56": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
@@ -2290,8 +2443,10 @@
       "250": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "4002": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "9000": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
+      "9001": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "42161": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "42170": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "42220": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "43113": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "43114": "0x48F9152b91103E158029921C59Ff844d30468288",
       "44787": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
@@ -2304,11 +2459,14 @@
       "avalancheFujiTestnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "bsc": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "bscTestnet": "0xEE122C46dFd680194268E614928b6dCD621aa533",
+      "celo": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "celoTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "cronos": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
+      "evmosMainnet": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "evmosTestnet": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "ftmTestnet": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "goerli": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
+      "mainnet": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "okcMainnet": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "okcTestnet": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "opera": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
@@ -2324,7 +2482,7 @@
       "unlockByRole(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x28ed446a"
     ],
@@ -2335,11 +2493,12 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
     "addresses": {
+      "1": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "5": "0xdc1b606fe1bab50ad7e3b472d05181f9efa71898",
       "25": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "56": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
@@ -2350,8 +2509,10 @@
       "250": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "4002": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "9000": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
+      "9001": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "42161": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "42170": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "42220": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "43113": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "43114": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "44787": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
@@ -2364,11 +2525,14 @@
       "avalancheFujiTestnet": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "bsc": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "bscTestnet": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
+      "celo": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "celoTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "cronos": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
+      "evmosMainnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "evmosTestnet": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "ftmTestnet": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "goerli": "0xdc1b606fe1bab50ad7e3b472d05181f9efa71898",
+      "mainnet": "0xD01F2668247FC1c7334591457dc1a8e3C6a5a8E4",
       "okcMainnet": "0x407E580A8c39B4254F89f809d00891F079026771",
       "okcTestnet": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "opera": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
@@ -2381,7 +2545,7 @@
       "tokenURI(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x5b5e139f"
     ],
@@ -2392,11 +2556,12 @@
     "category": "NFTs",
     "title": "ERC721 - Metadata",
     "notice": "Provides metadata for ERC721 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
     "addresses": {
+      "1": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "5": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
       "25": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "56": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
@@ -2407,8 +2572,10 @@
       "250": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "4002": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "9000": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+      "9001": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "42161": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "42170": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "42220": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "43113": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "43114": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "44787": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
@@ -2421,11 +2588,14 @@
       "avalancheFujiTestnet": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "bsc": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "bscTestnet": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
+      "celo": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "celoTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "cronos": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
+      "evmosMainnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "evmosTestnet": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "ftmTestnet": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "goerli": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
+      "mainnet": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "okcMainnet": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "okcTestnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "opera": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
@@ -2437,7 +2607,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -2448,11 +2618,12 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
     "addresses": {
+      "1": "0x48F9152b91103E158029921C59Ff844d30468288",
       "5": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df",
       "25": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "56": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
@@ -2463,8 +2634,10 @@
       "250": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "4002": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "9000": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
+      "9001": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "42161": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "42170": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "42220": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "43113": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "43114": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "44787": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
@@ -2477,11 +2650,14 @@
       "avalancheFujiTestnet": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "bsc": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "bscTestnet": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
+      "celo": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "celoTestnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "cronos": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
+      "evmosMainnet": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "evmosTestnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "ftmTestnet": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "goerli": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df",
+      "mainnet": "0x48F9152b91103E158029921C59Ff844d30468288",
       "okcMainnet": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "okcTestnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "opera": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
@@ -2493,7 +2669,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -2504,11 +2680,12 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as owner - with meta-transactions",
     "notice": "Allow minting as owner via meta transactions, signed by the owner private key. (supports ERC721A)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
     "addresses": {
+      "1": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "5": "0x4B6BD2905837f5061939630312f89f7563fb53d4",
       "25": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "56": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
@@ -2519,8 +2696,10 @@
       "250": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "4002": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "9000": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
+      "9001": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "42161": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "42170": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
+      "42220": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "43113": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "43114": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
       "44787": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
@@ -2533,11 +2712,14 @@
       "avalancheFujiTestnet": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "bsc": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
       "bscTestnet": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
+      "celo": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "celoTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "cronos": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
+      "evmosMainnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "evmosTestnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "ftmTestnet": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "goerli": "0x4B6BD2905837f5061939630312f89f7563fb53d4",
+      "mainnet": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "okcMainnet": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "okcTestnet": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
       "opera": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
@@ -2552,7 +2734,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xef970b0f"
     ],
@@ -2563,11 +2745,12 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
     "addresses": {
+      "1": "0xe9832698308707D18dE429Aaf6260355196CEFB7",
       "5": "0x3870c7b34f50e2c2c5D91849CCC1ccd8DdE69f07",
       "25": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "56": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
@@ -2578,8 +2761,10 @@
       "250": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
       "4002": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
       "9000": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
+      "9001": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "42161": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "42170": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
+      "42220": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "43113": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "43114": "0xa6a7986065BA0aFAf13Fa9155BCFC4C2d0E80a0a",
       "44787": "0x614A331D14164720352ef916f4b91695c9199c7b",
@@ -2592,11 +2777,14 @@
       "avalancheFujiTestnet": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "bsc": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
       "bscTestnet": "0x4597efD61417c940aF99a73127c89187B63539F5",
+      "celo": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "celoTestnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "cronos": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
+      "evmosMainnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "evmosTestnet": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
       "ftmTestnet": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
       "goerli": "0x3870c7b34f50e2c2c5D91849CCC1ccd8DdE69f07",
+      "mainnet": "0xe9832698308707D18dE429Aaf6260355196CEFB7",
       "okcMainnet": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "okcTestnet": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "opera": "0xE9fCC8544F378332CAF85A9AbBd1d24872feAd54",
@@ -2611,7 +2799,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xef970b0f"
     ],
@@ -2622,11 +2810,12 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
     "addresses": {
+      "1": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "5": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
       "25": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "56": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
@@ -2637,8 +2826,10 @@
       "250": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "4002": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "9000": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
+      "9001": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "42161": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "42170": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "42220": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "43113": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "43114": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "44787": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
@@ -2651,11 +2842,14 @@
       "avalancheFujiTestnet": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "bsc": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "bscTestnet": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
+      "celo": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "celoTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "cronos": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
+      "evmosMainnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "evmosTestnet": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "ftmTestnet": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "goerli": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
+      "mainnet": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "okcMainnet": "0x50862ddB120017a4d48816C9073cF50f46438e4D",
       "okcTestnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "opera": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
@@ -2668,7 +2862,7 @@
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x8a7b7298"
     ],
@@ -2679,11 +2873,12 @@
     "category": "NFTs",
     "title": "ERC721 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "addresses": {
+      "1": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "5": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C",
       "25": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "56": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
@@ -2694,8 +2889,10 @@
       "250": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "4002": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "9000": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
+      "9001": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "42161": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "42170": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "42220": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "43113": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "43114": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "44787": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
@@ -2708,11 +2905,14 @@
       "avalancheFujiTestnet": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "bsc": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "bscTestnet": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
+      "celo": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "celoTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "cronos": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
+      "evmosMainnet": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "evmosTestnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "ftmTestnet": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "goerli": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C",
+      "mainnet": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "okcMainnet": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "okcTestnet": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "opera": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
@@ -2731,7 +2931,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -2743,11 +2943,12 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales",
     "notice": "Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "addresses": {
+      "1": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "5": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750",
       "25": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "56": "0x8fa6C988b115B46Ed2910C53992864754316305f",
@@ -2758,8 +2959,10 @@
       "250": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "4002": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "9000": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
+      "9001": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "42161": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "42170": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "42220": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "43113": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "43114": "0xe9832698308707D18dE429Aaf6260355196CEFB7",
       "44787": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
@@ -2772,11 +2975,14 @@
       "avalancheFujiTestnet": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "bsc": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "bscTestnet": "0x407E580A8c39B4254F89f809d00891F079026771",
+      "celo": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "celoTestnet": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "cronos": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
+      "evmosMainnet": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "evmosTestnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "ftmTestnet": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "goerli": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750",
+      "mainnet": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "okcMainnet": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
       "okcTestnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "opera": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
@@ -2795,7 +3001,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -2806,11 +3012,12 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC721 NFTs with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/License": {
     "addresses": {
+      "1": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "5": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D",
       "25": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "56": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
@@ -2824,6 +3031,7 @@
       "9001": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "42161": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "42170": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+      "42220": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "43113": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "43114": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "44787": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
@@ -2836,12 +3044,14 @@
       "avalancheFujiTestnet": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "bsc": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "bscTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
+      "celo": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "celoTestnet": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "cronos": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "evmosMainnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "evmosTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "ftmTestnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "goerli": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D",
+      "mainnet": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "okcMainnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "okcTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "opera": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
@@ -2856,7 +3066,7 @@
       "licenseVersion()"
     ],
     "fqn": "flair-sdk:legal/license/License",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x88a1e8f3",
       "0x649a51a8"
@@ -2866,11 +3076,12 @@
     "category": "Legal",
     "title": "License",
     "notice": "Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \"Can't Be Evil\".",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/legal/license/License.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/legal/license/License.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/LicenseOwnable": {
     "addresses": {
+      "1": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "5": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
       "25": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "56": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
@@ -2884,6 +3095,7 @@
       "9001": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "42161": "0x407E580A8c39B4254F89f809d00891F079026771",
       "42170": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "42220": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "43113": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "43114": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "44787": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
@@ -2896,12 +3108,14 @@
       "avalancheFujiTestnet": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "bsc": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "bscTestnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
+      "celo": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "celoTestnet": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "cronos": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "evmosMainnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "evmosTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "ftmTestnet": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "goerli": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
+      "mainnet": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "okcMainnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "okcTestnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "opera": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
@@ -2914,7 +3128,7 @@
       "setLicenseVersion(uint8)"
     ],
     "fqn": "flair-sdk:legal/license/LicenseOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x06ff95be"
     ],
@@ -2926,11 +3140,12 @@
     "category": "Legal",
     "title": "License - Admin - Ownable",
     "notice": "Allow contract owner to manage license version, name and URI.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/legal/license/LicenseOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/legal/license/LicenseOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "addresses": {
+      "1": "0x00232A8326af43515C8413A00b49282e25f50017",
       "5": "0xfaF4e7B5C6B5BEA7e5aeA09Bd56487541141b3F0",
       "25": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
       "56": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
@@ -2941,9 +3156,10 @@
       "250": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "4002": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "9000": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
-      "9001": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "9001": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "42161": "0x50862ddB120017a4d48816C9073cF50f46438e4D",
       "42170": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
+      "42220": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "43113": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "43114": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "44787": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
@@ -2956,12 +3172,14 @@
       "avalancheFujiTestnet": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "bsc": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "bscTestnet": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
+      "celo": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "celoTestnet": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "cronos": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
-      "evmosMainnet": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "evmosMainnet": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "evmosTestnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "ftmTestnet": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "goerli": "0xfaF4e7B5C6B5BEA7e5aeA09Bd56487541141b3F0",
+      "mainnet": "0x00232A8326af43515C8413A00b49282e25f50017",
       "okcMainnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "okcTestnet": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "opera": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
@@ -2974,7 +3192,7 @@
       "symbol()"
     ],
     "fqn": "flair-sdk:token/common/metadata/Metadata",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x93254542"
     ],
@@ -2983,11 +3201,12 @@
     "category": "Tokens",
     "title": "Metadata",
     "notice": "Provides contract name and symbol.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/common/metadata/Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/common/metadata/Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
     "addresses": {
+      "1": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "5": "0x0dF0885058D018693D2B3C6648f3e451683a4613",
       "25": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "56": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
@@ -3001,6 +3220,7 @@
       "9001": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "42161": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "42170": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "42220": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "43113": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "43114": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "44787": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
@@ -3013,12 +3233,14 @@
       "avalancheFujiTestnet": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "bsc": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "bscTestnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
+      "celo": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "celoTestnet": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "cronos": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "evmosMainnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "evmosTestnet": "0x166b5579474936a608478D6928E25F3272D92f89",
       "ftmTestnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "goerli": "0x0dF0885058D018693D2B3C6648f3e451683a4613",
+      "mainnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "okcMainnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "okcTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "opera": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
@@ -3031,7 +3253,7 @@
       "setSymbol(string)"
     ],
     "fqn": "flair-sdk:token/common/metadata/MetadataOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x1f0b49eb"
     ],
@@ -3042,11 +3264,12 @@
     "category": "Tokens",
     "title": "Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change name and symbol, or freeze them forever.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/common/metadata/MetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/common/metadata/MetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/ownable/Ownable": {
     "addresses": {
+      "1": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "5": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
       "25": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "56": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
@@ -3060,6 +3283,7 @@
       "9001": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "42161": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
       "42170": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
+      "42220": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "43113": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
       "43114": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
       "44787": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
@@ -3072,12 +3296,14 @@
       "avalancheFujiTestnet": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
       "bsc": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "bscTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "celo": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "celoTestnet": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "cronos": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "evmosMainnet": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "evmosTestnet": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "ftmTestnet": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "goerli": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
+      "mainnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "okcMainnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "okcTestnet": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "opera": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
@@ -3090,7 +3316,7 @@
       "transferOwnership(address)"
     ],
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x7f5828d0"
     ],
@@ -3099,11 +3325,12 @@
     "category": "Access",
     "title": "ERC173 - Ownable",
     "notice": "Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/access/ownable/Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/access/ownable/Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/Royalty": {
     "addresses": {
+      "1": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "5": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
       "25": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "56": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
@@ -3117,6 +3344,7 @@
       "9001": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "42161": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "42170": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "42220": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "43113": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "43114": "0x00232A8326af43515C8413A00b49282e25f50017",
       "44787": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
@@ -3129,12 +3357,14 @@
       "avalancheFujiTestnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "bsc": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "bscTestnet": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
+      "celo": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "celoTestnet": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "cronos": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "evmosMainnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "evmosTestnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "ftmTestnet": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "goerli": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
+      "mainnet": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "okcMainnet": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "okcTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "opera": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
@@ -3152,7 +3382,7 @@
       "royaltyInfo(uint256,uint256)"
     ],
     "fqn": "flair-sdk:finance/royalty/Royalty",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x2a55205a",
       "0x821be678",
@@ -3166,11 +3396,12 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty",
     "notice": "Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/royalty/Royalty.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/royalty/Royalty.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
     "addresses": {
+      "1": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "5": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
       "25": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "56": "0x6eeC81939d74586703C8712CA8d98825085Af839",
@@ -3184,6 +3415,7 @@
       "9001": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "42161": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "42170": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "42220": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "43113": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "43114": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "44787": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
@@ -3196,12 +3428,14 @@
       "avalancheFujiTestnet": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "bsc": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "bscTestnet": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+      "celo": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "celoTestnet": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "cronos": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "evmosMainnet": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "evmosTestnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "ftmTestnet": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "goerli": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
+      "mainnet": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "okcMainnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "okcTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "opera": "0xc4062CaF3E54978116303ac087C958b6764f2166",
@@ -3213,7 +3447,7 @@
       "setTokenRoyalties((uint256,address,uint16)[])"
     ],
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xbe561268"
     ],
@@ -3225,11 +3459,12 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty - Admin - Ownable",
     "notice": "Allow contract owner to manage token royalties based on EIP-2981 standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/royalty/RoyaltyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/royalty/RoyaltyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "addresses": {
+      "1": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "5": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
       "25": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "56": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
@@ -3243,6 +3478,7 @@
       "9001": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "42161": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "42170": "0x960327273C346eE9dfa122a757425B350b51F833",
+      "42220": "0x960327273C346eE9dfa122a757425B350b51F833",
       "43113": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "43114": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "44787": "0x960327273C346eE9dfa122a757425B350b51F833",
@@ -3255,12 +3491,14 @@
       "avalancheFujiTestnet": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "bsc": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "bscTestnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
+      "celo": "0x960327273C346eE9dfa122a757425B350b51F833",
       "celoTestnet": "0x960327273C346eE9dfa122a757425B350b51F833",
       "cronos": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "evmosMainnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "evmosTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "ftmTestnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "goerli": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
+      "mainnet": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "okcMainnet": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "okcTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "opera": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
@@ -3272,7 +3510,7 @@
       "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])"
     ],
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xf8458dcd"
     ],
@@ -3283,11 +3521,12 @@
     "category": "NFTs",
     "title": "Tiered Sales - Admin - Ownable",
     "notice": "Allow contract owner to manage sale tiers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/sales/TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/sales/TieredSalesOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/TokenMetadata": {
     "addresses": {
+      "1": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "5": "0x85fb73017f35fd56559d4481f37a497b53e20986",
       "25": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "56": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
@@ -3301,6 +3540,7 @@
       "9001": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "42161": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "42170": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "42220": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "43113": "0x74c654a0e916bbd1083C4E5409169c2595F64A32",
       "43114": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "44787": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
@@ -3313,12 +3553,14 @@
       "avalancheFujiTestnet": "0x74c654a0e916bbd1083C4E5409169c2595F64A32",
       "bsc": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "bscTestnet": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
+      "celo": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "celoTestnet": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "cronos": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "evmosMainnet": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "evmosTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "ftmTestnet": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "goerli": "0x85fb73017f35fd56559d4481f37a497b53e20986",
+      "mainnet": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "okcMainnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "okcTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "opera": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
@@ -3335,7 +3577,7 @@
       "uriSuffixLocked()"
     ],
     "fqn": "flair-sdk:token/common/metadata/TokenMetadata",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xc16c2a44"
     ],
@@ -3344,11 +3586,12 @@
     "category": "NFTs",
     "title": "NFT Token Metadata",
     "notice": "Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/common/metadata/TokenMetadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/common/metadata/TokenMetadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/TokenMetadataOwnable": {
     "addresses": {
+      "1": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "5": "0x7c1262d9bc9622A5867e5326Ed39287691175b8D",
       "25": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "56": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
@@ -3362,6 +3605,7 @@
       "9001": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "42161": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
       "42170": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "42220": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "43113": "0x4461377e03cD75bc5B9b3D5514318b10b05B76d1",
       "43114": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "44787": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
@@ -3374,12 +3618,14 @@
       "avalancheFujiTestnet": "0x4461377e03cD75bc5B9b3D5514318b10b05B76d1",
       "bsc": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "bscTestnet": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
+      "celo": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "celoTestnet": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "cronos": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "evmosMainnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "evmosTestnet": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "ftmTestnet": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "goerli": "0x7c1262d9bc9622A5867e5326Ed39287691175b8D",
+      "mainnet": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "okcMainnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "okcTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "opera": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
@@ -3398,7 +3644,7 @@
       "setURISuffix(string)"
     ],
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x3f963a7f"
     ],
@@ -3409,11 +3655,12 @@
     "category": "NFTs",
     "title": "NFT Token Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/token/common/metadata/TokenMetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/token/common/metadata/TokenMetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
     "addresses": {
+      "1": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "5": "0x1B66A8947730a857B938F7191D2603635A61Afe2",
       "25": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "56": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
@@ -3427,6 +3674,7 @@
       "9001": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "42161": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "42170": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "42220": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "43113": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "43114": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "44787": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
@@ -3439,12 +3687,14 @@
       "avalancheFujiTestnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "bsc": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "bscTestnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
+      "celo": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "celoTestnet": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "cronos": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "evmosMainnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "evmosTestnet": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "ftmTestnet": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "goerli": "0x1B66A8947730a857B938F7191D2603635A61Afe2",
+      "mainnet": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "okcMainnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "okcTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "opera": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
@@ -3460,7 +3710,7 @@
       "withdrawRecipientLocked()"
     ],
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0xa9c00e2f"
     ],
@@ -3469,11 +3719,12 @@
     "category": "Finance",
     "title": "Withdrawable",
     "notice": "Allow withdrwaing any ERC20 or native tokens from the contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/withdraw/Withdrawable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/withdraw/Withdrawable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "addresses": {
+      "1": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "5": "0x607E2580c3377584596C8B02B5527CB23259E191",
       "25": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "56": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
@@ -3487,6 +3738,7 @@
       "9001": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "42161": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "42170": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "42220": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "43113": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "43114": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "44787": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
@@ -3499,12 +3751,14 @@
       "avalancheFujiTestnet": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "bsc": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "bscTestnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
+      "celo": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "celoTestnet": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "cronos": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "evmosMainnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "evmosTestnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "ftmTestnet": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "goerli": "0x607E2580c3377584596C8B02B5527CB23259E191",
+      "mainnet": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "okcMainnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "okcTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "opera": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
@@ -3519,7 +3773,7 @@
       "setWithdrawRecipient(address)"
     ],
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
-    "version": "2.19.3",
+    "version": "2.20.1",
     "providesInterfaces": [
       "0x7246cea5"
     ],
@@ -3530,7 +3784,7 @@
     "category": "Finance",
     "title": "Withdrawable - Admin - Ownable",
     "notice": "Allow contract owner to manage who can withdraw funds and how.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.19.3/src/finance/withdraw/WithdrawableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.20.1/src/finance/withdraw/WithdrawableOwnable.sol",
     "author": "flair-sdk.eth"
   }
 }

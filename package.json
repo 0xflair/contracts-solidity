@@ -72,6 +72,8 @@
     "deploy:zksyncTestnet": "npx hardhat deploy --network zksyncTestnet",
     "deploy:nearAurora": "npx hardhat deploy --network nearAurora",
     "deploy:nearAuroraTestnet": "npx hardhat deploy --network nearAuroraTestnet",
+    "deploy:moonriver": "npx hardhat deploy --network moonriver",
+    "deploy:moonbeam": "npx hardhat deploy --network moonbeam",
     "verify:mainnet": "npx hardhat --network mainnet sourcify && npx hardhat etherscan-verify --network mainnet",
     "verify:goerli": "npx hardhat --network goerli sourcify && npx hardhat etherscan-verify --network goerli",
     "verify:sepolia": "npx hardhat --network sepolia sourcify && npx hardhat etherscan-verify --network sepolia",
