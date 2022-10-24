@@ -1,3 +1,10 @@
+### [2.20.4](https://github.com/flair-sdk/contracts/compare/v2.20.3...v2.20.4) (2022-10-24)
+
+
+### Bug Fixes
+
+* correct logic around token uri locks ([7744f7d](https://github.com/flair-sdk/contracts/commit/7744f7d291291bb698f32ccff20695c2292ca5ec))
+
 ### [2.20.3](https://github.com/flair-sdk/contracts/compare/v2.20.2...v2.20.3) (2022-10-24)
 
 ### [2.20.2](https://github.com/flair-sdk/contracts/compare/v2.20.1...v2.20.2) (2022-10-23)
