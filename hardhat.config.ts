@@ -281,6 +281,17 @@ const config: HardhatUserConfig = {
       url: process.env.OASIS_EMERALD_TESTNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
+    // Moonbeam / Moonriver
+    moonbeam: {
+      chainId: 1284,
+      url: process.env.MOONBEAM_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    moonriver: {
+      chainId: 1285,
+      url: process.env.MOONRIVER_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
     // zkSync
     zksyncTestnet: {
       chainId: 280,

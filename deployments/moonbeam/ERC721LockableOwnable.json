@@ -1,0 +1,118 @@
+{
+  "address": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "lockByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "ids",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "lockByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "ids",
+          "type": "uint256[]"
+        }
+      ],
+      "name": "unlockByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        }
+      ],
+      "name": "unlockByOwner",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x7c3cdade7be2a0cd40ece1f203f795d3c7e402b6904a30ec52ce6c12cc4950b0",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+    "transactionIndex": 0,
+    "gasUsed": "348508",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xcdea0ec2f2f055e2ac7ce51ad54c92decca636b079221aab0c2f2ee0ff11d8a9",
+    "transactionHash": "0x7c3cdade7be2a0cd40ece1f203f795d3c7e402b6904a30ec52ce6c12cc4950b0",
+    "logs": [],
+    "blockNumber": 2154530,
+    "cumulativeGasUsed": "348508",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "92b10a87a798c3ac32d6f62bce2409de",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"lockByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"}],\"name\":\"lockByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"}],\"name\":\"unlockByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"}],\"name\":\"unlockByOwner\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"IERC721LockableOwnable\",\"custom:required-dependencies\":\"IERC721LockableExtension\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC721 - Lock as owner\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allow locking tokens as the contract owner.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC721/facets/locking/ERC721LockableOwnable.sol\":\"ERC721LockableOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/common/Errors.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * The caller must be the current contract itself.\\n */\\nerror ErrSenderIsNotSelf();\\n\",\"keccak256\":\"0xd1592cdff5defdc5c2eabccce2fcd663d930338b99dad69567c7054c81711bc9\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/lockable/IERC5192.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC5192 {\\n    /// @notice Returns the locking status of an Soulbound Token\\n    /// @dev SBTs assigned to zero address are considered invalid, and queries\\n    /// about them do throw.\\n    /// @param tokenId The identifier for an SBT.\\n    function locked(uint256 tokenId) external view returns (bool);\\n}\\n\",\"keccak256\":\"0x60ad32e83a44da7a7b4d9cde51624b8b70c68100edd032e57c76a3f2c010c7fb\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/lockable/IERC721LockableExtension.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./IERC5192.sol\\\";\\nimport \\\"./IERC721LockableInternal.sol\\\";\\n\\n/**\\n * @dev Based on EIP-5192, extension of {ERC721} that allows other facets from the diamond to lock the tokens.\\n */\\ninterface IERC721LockableExtension is IERC5192, IERC721LockableInternal {\\n    /**\\n     * @dev Locks `amount` of tokens of `account`, of token type `id`.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond itself (other facets).\\n     */\\n    function lockByFacet(uint256 id) external;\\n\\n    function lockByFacet(uint256[] memory ids) external;\\n\\n    /**\\n     * @dev Un-locks `amount` of tokens of `account`, of token type `id`.\\n     *\\n     * Requirements:\\n     *\\n     * - the caller must be diamond itself (other facets).\\n     */\\n    function unlockByFacet(uint256 id) external;\\n\\n    function unlockByFacet(uint256[] memory ids) external;\\n}\\n\",\"keccak256\":\"0x56744f7ac9c43f00f9465bf16db511836c872e437d971fee659d4d4414094422\",\"license\":\"MIT\"},\"src/token/ERC721/extensions/lockable/IERC721LockableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC721LockableInternal {\\n    error ErrTokenLocked(uint256 tokenId);\\n\\n    /// @notice Emitted when the locking status is changed to locked.\\n    /// @dev If a token is minted and the status is locked, this event should be emitted.\\n    /// @param tokenId The identifier for a token.\\n    event Locked(uint256 tokenId);\\n\\n    /// @notice Emitted when the locking status is changed to unlocked.\\n    /// @dev If a token is minted and the status is unlocked, this event should be emitted.\\n    /// @param tokenId The identifier for a token.\\n    event Unlocked(uint256 tokenId);\\n}\\n\",\"keccak256\":\"0x0e3eedb0e00f2af792adb465fb06126fdf6e7eaeffbc5041571e07260fce58a4\",\"license\":\"MIT\"},\"src/token/ERC721/facets/locking/ERC721LockableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../../../common/Errors.sol\\\";\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"../../extensions/lockable/IERC721LockableExtension.sol\\\";\\nimport \\\"./IERC721LockableOwnable.sol\\\";\\n\\n/**\\n * @title ERC721 - Lock as owner\\n * @notice Allow locking tokens as the contract owner.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:required-dependencies IERC721LockableExtension\\n * @custom:provides-interfaces IERC721LockableOwnable\\n */\\ncontract ERC721LockableOwnable is IERC721LockableOwnable, OwnableInternal {\\n    /**\\n     * @inheritdoc IERC721LockableOwnable\\n     */\\n    function lockByOwner(uint256 id) public virtual onlyOwner {\\n        IERC721LockableExtension(address(this)).lockByFacet(id);\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721LockableOwnable\\n     */\\n    function lockByOwner(uint256[] memory ids) public virtual onlyOwner {\\n        IERC721LockableExtension(address(this)).lockByFacet(ids);\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721LockableOwnable\\n     */\\n    function unlockByOwner(uint256 id) public virtual onlyOwner {\\n        IERC721LockableExtension(address(this)).unlockByFacet(id);\\n    }\\n\\n    /**\\n     * @inheritdoc IERC721LockableOwnable\\n     */\\n    function unlockByOwner(uint256[] memory ids) public virtual onlyOwner {\\n        IERC721LockableExtension(address(this)).unlockByFacet(ids);\\n    }\\n}\\n\",\"keccak256\":\"0x315301b08cf8a7f51381f8736d1704d17530f148476fe3c8215fd6b353ade2ec\",\"license\":\"MIT\"},\"src/token/ERC721/facets/locking/IERC721LockableOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Extension of {ERC721} that allows diamond owner to lock tokens.\\n */\\ninterface IERC721LockableOwnable {\\n    function lockByOwner(uint256 id) external;\\n\\n    function lockByOwner(uint256[] memory ids) external;\\n\\n    function unlockByOwner(uint256 id) external;\\n\\n    function unlockByOwner(uint256[] memory ids) external;\\n}\\n\",\"keccak256\":\"0x55d68fefe60931b6823fd09a8dcd6b0a0745b68b520608040538579ebc771bba\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061055f806100206000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c80637181011614610051578063a3dddafa14610066578063b95440dc14610079578063e923a2a21461008c575b600080fd5b61006461005f3660046103df565b61009f565b005b610064610074366004610427565b610198565b6100646100873660046103df565b61025a565b61006461009a366004610427565b61031d565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b6040517f856e31c100000000000000000000000000000000000000000000000000000000815260048101829052309063856e31c1906024015b600060405180830381600087803b15801561017d57600080fd5b505af1158015610191573d6000803e3d6000fd5b5050505050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461021e5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517f4a371f640000000000000000000000000000000000000000000000000000000081523090634a371f64906101639084906004016104e5565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146102e05760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517fc7d1bc8300000000000000000000000000000000000000000000000000000000815260048101829052309063c7d1bc8390602401610163565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146103a35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517ff9497f34000000000000000000000000000000000000000000000000000000008152309063f9497f34906101639084906004016104e5565b6000602082840312156103f157600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000602080838503121561043a57600080fd5b823567ffffffffffffffff8082111561045257600080fd5b818501915085601f83011261046657600080fd5b813581811115610478576104786103f8565b8060051b604051601f19603f8301168101818110858211171561049d5761049d6103f8565b6040529182528482019250838101850191888311156104bb57600080fd5b938501935b828510156104d9578435845293850193928501926104c0565b98975050505050505050565b6020808252825182820181905260009190848201906040850190845b8181101561051d57835183529284019291840191600101610501565b5090969550505050505056fea2646970667358221220619df862c7ad08bede037cb309d444fdabb2e27cbfc645b7c72355c870a377c964736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c80637181011614610051578063a3dddafa14610066578063b95440dc14610079578063e923a2a21461008c575b600080fd5b61006461005f3660046103df565b61009f565b005b610064610074366004610427565b610198565b6100646100873660046103df565b61025a565b61006461009a366004610427565b61031d565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461012a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b6040517f856e31c100000000000000000000000000000000000000000000000000000000815260048101829052309063856e31c1906024015b600060405180830381600087803b15801561017d57600080fd5b505af1158015610191573d6000803e3d6000fd5b5050505050565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461021e5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517f4a371f640000000000000000000000000000000000000000000000000000000081523090634a371f64906101639084906004016104e5565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146102e05760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517fc7d1bc8300000000000000000000000000000000000000000000000000000000815260048101829052309063c7d1bc8390602401610163565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146103a35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610121565b6040517ff9497f34000000000000000000000000000000000000000000000000000000008152309063f9497f34906101639084906004016104e5565b6000602082840312156103f157600080fd5b5035919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b6000602080838503121561043a57600080fd5b823567ffffffffffffffff8082111561045257600080fd5b818501915085601f83011261046657600080fd5b813581811115610478576104786103f8565b8060051b604051601f19603f8301168101818110858211171561049d5761049d6103f8565b6040529182528482019250838101850191888311156104bb57600080fd5b938501935b828510156104d9578435845293850193928501926104c0565b98975050505050505050565b6020808252825182820181905260009190848201906040850190845b8181101561051d57835183529284019291840191600101610501565b5090969550505050505056fea2646970667358221220619df862c7ad08bede037cb309d444fdabb2e27cbfc645b7c72355c870a377c964736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "IERC721LockableOwnable",
+    "custom:required-dependencies": "IERC721LockableExtension",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC721 - Lock as owner",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allow locking tokens as the contract owner.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
