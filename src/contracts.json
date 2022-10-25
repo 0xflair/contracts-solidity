@@ -1,11 +1,13 @@
 {
   "flair-sdk:access/roles/AccessControl": {
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "5": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
       "25": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "40": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
+      "41": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "56": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "65": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "66": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
@@ -42,7 +44,9 @@
       "okcTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "opera": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "polygon": "0xaa2a84DAaf14BEE3f9207EF3EB2d18082291Fee5",
-      "polygonMumbai": "0xfB6e119087f8bb1f09cE2363943F74d49012157e"
+      "polygonMumbai": "0xfB6e119087f8bb1f09cE2363943F74d49012157e",
+      "telos": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
+      "telosTestnet": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -244,11 +248,13 @@
   },
   "flair-sdk:access/roles/AccessControlAdmin": {
     "fqn": "flair-sdk:access/roles/AccessControlAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "5": "0x1a7c5FD331A388acE3385592b0a53da810ef9dC4",
       "25": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "40": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "41": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "56": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "65": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "66": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
@@ -285,7 +291,9 @@
       "okcTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "opera": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "polygon": "0x79455bD8DB7152f9084eAd01328F498124D3eE3b",
-      "polygonMumbai": "0x5E8aD88e0A8a0B6eC0d80e83cdBe8164a2e10ad7"
+      "polygonMumbai": "0x5E8aD88e0A8a0B6eC0d80e83cdBe8164a2e10ad7",
+      "telos": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "telosTestnet": "0xF8fA73a567812c638e3258144965c03680CD2D87"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -422,11 +430,13 @@
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "5": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
       "25": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "40": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "41": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "56": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "65": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "66": "0xd59375B90526C16a007a779c15A844627fdBe716",
@@ -463,7 +473,9 @@
       "okcTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "opera": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
       "polygon": "0x2146A2e0d639F5F3024c43b9222BC85b1Ca47cca",
-      "polygonMumbai": "0x53f1bbb9d67c24476d982f60c28da4e3dc931303"
+      "polygonMumbai": "0x53f1bbb9d67c24476d982f60c28da4e3dc931303",
+      "telos": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "telosTestnet": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -665,11 +677,13 @@
   },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
     "fqn": "flair-sdk:token/common/burnable/BurnableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "5": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
       "25": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "40": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "41": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "56": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "65": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "66": "0x614A331D14164720352ef916f4b91695c9199c7b",
@@ -706,7 +720,9 @@
       "okcTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "opera": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "polygon": "0xb272329cf38CC44F9b54EeAf80F5E69A308FD7a5",
-      "polygonMumbai": "0x09dCE26e3f87AcA8D21A80489682a2ADfAdc9d96"
+      "polygonMumbai": "0x09dCE26e3f87AcA8D21A80489682a2ADfAdc9d96",
+      "telos": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "telosTestnet": "0x1dc99a44b07f1790647087D789173991DFa5EE65"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -755,11 +771,13 @@
   },
   "flair-sdk:finance/depository/Depository": {
     "fqn": "flair-sdk:finance/depository/Depository",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "5": "0x4498a21260157D3c06B9329f3a43654aB3FC1364",
       "25": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "40": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "41": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "56": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "65": "0x166b5579474936a608478D6928E25F3272D92f89",
       "66": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
@@ -796,7 +814,9 @@
       "okcTestnet": "0x166b5579474936a608478D6928E25F3272D92f89",
       "opera": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "polygon": "0x439A19B19D96e22454a8C6968d7d08fBf5CdE9Bb",
-      "polygonMumbai": "0x6c3d326993Ef22120D8a6Cab0D06c261Dd4d38E6"
+      "polygonMumbai": "0x6c3d326993Ef22120D8a6Cab0D06c261Dd4d38E6",
+      "telos": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "telosTestnet": "0x27F848F575D9EDBc10c874825CCE379b19e9D155"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -996,11 +1016,13 @@
   },
   "flair-sdk:finance/depository/DepositoryWithERC2771": {
     "fqn": "flair-sdk:finance/depository/DepositoryWithERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "5": "0x8226f05C9Fbecb29713155a0354FB56172f36034",
       "25": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "40": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "41": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "56": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "65": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "66": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
@@ -1037,7 +1059,9 @@
       "okcTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "opera": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "polygon": "0x28fbe43b52544a3947309768e11E4c1AebFDbD92",
-      "polygonMumbai": "0xcf4d8DA46B26006b34F22d5CF1668559ee719125"
+      "polygonMumbai": "0xcf4d8DA46B26006b34F22d5CF1668559ee719125",
+      "telos": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "telosTestnet": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -1237,11 +1261,13 @@
   },
   "flair-sdk:diamond/Diamond": {
     "fqn": "flair-sdk:diamond/Diamond",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "5": "0x7cEb8840126E1321FB3DAb2636f2c52365666023",
       "25": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
+      "40": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
+      "41": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "56": "0x6a61a408fF14Be189E8528aCa531852724D64091",
       "65": "0xb91057014bFB01df21e541335a78D930266f7869",
       "66": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
@@ -1278,7 +1304,9 @@
       "okcTestnet": "0xb91057014bFB01df21e541335a78D930266f7869",
       "opera": "0xe9832698308707D18dE429Aaf6260355196CEFB7",
       "polygon": "0x9956594252cf0dF3dC836Ad7A150189f778023eB",
-      "polygonMumbai": "0x2A2FDe386bb9dbAad9edc6d30B944A9c5A5E1f68"
+      "polygonMumbai": "0x2A2FDe386bb9dbAad9edc6d30B944A9c5A5E1f68",
+      "telos": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
+      "telosTestnet": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -1415,11 +1443,13 @@
   },
   "flair-sdk:diamond/DiamondCut": {
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "5": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
       "25": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "40": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "41": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "56": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "65": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "66": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
@@ -1456,7 +1486,9 @@
       "okcTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "opera": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "polygon": "0x9fFbbFD0dF48aFa346054782540866E54B900262",
-      "polygonMumbai": "0xCc91D62C3B08f97ff70f6edF735F2E37147eD6a3"
+      "polygonMumbai": "0xCc91D62C3B08f97ff70f6edF735F2E37147eD6a3",
+      "telos": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "telosTestnet": "0x180442ebd727fE663aC280CeF7AC4F6902414603"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -1606,11 +1638,13 @@
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "5": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
       "25": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "40": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "41": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "56": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "65": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "66": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
@@ -1647,7 +1681,9 @@
       "okcTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "opera": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "polygon": "0x19737CE758700bba4dEA9B6769045B4a5C206608",
-      "polygonMumbai": "0x9A3fe8699a1721310a397249F7E35822a7b63490"
+      "polygonMumbai": "0x9A3fe8699a1721310a397249F7E35822a7b63490",
+      "telos": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "telosTestnet": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -1740,11 +1776,13 @@
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "5": "0xa1aa81597bb7fddeaa02224498aa613daa01986d",
       "25": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "40": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "41": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "56": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "65": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "66": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
@@ -1781,7 +1819,9 @@
       "okcTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "opera": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "polygon": "0x26393526bF6c769d36199dFf6F9242476780437A",
-      "polygonMumbai": "0x7C74268aCb3c5CA79A5AFB6656c11D4191a3141e"
+      "polygonMumbai": "0x7C74268aCb3c5CA79A5AFB6656c11D4191a3141e",
+      "telos": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "telosTestnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -2403,11 +2443,13 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "5": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
       "25": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "40": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "41": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "56": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "65": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "66": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
@@ -2444,7 +2486,9 @@
       "okcTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "opera": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "polygon": "0x6ff92EA842753Ab5E1580fbDA702c6E2afFe3E18",
-      "polygonMumbai": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29"
+      "polygonMumbai": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
+      "telos": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "telosTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -2572,11 +2616,13 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "5": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
       "25": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "40": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "41": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "56": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "65": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "66": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
@@ -2613,7 +2659,9 @@
       "okcTestnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "opera": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "polygon": "0xFD3b5945b5721d2b4131E7EfA4DCCbfd6d050E17",
-      "polygonMumbai": "0xbCA6631a5aA3AE727195756bcfB997eBC23BFB41"
+      "polygonMumbai": "0xbCA6631a5aA3AE727195756bcfB997eBC23BFB41",
+      "telos": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "telosTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -2823,11 +2871,13 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
       "5": "0xB3206523e827557d6bF0513A9feD028e3DBc540C",
       "25": "0x6a61a408fF14Be189E8528aCa531852724D64091",
+      "40": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "41": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "56": "0x03EcE0a5f417eC136a78F8177De4699762389d2d",
       "65": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "66": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
@@ -2864,7 +2914,9 @@
       "okcTestnet": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "opera": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "polygon": "0x20D24b670b0A64F1bbf28ABc0C0e0aA1eC1356a8",
-      "polygonMumbai": "0xbcC76812f0aF4474cbfBC39ab5A90ad3B7E8f3a1"
+      "polygonMumbai": "0xbcC76812f0aF4474cbfBC39ab5A90ad3B7E8f3a1",
+      "telos": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "telosTestnet": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -2900,11 +2952,13 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "5": "0xA7B51baD8d1ad82154879e3D868b726eE9417a1F",
       "25": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
+      "40": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "41": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "56": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "65": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "66": "0x8fa6C988b115B46Ed2910C53992864754316305f",
@@ -2941,7 +2995,9 @@
       "okcTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "opera": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "polygon": "0x78f034582cF07dBF8Ea6dAE1dB4533CCaaDb57da",
-      "polygonMumbai": "0x7AE3DA1f07fFe1051FE0fBc989296146A8c242de"
+      "polygonMumbai": "0x7AE3DA1f07fFe1051FE0fBc989296146A8c242de",
+      "telos": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "telosTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -3033,11 +3089,13 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "5": "0x826E57fA5830f277d5c13D835fEe019fE2133Aa3",
       "25": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
+      "40": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "41": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "56": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "65": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "66": "0xb91057014bFB01df21e541335a78D930266f7869",
@@ -3074,7 +3132,9 @@
       "okcTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "opera": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "polygon": "0x0961DD3f858683a6335119b00ca54Af57966042f",
-      "polygonMumbai": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A"
+      "polygonMumbai": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
+      "telos": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "telosTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -3166,11 +3226,13 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "5": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D",
       "25": "0xd59375B90526C16a007a779c15A844627fdBe716",
+      "40": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "41": "0x166b5579474936a608478D6928E25F3272D92f89",
       "56": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "65": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "66": "0x933d6a003a024dB27926Ca44bF717658813BA570",
@@ -3207,7 +3269,9 @@
       "okcTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "opera": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "polygon": "0xBf2cA6B3D7A09102038738C97a26B53e53C350A8",
-      "polygonMumbai": "0xc14CD4C1da40cc7b167663d6883faf5b3bb39F83"
+      "polygonMumbai": "0xc14CD4C1da40cc7b167663d6883faf5b3bb39F83",
+      "telos": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "telosTestnet": "0x166b5579474936a608478D6928E25F3272D92f89"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -3381,11 +3445,13 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "5": "0xDa766C39473FF06E282271bB2e2aA10100712410",
       "25": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
+      "40": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "41": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "56": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "65": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "66": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
@@ -3422,7 +3488,9 @@
       "okcTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "opera": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "polygon": "0xdb4e88C16bB20b53C6504f126501147Afa6a9D24",
-      "polygonMumbai": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca"
+      "polygonMumbai": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
+      "telos": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "telosTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -3596,11 +3664,13 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "5": "0xda25087323285AE25e00E8C373a9184fb558D831",
       "25": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "40": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
+      "41": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "56": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "65": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "66": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
@@ -3637,7 +3707,9 @@
       "okcTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "opera": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "polygon": "0x5bE4740Be3Cd376b62da24a9A289f258eb572779",
-      "polygonMumbai": "0xEA2424B193F2Bb31BC439F7CA4F197FE832f5B15"
+      "polygonMumbai": "0xEA2424B193F2Bb31BC439F7CA4F197FE832f5B15",
+      "telos": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
+      "telosTestnet": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -3839,11 +3911,13 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "5": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
       "25": "0x614A331D14164720352ef916f4b91695c9199c7b",
+      "40": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
+      "41": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "56": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "65": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "66": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
@@ -3880,7 +3954,9 @@
       "okcTestnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "opera": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "polygon": "0x774eA87Dd867C44eE324d206d29E2a3dEacd4ea3",
-      "polygonMumbai": "0x3b9CAfAE19B32f1F2c857368C4976D35A7F231E4"
+      "polygonMumbai": "0x3b9CAfAE19B32f1F2c857368C4976D35A7F231E4",
+      "telos": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
+      "telosTestnet": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -4199,11 +4275,13 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "5": "0x73F432dc075BF3bEB9495ec7fF7FF742A005481E",
       "25": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
+      "40": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
+      "41": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "56": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "65": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "66": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
@@ -4240,7 +4318,9 @@
       "okcTestnet": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "opera": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "polygon": "0x4B48F543D20939Ad2904874797f81fd7EDB723D3",
-      "polygonMumbai": "0x065F47A54f3590b11aF4dCF8d2A8D3381f4C26E4"
+      "polygonMumbai": "0x065F47A54f3590b11aF4dCF8d2A8D3381f4C26E4",
+      "telos": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
+      "telosTestnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -4559,11 +4639,13 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "5": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
       "25": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
+      "40": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "41": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "56": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "65": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "66": "0x453ebb329780CFB54CE183f63F21db28b3106762",
@@ -4600,7 +4682,9 @@
       "okcTestnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "opera": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "polygon": "0xDd6d82C12C591B6698B4e1cd1e61362D19901860",
-      "polygonMumbai": "0x53F52Ab81c5aaD85161cE43763f8Efe7865F6219"
+      "polygonMumbai": "0x53F52Ab81c5aaD85161cE43763f8Efe7865F6219",
+      "telos": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "telosTestnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -4672,11 +4756,13 @@
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "5": "0x1903d9d83B82F541a1c022410C4Aca7223cBE230",
       "25": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "40": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
+      "41": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "56": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "65": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "66": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
@@ -4713,7 +4799,9 @@
       "okcTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "opera": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "polygon": "0x784d2e45d89631f51EA60b8511270384a11dAa93",
-      "polygonMumbai": "0xf5a4DBB4DeB93B522eD03749BE28EE851CF9087c"
+      "polygonMumbai": "0xf5a4DBB4DeB93B522eD03749BE28EE851CF9087c",
+      "telos": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
+      "telosTestnet": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5335,11 +5423,13 @@
   },
   "flair-sdk:introspection/ERC165": {
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "5": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
       "25": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "40": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "41": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "56": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "65": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "66": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
@@ -5376,7 +5466,9 @@
       "okcTestnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "opera": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "polygon": "0xBF8049Ccd7994D37Afb31885E7Cd3F07B473B3a2",
-      "polygonMumbai": "0xb3a572b57b116b2c0520b798F7E91486dc378f90"
+      "polygonMumbai": "0xb3a572b57b116b2c0520b798F7E91486dc378f90",
+      "telos": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "telosTestnet": "0xa79B21B345846224b307212FB7278b2e74Ea3295"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5412,11 +5504,13 @@
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "5": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
       "25": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "40": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
+      "41": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "56": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "65": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "66": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
@@ -5453,7 +5547,9 @@
       "okcTestnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "opera": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "polygon": "0x3d7d2eD0e25B1707C163293935F63521954e472D",
-      "polygonMumbai": "0x89e46AFFf387E0d4eFCADFff73CB4615a69ae47B"
+      "polygonMumbai": "0x89e46AFFf387E0d4eFCADFff73CB4615a69ae47B",
+      "telos": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
+      "telosTestnet": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5507,11 +5603,13 @@
   },
   "flair-sdk:token/ERC20/ERC20": {
     "fqn": "flair-sdk:token/ERC20/ERC20",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "5": "0x5C6e288d37cEd0F5cfAB51893349464B6DDeB720",
       "25": "0x8fa6C988b115B46Ed2910C53992864754316305f",
+      "40": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "41": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "56": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "65": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "66": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
@@ -5548,7 +5646,9 @@
       "okcTestnet": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "opera": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "polygon": "0x4086C6b7f7dCD717E2dC1da764B60E926D03Ffc2",
-      "polygonMumbai": "0xDA8Fc379752C0E4A5e2D962314cCeCde39327212"
+      "polygonMumbai": "0xDA8Fc379752C0E4A5e2D962314cCeCde39327212",
+      "telos": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "telosTestnet": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5807,11 +5907,13 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "5": "0xf8689140ff33CB5971D5D5D6e2E0c9f67A5200EB",
       "25": "0xb91057014bFB01df21e541335a78D930266f7869",
+      "40": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "41": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "56": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "65": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "66": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
@@ -5848,7 +5950,9 @@
       "okcTestnet": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "opera": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "polygon": "0x5530239CF119cd0928d851A5a5B8dd55B3545645",
-      "polygonMumbai": "0x6BCA1f4aDABa8cAF0d6D9F86b15C1F177bb86F0D"
+      "polygonMumbai": "0x6BCA1f4aDABa8cAF0d6D9F86b15C1F177bb86F0D",
+      "telos": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "telosTestnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -5930,11 +6034,13 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "5": "0x13B2F9D94009103C6C3b025e8Cd59b69d3F1F5b4",
       "25": "0x933d6a003a024dB27926Ca44bF717658813BA570",
+      "40": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "41": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "56": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "65": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "66": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
@@ -5971,7 +6077,9 @@
       "okcTestnet": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "opera": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "polygon": "0xdf6A70BB0966674470efbD928F4f7Fe0a6208DeB",
-      "polygonMumbai": "0xC8bc19aAAFe25246c7c11469Cd5674e644C3F2De"
+      "polygonMumbai": "0xC8bc19aAAFe25246c7c11469Cd5674e644C3F2De",
+      "telos": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "telosTestnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6027,11 +6135,13 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "5": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
       "25": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
+      "40": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "41": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "56": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "65": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "66": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
@@ -6068,7 +6178,9 @@
       "okcTestnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "opera": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "polygon": "0xf7B3641DE9c3E2477700799cc0302767e483e496",
-      "polygonMumbai": "0xb61cEf607ef300702E8D530Be622d14ebBC84371"
+      "polygonMumbai": "0xb61cEf607ef300702E8D530Be622d14ebBC84371",
+      "telos": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "telosTestnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6140,11 +6252,13 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "5": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
       "25": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
+      "40": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "41": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "56": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "65": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "66": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
@@ -6181,7 +6295,9 @@
       "okcTestnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "opera": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "polygon": "0xF30f194902058e17ca6e1c95649763736DF96e16",
-      "polygonMumbai": "0x6B5d443911eC4A8bF3F6fcc289fa7B6500fF39b9"
+      "polygonMumbai": "0x6B5d443911eC4A8bF3F6fcc289fa7B6500fF39b9",
+      "telos": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "telosTestnet": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6253,11 +6369,13 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "5": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
       "25": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
+      "40": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "41": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "56": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "65": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "66": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
@@ -6294,7 +6412,9 @@
       "okcTestnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "opera": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "polygon": "0x4A066F8aE8C2Cfa73F6d32C6f72A74A2EB0e9727",
-      "polygonMumbai": "0x3Df62cE571d7aCCD852703B3eCA869831e558812"
+      "polygonMumbai": "0x3Df62cE571d7aCCD852703B3eCA869831e558812",
+      "telos": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "telosTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6448,11 +6568,13 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "5": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
       "25": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
+      "40": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "41": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "56": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "65": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "66": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
@@ -6489,7 +6611,9 @@
       "okcTestnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "opera": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "polygon": "0x1b540eF7f0E617a36C57c369A9ca0fcB1298DC41",
-      "polygonMumbai": "0x7dDDBb268EadD5aCBB6B0b93E3135561F2572790"
+      "polygonMumbai": "0x7dDDBb268EadD5aCBB6B0b93E3135561F2572790",
+      "telos": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "telosTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6643,11 +6767,13 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "5": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
       "25": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+      "40": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "41": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "56": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "65": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "66": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
@@ -6684,7 +6810,9 @@
       "okcTestnet": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "opera": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "polygon": "0x122807f8Fc852D2811A5C34CE6ce6E9a5818eB09",
-      "polygonMumbai": "0x6F1fB6281FA671b4Eef24a4291e2075AC3F7D020"
+      "polygonMumbai": "0x6F1fB6281FA671b4Eef24a4291e2075AC3F7D020",
+      "telos": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "telosTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -6758,11 +6886,13 @@
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales": {
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "5": "0x017a54A2a38105B534BA40D8d8cE05F089009B67",
       "25": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
+      "40": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
+      "41": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "56": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "65": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "66": "0x03EcE0a5f417eC136a78F8177De4699762389d2d",
@@ -6799,7 +6929,9 @@
       "okcTestnet": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "opera": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "polygon": "0x2de847A7BBCeD18FE7462cECbF4d854880B88882",
-      "polygonMumbai": "0x7998EF0423A264a2dD623Bf7408f2b6B10f6262c"
+      "polygonMumbai": "0x7998EF0423A264a2dD623Bf7408f2b6B10f6262c",
+      "telos": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
+      "telosTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -7135,11 +7267,13 @@
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "5": "0x521200ca8c48b1C65A1D1cf941C062d29e89fbCc",
       "25": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
+      "40": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "41": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "56": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "65": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "66": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
@@ -7176,7 +7310,9 @@
       "okcTestnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "opera": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "polygon": "0x1D462205F7269338bbB7C192e562E1E1F4Fd60F5",
-      "polygonMumbai": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333"
+      "polygonMumbai": "0x48A926Af5b5783B561BAAA52ED4229ADE358D333",
+      "telos": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "telosTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -7512,11 +7648,13 @@
   },
   "flair-sdk:metatx/ERC2771Context": {
     "fqn": "flair-sdk:metatx/ERC2771Context",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "5": "0x5684267E9c4aEBae63FFcb69074e1D1DFF606C3c",
       "25": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
+      "40": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
+      "41": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "56": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "65": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "66": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
@@ -7553,7 +7691,9 @@
       "okcTestnet": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "opera": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "polygon": "0x26873c8AEF28C2a0Da95d2DB8E7EF81b1bc0c182",
-      "polygonMumbai": "0x083dACe671Eb9D21e0314ceec565d95194191c9a"
+      "polygonMumbai": "0x083dACe671Eb9D21e0314ceec565d95194191c9a",
+      "telos": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
+      "telosTestnet": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -7602,11 +7742,13 @@
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "5": "0xb3Fd2744e07B739Ee408c07b3A63F2642b25425F",
       "25": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
+      "40": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "41": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "56": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "65": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "66": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
@@ -7643,7 +7785,9 @@
       "okcTestnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "opera": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "polygon": "0x0a67c162dbe57878EFda7E6ab39883BBD431Dc29",
-      "polygonMumbai": "0xD3B24FAd4f861e07690d2bD47D2467C5F535fbf6"
+      "polygonMumbai": "0xD3B24FAd4f861e07690d2bD47D2467C5F535fbf6",
+      "telos": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "telosTestnet": "0xb2edC1E98b147137D7f6894403E163236bc6FffC"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -7692,11 +7836,13 @@
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "fqn": "flair-sdk:token/ERC721/ERC721A",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "5": "0x2d8149246c288Eb999A73941bd368d3Cd7C3bb77",
       "25": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
+      "40": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "41": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "56": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "65": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "66": "0xEE122C46dFd680194268E614928b6dCD621aa533",
@@ -7733,7 +7879,9 @@
       "okcTestnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "opera": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "polygon": "0xc644d4EC87dCA47c093970aE89eCC69f20217f3c",
-      "polygonMumbai": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A"
+      "polygonMumbai": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
+      "telos": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "telosTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -8368,11 +8516,13 @@
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "fqn": "flair-sdk:token/ERC721/ERC721AWithERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "5": "0xEBCDc45E69e83d86d2B484F8A27448b0bc27903C",
       "25": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
+      "40": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "41": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "56": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "65": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "66": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
@@ -8409,7 +8559,9 @@
       "okcTestnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "opera": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "polygon": "0xE508b5F521b7cB5a17a2439442D1047861E004C2",
-      "polygonMumbai": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce"
+      "polygonMumbai": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
+      "telos": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "telosTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9044,11 +9196,13 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "5": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
       "25": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
+      "40": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "41": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "56": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
       "65": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "66": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
@@ -9085,7 +9239,9 @@
       "okcTestnet": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "opera": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "polygon": "0xcE824cbb7B017526c4dd7E86A27Ff73C46609982",
-      "polygonMumbai": "0x9BA50Cf5Bb96482eB1cf9aF45fDc72377B0f7094"
+      "polygonMumbai": "0x9BA50Cf5Bb96482eB1cf9aF45fDc72377B0f7094",
+      "telos": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "telosTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9173,11 +9329,13 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "5": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
       "25": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
+      "40": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "41": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "56": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "65": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "66": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
@@ -9214,7 +9372,9 @@
       "okcTestnet": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "opera": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "polygon": "0x77e03F68C1Ef341a4D2fc5E8A878d2a4B3e1DD59",
-      "polygonMumbai": "0xBD0bE37046C6143c1D72E6d27b798feAAD7e8648"
+      "polygonMumbai": "0xBD0bE37046C6143c1D72E6d27b798feAAD7e8648",
+      "telos": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "telosTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9384,11 +9544,13 @@
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
     "fqn": "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
       "5": "0xDe7abc1A2DcB13728F8e84CFcbFbE6fC790D572A",
       "25": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
+      "40": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "41": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "56": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
       "65": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "66": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
@@ -9425,7 +9587,9 @@
       "okcTestnet": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
       "opera": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
       "polygon": "0x13a589CF3242C86b9cFde92c41A2a2B4cd631b51",
-      "polygonMumbai": "0x4FA397DFF5529909713bC7a45fd4fC598F30c599"
+      "polygonMumbai": "0x4FA397DFF5529909713bC7a45fd4fC598F30c599",
+      "telos": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "telosTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9487,11 +9651,13 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "5": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
       "25": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
+      "40": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "41": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "56": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "65": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "66": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
@@ -9528,7 +9694,9 @@
       "okcTestnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "opera": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "polygon": "0x1493E072034aA12188095f65172B97c97B223385",
-      "polygonMumbai": "0xaab8A7aE4bFe790d60269Df4A7f9ae1616cA1CA3"
+      "polygonMumbai": "0xaab8A7aE4bFe790d60269Df4A7f9ae1616cA1CA3",
+      "telos": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "telosTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9600,11 +9768,13 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x48F9152b91103E158029921C59Ff844d30468288",
       "5": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df",
       "25": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
+      "40": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "41": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "56": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "65": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "66": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
@@ -9641,7 +9811,9 @@
       "okcTestnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "opera": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "polygon": "0xc1b196f70787861629bB2683C4ca5f88a5b21Ac3",
-      "polygonMumbai": "0x6538B78482B0cb8086a4d324d5107395d80aFD5f"
+      "polygonMumbai": "0x6538B78482B0cb8086a4d324d5107395d80aFD5f",
+      "telos": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "telosTestnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9713,11 +9885,13 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xa6a7986065BA0aFAf13Fa9155BCFC4C2d0E80a0a",
       "5": "0x5785f8a19A1bbd18fAB71B096451b7797DB62C49",
       "25": "0x107323fC6180D032B522214AF88d7A3083D67827",
+      "40": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "41": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "56": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "65": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
       "66": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
@@ -9754,7 +9928,9 @@
       "okcTestnet": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
       "opera": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
       "polygon": "0x3a90d1FA97da4e0b4863303af5c46bD93ff8d5Ca",
-      "polygonMumbai": "0xDFDB39cEa0095BE1f240ad0f84c8b8Cf82B725Ba"
+      "polygonMumbai": "0xDFDB39cEa0095BE1f240ad0f84c8b8Cf82B725Ba",
+      "telos": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "telosTestnet": "0x6eeC81939d74586703C8712CA8d98825085Af839"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -9950,11 +10126,13 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xedE905c334D4278194fF240a3B2009E05C09879A",
       "5": "0x3d97fa9164f7cB97Ed08457b0A7A65995D079a6e",
       "25": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
+      "40": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "41": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "56": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "65": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
       "66": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
@@ -9991,7 +10169,9 @@
       "okcTestnet": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
       "opera": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
       "polygon": "0xCaF294C66F7be0fc5A74fAbAFbFE6c531Fb56e33",
-      "polygonMumbai": "0xD1E6730c7721392Ba222d3b934a22eF905F780EC"
+      "polygonMumbai": "0xD1E6730c7721392Ba222d3b934a22eF905F780EC",
+      "telos": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "telosTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -10187,11 +10367,13 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "5": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
       "25": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
+      "40": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "41": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "56": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "65": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "66": "0x50862ddB120017a4d48816C9073cF50f46438e4D",
@@ -10228,7 +10410,9 @@
       "okcTestnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "opera": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "polygon": "0x73218E3e5F888f27256a6592A92f6A572147a4d1",
-      "polygonMumbai": "0x93EA5c5f0961E9912E77211ef5888618E4DC7e7e"
+      "polygonMumbai": "0x93EA5c5f0961E9912E77211ef5888618E4DC7e7e",
+      "telos": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "telosTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -10302,11 +10486,13 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "5": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C",
       "25": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
+      "40": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "41": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "56": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "65": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "66": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
@@ -10343,7 +10529,9 @@
       "okcTestnet": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "opera": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "polygon": "0x857eEFe61D529b953095f76f4f2aBe524Dfd707B",
-      "polygonMumbai": "0x622e5156527a396FF2Aded25F32caFFe84e88C68"
+      "polygonMumbai": "0x622e5156527a396FF2Aded25F32caFFe84e88C68",
+      "telos": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "telosTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -10629,11 +10817,13 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x9d9Ec7d191a11F38d3941A2A8d656584aF01748e",
       "5": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750",
       "25": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
+      "40": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "41": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "56": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "65": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "66": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
@@ -10670,7 +10860,9 @@
       "okcTestnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "opera": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "polygon": "0xE2d3f813daf849140Bcaaf34fBE4E96DAcC86010",
-      "polygonMumbai": "0xE72d19BC0766373516D1cD1e6F621B47C48634B2"
+      "polygonMumbai": "0xE72d19BC0766373516D1cD1e6F621B47C48634B2",
+      "telos": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "telosTestnet": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -10956,11 +11148,13 @@
   },
   "flair-sdk:factory/FlairFactory": {
     "fqn": "flair-sdk:factory/FlairFactory",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "5": "0x16d9e9f1f339c1aa90adfaeac26e518b6c0e311b",
       "25": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "40": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
+      "41": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
       "56": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "65": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "66": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
@@ -10997,7 +11191,9 @@
       "okcTestnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "opera": "0x74c654a0e916bbd1083C4E5409169c2595F64A32",
       "polygon": "0xCEC6155b62ef9b58a2278d54Af6f48Ad3877cF87",
-      "polygonMumbai": "0xe24a8b4D9ccA57B761B0cE10a60588B84ddaEEf8"
+      "polygonMumbai": "0xe24a8b4D9ccA57B761B0cE10a60588B84ddaEEf8",
+      "telos": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
+      "telosTestnet": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11158,11 +11354,13 @@
   },
   "flair-sdk:factory/FlairFactoryNewable": {
     "fqn": "flair-sdk:factory/FlairFactoryNewable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "5": "0x71247dab5d31b59d6aeb2df009c574ec9086036d",
       "25": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "40": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
+      "41": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
       "56": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "65": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "66": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
@@ -11199,7 +11397,9 @@
       "okcTestnet": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "opera": "0x4461377e03cD75bc5B9b3D5514318b10b05B76d1",
       "polygon": "0x86eb3E746DaA53530aCBd1a5308349574De5990c",
-      "polygonMumbai": "0x047b8b467b4D2E99965FD51C118c3f796FD2A584"
+      "polygonMumbai": "0x047b8b467b4D2E99965FD51C118c3f796FD2A584",
+      "telos": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
+      "telosTestnet": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11336,11 +11536,13 @@
   },
   "flair-sdk:legal/license/License": {
     "fqn": "flair-sdk:legal/license/License",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "5": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D",
       "25": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "40": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+      "41": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "56": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "65": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "66": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
@@ -11377,7 +11579,9 @@
       "okcTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "opera": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "polygon": "0xf6a0957898ba2beD2CD0Ee31dA3504b510Fde0F6",
-      "polygonMumbai": "0x08E1D6600c19357Bdb5EF8BCa85cf056C803608b"
+      "polygonMumbai": "0x08E1D6600c19357Bdb5EF8BCa85cf056C803608b",
+      "telos": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+      "telosTestnet": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11502,11 +11706,13 @@
   },
   "flair-sdk:legal/license/LicenseOwnable": {
     "fqn": "flair-sdk:legal/license/LicenseOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "5": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
       "25": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "40": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "41": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "56": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "65": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "66": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
@@ -11543,7 +11749,9 @@
       "okcTestnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "opera": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "polygon": "0xf1293f3796BD47F3623e359d17a0a134cC84b517",
-      "polygonMumbai": "0x01BF6D446bE193a66E06355Ee40896de3b066be2"
+      "polygonMumbai": "0x01BF6D446bE193a66E06355Ee40896de3b066be2",
+      "telos": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "telosTestnet": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11655,11 +11863,13 @@
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "fqn": "flair-sdk:token/common/metadata/Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x00232A8326af43515C8413A00b49282e25f50017",
       "5": "0xfaF4e7B5C6B5BEA7e5aeA09Bd56487541141b3F0",
       "25": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
+      "40": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
+      "41": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "56": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "65": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "66": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
@@ -11696,7 +11906,9 @@
       "okcTestnet": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "opera": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "polygon": "0xd2995522200bd4D5D587750845b9Aebc3C711122",
-      "polygonMumbai": "0xe8444eB28a34BdB95587A311b6a2C50da029A3E2"
+      "polygonMumbai": "0xe8444eB28a34BdB95587A311b6a2C50da029A3E2",
+      "telos": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
+      "telosTestnet": "0xAd450761261B1C70C7583ff500D291E1A07EE495"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11752,11 +11964,13 @@
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
     "fqn": "flair-sdk:token/common/metadata/MetadataOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "5": "0x0dF0885058D018693D2B3C6648f3e451683a4613",
       "25": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "40": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "41": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "56": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "65": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "66": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
@@ -11793,7 +12007,9 @@
       "okcTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "opera": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "polygon": "0x29158AD881E62e5A655381Aa85D164b40453193a",
-      "polygonMumbai": "0x984BD8AE83807A4d515F9d5f5e3e94965FAFdf35"
+      "polygonMumbai": "0x984BD8AE83807A4d515F9d5f5e3e94965FAFdf35",
+      "telos": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "telosTestnet": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11862,11 +12078,13 @@
   },
   "flair-sdk:access/ownable/Ownable": {
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "5": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
       "25": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "40": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
+      "41": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "56": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "65": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "66": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
@@ -11903,7 +12121,9 @@
       "okcTestnet": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "opera": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "polygon": "0x68ab666d5ede1b9f0c06da5f2bde651824bd2534",
-      "polygonMumbai": "0x7Ffe900827b858c3C7048AAb2d57C650404be0b9"
+      "polygonMumbai": "0x7Ffe900827b858c3C7048AAb2d57C650404be0b9",
+      "telos": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
+      "telosTestnet": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -11972,11 +12192,13 @@
   },
   "flair-sdk:finance/royalty/Royalty": {
     "fqn": "flair-sdk:finance/royalty/Royalty",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "5": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
       "25": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "40": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "41": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "56": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "65": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "66": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
@@ -12013,7 +12235,9 @@
       "okcTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "opera": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "polygon": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5",
-      "polygonMumbai": "0xfD85Cab3601e152Bf2aDbFC124511d78F8CcFeF4"
+      "polygonMumbai": "0xfD85Cab3601e152Bf2aDbFC124511d78F8CcFeF4",
+      "telos": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "telosTestnet": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -12283,11 +12507,13 @@
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "5": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
       "25": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "40": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "41": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "56": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "65": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "66": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
@@ -12324,7 +12550,9 @@
       "okcTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "opera": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "polygon": "0x3FdD50ff88712e4f8AB329EBEA847Ada88813603",
-      "polygonMumbai": "0x16C15d158f50718f4a1eC4e1D3e75b850902e9F3"
+      "polygonMumbai": "0x16C15d158f50718f4a1eC4e1D3e75b850902e9F3",
+      "telos": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "telosTestnet": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -12472,11 +12700,13 @@
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "5": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
       "25": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "40": "0x960327273C346eE9dfa122a757425B350b51F833",
+      "41": "0x960327273C346eE9dfa122a757425B350b51F833",
       "56": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "65": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "66": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
@@ -12513,7 +12743,9 @@
       "okcTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "opera": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
       "polygon": "0x552839625f5F52C4F6d8C39f0f88B117622e81C0",
-      "polygonMumbai": "0xAA043168B51C2B7f0F41387fEa1e19437D0E8480"
+      "polygonMumbai": "0xAA043168B51C2B7f0F41387fEa1e19437D0E8480",
+      "telos": "0x960327273C346eE9dfa122a757425B350b51F833",
+      "telosTestnet": "0x960327273C346eE9dfa122a757425B350b51F833"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -12669,11 +12901,13 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadata": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "5": "0xf2178fd0eb1c2e70b0aa9eac227be59b567b1ac3",
       "25": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
+      "40": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "41": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "56": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
       "65": "0x6a61a408fF14Be189E8528aCa531852724D64091",
       "66": "0xc4062CaF3E54978116303ac087C958b6764f2166",
@@ -12710,7 +12944,9 @@
       "okcTestnet": "0x6a61a408fF14Be189E8528aCa531852724D64091",
       "opera": "0x53F5Dd7344Dc677963d07a5B6a9267316B52baC3",
       "polygon": "0x1F4D5D95a145c7082ae8b91Dc27bD4061E439475",
-      "polygonMumbai": "0xDd7f7fb73B68b344Bb7b10F8C7951eB0ff331418"
+      "polygonMumbai": "0xDd7f7fb73B68b344Bb7b10F8C7951eB0ff331418",
+      "telos": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "telosTestnet": "0x871075393948FdA247fAE1bc396543c2Ffa36F79"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -12818,11 +13054,13 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataOwnable": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
       "5": "0x7fDc92CBC1e3404151B95D1857b43ee51d45c059",
       "25": "0x453ebb329780CFB54CE183f63F21db28b3106762",
+      "40": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "41": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "56": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
       "65": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "66": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
@@ -12859,7 +13097,9 @@
       "okcTestnet": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "opera": "0xE59823282f481889A1264469ACa219f6aCa2fE40",
       "polygon": "0x08F4d82A35641eFbd0eE9185666C0f784BFFc5D5",
-      "polygonMumbai": "0x5256475ee5aD36dC9A5dDb51072B9BAC4aB91eDc"
+      "polygonMumbai": "0x5256475ee5aD36dC9A5dDb51072B9BAC4aB91eDc",
+      "telos": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "telosTestnet": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -13023,11 +13263,13 @@
   },
   "flair-sdk:common/UnorderedForwarder": {
     "fqn": "flair-sdk:common/UnorderedForwarder",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "5": "0x31a848F6fA51655115b12fb0b94a16EDA11Ed489",
       "25": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "40": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
+      "41": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "56": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "65": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "66": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
@@ -13064,7 +13306,9 @@
       "okcTestnet": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "opera": "0x00232A8326af43515C8413A00b49282e25f50017",
       "polygon": "0x79Fb49Cb22Cd08799F7aF3Cd1317EbfcC6130881",
-      "polygonMumbai": "0x77F2353860D1EFc1D956b1AC317E2E1D9D342775"
+      "polygonMumbai": "0x77F2353860D1EFc1D956b1AC317E2E1D9D342775",
+      "telos": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
+      "telosTestnet": "0xa2b85F51affCAa00EFf599805407781C582d3d7F"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -13284,11 +13528,13 @@
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "5": "0x1B66A8947730a857B938F7191D2603635A61Afe2",
       "25": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "40": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "41": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "56": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "65": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "66": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
@@ -13325,7 +13571,9 @@
       "okcTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "opera": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "polygon": "0x85395811c544FaDB7E213dA3b7FF286568310fb6",
-      "polygonMumbai": "0x4e33572e6f5f76a447f9f4add4d47720d8886edf"
+      "polygonMumbai": "0x4e33572e6f5f76a447f9f4add4d47720d8886edf",
+      "telos": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "telosTestnet": "0x70492D215774d05f279b7C811399AEe2406d4c2D"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -13537,11 +13785,13 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "address": {
       "1": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "5": "0x607E2580c3377584596C8B02B5527CB23259E191",
       "25": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "40": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "41": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "56": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "65": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "66": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
@@ -13578,7 +13828,9 @@
       "okcTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "opera": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "polygon": "0x6a472ca58d9F49DD0813a07E0881c9C95631B080",
-      "polygonMumbai": "0x6054EDCEF9109bD9F3EA6C868Ba8fE6aa37F68E9"
+      "polygonMumbai": "0x6054EDCEF9109bD9F3EA6C868Ba8fE6aa37F68E9",
+      "telos": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "telosTestnet": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f"
     },
     "artifact": {
       "_format": "hh-sol-artifact-1",
@@ -13754,7 +14006,7 @@
   },
   "flair-sdk:access/ownable/IERC173": {
     "fqn": "flair-sdk:access/ownable/IERC173",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173",
@@ -13815,7 +14067,7 @@
   },
   "flair-sdk:access/ownable/IERC173Events": {
     "fqn": "flair-sdk:access/ownable/IERC173Events",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173Events",
@@ -13850,7 +14102,7 @@
   },
   "flair-sdk:access/ownable/OwnableERC2771": {
     "fqn": "flair-sdk:access/ownable/OwnableERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableERC2771",
@@ -13918,7 +14170,7 @@
   },
   "flair-sdk:access/ownable/OwnableInternal": {
     "fqn": "flair-sdk:access/ownable/OwnableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableInternal",
@@ -13953,7 +14205,7 @@
   },
   "flair-sdk:access/ownable/OwnableStorage": {
     "fqn": "flair-sdk:access/ownable/OwnableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableStorage",
@@ -13968,7 +14220,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerable",
@@ -14212,7 +14464,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableERC2771",
@@ -14456,7 +14708,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableStorage",
@@ -14471,7 +14723,7 @@
   },
   "flair-sdk:access/roles/AccessControlInternal": {
     "fqn": "flair-sdk:access/roles/AccessControlInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlInternal",
@@ -14575,7 +14827,7 @@
   },
   "flair-sdk:access/roles/AccessControlStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlStorage",
@@ -14590,7 +14842,7 @@
   },
   "flair-sdk:access/roles/IAccessControl": {
     "fqn": "flair-sdk:access/roles/IAccessControl",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControl",
@@ -14778,7 +15030,7 @@
   },
   "flair-sdk:access/roles/IAccessControlAdmin": {
     "fqn": "flair-sdk:access/roles/IAccessControlAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlAdmin",
@@ -14807,7 +15059,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/IAccessControlEnumerable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEnumerable",
@@ -15038,7 +15290,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEvents": {
     "fqn": "flair-sdk:access/roles/IAccessControlEvents",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEvents",
@@ -15129,7 +15381,7 @@
   },
   "flair-sdk:diamond/DiamondStorage": {
     "fqn": "flair-sdk:diamond/DiamondStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "DiamondStorage",
@@ -15187,7 +15439,7 @@
   },
   "flair-sdk:diamond/IDiamondCut": {
     "fqn": "flair-sdk:diamond/IDiamondCut",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondCut",
@@ -15285,7 +15537,7 @@
   },
   "flair-sdk:diamond/IDiamondLoupe": {
     "fqn": "flair-sdk:diamond/IDiamondLoupe",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondLoupe",
@@ -15377,7 +15629,7 @@
   },
   "flair-sdk:factory/Clones": {
     "fqn": "flair-sdk:factory/Clones",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "Clones",
@@ -15392,7 +15644,7 @@
   },
   "flair-sdk:factory/MinimalProxy": {
     "fqn": "flair-sdk:factory/MinimalProxy",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MinimalProxy",
@@ -15427,7 +15679,7 @@
   },
   "flair-sdk:finance/depository/IDepository": {
     "fqn": "flair-sdk:finance/depository/IDepository",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDepository",
@@ -15525,7 +15777,7 @@
   },
   "flair-sdk:finance/royalty/IRoyalty": {
     "fqn": "flair-sdk:finance/royalty/IRoyalty",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyalty",
@@ -15794,7 +16046,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyAdmin": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyAdmin",
@@ -15865,7 +16117,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyInternal": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyInternal",
@@ -15938,7 +16190,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyInternal": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyInternal",
@@ -16011,7 +16263,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyStorage": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyStorage",
@@ -16026,7 +16278,7 @@
   },
   "flair-sdk:finance/sales/ITieredSales": {
     "fqn": "flair-sdk:finance/sales/ITieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSales",
@@ -16287,7 +16539,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesAdmin": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesAdmin",
@@ -16423,7 +16675,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesInternal",
@@ -16438,7 +16690,7 @@
   },
   "flair-sdk:finance/sales/TieredSales": {
     "fqn": "flair-sdk:finance/sales/TieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSales",
@@ -16718,7 +16970,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesERC2771": {
     "fqn": "flair-sdk:finance/sales/TieredSalesERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesERC2771",
@@ -16998,7 +17250,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/TieredSalesInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesInternal",
@@ -17033,7 +17285,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesStorage": {
     "fqn": "flair-sdk:finance/sales/TieredSalesStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesStorage",
@@ -17048,7 +17300,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawable": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawable",
@@ -17240,7 +17492,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawableAdmin": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawableAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawableAdmin",
@@ -17303,7 +17555,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawableInternal": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawableInternal",
@@ -17412,7 +17664,7 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableInternal": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "WithdrawableInternal",
@@ -17540,7 +17792,7 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableStorage": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "WithdrawableStorage",
@@ -17555,7 +17807,7 @@
   },
   "flair-sdk:introspection/ERC165Storage": {
     "fqn": "flair-sdk:introspection/ERC165Storage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC165Storage",
@@ -17570,7 +17822,7 @@
   },
   "flair-sdk:introspection/IERC165Admin": {
     "fqn": "flair-sdk:introspection/IERC165Admin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC165Admin",
@@ -17604,7 +17856,7 @@
   },
   "flair-sdk:legal/license/a16z/ICantBeEvil": {
     "fqn": "flair-sdk:legal/license/a16z/ICantBeEvil",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ICantBeEvil",
@@ -17646,7 +17898,7 @@
   },
   "flair-sdk:legal/license/ILicense": {
     "fqn": "flair-sdk:legal/license/ILicense",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicense",
@@ -17770,7 +18022,7 @@
   },
   "flair-sdk:legal/license/ILicenseAdmin": {
     "fqn": "flair-sdk:legal/license/ILicenseAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicenseAdmin",
@@ -17819,7 +18071,7 @@
   },
   "flair-sdk:legal/license/ILicenseInternal": {
     "fqn": "flair-sdk:legal/license/ILicenseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicenseInternal",
@@ -17878,7 +18130,7 @@
   },
   "flair-sdk:legal/license/LicenseInternal": {
     "fqn": "flair-sdk:legal/license/LicenseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "LicenseInternal",
@@ -17937,7 +18189,7 @@
   },
   "flair-sdk:legal/license/LicenseStorage": {
     "fqn": "flair-sdk:legal/license/LicenseStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "LicenseStorage",
@@ -17952,7 +18204,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextInternal": {
     "fqn": "flair-sdk:metatx/ERC2771ContextInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextInternal",
@@ -17967,7 +18219,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextStorage": {
     "fqn": "flair-sdk:metatx/ERC2771ContextStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextStorage",
@@ -17982,7 +18234,7 @@
   },
   "flair-sdk:metatx/IERC2771Context": {
     "fqn": "flair-sdk:metatx/IERC2771Context",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771Context",
@@ -18030,7 +18282,7 @@
   },
   "flair-sdk:metatx/IERC2771ContextAdmin": {
     "fqn": "flair-sdk:metatx/IERC2771ContextAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771ContextAdmin",
@@ -18059,7 +18311,7 @@
   },
   "flair-sdk:security/ReentrancyGuard": {
     "fqn": "flair-sdk:security/ReentrancyGuard",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ReentrancyGuard",
@@ -18074,7 +18326,7 @@
   },
   "flair-sdk:security/ReentrancyGuardStorage": {
     "fqn": "flair-sdk:security/ReentrancyGuardStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ReentrancyGuardStorage",
@@ -18089,7 +18341,7 @@
   },
   "flair-sdk:token/common/burnable/BurnableStorage": {
     "fqn": "flair-sdk:token/common/burnable/BurnableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "BurnableStorage",
@@ -18104,7 +18356,7 @@
   },
   "flair-sdk:token/common/burnable/IBurnableAdmin": {
     "fqn": "flair-sdk:token/common/burnable/IBurnableAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IBurnableAdmin",
@@ -18133,7 +18385,7 @@
   },
   "flair-sdk:token/common/metadata/IMetadata": {
     "fqn": "flair-sdk:token/common/metadata/IMetadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IMetadata",
@@ -18175,7 +18427,7 @@
   },
   "flair-sdk:token/common/metadata/IMetadataAdmin": {
     "fqn": "flair-sdk:token/common/metadata/IMetadataAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IMetadataAdmin",
@@ -18224,7 +18476,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadata": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadata",
@@ -18331,7 +18583,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadataAdmin": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadataAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadataAdmin",
@@ -18456,7 +18708,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadataInternal": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadataInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadataInternal",
@@ -18491,7 +18743,7 @@
   },
   "flair-sdk:token/common/metadata/MetadataAdminInternal": {
     "fqn": "flair-sdk:token/common/metadata/MetadataAdminInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MetadataAdminInternal",
@@ -18506,7 +18758,7 @@
   },
   "flair-sdk:token/common/metadata/MetadataStorage": {
     "fqn": "flair-sdk:token/common/metadata/MetadataStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MetadataStorage",
@@ -18521,7 +18773,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataAdminInternal": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataAdminInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TokenMetadataAdminInternal",
@@ -18556,7 +18808,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataStorage": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TokenMetadataStorage",
@@ -18571,7 +18823,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155Base": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155Base",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Base",
@@ -18842,7 +19094,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseERC2771",
@@ -19113,7 +19365,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseInternal": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseInternal",
@@ -19228,7 +19480,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseStorage": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseStorage",
@@ -19243,7 +19495,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BurnableExtension",
@@ -19455,7 +19707,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/IERC1155BurnableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/IERC1155BurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155BurnableExtension",
@@ -19563,7 +19815,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableExtension",
@@ -19823,7 +20075,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableInternal",
@@ -19938,7 +20190,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableStorage",
@@ -19953,7 +20205,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/IERC1155LockableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/IERC1155LockableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableExtension",
@@ -20061,7 +20313,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/ERC1155MintableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/ERC1155MintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155MintableExtension",
@@ -20237,7 +20489,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/IERC1155MintableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/IERC1155MintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableExtension",
@@ -20309,7 +20561,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyExtension",
@@ -20481,7 +20733,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyInternal",
@@ -20596,7 +20848,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyStorage",
@@ -20611,7 +20863,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyExtension",
@@ -20684,7 +20936,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableOwnable",
@@ -20792,7 +21044,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableRoleBased",
@@ -20900,7 +21152,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Metadata",
@@ -20935,7 +21187,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableOwnable",
@@ -21007,7 +21259,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableRoleBased",
@@ -21079,7 +21331,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155TieredSalesStorage",
@@ -21094,7 +21346,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSales",
@@ -21148,7 +21400,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSalesAdmin",
@@ -21200,7 +21452,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyAdminStorage",
@@ -21215,7 +21467,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyAdmin",
@@ -21298,7 +21550,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155",
@@ -21569,7 +21821,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Events": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Events",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Events",
@@ -21684,7 +21936,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Receiver": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Receiver",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Receiver",
@@ -21797,7 +22049,7 @@
   },
   "flair-sdk:token/ERC20/base/ERC20Base": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20Base",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20Base",
@@ -21996,7 +22248,7 @@
   },
   "flair-sdk:token/ERC20/base/ERC20BaseInternal": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20BaseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BaseInternal",
@@ -22062,7 +22314,7 @@
   },
   "flair-sdk:token/ERC20/base/ERC20BaseStorage": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20BaseStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BaseStorage",
@@ -22077,7 +22329,7 @@
   },
   "flair-sdk:token/ERC20/base/IERC20Base": {
     "fqn": "flair-sdk:token/ERC20/base/IERC20Base",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20Base",
@@ -22276,7 +22528,7 @@
   },
   "flair-sdk:token/ERC20/base/IERC20BaseInternal": {
     "fqn": "flair-sdk:token/ERC20/base/IERC20BaseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20BaseInternal",
@@ -22342,7 +22594,7 @@
   },
   "flair-sdk:token/ERC20/extensions/burnable/ERC20BurnableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/burnable/ERC20BurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BurnableExtension",
@@ -22444,7 +22696,7 @@
   },
   "flair-sdk:token/ERC20/extensions/burnable/IERC20BurnableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/burnable/IERC20BurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20BurnableExtension",
@@ -22491,7 +22743,7 @@
   },
   "flair-sdk:token/ERC20/extensions/mintable/ERC20MintableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/mintable/ERC20MintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MintableExtension",
@@ -22598,7 +22850,7 @@
   },
   "flair-sdk:token/ERC20/extensions/mintable/IERC20MintableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/mintable/IERC20MintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableExtension",
@@ -22650,7 +22902,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyExtension",
@@ -22734,7 +22986,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyInternal": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyInternal",
@@ -22755,7 +23007,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyStorage": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyStorage",
@@ -22770,7 +23022,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyExtension",
@@ -22799,7 +23051,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyInternal": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyInternal",
@@ -22820,7 +23072,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataInternal": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MetadataInternal",
@@ -22835,7 +23087,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataStorage": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MetadataStorage",
@@ -22850,7 +23102,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/IERC20Metadata": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/IERC20Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20Metadata",
@@ -22905,7 +23157,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/IERC20MetadataAdmin": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/IERC20MetadataAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MetadataAdmin",
@@ -22941,7 +23193,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/IERC20MintableOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/IERC20MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableOwnable",
@@ -22993,7 +23245,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/IERC20MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/IERC20MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableRoleBased",
@@ -23045,7 +23297,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminInternal": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyAdminInternal",
@@ -23060,7 +23312,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyAdminStorage",
@@ -23075,7 +23327,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/IERC20SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/IERC20SupplyAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyAdmin",
@@ -23129,7 +23381,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABase": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABase",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABase",
@@ -23512,7 +23764,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABaseERC2771": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABaseERC2771",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABaseERC2771",
@@ -23895,7 +24147,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABaseInternal": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABaseInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABaseInternal",
@@ -24087,7 +24339,7 @@
   },
   "flair-sdk:token/ERC721/base/IERC721ABase": {
     "fqn": "flair-sdk:token/ERC721/base/IERC721ABase",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721ABase",
@@ -24470,7 +24722,7 @@
   },
   "flair-sdk:token/ERC721/base/IERC721AInternal": {
     "fqn": "flair-sdk:token/ERC721/base/IERC721AInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721AInternal",
@@ -24662,7 +24914,7 @@
   },
   "flair-sdk:token/ERC721/extensions/burnable/ERC721ABurnableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/burnable/ERC721ABurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABurnableExtension",
@@ -24911,7 +25163,7 @@
   },
   "flair-sdk:token/ERC721/extensions/burnable/IERC721BurnableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/burnable/IERC721BurnableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721BurnableExtension",
@@ -24979,7 +25231,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ALockableExtension",
@@ -25303,7 +25555,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ALockableInternal",
@@ -25532,7 +25784,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721LockableStorage": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721LockableStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721LockableStorage",
@@ -25547,7 +25799,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC5192": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC5192",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC5192",
@@ -25582,7 +25834,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableExtension",
@@ -25706,7 +25958,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableInternal",
@@ -25759,7 +26011,7 @@
   },
   "flair-sdk:token/ERC721/extensions/mintable/ERC721AMintableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/mintable/ERC721AMintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721AMintableExtension",
@@ -25992,7 +26244,7 @@
   },
   "flair-sdk:token/ERC721/extensions/mintable/IERC721MintableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/mintable/IERC721MintableExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableExtension",
@@ -26044,7 +26296,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721ASupplyExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721ASupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ASupplyExtension",
@@ -26267,7 +26519,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyInternal",
@@ -26288,7 +26540,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyStorage": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyStorage",
@@ -26303,7 +26555,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyExtension",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyExtension",
@@ -26345,7 +26597,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyInternal",
@@ -26366,7 +26618,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/IERC721LockableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/IERC721LockableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableOwnable",
@@ -26434,7 +26686,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/IERC721LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/IERC721LockableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableRoleBased",
@@ -26502,7 +26754,7 @@
   },
   "flair-sdk:token/ERC721/facets/metadata/IERC721Metadata": {
     "fqn": "flair-sdk:token/ERC721/facets/metadata/IERC721Metadata",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721Metadata",
@@ -26563,7 +26815,7 @@
   },
   "flair-sdk:token/ERC721/facets/minting/IERC721MintableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/IERC721MintableOwnable",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableOwnable",
@@ -26615,7 +26867,7 @@
   },
   "flair-sdk:token/ERC721/facets/minting/IERC721MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/IERC721MintableRoleBased",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableRoleBased",
@@ -26690,7 +26942,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminInternal": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminInternal",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyAdminInternal",
@@ -26705,7 +26957,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminStorage",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyAdminStorage",
@@ -26720,7 +26972,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/IERC721SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/IERC721SupplyAdmin",
-    "version": "2.20.4",
+    "version": "2.20.5",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyAdmin",
