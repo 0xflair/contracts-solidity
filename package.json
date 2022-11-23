@@ -74,6 +74,7 @@
     "deploy:nearAuroraTestnet": "npx hardhat deploy --network nearAuroraTestnet",
     "deploy:moonriver": "npx hardhat deploy --network moonriver",
     "deploy:moonbeam": "npx hardhat deploy --network moonbeam",
+    "deploy:fuse": "npx hardhat deploy --network fuse",
     "verify:mainnet": "npx hardhat --network mainnet sourcify && npx hardhat etherscan-verify --network mainnet",
     "verify:goerli": "npx hardhat --network goerli sourcify && npx hardhat etherscan-verify --network goerli",
     "verify:sepolia": "npx hardhat --network sepolia sourcify && npx hardhat etherscan-verify --network sepolia",
@@ -102,7 +103,8 @@
     "verify:oasisEmerald": "npx hardhat --network oasisEmerald sourcify && npx hardhat etherscan-verify --network oasisEmerald",
     "verify:oasisEmeraldTestnet": "npx hardhat --network oasisEmeraldTestnet sourcify && npx hardhat etherscan-verify --network oasisEmeraldTestnet",
     "verify:arbitrumNova": "npx hardhat --network arbitrumNova sourcify && npx hardhat etherscan-verify --network arbitrumNova",
-    "verify:zksyncTestnet": "npx hardhat --network zksyncTestnet sourcify && npx hardhat etherscan-verify --network zksyncTestnet"
+    "verify:zksyncTestnet": "npx hardhat --network zksyncTestnet sourcify && npx hardhat etherscan-verify --network zksyncTestnet",
+    "verify:fuse": "npx hardhat --network fuse sourcify && npx hardhat etherscan-verify --network fuse"
   },
   "devDependencies": {
     "@a16z/contracts": "^0.0.8",
