@@ -1,3 +1,10 @@
+### [2.20.9](https://github.com/flair-sdk/contracts/compare/v2.20.8...v2.20.9) (2022-11-23)
+
+
+### Bug Fixes
+
+* token metadata fallback uri ([#2](https://github.com/flair-sdk/contracts/issues/2)) ([9873ad8](https://github.com/flair-sdk/contracts/commit/9873ad8528e7b38c961c9a7b374929b784068e8e))
+
 ### [2.20.8](https://github.com/flair-sdk/contracts/compare/v2.20.7...v2.20.8) (2022-11-01)
 
 ### [2.20.7](https://github.com/flair-sdk/contracts/compare/v2.20.6...v2.20.7) (2022-10-25)
