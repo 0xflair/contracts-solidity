@@ -13,7 +13,7 @@ abstract contract TokenMetadataAdminInternal is ITokenMetadataInternal {
 
     function _setFallbackURI(string memory baseURI) internal virtual {
         require(!TokenMetadataStorage.layout().fallbackURILocked, "Metadata: fallbackURI locked");
-        TokenMetadataStorage.layout().baseURI = baseURI;
+        TokenMetadataStorage.layout().fallbackURI = baseURI;
     }
 
     function _setURI(uint256 tokenId, string memory tokenURI) internal virtual {

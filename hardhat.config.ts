@@ -67,6 +67,8 @@ if (args.includes('mainnet')) {
   etherScanApiKey = '';
 } else if (args.includes('telosTestnet')) {
   etherScanApiKey = '';
+} else if (args.includes('fuse')) {
+  etherScanApiKey = '';
 } else if (args.includes('hardhat')) {
   etherScanApiKey = process.env.GOERLI_ETHERSCAN_API_KEY;
 } else {
@@ -90,7 +92,7 @@ const config: HardhatUserConfig = {
     },
   },
   zksolc: {
-    version: '1.1.2',
+    version: '1.2.0',
     compilerSource: 'docker',
     settings: {
       optimizer: {
@@ -98,7 +100,7 @@ const config: HardhatUserConfig = {
       },
       experimental: {
         dockerImage: 'matterlabs/zksolc',
-        tag: 'v1.1.2',
+        tag: 'v1.2.0',
       },
     },
   },
@@ -120,7 +122,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
       url: process.env.MAINNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 10_000000000, // 10 gwei
+      gasPrice: 13_000000000, // 10 gwei
     },
     ropsten: {
       chainId: 3,
@@ -290,6 +292,12 @@ const config: HardhatUserConfig = {
     moonriver: {
       chainId: 1285,
       url: process.env.MOONRIVER_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Fuse
+    fuse: {
+      chainId: 122,
+      url: process.env.FUSE_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // zkSync
