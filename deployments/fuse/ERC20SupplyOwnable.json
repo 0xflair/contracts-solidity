@@ -1,0 +1,104 @@
+{
+  "address": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ErrMaxSupplyFrozen",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "freezeMaxSupply",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "maxSupplyFrozen",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "newValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMaxSupply",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x90abdc50a25c455bb178a3877a16437f13c89b345a6044030c9ffe2700d375c3",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+    "transactionIndex": 0,
+    "gasUsed": "208526",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x89c5625b5a61ab35892916d3ff11bad26ad927e9149304302209526033bb3b3d",
+    "transactionHash": "0x90abdc50a25c455bb178a3877a16437f13c89b345a6044030c9ffe2700d375c3",
+    "logs": [],
+    "blockNumber": 20338163,
+    "cumulativeGasUsed": "208526",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "ecd38ea833cab447c99e4d76d7385bbf",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ErrMaxSupplyFrozen\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"freezeMaxSupply\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"maxSupplyFrozen\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"newValue\",\"type\":\"uint256\"}],\"name\":\"setMaxSupply\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Tokens\",\"custom:peer-dependencies\":\"IERC20SupplyExtension\",\"custom:provides-interfaces\":\"IERC20SupplyAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC20 - Supply - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allows owner of a EIP-721 contract to change max supply of tokens.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol\":\"ERC20SupplyOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/token/ERC20/extensions/supply/ERC20SupplyStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC20SupplyStorage {\\n    struct Layout {\\n        // Maximum possible supply of tokens.\\n        uint256 maxSupply;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC20Supply\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xafb8dddd36d656553d51620a153c5fc57d5c36ae7a4c9a37dc18a5dfcf5085d9\",\"license\":\"MIT\"},\"src/token/ERC20/facets/supply/ERC20SupplyAdminInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../extensions/supply/ERC20SupplyStorage.sol\\\";\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"./ERC20SupplyAdminStorage.sol\\\";\\nimport \\\"./IERC20SupplyAdmin.sol\\\";\\n\\nabstract contract ERC20SupplyAdminInternal {\\n    using ERC20SupplyAdminStorage for ERC20SupplyAdminStorage.Layout;\\n    using ERC20SupplyStorage for ERC20SupplyStorage.Layout;\\n\\n    function _setMaxSupply(uint256 newValue) internal virtual {\\n        if (ERC20SupplyAdminStorage.layout().maxSupplyFrozen) {\\n            revert IERC20SupplyAdmin.ErrMaxSupplyFrozen();\\n        }\\n\\n        ERC20SupplyStorage.layout().maxSupply = newValue;\\n    }\\n\\n    function _freezeMaxSupply() internal virtual {\\n        ERC20SupplyAdminStorage.layout().maxSupplyFrozen = true;\\n    }\\n\\n    function _maxSupplyFrozen() internal view virtual returns (bool) {\\n        return ERC20SupplyAdminStorage.layout().maxSupplyFrozen;\\n    }\\n}\\n\",\"keccak256\":\"0xe8185ca03d76697c8c6eb13ba80dc0ca2ece3bacc0d7f87127dad3dc2d950aa9\",\"license\":\"MIT\"},\"src/token/ERC20/facets/supply/ERC20SupplyAdminStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC20SupplyAdminStorage {\\n    struct Layout {\\n        bool maxSupplyFrozen;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC20SupplyAdmin\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x2e86261fa56bc7decf630c7a4084a0a354db74a871d609bc21add7a10efc67bf\",\"license\":\"MIT\"},\"src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"../../extensions/supply/ERC20SupplyStorage.sol\\\";\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\nimport \\\"./ERC20SupplyAdminInternal.sol\\\";\\nimport \\\"./IERC20SupplyAdmin.sol\\\";\\n\\n/**\\n * @title ERC20 - Supply - Admin - Ownable\\n * @notice Allows owner of a EIP-721 contract to change max supply of tokens.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Tokens\\n * @custom:peer-dependencies IERC20SupplyExtension\\n * @custom:provides-interfaces IERC20SupplyAdmin\\n */\\ncontract ERC20SupplyOwnable is IERC20SupplyAdmin, ERC20SupplyAdminInternal, OwnableInternal {\\n    function setMaxSupply(uint256 newValue) public virtual onlyOwner {\\n        _setMaxSupply(newValue);\\n    }\\n\\n    function freezeMaxSupply() public virtual onlyOwner {\\n        _freezeMaxSupply();\\n    }\\n\\n    function maxSupplyFrozen() public view virtual override returns (bool) {\\n        return _maxSupplyFrozen();\\n    }\\n}\\n\",\"keccak256\":\"0x5ec0f3bfcf4e3b87d6943d5bf55ab1cda0bb7e93ad764468177fafc7d999d767\",\"license\":\"MIT\"},\"src/token/ERC20/facets/supply/IERC20SupplyAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC20SupplyAdmin {\\n    error ErrMaxSupplyFrozen();\\n\\n    function setMaxSupply(uint256 newValue) external;\\n\\n    function freezeMaxSupply() external;\\n\\n    function maxSupplyFrozen() external view returns (bool);\\n}\\n\",\"keccak256\":\"0xa4380ddb819d426f648915c7deadc31055cbf56b087ea4ee5d3b931194534f80\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506102d0806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c806316744607146100465780636f8b44b014610050578063f384702f14610063575b600080fd5b61004e61007f565b005b61004e61005e366004610281565b61013d565b61006b6101cf565b604051901515815260200160405180910390f35b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461010a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b61013b7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd554805460ff19166001179055565b565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101c35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610101565b6101cc81610201565b50565b60006101fc7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd5545460ff1690565b905090565b7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd5545460ff161561025d576040517f600d428700000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e55565b60006020828403121561029357600080fd5b503591905056fea2646970667358221220c0043ae62034a4db557abea491524f9e1793acc21f5b63c430b078a16fa59f2b64736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c806316744607146100465780636f8b44b014610050578063f384702f14610063575b600080fd5b61004e61007f565b005b61004e61005e366004610281565b61013d565b61006b6101cf565b604051901515815260200160405180910390f35b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461010a5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b61013b7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd554805460ff19166001179055565b565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146101c35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e65720000006044820152606401610101565b6101cc81610201565b50565b60006101fc7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd5545460ff1690565b905090565b7fd0832515f11f667b4d59e1c68f49df2dada478773101548b4c3734f8821cd5545460ff161561025d576040517f600d428700000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b7f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e55565b60006020828403121561029357600080fd5b503591905056fea2646970667358221220c0043ae62034a4db557abea491524f9e1793acc21f5b63c430b078a16fa59f2b64736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Tokens",
+    "custom:peer-dependencies": "IERC20SupplyExtension",
+    "custom:provides-interfaces": "IERC20SupplyAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC20 - Supply - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
