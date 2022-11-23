@@ -1,8 +1,8 @@
-import {Fragment} from 'ethers/lib/utils';
+import { Fragment } from 'ethers/lib/utils';
 import fs from 'fs';
 import hre from 'hardhat';
-import {HardhatRuntimeEnvironment} from 'hardhat/types';
-import {DeployOptions} from 'hardhat-deploy/types';
+import { HardhatRuntimeEnvironment } from 'hardhat/types';
+import { DeployOptions } from 'hardhat-deploy/types';
 
 export const deployUpgradableContract = async (
   deployments: HardhatRuntimeEnvironment['deployments'],
@@ -11,7 +11,7 @@ export const deployUpgradableContract = async (
   name: string,
   args: any[],
 ) => {
-  const {deploy} = deployments;
+  const { deploy } = deployments;
 
   const contract = await deploy(name, {
     from,
@@ -20,7 +20,7 @@ export const deployUpgradableContract = async (
       owner,
       proxyContract: 'UUPSProxy',
       execute: {
-        init: {methodName: 'initialize', args},
+        init: { methodName: 'initialize', args },
       },
     },
     estimateGasExtra: 1000000,
@@ -79,7 +79,7 @@ export const deployPermanentContract = async (
   args: any[],
   additionalOptions: Partial<DeployOptions> = {},
 ) => {
-  const {deploy} = deployments;
+  const { deploy } = deployments;
   const result = await deploy(name, {
     from,
     args,
