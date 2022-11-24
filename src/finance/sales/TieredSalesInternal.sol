@@ -122,6 +122,29 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
+    function _executeSalePrivileged(
+        address minter,
+        uint256 tierId,
+        uint256 count,
+        uint256 maxAllowance,
+        bytes32[] calldata proof
+    ) internal virtual {
+        uint256 maxMintable = _eligibleForTier(tierId, minter, maxAllowance, proof);
+
+        TieredSalesStorage.Layout storage l = TieredSalesStorage.layout();
+
+        require(count <= maxMintable, "EXCEEDS_MAX");
+        require(count <= _availableSupplyForTier(tierId), "EXCEEDS_SUPPLY");
+        require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
+
+        l.walletMinted[tierId][minter] += count;
+        l.tierMints[tierId] += count;
+
+        if (l.tiers[tierId].reserved > 0) {
+            l.reservedMints += count;
+        }
+    }
+
     function _remainingSupply(
         uint256 /*tierId*/
     ) internal view virtual returns (uint256) {

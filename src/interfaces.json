@@ -46,6 +46,7 @@
   "IERC721MintableOwnable": "0x197f2429",
   "IERC721MintableRoleBased": "0xef970b0f",
   "IERC721SupplyAdmin": "0x8a7b7298",
+  "ITieredSalesRoleBased": "0x352a90bb",
   "ILicense": "0x88a1e8f3",
   "ICantBeEvil": "0x649a51a8",
   "ILicenseAdmin": "0x06ff95be",
