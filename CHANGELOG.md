@@ -1,3 +1,10 @@
+## [2.21.0](https://github.com/flair-sdk/contracts/compare/v2.20.9...v2.21.0) (2022-11-24)
+
+
+### Features
+
+* add privileged tiered sales minting ([#3](https://github.com/flair-sdk/contracts/issues/3)) ([75c7ebd](https://github.com/flair-sdk/contracts/commit/75c7ebde744a69e6939a44fbb7002757e705a2d3))
+
 ### [2.20.9](https://github.com/flair-sdk/contracts/compare/v2.20.8...v2.20.9) (2022-11-23)
 
 
