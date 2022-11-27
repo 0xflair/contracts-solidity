@@ -1,3 +1,10 @@
+## [2.22.0](https://github.com/flair-sdk/contracts/compare/v2.21.0...v2.22.0) (2022-11-27)
+
+
+### Features
+
+* add role-based tiered sales and arbitrum goerli ([c00d7bd](https://github.com/flair-sdk/contracts/commit/c00d7bd5585609d12c7611c9175f8e459b5e044d))
+
 ## [2.21.0](https://github.com/flair-sdk/contracts/compare/v2.20.9...v2.21.0) (2022-11-24)
 
 
