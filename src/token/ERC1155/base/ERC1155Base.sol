@@ -54,10 +54,7 @@ contract ERC1155Base is IERC1155, ERC1155BaseInternal {
      * @inheritdoc IERC1155
      */
     function setApprovalForAll(address operator, bool status) public virtual {
-        address sender = _msgSender();
-        require(sender != operator, "ERC1155: setting approval status for self");
-        ERC1155BaseStorage.layout().operatorApprovals[sender][operator] = status;
-        emit ApprovalForAll(sender, operator, status);
+        super._setApprovalForAll(operator, status);
     }
 
     /**

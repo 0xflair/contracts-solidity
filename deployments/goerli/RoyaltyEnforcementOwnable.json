@@ -1,0 +1,79 @@
+{
+  "address": "0x43fBdE69FE2f48C58e6C5837d7D34530E8062488",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bool",
+          "name": "enforce",
+          "type": "bool"
+        }
+      ],
+      "name": "toggleRoyaltyEnforcement",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xc172101f3b174b77dc3ec1e88ba28a1f57179cd15016fc900cc34d1c46ef37bd",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x43fBdE69FE2f48C58e6C5837d7D34530E8062488",
+    "transactionIndex": 58,
+    "gasUsed": "134659",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xb915f21d1faf23b50a851370f807c62da62950b59cb084c71ec3c32680c759c3",
+    "transactionHash": "0xc172101f3b174b77dc3ec1e88ba28a1f57179cd15016fc900cc34d1c46ef37bd",
+    "logs": [],
+    "blockNumber": 8029951,
+    "cumulativeGasUsed": "8891350",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "b12c9533e24a6fe2af3d3c12017206c0",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"bool\",\"name\":\"enforce\",\"type\":\"bool\"}],\"name\":\"toggleRoyaltyEnforcement\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Tokens\",\"custom:peer-dependencies\":\"IRoyaltyEnforcement\",\"custom:provides-interfaces\":\"IRoyaltyEnforcementAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Royalty Enforcement - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Controls where on-chain royalties must be enforced by blocklisting marketplaces.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/common/royalty/RoyaltyEnforcementOwnable.sol\":\"RoyaltyEnforcementOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/token/common/royalty/IRoyaltyEnforcementAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @dev Manages where on-chain royalties must be enforced by blocklisting marketplaces with optional royalty.\\n */\\ninterface IRoyaltyEnforcementAdmin {\\n    function toggleRoyaltyEnforcement(bool enforce) external;\\n}\\n\",\"keccak256\":\"0x8342c1426dfa6d3e348b8190e9a20278c1cebb19a83d303adfbf6e7b549db6c1\",\"license\":\"MIT\"},\"src/token/common/royalty/RoyaltyEnforcementAdminInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./RoyaltyEnforcementStorage.sol\\\";\\n\\nabstract contract RoyaltyEnforcementAdminInternal {\\n    function _toggleRoyaltyEnforcement(bool enforce) internal virtual {\\n        RoyaltyEnforcementStorage.layout().enforceRoyalties = enforce;\\n    }\\n}\\n\",\"keccak256\":\"0x1374adde544078ecb0c4b03298be7b60090226d89ac335093e0af88c27cdd259\",\"license\":\"MIT\"},\"src/token/common/royalty/RoyaltyEnforcementOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"../../../access/ownable/OwnableInternal.sol\\\";\\n\\nimport \\\"./RoyaltyEnforcementStorage.sol\\\";\\nimport \\\"./IRoyaltyEnforcementAdmin.sol\\\";\\nimport \\\"./RoyaltyEnforcementAdminInternal.sol\\\";\\n\\n/**\\n * @title Royalty Enforcement - Admin - Ownable\\n * @notice Controls where on-chain royalties must be enforced by blocklisting marketplaces.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Tokens\\n * @custom:peer-dependencies IRoyaltyEnforcement\\n * @custom:provides-interfaces IRoyaltyEnforcementAdmin\\n */\\ncontract RoyaltyEnforcementOwnable is IRoyaltyEnforcementAdmin, RoyaltyEnforcementAdminInternal, OwnableInternal {\\n    function toggleRoyaltyEnforcement(bool enforce) external virtual override onlyOwner {\\n        _toggleRoyaltyEnforcement(enforce);\\n    }\\n}\\n\",\"keccak256\":\"0xe1c6172c7eb4680b52927b9160ec292216b2cb1ca26b626a1f2a010e0493da27\",\"license\":\"MIT\"},\"src/token/common/royalty/RoyaltyEnforcementStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary RoyaltyEnforcementStorage {\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.RoyaltyEnforcement\\\");\\n\\n    struct Layout {\\n        bool enforceRoyalties;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xae08fcf816a425c667b25c3a0f37b3a39c7584a857bdbce3912a12ae86e7bb99\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061017a806100206000396000f3fe608060405234801561001057600080fd5b506004361061002b5760003560e01c80631012248814610030575b600080fd5b61004361003e36600461011b565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f9c1f08fc16fa10f59a3ac18a8c5596ea456f2d66793744df41c7c3e4eb219790805482151560ff1990911617905550565b60006020828403121561012d57600080fd5b8135801515811461013d57600080fd5b939250505056fea264697066735822122028d337c0e51a5fee9cd61446f8edfe9efe4a70cea3984f2de1e36bc1bb82c3f064736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061002b5760003560e01c80631012248814610030575b600080fd5b61004361003e36600461011b565b610045565b005b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e9576040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e6572000000604482015260640160405180910390fd5b7f9c1f08fc16fa10f59a3ac18a8c5596ea456f2d66793744df41c7c3e4eb219790805482151560ff1990911617905550565b60006020828403121561012d57600080fd5b8135801515811461013d57600080fd5b939250505056fea264697066735822122028d337c0e51a5fee9cd61446f8edfe9efe4a70cea3984f2de1e36bc1bb82c3f064736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Tokens",
+    "custom:peer-dependencies": "IRoyaltyEnforcement",
+    "custom:provides-interfaces": "IRoyaltyEnforcementAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "Royalty Enforcement - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Controls where on-chain royalties must be enforced by blocklisting marketplaces.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}
