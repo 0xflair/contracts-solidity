@@ -10,7 +10,7 @@
   "IERC1155MintableExtension": "0xbb774d48",
   "IERC1155BurnableExtension": "0xdc290004",
   "IERC1155LockableExtension": "0x37773a16",
-  "IRoyaltyEnforcement": "0x7d151549",
+  "IRoyaltyEnforcement": "0xffa6b6b8",
   "IERC1155LockableOwnable": "0x7b535f1c",
   "IERC1155LockableRoleBased": "0xd40d0af6",
   "IMetadata": "0x93254542",
@@ -65,5 +65,5 @@
   "ITokenMetadataAdmin": "0x3f963a7f",
   "IWithdrawable": "0xa9c00e2f",
   "IWithdrawableAdmin": "0x7246cea5",
-  "IRoyaltyEnforcementAdmin": "0x10122488"
+  "IRoyaltyEnforcementAdmin": "0x06ad59bc"
 }

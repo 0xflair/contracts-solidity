@@ -4,11 +4,11 @@ pragma solidity ^0.8.15;
 
 import "@openzeppelin/contracts/utils/Strings.sol";
 
-import "../../../access/ownable/OwnableInternal.sol";
+import "../../access/ownable/OwnableInternal.sol";
 
 import "./RoyaltyEnforcementStorage.sol";
 import "./IRoyaltyEnforcementAdmin.sol";
-import "./RoyaltyEnforcementAdminInternal.sol";
+import "./RoyaltyEnforcementInternal.sol";
 
 /**
  * @title Royalty Enforcement - Admin - Ownable
@@ -19,8 +19,12 @@ import "./RoyaltyEnforcementAdminInternal.sol";
  * @custom:peer-dependencies IRoyaltyEnforcement
  * @custom:provides-interfaces IRoyaltyEnforcementAdmin
  */
-contract RoyaltyEnforcementOwnable is IRoyaltyEnforcementAdmin, RoyaltyEnforcementAdminInternal, OwnableInternal {
-    function toggleRoyaltyEnforcement(bool enforce) external virtual override onlyOwner {
+contract RoyaltyEnforcementOwnable is IRoyaltyEnforcementAdmin, RoyaltyEnforcementInternal, OwnableInternal {
+    function toggleRoyaltyEnforcement(bool enforce) external override {
         _toggleRoyaltyEnforcement(enforce);
+    }
+
+    function registerRoyaltyEnforcement(address subscriptionOrRegistrantToCopy, bool subscribe) external override {
+        _register(subscriptionOrRegistrantToCopy, subscribe);
     }
 }

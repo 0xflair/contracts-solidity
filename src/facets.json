@@ -596,7 +596,7 @@
   "flair-sdk:token/ERC1155/ERC1155": {
     "addresses": {
       "1": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
-      "5": "0x55D0128aFF929229c309198811c93F94183D7315",
+      "5": "0x1022938D58C482060c15B6c0420Fce5007ba954e",
       "25": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "40": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "41": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
@@ -605,7 +605,7 @@
       "66": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "97": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "122": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
-      "137": "0x26393526bF6c769d36199dFf6F9242476780437A",
+      "137": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
       "250": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "338": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "1284": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
@@ -637,19 +637,18 @@
       "evmosTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "ftmTestnet": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "fuse": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
-      "goerli": "0x55D0128aFF929229c309198811c93F94183D7315",
+      "goerli": "0x1022938D58C482060c15B6c0420Fce5007ba954e",
       "mainnet": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "moonbeam": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "okcMainnet": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "okcTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "opera": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
-      "polygon": "0x26393526bF6c769d36199dFf6F9242476780437A",
+      "polygon": "0x2e8fAafb1CFc3941d94436Adaf0910b0F9a5833b",
       "polygonMumbai": "0x7C74268aCb3c5CA79A5AFB6656c11D4191a3141e",
       "telos": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "telosTestnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba"
     },
     "functionSelectors": [
-      "OPERATOR_FILTER_REGISTRY()",
       "balanceOf(address,uint256)",
       "balanceOfBatch(address[],uint256[])",
       "burn(address,uint256,uint256)",
@@ -665,7 +664,6 @@
       "maxSupply(uint256)",
       "mintByFacet(address,uint256,uint256,bytes)",
       "mintByFacet(address[],uint256[],uint256[],bytes[])",
-      "royaltiesEnforced()",
       "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
       "safeTransferFrom(address,address,uint256,uint256,bytes)",
       "setApprovalForAll(address,bool)",
@@ -681,7 +679,7 @@
       "0xbb774d48",
       "0xdc290004",
       "0x37773a16",
-      "0x7d151549"
+      "0xffa6b6b8"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -703,7 +701,7 @@
       "66": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "97": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
       "122": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
-      "137": "0x6ff92EA842753Ab5E1580fbDA702c6E2afFe3E18",
+      "137": "0xA1AA81597BB7FDDEAa02224498aA613DAa01986D",
       "250": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "338": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "1284": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
@@ -741,7 +739,7 @@
       "okcMainnet": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "okcTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "opera": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
-      "polygon": "0x6ff92EA842753Ab5E1580fbDA702c6E2afFe3E18",
+      "polygon": "0xA1AA81597BB7FDDEAa02224498aA613DAa01986D",
       "polygonMumbai": "0xA0334202e76ba156E6Cd0B66693A7dC97Ac01B29",
       "telos": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "telosTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448"
@@ -779,7 +777,7 @@
       "66": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "97": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
       "122": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
-      "137": "0xFD3b5945b5721d2b4131E7EfA4DCCbfd6d050E17",
+      "137": "0x5a75374be2803B9E30CD48112Ad0817773e268eA",
       "250": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "338": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "1284": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
@@ -817,7 +815,7 @@
       "okcMainnet": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "okcTestnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "opera": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
-      "polygon": "0xFD3b5945b5721d2b4131E7EfA4DCCbfd6d050E17",
+      "polygon": "0x5a75374be2803B9E30CD48112Ad0817773e268eA",
       "polygonMumbai": "0xbCA6631a5aA3AE727195756bcfB997eBC23BFB41",
       "telos": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "telosTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6"
@@ -931,7 +929,7 @@
       "66": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "97": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
       "122": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
-      "137": "0x78f034582cF07dBF8Ea6dAE1dB4533CCaaDb57da",
+      "137": "0xda25087323285AE25e00E8C373a9184fb558D831",
       "250": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "338": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "1284": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
@@ -969,7 +967,7 @@
       "okcMainnet": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "okcTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "opera": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
-      "polygon": "0x78f034582cF07dBF8Ea6dAE1dB4533CCaaDb57da",
+      "polygon": "0xda25087323285AE25e00E8C373a9184fb558D831",
       "polygonMumbai": "0x7AE3DA1f07fFe1051FE0fBc989296146A8c242de",
       "telos": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "telosTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8"
@@ -1005,7 +1003,7 @@
       "66": "0xb91057014bFB01df21e541335a78D930266f7869",
       "97": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
       "122": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
-      "137": "0x0961DD3f858683a6335119b00ca54Af57966042f",
+      "137": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943",
       "250": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "338": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "1284": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
@@ -1043,7 +1041,7 @@
       "okcMainnet": "0xb91057014bFB01df21e541335a78D930266f7869",
       "okcTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "opera": "0x88D339113E47355A9544E0665193F47A0325EBcB",
-      "polygon": "0x0961DD3f858683a6335119b00ca54Af57966042f",
+      "polygon": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943",
       "polygonMumbai": "0x8e8f03D9444Fd9f657643d10caaF6091b891c37A",
       "telos": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "telosTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F"
@@ -1079,7 +1077,7 @@
       "66": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "97": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
       "122": "0x166b5579474936a608478D6928E25F3272D92f89",
-      "137": "0xBf2cA6B3D7A09102038738C97a26B53e53C350A8",
+      "137": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
       "250": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "338": "0x166b5579474936a608478D6928E25F3272D92f89",
       "1284": "0x166b5579474936a608478D6928E25F3272D92f89",
@@ -1117,7 +1115,7 @@
       "okcMainnet": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "okcTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "opera": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
-      "polygon": "0xBf2cA6B3D7A09102038738C97a26B53e53C350A8",
+      "polygon": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
       "polygonMumbai": "0xc14CD4C1da40cc7b167663d6883faf5b3bb39F83",
       "telos": "0x166b5579474936a608478D6928E25F3272D92f89",
       "telosTestnet": "0x166b5579474936a608478D6928E25F3272D92f89"
@@ -1155,7 +1153,7 @@
       "66": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "97": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "122": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
-      "137": "0xdb4e88C16bB20b53C6504f126501147Afa6a9D24",
+      "137": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
       "250": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "338": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "1284": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
@@ -1193,7 +1191,7 @@
       "okcMainnet": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "okcTestnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "opera": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
-      "polygon": "0xdb4e88C16bB20b53C6504f126501147Afa6a9D24",
+      "polygon": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
       "polygonMumbai": "0x570559B859c8d9EADFfd94f6fAdf8E675b42f9Ca",
       "telos": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "telosTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0"
@@ -1231,7 +1229,7 @@
       "66": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
       "97": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "122": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
-      "137": "0x5bE4740Be3Cd376b62da24a9A289f258eb572779",
+      "137": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
       "250": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "338": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "1284": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
@@ -1269,7 +1267,7 @@
       "okcMainnet": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
       "okcTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "opera": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
-      "polygon": "0x5bE4740Be3Cd376b62da24a9A289f258eb572779",
+      "polygon": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
       "polygonMumbai": "0xEA2424B193F2Bb31BC439F7CA4F197FE832f5B15",
       "telos": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "telosTestnet": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A"
@@ -1460,7 +1458,7 @@
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "addresses": {
       "1": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
-      "5": "0x863c364beB0E60D003c000467Fc8C1744356FD71",
+      "5": "0x79D4f923C93decC6398f2CC1F782ee71bee7563B",
       "25": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "40": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "41": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
@@ -1469,7 +1467,7 @@
       "66": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
       "97": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "122": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
-      "137": "0x784d2e45d89631f51EA60b8511270384a11dAa93",
+      "137": "0x73F432dc075BF3bEB9495ec7fF7FF742A005481E",
       "250": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "338": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "1284": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
@@ -1501,19 +1499,18 @@
       "evmosTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "ftmTestnet": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "fuse": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
-      "goerli": "0x863c364beB0E60D003c000467Fc8C1744356FD71",
+      "goerli": "0x79D4f923C93decC6398f2CC1F782ee71bee7563B",
       "mainnet": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "moonbeam": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "okcMainnet": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
       "okcTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "opera": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
-      "polygon": "0x784d2e45d89631f51EA60b8511270384a11dAa93",
+      "polygon": "0x73F432dc075BF3bEB9495ec7fF7FF742A005481E",
       "polygonMumbai": "0xf5a4DBB4DeB93B522eD03749BE28EE851CF9087c",
       "telos": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "telosTestnet": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F"
     },
     "functionSelectors": [
-      "OPERATOR_FILTER_REGISTRY()",
       "balanceOf(address,uint256)",
       "balanceOfBatch(address[],uint256[])",
       "burn(address,uint256,uint256)",
@@ -1529,7 +1526,6 @@
       "maxSupply(uint256)",
       "mintByFacet(address,uint256,uint256,bytes)",
       "mintByFacet(address[],uint256[],uint256[],bytes[])",
-      "royaltiesEnforced()",
       "safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)",
       "safeTransferFrom(address,address,uint256,uint256,bytes)",
       "setApprovalForAll(address,bool)",
@@ -1545,7 +1541,7 @@
       "0xbb774d48",
       "0xdc290004",
       "0x37773a16",
-      "0x7d151549"
+      "0xffa6b6b8"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -2621,7 +2617,7 @@
   "flair-sdk:token/ERC721/ERC721A": {
     "addresses": {
       "1": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
-      "5": "0x785cECd6d7cE8a3C4bc3662fceC31de42C7363A0",
+      "5": "0xb89107d438b005F81B7908fA9350Ae1EE96065b3",
       "25": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "40": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "41": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
@@ -2630,7 +2626,7 @@
       "66": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "97": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "122": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
-      "137": "0xc644d4EC87dCA47c093970aE89eCC69f20217f3c",
+      "137": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
       "250": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "338": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "1284": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
@@ -2662,19 +2658,18 @@
       "evmosTestnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "ftmTestnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "fuse": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
-      "goerli": "0x785cECd6d7cE8a3C4bc3662fceC31de42C7363A0",
+      "goerli": "0xb89107d438b005F81B7908fA9350Ae1EE96065b3",
       "mainnet": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "moonbeam": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "okcMainnet": "0xEE122C46dFd680194268E614928b6dCD621aa533",
       "okcTestnet": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "opera": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
-      "polygon": "0xc644d4EC87dCA47c093970aE89eCC69f20217f3c",
+      "polygon": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
       "polygonMumbai": "0xFCAEa9fE85Dc6d537165d804c26373fe9a56916A",
       "telos": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "telosTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485"
     },
     "functionSelectors": [
-      "OPERATOR_FILTER_REGISTRY()",
       "approve(address,uint256)",
       "balanceOf(address)",
       "burn(uint256)",
@@ -2691,7 +2686,6 @@
       "mintByFacet(address,uint256)",
       "mintByFacet(address[],uint256[])",
       "ownerOf(uint256)",
-      "royaltiesEnforced()",
       "safeTransferFrom(address,address,uint256)",
       "safeTransferFrom(address,address,uint256,bytes)",
       "setApprovalForAll(address,bool)",
@@ -2710,7 +2704,7 @@
       "0x645b6d4b",
       "0x459bd11c",
       "0xc82b5d4d",
-      "0x7d151549"
+      "0xffa6b6b8"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -2723,7 +2717,7 @@
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "addresses": {
       "1": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
-      "5": "0xB6FDCd916a2A903DB4f941be2beCa8725fdA7635",
+      "5": "0xA7F820c5F0Ec8964384a0E113FA5f2188a821b96",
       "25": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "40": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "41": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
@@ -2732,7 +2726,7 @@
       "66": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "97": "0x107323fC6180D032B522214AF88d7A3083D67827",
       "122": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
-      "137": "0xE508b5F521b7cB5a17a2439442D1047861E004C2",
+      "137": "0x867F1aCc9d8132911e5E6Bdaa4599D176DA91E1C",
       "250": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "338": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "1284": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
@@ -2764,19 +2758,18 @@
       "evmosTestnet": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "ftmTestnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "fuse": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
-      "goerli": "0xB6FDCd916a2A903DB4f941be2beCa8725fdA7635",
+      "goerli": "0xA7F820c5F0Ec8964384a0E113FA5f2188a821b96",
       "mainnet": "0xe61cc06a7435EC72507c028a577BbAD42E67eAc1",
       "moonbeam": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "okcMainnet": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
       "okcTestnet": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "opera": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
-      "polygon": "0xE508b5F521b7cB5a17a2439442D1047861E004C2",
+      "polygon": "0x867F1aCc9d8132911e5E6Bdaa4599D176DA91E1C",
       "polygonMumbai": "0x002c1c1390D4336bD3c1aE916bDB9C9747BC40ce",
       "telos": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "telosTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E"
     },
     "functionSelectors": [
-      "OPERATOR_FILTER_REGISTRY()",
       "approve(address,uint256)",
       "balanceOf(address)",
       "burn(uint256)",
@@ -2793,7 +2786,6 @@
       "mintByFacet(address,uint256)",
       "mintByFacet(address[],uint256[])",
       "ownerOf(uint256)",
-      "royaltiesEnforced()",
       "safeTransferFrom(address,address,uint256)",
       "safeTransferFrom(address,address,uint256,bytes)",
       "setApprovalForAll(address,bool)",
@@ -2812,7 +2804,7 @@
       "0x645b6d4b",
       "0x459bd11c",
       "0xc82b5d4d",
-      "0x7d151549"
+      "0xffa6b6b8"
     ],
     "peerDependencies": [],
     "requiredDependencies": [],
@@ -4514,27 +4506,53 @@
     "source": "https://github.com/flair-sdk/contracts/blob/v2.22.0/src/finance/withdraw/WithdrawableOwnable.sol",
     "author": "flair-sdk.eth"
   },
-  "flair-sdk:token/common/royalty/RoyaltyEnforcementOwnable": {
+  "flair-sdk:finance/royalty/RoyaltyEnforcement": {
     "addresses": {
-      "5": "0x43fBdE69FE2f48C58e6C5837d7D34530E8062488",
-      "goerli": "0x43fBdE69FE2f48C58e6C5837d7D34530E8062488"
+      "5": "0x003081cD294014e67dc59C4F82CaAfDBFFC8b380",
+      "137": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D",
+      "goerli": "0x003081cD294014e67dc59C4F82CaAfDBFFC8b380",
+      "polygon": "0x70391b81B8A39ddd515a0603eCC3DE306f62d09D"
     },
     "functionSelectors": [
-      "toggleRoyaltyEnforcement(bool)"
+      "hasRoyaltyEnforcement()"
     ],
-    "fqn": "flair-sdk:token/common/royalty/RoyaltyEnforcementOwnable",
+    "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcement",
     "version": "2.22.0",
     "providesInterfaces": [
-      "0x10122488"
+      "0xffa6b6b8"
+    ],
+    "peerDependencies": [],
+    "requiredDependencies": [],
+    "category": "Tokens",
+    "title": "Royalty Enforcement",
+    "notice": "Shows current state of on-chain royalties enforcement on blocklisting marketplaces.",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.22.0/src/finance/royalty/RoyaltyEnforcement.sol",
+    "author": "flair-sdk.eth"
+  },
+  "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable": {
+    "addresses": {
+      "5": "0xABcD3bf0685d110A659FcF49c87bD2334727c8a4",
+      "137": "0xDa766C39473FF06E282271bB2e2aA10100712410",
+      "goerli": "0xABcD3bf0685d110A659FcF49c87bD2334727c8a4",
+      "polygon": "0xDa766C39473FF06E282271bB2e2aA10100712410"
+    },
+    "functionSelectors": [
+      "registerRoyaltyEnforcement(address,bool)",
+      "toggleRoyaltyEnforcement(bool)"
+    ],
+    "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable",
+    "version": "2.22.0",
+    "providesInterfaces": [
+      "0x06ad59bc"
     ],
     "peerDependencies": [
-      "0x7d151549"
+      "0xffa6b6b8"
     ],
     "requiredDependencies": [],
     "category": "Tokens",
     "title": "Royalty Enforcement - Admin - Ownable",
     "notice": "Controls where on-chain royalties must be enforced by blocklisting marketplaces.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.22.0/src/token/common/royalty/RoyaltyEnforcementOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.22.0/src/finance/royalty/RoyaltyEnforcementOwnable.sol",
     "author": "flair-sdk.eth"
   }
 }

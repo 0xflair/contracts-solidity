@@ -2,17 +2,11 @@
 
 pragma solidity ^0.8.15;
 
-import "operator-filter-registry/src/DefaultOperatorFilterer.sol";
-
 import "../../../../common/Errors.sol";
-import "../../../common/royalty/RoyaltyEnforcement.sol";
+import "../../../../finance/royalty/RoyaltyEnforcementInternal.sol";
 import "../../base/ERC1155BaseInternal.sol";
 
-abstract contract ERC1155RoyaltyEnforcementExtension is
-    DefaultOperatorFilterer,
-    RoyaltyEnforcement,
-    ERC1155BaseInternal
-{
+abstract contract ERC1155RoyaltyEnforcementExtension is RoyaltyEnforcementInternal, ERC1155BaseInternal {
     function _setApprovalForAll(address operator, bool approved)
         internal
         virtual
