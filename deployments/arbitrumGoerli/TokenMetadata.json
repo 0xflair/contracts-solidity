@@ -1,0 +1,137 @@
+{
+  "address": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "baseURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "baseURILocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fallbackURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "fallbackURILocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "lastUnlockedTokenId",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uriSuffix",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "uriSuffixLocked",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x13ed93780a8a864b074a52999b6866cff900b4d3f8ea0cb29ccf9c2d940bf576",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+    "transactionIndex": 1,
+    "gasUsed": "237674",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x3b9660affada075ec21e4d24fbff1f22d86745c3c41719a77f1fa905e4a865b1",
+    "transactionHash": "0x13ed93780a8a864b074a52999b6866cff900b4d3f8ea0cb29ccf9c2d940bf576",
+    "logs": [],
+    "blockNumber": 1835385,
+    "cumulativeGasUsed": "237674",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "354ee2622d904f4fbaf6db8e49b9ba36",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"baseURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"baseURILocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fallbackURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"fallbackURILocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"lastUnlockedTokenId\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"uriSuffix\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"uriSuffixLocked\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"NFTs\",\"custom:provides-interfaces\":\"ITokenMetadata\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"NFT Token Metadata\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/common/metadata/TokenMetadata.sol\":\"TokenMetadata\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/token/common/metadata/ITokenMetadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface ITokenMetadata {\\n    function baseURI() external view returns (string memory);\\n\\n    function baseURILocked() external view returns (bool);\\n\\n    function uriSuffix() external view returns (string memory);\\n\\n    function uriSuffixLocked() external view returns (bool);\\n\\n    function fallbackURI() external view returns (string memory);\\n\\n    function fallbackURILocked() external view returns (bool);\\n\\n    function lastUnlockedTokenId() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x57ce36c9bd26574f99d1975d7654d28662ddadd39c99363468d55ff64e912708\",\"license\":\"MIT\"},\"src/token/common/metadata/TokenMetadata.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"./ITokenMetadata.sol\\\";\\nimport \\\"./TokenMetadataStorage.sol\\\";\\n\\n/**\\n * @title NFT Token Metadata\\n * @notice Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category NFTs\\n * @custom:provides-interfaces ITokenMetadata\\n */\\ncontract TokenMetadata is ITokenMetadata {\\n    function baseURI() external view virtual returns (string memory) {\\n        return TokenMetadataStorage.layout().baseURI;\\n    }\\n\\n    function fallbackURI() external view virtual returns (string memory) {\\n        return TokenMetadataStorage.layout().fallbackURI;\\n    }\\n\\n    function uriSuffix() external view virtual returns (string memory) {\\n        return TokenMetadataStorage.layout().uriSuffix;\\n    }\\n\\n    function baseURILocked() external view virtual returns (bool) {\\n        return TokenMetadataStorage.layout().baseURILocked;\\n    }\\n\\n    function fallbackURILocked() external view virtual returns (bool) {\\n        return TokenMetadataStorage.layout().fallbackURILocked;\\n    }\\n\\n    function uriSuffixLocked() external view virtual returns (bool) {\\n        return TokenMetadataStorage.layout().uriSuffixLocked;\\n    }\\n\\n    function lastUnlockedTokenId() external view virtual returns (uint256) {\\n        return TokenMetadataStorage.layout().lastUnlockedTokenId;\\n    }\\n}\\n\",\"keccak256\":\"0x32590f90c25fe164bdf9f46e51abee761235b7c631d1609dd05476462466aee8\",\"license\":\"MIT\"},\"src/token/common/metadata/TokenMetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary TokenMetadataStorage {\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.TokenMetadata\\\");\\n\\n    struct Layout {\\n        string baseURI;\\n        bool baseURILocked;\\n        string fallbackURI;\\n        bool fallbackURILocked;\\n        string uriSuffix;\\n        bool uriSuffixLocked;\\n        uint256 lastUnlockedTokenId;\\n        mapping(uint256 => string) tokenURIs;\\n    }\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xafa901b11d3ed3e6253df7f86855baef6cf35d53508ff43a59cb140d63d4a192\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610357806100206000396000f3fe608060405234801561001057600080fd5b506004361061007d5760003560e01c80635d148e5c1161005b5780635d148e5c146100da5780636c0360eb14610104578063c4ef3e051461010c578063f81680da1461013657600080fd5b8063067f0848146100825780630c7d9752146100bd5780635503a0e8146100d2575b600080fd5b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef625460ff165b60405190151581526020015b60405180910390f35b6100c5610166565b6040516100b49190610279565b6100c561021a565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef605460ff166100a8565b6100c561024b565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef645460ff166100a8565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef65546040519081526020016100b4565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f6002018054610197906102ce565b80601f01602080910402602001604051908101604052809291908181526020018280546101c3906102ce565b80156102105780601f106101e557610100808354040283529160200191610210565b820191906000526020600020905b8154815290600101906020018083116101f357829003601f168201915b5050505050905090565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f6004018054610197906102ce565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f8054610197906102ce565b600060208083528351808285015260005b818110156102a65785810183015185820160400152820161028a565b818111156102b8576000604083870101525b50601f01601f1916929092016040019392505050565b600181811c908216806102e257607f821691505b60208210810361031b577f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b5091905056fea2646970667358221220d2597b5517dabdb626208be526c797c8ac154b0762c2d83b7f9d03a5bce0907564736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061007d5760003560e01c80635d148e5c1161005b5780635d148e5c146100da5780636c0360eb14610104578063c4ef3e051461010c578063f81680da1461013657600080fd5b8063067f0848146100825780630c7d9752146100bd5780635503a0e8146100d2575b600080fd5b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef625460ff165b60405190151581526020015b60405180910390f35b6100c5610166565b6040516100b49190610279565b6100c561021a565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef605460ff166100a8565b6100c561024b565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef645460ff166100a8565b7f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef65546040519081526020016100b4565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f6002018054610197906102ce565b80601f01602080910402602001604051908101604052809291908181526020018280546101c3906102ce565b80156102105780601f106101e557610100808354040283529160200191610210565b820191906000526020600020905b8154815290600101906020018083116101f357829003601f168201915b5050505050905090565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f6004018054610197906102ce565b60607f021fe373f7e014154d4f551c37c047b9ed9093c774291911030896b9b2dfef5f8054610197906102ce565b600060208083528351808285015260005b818110156102a65785810183015185820160400152820161028a565b818111156102b8576000604083870101525b50601f01601f1916929092016040019392505050565b600181811c908216806102e257607f821691505b60208210810361031b577f4e487b7100000000000000000000000000000000000000000000000000000000600052602260045260246000fd5b5091905056fea2646970667358221220d2597b5517dabdb626208be526c797c8ac154b0762c2d83b7f9d03a5bce0907564736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "NFTs",
+    "custom:provides-interfaces": "ITokenMetadata",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "NFT Token Metadata",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

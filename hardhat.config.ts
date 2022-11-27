@@ -31,8 +31,8 @@ if (args.includes('mainnet')) {
   etherScanApiKey = process.env.ARBITRUM_ONE_ETHERSCAN_API_KEY;
 } else if (args.includes('arbitrumNova')) {
   etherScanApiKey = process.env.ARBITRUM_NOVA_ETHERSCAN_API_KEY;
-} else if (args.includes('arbitrumTestnet')) {
-  etherScanApiKey = process.env.ARBITRUM_TESTNET_ETHERSCAN_API_KEY;
+} else if (args.includes('arbitrumGoerli')) {
+  etherScanApiKey = process.env.ARBITRUM_GOERLI_ETHERSCAN_API_KEY;
 } else if (args.includes('opera')) {
   etherScanApiKey = process.env.FANTOM_OPERA_ETHERSCAN_API_KEY;
 } else if (args.includes('ftmTestnet')) {
@@ -122,7 +122,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
       url: process.env.MAINNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 13_000000000, // 10 gwei
+      gasPrice: 9_000000000, // 9 gwei
     },
     ropsten: {
       chainId: 3,
@@ -178,9 +178,9 @@ const config: HardhatUserConfig = {
       url: process.env.ARBITRUM_NOVA_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    arbitrumTestnet: {
-      chainId: 421611,
-      url: process.env.ARBITRUM_TESTNET_URL || '',
+    arbitrumGoerli: {
+      chainId: 421613,
+      url: process.env.ARBITRUM_GOERLI_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
     // Polygon

@@ -4,6 +4,7 @@ pragma solidity ^0.8.15;
 
 import "../../../../introspection/ERC165Storage.sol";
 import "../../../../security/ReentrancyGuard.sol";
+import "../../../../access/roles/AccessControlInternal.sol";
 import "../../../../finance/sales/TieredSales.sol";
 import "../../extensions/mintable/IERC1155MintableExtension.sol";
 import "../../extensions/supply/ERC1155SupplyStorage.sol";
@@ -18,12 +19,14 @@ import "./IERC1155TieredSales.sol";
  * @custom:type eip-2535-facet
  * @custom:category NFTs
  * @custom:required-dependencies IERC1155MintableExtension
- * @custom:provides-interfaces ITieredSales IERC1155TieredSales
+ * @custom:provides-interfaces ITieredSales IERC1155TieredSales ITieredSalesRoleBased
  */
-contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales {
+contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales, AccessControlInternal {
     using ERC165Storage for ERC165Storage.Layout;
     using ERC1155TieredSalesStorage for ERC1155TieredSalesStorage.Layout;
     using ERC1155SupplyStorage for ERC1155SupplyStorage.Layout;
+
+    bytes32 public constant MERCHANT_ROLE = keccak256("MERCHANT_ROLE");
 
     function mintByTier(
         uint256 tierId,
@@ -35,6 +38,23 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
 
         IERC1155MintableExtension(address(this)).mintByFacet(
             _msgSender(),
+            ERC1155TieredSalesStorage.layout().tierToTokenId[tierId],
+            count,
+            ""
+        );
+    }
+
+    function mintByTierByRole(
+        address minter,
+        uint256 tierId,
+        uint256 count,
+        uint256 maxAllowance,
+        bytes32[] calldata proof
+    ) external payable virtual nonReentrant onlyRole(MERCHANT_ROLE) {
+        super._executeSalePrivileged(minter, tierId, count, maxAllowance, proof);
+
+        IERC1155MintableExtension(address(this)).mintByFacet(
+            minter,
             ERC1155TieredSalesStorage.layout().tierToTokenId[tierId],
             count,
             ""
