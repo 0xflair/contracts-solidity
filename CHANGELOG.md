@@ -1,3 +1,10 @@
+## [2.23.0](https://github.com/flair-sdk/contracts/compare/v2.22.1...v2.23.0) (2022-11-28)
+
+
+### Features
+
+* add royalty enforcement facet and extension ([#4](https://github.com/flair-sdk/contracts/issues/4)) ([6ed09d1](https://github.com/flair-sdk/contracts/commit/6ed09d1d11a313f418e1a5c7803bf75f514fb171))
+
 ### [2.22.1](https://github.com/flair-sdk/contracts/compare/v2.22.0...v2.22.1) (2022-11-27)
 
 ## [2.22.0](https://github.com/flair-sdk/contracts/compare/v2.21.0...v2.22.0) (2022-11-27)
