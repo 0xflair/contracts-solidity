@@ -78,9 +78,9 @@ contract ERC1155Base is IERC1155, ERC1155BaseInternal {
     function safeBatchTransferFrom(
         address from,
         address to,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
+        bytes calldata data
     ) public virtual {
         address sender = _msgSender();
         require(from == sender || isApprovedForAll(from, sender), "ERC1155: caller is not owner nor approved");

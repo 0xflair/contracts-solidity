@@ -4,59 +4,35 @@ pragma solidity ^0.8.15;
 
 import "../../../../common/Errors.sol";
 import "../../../../finance/royalty/RoyaltyEnforcementInternal.sol";
-import "../../base/ERC1155BaseInternal.sol";
+import "../../base/ERC1155Base.sol";
 
-abstract contract ERC1155RoyaltyEnforcementExtension is RoyaltyEnforcementInternal, ERC1155BaseInternal {
-    function _setApprovalForAll(address operator, bool approved)
-        internal
+abstract contract ERC1155RoyaltyEnforcementExtension is RoyaltyEnforcementInternal, ERC1155Base {
+    function setApprovalForAll(address operator, bool approved)
+        public
         virtual
         override
         onlyAllowedOperatorApproval(operator)
     {
-        super._setApprovalForAll(operator, approved);
+        super.setApprovalForAll(operator, approved);
     }
 
-    function _safeTransferBatch(
-        address operator,
-        address sender,
-        address recipient,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal virtual override onlyAllowedOperator(operator) {
-        super._safeTransferBatch(operator, sender, recipient, ids, amounts, data);
-    }
-
-    function _transferBatch(
-        address operator,
-        address sender,
-        address recipient,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal virtual override onlyAllowedOperator(operator) {
-        super._transferBatch(operator, sender, recipient, ids, amounts, data);
-    }
-
-    function _safeTransfer(
-        address operator,
-        address sender,
-        address recipient,
+    function safeTransferFrom(
+        address from,
+        address to,
         uint256 id,
         uint256 amount,
         bytes calldata data
-    ) internal virtual override onlyAllowedOperator(operator) {
-        super._safeTransfer(operator, sender, recipient, id, amount, data);
+    ) public virtual override onlyAllowedOperator(from) {
+        super.safeTransferFrom(from, to, id, amount, data);
     }
 
-    function _transfer(
-        address operator,
-        address sender,
-        address recipient,
-        uint256 id,
-        uint256 amount,
+    function safeBatchTransferFrom(
+        address from,
+        address to,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
         bytes calldata data
-    ) internal virtual override onlyAllowedOperator(operator) {
-        super._transfer(operator, sender, recipient, id, amount, data);
+    ) public virtual override onlyAllowedOperator(from) {
+        super.safeBatchTransferFrom(from, to, ids, amounts, data);
     }
 }

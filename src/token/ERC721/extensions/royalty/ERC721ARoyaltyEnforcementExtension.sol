@@ -6,47 +6,42 @@ import "../../../../common/Errors.sol";
 import "../../../../finance/royalty/RoyaltyEnforcementInternal.sol";
 import "../../base/ERC721ABase.sol";
 
-abstract contract ERC721ARoyaltyEnforcementExtension is RoyaltyEnforcementInternal, ERC721ABaseInternal {
-    function _setApprovalForAll(address operator, bool approved)
-        internal
+abstract contract ERC721ARoyaltyEnforcementExtension is RoyaltyEnforcementInternal, ERC721ABase {
+    function setApprovalForAll(address operator, bool approved)
+        public
         virtual
         override
         onlyAllowedOperatorApproval(operator)
     {
-        super._setApprovalForAll(operator, approved);
+        _setApprovalForAll(operator, approved);
     }
 
-    function _approve(address operator, uint256 tokenId)
-        internal
-        virtual
-        override
-        onlyAllowedOperatorApproval(operator)
-    {
-        super._approve(operator, tokenId);
+    function approve(address to, uint256 tokenId) public virtual override onlyAllowedOperatorApproval(to) {
+        _approve(to, tokenId);
     }
 
-    function _transferFrom(
+    function transferFrom(
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override onlyAllowedOperator(from) {
-        super._transferFrom(from, to, tokenId);
+    ) public virtual override onlyAllowedOperator(from) {
+        _transferFrom(from, to, tokenId);
     }
 
-    function _safeTransferFrom(
+    function safeTransferFrom(
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override onlyAllowedOperator(from) {
-        super._safeTransferFrom(from, to, tokenId);
+    ) public virtual override onlyAllowedOperator(from) {
+        _safeTransferFrom(from, to, tokenId);
     }
 
-    function _safeTransferFrom(
+    function safeTransferFrom(
         address from,
         address to,
         uint256 tokenId,
-        bytes memory data
-    ) internal virtual override onlyAllowedOperator(from) {
-        super._safeTransferFrom(from, to, tokenId, data);
+        bytes calldata data
+    ) public virtual override onlyAllowedOperator(from) {
+        _safeTransferFrom(from, to, tokenId, data);
     }
 }

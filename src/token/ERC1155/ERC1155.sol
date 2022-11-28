@@ -39,55 +39,31 @@ contract ERC1155 is
         super._beforeTokenTransfer(operator, from, to, ids, amounts, data);
     }
 
-    function _setApprovalForAll(address operator, bool approved)
-        internal
+    function setApprovalForAll(address operator, bool approved)
+        public
         virtual
-        override(ERC1155BaseInternal, ERC1155RoyaltyEnforcementExtension)
+        override(ERC1155Base, ERC1155RoyaltyEnforcementExtension)
     {
-        ERC1155RoyaltyEnforcementExtension._setApprovalForAll(operator, approved);
+        ERC1155RoyaltyEnforcementExtension.setApprovalForAll(operator, approved);
     }
 
-    function _safeTransferBatch(
-        address operator,
-        address sender,
-        address recipient,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal virtual override(ERC1155BaseInternal, ERC1155RoyaltyEnforcementExtension) {
-        ERC1155RoyaltyEnforcementExtension._safeTransferBatch(operator, sender, recipient, ids, amounts, data);
-    }
-
-    function _transferBatch(
-        address operator,
-        address sender,
-        address recipient,
-        uint256[] memory ids,
-        uint256[] memory amounts,
-        bytes memory data
-    ) internal virtual override(ERC1155BaseInternal, ERC1155RoyaltyEnforcementExtension) {
-        ERC1155RoyaltyEnforcementExtension._transferBatch(operator, sender, recipient, ids, amounts, data);
-    }
-
-    function _safeTransfer(
-        address operator,
-        address sender,
-        address recipient,
+    function safeTransferFrom(
+        address from,
+        address to,
         uint256 id,
         uint256 amount,
         bytes calldata data
-    ) internal virtual override(ERC1155BaseInternal, ERC1155RoyaltyEnforcementExtension) {
-        ERC1155RoyaltyEnforcementExtension._safeTransfer(operator, sender, recipient, id, amount, data);
+    ) public virtual override(ERC1155Base, ERC1155RoyaltyEnforcementExtension) {
+        ERC1155RoyaltyEnforcementExtension.safeTransferFrom(from, to, id, amount, data);
     }
 
-    function _transfer(
-        address operator,
-        address sender,
-        address recipient,
-        uint256 id,
-        uint256 amount,
+    function safeBatchTransferFrom(
+        address from,
+        address to,
+        uint256[] calldata ids,
+        uint256[] calldata amounts,
         bytes calldata data
-    ) internal virtual override(ERC1155BaseInternal, ERC1155RoyaltyEnforcementExtension) {
-        ERC1155RoyaltyEnforcementExtension._transfer(operator, sender, recipient, id, amount, data);
+    ) public virtual override(ERC1155Base, ERC1155RoyaltyEnforcementExtension) {
+        ERC1155RoyaltyEnforcementExtension.safeBatchTransferFrom(from, to, ids, amounts, data);
     }
 }

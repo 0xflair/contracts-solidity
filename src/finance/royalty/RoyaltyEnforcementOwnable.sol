@@ -20,11 +20,15 @@ import "./RoyaltyEnforcementInternal.sol";
  * @custom:provides-interfaces IRoyaltyEnforcementAdmin
  */
 contract RoyaltyEnforcementOwnable is IRoyaltyEnforcementAdmin, RoyaltyEnforcementInternal, OwnableInternal {
-    function toggleRoyaltyEnforcement(bool enforce) external override {
+    function toggleRoyaltyEnforcement(bool enforce) external override onlyOwner {
         _toggleRoyaltyEnforcement(enforce);
     }
 
-    function registerRoyaltyEnforcement(address subscriptionOrRegistrantToCopy, bool subscribe) external override {
+    function registerRoyaltyEnforcement(address subscriptionOrRegistrantToCopy, bool subscribe)
+        external
+        override
+        onlyOwner
+    {
         _register(subscriptionOrRegistrantToCopy, subscribe);
     }
 }

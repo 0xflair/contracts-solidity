@@ -26,7 +26,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
     /**
      * @inheritdoc IERC721ABase
      */
-    function approve(address to, uint256 tokenId) external virtual {
+    function approve(address to, uint256 tokenId) public virtual {
         _approve(to, tokenId);
     }
 
@@ -40,7 +40,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
     /**
      * @inheritdoc IERC721ABase
      */
-    function setApprovalForAll(address operator, bool approved) external virtual override {
+    function setApprovalForAll(address operator, bool approved) public virtual override {
         _setApprovalForAll(operator, approved);
     }
 
@@ -58,7 +58,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address from,
         address to,
         uint256 tokenId
-    ) external virtual override {
+    ) public virtual override {
         _transferFrom(from, to, tokenId);
     }
 
@@ -69,7 +69,7 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address from,
         address to,
         uint256 tokenId
-    ) external virtual override {
+    ) public virtual override {
         _safeTransferFrom(from, to, tokenId, "");
     }
 
@@ -80,8 +80,8 @@ contract ERC721ABase is ERC721ABaseInternal, IERC721ABase {
         address from,
         address to,
         uint256 tokenId,
-        bytes memory _data
-    ) external virtual override {
+        bytes calldata _data
+    ) public virtual override {
         _safeTransferFrom(from, to, tokenId, _data);
     }
 }

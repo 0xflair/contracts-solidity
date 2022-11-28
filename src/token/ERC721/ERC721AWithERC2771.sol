@@ -45,44 +45,44 @@ contract ERC721AWithERC2771 is
         super._beforeTokenTransfers(from, to, startTokenId, quantity);
     }
 
-    function _approve(address operator, uint256 tokenId)
-        internal
+    function setApprovalForAll(address operator, bool approved)
+        public
         virtual
-        override(ERC721ABaseInternal, ERC721ARoyaltyEnforcementExtension)
+        override(ERC721ABase, ERC721ARoyaltyEnforcementExtension)
     {
-        ERC721ARoyaltyEnforcementExtension._approve(operator, tokenId);
+        ERC721ARoyaltyEnforcementExtension.setApprovalForAll(operator, approved);
     }
 
-    function _setApprovalForAll(address operator, bool approved)
-        internal
+    function approve(address to, uint256 tokenId)
+        public
         virtual
-        override(ERC721ABaseInternal, ERC721ARoyaltyEnforcementExtension)
+        override(ERC721ABase, ERC721ARoyaltyEnforcementExtension)
     {
-        ERC721ARoyaltyEnforcementExtension._setApprovalForAll(operator, approved);
+        ERC721ARoyaltyEnforcementExtension.approve(to, tokenId);
     }
 
-    function _transferFrom(
+    function transferFrom(
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override(ERC721ABaseInternal, ERC721ARoyaltyEnforcementExtension) {
-        ERC721ARoyaltyEnforcementExtension._transferFrom(from, to, tokenId);
+    ) public virtual override(ERC721ABase, ERC721ARoyaltyEnforcementExtension) {
+        ERC721ARoyaltyEnforcementExtension.transferFrom(from, to, tokenId);
     }
 
-    function _safeTransferFrom(
+    function safeTransferFrom(
         address from,
         address to,
         uint256 tokenId
-    ) internal virtual override(ERC721ABaseInternal, ERC721ARoyaltyEnforcementExtension) {
-        ERC721ARoyaltyEnforcementExtension._safeTransferFrom(from, to, tokenId);
+    ) public virtual override(ERC721ABase, ERC721ARoyaltyEnforcementExtension) {
+        ERC721ARoyaltyEnforcementExtension.safeTransferFrom(from, to, tokenId);
     }
 
-    function _safeTransferFrom(
+    function safeTransferFrom(
         address from,
         address to,
         uint256 tokenId,
-        bytes memory data
-    ) internal virtual override(ERC721ABaseInternal, ERC721ARoyaltyEnforcementExtension) {
-        ERC721ARoyaltyEnforcementExtension._safeTransferFrom(from, to, tokenId, data);
+        bytes calldata data
+    ) public virtual override(ERC721ABase, ERC721ARoyaltyEnforcementExtension) {
+        ERC721ARoyaltyEnforcementExtension.safeTransferFrom(from, to, tokenId, data);
     }
 }
