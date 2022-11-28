@@ -221,6 +221,21 @@ describe('ERC721 Tiered Sales', function () {
     expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
   });
 
+  it('should mint by tier and emit TierSale event', async function () {
+    const { userA } = await setupTest();
+
+    const diamond = await deployERC721WithSales();
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+    await expect(
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
+        value: utils.parseEther('0.12'),
+      }),
+    )
+      .to.emit(tieredSalesFacet, 'TierSale')
+      .withArgs(0, userA.signer.address, userA.signer.address, 2);
+  });
+
   it('should get wallet minted amount by tier', async function () {
     const { userA } = await setupTest();
 

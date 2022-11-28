@@ -120,6 +120,8 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         if (l.tiers[tierId].reserved > 0) {
             l.reservedMints += count;
         }
+
+        emit TierSale(tierId, minter, minter, count);
     }
 
     function _executeSalePrivileged(
@@ -143,6 +145,8 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         if (l.tiers[tierId].reserved > 0) {
             l.reservedMints += count;
         }
+
+        emit TierSale(tierId, _msgSender(), minter, count);
     }
 
     function _remainingSupply(

@@ -107,6 +107,7 @@
     "verify:fuse": "npx hardhat --network fuse sourcify && npx hardhat etherscan-verify --network fuse"
   },
   "devDependencies": {
+    "operator-filter-registry": "^1.3.0",
     "@a16z/contracts": "^0.0.8",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",

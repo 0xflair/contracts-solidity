@@ -211,6 +211,13 @@ abstract contract ERC1155BaseInternal is Context, IERC1155Events {
         emit TransferBatch(sender, account, address(0), ids, amounts);
     }
 
+    function _setApprovalForAll(address operator, bool status) internal virtual {
+        address sender = _msgSender();
+        require(sender != operator, "ERC1155: setting approval status for self");
+        ERC1155BaseStorage.layout().operatorApprovals[sender][operator] = status;
+        emit ApprovalForAll(sender, operator, status);
+    }
+
     /**
      * @notice transfer tokens between given addresses
      * @dev ERC1155Receiver implementation is not checked

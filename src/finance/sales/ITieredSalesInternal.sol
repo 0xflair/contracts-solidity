@@ -13,4 +13,6 @@ interface ITieredSalesInternal {
         uint256 reserved;
         uint256 maxAllocation;
     }
+
+    event TierSale(uint256 indexed tierId, address indexed operator, address indexed minter, uint256 count);
 }
