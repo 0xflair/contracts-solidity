@@ -20,11 +20,11 @@ import "./IMetadataAdmin.sol";
  * @custom:provides-interfaces IMetadataAdmin
  */
 contract MetadataOwnable is IMetadataAdmin, MetadataAdminInternal, OwnableInternal {
-    function setName(string calldata name) external virtual override onlyOwner {
+    function setName(string memory name) external virtual override onlyOwner {
         _setName(name);
     }
 
-    function setSymbol(string calldata symbol) external virtual override onlyOwner {
+    function setSymbol(string memory symbol) external virtual override onlyOwner {
         _setSymbol(symbol);
     }
 
