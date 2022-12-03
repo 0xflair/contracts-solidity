@@ -2,10 +2,6 @@
 
 pragma solidity ^0.8.15;
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
-
 import "./LicenseStorage.sol";
 import "./LicenseInternal.sol";
 import "./ILicense.sol";

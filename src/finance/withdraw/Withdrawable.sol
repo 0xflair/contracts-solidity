@@ -2,12 +2,6 @@
 
 pragma solidity ^0.8.15;
 
-import "@openzeppelin/contracts/proxy/utils/Initializable.sol";
-import "@openzeppelin/contracts/utils/introspection/ERC165Storage.sol";
-
-import "@openzeppelin/contracts/utils/Address.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
-
 import "./WithdrawableStorage.sol";
 import "./WithdrawableInternal.sol";
 import "./IWithdrawable.sol";
