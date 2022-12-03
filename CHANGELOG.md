@@ -1,3 +1,10 @@
+### [2.23.5](https://github.com/flair-sdk/contracts/compare/v2.23.4...v2.23.5) (2022-12-03)
+
+
+### Bug Fixes
+
+* change inputType for setName and setSymbol ([#5](https://github.com/flair-sdk/contracts/issues/5)) ([10eb03a](https://github.com/flair-sdk/contracts/commit/10eb03a6eec4dacd545929982e5671152298b134))
+
 ### [2.23.4](https://github.com/flair-sdk/contracts/compare/v2.23.3...v2.23.4) (2022-12-03)
 
 ### [2.23.3](https://github.com/flair-sdk/contracts/compare/v2.23.2...v2.23.3) (2022-12-03)
