@@ -1455,7 +1455,9 @@
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
     "version": "2.23.3",
     "providesInterfaces": [
-      "0x79f33254"
+      "0x79f33254",
+      "0x5ae18a74",
+      "0x352a90bb"
     ],
     "peerDependencies": [],
     "requiredDependencies": [

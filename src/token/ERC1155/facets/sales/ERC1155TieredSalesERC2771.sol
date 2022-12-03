@@ -12,7 +12,7 @@ import "./ERC1155TieredSales.sol";
  * @custom:type eip-2535-facet
  * @custom:category NFTs
  * @custom:required-dependencies IERC1155MintableExtension
- * @custom:provides-interfaces ITieredSales
+ * @custom:provides-interfaces ITieredSales IERC1155TieredSales ITieredSalesRoleBased
  */
 contract ERC1155TieredSalesERC2771 is ERC1155TieredSales, ERC2771ContextInternal {
     function _msgSender() internal view virtual override(Context, ERC2771ContextInternal) returns (address) {
