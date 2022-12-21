@@ -18,8 +18,10 @@
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
-      "require": "./dist/index.js"
-    }
+      "require": "./dist/index.js",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
   },
   "module": "dist/index.es.js",
   "types": "dist/types.d.ts",
