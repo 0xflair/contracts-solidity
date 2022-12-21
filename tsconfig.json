@@ -15,13 +15,5 @@
     "noEmit": true
   },
   "exclude": ["dist", "node_modules"],
-  "include": [
-    "./src",
-    "./test",
-    "./deploy",
-    "./scripts",
-    "hardhat.config.ts",
-    "hardhat.util.ts",
-    "openzeppelin.config.ts"
-  ]
+  "include": ["./src", "./test", "./deploy", "./scripts"]
 }

@@ -4,7 +4,7 @@ import ContractsJson from './contracts.json';
 import FacetsJson from './facets.json';
 import InterfacesJson from './interfaces.json';
 
-export * from './typechain';
+export * from './typechain/index.js';
 
 export const ContractsManifests = ContractsJson;
 export const FacetsManifests = FacetsJson;
