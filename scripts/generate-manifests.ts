@@ -147,15 +147,6 @@ async function main() {
   fse.writeJSONSync(path.resolve(srcPath, 'interfaces.json'), resolvedInterfaces, {
     spaces: 2,
   });
-
-  //
-  // 7. Update package.json to add "type": "module"
-  //
-  const packageJson = fse.readJSONSync(path.resolve(__dirname, '../dist/package.json'));
-  packageJson.type = 'module';
-  fse.writeJSONSync(path.resolve(__dirname, '../dist/package.json'), packageJson, {
-    spaces: 2,
-  });
 }
 
 // We recommend this pattern to be able to use async/await everywhere
