@@ -1,3 +1,10 @@
+## [2.24.0](https://github.com/flair-sdk/contracts/compare/v2.23.9...v2.24.0) (2022-12-28)
+
+
+### Features
+
+* add metis main and test chain ([d0c00a0](https://github.com/flair-sdk/contracts/commit/d0c00a01f7abf92159233a308615b4528cc00773))
+
 ### [2.23.9](https://github.com/flair-sdk/contracts/compare/v2.23.8...v2.23.9) (2022-12-22)
 
 ### [2.23.8](https://github.com/flair-sdk/contracts/compare/v2.23.7...v2.23.8) (2022-12-21)
