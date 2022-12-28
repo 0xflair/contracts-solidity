@@ -14,6 +14,8 @@
       "137": "0xaa2a84DAaf14BEE3f9207EF3EB2d18082291Fee5",
       "250": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "338": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
+      "599": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
+      "1088": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "1284": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "4002": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
       "9000": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
@@ -46,6 +48,8 @@
       "fuse": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "goerli": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
       "mainnet": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
+      "metis": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "metisGoerli": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "moonbeam": "0x5C7C7E058dF26669Ce5623d8B0a6C4d8Ac3EF4fD",
       "nearAuroraTestnet": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "okcMainnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
@@ -65,7 +69,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -74,7 +78,7 @@
     "category": "Access",
     "title": "Roles",
     "notice": "Role-based access control for write functions based on OpenZeppelin's AccessControl",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/access/roles/AccessControl.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/access/roles/AccessControl.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlAdmin": {
@@ -92,6 +96,8 @@
       "137": "0x79455bD8DB7152f9084eAd01328F498124D3eE3b",
       "250": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "338": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "599": "0xF8fA73a567812c638e3258144965c03680CD2D87",
+      "1088": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "1284": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "4002": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
       "9000": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
@@ -124,6 +130,8 @@
       "fuse": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "goerli": "0x1a7c5FD331A388acE3385592b0a53da810ef9dC4",
       "mainnet": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
+      "metis": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "metisGoerli": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "moonbeam": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "nearAuroraTestnet": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "okcMainnet": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
@@ -139,7 +147,7 @@
       "grantAdminRole(address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlAdmin",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xc634b78e"
     ],
@@ -150,7 +158,7 @@
     "category": "Access",
     "title": "Roles - Admin",
     "notice": "Allows you to initiate access controls as current contract owner by giving DEFAULT_ADMIN_ROLE to an address.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/access/roles/AccessControlAdmin.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/access/roles/AccessControlAdmin.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
@@ -168,6 +176,8 @@
       "137": "0x2146A2e0d639F5F3024c43b9222BC85b1Ca47cca",
       "250": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
       "338": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "599": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "1088": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "1284": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "4002": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
       "9000": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
@@ -200,6 +210,8 @@
       "fuse": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "goerli": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
       "mainnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
+      "metis": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "metisGoerli": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "moonbeam": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "nearAuroraTestnet": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "okcMainnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
@@ -219,7 +231,7 @@
       "revokeRole(bytes32,address)"
     ],
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x7965db0b"
     ],
@@ -228,7 +240,7 @@
     "category": "Access",
     "title": "Roles - with meta-transactions",
     "notice": "Role-based access control with meta-transactions enabled (mainly for grantRole, revokeRole, renounceRole)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/access/roles/AccessControlERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/access/roles/AccessControlERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
@@ -246,6 +258,8 @@
       "137": "0xb272329cf38CC44F9b54EeAf80F5E69A308FD7a5",
       "250": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "338": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "599": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
+      "1088": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "1284": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "4002": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
       "9000": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
@@ -278,6 +292,8 @@
       "fuse": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "goerli": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
       "mainnet": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
+      "metis": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "metisGoerli": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "moonbeam": "0x1dc99a44b07f1790647087D789173991DFa5EE65",
       "nearAuroraTestnet": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "okcMainnet": "0x614A331D14164720352ef916f4b91695c9199c7b",
@@ -292,7 +308,7 @@
       "setBurnablePausedUntil(uint256)"
     ],
     "fqn": "flair-sdk:token/common/burnable/BurnableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x710fb577"
     ],
@@ -301,7 +317,7 @@
     "category": "NFTs",
     "title": "Burnable - Admin - Ownable",
     "notice": "Allow contract owner to manage burning mechanism.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/common/burnable/BurnableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/common/burnable/BurnableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/Depository": {
@@ -319,6 +335,8 @@
       "137": "0x439A19B19D96e22454a8C6968d7d08fBf5CdE9Bb",
       "250": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "338": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "599": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
+      "1088": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "1284": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "4002": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
       "9000": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
@@ -351,6 +369,8 @@
       "fuse": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "goerli": "0x4498a21260157D3c06B9329f3a43654aB3FC1364",
       "mainnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
+      "metis": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "metisGoerli": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "moonbeam": "0x27F848F575D9EDBc10c874825CCE379b19e9D155",
       "nearAuroraTestnet": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "okcMainnet": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
@@ -370,7 +390,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/Depository",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -379,7 +399,7 @@
     "category": "Finance",
     "title": "Depository",
     "notice": "A simple depository contract to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/depository/Depository.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/depository/Depository.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/depository/DepositoryWithERC2771": {
@@ -397,6 +417,8 @@
       "137": "0x28fbe43b52544a3947309768e11E4c1AebFDbD92",
       "250": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "338": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "599": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
+      "1088": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
       "1284": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "4002": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
       "9000": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
@@ -429,6 +451,8 @@
       "fuse": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "goerli": "0x8226f05C9Fbecb29713155a0354FB56172f36034",
       "mainnet": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
+      "metis": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
+      "metisGoerli": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "moonbeam": "0x01d50c1438f38A9DD5906a92bdEC7efB60A7c584",
       "nearAuroraTestnet": "0x1Fc79E01fe724Ef4A1f8995f1299B90565a6AD39",
       "okcMainnet": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
@@ -448,7 +472,7 @@
       "transferNative(address[],uint256[])"
     ],
     "fqn": "flair-sdk:finance/depository/DepositoryWithERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xf5164e15"
     ],
@@ -457,7 +481,7 @@
     "category": "Finance",
     "title": "Depository - with meta-transactions",
     "notice": "A simple depository contract, with ERC2771 context for meta-transactions to hold native or ERC20 tokens and allow certain roles to transfer or disperse.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/depository/DepositoryWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/depository/DepositoryWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondCut": {
@@ -475,6 +499,8 @@
       "137": "0x9fFbbFD0dF48aFa346054782540866E54B900262",
       "250": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "338": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "599": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
+      "1088": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "1284": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "4002": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "9000": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
@@ -507,6 +533,8 @@
       "fuse": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "goerli": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
       "mainnet": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
+      "metis": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
+      "metisGoerli": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "moonbeam": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "nearAuroraTestnet": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
       "okcMainnet": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
@@ -521,7 +549,7 @@
       "diamondCut((address,uint8,bytes4[])[],address,bytes)"
     ],
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x1f931c1c"
     ],
@@ -530,7 +558,7 @@
     "category": "Diamonds",
     "title": "Diamond - Cut",
     "notice": "Standard EIP-2535 cut functionality to add, replace and remove facets from a diamond.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/diamond/DiamondCut.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/diamond/DiamondCut.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:diamond/DiamondLoupe": {
@@ -548,6 +576,8 @@
       "137": "0x19737CE758700bba4dEA9B6769045B4a5C206608",
       "250": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "338": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "599": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
+      "1088": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "1284": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "4002": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
       "9000": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
@@ -580,6 +610,8 @@
       "fuse": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "goerli": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
       "mainnet": "0x88D339113E47355A9544E0665193F47A0325EBcB",
+      "metis": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
+      "metisGoerli": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "moonbeam": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "nearAuroraTestnet": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "okcMainnet": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
@@ -597,7 +629,7 @@
       "facets()"
     ],
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x48e2b093"
     ],
@@ -606,7 +638,7 @@
     "category": "Diamonds",
     "title": "Diamond - Loupe",
     "notice": "Standard EIP-2535 loupe functions to allow inspecting a diamond for explorers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/diamond/DiamondLoupe.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/diamond/DiamondLoupe.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155": {
@@ -624,6 +656,8 @@
       "137": "0x134eDea1fD79F9F2F19DD3e21af0881B65A4a365",
       "250": "0xdbAc88824f9FaE585EAA07c598e693E588E1Bb18",
       "338": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
+      "599": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
+      "1088": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "1284": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "4002": "0x185c57dcb7787bb94b183aaff951df934f89fff5",
       "9000": "0x407E580A8c39B4254F89f809d00891F079026771",
@@ -656,6 +690,8 @@
       "fuse": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "goerli": "0x8730006C242E1a54b8fD8F6eAEbC9e83D6478998",
       "mainnet": "0xcD3dECb28dBfa49579237928c1A7df2687d88881",
+      "metis": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "metisGoerli": "0x2e43759e52d69Eb4561541f6F7A6C4E82CD2448A",
       "moonbeam": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "nearAuroraTestnet": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "okcMainnet": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
@@ -690,7 +726,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xd9b67a26",
       "0x744f4bd4",
@@ -704,7 +740,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Standard",
     "notice": "Standard EIP-1155 NFTs with core capabilities of Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/ERC1155.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/ERC1155.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
@@ -722,6 +758,8 @@
       "137": "0xA1AA81597BB7FDDEAa02224498aA613DAa01986D",
       "250": "0xb18A1CF7099bd32EED940e84391ecf352885CDcc",
       "338": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
+      "599": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "1088": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "1284": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "4002": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "9000": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
@@ -754,6 +792,8 @@
       "fuse": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "goerli": "0x35Ae96463b033c6583a2059b23A5b828C03021d9",
       "mainnet": "0x17DB0f5512784Cf0aF0CCa72686961aBAe36aEaC",
+      "metis": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "metisGoerli": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "moonbeam": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "nearAuroraTestnet": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "okcMainnet": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
@@ -771,7 +811,7 @@
       "unlockByOwner(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x7b535f1c"
     ],
@@ -782,7 +822,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/locking/ERC1155LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
@@ -800,6 +840,8 @@
       "137": "0x5a75374be2803B9E30CD48112Ad0817773e268eA",
       "250": "0x4990b33f36BB506403f1536522d030f2164052e5",
       "338": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
+      "599": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "1088": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "1284": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "4002": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "9000": "0x47FE6eE36D04babeC8a809590332018D55B4f5E9",
@@ -832,6 +874,8 @@
       "fuse": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "goerli": "0x384524C02DD8c7f0432989fe61Ff883f841d0C90",
       "mainnet": "0xaEdB7Ee8526AaD5435fcF7e3BD00f3452c743Eaa",
+      "metis": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
+      "metisGoerli": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "moonbeam": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "nearAuroraTestnet": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "okcMainnet": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
@@ -851,7 +895,7 @@
       "unlockByRole(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xd40d0af6"
     ],
@@ -862,7 +906,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/locking/ERC1155LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
@@ -880,6 +924,8 @@
       "137": "0x20D24b670b0A64F1bbf28ABc0C0e0aA1eC1356a8",
       "250": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "338": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "599": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
+      "1088": "0x166b5579474936a608478D6928E25F3272D92f89",
       "1284": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "4002": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "9000": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
@@ -912,6 +958,8 @@
       "fuse": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "goerli": "0xB3206523e827557d6bF0513A9feD028e3DBc540C",
       "mainnet": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
+      "metis": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "metisGoerli": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
       "moonbeam": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "nearAuroraTestnet": "0x166b5579474936a608478D6928E25F3272D92f89",
       "okcMainnet": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
@@ -926,7 +974,7 @@
       "uri(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x93254542",
       "0x0e89341c"
@@ -938,7 +986,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Metadata",
     "notice": "Provides metadata for ERC1155 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/metadata/ERC1155Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
@@ -956,6 +1004,8 @@
       "137": "0xda25087323285AE25e00E8C373a9184fb558D831",
       "250": "0x17DB0f5512784Cf0aF0CCa72686961aBAe36aEaC",
       "338": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
+      "599": "0x166b5579474936a608478D6928E25F3272D92f89",
+      "1088": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "1284": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "4002": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "9000": "0xb2035c77EEc63Eca2bA2d20415715f1993fb4B35",
@@ -988,6 +1038,8 @@
       "fuse": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "goerli": "0x6c2Bd66EcE884d27799D0DB9Fa94EC7e148c8F50",
       "mainnet": "0x9A8050DE80375087c36f753F4Ea6Bb3aEF49A932",
+      "metis": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
+      "metisGoerli": "0x166b5579474936a608478D6928E25F3272D92f89",
       "moonbeam": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "nearAuroraTestnet": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "okcMainnet": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
@@ -1003,7 +1055,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -1014,7 +1066,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/minting/ERC1155MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
@@ -1032,6 +1084,8 @@
       "137": "0x8F8E67fEa0ed0dd5eD79ef465497D5d31c619943",
       "250": "0xaEdB7Ee8526AaD5435fcF7e3BD00f3452c743Eaa",
       "338": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
+      "599": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
+      "1088": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "1284": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "4002": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "9000": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
@@ -1064,6 +1118,8 @@
       "fuse": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "goerli": "0xB11Dd842D23a548d16466038e2CFD7E135C897bF",
       "mainnet": "0x083E023e04Eb1c2D9686e5eaCf53CF7266DE77F8",
+      "metis": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "metisGoerli": "0x543Ae6908CBcBA7a20739Ac87742A10922F2f0f0",
       "moonbeam": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "nearAuroraTestnet": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "okcMainnet": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
@@ -1079,7 +1135,7 @@
       "mintByOwner(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x6c5e99c7"
     ],
@@ -1090,7 +1146,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as owner - with meta transactions",
     "notice": "Allow minting as owner via ERC2771 Context meta transactions (signed by the owner private key)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
@@ -1108,6 +1164,8 @@
       "137": "0x7509048f8a798a60596f3Bb48587Ca2a533f288a",
       "250": "0x9A8050DE80375087c36f753F4Ea6Bb3aEF49A932",
       "338": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
+      "599": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
+      "1088": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "1284": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "4002": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "9000": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
@@ -1140,6 +1198,8 @@
       "fuse": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "goerli": "0x9CC086FC0937A4f301ffDB729dC8A90220C1a502",
       "mainnet": "0x3790f809b612682Ee95002273Cd31eaBD0aA177c",
+      "metis": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "metisGoerli": "0x60FBBbE5C094a2D4f831a4A36135be6555D220f7",
       "moonbeam": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "nearAuroraTestnet": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "okcMainnet": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
@@ -1157,7 +1217,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -1168,7 +1228,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role",
     "notice": "Allow minting for grantees of MINTER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/minting/ERC1155MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
@@ -1186,6 +1246,8 @@
       "137": "0x20bccA536307cEd175391e893061BAf5cE80e36F",
       "250": "0x083E023e04Eb1c2D9686e5eaCf53CF7266DE77F8",
       "338": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
+      "599": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
+      "1088": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "1284": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "4002": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "9000": "0xC226F6dFcEb1b2Ae174820de51d077275ceE0E14",
@@ -1218,6 +1280,8 @@
       "fuse": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "goerli": "0x7bc80E164b3D5E85ac333A4B9302851b4954696C",
       "mainnet": "0x327C9652501569CaC5242E186b747Bb644E1606B",
+      "metis": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "metisGoerli": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
       "moonbeam": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "nearAuroraTestnet": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "okcMainnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
@@ -1235,7 +1299,7 @@
       "mintByRole(address[],uint256[],uint256[],bytes[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x1abe36ba"
     ],
@@ -1246,7 +1310,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Mint as role - with meta transactions",
     "notice": "Allow minting for grantees of MINTER_ROLE with meta-transactions supported via ERC2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
@@ -1264,6 +1328,8 @@
       "137": "0x5a43EfdAfc930d6A47bb1C228F490c691344aC1a",
       "250": "0xcD3dECb28dBfa49579237928c1A7df2687d88881",
       "338": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
+      "599": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "1088": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "1284": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "4002": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "9000": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
@@ -1296,6 +1362,8 @@
       "fuse": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "goerli": "0xBDe1E9784883E4Eab27d4955F2a2e41Bafcf9Fcb",
       "mainnet": "0x4990b33f36BB506403f1536522d030f2164052e5",
+      "metis": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
+      "metisGoerli": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "moonbeam": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "nearAuroraTestnet": "0x704Db86993C725288e86d4a995CFDfcF7B0b714F",
       "okcMainnet": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
@@ -1313,7 +1381,7 @@
       "setMaxSupplyBatch(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xf0d6039e"
     ],
@@ -1324,7 +1392,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-1155 contract to change max supply of token IDs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/supply/ERC1155SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
@@ -1342,6 +1410,8 @@
       "137": "0x8a7EcBE857EF9853bc4E2A940a62ae1C62C53bc8",
       "250": "0xa2AbeDDaeF2B6E186e5794C2541D600d35BF2D4C",
       "338": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
+      "599": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "1088": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "1284": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "4002": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "9000": "0xa95222e729bEE6E32E23D2AA97cED56cc9b719CA",
@@ -1374,6 +1444,8 @@
       "fuse": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "goerli": "0xE544A314335b1C740792505a539AC19aEdF12af4",
       "mainnet": "0x4B5fa4635D507Cb8f4081da68647071C80dC0d21",
+      "metis": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "metisGoerli": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "moonbeam": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "nearAuroraTestnet": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "okcMainnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
@@ -1401,7 +1473,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254",
       "0x5ae18a74",
@@ -1414,7 +1486,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales",
     "notice": "Sales mechanism for ERC1155 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/sales/ERC1155TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771": {
@@ -1432,6 +1504,8 @@
       "137": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
       "250": "0x99cEF23f011AF9b4F9181aC6880228Be992186cE",
       "338": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
+      "599": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "1088": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "1284": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "4002": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "9000": "0x4597efD61417c940aF99a73127c89187B63539F5",
@@ -1464,6 +1538,8 @@
       "fuse": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "goerli": "0xd1666249b8A05547f66488812B205248045a2Eb1",
       "mainnet": "0xa2AbeDDaeF2B6E186e5794C2541D600d35BF2D4C",
+      "metis": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "metisGoerli": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "moonbeam": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "nearAuroraTestnet": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "okcMainnet": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
@@ -1491,7 +1567,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254",
       "0x5ae18a74",
@@ -1504,7 +1580,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC1155 NFTs with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/sales/ERC1155TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/sales/ERC1155TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
@@ -1522,6 +1598,8 @@
       "137": "0xDd6d82C12C591B6698B4e1cd1e61362D19901860",
       "250": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "338": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
+      "599": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "1088": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "1284": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "4002": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "9000": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
@@ -1554,6 +1632,8 @@
       "fuse": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "goerli": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
       "mainnet": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
+      "metis": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "metisGoerli": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "moonbeam": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
       "nearAuroraTestnet": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "okcMainnet": "0x453ebb329780CFB54CE183f63F21db28b3106762",
@@ -1569,7 +1649,7 @@
       "configureTierTokenId(uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x76c5dd21"
     ],
@@ -1580,7 +1660,7 @@
     "category": "NFTs",
     "title": "ERC1155 - Tiered Sales - Admin - Ownable",
     "notice": "Used to manage which ERC1155 token is related to which the sales tier.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/facets/sales/ERC1155TieredSalesOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
@@ -1598,6 +1678,8 @@
       "137": "0x76e43De9addA1cDCe8d946e93531C46E9D1147d9",
       "250": "0xa7BAFc51800779DC3557c916AFC5AA92af4aE8B8",
       "338": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
+      "599": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
+      "1088": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "1284": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "4002": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "9000": "0x50862ddB120017a4d48816C9073cF50f46438e4D",
@@ -1630,6 +1712,8 @@
       "fuse": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "goerli": "0x8b883822378dD52537B3B4eAF8DDf8BeD5666e54",
       "mainnet": "0xb18A1CF7099bd32EED940e84391ecf352885CDcc",
+      "metis": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
+      "metisGoerli": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
       "moonbeam": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "nearAuroraTestnet": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
       "okcMainnet": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
@@ -1664,7 +1748,7 @@
       "unlockByFacet(address[],uint256[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xd9b67a26",
       "0x744f4bd4",
@@ -1678,7 +1762,7 @@
     "category": "NFTs",
     "title": "ERC1155 - with meta-transactions",
     "notice": "Standard EIP-1155 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC1155/ERC1155WithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC1155/ERC1155WithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165": {
@@ -1696,6 +1780,8 @@
       "137": "0xBF8049Ccd7994D37Afb31885E7Cd3F07B473B3a2",
       "250": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "338": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "599": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "1088": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "1284": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "4002": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "9000": "0x41fe70fC286f7E3e842DE6142a79C89fdCE3bace",
@@ -1728,6 +1814,8 @@
       "fuse": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "goerli": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
       "mainnet": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
+      "metis": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "metisGoerli": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "moonbeam": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "nearAuroraTestnet": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "okcMainnet": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
@@ -1742,7 +1830,7 @@
       "supportsInterface(bytes4)"
     ],
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x01ffc9a7"
     ],
@@ -1751,7 +1839,7 @@
     "category": "Introspection",
     "title": "ERC165",
     "notice": "Standard EIP-165 facet which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/introspection/ERC165.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/introspection/ERC165.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:introspection/ERC165Ownable": {
@@ -1769,6 +1857,8 @@
       "137": "0x3d7d2eD0e25B1707C163293935F63521954e472D",
       "250": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "338": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
+      "599": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
+      "1088": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "1284": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "4002": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "9000": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
@@ -1801,6 +1891,8 @@
       "fuse": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "goerli": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
       "mainnet": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
+      "metis": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
+      "metisGoerli": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "moonbeam": "0x26aaa1F0Be85042402C97766EAC22357AeCCEbc6",
       "nearAuroraTestnet": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "okcMainnet": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
@@ -1815,7 +1907,7 @@
       "setERC165(bytes4[],bytes4[])"
     ],
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x2a848091"
     ],
@@ -1826,7 +1918,7 @@
     "category": "Diamonds",
     "title": "ERC165 - Admin - Ownable",
     "notice": "Standard EIP-165 management facet using Ownable extension for access control.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/introspection/ERC165Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/introspection/ERC165Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/ERC20": {
@@ -1844,6 +1936,8 @@
       "137": "0x4086C6b7f7dCD717E2dC1da764B60E926D03Ffc2",
       "250": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "338": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
+      "599": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "1088": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "1284": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "4002": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "9000": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
@@ -1876,6 +1970,8 @@
       "fuse": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "goerli": "0x5C6e288d37cEd0F5cfAB51893349464B6DDeB720",
       "mainnet": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
+      "metis": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "metisGoerli": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "moonbeam": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
       "nearAuroraTestnet": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "okcMainnet": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
@@ -1898,7 +1994,7 @@
       "transferFrom(address,address,uint256)"
     ],
     "fqn": "flair-sdk:token/ERC20/ERC20",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x36372b07",
       "0x36372b07",
@@ -1910,7 +2006,7 @@
     "category": "Tokens",
     "title": "ERC20 - Standard",
     "notice": "Standard EIP-20 token with mintable and max supply capability.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/ERC20.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/ERC20.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata": {
@@ -1928,6 +2024,8 @@
       "137": "0x5530239CF119cd0928d851A5a5B8dd55B3545645",
       "250": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "338": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
+      "599": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "1088": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "1284": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "4002": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "9000": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
@@ -1960,6 +2058,8 @@
       "fuse": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "goerli": "0xf8689140ff33CB5971D5D5D6e2E0c9f67A5200EB",
       "mainnet": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
+      "metis": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "metisGoerli": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "moonbeam": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
       "nearAuroraTestnet": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "okcMainnet": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
@@ -1978,7 +2078,7 @@
       "symbol()"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xa219a025"
     ],
@@ -1987,7 +2087,7 @@
     "category": "Tokens",
     "title": "ERC20 - Metadata",
     "notice": "Provides standard read methods for name, symbol and decimals metadata for an ERC20 token.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/metadata/ERC20Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/metadata/ERC20Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable": {
@@ -2005,6 +2105,8 @@
       "137": "0xdf6A70BB0966674470efbD928F4f7Fe0a6208DeB",
       "250": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "338": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
+      "599": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "1088": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "1284": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "4002": "0x208Fc6bcB67CC184162e18Ba53b11cFD568B53d5",
       "9000": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
@@ -2037,6 +2139,8 @@
       "fuse": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "goerli": "0x13B2F9D94009103C6C3b025e8Cd59b69d3F1F5b4",
       "mainnet": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
+      "metis": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "metisGoerli": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "moonbeam": "0x91a90c18b6829688973dD1a14CD4a2824b2CD6Ff",
       "nearAuroraTestnet": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "okcMainnet": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
@@ -2052,7 +2156,7 @@
       "setDecimals(uint8)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x951c287d"
     ],
@@ -2063,7 +2167,7 @@
     "category": "Tokens",
     "title": "ERC20 - Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change decimals config or freeze it forever.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable": {
@@ -2081,6 +2185,8 @@
       "137": "0xf7B3641DE9c3E2477700799cc0302767e483e496",
       "250": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "338": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
+      "599": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "1088": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "1284": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "4002": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "9000": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
@@ -2113,6 +2219,8 @@
       "fuse": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "goerli": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
       "mainnet": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
+      "metis": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "metisGoerli": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "moonbeam": "0x2670ABe7b5B65549A6b24Ea1d7ccF0175dAEE0B2",
       "nearAuroraTestnet": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "okcMainnet": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
@@ -2128,7 +2236,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -2139,7 +2247,7 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/minting/ERC20MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/minting/ERC20MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771": {
@@ -2157,6 +2265,8 @@
       "137": "0xF30f194902058e17ca6e1c95649763736DF96e16",
       "250": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "338": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "599": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "1088": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "1284": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "4002": "0xaaa673316Dae46918f803dd15eB2d20F3bB882B1",
       "9000": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
@@ -2189,6 +2299,8 @@
       "fuse": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "goerli": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
       "mainnet": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
+      "metis": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "metisGoerli": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "moonbeam": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "nearAuroraTestnet": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "okcMainnet": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
@@ -2204,7 +2316,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -2215,7 +2327,7 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as owner - with meta-transactions",
     "notice": "Allow minting as owner via meta transactions, signed by the owner private key.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/minting/ERC20MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/minting/ERC20MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased": {
@@ -2233,6 +2345,8 @@
       "137": "0x4A066F8aE8C2Cfa73F6d32C6f72A74A2EB0e9727",
       "250": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "338": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
+      "599": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
+      "1088": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "1284": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "4002": "0xBa483d24122aDd9BB0E2334E31288f4865e54A83",
       "9000": "0xd59375B90526C16a007a779c15A844627fdBe716",
@@ -2265,6 +2379,8 @@
       "fuse": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "goerli": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
       "mainnet": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
+      "metis": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "metisGoerli": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "moonbeam": "0xA2E7c4793a038362406C9e750509f2EDB38092cC",
       "nearAuroraTestnet": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "okcMainnet": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
@@ -2282,7 +2398,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -2293,7 +2409,7 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as role",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC20A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/minting/ERC20MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/minting/ERC20MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771": {
@@ -2311,6 +2427,8 @@
       "137": "0x1b540eF7f0E617a36C57c369A9ca0fcB1298DC41",
       "250": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "338": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
+      "599": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
+      "1088": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "1284": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "4002": "0xb5A05196Fdda3b680fdA6E17565f6707E9365752",
       "9000": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
@@ -2343,6 +2461,8 @@
       "fuse": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "goerli": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
       "mainnet": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
+      "metis": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "metisGoerli": "0x1f0c421312EA02e964Cec73fdC49a350626758D3",
       "moonbeam": "0x0c73275707240354C7fF30a5d5485F76B73a24f4",
       "nearAuroraTestnet": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "okcMainnet": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
@@ -2360,7 +2480,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xa3a11183"
     ],
@@ -2371,7 +2491,7 @@
     "category": "Tokens",
     "title": "ERC20 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC20A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable": {
@@ -2389,6 +2509,8 @@
       "137": "0x122807f8Fc852D2811A5C34CE6ce6E9a5818eB09",
       "250": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "338": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
+      "599": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
+      "1088": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "1284": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "4002": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "9000": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
@@ -2421,6 +2543,8 @@
       "fuse": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "goerli": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
       "mainnet": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
+      "metis": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
+      "metisGoerli": "0xA2474D51D29079aa55e6FD6Ee97FFCa63f1f3661",
       "moonbeam": "0xdb2730fBef4d69d28Bb16d0C071Fca42ED59bE00",
       "nearAuroraTestnet": "0xad0B69e01dC4F051e23F247F2EA41dFCBe3a78b1",
       "okcMainnet": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
@@ -2437,7 +2561,7 @@
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x8a7b7298"
     ],
@@ -2448,7 +2572,7 @@
     "category": "Tokens",
     "title": "ERC20 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/supply/ERC20SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales": {
@@ -2466,6 +2590,8 @@
       "137": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
       "250": "0x1c5Acc9626472D36615CB5d995a4B8D553568f51",
       "338": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
+      "599": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
+      "1088": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "1284": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "4002": "0x3F684a639d5d2D7ccD3daA31E259920E13c67743",
       "9000": "0x74c654a0e916bbd1083C4E5409169c2595F64A32",
@@ -2498,6 +2624,8 @@
       "fuse": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "goerli": "0xe4a72564f4278c5ecc6ad3fc76bc3f2ec1d78f1d",
       "mainnet": "0x99cEF23f011AF9b4F9181aC6880228Be992186cE",
+      "metis": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "metisGoerli": "0x0b83BaeDCEc970EB2F695Fd0Eb07Cd6a7F31E485",
       "moonbeam": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "nearAuroraTestnet": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "okcMainnet": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
@@ -2523,7 +2651,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254",
       "0x352a90bb"
@@ -2536,7 +2664,7 @@
     "category": "Tokens",
     "title": "ERC20 - Tiered Sales",
     "notice": "Sales mechanism for ERC20 tokens with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/sales/ERC20TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/sales/ERC20TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771": {
@@ -2554,6 +2682,8 @@
       "137": "0xFC8D2Baa496D28D63b0D3f3B30Fb510EFaA33d8C",
       "250": "0x05a26D772EBA3096a969165f8c9daE766C78976f",
       "338": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
+      "599": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
+      "1088": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "1284": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "4002": "0xE07116Ab6e1599eF4991986D68E0377d705Ab455",
       "9000": "0x4461377e03cD75bc5B9b3D5514318b10b05B76d1",
@@ -2586,6 +2716,8 @@
       "fuse": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "goerli": "0x3d9827E4eb487315e70a6AEc0D8Ba2AeCd7f84e3",
       "mainnet": "0x1c5Acc9626472D36615CB5d995a4B8D553568f51",
+      "metis": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "metisGoerli": "0xeeFF78D0184C338E5379F7B16EFbc9Ba3Ae0B42E",
       "moonbeam": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "nearAuroraTestnet": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "okcMainnet": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
@@ -2611,7 +2743,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -2622,7 +2754,7 @@
     "category": "Tokens",
     "title": "ERC20 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC20 tokens with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC20/facets/sales/ERC20TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC20/facets/sales/ERC20TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:metatx/ERC2771Context": {
@@ -2640,6 +2772,8 @@
       "137": "0x26873c8AEF28C2a0Da95d2DB8E7EF81b1bc0c182",
       "250": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "338": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
+      "599": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
+      "1088": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
       "1284": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "4002": "0x355d2D09CF839D2CBBcdDf29198Fb3460ef0A3F5",
       "9000": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
@@ -2672,6 +2806,8 @@
       "fuse": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "goerli": "0x5684267E9c4aEBae63FFcb69074e1D1DFF606C3c",
       "mainnet": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
+      "metis": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
+      "metisGoerli": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "moonbeam": "0x35F6B1d81aED96Ae0019bdec354a80E99219bEc5",
       "nearAuroraTestnet": "0x437f9E3A2EF9089Bf3C8A89599b40f62fA2Bb3F9",
       "okcMainnet": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
@@ -2687,7 +2823,7 @@
       "trustedForwarder()"
     ],
     "fqn": "flair-sdk:metatx/ERC2771Context",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x2a8bc472"
     ],
@@ -2696,7 +2832,7 @@
     "category": "Meta Transactions",
     "title": "ERC2771 Context",
     "notice": "Provides view functions about configured trusted forwarder according to EIP-2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/metatx/ERC2771Context.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/metatx/ERC2771Context.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
@@ -2714,6 +2850,8 @@
       "137": "0x0a67c162dbe57878EFda7E6ab39883BBD431Dc29",
       "250": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "338": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "599": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
+      "1088": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "1284": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "4002": "0x4597efD61417c940aF99a73127c89187B63539F5",
       "9000": "0x0681a5288FEFb24B65369B3f91c9281dD9d17Eba",
@@ -2746,6 +2884,8 @@
       "fuse": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "goerli": "0xb3Fd2744e07B739Ee408c07b3A63F2642b25425F",
       "mainnet": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
+      "metis": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
+      "metisGoerli": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "moonbeam": "0xb2edC1E98b147137D7f6894403E163236bc6FffC",
       "nearAuroraTestnet": "0xa79B21B345846224b307212FB7278b2e74Ea3295",
       "okcMainnet": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
@@ -2760,7 +2900,7 @@
       "setTrustedForwarder(address)"
     ],
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xda742228"
     ],
@@ -2769,7 +2909,7 @@
     "category": "Meta Transactions",
     "title": "ERC2771 Context - Admin - Ownable",
     "notice": "Controls trusted forwarder used to accept meta transactions according to EIP-2771.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/metatx/ERC2771ContextOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/metatx/ERC2771ContextOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721A": {
@@ -2787,6 +2927,8 @@
       "137": "0x417CB4a563C5cf2F9C607963bE9Bf22F513b7750",
       "250": "0x3790f809b612682Ee95002273Cd31eaBD0aA177c",
       "338": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
+      "599": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "1088": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "1284": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "4002": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "9000": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
@@ -2819,6 +2961,8 @@
       "fuse": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "goerli": "0x3bdD10f2457C14d762880773D9ff0695591CB8Bd",
       "mainnet": "0x05a26D772EBA3096a969165f8c9daE766C78976f",
+      "metis": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "metisGoerli": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "moonbeam": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "nearAuroraTestnet": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "okcMainnet": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
@@ -2855,7 +2999,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721A",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x8153916a",
       "0xb45a3c0e",
@@ -2871,7 +3015,7 @@
     "category": "NFTs",
     "title": "ERC721 (A) - Standard",
     "notice": "Azuki's implementation of standard EIP-721 NFTs with core capabilities of Royalty, Mintable, Burnable and Lockable.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/ERC721A.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/ERC721A.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
@@ -2889,6 +3033,8 @@
       "137": "0xE401b539C18793a203b3F769781D575105fD9715",
       "250": "0x327C9652501569CaC5242E186b747Bb644E1606B",
       "338": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
+      "599": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "1088": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "1284": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "4002": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "9000": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
@@ -2921,6 +3067,8 @@
       "fuse": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "goerli": "0x5d3A9621F35Adf4D8E79cFc6589792C9E109B0d0",
       "mainnet": "0x712a4ff806acD985f914E0ebc1EbC7b17361d778",
+      "metis": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "metisGoerli": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "moonbeam": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "nearAuroraTestnet": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "okcMainnet": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
@@ -2957,7 +3105,7 @@
       "unlockByFacet(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/ERC721AWithERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x8153916a",
       "0xb45a3c0e",
@@ -2973,7 +3121,7 @@
     "category": "NFTs",
     "title": "ERC721 (A) - with meta-transactions",
     "notice": "Azuki's implemntation of standard EIP-721 with ability to accept meta transactions (mainly transfer or burn methods).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/ERC721AWithERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/ERC721AWithERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
@@ -2991,6 +3139,8 @@
       "137": "0xcE824cbb7B017526c4dd7E86A27Ff73C46609982",
       "250": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "338": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "599": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "1088": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "1284": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "4002": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "9000": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
@@ -3023,6 +3173,8 @@
       "fuse": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "goerli": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
       "mainnet": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
+      "metis": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "metisGoerli": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "moonbeam": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "nearAuroraTestnet": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "okcMainnet": "0x137d31C9E75eeb883d88406944540F2FB8bfDcaF",
@@ -3040,7 +3192,7 @@
       "unlockByOwner(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x822b3992"
     ],
@@ -3051,7 +3203,7 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as owner",
     "notice": "Allow locking tokens as the contract owner.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/locking/ERC721LockableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
@@ -3069,6 +3221,8 @@
       "137": "0x77e03F68C1Ef341a4D2fc5E8A878d2a4B3e1DD59",
       "250": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "338": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "599": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "1088": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "1284": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "4002": "0x0F59d516C928aA8DeA3F4d41F6B0B216611a39ce",
       "9000": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
@@ -3101,6 +3255,8 @@
       "fuse": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "goerli": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
       "mainnet": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
+      "metis": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
+      "metisGoerli": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "moonbeam": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "nearAuroraTestnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "okcMainnet": "0x1ee1fEd614B687D913fD9874FBC60CBfE15964d9",
@@ -3120,7 +3276,7 @@
       "unlockByRole(uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x28ed446a"
     ],
@@ -3131,7 +3287,7 @@
     "category": "NFTs",
     "title": "ERC721 - Lock as role",
     "notice": "Allow locking tokens by any sender who has the LOCKER_ROLE.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/locking/ERC721LockableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
@@ -3149,6 +3305,8 @@
       "137": "0x13a589CF3242C86b9cFde92c41A2a2B4cd631b51",
       "250": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
       "338": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
+      "599": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "1088": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "1284": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "4002": "0x644962F716f6D75E026Bd9B3b42582C3D1346c4A",
       "9000": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
@@ -3181,6 +3339,8 @@
       "fuse": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "goerli": "0xDe7abc1A2DcB13728F8e84CFcbFbE6fC790D572A",
       "mainnet": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
+      "metis": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "metisGoerli": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "moonbeam": "0xb273f563F6fD19a4B48c027456EBc53c58a661c5",
       "nearAuroraTestnet": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "okcMainnet": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
@@ -3197,7 +3357,7 @@
       "tokenURI(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x5b5e139f"
     ],
@@ -3208,7 +3368,7 @@
     "category": "NFTs",
     "title": "ERC721 - Metadata",
     "notice": "Provides metadata for ERC721 tokens according to standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/metadata/ERC721Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
@@ -3226,6 +3386,8 @@
       "137": "0x1493E072034aA12188095f65172B97c97B223385",
       "250": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "338": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
+      "599": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "1088": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "1284": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "4002": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "9000": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
@@ -3258,6 +3420,8 @@
       "fuse": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "goerli": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
       "mainnet": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
+      "metis": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "metisGoerli": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "moonbeam": "0xc65C4e0C5f81E7016F75f38387b5D13e8775f729",
       "nearAuroraTestnet": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "okcMainnet": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
@@ -3273,7 +3437,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -3284,7 +3448,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as owner",
     "notice": "Allow minting as contract owner with no restrictions (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/minting/ERC721MintableOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
@@ -3302,6 +3466,8 @@
       "137": "0xc1b196f70787861629bB2683C4ca5f88a5b21Ac3",
       "250": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "338": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "599": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "1088": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "1284": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "4002": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "9000": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
@@ -3334,6 +3500,8 @@
       "fuse": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "goerli": "0xd2DaeCF596eC47174CE38A97C747e33723FeC5df",
       "mainnet": "0x48F9152b91103E158029921C59Ff844d30468288",
+      "metis": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
+      "metisGoerli": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "moonbeam": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "nearAuroraTestnet": "0xe00eEeb0cC699f58cc3c9acCc7C7009c6ffe30ab",
       "okcMainnet": "0xf61E4e084A73bbc1A862566A3ad2cf5fe685fE69",
@@ -3349,7 +3517,7 @@
       "mintByOwner(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x197f2429"
     ],
@@ -3360,7 +3528,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as owner - with meta-transactions",
     "notice": "Allow minting as owner via meta transactions, signed by the owner private key. (supports ERC721A)",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/minting/ERC721MintableOwnableERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
@@ -3378,6 +3546,8 @@
       "137": "0x16d9E9F1f339c1aa90ADFAEac26E518B6c0e311b",
       "250": "0xED4D5A245903825E042430C3058d3e64B482F60e",
       "338": "0x6eeC81939d74586703C8712CA8d98825085Af839",
+      "599": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "1088": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "1284": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "4002": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
       "9000": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
@@ -3410,6 +3580,8 @@
       "fuse": "0x6eeC81939d74586703C8712CA8d98825085Af839",
       "goerli": "0x46D3703A02205EeC186Cf1f8085F26215b7bfa45",
       "mainnet": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
+      "metis": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
+      "metisGoerli": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "moonbeam": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "nearAuroraTestnet": "0x8d730544AED6d3F0C7A4a702BbB9d97583e5c823",
       "okcMainnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
@@ -3428,7 +3600,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xef970b0f"
     ],
@@ -3439,7 +3611,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/minting/ERC721MintableRoleBased.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
@@ -3457,6 +3629,8 @@
       "137": "0x39bFe7f8843D313E47b8e916E767812C699143a5",
       "250": "0x185C57DCb7787BB94B183aAFf951DF934F89FFf5",
       "338": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
+      "599": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
+      "1088": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "1284": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "4002": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
       "9000": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
@@ -3489,6 +3663,8 @@
       "fuse": "0x0f05228b9b2dD98c3A6b5E89bdFD44b2e7F63245",
       "goerli": "0x2368b856c7201d9b5cBcaD3Ef7be26CFDaca8DfD",
       "mainnet": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
+      "metis": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "metisGoerli": "0x1aDDE2eEa8c6c85923535DD9Bed202b94A2A8eA7",
       "moonbeam": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "nearAuroraTestnet": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "okcMainnet": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
@@ -3507,7 +3683,7 @@
       "mintByRole(address[],uint256[])"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xef970b0f"
     ],
@@ -3518,7 +3694,7 @@
     "category": "NFTs",
     "title": "ERC721 - Mint as role - with meta-transactions",
     "notice": "Allow minting for senders with MINTER_ROLE to mint new tokens with meta-transactions supported via ERC2771 (supports ERC721A).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
@@ -3536,6 +3712,8 @@
       "137": "0x73218E3e5F888f27256a6592A92f6A572147a4d1",
       "250": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "338": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
+      "599": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
+      "1088": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "1284": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "4002": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "9000": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
@@ -3568,6 +3746,8 @@
       "fuse": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "goerli": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
       "mainnet": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
+      "metis": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
+      "metisGoerli": "0xe69E05f4f2b86aA996d76b43A407a93d3Fa84345",
       "moonbeam": "0xB19105DfCC8CF80240e86aC7F2CFa9264D6167a8",
       "nearAuroraTestnet": "0x2F33676a7028662F60b5E316bfE2BcF03bdE74A9",
       "okcMainnet": "0x50862ddB120017a4d48816C9073cF50f46438e4D",
@@ -3584,7 +3764,7 @@
       "setMaxSupply(uint256)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x8a7b7298"
     ],
@@ -3595,7 +3775,7 @@
     "category": "NFTs",
     "title": "ERC721 - Supply - Admin - Ownable",
     "notice": "Allows owner of a EIP-721 contract to change max supply of tokens.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/supply/ERC721SupplyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
@@ -3613,6 +3793,8 @@
       "137": "0xED72eDd0D7ECce3889F8Fc1D3394061d4C7c1278",
       "250": "0x712a4ff806acD985f914E0ebc1EbC7b17361d778",
       "338": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
+      "599": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
+      "1088": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "1284": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "4002": "0x6BCbc974500905Bb6EaBFd34BE3c6B05ee7F2499",
       "9000": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
@@ -3645,6 +3827,8 @@
       "fuse": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "goerli": "0x601178237BEf98503c5Be9b3858247967b87BC5a",
       "mainnet": "0x6aC77C70a4Ed04D2B74B825D52FB84214eEB96B3",
+      "metis": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
+      "metisGoerli": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "moonbeam": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "nearAuroraTestnet": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "okcMainnet": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
@@ -3670,7 +3854,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254",
       "0x352a90bb"
@@ -3683,7 +3867,7 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales",
     "notice": "Sales mechanism for ERC721 NFTs with multiple tiered pricing, allowlist and allocation plans.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/sales/ERC721TieredSales.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
@@ -3701,6 +3885,8 @@
       "137": "0xA2296c81c1755deB188Bea8187633256C2E5D7A5",
       "250": "0x6aC77C70a4Ed04D2B74B825D52FB84214eEB96B3",
       "338": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
+      "599": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
+      "1088": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "1284": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "4002": "0xFf6e39A766c55B5f56E58572B8C7bA54ef57acaB",
       "9000": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
@@ -3733,6 +3919,8 @@
       "fuse": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "goerli": "0x005dAb7c53aDcC3194C861b1129Ca13e0cfd1E63",
       "mainnet": "0xFe9225C81A9991925E626a41d6D3fd21C2e2E479",
+      "metis": "0xd59375B90526C16a007a779c15A844627fdBe716",
+      "metisGoerli": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "moonbeam": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "nearAuroraTestnet": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "okcMainnet": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
@@ -3758,7 +3946,7 @@
       "walletMintedByTier(uint256,address)"
     ],
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x79f33254"
     ],
@@ -3769,7 +3957,7 @@
     "category": "NFTs",
     "title": "ERC721 - Tiered Sales - with meta-transactions",
     "notice": "Sales mechanism for ERC721 NFTs with ERC2771 meta-transactions support (e.g. credit card minting).",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/ERC721/facets/sales/ERC721TieredSalesERC2771.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/License": {
@@ -3787,6 +3975,8 @@
       "137": "0xf6a0957898ba2beD2CD0Ee31dA3504b510Fde0F6",
       "250": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "338": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+      "599": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+      "1088": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "1284": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "4002": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "9000": "0xF5CB96fC0866235CbB17919c4b3416B2247e36A6",
@@ -3819,6 +4009,8 @@
       "fuse": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "goerli": "0x6A1c6F516ca7FA869449931af883d91Ed8A90a2D",
       "mainnet": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
+      "metis": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "metisGoerli": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "moonbeam": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "nearAuroraTestnet": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "okcMainnet": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
@@ -3837,7 +4029,7 @@
       "licenseVersion()"
     ],
     "fqn": "flair-sdk:legal/license/License",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x88a1e8f3",
       "0x649a51a8"
@@ -3847,7 +4039,7 @@
     "category": "Legal",
     "title": "License",
     "notice": "Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \"Can't Be Evil\".",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/legal/license/License.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/legal/license/License.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:legal/license/LicenseOwnable": {
@@ -3865,6 +4057,8 @@
       "137": "0xf1293f3796BD47F3623e359d17a0a134cC84b517",
       "250": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "338": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "599": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
+      "1088": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "1284": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "4002": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "9000": "0xA91CF95Af2C57aA1D5F4461a5Aa6cb2e027e42d8",
@@ -3897,6 +4091,8 @@
       "fuse": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "goerli": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
       "mainnet": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
+      "metis": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "metisGoerli": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "moonbeam": "0xee3fcdF6e5D1d5c5900D9B8DC388D03801d633c9",
       "nearAuroraTestnet": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "okcMainnet": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
@@ -3913,7 +4109,7 @@
       "setLicenseVersion(uint8)"
     ],
     "fqn": "flair-sdk:legal/license/LicenseOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x06ff95be"
     ],
@@ -3925,7 +4121,7 @@
     "category": "Legal",
     "title": "License - Admin - Ownable",
     "notice": "Allow contract owner to manage license version, name and URI.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/legal/license/LicenseOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/legal/license/LicenseOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/Metadata": {
@@ -3943,6 +4139,8 @@
       "137": "0xd2995522200bd4D5D587750845b9Aebc3C711122",
       "250": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "338": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
+      "599": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
+      "1088": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "1284": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "4002": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
       "9000": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
@@ -3975,6 +4173,8 @@
       "fuse": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "goerli": "0xfaF4e7B5C6B5BEA7e5aeA09Bd56487541141b3F0",
       "mainnet": "0x00232A8326af43515C8413A00b49282e25f50017",
+      "metis": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "metisGoerli": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "moonbeam": "0xAd450761261B1C70C7583ff500D291E1A07EE495",
       "nearAuroraTestnet": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "okcMainnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
@@ -3991,7 +4191,7 @@
       "symbol()"
     ],
     "fqn": "flair-sdk:token/common/metadata/Metadata",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x93254542"
     ],
@@ -4000,7 +4200,7 @@
     "category": "Tokens",
     "title": "Metadata",
     "notice": "Provides contract name and symbol.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/common/metadata/Metadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/common/metadata/Metadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
@@ -4018,6 +4218,8 @@
       "137": "0x29158AD881E62e5A655381Aa85D164b40453193a",
       "250": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "338": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "599": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
+      "1088": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "1284": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "4002": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "9000": "0x166b5579474936a608478D6928E25F3272D92f89",
@@ -4050,6 +4252,8 @@
       "fuse": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "goerli": "0x0dF0885058D018693D2B3C6648f3e451683a4613",
       "mainnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
+      "metis": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "metisGoerli": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "moonbeam": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "nearAuroraTestnet": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "okcMainnet": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
@@ -4066,7 +4270,7 @@
       "setSymbol(string)"
     ],
     "fqn": "flair-sdk:token/common/metadata/MetadataOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x1f0b49eb"
     ],
@@ -4077,7 +4281,7 @@
     "category": "Tokens",
     "title": "Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change name and symbol, or freeze them forever.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/common/metadata/MetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/common/metadata/MetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:access/ownable/Ownable": {
@@ -4095,6 +4299,8 @@
       "137": "0x68ab666d5ede1b9f0c06da5f2bde651824bd2534",
       "250": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "338": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
+      "599": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
+      "1088": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
       "1284": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "4002": "0x5DF94f718a1C52f7685DA531842B67D1fff15584",
       "9000": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
@@ -4127,6 +4333,8 @@
       "fuse": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "goerli": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
       "mainnet": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
+      "metis": "0xae19F12838b3513246769Ed8636D565F75Dcb1c7",
+      "metisGoerli": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "moonbeam": "0x5dB0493c729533e5A57e9885c376c41Ceb54C56E",
       "nearAuroraTestnet": "0xF8fA73a567812c638e3258144965c03680CD2D87",
       "okcMainnet": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
@@ -4143,7 +4351,7 @@
       "transferOwnership(address)"
     ],
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x7f5828d0"
     ],
@@ -4152,7 +4360,7 @@
     "category": "Access",
     "title": "ERC173 - Ownable",
     "notice": "Ownership access control facet based on EIP-173 which would be already included as a core facet in Flair's Diamond contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/access/ownable/Ownable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/access/ownable/Ownable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/Royalty": {
@@ -4170,6 +4378,8 @@
       "137": "0xCC550CBED61fCEDEC269B300251a9C1bAbB771a5",
       "250": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "338": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "599": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
+      "1088": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "1284": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "4002": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "9000": "0x47C91adF07FA05a6e6fC7d9a31780eAb6e6e60A3",
@@ -4202,6 +4412,8 @@
       "fuse": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "goerli": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
       "mainnet": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
+      "metis": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "metisGoerli": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "moonbeam": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "nearAuroraTestnet": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "okcMainnet": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
@@ -4223,7 +4435,7 @@
       "royaltyInfo(uint256,uint256)"
     ],
     "fqn": "flair-sdk:finance/royalty/Royalty",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x2a55205a",
       "0x821be678",
@@ -4237,7 +4449,7 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty",
     "notice": "Provide standard on-chain EIP-2981 royalty support for ERC721 or ERC1155 tokens, and additional functions for Rarible and Foundation.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/royalty/Royalty.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/royalty/Royalty.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcement": {
@@ -4255,6 +4467,8 @@
       "137": "0x9fD97813197377Fef180B8E4acDcF5c1F6509AA9",
       "250": "0x06CE0C5759fad39088a6B428C45755c0f256C9b0",
       "338": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
+      "599": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "1088": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "1284": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "4002": "0xedE905c334D4278194fF240a3B2009E05C09879A",
       "9000": "0x21e829BaFF29509e87E94D59d57d200B50Eaeb7F",
@@ -4285,6 +4499,8 @@
       "fuse": "0xd6ebdF16Ca009267bed5EDf73458762dC301A8Fe",
       "goerli": "0x6e20c8b5466133d10287332589329dcFA90A1290",
       "mainnet": "0x5dd91C4418e15fcca4DB1D01b5C6f875Ca405055",
+      "metis": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "metisGoerli": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "moonbeam": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "nearAuroraTestnet": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "okcMainnet": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
@@ -4299,7 +4515,7 @@
       "hasRoyaltyEnforcement()"
     ],
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcement",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xffa6b6b8"
     ],
@@ -4308,7 +4524,7 @@
     "category": "Tokens",
     "title": "Royalty Enforcement",
     "notice": "Shows current state of on-chain royalties enforcement on blocklisting marketplaces.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/royalty/RoyaltyEnforcement.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/royalty/RoyaltyEnforcement.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable": {
@@ -4326,6 +4542,8 @@
       "137": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
       "250": "0x5dd91C4418e15fcca4DB1D01b5C6f875Ca405055",
       "338": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
+      "599": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "1088": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "1284": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "4002": "0x0918555b34dBa7C9f4984234597DCD7a3A26Af0a",
       "9000": "0xEE122C46dFd680194268E614928b6dCD621aa533",
@@ -4356,6 +4574,8 @@
       "fuse": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "goerli": "0x111177d600b7449B685bf8fF654d236588aF9fA2",
       "mainnet": "0xdbAc88824f9FaE585EAA07c598e693E588E1Bb18",
+      "metis": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
+      "metisGoerli": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "moonbeam": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "nearAuroraTestnet": "0x5bdECF506Cc673a60dD8c820fa1fd3806e459864",
       "okcMainnet": "0xF78f311924255e2C42a4941F8400c485a4442250",
@@ -4371,7 +4591,7 @@
       "toggleRoyaltyEnforcement(bool)"
     ],
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x06ad59bc"
     ],
@@ -4382,7 +4602,7 @@
     "category": "Tokens",
     "title": "Royalty Enforcement - Admin - Ownable",
     "notice": "Controls where on-chain royalties must be enforced by blocklisting marketplaces.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/royalty/RoyaltyEnforcementOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/royalty/RoyaltyEnforcementOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
@@ -4400,6 +4620,8 @@
       "137": "0x3FdD50ff88712e4f8AB329EBEA847Ada88813603",
       "250": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "338": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "599": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "1088": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "1284": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "4002": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "9000": "0x9Ce515bA286bE13248cF65e2BF3c0Ec7114341B7",
@@ -4432,6 +4654,8 @@
       "fuse": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "goerli": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
       "mainnet": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
+      "metis": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "metisGoerli": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "moonbeam": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "nearAuroraTestnet": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "okcMainnet": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
@@ -4447,7 +4671,7 @@
       "setTokenRoyalties((uint256,address,uint16)[])"
     ],
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xbe561268"
     ],
@@ -4459,7 +4683,7 @@
     "category": "Finance",
     "title": "ERC2981 - Royalty - Admin - Ownable",
     "notice": "Allow contract owner to manage token royalties based on EIP-2981 standard.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/royalty/RoyaltyOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/royalty/RoyaltyOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
@@ -4477,6 +4701,8 @@
       "137": "0xFD348987ed2e39e899C68988A0FBF8A8cA9DF311",
       "250": "0x4B5fa4635D507Cb8f4081da68647071C80dC0d21",
       "338": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
+      "599": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
+      "1088": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "1284": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "4002": "0xED4D5A245903825E042430C3058d3e64B482F60e",
       "9000": "0x2b99B776E0542A4d9Ce6Ec4ed2B2868D643FCC55",
@@ -4509,6 +4735,8 @@
       "fuse": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
       "goerli": "0x974D4D0D58322e4Ae13D73a941EE32fbFA84fC37",
       "mainnet": "0xa7BAFc51800779DC3557c916AFC5AA92af4aE8B8",
+      "metis": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
+      "metisGoerli": "0x7Ac4a0cE09D67f1C6Dc25138AdacF8D2195A363F",
       "moonbeam": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "nearAuroraTestnet": "0x9329dc0e42c1f45661AAd2EeB1538c5dA9187448",
       "okcMainnet": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
@@ -4524,7 +4752,7 @@
       "configureTiering(uint256[],(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256)[])"
     ],
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xf8458dcd"
     ],
@@ -4535,7 +4763,7 @@
     "category": "NFTs",
     "title": "Tiered Sales - Admin - Ownable",
     "notice": "Allow contract owner to manage sale tiers.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/sales/TieredSalesOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/sales/TieredSalesOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/TokenMetadata": {
@@ -4553,6 +4781,8 @@
       "137": "0x1F4D5D95a145c7082ae8b91Dc27bD4061E439475",
       "250": "0x53F5Dd7344Dc677963d07a5B6a9267316B52baC3",
       "338": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "599": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
+      "1088": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "1284": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "4002": "0x53F5Dd7344Dc677963d07a5B6a9267316B52baC3",
       "9000": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
@@ -4585,6 +4815,8 @@
       "fuse": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "goerli": "0xf2178fd0eb1c2e70b0aa9eac227be59b567b1ac3",
       "mainnet": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
+      "metis": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
+      "metisGoerli": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "moonbeam": "0x871075393948FdA247fAE1bc396543c2Ffa36F79",
       "nearAuroraTestnet": "0x0c63546bFa4096C592d2BfDd9Ac9b6adBB181ea7",
       "okcMainnet": "0xc4062CaF3E54978116303ac087C958b6764f2166",
@@ -4605,7 +4837,7 @@
       "uriSuffixLocked()"
     ],
     "fqn": "flair-sdk:token/common/metadata/TokenMetadata",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x52ef6f9a"
     ],
@@ -4614,7 +4846,7 @@
     "category": "NFTs",
     "title": "NFT Token Metadata",
     "notice": "Provides common functions for various NFT metadata standards. This extension supports base URI, per-token URI, and a fallback URI. You can also freeze URIs until a certain token ID.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/common/metadata/TokenMetadata.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/common/metadata/TokenMetadata.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:token/common/metadata/TokenMetadataOwnable": {
@@ -4632,6 +4864,8 @@
       "137": "0x65b55427Ed2124C5a3DA13e16F94B48b5019d29C",
       "250": "0x0918555b34dBa7C9f4984234597DCD7a3A26Af0a",
       "338": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "599": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
+      "1088": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "1284": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "4002": "0xa6a7986065ba0afaf13fa9155bcfc4c2d0e80a0a",
       "9000": "0x933d6a003a024dB27926Ca44bF717658813BA570",
@@ -4664,6 +4898,8 @@
       "fuse": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "goerli": "0xa69Ce2578478499736A4170d01da8D9289901461",
       "mainnet": "0xdea60aca7e5bfa2d482bf4eec9c1ba0580b26a5b",
+      "metis": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "metisGoerli": "0x4F40fe9Ee1EAB15D38b6D8056b415BbEe1e4CCbF",
       "moonbeam": "0x0599646d68cC022Fa5B7D0DB88A21807735ff857",
       "nearAuroraTestnet": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "okcMainnet": "0x00232A8326af43515C8413A00b49282e25f50017",
@@ -4686,7 +4922,7 @@
       "setURISuffix(string)"
     ],
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x3f963a7f"
     ],
@@ -4697,7 +4933,7 @@
     "category": "NFTs",
     "title": "NFT Token Metadata - Admin - Ownable",
     "notice": "Allows diamond owner to change base, per-token, and fallback URIs, as wel as freezing URIs.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/token/common/metadata/TokenMetadataOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/token/common/metadata/TokenMetadataOwnable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
@@ -4715,6 +4951,8 @@
       "137": "0x85395811c544FaDB7E213dA3b7FF286568310fb6",
       "250": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "338": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
+      "599": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
+      "1088": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "1284": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "4002": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "9000": "0x6a239F882f3aB169829DC2149d04C2Adb5C63368",
@@ -4747,6 +4985,8 @@
       "fuse": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "goerli": "0x1B66A8947730a857B938F7191D2603635A61Afe2",
       "mainnet": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
+      "metis": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
+      "metisGoerli": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "moonbeam": "0x70492D215774d05f279b7C811399AEe2406d4c2D",
       "nearAuroraTestnet": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "okcMainnet": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
@@ -4766,7 +5006,7 @@
       "withdrawRecipientLocked()"
     ],
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0xa9c00e2f"
     ],
@@ -4775,7 +5015,7 @@
     "category": "Finance",
     "title": "Withdrawable",
     "notice": "Allow withdrwaing any ERC20 or native tokens from the contract.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/withdraw/Withdrawable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/withdraw/Withdrawable.sol",
     "author": "flair-sdk.eth"
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
@@ -4793,6 +5033,8 @@
       "137": "0x6a472ca58d9F49DD0813a07E0881c9C95631B080",
       "250": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "338": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
+      "599": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
+      "1088": "0x960327273C346eE9dfa122a757425B350b51F833",
       "1284": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "4002": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "9000": "0xD3B8fb60442288b185Db9d3B8c4cacccaa3451C0",
@@ -4825,6 +5067,8 @@
       "fuse": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "goerli": "0x607E2580c3377584596C8B02B5527CB23259E191",
       "mainnet": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
+      "metis": "0x960327273C346eE9dfa122a757425B350b51F833",
+      "metisGoerli": "0xCeEb0cF54453f3070Da376fe34D94E278D3f3f6b",
       "moonbeam": "0xe0F561A9C77c04092593Ff88370D703F239B4f7f",
       "nearAuroraTestnet": "0x960327273C346eE9dfa122a757425B350b51F833",
       "okcMainnet": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
@@ -4843,7 +5087,7 @@
       "setWithdrawRecipient(address)"
     ],
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
-    "version": "2.23.6",
+    "version": "2.23.8",
     "providesInterfaces": [
       "0x7246cea5"
     ],
@@ -4854,7 +5098,7 @@
     "category": "Finance",
     "title": "Withdrawable - Admin - Ownable",
     "notice": "Allow contract owner to manage who can withdraw funds and how.",
-    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.6/src/finance/withdraw/WithdrawableOwnable.sol",
+    "source": "https://github.com/flair-sdk/contracts/blob/v2.23.8/src/finance/withdraw/WithdrawableOwnable.sol",
     "author": "flair-sdk.eth"
   }
 }

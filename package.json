@@ -83,6 +83,8 @@
     "deploy:moonriver": "npx hardhat deploy --network moonriver",
     "deploy:moonbeam": "npx hardhat deploy --network moonbeam",
     "deploy:fuse": "npx hardhat deploy --network fuse",
+    "deploy:metis": "npx hardhat deploy --network metis",
+    "deploy:metisGoerli": "npx hardhat deploy --network metisGoerli",
     "verify:mainnet": "npx hardhat --network mainnet sourcify && npx hardhat etherscan-verify --network mainnet",
     "verify:goerli": "npx hardhat --network goerli sourcify && npx hardhat etherscan-verify --network goerli",
     "verify:sepolia": "npx hardhat --network sepolia sourcify && npx hardhat etherscan-verify --network sepolia",
@@ -112,7 +114,9 @@
     "verify:oasisEmerald": "npx hardhat --network oasisEmerald sourcify && npx hardhat etherscan-verify --network oasisEmerald",
     "verify:oasisEmeraldTestnet": "npx hardhat --network oasisEmeraldTestnet sourcify && npx hardhat etherscan-verify --network oasisEmeraldTestnet",
     "verify:zksyncTestnet": "npx hardhat --network zksyncTestnet sourcify && npx hardhat etherscan-verify --network zksyncTestnet",
-    "verify:fuse": "npx hardhat --network fuse sourcify && npx hardhat etherscan-verify --network fuse"
+    "verify:fuse": "npx hardhat --network fuse sourcify && npx hardhat etherscan-verify --network fuse",
+    "verify:metis": "npx hardhat --network metis sourcify && npx hardhat etherscan-verify --network metis",
+    "verify:metisGoerli": "npx hardhat --network metisGoerli sourcify && npx hardhat etherscan-verify --network metisGoerli"
   },
   "dependencies": {
     "operator-filter-registry": "^1.3.0",

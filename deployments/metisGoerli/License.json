@@ -1,0 +1,154 @@
+{
+  "address": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "ErrLicenseLocked",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "customLicenseURI",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "customLicenseName",
+          "type": "string"
+        }
+      ],
+      "name": "CustomLicenseSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [],
+      "name": "LicenseLocked",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "enum ILicenseInternal.LicenseVersion",
+          "name": "licenseVersion",
+          "type": "uint8"
+        }
+      ],
+      "name": "LicenseVersionSet",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "customLicenseName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "customLicenseURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLicenseName",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getLicenseURI",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "licenseVersion",
+      "outputs": [
+        {
+          "internalType": "enum ILicenseInternal.LicenseVersion",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0xa439d7dd87b5e117f91fd403a12606efcf9b347df7a309b5e5201b15d4570dd0",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
+    "transactionIndex": 0,
+    "gasUsed": "557573",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x2e01bbc51a9f74fabb860b5504a2efc77a06eb3608cc73fac9faee7059525048",
+    "transactionHash": "0xa439d7dd87b5e117f91fd403a12606efcf9b347df7a309b5e5201b15d4570dd0",
+    "logs": [],
+    "blockNumber": 271269,
+    "cumulativeGasUsed": "557573",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bc22c1dff1a3b21bf4b0d926dd7f4c1e",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ErrLicenseLocked\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"customLicenseURI\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"customLicenseName\",\"type\":\"string\"}],\"name\":\"CustomLicenseSet\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[],\"name\":\"LicenseLocked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"enum ILicenseInternal.LicenseVersion\",\"name\":\"licenseVersion\",\"type\":\"uint8\"}],\"name\":\"LicenseVersionSet\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"customLicenseName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"customLicenseURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLicenseName\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getLicenseURI\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"licenseVersion\",\"outputs\":[{\"internalType\":\"enum ILicenseInternal.LicenseVersion\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Legal\",\"custom:provides-interfaces\":\"ILicense ICantBeEvil\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"License\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \\\"Can't Be Evil\\\".\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/legal/license/License.sol\":\"License\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/legal/license/ILicense.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./a16z/ICantBeEvil.sol\\\";\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\ninterface ILicense is ILicenseInternal, ICantBeEvil {\\n    function licenseVersion() external view returns (ILicenseInternal.LicenseVersion);\\n\\n    function customLicenseURI() external view returns (string memory);\\n\\n    function customLicenseName() external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x830403b876f0d9cb95d02f2cf2212166f1077b6ece36ee8d8477cad9828ab77b\",\"license\":\"AGPL-3.0\"},\"src/legal/license/ILicenseInternal.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity ^0.8.15;\\n\\ninterface ILicenseInternal {\\n    enum LicenseVersion {\\n        CBE_CC0,\\n        CBE_ECR,\\n        CBE_NECR,\\n        CBE_NECR_HS,\\n        CBE_PR,\\n        CBE_PR_HS,\\n        CUSTOM,\\n        UNLICENSED\\n    }\\n\\n    error ErrLicenseLocked();\\n\\n    event CustomLicenseSet(string customLicenseURI, string customLicenseName);\\n    event LicenseVersionSet(LicenseVersion licenseVersion);\\n    event LicenseLocked();\\n}\\n\",\"keccak256\":\"0x54aa4ce575c120cc31f9bdfd79b490ac25993dd43e6c78ce6d153c87abbc2fa7\",\"license\":\"AGPL-3.0\"},\"src/legal/license/License.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./LicenseStorage.sol\\\";\\nimport \\\"./LicenseInternal.sol\\\";\\nimport \\\"./ILicense.sol\\\";\\n\\n/**\\n * @title License\\n * @notice Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \\\"Can't Be Evil\\\".\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Legal\\n * @custom:provides-interfaces ILicense ICantBeEvil\\n */\\ncontract License is ILicense, LicenseInternal {\\n    function getLicenseURI() external view returns (string memory) {\\n        return _getLicenseURI();\\n    }\\n\\n    function getLicenseName() external view returns (string memory) {\\n        return _getLicenseName();\\n    }\\n\\n    function licenseVersion() external view returns (LicenseVersion) {\\n        return _licenseVersion();\\n    }\\n\\n    function customLicenseURI() external view returns (string memory) {\\n        return LicenseStorage.layout().customLicenseURI;\\n    }\\n\\n    function customLicenseName() external view returns (string memory) {\\n        return LicenseStorage.layout().customLicenseName;\\n    }\\n}\\n\",\"keccak256\":\"0xe3246e9610661ff7beb7fa381126eefa90b14f022408cc5d6437a1837d2f281d\",\"license\":\"AGPL-3.0\"},\"src/legal/license/LicenseInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"./LicenseStorage.sol\\\";\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\n/**\\n * @title Functionality to expose license name and URI for the assets of the contract.\\n */\\nabstract contract LicenseInternal is ILicenseInternal {\\n    using Strings for uint256;\\n    using LicenseStorage for LicenseStorage.Layout;\\n\\n    string internal constant A16Z_BASE_LICENSE_URI = \\\"ar://_D9kN1WrNWbCq55BSAGRbTB4bS3v8QAPTYmBThSbX3A/\\\";\\n\\n    function _licenseVersion() internal view virtual returns (ILicenseInternal.LicenseVersion) {\\n        return LicenseStorage.layout().licenseVersion;\\n    }\\n\\n    function _getLicenseURI() internal view virtual returns (string memory) {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersion == LicenseVersion.CUSTOM) {\\n            return l.customLicenseURI;\\n        }\\n        if (l.licenseVersion == LicenseVersion.UNLICENSED) {\\n            return \\\"\\\";\\n        }\\n\\n        return string.concat(A16Z_BASE_LICENSE_URI, uint256(l.licenseVersion).toString());\\n    }\\n\\n    function _getLicenseName() internal view virtual returns (string memory) {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersion == LicenseVersion.CUSTOM) {\\n            return l.customLicenseName;\\n        }\\n\\n        if (l.licenseVersion == LicenseVersion.UNLICENSED) {\\n            return \\\"\\\";\\n        }\\n\\n        if (LicenseVersion.CBE_CC0 == l.licenseVersion) return \\\"CBE_CC0\\\";\\n        if (LicenseVersion.CBE_ECR == l.licenseVersion) return \\\"CBE_ECR\\\";\\n        if (LicenseVersion.CBE_NECR == l.licenseVersion) return \\\"CBE_NECR\\\";\\n        if (LicenseVersion.CBE_NECR_HS == l.licenseVersion) return \\\"CBE_NECR_HS\\\";\\n        if (LicenseVersion.CBE_PR == l.licenseVersion) return \\\"CBE_PR\\\";\\n        else return \\\"CBE_PR_HS\\\";\\n    }\\n\\n    function _setCustomLicense(string calldata _customLicenseName, string calldata _customLicenseURI) internal virtual {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersionLocked) {\\n            revert ErrLicenseLocked();\\n        }\\n\\n        l.licenseVersion = LicenseVersion.CUSTOM;\\n        l.customLicenseName = _customLicenseName;\\n        l.customLicenseURI = _customLicenseURI;\\n\\n        emit CustomLicenseSet(_customLicenseName, _customLicenseURI);\\n    }\\n\\n    function _setLicenseVersion(LicenseVersion _newVersion) internal virtual {\\n        LicenseStorage.Layout storage l = LicenseStorage.layout();\\n\\n        if (l.licenseVersionLocked) {\\n            revert ErrLicenseLocked();\\n        }\\n\\n        l.licenseVersion = _newVersion;\\n\\n        emit LicenseVersionSet(_newVersion);\\n    }\\n\\n    function _lockLicenseVersion() internal virtual {\\n        LicenseStorage.layout().licenseVersionLocked = true;\\n\\n        emit LicenseLocked();\\n    }\\n}\\n\",\"keccak256\":\"0x112536fa2b4f35ca20280831eb0facd89da67c6316ac4295638e13dfe9eabf1c\",\"license\":\"MIT\"},\"src/legal/license/LicenseStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"./ILicenseInternal.sol\\\";\\n\\nlibrary LicenseStorage {\\n    struct Layout {\\n        ILicenseInternal.LicenseVersion licenseVersion;\\n        string customLicenseURI;\\n        string customLicenseName;\\n        bool licenseVersionLocked;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.License\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0xfcb98e8289385e14addd110e33cdf22499b7cdf9af83dc1c204ca1e2bad12d1b\",\"license\":\"MIT\"},\"src/legal/license/a16z/ICantBeEvil.sol\":{\"content\":\"// SPDX-License-Identifier: AGPL-3.0\\n\\npragma solidity ^0.8.15;\\n\\n// Adopted from \\\"@a16z/contracts/licenses/CantBeEvil.sol\\\"\\ninterface ICantBeEvil {\\n    function getLicenseURI() external view returns (string memory);\\n\\n    function getLicenseName() external view returns (string memory);\\n}\\n\",\"keccak256\":\"0x3abd3621f706abf2f7a7655a846205bc6b24b9d72e0591faba8470f0be67d2ac\",\"license\":\"AGPL-3.0\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610929806100206000396000f3fe608060405234801561001057600080fd5b50600436106100675760003560e01c8063a341793b11610050578063a341793b1461009f578063c7db2893146100a7578063d41a6f5f146100af57600080fd5b806350a5292f1461006c5780636884ff2b1461008a575b600080fd5b6100746100b7565b6040516100819190610706565b60405180910390f35b6100926100e9565b604051610081919061075e565b61009261019d565b6100926101a7565b6100926101b1565b60006100e47f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f65460ff1690565b905090565b60607f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f6600101805461011a90610791565b80601f016020809104026020016040519081016040528092919081815260200182805461014690610791565b80156101935780601f1061016857610100808354040283529160200191610193565b820191906000526020600020905b81548152906001019060200180831161017657829003601f168201915b5050505050905090565b60606100e46101e2565b60606100e46104d1565b60607f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f6600201805461011a90610791565b606060007f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f690506006815460ff166007811115610221576102216106f0565b036102b95780600201805461023590610791565b80601f016020809104026020016040519081016040528092919081815260200182805461026190610791565b80156102ae5780601f10610283576101008083540402835291602001916102ae565b820191906000526020600020905b81548152906001019060200180831161029157829003601f168201915b505050505091505090565b6007815460ff1660078111156102d1576102d16106f0565b036102ea57505060408051602081019091526000815290565b805460ff166007811115610300576103006106f0565b60000361034057505060408051808201909152600781527f4342455f43433000000000000000000000000000000000000000000000000000602082015290565b805460ff166007811115610356576103566106f0565b60010361039657505060408051808201909152600781527f4342455f45435200000000000000000000000000000000000000000000000000602082015290565b805460ff1660078111156103ac576103ac6106f0565b6002036103ec57505060408051808201909152600881527f4342455f4e454352000000000000000000000000000000000000000000000000602082015290565b805460ff166007811115610402576104026106f0565b60030361044257505060408051808201909152600b81527f4342455f4e4543525f4853000000000000000000000000000000000000000000602082015290565b805460ff166007811115610458576104586106f0565b60040361049857505060408051808201909152600681527f4342455f50520000000000000000000000000000000000000000000000000000602082015290565b505060408051808201909152600981527f4342455f50525f48530000000000000000000000000000000000000000000000602082015290565b606060007f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f690506006815460ff166007811115610510576105106106f0565b036105245780600101805461023590610791565b6007815460ff16600781111561053c5761053c6106f0565b0361055557505060408051602081019091526000815290565b6040518060600160405280603181526020016108c360319139815461058d9060ff166007811115610588576105886106f0565b6105b3565b60405160200161059e9291906107cb565b60405160208183030381529060405291505090565b6060816000036105f657505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b8115610620578061060a81610810565b91506106199050600a8361083f565b91506105fa565b60008167ffffffffffffffff81111561063b5761063b610853565b6040519080825280601f01601f191660200182016040528015610665576020820181803683370190505b5090505b84156106e85761067a600183610869565b9150610687600a86610880565b610692906030610894565b60f81b8183815181106106a7576106a76108ac565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053506106e1600a8661083f565b9450610669565b949350505050565b634e487b7160e01b600052602160045260246000fd5b602081016008831061072857634e487b7160e01b600052602160045260246000fd5b91905290565b60005b83811015610749578181015183820152602001610731565b83811115610758576000848401525b50505050565b602081526000825180602084015261077d81604085016020870161072e565b601f01601f19169190910160400192915050565b600181811c908216806107a557607f821691505b6020821081036107c557634e487b7160e01b600052602260045260246000fd5b50919050565b600083516107dd81846020880161072e565b8351908301906107f181836020880161072e565b01949350505050565b634e487b7160e01b600052601160045260246000fd5b600060018201610822576108226107fa565b5060010190565b634e487b7160e01b600052601260045260246000fd5b60008261084e5761084e610829565b500490565b634e487b7160e01b600052604160045260246000fd5b60008282101561087b5761087b6107fa565b500390565b60008261088f5761088f610829565b500690565b600082198211156108a7576108a76107fa565b500190565b634e487b7160e01b600052603260045260246000fdfe61723a2f2f5f44396b4e3157724e576243713535425341475262544234625333763851415054596d42546853625833412fa2646970667358221220881407902d1e554ed3f965bea3f48a1d7e0e043d8728ca9eff5c7d6d24d4f5b664736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100675760003560e01c8063a341793b11610050578063a341793b1461009f578063c7db2893146100a7578063d41a6f5f146100af57600080fd5b806350a5292f1461006c5780636884ff2b1461008a575b600080fd5b6100746100b7565b6040516100819190610706565b60405180910390f35b6100926100e9565b604051610081919061075e565b61009261019d565b6100926101a7565b6100926101b1565b60006100e47f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f65460ff1690565b905090565b60607f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f6600101805461011a90610791565b80601f016020809104026020016040519081016040528092919081815260200182805461014690610791565b80156101935780601f1061016857610100808354040283529160200191610193565b820191906000526020600020905b81548152906001019060200180831161017657829003601f168201915b5050505050905090565b60606100e46101e2565b60606100e46104d1565b60607f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f6600201805461011a90610791565b606060007f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f690506006815460ff166007811115610221576102216106f0565b036102b95780600201805461023590610791565b80601f016020809104026020016040519081016040528092919081815260200182805461026190610791565b80156102ae5780601f10610283576101008083540402835291602001916102ae565b820191906000526020600020905b81548152906001019060200180831161029157829003601f168201915b505050505091505090565b6007815460ff1660078111156102d1576102d16106f0565b036102ea57505060408051602081019091526000815290565b805460ff166007811115610300576103006106f0565b60000361034057505060408051808201909152600781527f4342455f43433000000000000000000000000000000000000000000000000000602082015290565b805460ff166007811115610356576103566106f0565b60010361039657505060408051808201909152600781527f4342455f45435200000000000000000000000000000000000000000000000000602082015290565b805460ff1660078111156103ac576103ac6106f0565b6002036103ec57505060408051808201909152600881527f4342455f4e454352000000000000000000000000000000000000000000000000602082015290565b805460ff166007811115610402576104026106f0565b60030361044257505060408051808201909152600b81527f4342455f4e4543525f4853000000000000000000000000000000000000000000602082015290565b805460ff166007811115610458576104586106f0565b60040361049857505060408051808201909152600681527f4342455f50520000000000000000000000000000000000000000000000000000602082015290565b505060408051808201909152600981527f4342455f50525f48530000000000000000000000000000000000000000000000602082015290565b606060007f686fbd75ec6671870c2ca65eac65ee184d2285f055fb69de73ba3ce5549e15f690506006815460ff166007811115610510576105106106f0565b036105245780600101805461023590610791565b6007815460ff16600781111561053c5761053c6106f0565b0361055557505060408051602081019091526000815290565b6040518060600160405280603181526020016108c360319139815461058d9060ff166007811115610588576105886106f0565b6105b3565b60405160200161059e9291906107cb565b60405160208183030381529060405291505090565b6060816000036105f657505060408051808201909152600181527f3000000000000000000000000000000000000000000000000000000000000000602082015290565b8160005b8115610620578061060a81610810565b91506106199050600a8361083f565b91506105fa565b60008167ffffffffffffffff81111561063b5761063b610853565b6040519080825280601f01601f191660200182016040528015610665576020820181803683370190505b5090505b84156106e85761067a600183610869565b9150610687600a86610880565b610692906030610894565b60f81b8183815181106106a7576106a76108ac565b60200101907effffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff1916908160001a9053506106e1600a8661083f565b9450610669565b949350505050565b634e487b7160e01b600052602160045260246000fd5b602081016008831061072857634e487b7160e01b600052602160045260246000fd5b91905290565b60005b83811015610749578181015183820152602001610731565b83811115610758576000848401525b50505050565b602081526000825180602084015261077d81604085016020870161072e565b601f01601f19169190910160400192915050565b600181811c908216806107a557607f821691505b6020821081036107c557634e487b7160e01b600052602260045260246000fd5b50919050565b600083516107dd81846020880161072e565b8351908301906107f181836020880161072e565b01949350505050565b634e487b7160e01b600052601160045260246000fd5b600060018201610822576108226107fa565b5060010190565b634e487b7160e01b600052601260045260246000fd5b60008261084e5761084e610829565b500490565b634e487b7160e01b600052604160045260246000fd5b60008282101561087b5761087b6107fa565b500390565b60008261088f5761088f610829565b500690565b600082198211156108a7576108a76107fa565b500190565b634e487b7160e01b600052603260045260246000fdfe61723a2f2f5f44396b4e3157724e576243713535425341475262544234625333763851415054596d42546853625833412fa2646970667358221220881407902d1e554ed3f965bea3f48a1d7e0e043d8728ca9eff5c7d6d24d4f5b664736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Legal",
+    "custom:provides-interfaces": "ILicense ICantBeEvil",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "License",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Add license name and content URI for interacting or holding assets of this contract. Based on a16z's \"Can't Be Evil\".",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

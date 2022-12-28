@@ -67,6 +67,10 @@ if (args.includes('mainnet')) {
   etherScanApiKey = '';
 } else if (args.includes('telosTestnet')) {
   etherScanApiKey = '';
+} else if (args.includes('metis')) {
+  etherScanApiKey = '';
+} else if (args.includes('metisGoerli')) {
+  etherScanApiKey = '';
 } else if (args.includes('fuse')) {
   etherScanApiKey = '';
 } else if (args.includes('hardhat')) {
@@ -305,6 +309,17 @@ const config: HardhatUserConfig = {
       chainId: 280,
       zksync: true,
       url: 'https://zksync2-testnet.zksync.dev',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    // Metis
+    metis: {
+      chainId: 1088,
+      url: process.env.METIS_URL || '',
+      accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    metisGoerli: {
+      chainId: 599,
+      url: process.env.METIS_GOERLI_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
   },
