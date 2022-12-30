@@ -38,7 +38,7 @@ contract ERC721TieredSales is
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof);
+        super._executeSale(tierId, count, maxAllowance, proof, 0);
 
         IERC721MintableExtension(address(this)).mintByFacet(_msgSender(), count);
     }

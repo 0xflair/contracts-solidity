@@ -10,6 +10,7 @@ import "../../../../finance/sales/ITieredSalesRoleBased.sol";
 import "../../extensions/mintable/IERC20MintableExtension.sol";
 import "../../extensions/supply/ERC20SupplyStorage.sol";
 import "../../extensions/supply/ERC20SupplyInternal.sol";
+import "../metadata/ERC20MetadataStorage.sol";
 
 /**
  * @title ERC20 - Tiered Sales
@@ -30,6 +31,7 @@ contract ERC20TieredSales is
 {
     using ERC165Storage for ERC165Storage.Layout;
     using ERC20SupplyStorage for ERC20SupplyStorage.Layout;
+    using ERC20MetadataStorage for ERC20MetadataStorage.Layout;
 
     bytes32 public constant MERCHANT_ROLE = keccak256("MERCHANT_ROLE");
 
@@ -39,9 +41,12 @@ contract ERC20TieredSales is
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof);
+        super._executeSale(tierId, count, maxAllowance, proof, ERC20MetadataStorage.layout().decimals);
 
-        IERC20MintableExtension(address(this)).mintByFacet(_msgSender(), count);
+        IERC20MintableExtension(address(this)).mintByFacet(
+            _msgSender(),
+            count
+        );
     }
 
     function mintByTierByRole(

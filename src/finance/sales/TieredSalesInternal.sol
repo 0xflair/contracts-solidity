@@ -92,11 +92,23 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
+    /**
+     * @dev Executes common operations of a sale for a given tier. Checks max allocation of the tier,
+     *      max allowance per wallet, allowlist eligiblity and amount of payment.
+     *      Caller of this internal method must provide the assets to the buyer based on any custom logic.
+     *
+     * @param tierId Tier ID
+     * @param count Number of units (NFTs, Tokens, etc) to be sold
+     * @param maxAllowance Maximum allowance of this wallet defined in the allowlist (only if tier needs an allowlist)
+     * @param proof Merkle proof of the wallet in the allowlist (only if tier needs an allowlist)
+     * @param decimals Decimals of the sold units (only applicable for ERC20 sales, usually "18". For NFTs must be "0")
+     */
     function _executeSale(
         uint256 tierId,
         uint256 count,
         uint256 maxAllowance,
-        bytes32[] calldata proof
+        bytes32[] calldata proof,
+        uint256 decimals
     ) internal virtual {
         address minter = _msgSender();
 
@@ -109,7 +121,11 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
         if (l.tiers[tierId].currency == address(0)) {
-            require(l.tiers[tierId].price * count <= msg.value, "INSUFFICIENT_AMOUNT");
+            if (decimals > 0) {
+                require(((l.tiers[tierId].price) * count) <= msg.value * (10**decimals), "INSUFFICIENT_AMOUNT");
+            } else {
+                require(l.tiers[tierId].price * count <= msg.value, "INSUFFICIENT_AMOUNT");
+            }
         } else {
             IERC20(l.tiers[tierId].currency).transferFrom(minter, address(this), l.tiers[tierId].price * count);
         }
