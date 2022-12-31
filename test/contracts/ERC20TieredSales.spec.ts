@@ -45,7 +45,7 @@ const DEFAULT_TIERS: Tier[] = [
   },
 ];
 
-const deployERC20WithSales = async ({
+export const deployERC20WithSales = async ({
   tiers = DEFAULT_TIERS,
   initializations = [],
 }: {
@@ -1991,6 +1991,45 @@ describe('ERC20 Tiered Sales', function () {
     await expect(
       mintableOwnableFacet.connect(deployer.signer)['mintByOwner(address,uint256)'](userB.signer.address, 2),
     ).to.be.revertedWith('ErrMaxSupplyExceeded()');
+  });
+
+  it('should mint by tier when 1 tier, no allowlist, with erc20 currency', async function () {
+    const { deployer, userA } = await setupTest();
+
+    const currencyERC20Diamond = await deployERC20WithSales();
+    const currencyERC20BaseFacet = await hre.ethers.getContractAt<ERC20Base>('ERC20Base', currencyERC20Diamond.address);
+    const currencyERC20MintableOwnableFacet = await hre.ethers.getContractAt<ERC20MintableOwnable>(
+      'ERC20MintableOwnable',
+      currencyERC20Diamond.address,
+    );
+    await currencyERC20MintableOwnableFacet
+      .connect(deployer.signer)
+      ['mintByOwner(address,uint256)'](userA.signer.address, ethers.utils.parseEther('40'));
+
+    const diamond = await deployERC20WithSales({
+      tiers: [
+        {
+          start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+          end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+          currency: currencyERC20Diamond.address,
+          maxPerWallet: ethers.utils.parseEther('5'),
+          merkleRoot: ZERO_BYTES32,
+          price: utils.parseEther('3'),
+          reserved: 0,
+          maxAllocation: ethers.utils.parseEther('5000'),
+        },
+      ],
+    });
+    const erc20Facet = await hre.ethers.getContractAt<IERC20>('IERC20', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC20TieredSales>('ERC20TieredSales', diamond.address);
+
+    await currencyERC20BaseFacet.connect(userA.signer).approve(diamond.address, ethers.utils.parseEther('1.5'));
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, ethers.utils.parseEther('0.5'), 0, []);
+    expect(await erc20Facet.balanceOf(userA.signer.address)).to.be.equal(ethers.utils.parseEther('0.5'));
+
+    await currencyERC20BaseFacet.connect(userA.signer).approve(diamond.address, ethers.utils.parseEther('7.5'));
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, ethers.utils.parseEther('2.5'), 0, []);
+    expect(await erc20Facet.balanceOf(userA.signer.address)).to.be.equal(ethers.utils.parseEther('3'));
   });
 
   //

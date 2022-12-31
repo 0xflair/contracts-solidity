@@ -3,11 +3,13 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 
 import { expect } from 'chai';
-import { utils } from 'ethers';
+import { ethers, utils } from 'ethers';
 import hre from 'hardhat';
 
 import {
   DiamondLoupe,
+  ERC20Base,
+  ERC20MintableOwnable,
   ERC165,
   ERC721SupplyOwnable,
   ERC721TieredSales,
@@ -21,6 +23,7 @@ import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/all
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
 import { deployDiamond, Initialization } from '../utils/diamond';
 import { Tier } from '../utils/tiered-sales';
+import { deployERC20WithSales } from './ERC20TieredSales.spec';
 
 const DEFAULT_TIERS: Tier[] = [
   {
@@ -217,6 +220,43 @@ describe('ERC721 Tiered Sales', function () {
     await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, [], {
       value: utils.parseEther('0.12'),
     });
+
+    expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
+  });
+
+  it('should mint by tier when 1 tier, no allowlist, with erc20 currency', async function () {
+    const { deployer, userA } = await setupTest();
+
+    const erc20Diamond = await deployERC20WithSales();
+    const erc20BaseFacet = await hre.ethers.getContractAt<ERC20Base>('ERC20Base', erc20Diamond.address);
+    const erc20MintableOwnableFacet = await hre.ethers.getContractAt<ERC20MintableOwnable>(
+      'ERC20MintableOwnable',
+      erc20Diamond.address,
+    );
+
+    await erc20MintableOwnableFacet
+      .connect(deployer.signer)
+      ['mintByOwner(address,uint256)'](userA.signer.address, ethers.utils.parseEther('40'));
+
+    const diamond = await deployERC721WithSales({
+      tiers: [
+        {
+          start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+          end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+          currency: erc20Diamond.address,
+          maxPerWallet: 5,
+          merkleRoot: ZERO_BYTES32,
+          price: utils.parseEther('3'),
+          reserved: 0,
+          maxAllocation: 5000,
+        },
+      ],
+    });
+    const erc721Facet = await hre.ethers.getContractAt<IERC721>('IERC721', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+    await erc20BaseFacet.connect(userA.signer).approve(diamond.address, ethers.utils.parseEther('6'));
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, []);
 
     expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
   });
