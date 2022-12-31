@@ -41,12 +41,9 @@ contract ERC20TieredSales is
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof, ERC20MetadataStorage.layout().decimals);
+        super._executeSale(tierId, count, maxAllowance, proof);
 
-        IERC20MintableExtension(address(this)).mintByFacet(
-            _msgSender(),
-            count
-        );
+        IERC20MintableExtension(address(this)).mintByFacet(_msgSender(), count);
     }
 
     function mintByTierByRole(
@@ -56,9 +53,27 @@ contract ERC20TieredSales is
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant onlyRole(MERCHANT_ROLE) {
-        super._executeSalePrivileged(minter, tierId, count, maxAllowance, proof);
+        super._executeSaleSkipPayment(minter, tierId, count, maxAllowance, proof);
 
         IERC20MintableExtension(address(this)).mintByFacet(minter, count);
+    }
+
+    function _processPayment(
+        uint256 tierId,
+        address minter,
+        address currency,
+        uint256 count,
+        uint256 price
+    ) internal virtual override {
+        tierId;
+
+        if (currency == address(0)) {
+            require((price * count) <= msg.value * (10**ERC20MetadataStorage.layout().decimals), "INSUFFICIENT_AMOUNT");
+        } else {
+            uint256 amountTotal = (price * count) / (10**ERC20MetadataStorage.layout().decimals);
+            require(price == 0 || amountTotal > 0, "INCORRECT_COUNT");
+            IERC20(currency).transferFrom(minter, address(this), amountTotal);
+        }
     }
 
     function _remainingSupply(uint256) internal view virtual override returns (uint256) {

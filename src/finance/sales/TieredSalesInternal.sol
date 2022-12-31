@@ -101,14 +101,12 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
      * @param count Number of units (NFTs, Tokens, etc) to be sold
      * @param maxAllowance Maximum allowance of this wallet defined in the allowlist (only if tier needs an allowlist)
      * @param proof Merkle proof of the wallet in the allowlist (only if tier needs an allowlist)
-     * @param decimals Decimals of the sold units (only applicable for ERC20 sales, usually "18". For NFTs must be "0")
      */
     function _executeSale(
         uint256 tierId,
         uint256 count,
         uint256 maxAllowance,
-        bytes32[] calldata proof,
-        uint256 decimals
+        bytes32[] calldata proof
     ) internal virtual {
         address minter = _msgSender();
 
@@ -120,15 +118,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         require(count <= _availableSupplyForTier(tierId), "EXCEEDS_SUPPLY");
         require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
-        if (l.tiers[tierId].currency == address(0)) {
-            if (decimals > 0) {
-                require(((l.tiers[tierId].price) * count) <= msg.value * (10**decimals), "INSUFFICIENT_AMOUNT");
-            } else {
-                require(l.tiers[tierId].price * count <= msg.value, "INSUFFICIENT_AMOUNT");
-            }
-        } else {
-            IERC20(l.tiers[tierId].currency).transferFrom(minter, address(this), l.tiers[tierId].price * count);
-        }
+        _processPayment(tierId, minter, l.tiers[tierId].currency, count, l.tiers[tierId].price);
 
         l.walletMinted[tierId][minter] += count;
         l.tierMints[tierId] += count;
@@ -140,7 +130,21 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         emit TierSale(tierId, minter, minter, count);
     }
 
-    function _executeSalePrivileged(
+    function _processPayment(
+        uint256 tierId,
+        address minter,
+        address currency,
+        uint256 count,
+        uint256 price
+    ) internal virtual {
+        if (currency == address(0)) {
+            require(price * count <= msg.value, "INSUFFICIENT_AMOUNT");
+        } else {
+            IERC20(currency).transferFrom(minter, address(this), price * count);
+        }
+    }
+
+    function _executeSaleSkipPayment(
         address minter,
         uint256 tierId,
         uint256 count,

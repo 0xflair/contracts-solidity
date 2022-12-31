@@ -34,7 +34,7 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant {
-        super._executeSale(tierId, count, maxAllowance, proof, 0);
+        super._executeSale(tierId, count, maxAllowance, proof);
 
         IERC1155MintableExtension(address(this)).mintByFacet(
             _msgSender(),
@@ -51,7 +51,7 @@ contract ERC1155TieredSales is IERC1155TieredSales, ReentrancyGuard, TieredSales
         uint256 maxAllowance,
         bytes32[] calldata proof
     ) external payable virtual nonReentrant onlyRole(MERCHANT_ROLE) {
-        super._executeSalePrivileged(minter, tierId, count, maxAllowance, proof);
+        super._executeSaleSkipPayment(minter, tierId, count, maxAllowance, proof);
 
         IERC1155MintableExtension(address(this)).mintByFacet(
             minter,
