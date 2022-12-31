@@ -96,24 +96,15 @@ const config: HardhatUserConfig = {
     },
   },
   zksolc: {
-    version: '1.2.0',
-    compilerSource: 'docker',
+    version: '1.2.1',
     settings: {
       optimizer: {
         enabled: true,
-      },
-      experimental: {
-        dockerImage: 'matterlabs/zksolc',
-        tag: 'v1.2.0',
       },
     },
   },
   typechain: {
     outDir: './src/typechain',
-  },
-  zkSyncDeploy: {
-    zkSyncNetwork: 'https://zksync2-testnet.zksync.dev',
-    ethNetwork: 'goerli',
   },
   gasReporter: {
     coinmarketcap: process.env.COIN_MARKET_CAP_API_KEY || '',
@@ -126,7 +117,7 @@ const config: HardhatUserConfig = {
       chainId: 1,
       url: process.env.MAINNET_URL || '',
       accounts: process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
-      gasPrice: 9_000000000, // 9 gwei
+      gasPrice: 10_000000000, // 10 gwei
     },
     ropsten: {
       chainId: 3,

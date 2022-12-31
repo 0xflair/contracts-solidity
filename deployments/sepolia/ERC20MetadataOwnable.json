@@ -1,0 +1,86 @@
+{
+  "address": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "lockDecimals",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint8",
+          "name": "newDecimals",
+          "type": "uint8"
+        }
+      ],
+      "name": "setDecimals",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x38b8924c6cfaa6c2d12c24026e4f28eeee9bb3dd5021b6e29e211f88e043c304",
+  "receipt": {
+    "to": null,
+    "from": "0xB68d649F181bDE8A8FeE367535a606Cc3C09fCCd",
+    "contractAddress": "0xE3fB6D01902daA4577f089DDC024f0a8F6bBca4f",
+    "transactionIndex": 0,
+    "gasUsed": "201127",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x69bc76de33f5a22e3fdfc82cec6ba752a175c4d9c8c8f3a159e638b87311b787",
+    "transactionHash": "0x38b8924c6cfaa6c2d12c24026e4f28eeee9bb3dd5021b6e29e211f88e043c304",
+    "logs": [],
+    "blockNumber": 2590192,
+    "cumulativeGasUsed": "201127",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [],
+  "numDeployments": 1,
+  "solcInputHash": "bd924e81b959edc830ca5e48147a41a3",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"lockDecimals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint8\",\"name\":\"newDecimals\",\"type\":\"uint8\"}],\"name\":\"setDecimals\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"custom:category\":\"Tokens\",\"custom:peer-dependencies\":\"IERC20Metadata\",\"custom:provides-interfaces\":\"IERC20MetadataAdmin\",\"custom:type\":\"eip-2535-facet\",\"kind\":\"dev\",\"methods\":{},\"title\":\"ERC20 - Metadata - Admin - Ownable\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"Allows diamond owner to change decimals config or freeze it forever.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol\":\"ERC20MetadataOwnable\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1337},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts v4.4.1 (utils/Context.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0xe2e337e6dde9ef6b680e07338c493ebea1b5fd09b43424112868e9cc1706bca7\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Strings.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v4.7.0) (utils/Strings.sol)\\n\\npragma solidity ^0.8.0;\\n\\n/**\\n * @dev String operations.\\n */\\nlibrary Strings {\\n    bytes16 private constant _HEX_SYMBOLS = \\\"0123456789abcdef\\\";\\n    uint8 private constant _ADDRESS_LENGTH = 20;\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` decimal representation.\\n     */\\n    function toString(uint256 value) internal pure returns (string memory) {\\n        // Inspired by OraclizeAPI's implementation - MIT licence\\n        // https://github.com/oraclize/ethereum-api/blob/b42146b063c7d6ee1358846c198246239e9360e8/oraclizeAPI_0.4.25.sol\\n\\n        if (value == 0) {\\n            return \\\"0\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 digits;\\n        while (temp != 0) {\\n            digits++;\\n            temp /= 10;\\n        }\\n        bytes memory buffer = new bytes(digits);\\n        while (value != 0) {\\n            digits -= 1;\\n            buffer[digits] = bytes1(uint8(48 + uint256(value % 10)));\\n            value /= 10;\\n        }\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(uint256 value) internal pure returns (string memory) {\\n        if (value == 0) {\\n            return \\\"0x00\\\";\\n        }\\n        uint256 temp = value;\\n        uint256 length = 0;\\n        while (temp != 0) {\\n            length++;\\n            temp >>= 8;\\n        }\\n        return toHexString(value, length);\\n    }\\n\\n    /**\\n     * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation with fixed length.\\n     */\\n    function toHexString(uint256 value, uint256 length) internal pure returns (string memory) {\\n        bytes memory buffer = new bytes(2 * length + 2);\\n        buffer[0] = \\\"0\\\";\\n        buffer[1] = \\\"x\\\";\\n        for (uint256 i = 2 * length + 1; i > 1; --i) {\\n            buffer[i] = _HEX_SYMBOLS[value & 0xf];\\n            value >>= 4;\\n        }\\n        require(value == 0, \\\"Strings: hex length insufficient\\\");\\n        return string(buffer);\\n    }\\n\\n    /**\\n     * @dev Converts an `address` with fixed length of 20 bytes to its not checksummed ASCII `string` hexadecimal representation.\\n     */\\n    function toHexString(address addr) internal pure returns (string memory) {\\n        return toHexString(uint256(uint160(addr)), _ADDRESS_LENGTH);\\n    }\\n}\\n\",\"keccak256\":\"0xaf159a8b1923ad2a26d516089bceca9bdeaeacd04be50983ea00ba63070f08a3\",\"license\":\"MIT\"},\"src/access/ownable/IERC173Events.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\n/**\\n * @title Contract ownership standard interface (event only)\\n * @dev see https://eips.ethereum.org/EIPS/eip-173\\n */\\ninterface IERC173Events {\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n}\\n\",\"keccak256\":\"0xe2a19d82d7050c0cd1afb542253f65ce34a650d7d99c0ffcdec6b4274fc51e31\",\"license\":\"MIT\"},\"src/access/ownable/OwnableInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Context.sol\\\";\\n\\nimport \\\"./OwnableStorage.sol\\\";\\nimport \\\"./IERC173Events.sol\\\";\\n\\nabstract contract OwnableInternal is IERC173Events, Context {\\n    using OwnableStorage for OwnableStorage.Layout;\\n\\n    modifier onlyOwner() {\\n        require(_msgSender() == _owner(), \\\"Ownable: sender must be owner\\\");\\n        _;\\n    }\\n\\n    function _owner() internal view virtual returns (address) {\\n        return OwnableStorage.layout().owner;\\n    }\\n\\n    function _transferOwnership(address account) internal virtual {\\n        OwnableStorage.layout().setOwner(account);\\n        emit OwnershipTransferred(_msgSender(), account);\\n    }\\n}\\n\",\"keccak256\":\"0x1f1b08cba51a05c8cea04e13251f9f8b8fc895017071cb205b0b4170900d1e5b\",\"license\":\"MIT\"},\"src/access/ownable/OwnableStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary OwnableStorage {\\n    struct Layout {\\n        address owner;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"openzeppelin.contracts.storage.Ownable\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n\\n    function setOwner(Layout storage l, address owner) internal {\\n        l.owner = owner;\\n    }\\n}\\n\",\"keccak256\":\"0xaf69959fcc5b87a74426939bc35b8517566494e3ba575b5cfdb1b5c788c0636a\",\"license\":\"MIT\"},\"src/token/ERC20/facets/metadata/ERC20MetadataInternal.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport { ERC20MetadataStorage } from \\\"./ERC20MetadataStorage.sol\\\";\\n\\n/**\\n * @title ERC20Metadata internal functions\\n */\\nabstract contract ERC20MetadataInternal {\\n    /**\\n     * @notice return token decimals, generally used only for display purposes\\n     * @return token decimals\\n     */\\n    function _decimals() internal view virtual returns (uint8) {\\n        return ERC20MetadataStorage.layout().decimals;\\n    }\\n\\n    function _decimalsLocked() internal view virtual returns (bool) {\\n        return ERC20MetadataStorage.layout().decimalsLocked;\\n    }\\n\\n    function _setDecimals(uint8 decimals_) internal virtual {\\n        require(!_decimalsLocked(), \\\"ERC20Metadata: decimals locked\\\");\\n        ERC20MetadataStorage.layout().decimals = decimals_;\\n        ERC20MetadataStorage.layout().decimalsLocked = true;\\n    }\\n\\n    function _setDecimalsLocked(bool decimalsLocked_) internal virtual {\\n        ERC20MetadataStorage.layout().decimalsLocked = decimalsLocked_;\\n    }\\n}\\n\",\"keccak256\":\"0x2078cdc79543f4b5ebb68baf2cc4ab3c07c4887898bf52ff0b095917cdf5cbe4\",\"license\":\"MIT\"},\"src/token/ERC20/facets/metadata/ERC20MetadataOwnable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nimport \\\"@openzeppelin/contracts/utils/Strings.sol\\\";\\n\\nimport \\\"../../../../access/ownable/OwnableInternal.sol\\\";\\n\\nimport \\\"./ERC20MetadataInternal.sol\\\";\\nimport \\\"./ERC20MetadataStorage.sol\\\";\\nimport \\\"./IERC20MetadataAdmin.sol\\\";\\n\\n/**\\n * @title ERC20 - Metadata - Admin - Ownable\\n * @notice Allows diamond owner to change decimals config or freeze it forever.\\n *\\n * @custom:type eip-2535-facet\\n * @custom:category Tokens\\n * @custom:peer-dependencies IERC20Metadata\\n * @custom:provides-interfaces IERC20MetadataAdmin\\n */\\ncontract ERC20MetadataOwnable is IERC20MetadataAdmin, ERC20MetadataInternal, OwnableInternal {\\n    function setDecimals(uint8 newDecimals) external override onlyOwner {\\n        ERC20MetadataStorage.Layout storage l = ERC20MetadataStorage.layout();\\n        require(!l.decimalsLocked, \\\"ERC20MetadataOwnable: decimals locked\\\");\\n        l.decimals = newDecimals;\\n    }\\n\\n    function lockDecimals() external override onlyOwner {\\n        ERC20MetadataStorage.Layout storage l = ERC20MetadataStorage.layout();\\n        l.decimalsLocked = true;\\n    }\\n}\\n\",\"keccak256\":\"0x48f569c396549b20726c6ea348812bcfddb925ce39fc20adc5da84b80e6daf95\",\"license\":\"MIT\"},\"src/token/ERC20/facets/metadata/ERC20MetadataStorage.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\nlibrary ERC20MetadataStorage {\\n    struct Layout {\\n        uint8 decimals;\\n        bool decimalsLocked;\\n    }\\n\\n    bytes32 internal constant STORAGE_SLOT = keccak256(\\\"v2.flair.contracts.storage.ERC20Metadata\\\");\\n\\n    function layout() internal pure returns (Layout storage l) {\\n        bytes32 slot = STORAGE_SLOT;\\n        assembly {\\n            l.slot := slot\\n        }\\n    }\\n}\\n\",\"keccak256\":\"0x62148e2c731baf6badbae460d125fa8b698993013b8e2619966e832d8b437b7c\",\"license\":\"MIT\"},\"src/token/ERC20/facets/metadata/IERC20MetadataAdmin.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n\\npragma solidity ^0.8.15;\\n\\ninterface IERC20MetadataAdmin {\\n    function setDecimals(uint8 newDecimals) external;\\n\\n    function lockDecimals() external;\\n}\\n\",\"keccak256\":\"0xa40da6b383172c3f11b0cc0b4d5633859c6959cd2770e7df1361a2d86592e7d6\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506102ae806100206000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c80637a1395aa1461003b578063ef0fbdd714610050575b600080fd5b61004e61004936600461024e565b610058565b005b61004e610195565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f3b67c745df1d17403ada58f538de4780e4768549f9387f877a18fb6c6b3a7b4b8054610100900460ff16156101815760405162461bcd60e51b815260206004820152602560248201527f45524332304d657461646174614f776e61626c653a20646563696d616c73206c60448201527f6f636b656400000000000000000000000000000000000000000000000000000060648201526084016100da565b805460ff191660ff92909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461021b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100da565b60007f3b67c745df1d17403ada58f538de4780e4768549f9387f877a18fb6c6b3a7b4b805461ff00191661010017905550565b60006020828403121561026057600080fd5b813560ff8116811461027157600080fd5b939250505056fea2646970667358221220ff34bcf151af3bf7bc757f1bad0a75c98c6e843dbeceaa96816864fdcb3ca21164736f6c634300080f0033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c80637a1395aa1461003b578063ef0fbdd714610050575b600080fd5b61004e61004936600461024e565b610058565b005b61004e610195565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff1633146100e35760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064015b60405180910390fd5b7f3b67c745df1d17403ada58f538de4780e4768549f9387f877a18fb6c6b3a7b4b8054610100900460ff16156101815760405162461bcd60e51b815260206004820152602560248201527f45524332304d657461646174614f776e61626c653a20646563696d616c73206c60448201527f6f636b656400000000000000000000000000000000000000000000000000000060648201526084016100da565b805460ff191660ff92909216919091179055565b7fc0ea367cb0174dd5521cd2372c76f8c13e6c1f832c71f1d6e0cbc185c9cc8ed45473ffffffffffffffffffffffffffffffffffffffff16331461021b5760405162461bcd60e51b815260206004820152601d60248201527f4f776e61626c653a2073656e646572206d757374206265206f776e657200000060448201526064016100da565b60007f3b67c745df1d17403ada58f538de4780e4768549f9387f877a18fb6c6b3a7b4b805461ff00191661010017905550565b60006020828403121561026057600080fd5b813560ff8116811461027157600080fd5b939250505056fea2646970667358221220ff34bcf151af3bf7bc757f1bad0a75c98c6e843dbeceaa96816864fdcb3ca21164736f6c634300080f0033",
+  "devdoc": {
+    "custom:category": "Tokens",
+    "custom:peer-dependencies": "IERC20Metadata",
+    "custom:provides-interfaces": "IERC20MetadataAdmin",
+    "custom:type": "eip-2535-facet",
+    "kind": "dev",
+    "methods": {},
+    "title": "ERC20 - Metadata - Admin - Ownable",
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "notice": "Allows diamond owner to change decimals config or freeze it forever.",
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [],
+    "types": null
+  }
+}

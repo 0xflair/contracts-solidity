@@ -3,11 +3,13 @@ import '@nomiclabs/hardhat-ethers';
 import '@nomiclabs/hardhat-waffle';
 
 import { expect } from 'chai';
-import { utils } from 'ethers';
+import { ethers, utils } from 'ethers';
 import hre from 'hardhat';
 
 import {
   DiamondLoupe,
+  ERC20Base,
+  ERC20MintableOwnable,
   ERC165,
   ERC721SupplyOwnable,
   ERC721TieredSales,
@@ -21,6 +23,7 @@ import { generateAllowlistLeaf, generateAllowlistMerkleTree } from '../utils/all
 import { ZERO_ADDRESS, ZERO_BYTES32 } from '../utils/common';
 import { deployDiamond, Initialization } from '../utils/diamond';
 import { Tier } from '../utils/tiered-sales';
+import { deployERC20WithSales } from './ERC20TieredSales.spec';
 
 const DEFAULT_TIERS: Tier[] = [
   {
@@ -221,6 +224,43 @@ describe('ERC721 Tiered Sales', function () {
     expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
   });
 
+  it('should mint by tier when 1 tier, no allowlist, with erc20 currency', async function () {
+    const { deployer, userA } = await setupTest();
+
+    const erc20Diamond = await deployERC20WithSales();
+    const erc20BaseFacet = await hre.ethers.getContractAt<ERC20Base>('ERC20Base', erc20Diamond.address);
+    const erc20MintableOwnableFacet = await hre.ethers.getContractAt<ERC20MintableOwnable>(
+      'ERC20MintableOwnable',
+      erc20Diamond.address,
+    );
+
+    await erc20MintableOwnableFacet
+      .connect(deployer.signer)
+      ['mintByOwner(address,uint256)'](userA.signer.address, ethers.utils.parseEther('40'));
+
+    const diamond = await deployERC721WithSales({
+      tiers: [
+        {
+          start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+          end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+          currency: erc20Diamond.address,
+          maxPerWallet: 5,
+          merkleRoot: ZERO_BYTES32,
+          price: utils.parseEther('3'),
+          reserved: 0,
+          maxAllocation: 5000,
+        },
+      ],
+    });
+    const erc721Facet = await hre.ethers.getContractAt<IERC721>('IERC721', diamond.address);
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+
+    await erc20BaseFacet.connect(userA.signer).approve(diamond.address, ethers.utils.parseEther('6'));
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 2, 0, []);
+
+    expect(await erc721Facet.balanceOf(userA.signer.address)).to.be.equal(2);
+  });
+
   it('should mint by tier and emit TierSale event', async function () {
     const { userA } = await setupTest();
 
@@ -312,6 +352,46 @@ describe('ERC721 Tiered Sales', function () {
         value: utils.parseEther('0.12'),
       }),
     ).to.be.revertedWith('ALREADY_ENDED');
+  });
+
+  it('should fail when minting a tier with lowered max allowance per-wallet', async function () {
+    const { userA } = await setupTest();
+
+    const tierConfig = {
+      start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+      end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+      currency: ZERO_ADDRESS,
+      maxPerWallet: 50,
+      merkleRoot: ZERO_BYTES32,
+      price: utils.parseEther('0.1'),
+      reserved: 0,
+      maxAllocation: 5000,
+    };
+    const diamond = await deployERC721WithSales({
+      tiers: [tierConfig],
+    });
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const tieredSalesOwnable = await hre.ethers.getContractAt<TieredSalesOwnable>(
+      'TieredSalesOwnable',
+      diamond.address,
+    );
+
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 40, 0, [], {
+      value: utils.parseEther('4'),
+    });
+
+    await tieredSalesOwnable[
+      'configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))'
+    ](0, {
+      ...tierConfig,
+      maxPerWallet: 10,
+    });
+
+    await expect(
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 20, 0, [], {
+        value: utils.parseEther('2'),
+      }),
+    ).to.be.reverted;
   });
 
   it('should fail when minting a tier and wallet is not allowlisted', async function () {

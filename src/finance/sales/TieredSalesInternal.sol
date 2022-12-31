@@ -25,10 +25,6 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
             require(tier.reserved >= l.tierMints[tierId], "LOW_RESERVE_AMOUNT");
         }
 
-        if (l.tierMints[tierId] > 0) {
-            require(tier.maxPerWallet >= l.tiers[tierId].maxPerWallet, "LOW_MAX_PER_WALLET");
-        }
-
         l.totalReserved -= l.tiers[tierId].reserved;
         l.tiers[tierId] = tier;
         l.totalReserved += tier.reserved;
@@ -92,6 +88,16 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         }
     }
 
+    /**
+     * @dev Executes common operations of a sale for a given tier. Checks max allocation of the tier,
+     *      max allowance per wallet, allowlist eligiblity and amount of payment.
+     *      Caller of this internal method must provide the assets to the buyer based on any custom logic.
+     *
+     * @param tierId Tier ID
+     * @param count Number of units (NFTs, Tokens, etc) to be sold
+     * @param maxAllowance Maximum allowance of this wallet defined in the allowlist (only if tier needs an allowlist)
+     * @param proof Merkle proof of the wallet in the allowlist (only if tier needs an allowlist)
+     */
     function _executeSale(
         uint256 tierId,
         uint256 count,
@@ -108,11 +114,7 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         require(count <= _availableSupplyForTier(tierId), "EXCEEDS_SUPPLY");
         require(count + l.tierMints[tierId] <= l.tiers[tierId].maxAllocation, "EXCEEDS_ALLOCATION");
 
-        if (l.tiers[tierId].currency == address(0)) {
-            require(l.tiers[tierId].price * count <= msg.value, "INSUFFICIENT_AMOUNT");
-        } else {
-            IERC20(l.tiers[tierId].currency).transferFrom(minter, address(this), l.tiers[tierId].price * count);
-        }
+        _processPayment(tierId, minter, l.tiers[tierId].currency, count, l.tiers[tierId].price);
 
         l.walletMinted[tierId][minter] += count;
         l.tierMints[tierId] += count;
@@ -124,7 +126,25 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         emit TierSale(tierId, minter, minter, count);
     }
 
-    function _executeSalePrivileged(
+    function _processPayment(
+        uint256 tierId,
+        address minter,
+        address currency,
+        uint256 count,
+        uint256 price
+    ) internal virtual {
+        tierId;
+
+        if (price > 0) {
+            if (currency == address(0)) {
+                require(price * count <= msg.value, "INSUFFICIENT_AMOUNT");
+            } else {
+                IERC20(currency).transferFrom(minter, address(this), price * count);
+            }
+        }
+    }
+
+    function _executeSaleSkipPayment(
         address minter,
         uint256 tierId,
         uint256 count,
