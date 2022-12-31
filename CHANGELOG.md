@@ -1,3 +1,10 @@
+## [2.25.0](https://github.com/flair-sdk/contracts/compare/v2.24.0...v2.25.0) (2022-12-31)
+
+
+### Features
+
+* support erc20 tokens for tiered sales facet ([#6](https://github.com/flair-sdk/contracts/issues/6)) ([73e2d58](https://github.com/flair-sdk/contracts/commit/73e2d5814306e6281169f47fbaad4a07b1122528))
+
 ## [2.24.0](https://github.com/flair-sdk/contracts/compare/v2.23.9...v2.24.0) (2022-12-28)
 
 
