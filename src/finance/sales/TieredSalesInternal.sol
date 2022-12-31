@@ -25,10 +25,6 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
             require(tier.reserved >= l.tierMints[tierId], "LOW_RESERVE_AMOUNT");
         }
 
-        if (l.tierMints[tierId] > 0) {
-            require(tier.maxPerWallet >= l.tiers[tierId].maxPerWallet, "LOW_MAX_PER_WALLET");
-        }
-
         l.totalReserved -= l.tiers[tierId].reserved;
         l.tiers[tierId] = tier;
         l.totalReserved += tier.reserved;
@@ -137,10 +133,14 @@ abstract contract TieredSalesInternal is ITieredSalesInternal, Context, OwnableI
         uint256 count,
         uint256 price
     ) internal virtual {
-        if (currency == address(0)) {
-            require(price * count <= msg.value, "INSUFFICIENT_AMOUNT");
-        } else {
-            IERC20(currency).transferFrom(minter, address(this), price * count);
+        tierId;
+
+        if (price > 0) {
+            if (currency == address(0)) {
+                require(price * count <= msg.value, "INSUFFICIENT_AMOUNT");
+            } else {
+                IERC20(currency).transferFrom(minter, address(this), price * count);
+            }
         }
     }
 

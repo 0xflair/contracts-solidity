@@ -67,12 +67,17 @@ contract ERC20TieredSales is
     ) internal virtual override {
         tierId;
 
-        if (currency == address(0)) {
-            require((price * count) <= msg.value * (10**ERC20MetadataStorage.layout().decimals), "INSUFFICIENT_AMOUNT");
-        } else {
-            uint256 amountTotal = (price * count) / (10**ERC20MetadataStorage.layout().decimals);
-            require(price == 0 || amountTotal > 0, "INCORRECT_COUNT");
-            IERC20(currency).transferFrom(minter, address(this), amountTotal);
+        if (price > 0) {
+            if (currency == address(0)) {
+                require(
+                    (price * count) <= msg.value * (10**ERC20MetadataStorage.layout().decimals),
+                    "INSUFFICIENT_AMOUNT"
+                );
+            } else {
+                uint256 amountTotal = (price * count) / (10**ERC20MetadataStorage.layout().decimals);
+                require(amountTotal > 0, "INCORRECT_COUNT");
+                IERC20(currency).transferFrom(minter, address(this), amountTotal);
+            }
         }
     }
 

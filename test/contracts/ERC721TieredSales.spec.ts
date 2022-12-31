@@ -314,6 +314,46 @@ describe('ERC721 Tiered Sales', function () {
     ).to.be.revertedWith('ALREADY_ENDED');
   });
 
+  it('should fail when minting a tier with lowered max allowance per-wallet', async function () {
+    const { userA } = await setupTest();
+
+    const tierConfig = {
+      start: Math.floor(+new Date() / 1000) - 4 * 24 * 60 * 60,
+      end: Math.floor(+new Date() / 1000) + 6 * 24 * 60 * 60,
+      currency: ZERO_ADDRESS,
+      maxPerWallet: 50,
+      merkleRoot: ZERO_BYTES32,
+      price: utils.parseEther('0.1'),
+      reserved: 0,
+      maxAllocation: 5000,
+    };
+    const diamond = await deployERC721WithSales({
+      tiers: [tierConfig],
+    });
+    const tieredSalesFacet = await hre.ethers.getContractAt<ERC721TieredSales>('ERC721TieredSales', diamond.address);
+    const tieredSalesOwnable = await hre.ethers.getContractAt<TieredSalesOwnable>(
+      'TieredSalesOwnable',
+      diamond.address,
+    );
+
+    await tieredSalesFacet.connect(userA.signer).mintByTier(0, 40, 0, [], {
+      value: utils.parseEther('4'),
+    });
+
+    await tieredSalesOwnable[
+      'configureTiering(uint256,(uint256,uint256,address,uint256,uint256,bytes32,uint256,uint256))'
+    ](0, {
+      ...tierConfig,
+      maxPerWallet: 10,
+    });
+
+    await expect(
+      tieredSalesFacet.connect(userA.signer).mintByTier(0, 20, 0, [], {
+        value: utils.parseEther('2'),
+      }),
+    ).to.be.reverted;
+  });
+
   it('should fail when minting a tier and wallet is not allowlisted', async function () {
     const { userA, userB, userC, userD } = await setupTest();
 
