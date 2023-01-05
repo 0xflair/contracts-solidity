@@ -33,4 +33,17 @@ abstract contract ERC721AMintableExtension is IERC721MintableExtension, ERC721AB
             _mint(tos[i], amounts[i]);
         }
     }
+
+    /**
+     * @inheritdoc IERC721MintableExtension
+     */
+    function mintByFacet(address[] calldata tos, uint256 amount) public virtual override {
+        if (address(this) != msg.sender) {
+            revert ErrSenderIsNotSelf();
+        }
+
+        for (uint256 i = 0; i < tos.length; i++) {
+            _mint(tos[i], amount);
+        }
+    }
 }

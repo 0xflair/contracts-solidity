@@ -40,6 +40,13 @@ contract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInter
     /**
      * @inheritdoc IERC721MintableRoleBased
      */
+    function mintByRole(address[] calldata tos, uint256 amount) public virtual onlyRole(MINTER_ROLE) {
+        IERC721MintableExtension(address(this)).mintByFacet(tos, amount);
+    }
+
+    /**
+     * @inheritdoc IERC721MintableRoleBased
+     */
     function mintByRole(
         address to,
         uint256 amount,
@@ -50,6 +57,20 @@ contract ERC721MintableRoleBased is IERC721MintableRoleBased, AccessControlInter
         IERC721MintableExtension(address(this)).mintByFacet(to, amount);
 
         for (uint256 i = 0; i < amount; i++) {
+            _setURI(nextTokenId + i, tokenURIs[i]);
+        }
+    }
+
+    /**
+     * @inheritdoc IERC721MintableRoleBased
+     */
+    function mintByRole(address[] calldata tos, string[] calldata tokenURIs) public virtual onlyRole(MINTER_ROLE) {
+        uint256 nextTokenId = ERC721SupplyStorage.layout().currentIndex;
+        uint256 total = tos.length;
+
+        IERC721MintableExtension(address(this)).mintByFacet(tos, 1);
+
+        for (uint256 i = 0; i < total; i++) {
             _setURI(nextTokenId + i, tokenURIs[i]);
         }
     }
