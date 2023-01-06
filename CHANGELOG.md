@@ -1,3 +1,10 @@
+## [2.26.0](https://github.com/flair-sdk/contracts/compare/v2.25.0...v2.26.0) (2023-01-06)
+
+
+### Features
+
+* various minting with metadata functions ([#7](https://github.com/flair-sdk/contracts/issues/7)) ([a285ae9](https://github.com/flair-sdk/contracts/commit/a285ae9942b241516d9d7ed5dc05af62631c32b2))
+
 ## [2.25.0](https://github.com/flair-sdk/contracts/compare/v2.24.0...v2.25.0) (2022-12-31)
 
 
