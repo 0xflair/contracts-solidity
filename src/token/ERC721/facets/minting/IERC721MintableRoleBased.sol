@@ -17,11 +17,21 @@ interface IERC721MintableRoleBased {
     function mintByRole(address[] calldata tos, uint256[] calldata amounts) external;
 
     /**
-     * @dev Mint a new token with a dedicated tokenURI.
+     * @dev Mint constant amount of new tokens for multiple addresses (e.g. 1 nft for each address).
+     */
+    function mintByRole(address[] calldata tos, uint256 amount) external;
+
+    /**
+     * @dev Mint new tokens for single address with dedicated tokenURIs.
      */
     function mintByRole(
         address to,
         uint256 amount,
         string[] calldata tokenURIs
     ) external;
+
+    /**
+     * @dev Mint new tokens for multiple addresses with dedicated tokenURIs.
+     */
+    function mintByRole(address[] calldata tos, string[] calldata tokenURIs) external;
 }
