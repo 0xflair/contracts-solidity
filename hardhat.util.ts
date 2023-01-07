@@ -85,6 +85,7 @@ export const deployPermanentContract = async (
     args,
     log: true,
     estimateGasExtra: 1000000,
+    // nonce: 'pending',
     ...additionalOptions,
   });
 
