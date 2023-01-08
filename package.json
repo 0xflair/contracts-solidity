@@ -93,7 +93,7 @@
     "verify:avalanche": "npx hardhat --network avalanche sourcify && npx hardhat etherscan-verify --network avalanche",
     "verify:avalancheFujiTestnet": "npx hardhat --network avalancheFujiTestnet sourcify && npx hardhat etherscan-verify --network avalancheFujiTestnet",
     "verify:arbitrumOne": "npx hardhat --network arbitrumOne sourcify && npx hardhat etherscan-verify --network arbitrumOne",
-    "verify:arbitrumNova": "npx hardhat --network arbitrumNova sourcify && npx hardhat etherscan-verify --network arbitrumNova",
+    "verify:arbitrumNova": "npx hardhat --network arbitrumNova sourcify && npx hardhat etherscan-verify --network arbitrumNova --api-url https://api-nova.arbiscan.io",
     "verify:arbitrumGoerli": "npx hardhat --network arbitrumGoerli sourcify && npx hardhat etherscan-verify --network arbitrumGoerli",
     "verify:polygon": "npx hardhat --network polygon sourcify && npx hardhat etherscan-verify --network polygon",
     "verify:polygonMumbai": "npx hardhat --network polygonMumbai sourcify && npx hardhat etherscan-verify --network polygonMumbai",

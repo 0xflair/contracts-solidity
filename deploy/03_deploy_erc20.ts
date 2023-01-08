@@ -10,6 +10,7 @@ const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   // Base
   //
   await deployPermanentContract(hre.deployments, accounts[0], 'ERC20', []);
+  await deployPermanentContract(hre.deployments, accounts[0], 'ERC20WithERC2771', []);
 
   //
   // Facets

@@ -1,7 +1,7 @@
 {
   "flair-sdk:access/roles/AccessControl": {
     "fqn": "flair-sdk:access/roles/AccessControl",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x6569cadd4b5EF142d4798Ef91aF60E2B5becB52b",
       "5": "0x942241f517203838D2318086CcF80E8E2dCd77Fa",
@@ -262,7 +262,7 @@
   },
   "flair-sdk:access/roles/AccessControlAdmin": {
     "fqn": "flair-sdk:access/roles/AccessControlAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x4F9bf8f997b2Ce586f7Bc7a976aEBAc8D17312D3",
       "5": "0x1a7c5FD331A388acE3385592b0a53da810ef9dC4",
@@ -458,7 +458,7 @@
   },
   "flair-sdk:access/roles/AccessControlERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xeF4f60a0aeDCF9d12cD11860b0D09741Aa1eaBe4",
       "5": "0xafD33B31c15E56769B67794f4B5C460395F1314A",
@@ -719,7 +719,7 @@
   },
   "flair-sdk:token/common/burnable/BurnableOwnable": {
     "fqn": "flair-sdk:token/common/burnable/BurnableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xDEbe382321104c3A59a416f53C7d671e506C15c5",
       "5": "0x8457d8dAAc4f875B1380263A0e73B01F2392dE06",
@@ -827,7 +827,7 @@
   },
   "flair-sdk:finance/depository/Depository": {
     "fqn": "flair-sdk:finance/depository/Depository",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x359872F232788bC8E3C41FcED848F46D9cb528dF",
       "5": "0x4498a21260157D3c06B9329f3a43654aB3FC1364",
@@ -1086,7 +1086,7 @@
   },
   "flair-sdk:finance/depository/DepositoryWithERC2771": {
     "fqn": "flair-sdk:finance/depository/DepositoryWithERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x7c461941A63985a57972ab624fA9A27b246C3aA9",
       "5": "0x8226f05C9Fbecb29713155a0354FB56172f36034",
@@ -1345,7 +1345,7 @@
   },
   "flair-sdk:diamond/Diamond": {
     "fqn": "flair-sdk:diamond/Diamond",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x5e88650C4e38206addb2561cec3103Fa6C6A9bF7",
       "5": "0x7cEb8840126E1321FB3DAb2636f2c52365666023",
@@ -1541,7 +1541,7 @@
   },
   "flair-sdk:diamond/DiamondCut": {
     "fqn": "flair-sdk:diamond/DiamondCut",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "5": "0x91E2D99eEddFB281CBBc2B96e5ff83E7e6e6A548",
@@ -1750,7 +1750,7 @@
   },
   "flair-sdk:diamond/DiamondLoupe": {
     "fqn": "flair-sdk:diamond/DiamondLoupe",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "5": "0x5fab35bf5f7f6e57781f548ca75d15254413d6c8",
@@ -1902,7 +1902,7 @@
   },
   "flair-sdk:token/ERC1155/ERC1155": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xcD3dECb28dBfa49579237928c1A7df2687d88881",
       "5": "0x8730006C242E1a54b8fD8F6eAEbC9e83D6478998",
@@ -2594,7 +2594,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x17DB0f5512784Cf0aF0CCa72686961aBAe36aEaC",
       "5": "0x35Ae96463b033c6583a2059b23A5b828C03021d9",
@@ -2781,7 +2781,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/ERC1155LockableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xaEdB7Ee8526AaD5435fcF7e3BD00f3452c743Eaa",
       "5": "0x384524C02DD8c7f0432989fe61Ff883f841d0C90",
@@ -3050,7 +3050,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/ERC1155Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xb6008DA1e10C37F3834F0bF466a168cd1Fc5A6A5",
       "5": "0xB3206523e827557d6bF0513A9feD028e3DBc540C",
@@ -3145,7 +3145,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x9A8050DE80375087c36f753F4Ea6Bb3aEF49A932",
       "5": "0x6c2Bd66EcE884d27799D0DB9Fa94EC7e148c8F50",
@@ -3296,7 +3296,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableOwnableERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x083E023e04Eb1c2D9686e5eaCf53CF7266DE77F8",
       "5": "0xB11Dd842D23a548d16466038e2CFD7E135C897bF",
@@ -3447,7 +3447,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x3790f809b612682Ee95002273Cd31eaBD0aA177c",
       "5": "0x9CC086FC0937A4f301ffDB729dC8A90220C1a502",
@@ -3680,7 +3680,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/ERC1155MintableRoleBasedERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x327C9652501569CaC5242E186b747Bb644E1606B",
       "5": "0x7bc80E164b3D5E85ac333A4B9302851b4954696C",
@@ -3913,7 +3913,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x4990b33f36BB506403f1536522d030f2164052e5",
       "5": "0xBDe1E9784883E4Eab27d4955F2a2e41Bafcf9Fcb",
@@ -4174,9 +4174,9 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x4B5fa4635D507Cb8f4081da68647071C80dC0d21",
+      "1": "0x03b6AEd42C5eEB623C1C7b0c39211999f5DcF8a8",
       "5": "0xcafaE85C535448a05338d9d9AF4D9094e2774af4",
       "25": "0x83aFfb8bDB6e875B51e640537CCe36860578046F",
       "40": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
@@ -4221,7 +4221,7 @@
       "ftmTestnet": "0xa7BAFc51800779DC3557c916AFC5AA92af4aE8B8",
       "fuse": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
       "goerli": "0xcafaE85C535448a05338d9d9AF4D9094e2774af4",
-      "mainnet": "0x4B5fa4635D507Cb8f4081da68647071C80dC0d21",
+      "mainnet": "0x03b6AEd42C5eEB623C1C7b0c39211999f5DcF8a8",
       "metis": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "metisGoerli": "0x614A331D14164720352ef916f4b91695c9199c7b",
       "moonbeam": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
@@ -4717,9 +4717,9 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xa2AbeDDaeF2B6E186e5794C2541D600d35BF2D4C",
+      "1": "0x984BD8AE83807A4d515F9d5f5e3e94965FAFdf35",
       "5": "0x5f8Fc1a587B37f2527F3dAB4B7B54125e0eF986a",
       "25": "0x88D339113E47355A9544E0665193F47A0325EBcB",
       "40": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
@@ -4764,7 +4764,7 @@
       "ftmTestnet": "0xcD3dECb28dBfa49579237928c1A7df2687d88881",
       "fuse": "0x8fa6C988b115B46Ed2910C53992864754316305f",
       "goerli": "0x5f8Fc1a587B37f2527F3dAB4B7B54125e0eF986a",
-      "mainnet": "0xa2AbeDDaeF2B6E186e5794C2541D600d35BF2D4C",
+      "mainnet": "0x984BD8AE83807A4d515F9d5f5e3e94965FAFdf35",
       "metis": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "metisGoerli": "0xE2cb3B6Ff2bcffCDDdDeca9FAff4d393f25ab5da",
       "moonbeam": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
@@ -5260,7 +5260,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x2ccF63FE5613d729E4bc7edAb240aba09B2A703b",
       "5": "0xb1589F9197F2D0ec885E109D58A8e02D293900ab",
@@ -5391,7 +5391,7 @@
   },
   "flair-sdk:token/ERC1155/ERC1155WithERC2771": {
     "fqn": "flair-sdk:token/ERC1155/ERC1155WithERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xb18A1CF7099bd32EED940e84391ecf352885CDcc",
       "5": "0x8b883822378dD52537B3B4eAF8DDf8BeD5666e54",
@@ -6083,7 +6083,7 @@
   },
   "flair-sdk:introspection/ERC165": {
     "fqn": "flair-sdk:introspection/ERC165",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xC248Ff2D021144e1b7E9eC522b9aC7Af3A11210c",
       "5": "0x956Cd6d2F31EaA815dF44C9A3969Fc7e1395EdeF",
@@ -6178,7 +6178,7 @@
   },
   "flair-sdk:introspection/ERC165Ownable": {
     "fqn": "flair-sdk:introspection/ERC165Ownable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x8F1Df4765681d09D2EE5fF5a9265331A49268D31",
       "5": "0x3c0176CDFB21675377e41a9987d8c31f90d293AA",
@@ -6291,7 +6291,7 @@
   },
   "flair-sdk:token/ERC20/ERC20": {
     "fqn": "flair-sdk:token/ERC20/ERC20",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x9d938a88094296ff207966671bBCAF14Bf28286f",
       "5": "0x5C6e288d37cEd0F5cfAB51893349464B6DDeB720",
@@ -6609,7 +6609,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x293E9F67cEF4d7465b6B9E19ccDB16F68536F54d",
       "5": "0xf8689140ff33CB5971D5D5D6e2E0c9f67A5200EB",
@@ -6750,7 +6750,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xeD2d1FBE8A6e9e428A343D67088AC299EbCC1F18",
       "5": "0x13B2F9D94009103C6C3b025e8Cd59b69d3F1F5b4",
@@ -6865,7 +6865,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x102B9F9D28A46f0AdbC562FdC333f5CBe3aBcA27",
       "5": "0xfF101b1fc9BD2dF8AEdbbDef5a37C0264440CCB4",
@@ -6996,7 +6996,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableOwnableERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x1FAaCD621bd3B14F3494Be13c7Cf85334EC3F492",
       "5": "0xa03c7e89e6c2a000440940f431aaff8dc297e2a2",
@@ -7127,7 +7127,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xD781b8126F857A2073D5d0DD3D2903253DAA46bD",
       "5": "0x39669Dc60264dc236055C3C197Fe7755ca03C35e",
@@ -7340,7 +7340,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/ERC20MintableRoleBasedERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xc456cdA6dE7e99B321f4dAF260319888a3D42cBe",
       "5": "0x28AeE1B3065Cc335cad5214AD9a313aefE62caE0",
@@ -7553,7 +7553,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x99aCCfe475D59DeA6C6F45595Ee553Eee5e62c1A",
       "5": "0xfBF2ED190AcA503F8bed6Da06ece9e1c45aB0717",
@@ -7686,9 +7686,9 @@
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales": {
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x99cEF23f011AF9b4F9181aC6880228Be992186cE",
+      "1": "0x2218FC40359eD984b9DA7Af7467d3ec4f3F4099f",
       "5": "0x031BA6E69d1E725EfF868E47971FC9dEea8bb099",
       "25": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "40": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
@@ -7733,7 +7733,7 @@
       "ftmTestnet": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
       "fuse": "0x8043d592263311ccCaAeeC871Df6ad1e127A52E1",
       "goerli": "0x031BA6E69d1E725EfF868E47971FC9dEea8bb099",
-      "mainnet": "0x99cEF23f011AF9b4F9181aC6880228Be992186cE",
+      "mainnet": "0x2218FC40359eD984b9DA7Af7467d3ec4f3F4099f",
       "metis": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "metisGoerli": "0xd59375B90526C16a007a779c15A844627fdBe716",
       "moonbeam": "0xa878c0aeAaA76Ec7A370b76Ac5BcAc4364eD60e1",
@@ -8246,9 +8246,9 @@
   },
   "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC20/facets/sales/ERC20TieredSalesERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x1c5Acc9626472D36615CB5d995a4B8D553568f51",
+      "1": "0x2Ca28d4EcCa440eEdc52DA402559B569afaf4bF7",
       "5": "0x9Bb15a17bf2Dbc263Da54130C9bD64A36b5B6f22",
       "25": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "40": "0x8fa6C988b115B46Ed2910C53992864754316305f",
@@ -8293,7 +8293,7 @@
       "ftmTestnet": "0x8a94614B8A2a5f464cB1b521325fE5e7cf4dCdB8",
       "fuse": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
       "goerli": "0x9Bb15a17bf2Dbc263Da54130C9bD64A36b5B6f22",
-      "mainnet": "0x1c5Acc9626472D36615CB5d995a4B8D553568f51",
+      "mainnet": "0x2Ca28d4EcCa440eEdc52DA402559B569afaf4bF7",
       "metis": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "metisGoerli": "0xc19D021B27f2c170E3ebb1BF9B60Dd2F93d2aef3",
       "moonbeam": "0x97BA377E12dCA8a81b9d304F5e27D179E6ca1FBA",
@@ -8806,7 +8806,7 @@
   },
   "flair-sdk:metatx/ERC2771Context": {
     "fqn": "flair-sdk:metatx/ERC2771Context",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xffDEa3c92b1Ab7f49Dc4208e234ed73A7Ecd4467",
       "5": "0x5684267E9c4aEBae63FFcb69074e1D1DFF606C3c",
@@ -8914,7 +8914,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextOwnable": {
     "fqn": "flair-sdk:metatx/ERC2771ContextOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x15E7232440d2c57a34507430426806E2Ba2Cdf84",
       "5": "0xb3Fd2744e07B739Ee408c07b3A63F2642b25425F",
@@ -9022,9 +9022,9 @@
   },
   "flair-sdk:token/ERC721/ERC721A": {
     "fqn": "flair-sdk:token/ERC721/ERC721A",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x05a26D772EBA3096a969165f8c9daE766C78976f",
+      "1": "0x31e77aC57658b8F89418603bf95e8cE60ED5Bc76",
       "5": "0xC15097A1024bcfe7FD3cd3ab4A7Cb91DE8AFF1D1",
       "25": "0x4c4226C746c9CE072710F44D7Ee8798c6f6DCFFd",
       "40": "0x6a61a408fF14Be189E8528aCa531852724D64091",
@@ -9069,7 +9069,7 @@
       "ftmTestnet": "0x3790f809b612682Ee95002273Cd31eaBD0aA177c",
       "fuse": "0xb91057014bFB01df21e541335a78D930266f7869",
       "goerli": "0xC15097A1024bcfe7FD3cd3ab4A7Cb91DE8AFF1D1",
-      "mainnet": "0x05a26D772EBA3096a969165f8c9daE766C78976f",
+      "mainnet": "0x31e77aC57658b8F89418603bf95e8cE60ED5Bc76",
       "metis": "0xB3C2dE2f1972f2f1cF3BD5EAC67dECFDA6EF739d",
       "metisGoerli": "0x1FB4fE4354A49C784463FFA92DcCe53d499825ff",
       "moonbeam": "0x0e6223dEfF249b5E2Ff966f2f24CE87de1229Df5",
@@ -9745,9 +9745,9 @@
   },
   "flair-sdk:token/ERC721/ERC721AWithERC2771": {
     "fqn": "flair-sdk:token/ERC721/ERC721AWithERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x712a4ff806acD985f914E0ebc1EbC7b17361d778",
+      "1": "0xfD85Cab3601e152Bf2aDbFC124511d78F8CcFeF4",
       "5": "0x4b95D1c11A88cA0d63246db2E4BaE214bdc706b6",
       "25": "0xD89b756f2a891E99C1eC9FB452d99Fe1cd9C0876",
       "40": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
@@ -9792,7 +9792,7 @@
       "ftmTestnet": "0x327C9652501569CaC5242E186b747Bb644E1606B",
       "fuse": "0x933d6a003a024dB27926Ca44bF717658813BA570",
       "goerli": "0x4b95D1c11A88cA0d63246db2E4BaE214bdc706b6",
-      "mainnet": "0x712a4ff806acD985f914E0ebc1EbC7b17361d778",
+      "mainnet": "0xfD85Cab3601e152Bf2aDbFC124511d78F8CcFeF4",
       "metis": "0x76067992fE097Af6186Cf1157d5AF2e9d7429BFC",
       "metisGoerli": "0xf56F052e7F19C8ceF2FBf3E881587D14De95C70a",
       "moonbeam": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
@@ -10468,7 +10468,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x73fb9dDfA54EC7d0fecC22c88B8e9E98a2C1bF78",
       "5": "0xb778984e1a1EEd7d7e29bbD69850c055AdC11120",
@@ -10615,7 +10615,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/ERC721LockableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x6d018457d731E1EFA8700a454a52e46c2Ce1451e",
       "5": "0x973c3d592122DFa4f40F5748b3785457C85B1Fd5",
@@ -10844,7 +10844,7 @@
   },
   "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata": {
     "fqn": "flair-sdk:token/ERC721/facets/metadata/ERC721Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x40BD4F6B9D5d4CAF28909dC679146101099C5895",
       "5": "0xDe7abc1A2DcB13728F8e84CFcbFbE6fC790D572A",
@@ -10965,9 +10965,9 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
+      "1": "0x16C15d158f50718f4a1eC4e1D3e75b850902e9F3",
       "5": "0xD6269aEe136B91Ceb074Fc284e92e4B1D1eA3cBd",
       "25": "0xa62E1dc1d2AcC278Ec04f5f7bb2234d45f87dF8E",
       "40": "0x107323fC6180D032B522214AF88d7A3083D67827",
@@ -11012,7 +11012,7 @@
       "ftmTestnet": "0x4B5fa4635D507Cb8f4081da68647071C80dC0d21",
       "fuse": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
       "goerli": "0xD6269aEe136B91Ceb074Fc284e92e4B1D1eA3cBd",
-      "mainnet": "0xE949eBA5548cCAfc29612a41916DcAE6a56ed877",
+      "mainnet": "0x16C15d158f50718f4a1eC4e1D3e75b850902e9F3",
       "metis": "0x8b5De228363f3f7D3821bee7977527cc8898aa0e",
       "metisGoerli": "0xeED9E0a45B31F9dd7b2D55CABe3742Ddca116532",
       "moonbeam": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
@@ -11174,9 +11174,9 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableOwnableERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x48F9152b91103E158029921C59Ff844d30468288",
+      "1": "0x4e33572e6F5f76A447F9f4Add4d47720d8886eDf",
       "5": "0xb705afF3620bfcaCacA01b672d102D76837ce63c",
       "25": "0xF78f311924255e2C42a4941F8400c485a4442250",
       "40": "0xa9dB7831CC85960dB16bEf4914e4d3Ce0630d2B0",
@@ -11221,7 +11221,7 @@
       "ftmTestnet": "0xa2AbeDDaeF2B6E186e5794C2541D600d35BF2D4C",
       "fuse": "0x7cd170485d3540b87f5e4675c1068a60cc81CB89",
       "goerli": "0xb705afF3620bfcaCacA01b672d102D76837ce63c",
-      "mainnet": "0x48F9152b91103E158029921C59Ff844d30468288",
+      "mainnet": "0x4e33572e6F5f76A447F9f4Add4d47720d8886eDf",
       "metis": "0x232A1C44b1E3353a1F25fFc537d1879A5d6e8ec7",
       "metisGoerli": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "moonbeam": "0xBB0AA646E8D63d920a7Ab1C96Ba082cbF075DcDA",
@@ -11383,9 +11383,9 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
+      "1": "0x6054edcef9109bd9f3ea6c868ba8fe6aa37f68e9",
       "5": "0xA7A25991683756181628E9306aAe4a554De405bB",
       "25": "0xEF7e3edC2ac4c07A890663E57dA77D8909A7b849",
       "40": "0xc21AC86C664015e9Eb122313cb520720e67a532b",
@@ -11430,7 +11430,7 @@
       "ftmTestnet": "0x99cEF23f011AF9b4F9181aC6880228Be992186cE",
       "fuse": "0xe916B8aD209F43b06be7b4596C87deb6f7911bD0",
       "goerli": "0xA7A25991683756181628E9306aAe4a554De405bB",
-      "mainnet": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
+      "mainnet": "0x6054edcef9109bd9f3ea6c868ba8fe6aa37f68e9",
       "metis": "0x8D6B1DEe1Ce4901D917eAD895A955F19F783AC8a",
       "metisGoerli": "0xd90D65411bab7126E1Ffc6293B4db8E40Ae2da3c",
       "moonbeam": "0x8fa6C988b115B46Ed2910C53992864754316305f",
@@ -11674,9 +11674,9 @@
   },
   "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/ERC721MintableRoleBasedERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
+      "1": "0x9A3fe8699a1721310a397249F7E35822a7b63490",
       "5": "0x3453bDF59141d7Cf3b3aF44E95818E2c00F74451",
       "25": "0x6312edE7Ba467f89A0e48122f3F6E08Ca085c07D",
       "40": "0x2f6ccd01759b3DB70e15f29fa647873Ed6bD42E3",
@@ -11721,7 +11721,7 @@
       "ftmTestnet": "0x1c5Acc9626472D36615CB5d995a4B8D553568f51",
       "fuse": "0x453ebb329780CFB54CE183f63F21db28b3106762",
       "goerli": "0x3453bDF59141d7Cf3b3aF44E95818E2c00F74451",
-      "mainnet": "0xB160C54d8FFc4C55eFE6e1C140E37d37e434D226",
+      "mainnet": "0x9A3fe8699a1721310a397249F7E35822a7b63490",
       "metis": "0xb31c8f06F99Be1285Cb1998949F47E1988f38b23",
       "metisGoerli": "0xAcB0dD0A3129859955D610233C0DD18BCb15fB88",
       "moonbeam": "0xb91057014bFB01df21e541335a78D930266f7869",
@@ -11965,7 +11965,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xf0bC1455b81Cd9eFa6C89eF3ee304345450530A8",
       "5": "0x96C3d4e3Bc2A28E8188C2f3FC1EfA1BA8a013977",
@@ -12098,9 +12098,9 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales": {
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x6aC77C70a4Ed04D2B74B825D52FB84214eEB96B3",
+      "1": "0x34A574ACB0c96E3845834f64B8bB3cC208F7fd4e",
       "5": "0x111D52E721C2EE74cDE4e08eCfD3D62E482e6ED6",
       "25": "0xb676B1164E57A5dC0b94645CaEA78Fe230020346",
       "40": "0xFf7CBd71bDdc5a51BF68054e2F4f0b7DF9273E1b",
@@ -12145,7 +12145,7 @@
       "ftmTestnet": "0x05a26D772EBA3096a969165f8c9daE766C78976f",
       "fuse": "0x6a61a408fF14Be189E8528aCa531852724D64091",
       "goerli": "0x111D52E721C2EE74cDE4e08eCfD3D62E482e6ED6",
-      "mainnet": "0x6aC77C70a4Ed04D2B74B825D52FB84214eEB96B3",
+      "mainnet": "0x34A574ACB0c96E3845834f64B8bB3cC208F7fd4e",
       "metis": "0x58E403CDcade1095f0FF8d76de0dF62Ff0EaD4a2",
       "metisGoerli": "0x3F5db007aBDcB9cA84ec4f8187A3c6Da83c44f7E",
       "moonbeam": "0x933d6a003a024dB27926Ca44bF717658813BA570",
@@ -12608,9 +12608,9 @@
   },
   "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771": {
     "fqn": "flair-sdk:token/ERC721/facets/sales/ERC721TieredSalesERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xFe9225C81A9991925E626a41d6D3fd21C2e2E479",
+      "1": "0x77F2353860D1EFc1D956b1AC317E2E1D9D342775",
       "5": "0x75bD93f4A8bE28683b83168a7cC75bb617f68c1b",
       "25": "0xBfFDFC6468C2E40E220Bab6f10c60C72b38c7977",
       "40": "0xFADbF74931C8a1eD22e80b390524A83717161eAe",
@@ -12655,7 +12655,7 @@
       "ftmTestnet": "0x712a4ff806acD985f914E0ebc1EbC7b17361d778",
       "fuse": "0xC7F92f1d76Ff5D29F7C90e748ef0B2e26827c785",
       "goerli": "0x75bD93f4A8bE28683b83168a7cC75bb617f68c1b",
-      "mainnet": "0xFe9225C81A9991925E626a41d6D3fd21C2e2E479",
+      "mainnet": "0x77F2353860D1EFc1D956b1AC317E2E1D9D342775",
       "metis": "0xFf3B2524F0BA31FdeA8DE0506F82978c3ce8fFe6",
       "metisGoerli": "0x2759c16F06B07D3Aaea777223068295A0938fe69",
       "moonbeam": "0xeAE43cFE24194F531A4Dc06d4bb93C39F2C6c665",
@@ -13118,7 +13118,7 @@
   },
   "flair-sdk:factory/FlairFactory": {
     "fqn": "flair-sdk:factory/FlairFactory",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xc4062CaF3E54978116303ac087C958b6764f2166",
       "5": "0x16d9e9f1f339c1aa90adfaeac26e518b6c0e311b",
@@ -13338,7 +13338,7 @@
   },
   "flair-sdk:factory/FlairFactoryNewable": {
     "fqn": "flair-sdk:factory/FlairFactoryNewable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xC446f39eBce2CCB5Fec13cDbD98E4F6ddEE12198",
       "5": "0x71247dab5d31b59d6aeb2df009c574ec9086036d",
@@ -13534,9 +13534,9 @@
   },
   "flair-sdk:legal/license/License": {
     "fqn": "flair-sdk:legal/license/License",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
+      "1": "0xb3a572b57b116b2c0520b798f7e91486dc378f90",
       "5": "0xBCEBaD050c4ad38225E3ee34F601DFBA6Bc30Cc8",
       "25": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
       "40": "0xb91057014bFB01df21e541335a78D930266f7869",
@@ -13581,7 +13581,7 @@
       "ftmTestnet": "0x90D4f1b7b52FAaBAD94725048Ae6Ab3de80D1eCD",
       "fuse": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
       "goerli": "0xBCEBaD050c4ad38225E3ee34F601DFBA6Bc30Cc8",
-      "mainnet": "0x136F0FFc4E3eDa473143D3bA774293a0Ae77151D",
+      "mainnet": "0xb3a572b57b116b2c0520b798f7e91486dc378f90",
       "metis": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "metisGoerli": "0x99cfc48d63e4914A0f94d46B0FCF30bD8775067E",
       "moonbeam": "0xfdc3a9eB43e0fa62cA206D9F51A1cDdf9dD5f1e8",
@@ -13718,7 +13718,7 @@
   },
   "flair-sdk:legal/license/LicenseOwnable": {
     "fqn": "flair-sdk:legal/license/LicenseOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x89645f545df21de76B31399E74DdEd5Edf00145c",
       "5": "0xea9e49bf118ed2ef37b94474b8702b18ad2f7f6a",
@@ -13889,7 +13889,7 @@
   },
   "flair-sdk:token/common/metadata/Metadata": {
     "fqn": "flair-sdk:token/common/metadata/Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x00232A8326af43515C8413A00b49282e25f50017",
       "5": "0xfaF4e7B5C6B5BEA7e5aeA09Bd56487541141b3F0",
@@ -14004,9 +14004,9 @@
   },
   "flair-sdk:token/common/metadata/MetadataOwnable": {
     "fqn": "flair-sdk:token/common/metadata/MetadataOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
+      "1": "0x89e46afff387e0d4efcadfff73cb4615a69ae47b",
       "5": "0x8c4431BD5da9412B87EC7c6f0999b5f53C78d50d",
       "25": "0x3c9BA6fd0b1cd2D3C26a193A760a05E7169e9B5e",
       "40": "0x3E368e34Ae2CD9F2617F397cE6B6310fE1cAEaed",
@@ -14051,7 +14051,7 @@
       "ftmTestnet": "0xdeA60aca7e5bFa2D482bF4eEc9c1Ba0580B26a5b",
       "fuse": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
       "goerli": "0x8c4431BD5da9412B87EC7c6f0999b5f53C78d50d",
-      "mainnet": "0xBCa9Cd5771322D7BbfabfD4dB816F57195d7B8b1",
+      "mainnet": "0x89e46afff387e0d4efcadfff73cb4615a69ae47b",
       "metis": "0x00Dc371b553B7be2dF5D5E42e49b4F9236f588B7",
       "metisGoerli": "0x6910176Ba412F3c3FD94630AA56F1573B9d79B7B",
       "moonbeam": "0xF8ABF0b720378bb25b3f73c01BDBd1A7EC558FB6",
@@ -14132,7 +14132,7 @@
   },
   "flair-sdk:access/ownable/Ownable": {
     "fqn": "flair-sdk:access/ownable/Ownable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x0459EE30E19776c6283Ce0A97DEC799c914BEB96",
       "5": "0x29199f2D68A91Bc227229DD1e11185CC639f134e",
@@ -14260,7 +14260,7 @@
   },
   "flair-sdk:finance/royalty/Royalty": {
     "fqn": "flair-sdk:finance/royalty/Royalty",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x5f5EdF57Bd727031aEaFd758f79460f4298c68F0",
       "5": "0x175e1b379E8f07FCf83cD13F5eE2B3eF00a18018",
@@ -14589,7 +14589,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcement": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcement",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x5dd91C4418e15fcca4DB1D01b5C6f875Ca405055",
       "5": "0x6e20c8b5466133d10287332589329dcFA90A1290",
@@ -14689,7 +14689,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcementOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xdbAc88824f9FaE585EAA07c598e693E588E1Bb18",
       "5": "0x111177d600b7449B685bf8fF654d236588aF9fA2",
@@ -14826,7 +14826,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyOwnable": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xf840B8e4205fba02Cf0cD6D49Ae2309ca9F6BEb3",
       "5": "0xC9DFaCC52F42d6a5A2C8221434DB48273A78960b",
@@ -15033,9 +15033,9 @@
   },
   "flair-sdk:finance/sales/TieredSalesOwnable": {
     "fqn": "flair-sdk:finance/sales/TieredSalesOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0xa7BAFc51800779DC3557c916AFC5AA92af4aE8B8",
+      "1": "0x01BF6D446bE193a66E06355Ee40896de3b066be2",
       "5": "0x0944159e3856AbA4229E4773e4914002700D9A55",
       "25": "0x6320E3De0548951F6614fF3C1b8F26a1fdAeA208",
       "40": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
@@ -15080,7 +15080,7 @@
       "ftmTestnet": "0x770798EC0CC0F03900F5bEE7c448d40BbFf756e0",
       "fuse": "0x5082a0AAffd7A82B16A15b6Ef42774A94527E69B",
       "goerli": "0x0944159e3856AbA4229E4773e4914002700D9A55",
-      "mainnet": "0xa7BAFc51800779DC3557c916AFC5AA92af4aE8B8",
+      "mainnet": "0x01BF6D446bE193a66E06355Ee40896de3b066be2",
       "metis": "0x2f75ce3BfF041d81d41AB6e403002A17151dFC24",
       "metisGoerli": "0x6897751C691fED8334B43B185a2Cc554C2FAAe73",
       "moonbeam": "0xaca3DC84080D4440CC526983027a89E0A16A73DD",
@@ -15279,7 +15279,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadata": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x52AF631599F413FdfDD8AEC5D72578B73708Dd3C",
       "5": "0xf2178fd0eb1c2e70b0aa9eac227be59b567b1ac3",
@@ -15446,7 +15446,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataOwnable": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0xdea60aca7e5bfa2d482bf4eec9c1ba0580b26a5b",
       "5": "0xa69Ce2578478499736A4170d01da8D9289901461",
@@ -15669,7 +15669,7 @@
   },
   "flair-sdk:common/UnorderedForwarder": {
     "fqn": "flair-sdk:common/UnorderedForwarder",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x294Fe22BcF44ff08A730C7791Ae0e9F473c13876",
       "5": "0x31a848F6fA51655115b12fb0b94a16EDA11Ed489",
@@ -15948,9 +15948,9 @@
   },
   "flair-sdk:finance/withdraw/Withdrawable": {
     "fqn": "flair-sdk:finance/withdraw/Withdrawable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
-      "1": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
+      "1": "0x08E1D6600c19357Bdb5EF8BCa85cf056C803608b",
       "5": "0xeEBc9d9BA9f3e4D884Da4Cb8e2b30c2F91a7b0B9",
       "25": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "40": "0x933d6a003a024dB27926Ca44bF717658813BA570",
@@ -15995,7 +15995,7 @@
       "ftmTestnet": "0xFb3905D2B1fBDaC92109F4A8Ffd2035Deb72dEF1",
       "fuse": "0xC97b52877Aa14987198eA8cABaa678B566baadF1",
       "goerli": "0xeEBc9d9BA9f3e4D884Da4Cb8e2b30c2F91a7b0B9",
-      "mainnet": "0x8aA62BB5F2B8e4Baa150eCB34b0C9775f12e99C1",
+      "mainnet": "0x08E1D6600c19357Bdb5EF8BCa85cf056C803608b",
       "metis": "0xa2b85F51affCAa00EFf599805407781C582d3d7F",
       "metisGoerli": "0x180442ebd727fE663aC280CeF7AC4F6902414603",
       "moonbeam": "0x2a89238074A3eF4cE606ed3f53CfE5C50CdD9299",
@@ -16219,7 +16219,7 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableOwnable": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "address": {
       "1": "0x2a9A7189F539a39215ae524Ca803CfbA16119432",
       "5": "0x607E2580c3377584596C8B02B5527CB23259E191",
@@ -16452,9 +16452,273 @@
     },
     "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"../../access/ownable/OwnableInternal.sol\";\n\nimport \"./WithdrawableInternal.sol\";\nimport \"./IWithdrawableAdmin.sol\";\n\n/**\n * @title Withdrawable - Admin - Ownable\n * @notice Allow contract owner to manage who can withdraw funds and how.\n *\n * @custom:type eip-2535-facet\n * @custom:category Finance\n * @custom:peer-dependencies IWithdrawable\n * @custom:provides-interfaces IWithdrawableAdmin\n */\ncontract WithdrawableOwnable is IWithdrawableAdmin, OwnableInternal, WithdrawableInternal {\n    function setWithdrawRecipient(address recipient) external onlyOwner {\n        _setWithdrawRecipient(recipient);\n    }\n\n    function lockWithdrawRecipient() external onlyOwner {\n        _lockWithdrawRecipient();\n    }\n\n    function revokeWithdrawPower() external onlyOwner {\n        _revokeWithdrawPower();\n    }\n\n    function setWithdrawMode(Mode mode) external onlyOwner {\n        _setWithdrawMode(mode);\n    }\n\n    function lockWithdrawMode() external onlyOwner {\n        _lockWithdrawMode();\n    }\n}\n"
   },
+  "flair-sdk:token/ERC20/ERC20WithERC2771": {
+    "fqn": "flair-sdk:token/ERC20/ERC20WithERC2771",
+    "version": "2.26.1",
+    "address": {
+      "5": "0x4393fEe416BaAcbBCB3cC0039f77C2A448dD9054",
+      "137": "0x5368004569091713B85000564D668D1744803B7a",
+      "goerli": "0x4393fEe416BaAcbBCB3cC0039f77C2A448dD9054",
+      "polygon": "0x5368004569091713B85000564D668D1744803B7a"
+    },
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "ERC20WithERC2771",
+      "sourceName": "src/token/ERC20/ERC20WithERC2771.sol",
+      "abi": [
+        {
+          "inputs": [],
+          "name": "ErrMaxSupplyExceeded",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "ErrSenderIsNotSelf",
+          "type": "error"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            }
+          ],
+          "name": "allowance",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "approve",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "maxSupply",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "mintByFacet",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address[]",
+              "name": "tos",
+              "type": "address[]"
+            },
+            {
+              "internalType": "uint256[]",
+              "name": "amounts",
+              "type": "uint256[]"
+            }
+          ],
+          "name": "mintByFacet",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "totalSupply",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "transfer",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "transferFrom",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x608060405234801561001057600080fd5b50610c66806100206000396000f3fe608060405234801561001057600080fd5b50600436106100a35760003560e01c806349142a1411610076578063a9059cbb1161005b578063a9059cbb14610169578063d5abeb011461017c578063dd62ed3e1461018457600080fd5b806349142a141461010e57806370a082311461012157600080fd5b8063095ea7b3146100a857806318160ddd146100d057806323b872dd146100e65780632d4f475f146100f9575b600080fd5b6100bb6100b6366004610a67565b610197565b60405190151581526020015b60405180910390f35b6100d86101b2565b6040519081526020016100c7565b6100bb6100f4366004610a91565b6101e1565b61010c610107366004610a67565b6101f6565b005b61010c61011c366004610b19565b610224565b6100d861012f366004610b85565b6001600160a01b031660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e05602052604090205490565b6100bb610177366004610a67565b6102b0565b6100d86102c4565b6100d8610192366004610ba0565b6102ee565b60006101ab6101a461033a565b8484610344565b9392505050565b60006101dc7fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e075490565b905090565b60006101ee8484846104c8565b949350505050565b3033146102165760405163fd570b5160e01b815260040160405180910390fd5b61022082826105c5565b5050565b3033146102445760405163fd570b5160e01b815260040160405180910390fd5b60005b838110156102a95761029785858381811061026457610264610bd3565b90506020020160208101906102799190610b85565b84848481811061028b5761028b610bd3565b905060200201356105c5565b806102a181610bff565b915050610247565b5050505050565b60006101ab6102bd61033a565b84846106f4565b60006101dc7f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e5490565b6001600160a01b0380831660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e06602090815260408083209385168352929052908120546101ab565b60006101dc610941565b60006001600160a01b0384166103c65760405162461bcd60e51b8152602060048201526024808201527f45524332303a20617070726f76652066726f6d20746865207a65726f2061646460448201527f726573730000000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6001600160a01b0383166104425760405162461bcd60e51b815260206004820152602260248201527f45524332303a20617070726f766520746f20746865207a65726f20616464726560448201527f737300000000000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b0384811660008181527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e066020908152604080832094881680845294825291829020869055815186815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a35060019392505050565b600080610521856104d761033a565b6001600160a01b0391821660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e066020908152604080832093909416825291909152205490565b9050828110156105995760405162461bcd60e51b815260206004820152602860248201527f45524332303a207472616e7366657220616d6f756e742065786365656473206160448201527f6c6c6f77616e636500000000000000000000000000000000000000000000000060648201526084016103bd565b6105ad856105a561033a565b858403610344565b506105b98585856106f4565b50600195945050505050565b6001600160a01b03821661061b5760405162461bcd60e51b815260206004820152601f60248201527f45524332303a206d696e7420746f20746865207a65726f20616464726573730060448201526064016103bd565b6106276000838361094b565b7fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e0780547fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e0591839160009061067c908490610c18565b90915550506001600160a01b038316600090815260208290526040812080548492906106a9908490610c18565b90915550506040518281526001600160a01b038416906000907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9060200160405180910390a3505050565b60006001600160a01b0384166107725760405162461bcd60e51b815260206004820152602560248201527f45524332303a207472616e736665722066726f6d20746865207a65726f20616460448201527f647265737300000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b0383166107ee5760405162461bcd60e51b815260206004820152602360248201527f45524332303a207472616e7366657220746f20746865207a65726f206164647260448201527f657373000000000000000000000000000000000000000000000000000000000060648201526084016103bd565b6107f984848461094b565b6001600160a01b03841660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e056020819052604090912054838110156108aa5760405162461bcd60e51b815260206004820152602660248201527f45524332303a207472616e7366657220616d6f756e742065786365656473206260448201527f616c616e6365000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b038087166000908152602084905260408082208785039055918716815290812080548692906108e1908490610c18565b92505081905550846001600160a01b0316866001600160a01b03167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef8660405161092d91815260200190565b60405180910390a350600195945050505050565b60006101dc61095b565b6109568383836109a1565b505050565b7fdb1d5e345c4903e9a32b6674ecc8b1deaddbbb2551474fb34c9d34becbe7f420546000906001600160a01b0316330361099c575060131936013560601c90565b503390565b6001600160a01b038316610956576001600160a01b03821615610956577f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e5481610a097fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e075490565b610a139190610c18565b1115610956576040517fb746b1c900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80356001600160a01b0381168114610a6257600080fd5b919050565b60008060408385031215610a7a57600080fd5b610a8383610a4b565b946020939093013593505050565b600080600060608486031215610aa657600080fd5b610aaf84610a4b565b9250610abd60208501610a4b565b9150604084013590509250925092565b60008083601f840112610adf57600080fd5b50813567ffffffffffffffff811115610af757600080fd5b6020830191508360208260051b8501011115610b1257600080fd5b9250929050565b60008060008060408587031215610b2f57600080fd5b843567ffffffffffffffff80821115610b4757600080fd5b610b5388838901610acd565b90965094506020870135915080821115610b6c57600080fd5b50610b7987828801610acd565b95989497509550505050565b600060208284031215610b9757600080fd5b6101ab82610a4b565b60008060408385031215610bb357600080fd5b610bbc83610a4b565b9150610bca60208401610a4b565b90509250929050565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b600060018201610c1157610c11610be9565b5060010190565b60008219821115610c2b57610c2b610be9565b50019056fea264697066735822122061bfe9b8d44458586d8cfa1ec39ae77c514dbb72b44ffd9e387b08807d03fcf064736f6c634300080f0033",
+      "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100a35760003560e01c806349142a1411610076578063a9059cbb1161005b578063a9059cbb14610169578063d5abeb011461017c578063dd62ed3e1461018457600080fd5b806349142a141461010e57806370a082311461012157600080fd5b8063095ea7b3146100a857806318160ddd146100d057806323b872dd146100e65780632d4f475f146100f9575b600080fd5b6100bb6100b6366004610a67565b610197565b60405190151581526020015b60405180910390f35b6100d86101b2565b6040519081526020016100c7565b6100bb6100f4366004610a91565b6101e1565b61010c610107366004610a67565b6101f6565b005b61010c61011c366004610b19565b610224565b6100d861012f366004610b85565b6001600160a01b031660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e05602052604090205490565b6100bb610177366004610a67565b6102b0565b6100d86102c4565b6100d8610192366004610ba0565b6102ee565b60006101ab6101a461033a565b8484610344565b9392505050565b60006101dc7fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e075490565b905090565b60006101ee8484846104c8565b949350505050565b3033146102165760405163fd570b5160e01b815260040160405180910390fd5b61022082826105c5565b5050565b3033146102445760405163fd570b5160e01b815260040160405180910390fd5b60005b838110156102a95761029785858381811061026457610264610bd3565b90506020020160208101906102799190610b85565b84848481811061028b5761028b610bd3565b905060200201356105c5565b806102a181610bff565b915050610247565b5050505050565b60006101ab6102bd61033a565b84846106f4565b60006101dc7f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e5490565b6001600160a01b0380831660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e06602090815260408083209385168352929052908120546101ab565b60006101dc610941565b60006001600160a01b0384166103c65760405162461bcd60e51b8152602060048201526024808201527f45524332303a20617070726f76652066726f6d20746865207a65726f2061646460448201527f726573730000000000000000000000000000000000000000000000000000000060648201526084015b60405180910390fd5b6001600160a01b0383166104425760405162461bcd60e51b815260206004820152602260248201527f45524332303a20617070726f766520746f20746865207a65726f20616464726560448201527f737300000000000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b0384811660008181527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e066020908152604080832094881680845294825291829020869055815186815291517f8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b9259281900390910190a35060019392505050565b600080610521856104d761033a565b6001600160a01b0391821660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e066020908152604080832093909416825291909152205490565b9050828110156105995760405162461bcd60e51b815260206004820152602860248201527f45524332303a207472616e7366657220616d6f756e742065786365656473206160448201527f6c6c6f77616e636500000000000000000000000000000000000000000000000060648201526084016103bd565b6105ad856105a561033a565b858403610344565b506105b98585856106f4565b50600195945050505050565b6001600160a01b03821661061b5760405162461bcd60e51b815260206004820152601f60248201527f45524332303a206d696e7420746f20746865207a65726f20616464726573730060448201526064016103bd565b6106276000838361094b565b7fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e0780547fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e0591839160009061067c908490610c18565b90915550506001600160a01b038316600090815260208290526040812080548492906106a9908490610c18565b90915550506040518281526001600160a01b038416906000907fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef9060200160405180910390a3505050565b60006001600160a01b0384166107725760405162461bcd60e51b815260206004820152602560248201527f45524332303a207472616e736665722066726f6d20746865207a65726f20616460448201527f647265737300000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b0383166107ee5760405162461bcd60e51b815260206004820152602360248201527f45524332303a207472616e7366657220746f20746865207a65726f206164647260448201527f657373000000000000000000000000000000000000000000000000000000000060648201526084016103bd565b6107f984848461094b565b6001600160a01b03841660009081527fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e056020819052604090912054838110156108aa5760405162461bcd60e51b815260206004820152602660248201527f45524332303a207472616e7366657220616d6f756e742065786365656473206260448201527f616c616e6365000000000000000000000000000000000000000000000000000060648201526084016103bd565b6001600160a01b038087166000908152602084905260408082208785039055918716815290812080548692906108e1908490610c18565b92505081905550846001600160a01b0316866001600160a01b03167fddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef8660405161092d91815260200190565b60405180910390a350600195945050505050565b60006101dc61095b565b6109568383836109a1565b505050565b7fdb1d5e345c4903e9a32b6674ecc8b1deaddbbb2551474fb34c9d34becbe7f420546000906001600160a01b0316330361099c575060131936013560601c90565b503390565b6001600160a01b038316610956576001600160a01b03821615610956577f992082eab08422324340bd25ada2736d6cd62f0b0f29a637f182303af822d56e5481610a097fe2463c7b61902c74336138227f8649cf55ec352748fb1d5f5a2a227dbcc19e075490565b610a139190610c18565b1115610956576040517fb746b1c900000000000000000000000000000000000000000000000000000000815260040160405180910390fd5b80356001600160a01b0381168114610a6257600080fd5b919050565b60008060408385031215610a7a57600080fd5b610a8383610a4b565b946020939093013593505050565b600080600060608486031215610aa657600080fd5b610aaf84610a4b565b9250610abd60208501610a4b565b9150604084013590509250925092565b60008083601f840112610adf57600080fd5b50813567ffffffffffffffff811115610af757600080fd5b6020830191508360208260051b8501011115610b1257600080fd5b9250929050565b60008060008060408587031215610b2f57600080fd5b843567ffffffffffffffff80821115610b4757600080fd5b610b5388838901610acd565b90965094506020870135915080821115610b6c57600080fd5b50610b7987828801610acd565b95989497509550505050565b600060208284031215610b9757600080fd5b6101ab82610a4b565b60008060408385031215610bb357600080fd5b610bbc83610a4b565b9150610bca60208401610a4b565b90509250929050565b634e487b7160e01b600052603260045260246000fd5b634e487b7160e01b600052601160045260246000fd5b600060018201610c1157610c11610be9565b5060010190565b60008219821115610c2b57610c2b610be9565b50019056fea264697066735822122061bfe9b8d44458586d8cfa1ec39ae77c514dbb72b44ffd9e387b08807d03fcf064736f6c634300080f0033",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"./base/ERC20BaseERC2771.sol\";\nimport \"./extensions/supply/ERC20SupplyExtension.sol\";\nimport \"./extensions/mintable/ERC20MintableExtension.sol\";\nimport \"./extensions/burnable/ERC20BurnableExtension.sol\";\n\n/**\n * @title ERC20 - with meta-transactions\n * @notice Standard EIP-20 with ability to accept meta transactions (mainly transfer and approve methods).\n *\n * @custom:type eip-2535-facet\n * @custom:category Tokens\n * @custom:provides-interfaces IERC20 IERC20Base IERC20SupplyExtension IERC20MintableExtension\n */\ncontract ERC20WithERC2771 is ERC20BaseERC2771, ERC20SupplyExtension, ERC20MintableExtension {\n    function _msgSender() internal view virtual override(Context, ERC20BaseERC2771) returns (address) {\n        return ERC20BaseERC2771._msgSender();\n    }\n\n    function _msgData() internal view virtual override(Context, ERC20BaseERC2771) returns (bytes calldata) {\n        return ERC20BaseERC2771._msgData();\n    }\n\n    /**\n     * @dev See {ERC20-_beforeTokenTransfer}.\n     */\n    function _beforeTokenTransfer(\n        address from,\n        address to,\n        uint256 amount\n    ) internal virtual override(ERC20BaseInternal, ERC20SupplyExtension) {\n        ERC20SupplyExtension._beforeTokenTransfer(from, to, amount);\n    }\n}\n"
+  },
   "flair-sdk:access/ownable/IERC173": {
     "fqn": "flair-sdk:access/ownable/IERC173",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173",
@@ -16515,7 +16779,7 @@
   },
   "flair-sdk:access/ownable/IERC173Events": {
     "fqn": "flair-sdk:access/ownable/IERC173Events",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC173Events",
@@ -16550,7 +16814,7 @@
   },
   "flair-sdk:access/ownable/OwnableERC2771": {
     "fqn": "flair-sdk:access/ownable/OwnableERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableERC2771",
@@ -16618,7 +16882,7 @@
   },
   "flair-sdk:access/ownable/OwnableInternal": {
     "fqn": "flair-sdk:access/ownable/OwnableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableInternal",
@@ -16653,7 +16917,7 @@
   },
   "flair-sdk:access/ownable/OwnableStorage": {
     "fqn": "flair-sdk:access/ownable/OwnableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "OwnableStorage",
@@ -16668,7 +16932,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerable",
@@ -16912,7 +17176,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableERC2771": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableERC2771",
@@ -17156,7 +17420,7 @@
   },
   "flair-sdk:access/roles/AccessControlEnumerableStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlEnumerableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlEnumerableStorage",
@@ -17171,7 +17435,7 @@
   },
   "flair-sdk:access/roles/AccessControlInternal": {
     "fqn": "flair-sdk:access/roles/AccessControlInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlInternal",
@@ -17275,7 +17539,7 @@
   },
   "flair-sdk:access/roles/AccessControlStorage": {
     "fqn": "flair-sdk:access/roles/AccessControlStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "AccessControlStorage",
@@ -17290,7 +17554,7 @@
   },
   "flair-sdk:access/roles/IAccessControl": {
     "fqn": "flair-sdk:access/roles/IAccessControl",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControl",
@@ -17478,7 +17742,7 @@
   },
   "flair-sdk:access/roles/IAccessControlAdmin": {
     "fqn": "flair-sdk:access/roles/IAccessControlAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlAdmin",
@@ -17507,7 +17771,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEnumerable": {
     "fqn": "flair-sdk:access/roles/IAccessControlEnumerable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEnumerable",
@@ -17738,7 +18002,7 @@
   },
   "flair-sdk:access/roles/IAccessControlEvents": {
     "fqn": "flair-sdk:access/roles/IAccessControlEvents",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IAccessControlEvents",
@@ -17829,7 +18093,7 @@
   },
   "flair-sdk:diamond/DiamondStorage": {
     "fqn": "flair-sdk:diamond/DiamondStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "DiamondStorage",
@@ -17887,7 +18151,7 @@
   },
   "flair-sdk:diamond/IDiamondCut": {
     "fqn": "flair-sdk:diamond/IDiamondCut",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondCut",
@@ -17985,7 +18249,7 @@
   },
   "flair-sdk:diamond/IDiamondLoupe": {
     "fqn": "flair-sdk:diamond/IDiamondLoupe",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDiamondLoupe",
@@ -18077,7 +18341,7 @@
   },
   "flair-sdk:factory/Clones": {
     "fqn": "flair-sdk:factory/Clones",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "Clones",
@@ -18092,7 +18356,7 @@
   },
   "flair-sdk:factory/MinimalProxy": {
     "fqn": "flair-sdk:factory/MinimalProxy",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MinimalProxy",
@@ -18127,7 +18391,7 @@
   },
   "flair-sdk:finance/depository/IDepository": {
     "fqn": "flair-sdk:finance/depository/IDepository",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IDepository",
@@ -18225,7 +18489,7 @@
   },
   "flair-sdk:finance/royalty/IRoyalty": {
     "fqn": "flair-sdk:finance/royalty/IRoyalty",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyalty",
@@ -18494,7 +18758,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyAdmin": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyAdmin",
@@ -18565,7 +18829,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyEnforcement": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyEnforcement",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyEnforcement",
@@ -18594,7 +18858,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyEnforcementAdmin": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyEnforcementAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyEnforcementAdmin",
@@ -18641,7 +18905,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyEnforcementInternal": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyEnforcementInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyEnforcementInternal",
@@ -18668,7 +18932,7 @@
   },
   "flair-sdk:finance/royalty/IRoyaltyInternal": {
     "fqn": "flair-sdk:finance/royalty/IRoyaltyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IRoyaltyInternal",
@@ -18741,7 +19005,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcementInternal": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcementInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyEnforcementInternal",
@@ -18768,7 +19032,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyEnforcementStorage": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyEnforcementStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyEnforcementStorage",
@@ -18783,7 +19047,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyInternal": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyInternal",
@@ -18856,7 +19120,7 @@
   },
   "flair-sdk:finance/royalty/RoyaltyStorage": {
     "fqn": "flair-sdk:finance/royalty/RoyaltyStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "RoyaltyStorage",
@@ -18871,7 +19135,7 @@
   },
   "flair-sdk:finance/sales/ITieredSales": {
     "fqn": "flair-sdk:finance/sales/ITieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSales",
@@ -19163,7 +19427,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesAdmin": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesAdmin",
@@ -19299,7 +19563,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesInternal",
@@ -19346,7 +19610,7 @@
   },
   "flair-sdk:finance/sales/ITieredSalesRoleBased": {
     "fqn": "flair-sdk:finance/sales/ITieredSalesRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITieredSalesRoleBased",
@@ -19395,7 +19659,7 @@
   },
   "flair-sdk:finance/sales/TieredSales": {
     "fqn": "flair-sdk:finance/sales/TieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSales",
@@ -19706,7 +19970,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesERC2771": {
     "fqn": "flair-sdk:finance/sales/TieredSalesERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesERC2771",
@@ -20017,7 +20281,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesInternal": {
     "fqn": "flair-sdk:finance/sales/TieredSalesInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesInternal",
@@ -20083,7 +20347,7 @@
   },
   "flair-sdk:finance/sales/TieredSalesStorage": {
     "fqn": "flair-sdk:finance/sales/TieredSalesStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TieredSalesStorage",
@@ -20098,7 +20362,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawable": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawable",
@@ -20290,7 +20554,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawableAdmin": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawableAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawableAdmin",
@@ -20353,7 +20617,7 @@
   },
   "flair-sdk:finance/withdraw/IWithdrawableInternal": {
     "fqn": "flair-sdk:finance/withdraw/IWithdrawableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IWithdrawableInternal",
@@ -20462,7 +20726,7 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableInternal": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "WithdrawableInternal",
@@ -20590,7 +20854,7 @@
   },
   "flair-sdk:finance/withdraw/WithdrawableStorage": {
     "fqn": "flair-sdk:finance/withdraw/WithdrawableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "WithdrawableStorage",
@@ -20605,7 +20869,7 @@
   },
   "flair-sdk:introspection/ERC165Storage": {
     "fqn": "flair-sdk:introspection/ERC165Storage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC165Storage",
@@ -20620,7 +20884,7 @@
   },
   "flair-sdk:introspection/IERC165Admin": {
     "fqn": "flair-sdk:introspection/IERC165Admin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC165Admin",
@@ -20654,7 +20918,7 @@
   },
   "flair-sdk:legal/license/a16z/ICantBeEvil": {
     "fqn": "flair-sdk:legal/license/a16z/ICantBeEvil",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ICantBeEvil",
@@ -20696,7 +20960,7 @@
   },
   "flair-sdk:legal/license/ILicense": {
     "fqn": "flair-sdk:legal/license/ILicense",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicense",
@@ -20820,7 +21084,7 @@
   },
   "flair-sdk:legal/license/ILicenseAdmin": {
     "fqn": "flair-sdk:legal/license/ILicenseAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicenseAdmin",
@@ -20869,7 +21133,7 @@
   },
   "flair-sdk:legal/license/ILicenseInternal": {
     "fqn": "flair-sdk:legal/license/ILicenseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ILicenseInternal",
@@ -20928,7 +21192,7 @@
   },
   "flair-sdk:legal/license/LicenseInternal": {
     "fqn": "flair-sdk:legal/license/LicenseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "LicenseInternal",
@@ -20987,7 +21251,7 @@
   },
   "flair-sdk:legal/license/LicenseStorage": {
     "fqn": "flair-sdk:legal/license/LicenseStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "LicenseStorage",
@@ -21002,7 +21266,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextInternal": {
     "fqn": "flair-sdk:metatx/ERC2771ContextInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextInternal",
@@ -21017,7 +21281,7 @@
   },
   "flair-sdk:metatx/ERC2771ContextStorage": {
     "fqn": "flair-sdk:metatx/ERC2771ContextStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC2771ContextStorage",
@@ -21032,7 +21296,7 @@
   },
   "flair-sdk:metatx/IERC2771Context": {
     "fqn": "flair-sdk:metatx/IERC2771Context",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771Context",
@@ -21080,7 +21344,7 @@
   },
   "flair-sdk:metatx/IERC2771ContextAdmin": {
     "fqn": "flair-sdk:metatx/IERC2771ContextAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC2771ContextAdmin",
@@ -21109,7 +21373,7 @@
   },
   "flair-sdk:security/ReentrancyGuard": {
     "fqn": "flair-sdk:security/ReentrancyGuard",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ReentrancyGuard",
@@ -21124,7 +21388,7 @@
   },
   "flair-sdk:security/ReentrancyGuardStorage": {
     "fqn": "flair-sdk:security/ReentrancyGuardStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ReentrancyGuardStorage",
@@ -21139,7 +21403,7 @@
   },
   "flair-sdk:token/common/burnable/BurnableStorage": {
     "fqn": "flair-sdk:token/common/burnable/BurnableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "BurnableStorage",
@@ -21154,7 +21418,7 @@
   },
   "flair-sdk:token/common/burnable/IBurnableAdmin": {
     "fqn": "flair-sdk:token/common/burnable/IBurnableAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IBurnableAdmin",
@@ -21183,7 +21447,7 @@
   },
   "flair-sdk:token/common/metadata/IMetadata": {
     "fqn": "flair-sdk:token/common/metadata/IMetadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IMetadata",
@@ -21225,7 +21489,7 @@
   },
   "flair-sdk:token/common/metadata/IMetadataAdmin": {
     "fqn": "flair-sdk:token/common/metadata/IMetadataAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IMetadataAdmin",
@@ -21274,7 +21538,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadata": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadata",
@@ -21381,7 +21645,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadataAdmin": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadataAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadataAdmin",
@@ -21506,7 +21770,7 @@
   },
   "flair-sdk:token/common/metadata/ITokenMetadataInternal": {
     "fqn": "flair-sdk:token/common/metadata/ITokenMetadataInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ITokenMetadataInternal",
@@ -21541,7 +21805,7 @@
   },
   "flair-sdk:token/common/metadata/MetadataAdminInternal": {
     "fqn": "flair-sdk:token/common/metadata/MetadataAdminInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MetadataAdminInternal",
@@ -21556,7 +21820,7 @@
   },
   "flair-sdk:token/common/metadata/MetadataStorage": {
     "fqn": "flair-sdk:token/common/metadata/MetadataStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "MetadataStorage",
@@ -21571,7 +21835,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataAdminInternal": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataAdminInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TokenMetadataAdminInternal",
@@ -21606,7 +21870,7 @@
   },
   "flair-sdk:token/common/metadata/TokenMetadataStorage": {
     "fqn": "flair-sdk:token/common/metadata/TokenMetadataStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "TokenMetadataStorage",
@@ -21621,7 +21885,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155Base": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155Base",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155Base",
@@ -21892,7 +22156,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseERC2771",
@@ -22163,7 +22427,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseInternal": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseInternal",
@@ -22278,7 +22542,7 @@
   },
   "flair-sdk:token/ERC1155/base/ERC1155BaseStorage": {
     "fqn": "flair-sdk:token/ERC1155/base/ERC1155BaseStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BaseStorage",
@@ -22293,7 +22557,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/ERC1155BurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155BurnableExtension",
@@ -22505,7 +22769,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/burnable/IERC1155BurnableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/burnable/IERC1155BurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155BurnableExtension",
@@ -22613,7 +22877,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableExtension",
@@ -22873,7 +23137,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableInternal",
@@ -22988,7 +23252,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/ERC1155LockableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155LockableStorage",
@@ -23003,7 +23267,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/lockable/IERC1155LockableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/lockable/IERC1155LockableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableExtension",
@@ -23111,7 +23375,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/ERC1155MintableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/ERC1155MintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155MintableExtension",
@@ -23287,7 +23551,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/mintable/IERC1155MintableExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/mintable/IERC1155MintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableExtension",
@@ -23359,7 +23623,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/royalty/ERC1155RoyaltyEnforcementExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/royalty/ERC1155RoyaltyEnforcementExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155RoyaltyEnforcementExtension",
@@ -23641,7 +23905,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyExtension",
@@ -23813,7 +24077,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyInternal",
@@ -23928,7 +24192,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/ERC1155SupplyStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyStorage",
@@ -23943,7 +24207,7 @@
   },
   "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtension": {
     "fqn": "flair-sdk:token/ERC1155/extensions/supply/IERC1155SupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyExtension",
@@ -24016,7 +24280,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableOwnable",
@@ -24124,7 +24388,7 @@
   },
   "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/locking/IERC1155LockableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155LockableRoleBased",
@@ -24232,7 +24496,7 @@
   },
   "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata": {
     "fqn": "flair-sdk:token/ERC1155/facets/metadata/IERC1155Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Metadata",
@@ -24267,7 +24531,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableOwnable": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableOwnable",
@@ -24339,7 +24603,7 @@
   },
   "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC1155/facets/minting/IERC1155MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155MintableRoleBased",
@@ -24411,7 +24675,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/ERC1155TieredSalesStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155TieredSalesStorage",
@@ -24426,7 +24690,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSales",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSales",
@@ -24480,7 +24744,7 @@
   },
   "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/sales/IERC1155TieredSalesAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155TieredSalesAdmin",
@@ -24532,7 +24796,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/ERC1155SupplyAdminStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC1155SupplyAdminStorage",
@@ -24547,7 +24811,7 @@
   },
   "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC1155/facets/supply/IERC1155SupplyAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155SupplyAdmin",
@@ -24630,7 +24894,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155",
@@ -24901,7 +25165,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Events": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Events",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Events",
@@ -25016,7 +25280,7 @@
   },
   "flair-sdk:token/ERC1155/IERC1155Receiver": {
     "fqn": "flair-sdk:token/ERC1155/IERC1155Receiver",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC1155Receiver",
@@ -25129,7 +25393,7 @@
   },
   "flair-sdk:token/ERC20/base/ERC20Base": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20Base",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20Base",
@@ -25326,9 +25590,208 @@
     },
     "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport { IERC20Base } from \"./IERC20Base.sol\";\nimport { ERC20BaseInternal } from \"./ERC20BaseInternal.sol\";\nimport { ERC20BaseStorage } from \"./ERC20BaseStorage.sol\";\n\n/**\n * @title Base ERC20 implementation, excluding optional extensions\n */\nabstract contract ERC20Base is IERC20Base, ERC20BaseInternal {\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function totalSupply() public view virtual returns (uint256) {\n        return _totalSupply();\n    }\n\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function balanceOf(address account) public view virtual returns (uint256) {\n        return _balanceOf(account);\n    }\n\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function allowance(address holder, address spender) public view virtual returns (uint256) {\n        return _allowance(holder, spender);\n    }\n\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function approve(address spender, uint256 amount) public virtual returns (bool) {\n        return _approve(_msgSender(), spender, amount);\n    }\n\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function transfer(address recipient, uint256 amount) public virtual returns (bool) {\n        return _transfer(_msgSender(), recipient, amount);\n    }\n\n    /**\n     * @inheritdoc IERC20Base\n     */\n    function transferFrom(\n        address holder,\n        address recipient,\n        uint256 amount\n    ) public virtual returns (bool) {\n        return _transferFrom(holder, recipient, amount);\n    }\n}\n"
   },
+  "flair-sdk:token/ERC20/base/ERC20BaseERC2771": {
+    "fqn": "flair-sdk:token/ERC20/base/ERC20BaseERC2771",
+    "version": "2.26.1",
+    "artifact": {
+      "_format": "hh-sol-artifact-1",
+      "contractName": "ERC20BaseERC2771",
+      "sourceName": "src/token/ERC20/base/ERC20BaseERC2771.sol",
+      "abi": [
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Approval",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "from",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "to",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "value",
+              "type": "uint256"
+            }
+          ],
+          "name": "Transfer",
+          "type": "event"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            }
+          ],
+          "name": "allowance",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "spender",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "approve",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "balanceOf",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "totalSupply",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "transfer",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "holder",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "recipient",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "transferFrom",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        }
+      ],
+      "bytecode": "0x",
+      "deployedBytecode": "0x",
+      "linkReferences": {},
+      "deployedLinkReferences": {}
+    },
+    "sourceCode": "// SPDX-License-Identifier: MIT\n\npragma solidity ^0.8.15;\n\nimport \"../../../metatx/ERC2771ContextInternal.sol\";\n\nimport \"./ERC20Base.sol\";\n\n/**\n * @title Base ERC20 contract with meta-transactions support (via ERC2771).\n */\nabstract contract ERC20BaseERC2771 is ERC20Base, ERC2771ContextInternal {\n    function _msgSender() internal view virtual override(Context, ERC2771ContextInternal) returns (address) {\n        return ERC2771ContextInternal._msgSender();\n    }\n\n    function _msgData() internal view virtual override(Context, ERC2771ContextInternal) returns (bytes calldata) {\n        return ERC2771ContextInternal._msgData();\n    }\n}\n"
+  },
   "flair-sdk:token/ERC20/base/ERC20BaseInternal": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20BaseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BaseInternal",
@@ -25394,7 +25857,7 @@
   },
   "flair-sdk:token/ERC20/base/ERC20BaseStorage": {
     "fqn": "flair-sdk:token/ERC20/base/ERC20BaseStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BaseStorage",
@@ -25409,7 +25872,7 @@
   },
   "flair-sdk:token/ERC20/base/IERC20Base": {
     "fqn": "flair-sdk:token/ERC20/base/IERC20Base",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20Base",
@@ -25608,7 +26071,7 @@
   },
   "flair-sdk:token/ERC20/base/IERC20BaseInternal": {
     "fqn": "flair-sdk:token/ERC20/base/IERC20BaseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20BaseInternal",
@@ -25674,7 +26137,7 @@
   },
   "flair-sdk:token/ERC20/extensions/burnable/ERC20BurnableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/burnable/ERC20BurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20BurnableExtension",
@@ -25776,7 +26239,7 @@
   },
   "flair-sdk:token/ERC20/extensions/burnable/IERC20BurnableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/burnable/IERC20BurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20BurnableExtension",
@@ -25823,7 +26286,7 @@
   },
   "flair-sdk:token/ERC20/extensions/mintable/ERC20MintableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/mintable/ERC20MintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MintableExtension",
@@ -25930,7 +26393,7 @@
   },
   "flair-sdk:token/ERC20/extensions/mintable/IERC20MintableExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/mintable/IERC20MintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableExtension",
@@ -25982,7 +26445,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyExtension",
@@ -26066,7 +26529,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyInternal": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyInternal",
@@ -26087,7 +26550,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyStorage": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/ERC20SupplyStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyStorage",
@@ -26102,7 +26565,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyExtension": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyExtension",
@@ -26131,7 +26594,7 @@
   },
   "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyInternal": {
     "fqn": "flair-sdk:token/ERC20/extensions/supply/IERC20SupplyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyInternal",
@@ -26152,7 +26615,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataInternal": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MetadataInternal",
@@ -26167,7 +26630,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataStorage": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/ERC20MetadataStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20MetadataStorage",
@@ -26182,7 +26645,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/IERC20Metadata": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/IERC20Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20Metadata",
@@ -26237,7 +26700,7 @@
   },
   "flair-sdk:token/ERC20/facets/metadata/IERC20MetadataAdmin": {
     "fqn": "flair-sdk:token/ERC20/facets/metadata/IERC20MetadataAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MetadataAdmin",
@@ -26273,7 +26736,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/IERC20MintableOwnable": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/IERC20MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableOwnable",
@@ -26325,7 +26788,7 @@
   },
   "flair-sdk:token/ERC20/facets/minting/IERC20MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC20/facets/minting/IERC20MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20MintableRoleBased",
@@ -26377,7 +26840,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminInternal": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyAdminInternal",
@@ -26392,7 +26855,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/ERC20SupplyAdminStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC20SupplyAdminStorage",
@@ -26407,7 +26870,7 @@
   },
   "flair-sdk:token/ERC20/facets/supply/IERC20SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC20/facets/supply/IERC20SupplyAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC20SupplyAdmin",
@@ -26461,7 +26924,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABase": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABase",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABase",
@@ -26844,7 +27307,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABaseERC2771": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABaseERC2771",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABaseERC2771",
@@ -27227,7 +27690,7 @@
   },
   "flair-sdk:token/ERC721/base/ERC721ABaseInternal": {
     "fqn": "flair-sdk:token/ERC721/base/ERC721ABaseInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABaseInternal",
@@ -27419,7 +27882,7 @@
   },
   "flair-sdk:token/ERC721/base/IERC721ABase": {
     "fqn": "flair-sdk:token/ERC721/base/IERC721ABase",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721ABase",
@@ -27802,7 +28265,7 @@
   },
   "flair-sdk:token/ERC721/base/IERC721AInternal": {
     "fqn": "flair-sdk:token/ERC721/base/IERC721AInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721AInternal",
@@ -27994,7 +28457,7 @@
   },
   "flair-sdk:token/ERC721/extensions/burnable/ERC721ABurnableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/burnable/ERC721ABurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ABurnableExtension",
@@ -28243,7 +28706,7 @@
   },
   "flair-sdk:token/ERC721/extensions/burnable/IERC721BurnableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/burnable/IERC721BurnableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721BurnableExtension",
@@ -28311,7 +28774,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ALockableExtension",
@@ -28635,7 +29098,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721ALockableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ALockableInternal",
@@ -28864,7 +29327,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/ERC721LockableStorage": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/ERC721LockableStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721LockableStorage",
@@ -28879,7 +29342,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC5192": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC5192",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC5192",
@@ -28914,7 +29377,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableExtension",
@@ -29038,7 +29501,7 @@
   },
   "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/lockable/IERC721LockableInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableInternal",
@@ -29091,7 +29554,7 @@
   },
   "flair-sdk:token/ERC721/extensions/mintable/ERC721AMintableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/mintable/ERC721AMintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721AMintableExtension",
@@ -29342,7 +29805,7 @@
   },
   "flair-sdk:token/ERC721/extensions/mintable/IERC721MintableExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/mintable/IERC721MintableExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableExtension",
@@ -29412,7 +29875,7 @@
   },
   "flair-sdk:token/ERC721/extensions/royalty/ERC721ARoyaltyEnforcementExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/royalty/ERC721ARoyaltyEnforcementExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ARoyaltyEnforcementExtension",
@@ -29806,7 +30269,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721ASupplyExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721ASupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721ASupplyExtension",
@@ -30029,7 +30492,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyInternal",
@@ -30050,7 +30513,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyStorage": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/ERC721SupplyStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyStorage",
@@ -30065,7 +30528,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyExtension": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyExtension",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyExtension",
@@ -30107,7 +30570,7 @@
   },
   "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyInternal": {
     "fqn": "flair-sdk:token/ERC721/extensions/supply/IERC721SupplyInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyInternal",
@@ -30128,7 +30591,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/IERC721LockableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/IERC721LockableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableOwnable",
@@ -30196,7 +30659,7 @@
   },
   "flair-sdk:token/ERC721/facets/locking/IERC721LockableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/locking/IERC721LockableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721LockableRoleBased",
@@ -30264,7 +30727,7 @@
   },
   "flair-sdk:token/ERC721/facets/metadata/IERC721Metadata": {
     "fqn": "flair-sdk:token/ERC721/facets/metadata/IERC721Metadata",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721Metadata",
@@ -30325,7 +30788,7 @@
   },
   "flair-sdk:token/ERC721/facets/minting/IERC721MintableOwnable": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/IERC721MintableOwnable",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableOwnable",
@@ -30436,7 +30899,7 @@
   },
   "flair-sdk:token/ERC721/facets/minting/IERC721MintableRoleBased": {
     "fqn": "flair-sdk:token/ERC721/facets/minting/IERC721MintableRoleBased",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721MintableRoleBased",
@@ -30547,7 +31010,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminInternal": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminInternal",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyAdminInternal",
@@ -30562,7 +31025,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminStorage": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/ERC721SupplyAdminStorage",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "ERC721SupplyAdminStorage",
@@ -30577,7 +31040,7 @@
   },
   "flair-sdk:token/ERC721/facets/supply/IERC721SupplyAdmin": {
     "fqn": "flair-sdk:token/ERC721/facets/supply/IERC721SupplyAdmin",
-    "version": "2.25.0",
+    "version": "2.26.1",
     "artifact": {
       "_format": "hh-sol-artifact-1",
       "contractName": "IERC721SupplyAdmin",
