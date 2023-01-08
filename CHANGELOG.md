@@ -1,3 +1,10 @@
+## [2.27.0](https://github.com/flair-sdk/contracts/compare/v2.26.1...v2.27.0) (2023-01-08)
+
+
+### Features
+
+* add erc20 with erc2771 meta-transaction support ([70c012f](https://github.com/flair-sdk/contracts/commit/70c012f2ec38ba13decdd7b7990fc3a211c1b8c4))
+
 ### [2.26.1](https://github.com/flair-sdk/contracts/compare/v2.26.0...v2.26.1) (2023-01-07)
 
 ## [2.26.0](https://github.com/flair-sdk/contracts/compare/v2.25.0...v2.26.0) (2023-01-06)
